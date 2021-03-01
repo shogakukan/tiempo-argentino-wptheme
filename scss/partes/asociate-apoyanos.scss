@@ -2,7 +2,8 @@
 @import "../mixins";
 
 .ta-context {
-  &.asociate {
+  &.asociate,
+  &.apoyanos {
     .btns-container {
       button {
         @include button(var(--ta-negro-texto), var(--ta-socios));
@@ -45,7 +46,8 @@
   }
 }
 
-.asociate-block-container {
+.asociate-block-container,
+.apoyanos-block-container {
   border: 1px solid var(--ta-gris-subtexto);
   .title {
     h4 {
@@ -65,6 +67,10 @@
         font-size: 27px;
         letter-spacing: -1px;
         margin: 0;
+      }
+
+      span {
+        background-color: var(--ta-socios-fondos);
       }
     }
   }
@@ -253,6 +259,23 @@
         @include red-hat-700;
         color: var(--ta-gris-subtexto);
       }
+
+      label {
+        @include red-hat-500;
+        font-size: 17px;
+      }
+
+      textarea {
+        width: 100%;
+        border: 1.5px solid var(--ta-gris-subtexto);
+        font-size: 13px;
+        border-radius: 20px;
+        padding: 5px 15px;
+
+        &:focus {
+          outline: none;
+        }
+      }
     }
   }
 
@@ -267,7 +290,8 @@
     }
   }
 
-  .asociate-wrapper {
+  .asociate-wrapper,
+  .apoyanos-wrapper {
     > .img-container {
       margin: 0 auto;
       max-width: 250px;
@@ -428,6 +452,30 @@
           width: 100%;
           padding: 5px;
           margin-top: 10px;
+        }
+      }
+    }
+
+    .discount {
+      .wout-discount-price {
+        p {
+          @include red-hat-500;
+          font-size: 17px;
+          letter-spacing: -0.2px;
+          color: var(--ta-gris-subtexto);
+          text-decoration: line-through;
+          margin-bottom: 0;
+        }
+      }
+
+      .discount-price {
+        width: max-content;
+        background-color: var(--ta-socios-fondos);
+        h4 {
+          @include caladea-700;
+          font-size: 27px;
+          letter-spacing: -1px;
+          text-transform: uppercase;
         }
       }
     }
@@ -679,7 +727,8 @@
 }
 
 @media (min-width: 768px) {
-  .asociate-block-container {
+  .asociate-block-container,
+  .apoyanos-block-container {
     .temas {
       .tema {
         .bg-color {
@@ -693,7 +742,8 @@
 }
 
 @media (min-width: 992px) {
-  .asociate-block-container {
+  .asociate-block-container,
+  .apoyanos-block-container {
     min-height: 600px;
 
     .title {
@@ -775,7 +825,8 @@
       }
     }
 
-    .asociate-wrapper {
+    .asociate-wrapper,
+    .apoyanos-wrapper {
       p {
         font-size: 19px;
       }
@@ -790,6 +841,12 @@
       }
       h6 {
         font-size: 19px;
+      }
+
+      .subtitle {
+        p {
+          font-size: 19px;
+        }
       }
 
       .your-amount-block {
@@ -853,6 +910,12 @@
               }
             }
           }
+
+          label {
+            @include red-hat-500;
+            font-size: 19px;
+            letter-spacing: -0.2px;
+          }
         }
       }
 
@@ -864,6 +927,22 @@
       .ayuda {
         max-width: 75%;
         margin: 0 auto;
+      }
+
+      .discount {
+        .wout-discount-price {
+          p {
+            font-size: 24px;
+          }
+        }
+
+        .discount-price {
+          width: max-content;
+          background-color: var(--ta-socios-fondos);
+          h4 {
+            font-size: 39px;
+          }
+        }
       }
     }
 
@@ -895,73 +974,6 @@
       padding: 8px 20px;
     }
   }
-
-  /* .subs-opt {
-    .opt-list {
-      .opt {
-        &.papel {
-          .description {
-            h4 {
-              font-size: 30px;
-              line-height: 33.69px;
-              letter-spacing: -0.5px;
-            }
-          }
-        }
-      }
-      .description {
-        h4 {
-          font-size: 39px;
-          line-height: 44.85px;
-          letter-spacing: -0.5px;
-        }
-
-        p {
-          font-size: 19px;
-          line-height: 25px;
-        }
-      }
-
-      .amounts {
-        .amount {
-          button {
-            min-height: 43px;
-            padding: 6px 10px;
-            p {
-              font-size: 35px;
-              letter-spacing: -0.5px;
-            }
-          }
-
-          &.other {
-            button {
-              p {
-                font-size: 19px;
-              }
-            }
-          }
-        }
-      }
-
-      .opt-details {
-        button {
-          p {
-            font-size: 19px;
-          }
-        }
-
-        .card-body {
-          div {
-            margin-top: 5px;
-          }
-
-          h6 {
-            font-size: 19px;
-          }
-        }
-      }
-    }
-  } */
 
   .popup-container {
     .continuar-error-popup,
