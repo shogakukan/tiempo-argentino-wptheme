@@ -738,6 +738,12 @@ a {
       }
     }
   }
+
+  &.asociate {
+    .separator {
+      background-color: var(--ta-socios);
+    }
+  }
 }
 
 .container-with-header {

@@ -1,5 +1,6 @@
 :root {
   --ta-celeste: #16a1dc;
+  --ta-gris-fondos: #ebf1f2;
   --ta-gris-imagen: #ebebeb;
   --ta-celeste-fondos: #ebf7fe;
   --ta-negro-texto: #252b2d;
@@ -493,6 +494,9 @@ a {
 .ta-context.yellow-border .ta-socios-block {
   border: 1px solid var(--ta-socios);
 }
+.ta-context.gray-border .subs-container {
+  border: 1px solid var(--ta-gris-subtexto);
+}
 .ta-context.talleres-especial p {
   font-size: 15px;
   font-family: "Caladea";
@@ -558,6 +562,9 @@ a {
   font-style: normal;
   font-weight: 700;
   color: var(--ta-celeste);
+}
+.ta-context.asociate .separator {
+  background-color: var(--ta-socios);
 }
 
 .container-with-header .section-title h4 {
