@@ -452,6 +452,24 @@ a {
     }
   } */
 
+  &.blue-tiempo {
+    .context-color {
+      .article-preview {
+        .content {
+          .article-info-container {
+            p {
+              color: white !important;
+            }
+          }
+        }
+      }
+    }
+
+    .context-bg {
+      background-color: var(--ta-celeste);
+    }
+  }
+
   &.dark-blue {
     .context-color {
       .article-preview {
@@ -669,6 +687,10 @@ a {
         }
       }
     }
+  }
+
+  &.newsletter-especial {
+    max-width: 100%;
   }
 
   &.newsletter-especial,

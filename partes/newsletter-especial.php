@@ -1,4 +1,4 @@
-<div class="m-3 m-md-5">
+<div class="container mt-3">
     <div class="ta-context blue-border newsletter newsletter-especial">
         <div class="py-4">
             <div class="container d-flex flex-column flex-md-row align-items-end text-center text-md-left">
@@ -6,7 +6,7 @@
                     <div class="envelope-icon text-left">
                         <img src="../../assets/images/envelope.svg" alt="" />
                     </div>
-                    <div class="px-0 pl-md-5">
+                    <div class="px-0 pl-md-5 mt-3">
                         <div class="section-title">
                             <h4>Sumate a nuestro NEWSLETTER</h4>
                         </div>

@@ -21,90 +21,26 @@
 
 <body>
     <?php include_once('../../partes/header.php');  ?>
-    <div class="container-fluid container-lg p-0 ">
-        <?php include_once('../../partes/articulo-especial.php');  ?>
-        <div class="ta-context yellow-border">
-            <?php include_once('../../partes/seamos-socios-fullwidth.php');  ?>
-        </div>
-        <?php include_once('../../partes/tags.php');  ?>
-        <div class="d-flex flex-column flex-md-row">
-            <?php include_once('../../partes/sponsor.php');  ?>
-
-        </div>
-    </div>
-    <div class="ta-context dark-bg mt-3 d-none d-md-block">
+    <?php include_once('../../partes/articulo-especial.php');  ?>
+    <?php include_once('../../partes/seamos-socios-fullwidth.php');  ?>
+    <?php include_once('../../partes/tags.php');  ?>
+    <?php include_once('../../partes/sponsor.php');  ?>
+    <div class="d-none d-md-block">
         <?php include_once('../../partes/audiovisual-especial.php');  ?>
     </div>
     <div class="d-block d-md-none">
-        <div class="container-md mb-2 p-0">
-            <div class="separator"></div>
-        </div>
         <?php include_once('../../partes/audiovisual.php');  ?>
     </div>
-    <div class="container p-0 d-block d-md-none mt-3">
-        <div class="line-height-0">
-            <div class="separator m-0"></div>
-        </div>
-    </div>
-    <div class="container mt-5">
-        <div class="ta-context newsletter-especial">
-            <?php include_once('../../partes/newsletter-especial.php');  ?>
-        </div>
-    </div>
-    </div>
-    <div class="ta-context light-blue-bg mt-5">
-        <?php include('../../partes/segun-tus-intereses.php');  ?>
-    </div>
-    <div class="container mt-3">
-        <div class="line-height-0">
-            <div class="separator m-0"></div>
-        </div>
-        <div class="ta-context talleres-especial">
-            <?php include('../../partes/talleres.php');  ?>
-        </div>
-    </div>
-    <div class="container-md mb-2 p-0">
-        <div class="separator"></div>
-    </div>
-    <div class="container-md">
-        <?php include_once('../../partes/comentarios.php');  ?>
-    </div>
-    <div class="container-md mb-2 p-0">
-        <div class="separator"></div>
-    </div>
-    <div class="container-md">
-        <?php include_once('../../partes/pregunta-y-participa.php');  ?>
-    </div>
-    <div class="container-md mb-2 p-0">
-        <div class="separator"></div>
-    </div>
-    <div class="container-md">
-        <?php include_once('../../partes/conversemos.php');  ?>
-    </div>
-    <div class="container-md p-0 line-height-0">
-        <div class="separator"></div>
-    </div>
-    <div class="ta-context dark-blue-bg">
-        <?php include_once('../../partes/relacionados-tema.php');  ?>
-    </div>
-    <div class="container-md p-0 line-height-0">
-        <div class="separator"></div>
-    </div>
-    <div class="ta-context mas-leidas-especial">
-        <?php include('../../partes/mas-leidas-especial.php');  ?>
-    </div>
-    <div class="container-md p-0 line-height-0">
-        <div class="separator"></div>
-    </div>
-    <div class="ta-context light-blue-bg">
-        <?php include('../../partes/ultimas-ambientales.php');  ?>
-    </div>
-    <div class="container-md p-0 line-height-0">
-        <div class="separator"></div>
-    </div>
-    <div class="ta-context light-blue-bg">
-        <?php include_once('../../partes/podes-leer.php');  ?>
-    </div>
+    <?php include_once('../../partes/newsletter-especial.php');  ?>
+    <?php include('../../partes/segun-tus-intereses.php');  ?>
+    <?php include('../../partes/talleres.php');  ?>
+    <?php include_once('../../partes/comentarios.php');  ?>
+    <?php include_once('../../partes/pregunta-y-participa.php');  ?>
+    <?php include_once('../../partes/conversemos.php');  ?>
+    <?php include_once('../../partes/relacionados-tema.php');  ?>
+    <?php include('../../partes/mas-leidas-especial.php');  ?>
+    <?php include('../../partes/ultimas-ambientales.php');  ?>
+    <?php include_once('../../partes/podes-leer.php');  ?>
     <?php include_once('../../partes/footer.php');  ?>
 </body>
 

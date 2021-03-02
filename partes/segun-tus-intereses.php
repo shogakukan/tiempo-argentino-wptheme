@@ -1,4 +1,4 @@
-<div class="container-with-header py-3">
+<div class="container-with-header light-blue-bg py-3 mt-3">
     <div class="container d-block d-lg-flex justify-content-between align-items-center">
         <div class="section-title">
             <h4>SEGÚN TUS INTERESES</h4>
@@ -12,12 +12,11 @@
     <div class="sub-blocks mt-3">
         <div class="container px-0 px-md-1">
             <div class="ta-articles-block d-flex">
-                <div class="article-preview m-2 col-12 col-lg-3 d-flex flex-column p-0">
+                <div class="article-preview vertical-article d-flex flex-column mb-3 col-12 col-md-3">
                     <div>
                         <a href="">
                             <div class="img-container position-relative">
                                 <div class="img-wrapper">
-
                                 </div>
                                 <div class="icons-container">
                                     <div class="article-icons d-flex flex-column position-absolute">
@@ -29,7 +28,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="content mt-0 mt-lg-3">
+                    <div class="content">
                         <div class="description">
                             <a href="">
                                 <p>Si el títular es muy muy largo, que tenga más de tres renglones, yo terminaría el
@@ -45,12 +44,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="article-preview m-2 col-12 col-lg-3 d-flex flex-column p-0">
+                <div class="article-preview vertical-article d-flex flex-column mb-3 col-12 col-md-3">
                     <div>
                         <a href="">
                             <div class="img-container position-relative">
                                 <div class="img-wrapper">
-
                                 </div>
                                 <div class="icons-container">
                                     <div class="article-icons d-flex flex-column position-absolute">
@@ -62,7 +60,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="content mt-0 mt-lg-3">
+                    <div class="content">
                         <div class="description">
                             <a href="">
                                 <p>Si el títular es muy muy largo, que tenga más de tres renglones, yo terminaría el
@@ -78,12 +76,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="article-preview m-2 col-12 col-lg-3 d-flex flex-column p-0">
+                <div class="article-preview vertical-article d-flex flex-column mb-3 col-12 col-md-3">
                     <div>
                         <a href="">
                             <div class="img-container position-relative">
                                 <div class="img-wrapper">
-
                                 </div>
                                 <div class="icons-container">
                                     <div class="article-icons d-flex flex-column position-absolute">
@@ -95,7 +92,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="content mt-0 mt-lg-3">
+                    <div class="content">
                         <div class="description">
                             <a href="">
                                 <p>Si el títular es muy muy largo, que tenga más de tres renglones, yo terminaría el
@@ -111,12 +108,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="article-preview m-2 col-12 col-lg-3 d-flex flex-column p-0">
+                <div class="article-preview vertical-article d-flex flex-column mb-3 col-12 col-md-3">
                     <div>
                         <a href="">
                             <div class="img-container position-relative">
                                 <div class="img-wrapper">
-
                                 </div>
                                 <div class="icons-container">
                                     <div class="article-icons d-flex flex-column position-absolute">
@@ -128,7 +124,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="content mt-0 mt-lg-3">
+                    <div class="content">
                         <div class="description">
                             <a href="">
                                 <p>Si el títular es muy muy largo, que tenga más de tres renglones, yo terminaría el
