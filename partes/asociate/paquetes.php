@@ -211,7 +211,7 @@
                                             <div class="btns-container">
                                                 <div
                                                     class=" d-flex justify-content-center mx-auto uppercase mt-3 mt-lg-0">
-                                                    <button>elegir y continuar</button>
+                                                    <button class="yellow-btn-white-text">elegir y continuar</button>
                                                 </div>
                                             </div>
                                         </div>

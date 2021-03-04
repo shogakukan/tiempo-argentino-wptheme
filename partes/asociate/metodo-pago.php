@@ -11,8 +11,7 @@
                 <div class="py-2">
                     <div class="subs-opt mt-3 mt-md-5">
                         <div class="title text-center">
-                            <h4 class="italic">¡Gracias Nombre Apellido</h4>
-                            <h4 class="italic">por apoyar Tiempo Argentino!</h4>
+                            <h4 class="italic">¡Gracias <span>Nombre Apellido</span> por apoyar Tiempo Argentino!</h4>
                         </div>
                         <div class="asociate-wrapper">
                             <div class="metodo-pago-block">
@@ -32,7 +31,8 @@
                             </div>
                             <div class="ayuda text-center mt-4 mb-3">
                                 <h6 class="mt-2">Si deseas obtener ayuda con el proceso de pago, podés escribir un mail
-                                    a <a href="mailto:suscripciones@tiempoargentino.com.ar"
+                                    a </h6>
+                                <h6><a href="mailto:suscripciones@tiempoargentino.com.ar"
                                         class="highlighted">suscripciones@tiempoargentino.com.ar</a></h6>
                             </div>
                         </div>

@@ -210,6 +210,7 @@
   letter-spacing: -1px;
   margin: 0;
   text-transform: uppercase;
+  color: var(--ta-gris-subtexto);
 }
 .asociate-block-container .subs-opt .opt-list .amounts .amount button.active,
 .apoyanos-block-container .subs-opt .opt-list .amounts .amount button.active {
@@ -218,6 +219,10 @@
   position: relative;
   top: -3px;
   left: -3px;
+}
+.asociate-block-container .subs-opt .opt-list .amounts .amount button.active p,
+.apoyanos-block-container .subs-opt .opt-list .amounts .amount button.active p {
+  color: var(--ta-negro-texto);
 }
 .asociate-block-container .subs-opt .opt-list .amounts .amount.other button p,
 .apoyanos-block-container .subs-opt .opt-list .amounts .amount.other button p {
@@ -399,6 +404,7 @@
   font-style: normal;
   font-weight: 500;
   font-size: 17px;
+  margin: 0;
 }
 .asociate-block-container .asociate-wrapper .aviso h6,
 .asociate-block-container .apoyanos-wrapper .aviso h6,
@@ -408,6 +414,7 @@
   font-style: normal;
   font-weight: 500;
   font-size: 17px;
+  line-height: 20px;
 }
 .asociate-block-container .asociate-wrapper h6,
 .asociate-block-container .apoyanos-wrapper h6,
@@ -608,6 +615,7 @@
   font-family: "Red Hat Display";
   font-style: normal;
   font-weight: 400;
+  line-height: 20px;
 }
 .asociate-block-container .asociate-wrapper .metodo-pago-block .btns-container button,
 .asociate-block-container .apoyanos-wrapper .metodo-pago-block .btns-container button,
@@ -1117,6 +1125,10 @@
     max-height: 50vh !important;
   }
 
+  .mw-md-60 {
+    max-width: 60%;
+  }
+
   .asociate-block-container,
 .apoyanos-block-container {
     min-height: 600px;
@@ -1194,6 +1206,7 @@
 .apoyanos-block-container .asociate-wrapper h6,
 .apoyanos-block-container .apoyanos-wrapper h6 {
     font-size: 19px;
+    line-height: 25px;
   }
   .asociate-block-container .asociate-wrapper .subtitle p,
 .asociate-block-container .apoyanos-wrapper .subtitle p,

@@ -9,11 +9,12 @@
         <div class="container">
             <div class="container-with-header">
                 <div class="py-2">
-                    <div class="subs-opt mt-3 mt-md-5">
+                    <div class="subs-opt mw-md-60 mx-auto mt-3 mt-md-5">
                         <div class="title text-center">
-                            <h4 class="italic m-0">Gracias Nombre,</h4>
-                            <h4 class="italic m-0">por elegir Tiempo Argentino, un medio autogestionado es </h4>
-                            <h4 class="italic m-0">posible gracias a personas como vos!</h4>
+                            <h4 class="italic m-0">Gracias <span>Nombre</span>, </h4>
+                            <h4 class="italic m-0">por elegir Tiempo Argentino, un medio autogestionado
+                                es posible gracias a personas como vos!</h4>
+                            <h4 class="italic m-0"></h4>
                         </div>
                         <div class="asociate-wrapper">
                             <div class="subtitle text-center mt-4">
@@ -31,7 +32,8 @@
                                 <button>Personalizar</button>
                             </div>
                             <div class="text-center mt-4">
-                                <p>o podés seguir navegando nuestro sitio y personalizar en otro momento</p>
+                                <p>o podés seguir navegando nuestro sitio y personalizar, desde tu perfil de usuario, en
+                                    otro momento</p>
                             </div>
                             <div class="btns-container text-center">
                                 <button class="gray-btn-black-text">ir al sitio</button>

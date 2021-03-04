@@ -4,7 +4,7 @@
     </div>
     <div class="asociate-block-container">
         <div class="section-title p-2">
-            <h4>asociate<span class="ml-2">CON TRANSFERENCIA BANCARIA</span></h4>
+            <h4>PAGO<span class="ml-2">TRANSFERENCIA BANCARIA</span></h4>
         </div>
         <div class="container">
             <div class="container-with-header">
@@ -44,7 +44,7 @@
                                     </div>
                                 </div>
                                 <div class="info text-center mt-5">
-                                    <h6>Al hacer click en registrarse, estás aceptando nuestros <a href=""
+                                    <h6>Al hacer click en abonar, estás aceptando nuestros <a href=""
                                             class="highlighted">términos y
                                             condiciones</a></h6>
 

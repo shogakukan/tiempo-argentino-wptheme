@@ -9,7 +9,7 @@
         <div class="container">
             <div class="container-with-header">
                 <div class="py-2">
-                    <div class="subs-opt mt-3 mt-md-5">
+                    <div class="subs-opt mw-md-60 mx-auto mt-3 mt-md-5">
                         <div class="title text-center">
                             <h4 class="italic m-0">Gracias </h4>
                             <h4 class="italic m-0">Nombre Apellido</h4>
@@ -19,7 +19,7 @@
                                 <p>Estamos trabajando para que disfrutes de una experiencia informativa única
                                 </p>
                             </div>
-                            <div class="btns-container text-center">
+                            <div class="btns-container text-center mt-4">
                                 <button>ir al sitio</button>
                             </div>
                             <div class="text-center my-5">

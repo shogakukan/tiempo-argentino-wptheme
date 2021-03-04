@@ -11,8 +11,10 @@
                 <div class="py-2">
                     <div class="subs-opt mt-3 mt-md-5">
                         <div class="title text-center">
-                            <h4 class="italic m-0">Desde Tiempo Argentino queremos ofrecerte la posibilidad de apoyar
-                                nuestro medio ofreciendote un <span>25% de descuento</span> en tu aporte</h4>
+                            <h4 class="italic m-0">Desde Tiempo Argentino queremos ofrecerte la </h4>
+                            <h4 class="italic m-0">posibilidad de apoyar
+                                nuestro medio ofreciendote un </h4>
+                            <h4 class="italic m-0"><span>25% de descuento</span> en tu aporte</h4>
                         </div>
                         <div class="apoyanos-wrapper">
                             <div class="discount  text-center mt-5">

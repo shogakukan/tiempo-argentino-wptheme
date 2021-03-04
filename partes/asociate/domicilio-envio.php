@@ -9,7 +9,7 @@
         <div class="container">
             <div class="container-with-header">
                 <div class="py-2">
-                    <div class="subs-opt mt-3 mt-md-5">
+                    <div class="subs-opt mw-md-60 mx-auto mt-3 mt-md-5">
                         <div class="asociate-wrapper">
                             <div class="address-block">
                                 <div class="title text-center mt-4">
@@ -44,8 +44,10 @@
 
                                 </div>
                                 <div class="ayuda text-center my-4">
-                                    <h6>Ante cualquier duda, podés escribirnos a <a class="highlighted"
-                                            href="mailto:pagos@tiempoar.com.ar">pagos@tiempoar.com.ar</a> o <b>llamarnos
+                                    <h6>Ante cualquier duda, podés escribirnos a</h6>
+                                    <h6><a class="highlighted"
+                                            href="mailto:pagos@tiempoar.com.ar">pagos@tiempoar.com.ar</a></h6>
+                                    <h6> o <b>llamarnos
                                             al <a href="tel:4342-5511">4342-5511</a>.</b>
                                     </h6>
                                 </div>

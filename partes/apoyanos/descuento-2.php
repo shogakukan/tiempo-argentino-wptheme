@@ -9,7 +9,7 @@
         <div class="container">
             <div class="container-with-header">
                 <div class="py-2">
-                    <div class="subs-opt mt-3 mt-md-5">
+                    <div class="subs-opt mw-md-60 mx-auto mt-3 mt-md-5">
                         <div class="apoyanos-wrapper">
                             <div class="address-block">
                                 <div class="title text-center mt-4">
@@ -17,8 +17,9 @@
                                     </p>
                                 </div>
                                 <div class="subtitle text-center mt-4">
-                                    <p>Indicanos tu nombre, tu e-mail y por qué considerás que necesitás este descuento:
+                                    <p class="m-0">Indicanos tu nombre, tu e-mail y por qué
                                     </p>
+                                    <p>considerás que necesitás este descuento:</p>
                                 </div>
                                 <div class="form-container mt-4">
                                     <div class="input-container">

@@ -94,7 +94,7 @@
                     </div>
                     <div class="close-popup mt-3">
                         <p>Si no vivís en estas zonas, te recomendamos ser Socio DIGITAL</p>
-                        <div class="close-btn">
+                        <div class="btns-container close-btn">
                             <button>cerrar</button>
                         </div>
                     </div>

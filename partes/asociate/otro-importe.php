@@ -9,7 +9,7 @@
         <div class="container">
             <div class="container-with-header">
                 <div class="py-2">
-                    <div class="subs-opt mt-3 mt-md-5">
+                    <div class="subs-opt mw-md-60 mx-auto mt-3 mt-md-5">
                         <div class="title text-center">
                             <h4>¿Con qué importe deseas asociarte?</h4>
                         </div>
@@ -33,8 +33,9 @@
                                     usuario</h6>
                             </div>
                             <div class="ayuda text-md-center mb-4 mt-5">
-                                <h6>Si deseas obtener ayuda con el proceso de asociación, podés escribir un mail a <a
-                                        class="highlighted"
+                                <h6>Si deseas obtener ayuda con el proceso de asociación, podés escribir un mail a
+                                </h6>
+                                <h6><a class="highlighted"
                                         href="mailto:suscripciones@tiempoargentino.com.ar">suscripciones@tiempoargentino.com.ar</a>
                                 </h6>
                             </div>

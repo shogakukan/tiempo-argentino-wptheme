@@ -9,15 +9,16 @@
         <div class="container">
             <div class="container-with-header">
                 <div class="py-2">
-                    <div class="subs-opt mt-3 mt-md-5">
+                    <div class="subs-opt mw-md-60 mx-auto mt-3 mt-md-5">
                         <div class="title text-center">
                             <h4 class="italic m-0">Gracias <span>Nombre</span></h4>
                         </div>
                         <div class="asociate-wrapper">
                             <div class="subtitle text-center mt-4">
-                                <p>Muy pronto alguien de Tiempo Argentino te escribirá por e-mail para efectuar el
-                                    pago.
+                                <p>Muy pronto alguien de Tiempo Argentino te
                                 </p>
+                                <p>escribirá por e-mail. Mientras tanto podés </p>
+                                <p>seguir leyendo nuestro sitio.</p>
                             </div>
                             <div class="title text-center mt-5">
                                 <p><b>¿Querés contarnos un poco más de vos?</b></p>
