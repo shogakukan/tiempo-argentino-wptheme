@@ -94,6 +94,10 @@
   font-weight: 900;
 }
 
+.mh-75 {
+  max-height: 75vh !important;
+}
+
 .asociate-block-container,
 .apoyanos-block-container {
   border: 1px solid var(--ta-gris-subtexto);
@@ -502,16 +506,32 @@
   letter-spacing: -1px;
 }
 .asociate-block-container .asociate-wrapper .checkbox-container .paper-checkbox,
+.asociate-block-container .asociate-wrapper .checkbox-container .opt-checkbox,
+.asociate-block-container .asociate-wrapper .checkbox-container .terms-checkbox,
 .asociate-block-container .apoyanos-wrapper .checkbox-container .paper-checkbox,
+.asociate-block-container .apoyanos-wrapper .checkbox-container .opt-checkbox,
+.asociate-block-container .apoyanos-wrapper .checkbox-container .terms-checkbox,
 .apoyanos-block-container .asociate-wrapper .checkbox-container .paper-checkbox,
-.apoyanos-block-container .apoyanos-wrapper .checkbox-container .paper-checkbox {
+.apoyanos-block-container .asociate-wrapper .checkbox-container .opt-checkbox,
+.apoyanos-block-container .asociate-wrapper .checkbox-container .terms-checkbox,
+.apoyanos-block-container .apoyanos-wrapper .checkbox-container .paper-checkbox,
+.apoyanos-block-container .apoyanos-wrapper .checkbox-container .opt-checkbox,
+.apoyanos-block-container .apoyanos-wrapper .checkbox-container .terms-checkbox {
   position: absolute;
   opacity: 0;
 }
 .asociate-block-container .asociate-wrapper .checkbox-container .paper-checkbox + label,
+.asociate-block-container .asociate-wrapper .checkbox-container .opt-checkbox + label,
+.asociate-block-container .asociate-wrapper .checkbox-container .terms-checkbox + label,
 .asociate-block-container .apoyanos-wrapper .checkbox-container .paper-checkbox + label,
+.asociate-block-container .apoyanos-wrapper .checkbox-container .opt-checkbox + label,
+.asociate-block-container .apoyanos-wrapper .checkbox-container .terms-checkbox + label,
 .apoyanos-block-container .asociate-wrapper .checkbox-container .paper-checkbox + label,
-.apoyanos-block-container .apoyanos-wrapper .checkbox-container .paper-checkbox + label {
+.apoyanos-block-container .asociate-wrapper .checkbox-container .opt-checkbox + label,
+.apoyanos-block-container .asociate-wrapper .checkbox-container .terms-checkbox + label,
+.apoyanos-block-container .apoyanos-wrapper .checkbox-container .paper-checkbox + label,
+.apoyanos-block-container .apoyanos-wrapper .checkbox-container .opt-checkbox + label,
+.apoyanos-block-container .apoyanos-wrapper .checkbox-container .terms-checkbox + label {
   position: relative;
   cursor: pointer;
   padding: 0;
@@ -520,9 +540,17 @@
   font-weight: 400;
 }
 .asociate-block-container .asociate-wrapper .checkbox-container .paper-checkbox + label:before,
+.asociate-block-container .asociate-wrapper .checkbox-container .opt-checkbox + label:before,
+.asociate-block-container .asociate-wrapper .checkbox-container .terms-checkbox + label:before,
 .asociate-block-container .apoyanos-wrapper .checkbox-container .paper-checkbox + label:before,
+.asociate-block-container .apoyanos-wrapper .checkbox-container .opt-checkbox + label:before,
+.asociate-block-container .apoyanos-wrapper .checkbox-container .terms-checkbox + label:before,
 .apoyanos-block-container .asociate-wrapper .checkbox-container .paper-checkbox + label:before,
-.apoyanos-block-container .apoyanos-wrapper .checkbox-container .paper-checkbox + label:before {
+.apoyanos-block-container .asociate-wrapper .checkbox-container .opt-checkbox + label:before,
+.apoyanos-block-container .asociate-wrapper .checkbox-container .terms-checkbox + label:before,
+.apoyanos-block-container .apoyanos-wrapper .checkbox-container .paper-checkbox + label:before,
+.apoyanos-block-container .apoyanos-wrapper .checkbox-container .opt-checkbox + label:before,
+.apoyanos-block-container .apoyanos-wrapper .checkbox-container .terms-checkbox + label:before {
   content: "";
   margin-right: 10px;
   display: inline-block;
@@ -533,9 +561,17 @@
   border: 1px solid var(--ta-socios);
 }
 .asociate-block-container .asociate-wrapper .checkbox-container .paper-checkbox:checked + label:after,
+.asociate-block-container .asociate-wrapper .checkbox-container .opt-checkbox:checked + label:after,
+.asociate-block-container .asociate-wrapper .checkbox-container .terms-checkbox:checked + label:after,
 .asociate-block-container .apoyanos-wrapper .checkbox-container .paper-checkbox:checked + label:after,
+.asociate-block-container .apoyanos-wrapper .checkbox-container .opt-checkbox:checked + label:after,
+.asociate-block-container .apoyanos-wrapper .checkbox-container .terms-checkbox:checked + label:after,
 .apoyanos-block-container .asociate-wrapper .checkbox-container .paper-checkbox:checked + label:after,
-.apoyanos-block-container .apoyanos-wrapper .checkbox-container .paper-checkbox:checked + label:after {
+.apoyanos-block-container .asociate-wrapper .checkbox-container .opt-checkbox:checked + label:after,
+.apoyanos-block-container .asociate-wrapper .checkbox-container .terms-checkbox:checked + label:after,
+.apoyanos-block-container .apoyanos-wrapper .checkbox-container .paper-checkbox:checked + label:after,
+.apoyanos-block-container .apoyanos-wrapper .checkbox-container .opt-checkbox:checked + label:after,
+.apoyanos-block-container .apoyanos-wrapper .checkbox-container .terms-checkbox:checked + label:after {
   content: url("../../assets/images/checkmark.png");
   position: absolute;
   left: 5px;
@@ -613,17 +649,35 @@
   text-transform: uppercase;
 }
 .asociate-block-container .temas .tema,
-.apoyanos-block-container .temas .tema {
+.asociate-block-container .temas .medio,
+.asociate-block-container .medios .tema,
+.asociate-block-container .medios .medio,
+.apoyanos-block-container .temas .tema,
+.apoyanos-block-container .temas .medio,
+.apoyanos-block-container .medios .tema,
+.apoyanos-block-container .medios .medio {
   margin-top: 10px;
   width: 100%;
   max-width: 340px;
 }
 .asociate-block-container .temas .tema .bg-color,
-.apoyanos-block-container .temas .tema .bg-color {
+.asociate-block-container .temas .medio .bg-color,
+.asociate-block-container .medios .tema .bg-color,
+.asociate-block-container .medios .medio .bg-color,
+.apoyanos-block-container .temas .tema .bg-color,
+.apoyanos-block-container .temas .medio .bg-color,
+.apoyanos-block-container .medios .tema .bg-color,
+.apoyanos-block-container .medios .medio .bg-color {
   background-color: var(--ta-gris-fondos);
 }
 .asociate-block-container .temas .tema .bg-color button,
-.apoyanos-block-container .temas .tema .bg-color button {
+.asociate-block-container .temas .medio .bg-color button,
+.asociate-block-container .medios .tema .bg-color button,
+.asociate-block-container .medios .medio .bg-color button,
+.apoyanos-block-container .temas .tema .bg-color button,
+.apoyanos-block-container .temas .medio .bg-color button,
+.apoyanos-block-container .medios .tema .bg-color button,
+.apoyanos-block-container .medios .medio .bg-color button {
   font-family: "Red Hat Display";
   font-style: normal;
   font-weight: 900;
@@ -644,7 +698,13 @@
   width: 100%;
 }
 .asociate-block-container .temas .tema .bg-color button.active,
-.apoyanos-block-container .temas .tema .bg-color button.active {
+.asociate-block-container .temas .medio .bg-color button.active,
+.asociate-block-container .medios .tema .bg-color button.active,
+.asociate-block-container .medios .medio .bg-color button.active,
+.apoyanos-block-container .temas .tema .bg-color button.active,
+.apoyanos-block-container .temas .medio .bg-color button.active,
+.apoyanos-block-container .medios .tema .bg-color button.active,
+.apoyanos-block-container .medios .medio .bg-color button.active {
   background-color: var(--ta-socios-fondos);
   color: var(--ta-negro-texto);
   left: -5px;
@@ -652,8 +712,75 @@
   top: -5px;
 }
 .asociate-block-container .temas .tema .bg-color button:focus,
-.apoyanos-block-container .temas .tema .bg-color button:focus {
+.asociate-block-container .temas .medio .bg-color button:focus,
+.asociate-block-container .medios .tema .bg-color button:focus,
+.asociate-block-container .medios .medio .bg-color button:focus,
+.apoyanos-block-container .temas .tema .bg-color button:focus,
+.apoyanos-block-container .temas .medio .bg-color button:focus,
+.apoyanos-block-container .medios .tema .bg-color button:focus,
+.apoyanos-block-container .medios .medio .bg-color button:focus {
   outline: none;
+}
+.asociate-block-container .medios .medio .bg-color button,
+.apoyanos-block-container .medios .medio .bg-color button {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 900;
+  background-color: var(--ta-gris-fondos);
+  border: none;
+  color: var(--ta-negro-texto);
+  font-size: 15px;
+  left: 50%;
+  line-height: 20px;
+  padding: 4px 10px;
+}
+.asociate-block-container .medios .medio .bg-color button > div img,
+.apoyanos-block-container .medios .medio .bg-color button > div img {
+  max-height: 23px;
+}
+.asociate-block-container .medios .medio .bg-color button > div p,
+.apoyanos-block-container .medios .medio .bg-color button > div p {
+  margin-bottom: 0;
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 17px;
+  letter-spacing: 0.3px;
+}
+.asociate-block-container .medios .medio .bg-color button.active,
+.apoyanos-block-container .medios .medio .bg-color button.active {
+  background-color: var(--ta-socios);
+}
+.asociate-block-container .articulos .articulo.with-thumbnail button,
+.apoyanos-block-container .articulos .articulo.with-thumbnail button {
+  background-color: var(--ta-gris-fondos);
+}
+.asociate-block-container .articulos .articulo.with-thumbnail button .thumbnail,
+.apoyanos-block-container .articulos .articulo.with-thumbnail button .thumbnail {
+  align-self: stretch;
+}
+.asociate-block-container .articulos .articulo.with-thumbnail button .thumbnail .img-container,
+.apoyanos-block-container .articulos .articulo.with-thumbnail button .thumbnail .img-container {
+  height: 100%;
+  background-image: url("../../assets/images/image.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: grayscale(100%);
+}
+.asociate-block-container .articulos .articulo.with-thumbnail button.active,
+.apoyanos-block-container .articulos .articulo.with-thumbnail button.active {
+  background-color: var(--ta-socios-fondos);
+  box-shadow: 5px 6px var(--ta-gris-fondos);
+}
+.asociate-block-container .articulos .articulo.with-thumbnail button.active .thumbnail .img-container,
+.apoyanos-block-container .articulos .articulo.with-thumbnail button.active .thumbnail .img-container {
+  filter: grayscale(0);
+}
+.asociate-block-container .articulos .articulo.with-thumbnail button.active .articulo-content,
+.apoyanos-block-container .articulos .articulo.with-thumbnail button.active .articulo-content {
+  background-color: transparent;
+  box-shadow: none;
 }
 .asociate-block-container .articulos .articulo button,
 .apoyanos-block-container .articulos .articulo button {
@@ -669,30 +796,7 @@
   padding: 4px 10px;
   padding: 0;
   text-align: left;
-}
-.asociate-block-container .articulos .articulo button .line-height-0 .separator,
-.apoyanos-block-container .articulos .articulo button .line-height-0 .separator {
-  background-color: var(--ta-gris-subtexto);
-}
-.asociate-block-container .articulos .articulo button .articulo-content,
-.apoyanos-block-container .articulos .articulo button .articulo-content {
-  background-color: var(--ta-gris-fondos);
-  padding: 4px 10px;
-}
-.asociate-block-container .articulos .articulo button .articulo-content .topic p,
-.apoyanos-block-container .articulos .articulo button .articulo-content .topic p {
-  font-family: "Red Hat Display";
-  font-style: normal;
-  font-weight: 900;
-  font-size: 12px;
-  margin-bottom: 0;
-}
-.asociate-block-container .articulos .articulo button .articulo-content .description p,
-.apoyanos-block-container .articulos .articulo button .articulo-content .description p {
-  font-family: "Red Hat Display";
-  font-style: normal;
-  font-weight: 400;
-  color: var(--ta-negro-texto);
+  width: 100%;
 }
 .asociate-block-container .articulos .articulo button.active,
 .apoyanos-block-container .articulos .articulo button.active {
@@ -717,6 +821,118 @@
 .asociate-block-container .articulos .articulo button:focus,
 .apoyanos-block-container .articulos .articulo button:focus {
   outline: none;
+}
+.asociate-block-container .articulos .articulo .line-height-0 .separator,
+.apoyanos-block-container .articulos .articulo .line-height-0 .separator {
+  background-color: var(--ta-gris-subtexto);
+}
+.asociate-block-container .articulos .articulo .articulo-content,
+.apoyanos-block-container .articulos .articulo .articulo-content {
+  background-color: var(--ta-gris-fondos);
+  padding: 4px 10px;
+}
+.asociate-block-container .articulos .articulo .articulo-content .topic p,
+.apoyanos-block-container .articulos .articulo .articulo-content .topic p {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 12px;
+  margin-bottom: 0;
+}
+.asociate-block-container .articulos .articulo .articulo-content .title h5,
+.apoyanos-block-container .articulos .articulo .articulo-content .title h5 {
+  font-family: "Caladea";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: -0.5px;
+  color: var(--ta-negro-texto);
+}
+.asociate-block-container .articulos .articulo .articulo-content .description p,
+.apoyanos-block-container .articulos .articulo .articulo-content .description p {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 400;
+  color: var(--ta-negro-texto);
+}
+.asociate-block-container .articulos .articulo .articulo-content .author p,
+.apoyanos-block-container .articulos .articulo .articulo-content .author p {
+  font-family: "Libre Baskerville";
+  font-style: italic;
+  font-weight: 400;
+  font-size: 12px;
+  color: var(--ta-negro-texto);
+}
+.asociate-block-container .articulos .articulo .articulo-content .checkbox-container .topic-checkbox,
+.apoyanos-block-container .articulos .articulo .articulo-content .checkbox-container .topic-checkbox {
+  height: 25px;
+  width: 25px;
+  margin: 0;
+  padding: 0;
+  opacity: 1;
+  appearance: none;
+  border: 1px solid var(--ta-gris-subtexto);
+  background: #fff;
+  position: relative;
+  bottom: 10px;
+  right: 15px;
+}
+.asociate-block-container .articulos .articulo .articulo-content .checkbox-container .topic-checkbox:checked,
+.apoyanos-block-container .articulos .articulo .articulo-content .checkbox-container .topic-checkbox:checked {
+  border: none;
+  background: var(--ta-socios);
+}
+.asociate-block-container .articulos .articulo .articulo-content .checkbox-container .topic-checkbox:checked:before, .asociate-block-container .articulos .articulo .articulo-content .checkbox-container .topic-checkbox:checked:after,
+.apoyanos-block-container .articulos .articulo .articulo-content .checkbox-container .topic-checkbox:checked:before,
+.apoyanos-block-container .articulos .articulo .articulo-content .checkbox-container .topic-checkbox:checked:after {
+  content: "";
+  position: absolute;
+  height: 4px;
+  background: var(--ta-negro-texto);
+}
+.asociate-block-container .articulos .articulo .articulo-content .checkbox-container .topic-checkbox:checked:before,
+.apoyanos-block-container .articulos .articulo .articulo-content .checkbox-container .topic-checkbox:checked:before {
+  width: 10px;
+  top: 14px;
+  left: 2px;
+  transform: rotate(44deg);
+}
+.asociate-block-container .articulos .articulo .articulo-content .checkbox-container .topic-checkbox:checked:after,
+.apoyanos-block-container .articulos .articulo .articulo-content .checkbox-container .topic-checkbox:checked:after {
+  width: 18px;
+  top: 11px;
+  left: 5px;
+  transform: rotate(-55deg);
+}
+.asociate-block-container .articulos .articulo .articulo-content .checkbox-container .topic-checkbox:focus,
+.apoyanos-block-container .articulos .articulo .articulo-content .checkbox-container .topic-checkbox:focus {
+  outline: none;
+}
+.asociate-block-container .articulos .articulo.articulo-elegido .line-height-0 .separator,
+.apoyanos-block-container .articulos .articulo.articulo-elegido .line-height-0 .separator {
+  background-color: var(--ta-socios);
+}
+.asociate-block-container .articulos .articulo.articulo-elegido .articulo-content,
+.apoyanos-block-container .articulos .articulo.articulo-elegido .articulo-content {
+  background-color: var(--ta-socios-fondos);
+  padding: 4px 10px;
+}
+.asociate-block-container .articulos .articulo.articulo-elegido .articulo-content .topic p,
+.apoyanos-block-container .articulos .articulo.articulo-elegido .articulo-content .topic p {
+  color: var(--ta-negro-texto);
+}
+.asociate-block-container .articulos-elegidos-counter p,
+.apoyanos-block-container .articulos-elegidos-counter p {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: -0.2px;
+  color: var(--ta-gris-subtexto);
+}
+.asociate-block-container .articulos-elegidos-counter p span,
+.apoyanos-block-container .articulos-elegidos-counter p span {
+  color: var(--ta-negro-texto);
 }
 .asociate-block-container .fotos .foto,
 .apoyanos-block-container .fotos .foto {
@@ -794,12 +1010,9 @@
   outline: none;
 }
 
-.ayuda {
-  word-break: break-all;
-}
-
 .popup-container {
   position: absolute;
+  z-index: 50;
   top: 0;
   width: 100%;
   height: 100%;
@@ -810,20 +1023,23 @@
   display: block;
 }
 .popup-container .continuar-error-popup,
-.popup-container .delivery-zones-popup {
+.popup-container .delivery-zones-popup,
+.popup-container .apply-pref-popup {
   position: sticky;
   top: 20%;
   background: var(--ta-gris-fondos);
 }
 .popup-container .continuar-error-popup .popup,
-.popup-container .delivery-zones-popup .popup {
+.popup-container .delivery-zones-popup .popup,
+.popup-container .apply-pref-popup .popup {
   padding: 15px;
   font-family: "Red Hat Display";
   font-style: normal;
   font-weight: 500;
 }
 .popup-container .continuar-error-popup .popup .title h4,
-.popup-container .delivery-zones-popup .popup .title h4 {
+.popup-container .delivery-zones-popup .popup .title h4,
+.popup-container .apply-pref-popup .popup .title h4 {
   font-family: "Red Hat Display";
   font-style: normal;
   font-weight: 900;
@@ -831,7 +1047,8 @@
   letter-spacing: 0.3px;
 }
 .popup-container .continuar-error-popup .popup .title h4.italic,
-.popup-container .delivery-zones-popup .popup .title h4.italic {
+.popup-container .delivery-zones-popup .popup .title h4.italic,
+.popup-container .apply-pref-popup .popup .title h4.italic {
   font-family: "Libre Baskerville";
   font-style: italic;
   font-weight: 400;
@@ -839,24 +1056,35 @@
   letter-spacing: -0.2px;
   margin: 0;
 }
+.popup-container .continuar-error-popup .popup .subtitle p,
+.popup-container .delivery-zones-popup .popup .subtitle p,
+.popup-container .apply-pref-popup .popup .subtitle p {
+  font-size: 15px;
+  line-height: 20px;
+}
 .popup-container .continuar-error-popup .popup .aviso p,
 .popup-container .continuar-error-popup .popup .continue p,
 .popup-container .continuar-error-popup .popup .close-popup p,
 .popup-container .delivery-zones-popup .popup .aviso p,
 .popup-container .delivery-zones-popup .popup .continue p,
-.popup-container .delivery-zones-popup .popup .close-popup p {
+.popup-container .delivery-zones-popup .popup .close-popup p,
+.popup-container .apply-pref-popup .popup .aviso p,
+.popup-container .apply-pref-popup .popup .continue p,
+.popup-container .apply-pref-popup .popup .close-popup p {
   font-family: "Red Hat Display";
   font-style: normal;
   font-weight: 400;
 }
 .popup-container .continuar-error-popup .popup .ayuda h6,
-.popup-container .delivery-zones-popup .popup .ayuda h6 {
+.popup-container .delivery-zones-popup .popup .ayuda h6,
+.popup-container .apply-pref-popup .popup .ayuda h6 {
   font-family: "Red Hat Display";
   font-style: normal;
   font-weight: 400;
 }
 .popup-container .continuar-error-popup .popup .ayuda h6 a,
-.popup-container .delivery-zones-popup .popup .ayuda h6 a {
+.popup-container .delivery-zones-popup .popup .ayuda h6 a,
+.popup-container .apply-pref-popup .popup .ayuda h6 a {
   font-family: "Red Hat Display";
   font-style: normal;
   font-weight: 500;
@@ -885,6 +1113,10 @@
   }
 }
 @media (min-width: 992px) {
+  .mh-md-50 {
+    max-height: 50vh !important;
+  }
+
   .asociate-block-container,
 .apoyanos-block-container {
     min-height: 600px;
@@ -1095,9 +1327,17 @@
 .apoyanos-block-container .temas .tema .bg-color button {
     font-size: 24px;
   }
-  .asociate-block-container .articulos .articulo button .articulo-content,
-.apoyanos-block-container .articulos .articulo button .articulo-content {
+  .asociate-block-container .articulos .articulo .articulo-content,
+.apoyanos-block-container .articulos .articulo .articulo-content {
     min-height: 125px;
+  }
+  .asociate-block-container .articulos .articulo .articulo-content .title h5,
+.apoyanos-block-container .articulos .articulo .articulo-content .title h5 {
+    font-size: 30px;
+  }
+  .asociate-block-container .articulos .articulo .articulo-content .author p,
+.apoyanos-block-container .articulos .articulo .articulo-content .author p {
+    font-size: 16px;
   }
 
   .btns-container button {
@@ -1106,11 +1346,21 @@
   }
 
   .popup-container .continuar-error-popup,
-.popup-container .delivery-zones-popup {
+.popup-container .delivery-zones-popup,
+.popup-container .apply-pref-popup {
     top: 50%;
     transform: translateY(-50%);
-    max-width: 30%;
+    max-width: 42%;
     margin: 0 auto;
+  }
+  .popup-container .continuar-error-popup .popup .subtitle p,
+.popup-container .continuar-error-popup .popup h6,
+.popup-container .delivery-zones-popup .popup .subtitle p,
+.popup-container .delivery-zones-popup .popup h6,
+.popup-container .apply-pref-popup .popup .subtitle p,
+.popup-container .apply-pref-popup .popup h6 {
+    font-size: 19px;
+    line-height: 25px;
   }
 }
 
