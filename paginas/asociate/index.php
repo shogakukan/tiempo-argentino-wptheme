@@ -26,6 +26,7 @@
     <?php include_once('../../partes/asociate/otro-importe.php');  ?>
     <?php include_once('../../partes/asociate/paquete-elegido.php');  ?>
     <?php include_once('../../partes/asociate/domicilio-envio.php');  ?>
+    <?php include_once('../../partes/asociate/no-identificado.php');  ?>
     <?php include_once('../../partes/asociate/sign-in-asociate.php');  ?>
     <?php include_once('../../partes/asociate/registrarse.php');  ?>
     <?php include_once('../../partes/asociate/metodo-pago.php');  ?>

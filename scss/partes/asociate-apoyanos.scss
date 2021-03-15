@@ -334,7 +334,7 @@
       }
     }
 
-    h6 {
+    h6, p {
       @include red-hat-400;
       margin-left: 10px;
       margin-bottom: 0;
@@ -348,6 +348,12 @@
           background-color: var(--ta-socios-fondos);
           text-decoration: underline;
         }
+      }
+    }
+
+    h6 {
+      &.subtitle {
+        @include red-hat-500;
       }
     }
 
@@ -1026,6 +1032,13 @@
       h6 {
         font-size: 19px;
         line-height: 25px;
+      }
+
+      h6 {
+        &.subtitle {
+          font-size: 24px;
+          line-height: 31.75px;
+        }
       }
 
       .subtitle {

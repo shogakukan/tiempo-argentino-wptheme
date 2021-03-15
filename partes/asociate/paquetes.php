@@ -11,7 +11,7 @@
                 <div class="py-2">
                     <div class="subs-opt mt-3 mt-md-5">
                         <div class="title text-center">
-                            <h4 class="italic">Nombre estas son las mejores opciones para asociarte</h4>
+                            <h4 class="italic">Nombre, estas son las mejores opciones para asociarte</h4>
                         </div>
                         <div class="opt-list mt-3">
                             <div class="d-flex flex-column flex-lg-row justify-content-center">
@@ -211,7 +211,7 @@
                                             <div class="btns-container">
                                                 <div
                                                     class=" d-flex justify-content-center mx-auto uppercase mt-3 mt-lg-0">
-                                                    <button class="yellow-btn-white-text">elegir y continuar</button>
+                                                    <button>elegir y continuar</button>
                                                 </div>
                                             </div>
                                         </div>
