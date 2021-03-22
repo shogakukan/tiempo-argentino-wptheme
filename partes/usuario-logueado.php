@@ -1,4 +1,4 @@
-<div class="logged-user">
+<div class="logged-user mx-2">
     <div class="d-flex align-items-center">
         <div class="welcome">
             <div>
