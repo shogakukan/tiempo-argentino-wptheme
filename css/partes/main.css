@@ -26,6 +26,22 @@ a {
   color: var(--ta-negro-texto) !important;
 }
 
+.logged-user .welcome p {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 16px;
+  margin: 0;
+}
+.logged-user .welcome .user-name p {
+  font-family: "Libre Baskerville";
+  font-style: italic;
+  font-weight: 400;
+  text-transform: capitalize;
+}
+
 .header {
   box-shadow: 0px 2px 2px #eef0f1;
 }
@@ -74,7 +90,7 @@ a {
   color: white;
 }
 .header .header-content .tiempo-logo {
-  max-width: 60%;
+  max-width: 50%;
   align-self: center;
 }
 .header .header-content .weather p {
@@ -251,6 +267,10 @@ a {
 }
 .menu .menu-section-wrapper .menu-section .menu-item.ver-mas h6 {
   color: var(--ta-gris-subtexto);
+}
+.menu .menu-section-wrapper .menu-section .menu-item.destacados img {
+  max-width: 35px;
+  height: auto;
 }
 .menu .menu-section-wrapper .card {
   border: none;
@@ -825,6 +845,22 @@ a {
   }
 }
 @media (min-width: 992px) {
+  .logged-user .welcome p {
+    font-family: "Red Hat Display";
+    font-style: normal;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 16px;
+    line-height: 20px;
+    margin: 0;
+  }
+  .logged-user .welcome .user-name p {
+    font-family: "Libre Baskerville";
+    font-style: italic;
+    font-weight: 400;
+    text-transform: capitalize;
+  }
+
   .banner-nuevo-tiempo .title,
 .eleccion-contenido .title {
     flex: 1;

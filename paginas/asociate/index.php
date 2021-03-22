@@ -21,7 +21,7 @@
 </head>
 
 <body>
-    <?php include_once('../../partes/header.php');  ?>
+    <?php include_once('../../partes/header-usuario-logueado-nosocio.php');  ?>
     <?php include_once('../../partes/asociate/paquetes.php');  ?>
     <?php include_once('../../partes/asociate/otro-importe.php');  ?>
     <?php include_once('../../partes/asociate/paquete-elegido.php');  ?>

@@ -11,6 +11,25 @@ a {
   color: var(--ta-negro-texto) !important;
 }
 
+.logged-user {
+  .welcome {
+    p {
+      @include red-hat-900;
+      text-transform: uppercase;
+      font-size: 12px;
+      line-height: 16px;
+      margin: 0;
+    }
+
+    .user-name {
+      p {
+        @include baskerville-italic;
+        text-transform: capitalize;
+      }
+    }
+  }
+}
+
 .header {
   box-shadow: 0px 2px 2px #eef0f1;
 
@@ -68,7 +87,7 @@ a {
   }
   .header-content {
     .tiempo-logo {
-      max-width: 60%;
+      max-width: 50%;
       align-self: center;
     }
 
@@ -289,6 +308,13 @@ a {
         &.ver-mas {
           h6 {
             color: var(--ta-gris-subtexto);
+          }
+        }
+
+        &.destacados {
+          img {
+            max-width: 35px;
+            height: auto;
           }
         }
       }
@@ -1045,6 +1071,25 @@ a {
 }
 
 @media (min-width: 992px) {
+  .logged-user {
+    .welcome {
+      p {
+        @include red-hat-900;
+        text-transform: uppercase;
+        font-size: 16px;
+        line-height: 20px;
+        margin: 0;
+      }
+
+      .user-name {
+        p {
+          @include baskerville-italic;
+          text-transform: capitalize;
+        }
+      }
+    }
+  }
+
   .banner-nuevo-tiempo,
   .eleccion-contenido {
     .title {

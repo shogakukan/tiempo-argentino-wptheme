@@ -22,9 +22,15 @@
                         <img src="../../assets/images/search-icon.svg" class="img-fluid" alt="">
                     </div>
                 </button>
-                <div class="profile-icon">
+
+                <!-- Si está logueado -->
+                <?php include('../../partes/usuario-logueado.php');  ?>
+
+                <!-- Si no está logueado -->
+                <!-- <div class="profile-icon">
                     <img src="../../assets/images/profile-icon.svg" class="img-fluid" alt="">
-                </div>
+                </div> -->
+
             </div>
         </div>
         <div id="searchBarMenu" class="collapse mb-4" aria-labelledby="searchBarMenu" data-parent="#search-btn2">
@@ -317,6 +323,14 @@
                                 <div class="d-flex">
                                     <img src="../../assets/images/podcast-menu-icon.svg" alt="">
                                     <p>Podcasts de Tiempo</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="menu-item destacados">
+                            <a href="" class="d-flex align-items-center">
+                                <div class="d-flex">
+                                    <img src="../../assets/images/audiovisual-icon-black.svg" alt="">
+                                    <p>Audiovisuales</p>
                                 </div>
                             </a>
                         </div>
