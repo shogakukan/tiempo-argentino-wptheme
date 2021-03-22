@@ -792,6 +792,56 @@ a {
       background-color: var(--ta-socios);
     }
   }
+
+  &.micrositio {
+    &.ambiental {
+      .context-color {
+        .separator {
+          background-color: var(--ta-ambiental);
+        }
+        .category-title {
+          h4 {
+            color: var(--ta-ambiental);
+          }
+        }
+      }
+      .context-bg {
+        background-color: var(--ta-ambiental-bg);
+      }
+    }
+
+    &.habitat {
+      .context-color {
+        .separator {
+          background-color: var(--ta-habitat);
+        }
+        .category-title {
+          h4 {
+            color: var(--ta-habitat);
+          }
+        }
+      }
+      .context-bg {
+        background-color: var(--ta-habitat-bg);
+      }
+    }
+
+    &.medios {
+      .context-color {
+        .separator {
+          background-color: var(--ta-medios);
+        }
+        .category-title {
+          h4 {
+            color: var(--ta-medios);
+          }
+        }
+      }
+      .context-bg {
+        background-color: var(--ta-medios-bg);
+      }
+    }
+  }
 }
 
 .container-with-header {
@@ -1065,6 +1115,30 @@ a {
       flex: 1;
       p {
         max-width: 100%;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .ta-context {
+    &.micrositio {
+      &.ambiental {
+        .context-bg {
+          background-color: transparent;
+        }
+      }
+
+      &.habitat {
+        .context-bg {
+          background-color: transparent;
+        }
+      }
+
+      &.medios {
+        .context-bg {
+          background-color: transparent;
+        }
       }
     }
   }
