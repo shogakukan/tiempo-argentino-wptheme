@@ -5,7 +5,7 @@
                 <h4 class="theme mr-2">TEMA GRAL</h4>
                 <h4 class="subtheme">SUBTEMA</h4>
             </div>
-            <div class="pl-lg-5">
+            <div class="art-column-w-padding">
                 <div class="title mt-2">
                     <h1>Títular de la nota, creo que podría tener hasta tres renglones máximo.</h1>
                 </div>
@@ -36,10 +36,12 @@
                     <p>Foto: REUTERS</p>
                 </div>
             </div>
-            <div class="d-flex flex-column flex-md-row">
-                <div class="author d-flex mx-2">
-                    <div class="author-icon mr-2">
-                        <img src="../../assets/images/author-pen.svg" alt="" />
+            <div class="d-flex flex-column flex-md-row mt-2 mt-md-3">
+                <div class="author d-flex mx-2 mx-md-0">
+                    <div class="author-img">
+                        <div class="author-icon mr-2">
+                            <img src="../../assets/images/author-pen.svg" alt="" />
+                        </div>
                     </div>
                     <div class="author-info">
                         <p>Por: Ricardo Ragendorfer</p>
@@ -49,7 +51,7 @@
                 </div>
             </div>
             <div class="article-body mt-3">
-                <div class="pl-lg-5">
+                <div class="art-column-w-padding">
                     <p>Durante el siglo XIV, la denominada peste negra se extendió por Asia Menor, Oriente Medio,
                         el norte de Africa y Europa, alcanzando su pico máximo entre 1346 y 1353 con un saldo aproximado
                         de

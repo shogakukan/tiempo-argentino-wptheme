@@ -47,6 +47,26 @@
     font-size: 12px;
   }
 
+  .author {
+    .author-img {
+      height: 60px;
+      min-height: 60px;
+      width: 60px;
+      background-image: url(../../assets/images/autor-foto-art.jpg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      margin-right: 10px;
+      position: relative;
+      border-radius: 8px;
+      .author-icon {
+        position: absolute;
+        bottom: -15px;
+        left: -15px;
+      }
+    }
+  }
+
   .img-container {
     .img-wrapper {
       width: 100vw;
@@ -71,9 +91,6 @@
   }
 
   .author {
-    position: relative;
-    left: 10px;
-
     .author-icon {
       margin-right: 5px;
     }
@@ -247,6 +264,18 @@
         left: auto;
         margin-left: 0;
       }
+    }
+
+    .author {
+      .author-img {
+        width: 75px;
+        height: 75px;
+        min-height: 75px;
+      }
+    }
+
+    .art-column-w-padding {
+      padding-left: 85px;
     }
   }
 }
