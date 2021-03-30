@@ -21,11 +21,41 @@
 </head>
 
 <body>
-    <?php include_once('../../partes/header.php');  ?>
-    <?php include_once('../../partes/micrositio/slider-micrositio.php');  ?>
+    <?php include_once('../../partes/micrositio/header-micrositio.php');  ?>
+    <?php include('../../partes/micrositio/slider-micrositio.php');  ?>
+    <?php include('../../partes/micrositio/slider-micrositio.php');  ?>
+    <?php include('../../partes/micrositio/slider-micrositio.php');  ?>
     <?php include_once('../../partes/footer.php');  ?>
 
+    <script>
+    const mobile = window.matchMedia("(max-width: 992px)")
 
+    window.onscroll = function() {
+        if (mobile.matches) {
+            if (window.pageYOffset >= 90) {
+                headerStickyMobile.classList.add("sticky")
+                menuSticky.style.position = "sticky"
+                menuSticky.style.transform = "none"
+            } else {
+                headerStickyMobile.classList.remove("sticky");
+                menuSticky.style.position = "absolute"
+                menuSticky.style.transform = "translateX(-50%)"
+            }
+        } else if (window.pageYOffset >= 200) {
+            headerStickyDesktop.classList.add("sticky")
+            menuSticky.style.position = "sticky"
+            menuSticky.style.transform = "none"
+            menuSticky.style.left = "0"
+        } else {
+            headerStickyDesktop.classList.remove("sticky");
+            menuSticky.style.position = "absolute"
+            menuSticky.style.transform = "translateX(-50%)"
+        }
+    };
+    const menuSticky = document.getElementById("menu");
+    const headerStickyMobile = document.getElementById("headerStickyMobile");
+    const headerStickyDesktop = document.getElementById("headerStickyDesktop");
+    </script>
 </body>
 
 </html>

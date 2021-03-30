@@ -604,8 +604,28 @@ a {
 .ta-context.micrositio.ambiental .context-color .category-title h4 {
   color: var(--ta-ambiental);
 }
+.ta-context.micrositio.ambiental .context-color .header-content .separator {
+  background-color: white;
+}
+.ta-context.micrositio.ambiental .context-color .header-content .asociate-banner-micrositio p {
+  color: var(--ta-ambiental);
+}
 .ta-context.micrositio.ambiental .context-bg {
   background-color: var(--ta-ambiental-bg);
+}
+.ta-context.micrositio.ambiental .context-bg .topic-tag .triangle-left,
+.ta-context.micrositio.ambiental .context-bg .topic-tag .content,
+.ta-context.micrositio.ambiental .context-bg .topic-tag .triangle-right {
+  background-color: var(--ta-ambiental);
+}
+.ta-context.micrositio.ambiental .context-bg .topic-tag .triangle-left,
+.ta-context.micrositio.ambiental .context-bg .topic-tag .triangle-right {
+  background-color: var(--ta-ambiental);
+  border-right: 1px solid var(--ta-ambiental);
+  border-top: 1px solid var(--ta-ambiental);
+}
+.ta-context.micrositio.ambiental .context-bg .topic-tag .content {
+  border: 1px solid var(--ta-ambiental);
 }
 .ta-context.micrositio.habitat .context-color .separator {
   background-color: var(--ta-habitat);
@@ -613,8 +633,28 @@ a {
 .ta-context.micrositio.habitat .context-color .category-title h4 {
   color: var(--ta-habitat);
 }
+.ta-context.micrositio.habitat .context-color .header-content .separator {
+  background-color: white;
+}
+.ta-context.micrositio.habitat .context-color .header-content .asociate-banner-micrositio p {
+  color: var(--ta-habitat);
+}
 .ta-context.micrositio.habitat .context-bg {
   background-color: var(--ta-habitat-bg);
+}
+.ta-context.micrositio.habitat .context-bg .topic-tag .triangle-left,
+.ta-context.micrositio.habitat .context-bg .topic-tag .content,
+.ta-context.micrositio.habitat .context-bg .topic-tag .triangle-right {
+  background-color: var(--ta-habitat);
+}
+.ta-context.micrositio.habitat .context-bg .topic-tag .triangle-left,
+.ta-context.micrositio.habitat .context-bg .topic-tag .triangle-right {
+  background-color: var(--ta-habitat);
+  border-right: 1px solid var(--ta-habitat);
+  border-top: 1px solid var(--ta-habitat);
+}
+.ta-context.micrositio.habitat .context-bg .topic-tag .content {
+  border: 1px solid var(--ta-habitat);
 }
 .ta-context.micrositio.medios .context-color .separator {
   background-color: var(--ta-medios);
@@ -622,8 +662,28 @@ a {
 .ta-context.micrositio.medios .context-color .category-title h4 {
   color: var(--ta-medios);
 }
+.ta-context.micrositio.medios .context-color .header-content .separator {
+  background-color: white;
+}
+.ta-context.micrositio.medios .context-color .header-content .asociate-banner-micrositio p {
+  color: var(--ta-medios);
+}
 .ta-context.micrositio.medios .context-bg {
   background-color: var(--ta-medios-bg);
+}
+.ta-context.micrositio.medios .context-bg .topic-tag .triangle-left,
+.ta-context.micrositio.medios .context-bg .topic-tag .content,
+.ta-context.micrositio.medios .context-bg .topic-tag .triangle-right {
+  background-color: var(--ta-medios);
+}
+.ta-context.micrositio.medios .context-bg .topic-tag .triangle-left,
+.ta-context.micrositio.medios .context-bg .topic-tag .triangle-right {
+  background-color: var(--ta-medios);
+  border-right: 1px solid var(--ta-medios);
+  border-top: 1px solid var(--ta-medios);
+}
+.ta-context.micrositio.medios .context-bg .topic-tag .content {
+  border: 1px solid var(--ta-medios);
 }
 
 .container-with-header .section-title h4 {

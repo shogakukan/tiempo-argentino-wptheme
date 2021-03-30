@@ -804,9 +804,40 @@ a {
             color: var(--ta-ambiental);
           }
         }
+
+        .header-content {
+          .separator {
+            background-color: white;
+          }
+
+          .asociate-banner-micrositio {
+            p {
+              color: var(--ta-ambiental);
+            }
+          }
+        }
       }
       .context-bg {
         background-color: var(--ta-ambiental-bg);
+
+        .topic-tag {
+          .triangle-left,
+          .content,
+          .triangle-right {
+            background-color: var(--ta-ambiental);
+          }
+
+          .triangle-left,
+          .triangle-right {
+            background-color: var(--ta-ambiental);
+            border-right: 1px solid var(--ta-ambiental);
+            border-top: 1px solid var(--ta-ambiental);
+          }
+
+          .content {
+            border: 1px solid var(--ta-ambiental);
+          }
+        }
       }
     }
 
@@ -820,9 +851,39 @@ a {
             color: var(--ta-habitat);
           }
         }
+        .header-content {
+          .separator {
+            background-color: white;
+          }
+
+          .asociate-banner-micrositio {
+            p {
+              color: var(--ta-habitat);
+            }
+          }
+        }
       }
       .context-bg {
         background-color: var(--ta-habitat-bg);
+
+        .topic-tag {
+          .triangle-left,
+          .content,
+          .triangle-right {
+            background-color: var(--ta-habitat);
+          }
+
+          .triangle-left,
+          .triangle-right {
+            background-color: var(--ta-habitat);
+            border-right: 1px solid var(--ta-habitat);
+            border-top: 1px solid var(--ta-habitat);
+          }
+
+          .content {
+            border: 1px solid var(--ta-habitat);
+          }
+        }
       }
     }
 
@@ -836,9 +897,40 @@ a {
             color: var(--ta-medios);
           }
         }
+
+        .header-content {
+          .separator {
+            background-color: white;
+          }
+
+          .asociate-banner-micrositio {
+            p {
+              color: var(--ta-medios);
+            }
+          }
+        }
       }
       .context-bg {
         background-color: var(--ta-medios-bg);
+
+        .topic-tag {
+          .triangle-left,
+          .content,
+          .triangle-right {
+            background-color: var(--ta-medios);
+          }
+
+          .triangle-left,
+          .triangle-right {
+            background-color: var(--ta-medios);
+            border-right: 1px solid var(--ta-medios);
+            border-top: 1px solid var(--ta-medios);
+          }
+
+          .content {
+            border: 1px solid var(--ta-medios);
+          }
+        }
       }
     }
   }

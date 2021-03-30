@@ -1,11 +1,10 @@
-<div class="menu container-lg collapse" id="navbarToggleExternalContent">
+<div class="menu container-lg collapse" id="menu">
     <div class="container">
         <div class="menu-header d-flex justify-content-between">
             <div class="d-flex justify-content-between">
                 <div class="hamburger-menu">
-                    <button id="menuBtn" type="button" class="collapsed" data-toggle="collapse"
-                        data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                    <button id="menuBtn" type="button" class="collapsed" data-toggle="collapse" data-target="#menu"
+                        aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
                         <span></span>
                         <span></span>
                         <span></span>

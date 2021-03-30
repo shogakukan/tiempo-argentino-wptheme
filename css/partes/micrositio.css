@@ -21,6 +21,112 @@
   --ta-medios-bg: #f3f9ff;
 }
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.header-sticky-micrositio {
+  display: none;
+}
+.header-sticky-micrositio.sticky {
+  display: block;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: white;
+  z-index: 15;
+  opacity: 1;
+  animation-name: fadeIn;
+  animation-timing-function: ease-in;
+  animation-duration: 100ms;
+}
+.header-sticky-micrositio .header-content {
+  padding: 5px 0;
+}
+.header-sticky-micrositio .header-content .asociate-banner-micrositio {
+  max-width: 35%;
+}
+.header-sticky-micrositio .header-content .asociate-banner-micrositio .asociate-banner-content {
+  top: 0;
+  left: 0;
+  transform: none;
+}
+.header-sticky-micrositio .header-content .asociate-banner-micrositio .asociate-banner-content p {
+  font-family: "Libre Baskerville";
+  font-style: italic;
+  font-weight: 400;
+  font-size: 20px;
+  text-decoration: underline;
+}
+
+.banner-micrositio {
+  background-color: var(--ta-gris-fondos);
+  box-shadow: 4px 4px 10px rgba(132, 152, 153, 0.4);
+}
+.banner-micrositio.sticky {
+  width: 70%;
+  box-shadow: none;
+  background-color: transparent;
+}
+.banner-micrositio.sticky .topic-tag {
+  height: 100%;
+}
+.banner-micrositio.sticky .topic-tag .content {
+  width: 100%;
+  height: 41.5px;
+}
+.banner-micrositio.sticky .topic-tag .content .hamburger-menu button span {
+  background-color: white;
+}
+.banner-micrositio.sticky .topic-tag .content .title {
+  text-align: left;
+  margin-left: 10px;
+}
+.banner-micrositio.sticky .topic-tag .content .title h2 {
+  margin: 0;
+  font-size: 17px;
+  text-transform: initial;
+}
+.banner-micrositio.sticky .topic-tag .triangle-right {
+  width: 33.6px;
+  height: 29.6px;
+  transform: rotate(45deg) translate(-10.8px, 11px);
+}
+.banner-micrositio .topic-tag .content {
+  font-family: "Caladea";
+  font-style: normal;
+  font-weight: 700;
+  border-right: 1px solid transparent;
+  font-size: 27px;
+  height: 35px;
+  letter-spacing: -1px;
+  line-height: 31px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 80%;
+  color: white;
+  z-index: 10;
+}
+.banner-micrositio .topic-tag .content p {
+  margin: 0;
+}
+.banner-micrositio .topic-tag .triangle-left,
+.banner-micrositio .topic-tag .triangle-right {
+  content: "";
+  background-color: transparent;
+  bottom: 0;
+  width: 24.6px;
+  height: 24.6px;
+  transform: rotate(45deg) translate(-5.5px, 12px);
+}
+.banner-micrositio .topic-tag .triangle-left {
+  transform: rotate(225deg) translate(-12.5px, 5px);
+}
+
 .slider-micrositio .carousel .carousel-item .carousel-caption {
   left: 5%;
   right: 5%;
@@ -50,6 +156,9 @@
   line-height: 15px;
   color: var(--ta-gris-subtexto);
 }
+.slider-micrositio .carousel .carousel-indicators {
+  z-index: 10;
+}
 .slider-micrositio .carousel .carousel-indicators li {
   width: 31px;
   height: 31px;
@@ -76,6 +185,52 @@
   font-weight: 900;
 }
 
+@media (min-width: 400px) {
+  .header-sticky-micrositio {
+    display: none;
+  }
+  .header-sticky-micrositio.sticky {
+    display: block;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    z-index: 15;
+    opacity: 1;
+    animation-name: fadeIn;
+    animation-timing-function: ease-in;
+    animation-duration: 100ms;
+  }
+  .header-sticky-micrositio .banner-micrositio {
+    background-color: var(--ta-gris-fondos);
+    box-shadow: 4px 4px 10px rgba(132, 152, 153, 0.4);
+  }
+  .header-sticky-micrositio .banner-micrositio.sticky {
+    width: 70%;
+    box-shadow: none;
+    background-color: transparent;
+  }
+  .header-sticky-micrositio .banner-micrositio.sticky .topic-tag {
+    height: 100%;
+  }
+  .header-sticky-micrositio .banner-micrositio.sticky .topic-tag .content {
+    width: 100%;
+    height: 52.5px;
+  }
+  .header-sticky-micrositio .banner-micrositio.sticky .topic-tag .content .hamburger-menu button span {
+    background-color: white;
+  }
+  .header-sticky-micrositio .banner-micrositio.sticky .topic-tag .content .title h2 {
+    font-size: 25px;
+    line-height: 23px;
+  }
+  .header-sticky-micrositio .banner-micrositio.sticky .topic-tag .triangle-right,
+.header-sticky-micrositio .banner-micrositio.sticky .topic-tag .triangle-left {
+    width: 40.6px;
+    height: 36.6px;
+    transform: rotate(45deg) translate(-11.8px, 13px);
+  }
+}
 @media (min-width: 768px) {
   .slider-micrositio .carousel {
     position: relative;
@@ -131,6 +286,58 @@
   }
 }
 @media (min-width: 992px) {
+  .header-sticky-micrositio.sticky {
+    background-color: var(--ta-gris-fondos);
+  }
+  .header-sticky-micrositio.sticky .hamburger-and-logo {
+    flex: 1;
+  }
+  .header-sticky-micrositio.sticky .hamburger-and-logo .hamburger-menu button span {
+    background-color: var(--ta-negro-texto);
+  }
+  .header-sticky-micrositio.sticky .banner-micrositio {
+    flex: 2;
+    box-shadow: none;
+  }
+  .header-sticky-micrositio.sticky .banner-micrositio .topic-tag .content {
+    height: 50px;
+  }
+  .header-sticky-micrositio.sticky .banner-micrositio .topic-tag .content p {
+    margin: 0;
+  }
+  .header-sticky-micrositio.sticky .banner-micrositio .topic-tag .triangle-right,
+.header-sticky-micrositio.sticky .banner-micrositio .topic-tag .triangle-left {
+    width: 35.6px;
+    height: 35.6px;
+    transform: rotate(45deg) translate(-7.5px, 17px);
+  }
+  .header-sticky-micrositio.sticky .banner-micrositio .topic-tag .triangle-left {
+    transform: rotate(225deg) translate(-18.5px, 8px);
+  }
+  .header-sticky-micrositio.sticky .search-and-profile {
+    flex: 1;
+  }
+
+  .header-micrositio .header-content .search-and-profile {
+    flex: 1;
+  }
+  .header-micrositio .banner-micrositio .topic-tag {
+    max-width: 50%;
+    margin: 0 auto;
+  }
+  .header-micrositio .banner-micrositio .topic-tag .content {
+    height: 50px;
+  }
+  .header-micrositio .banner-micrositio .topic-tag .triangle-right,
+.header-micrositio .banner-micrositio .topic-tag .triangle-left {
+    width: 35.6px;
+    height: 35.6px;
+    transform: rotate(45deg) translate(-7.5px, 17px);
+  }
+  .header-micrositio .banner-micrositio .topic-tag .triangle-left {
+    transform: rotate(225deg) translate(-18.5px, 8px);
+  }
+
   .slider-micrositio .carousel .carousel-item {
     height: 600px;
   }

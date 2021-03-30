@@ -69,9 +69,8 @@
         <div class="header-content d-flex justify-content-between pb-1 pb-lg-3">
             <div class="d-flex align-self-center pt-2">
                 <div class="hamburger-menu d-flex align-items-center mr-lg-5">
-                    <button id="menuBtn" type="button" class="collapsed" data-toggle="collapse"
-                        data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                    <button id="menuBtn" type="button" class="collapsed" data-toggle="collapse" data-target="#menu"
+                        aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
                         <span></span>
                         <span></span>
                         <span></span>
