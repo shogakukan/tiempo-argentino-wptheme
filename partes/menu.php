@@ -1,5 +1,5 @@
 <div class="menu container-lg collapse" id="menu">
-    <div class="container">
+    <div class="container p-0">
         <div class="menu-header d-flex justify-content-between">
             <div class="d-flex justify-content-between">
                 <div class="hamburger-menu">

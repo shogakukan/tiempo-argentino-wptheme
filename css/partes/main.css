@@ -50,6 +50,28 @@ a {
 
 .header {
   box-shadow: 0px 2px 2px #eef0f1;
+  background-color: white;
+  position: sticky;
+  z-index: 15;
+  top: 0;
+}
+.header.sticky-default .weather,
+.header.sticky-default .desktop-ribbon {
+  display: none !important;
+}
+.header.sticky-default .header-content .tiempo-logo {
+  max-width: 150px;
+}
+.header.sticky-default .header-content .search-and-profile {
+  flex: 1;
+}
+.header.sticky-default .header-content .asociate-banner {
+  height: 80px;
+  width: auto;
+}
+.header.sticky-default .header-content .asociate-banner img {
+  height: 100%;
+  width: auto;
 }
 .header .desktop-ribbon {
   background-color: var(--ta-negro-texto);
@@ -225,13 +247,13 @@ a {
 .menu {
   position: absolute;
   top: 0;
+  overflow: scroll;
+  max-height: 100vh;
+  max-height: 100vh;
   background-color: white;
   z-index: 20;
-  width: 100%;
   padding-bottom: 30px;
   box-shadow: 4px 4px 10px rgba(132, 152, 153, 0.4);
-  left: 50%;
-  transform: translateX(-50%);
 }
 .menu .menu-header {
   padding: 14px 0;
@@ -947,6 +969,13 @@ a {
   .ta-context.micrositio.medios .context-bg {
     background-color: transparent;
   }
+
+  .menu {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+  }
 }
 @media (min-width: 992px) {
   .logged-user .welcome p {
@@ -993,7 +1022,7 @@ a {
   }
 
   .menu {
-    padding: 60px 0 !important;
+    padding-top: 60px;
   }
   .menu .menu-header .tiempo-menu-logo,
 .menu .menu-header .search-icon,

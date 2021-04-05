@@ -1,4 +1,4 @@
-<div class="header">
+<div class="header" id="headerDefault">
     <div class="container">
         <div class="desktop-ribbon d-none d-lg-block">
             <div class="d-flex justify-content-between">
@@ -66,9 +66,9 @@
                 </div>
             </div>
         </div>
-        <div class="header-content d-flex justify-content-between pb-1 pb-lg-3">
-            <div class="d-flex align-self-center pt-2">
-                <div class="hamburger-menu d-flex align-items-center mr-lg-5">
+        <div class="header-content d-flex justify-content-between pb-1">
+            <div class="search-and-profile d-flex align-self-center pt-2">
+                <div class="hamburger-menu d-flex align-items-center mr-lg-2">
                     <button id="menuBtn" type="button" class="collapsed" data-toggle="collapse" data-target="#menu"
                         aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
                         <span></span>
@@ -102,8 +102,8 @@
                     <img src="../../assets/images/profile-icon.svg" class="img-fluid" alt="">
                 </div>
             </div>
-            <div class="asociate-banner position-relative">
-                <div class="asociate-banner-bg">
+            <div class="asociate-banner position-relative ml-2">
+                <div class="asociate-banner-bg h-100">
                     <img src="../../assets/images/asociate-banner.svg" class="img-fluid" alt="">
                 </div>
                 <div class="asociate-banner-content position-absolute">

@@ -42,6 +42,36 @@
     <?php include('../../partes/ultimas-ambientales.php');  ?>
     <?php include_once('../../partes/podes-leer.php');  ?>
     <?php include_once('../../partes/footer.php');  ?>
+
+    <script>
+    const desktop = window.matchMedia("(min-width: 768px)");
+
+    window.onscroll = function() {
+        if (desktop.matches) {
+            if (window.pageYOffset >= 150) {
+                headerStickyDesktop.classList.add("sticky-default");
+                menuSticky.style.position = 'sticky';
+                menuSticky.style.left = '0';
+                menuSticky.style.transform = 'none';
+            } else {
+                headerStickyDesktop.classList.remove("sticky-default");
+                menuSticky.style.position = 'absolute';
+                menuSticky.style.left = '50%';
+                menuSticky.style.transform = 'translateX(-50%)';
+            }
+        } else {
+            if (window.pageYOffset >= 65) {
+                headerStickyDesktop.classList.remove("sticky-default");
+                menuSticky.style.position = 'sticky';
+            } else {
+                menuSticky.style.position = 'absolute';
+            }
+        }
+    };
+
+    const menuSticky = document.getElementById('menu');
+    const headerStickyDesktop = document.getElementById("headerDefault");
+    </script>
 </body>
 
 </html>
