@@ -73,6 +73,9 @@ a {
   height: 100%;
   width: auto;
 }
+.header.header-micrositio {
+  position: static;
+}
 .header .desktop-ribbon {
   background-color: var(--ta-negro-texto);
 }

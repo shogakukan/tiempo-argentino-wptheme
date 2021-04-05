@@ -62,6 +62,9 @@ a {
       }
     }
   }
+  &.header-micrositio {
+    position: static;
+  }
   .desktop-ribbon {
     background-color: var(--ta-negro-texto);
 

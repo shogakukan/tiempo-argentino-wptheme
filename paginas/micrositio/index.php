@@ -39,7 +39,7 @@
             } else {
                 headerStickyMobile.classList.remove("sticky");
                 menuSticky.style.position = "absolute"
-                menuSticky.style.transform = "translateX(-50%)"
+                menuSticky.style.left = "0"
             }
         } else if (window.pageYOffset >= 200) {
             headerStickyDesktop.classList.add("sticky")
@@ -50,9 +50,11 @@
             headerStickyDesktop.classList.remove("sticky");
             menuSticky.style.position = "absolute"
             menuSticky.style.transform = "translateX(-50%)"
+            menuSticky.style.left = "50%"
         }
     };
     const menuSticky = document.getElementById("menu");
+    const header = document.querySelector(".header-micrositio")
     const headerStickyMobile = document.getElementById("headerStickyMobile");
     const headerStickyDesktop = document.getElementById("headerStickyDesktop");
     </script>
