@@ -943,6 +943,42 @@ a {
   max-width: 100%;
 }
 
+.article-tags .tag.selected .content,
+.article-tags .tag.selected .triangle {
+  background-color: var(--ta-celeste);
+}
+.article-tags .tag.selected .content p,
+.article-tags .tag.selected .triangle p {
+  color: white;
+}
+.article-tags .btns-container {
+  width: 100%;
+}
+.article-tags .btns-container button {
+  background-color: transparent;
+  border: none;
+  color: var(--ta-celeste);
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 19px;
+  line-height: 25px;
+  margin: 0 auto;
+  padding: 0;
+}
+.article-tags .btns-container button.collapsed img {
+  transform: rotate(90deg);
+  margin-left: 15px;
+}
+.article-tags .btns-container button img {
+  transform: rotate(-90deg);
+  margin-left: 15px;
+}
+.article-tags .btns-container button:focus {
+  border: none;
+  outline: none;
+}
+
 #more {
   display: none;
 }
@@ -981,6 +1017,10 @@ a {
   }
 }
 @media (min-width: 992px) {
+  .article-tags .btns-container {
+    width: max-content;
+  }
+
   .logged-user .welcome p {
     font-family: "Red Hat Display";
     font-style: normal;

@@ -9,7 +9,7 @@
             </div>
         </div>
         <div class="user-img ml-2">
-            <img src="../../assets/images/logged-profile-icon.svg" alt="">
+            <img src="/assets/images/logged-profile-icon.svg" alt="">
         </div>
     </div>
 </div>

@@ -15,6 +15,117 @@
     }
   }
 
+  &.benefits {
+    &.requested {
+      > .container {
+        border: 1px solid var(--ta-celeste);
+        background-color: var(--ta-celeste-fondos);
+      }
+    }
+    .container {
+      border: 1px solid var(--ta-gris-subtexto);
+    }
+    .content {
+      .title {
+        p {
+          @include red-hat-500;
+          font-size: 17px;
+          letter-spacing: -0.2px;
+          line-height: 22px;
+          margin: 0;
+
+          &.discount {
+            @include red-hat-900;
+            color: var(--ta-celeste);
+          }
+        }
+      }
+
+      .options {
+        .btns-container {
+          flex-wrap: nowrap;
+          .request,
+          .see-description {
+            button {
+              @include red-hat-900;
+              background-color: transparent;
+              color: var(--ta-celeste);
+              font-size: 15px;
+              line-height: 20px;
+              border: none;
+
+              &:focus {
+                outline: none;
+                border: none;
+              }
+            }
+          }
+
+          .request {
+            button {
+              padding: 3px 25px;
+              border: 2px solid var(--ta-celeste);
+              text-transform: uppercase;
+            }
+          }
+
+          .see-description {
+            button {
+              &.collapsed {
+                img {
+                  transform: rotate(90deg);
+                }
+              }
+              img {
+                min-width: 10px;
+                height: auto;
+                transform: rotate(-90deg);
+                margin-left: 10px;
+              }
+            }
+          }
+        }
+      }
+
+      .benefit-description {
+        .benefit-description-header {
+          .title {
+            p {
+              @include red-hat-700;
+              color: var(--ta-celeste);
+              text-transform: uppercase;
+              font-size: 13px;
+              line-height: 17px;
+            }
+          }
+
+          .category {
+            p {
+              font-size: 12px;
+              line-height: 15px;
+              @include baskerville-italic;
+              color: var(--ta-gris-subtexto);
+              margin: 0;
+            }
+          }
+        }
+
+        .description {
+          p {
+            @include red-hat-400;
+            font-size: 15px;
+            line-height: 20px;
+            letter-spacing: -0.2px;
+
+            span {
+              @include red-hat-700;
+            }
+          }
+        }
+      }
+    }
+  }
+
   &.horizontal {
     max-width: 100%;
     .date {

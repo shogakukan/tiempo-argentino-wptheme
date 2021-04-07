@@ -2,7 +2,7 @@
     <div class="banner-covid d-flex justify-content-between mt-3 py-2 px-5">
         <div class="d-flex align-items-center">
             <div class="mr-2">
-                <img src="../../assets/images/virus.svg" alt="">
+                <img src="/assets/images/virus.svg" alt="">
             </div>
             <div class="d-flex flex-column align-content-center">
                 <div class="separator mb-1"></div>
@@ -13,7 +13,7 @@
         </div>
         <div class="d-flex align-items-center">
             <div class="mr-2">
-                <img src="../../assets/images/circular-arrow.svg" alt="">
+                <img src="/assets/images/circular-arrow.svg" alt="">
             </div>
             <div class="d-flex flex-column align-content-center">
                 <div class="title">
@@ -26,7 +26,7 @@
         </div>
         <div class="d-flex align-items-center">
             <div class="mr-2">
-                <img src="../../assets/images/graphic.svg" alt="">
+                <img src="/assets/images/graphic.svg" alt="">
             </div>
             <div class="d-flex flex-column align-content-center">
                 <div class="title">

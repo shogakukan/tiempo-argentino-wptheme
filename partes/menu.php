@@ -11,23 +11,23 @@
                     </button>
                 </div>
                 <div class="tiempo-menu-logo mb-lg-3">
-                    <img src="../../assets/images/ta-min-logo-color.svg" class="img-fluid" alt="">
+                    <img src="/assets/images/ta-min-logo-color.svg" class="img-fluid" alt="">
                 </div>
             </div>
             <div class="d-flex d-lg-none justify-content-between">
                 <button id="search-btn2" class="search-icon mr-3 btn btn-link d-flex collapsed" data-toggle="collapse"
                     data-target="#searchBarMenu" aria-expanded="false" aria-controls="searchBarMenu">
                     <div>
-                        <img src="../../assets/images/search-icon.svg" class="img-fluid" alt="">
+                        <img src="/assets/images/search-icon.svg" class="img-fluid" alt="">
                     </div>
                 </button>
 
                 <!-- Si está logueado -->
-                <?php include('../../partes/usuario-logueado.php');  ?>
+                <?php include($_SERVER["DOCUMENT_ROOT"] . "/partes/usuario-logueado.php");  ?>
 
                 <!-- Si no está logueado -->
                 <!-- <div class="profile-icon">
-                    <img src="../../assets/images/profile-icon.svg" class="img-fluid" alt="">
+                    <img src="/assets/images/profile-icon.svg" class="img-fluid" alt="">
                 </div> -->
 
             </div>
@@ -38,13 +38,13 @@
                     <div>
                         <button class="btn btn-link d-flex" data-toggle="collapse" data-target="#searchBarMenu"
                             aria-expanded="true" aria-controls="searchBarMenu">
-                            <img src="../../assets/images/close.svg" class="img-fluid" alt="">
+                            <img src="/assets/images/close.svg" class="img-fluid" alt="">
                         </button>
                     </div>
                 </div>
                 <div class="input-container d-flex justify-content-center mt-3">
                     <div class="search-icon mr-2">
-                        <img src="../../assets/images/search-icon-blue.svg" class="img-fluid" alt="">
+                        <img src="/assets/images/search-icon-blue.svg" class="img-fluid" alt="">
                     </div>
                     <div class="input-wrapper flex-fill">
                         <input type="text" placeholder="buscar en Tiempo Argentino_" />
@@ -56,7 +56,7 @@
                         <div>
                             <button class="btn btn-link d-flex" data-toggle="collapse" data-target="#searchBarMenu"
                                 aria-expanded="true" aria-controls="searchBarMenu">
-                                <img src="../../assets/images/close.svg" class="img-fluid" alt="">
+                                <img src="/assets/images/close.svg" class="img-fluid" alt="">
                             </button>
                         </div>
                     </div>
@@ -76,7 +76,7 @@
                                 data-toggle="collapse" data-target="#searchBarMenu" aria-expanded="false"
                                 aria-controls="searchBarMenu">
                                 <div class="d-flex align-items-center">
-                                    <img src="../../assets/images/search-icon.svg" class="img-fluid" alt="">
+                                    <img src="/assets/images/search-icon.svg" class="img-fluid" alt="">
                                     <p>BUSCAR</p>
                                 </div>
                             </button>
@@ -88,7 +88,7 @@
                     <div class="menu-item destacados mt-3">
                         <a href="">
                             <div class="d-flex align-items-center">
-                                <img src="../../assets/images/profile-icon.svg" alt="">
+                                <img src="/assets/images/profile-icon.svg" alt="">
                                 <p>INGRESAR</p>
                             </div>
                         </a>
@@ -98,7 +98,7 @@
                     <div class="menu-item destacados seamos-socios">
                         <a href="">
                             <div class="d-flex align-items-center">
-                                <img src="../../assets/images/marker-socios.svg" alt="">
+                                <img src="/assets/images/marker-socios.svg" alt="">
                                 <h5>SEAMOS SOCIOS</h5>
                             </div>
                         </a>
@@ -118,7 +118,7 @@
                         <div class="menu-item destacados">
                             <a href="">
                                 <div class="d-flex align-items-center">
-                                    <img src="../../assets/images/tiempo-min-logo.svg" alt="">
+                                    <img src="/assets/images/tiempo-min-logo.svg" alt="">
                                     <p>SOBRE TIEMPO</p>
                                 </div>
                             </a>
@@ -127,27 +127,27 @@
                     <div class="redes-sociales d-flex my-4">
                         <div class="twitter">
                             <a href="">
-                                <img src="../../assets/images/twitter-grey-icon.svg" alt="">
+                                <img src="/assets/images/twitter-grey-icon.svg" alt="">
                             </a>
                         </div>
                         <div class="instagram">
                             <a href="">
-                                <img src="../../assets/images/instagram-grey-icon.svg" alt="">
+                                <img src="/assets/images/instagram-grey-icon.svg" alt="">
                             </a>
                         </div>
                         <div class="facebook">
                             <a href="">
-                                <img src="../../assets/images/facebook-grey-icon.svg" alt="">
+                                <img src="/assets/images/facebook-grey-icon.svg" alt="">
                             </a>
                         </div>
                         <div class="youtube">
                             <a href="">
-                                <img src="../../assets/images/youtube-grey-icon.svg" alt="">
+                                <img src="/assets/images/youtube-grey-icon.svg" alt="">
                             </a>
                         </div>
                         <div class="spotify">
                             <a href="">
-                                <img src="../../assets/images/spotify-grey-icon.svg" alt="">
+                                <img src="/assets/images/spotify-grey-icon.svg" alt="">
                             </a>
                         </div>
                     </div>
@@ -162,7 +162,7 @@
                             <div class="card-header" id="headingOne">
                                 <button class="btn btn-link d-flex" data-toggle="collapse" data-target="#collapseOne"
                                     aria-expanded="true" aria-controls="collapseOne">
-                                    <img src="../../assets/images/gray-arrow.svg" class="accordion-arrow" alt="">
+                                    <img src="/assets/images/gray-arrow.svg" class="accordion-arrow" alt="">
                                     <h5>SECCIONES</h5>
                                 </button>
                             </div>
@@ -209,7 +209,7 @@
                                         <div class="menu-item destacados cultura mb-3">
                                             <a href="">
                                                 <div class="d-flex align-items-center">
-                                                    <img src="../../assets/images/marker-cultura.svg" alt="">
+                                                    <img src="/assets/images/marker-cultura.svg" alt="">
                                                     <h6>Cultura</h6>
                                                 </div>
                                             </a>
@@ -217,7 +217,7 @@
                                         <div class="menu-item destacados espectaculos mb-3">
                                             <a href="">
                                                 <div class="d-flex align-items-center">
-                                                    <img src="../../assets/images/marker-espectaculos.svg" alt="">
+                                                    <img src="/assets/images/marker-espectaculos.svg" alt="">
                                                     <h6>Espectaculos</h6>
                                                 </div>
                                             </a>
@@ -225,7 +225,7 @@
                                         <div class="menu-item destacados deportes mb-3">
                                             <a href="">
                                                 <div class="d-flex align-items-center">
-                                                    <img src="../../assets/images/marker-deportes.svg" alt="">
+                                                    <img src="/assets/images/marker-deportes.svg" alt="">
                                                     <h6>Deportes</h6>
                                                 </div>
                                             </a>
@@ -245,7 +245,7 @@
                             <div class="card-header" id="headingTwo">
                                 <button class="btn btn-link d-flex" data-toggle="collapse" data-target="#collapseTwo"
                                     aria-expanded="true" aria-controls="collapseOne">
-                                    <img src="../../assets/images/gray-arrow.svg" class="accordion-arrow" alt="">
+                                    <img src="/assets/images/gray-arrow.svg" class="accordion-arrow" alt="">
                                     <h5>ESPECIALES</h5>
                                 </button>
                             </div>
@@ -278,7 +278,7 @@
                                         <div class="menu-item destacados ver-mas">
                                             <a href="">
                                                 <div class="d-flex align-items-center">
-                                                    <img src="../../assets/images/marker-vermas.svg" alt="">
+                                                    <img src="/assets/images/marker-vermas.svg" alt="">
                                                     <h6>Ver más</h6>
                                                 </div>
                                             </a>
@@ -296,7 +296,7 @@
                         <div class="menu-item destacados">
                             <a href="" class="d-flex align-items-center">
                                 <div class="d-flex">
-                                    <img src="../../assets/images/edimpresa-menu-icon.svg" alt="">
+                                    <img src="/assets/images/edimpresa-menu-icon.svg" alt="">
                                     <p>Ediciones impresas</p>
                                 </div>
                             </a>
@@ -304,7 +304,7 @@
                         <div class="menu-item destacados">
                             <a href="" class="d-flex align-items-center">
                                 <div class="d-flex">
-                                    <img src="../../assets/images/talleres-menu-icon.svg" alt="">
+                                    <img src="/assets/images/talleres-menu-icon.svg" alt="">
                                     <p>TALLERES</p>
                                 </div>
                             </a>
@@ -312,7 +312,7 @@
                         <div class="menu-item destacados">
                             <a href="" class="d-flex align-items-center">
                                 <div class="d-flex">
-                                    <img src="../../assets/images/participa-menu-icon.svg" alt="">
+                                    <img src="/assets/images/participa-menu-icon.svg" alt="">
                                     <p>PARTICIPÁ</p>
                                 </div>
                             </a>
@@ -320,7 +320,7 @@
                         <div class="menu-item destacados">
                             <a href="" class="d-flex align-items-center">
                                 <div class="d-flex">
-                                    <img src="../../assets/images/podcast-menu-icon.svg" alt="">
+                                    <img src="/assets/images/podcast-menu-icon.svg" alt="">
                                     <p>Podcasts de Tiempo</p>
                                 </div>
                             </a>
@@ -328,7 +328,7 @@
                         <div class="menu-item destacados">
                             <a href="" class="d-flex align-items-center">
                                 <div class="d-flex">
-                                    <img src="../../assets/images/audiovisual-icon-black.svg" alt="">
+                                    <img src="/assets/images/audiovisual-icon-black.svg" alt="">
                                     <p>Audiovisuales</p>
                                 </div>
                             </a>
@@ -336,7 +336,7 @@
                         <div class="menu-item destacados">
                             <a href="" class="d-flex align-items-center">
                                 <div class="d-flex">
-                                    <img src="../../assets/images/fotogaleria-menu-icon.svg" alt="">
+                                    <img src="/assets/images/fotogaleria-menu-icon.svg" alt="">
                                     <p>Fotogalería</p>
                                 </div>
                             </a>
@@ -354,7 +354,7 @@
                         <div class="menu-item destacados">
                             <a href="">
                                 <div class="d-flex align-items-center">
-                                    <img src="../../assets/images/tiempo-min-logo.svg" alt="">
+                                    <img src="/assets/images/tiempo-min-logo.svg" alt="">
                                     <p>SOBRE TIEMPO</p>
                                 </div>
                             </a>
@@ -363,27 +363,27 @@
                     <div class="redes-sociales d-flex my-4">
                         <div class="twitter">
                             <a href="">
-                                <img src="../../assets/images/twitter-grey-icon.svg" alt="">
+                                <img src="/assets/images/twitter-grey-icon.svg" alt="">
                             </a>
                         </div>
                         <div class="instagram">
                             <a href="">
-                                <img src="../../assets/images/instagram-grey-icon.svg" alt="">
+                                <img src="/assets/images/instagram-grey-icon.svg" alt="">
                             </a>
                         </div>
                         <div class="facebook">
                             <a href="">
-                                <img src="../../assets/images/facebook-grey-icon.svg" alt="">
+                                <img src="/assets/images/facebook-grey-icon.svg" alt="">
                             </a>
                         </div>
                         <div class="youtube">
                             <a href="">
-                                <img src="../../assets/images/youtube-grey-icon.svg" alt="">
+                                <img src="/assets/images/youtube-grey-icon.svg" alt="">
                             </a>
                         </div>
                         <div class="spotify">
                             <a href="">
-                                <img src="../../assets/images/spotify-grey-icon.svg" alt="">
+                                <img src="/assets/images/spotify-grey-icon.svg" alt="">
                             </a>
                         </div>
                     </div>

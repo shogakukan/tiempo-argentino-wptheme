@@ -1219,6 +1219,51 @@ a {
 
 /////// ver mas //////
 
+.article-tags {
+  .tag {
+    &.selected {
+      .content,
+      .triangle {
+        background-color: var(--ta-celeste);
+
+        p {
+          color: white;
+        }
+      }
+    }
+  }
+  .btns-container {
+    width: 100%;
+    button {
+      background-color: transparent;
+      border: none;
+      color: var(--ta-celeste);
+      @include red-hat-900;
+      font-size: 19px;
+      line-height: 25px;
+      margin: 0 auto;
+      padding: 0;
+
+      &.collapsed {
+        img {
+          transform: rotate(90deg);
+          margin-left: 15px;
+        }
+      }
+
+      img {
+        transform: rotate(-90deg);
+        margin-left: 15px;
+      }
+
+      &:focus {
+        border: none;
+        outline: none;
+      }
+    }
+  }
+}
+
 #more {
   display: none;
 }
@@ -1276,6 +1321,11 @@ a {
 }
 
 @media (min-width: 992px) {
+  .article-tags {
+    .btns-container {
+      width: max-content;
+    }
+  }
   .logged-user {
     .welcome {
       p {

@@ -9,7 +9,7 @@
                     <div class="temas-importantes d-flex align-items-center">
                         <div class="title d-flex p-1">
                             <div class="d-flex mr-2">
-                                <img src="../../assets/images/importante-icon.svg" alt="">
+                                <img src="/assets/images/importante-icon.svg" alt="">
                             </div>
                             <div>
                                 <p>IMPORTANTE ></p>
@@ -31,34 +31,34 @@
                         <div class="twitter">
                             <a href="">
                                 <div>
-                                    <img src="../../assets/images/twitter-white-icon.svg" class="img-fluid" alt="">
+                                    <img src="/assets/images/twitter-white-icon.svg" class="img-fluid" alt="">
                                 </div>
                             </a>
                         </div>
                         <div class="instagram">
                             <a href="">
                                 <div>
-                                    <img src="../../assets/images/instagram-white-icon.svg" class="img-fluid" alt="">
+                                    <img src="/assets/images/instagram-white-icon.svg" class="img-fluid" alt="">
                                 </div>
                             </a>
                         </div>
                         <div class="facebook">
                             <a href="">
                                 <div>
-                                    <img src="../../assets/images/facebook-white-icon.svg" class="img-fluid" alt="">
+                                    <img src="/assets/images/facebook-white-icon.svg" class="img-fluid" alt="">
                                 </div>
                             </a>
                         </div>
                         <div class="youtube">
                             <a href="">
                                 <div>
-                                    <img src="../../assets/images/youtube-white-icon.svg" class="img-fluid" alt="">
+                                    <img src="/assets/images/youtube-white-icon.svg" class="img-fluid" alt="">
                                 </div>
                             </a>
                         </div>
                         <div class="spotify">
                             <a href="">
-                                <div><img src="../../assets/images/spotify-white-icon.svg" class="img-fluid" alt="">
+                                <div><img src="/assets/images/spotify-white-icon.svg" class="img-fluid" alt="">
                                 </div>
                             </a>
                         </div>
@@ -77,7 +77,7 @@
                     </button>
                 </div>
                 <div class="tiempo-logo mr-lg-5">
-                    <img src="../../assets/images/tiempo-logo.svg" class="img-fluid" alt="">
+                    <img src="/assets/images/tiempo-logo.svg" class="img-fluid" alt="">
                 </div>
                 <div
                     class="weather d-none d-lg-flex flex-column align-content-center justify-content-start text-left  mr-5">
@@ -95,16 +95,16 @@
                 <button id="search-btn" class="search-icon mr-3 btn btn-link d-flex collapsed" data-toggle="collapse"
                     data-target="#searchBar" aria-expanded="false" aria-controls="searchBar">
                     <div class="d-flex align-items-center">
-                        <img src="../../assets/images/search-icon.svg" class="img-fluid" alt="">
+                        <img src="/assets/images/search-icon.svg" class="img-fluid" alt="">
                     </div>
                 </button>
                 <div class="profile-icon">
-                    <img src="../../assets/images/profile-icon.svg" class="img-fluid" alt="">
+                    <img src="/assets/images/profile-icon.svg" class="img-fluid" alt="">
                 </div>
             </div>
             <div class="asociate-banner position-relative ml-2">
                 <div class="asociate-banner-bg h-100">
-                    <img src="../../assets/images/asociate-banner.svg" class="img-fluid" alt="">
+                    <img src="/assets/images/asociate-banner.svg" class="img-fluid" alt="">
                 </div>
                 <div class="asociate-banner-content position-absolute">
                     <div class="separator"></div>
@@ -121,13 +121,13 @@
                 <div>
                     <button class="btn btn-link d-flex" data-toggle="collapse" data-target="#searchBar"
                         aria-expanded="true" aria-controls="searchBar">
-                        <img src="../../assets/images/close.svg" class="img-fluid" alt="">
+                        <img src="/assets/images/close.svg" class="img-fluid" alt="">
                     </button>
                 </div>
             </div>
             <div class="input-container d-flex justify-content-center mt-3">
                 <div class="search-icon mr-2">
-                    <img src="../../assets/images/search-icon-blue.svg" class="img-fluid" alt="">
+                    <img src="/assets/images/search-icon-blue.svg" class="img-fluid" alt="">
                 </div>
                 <div class="input-wrapper flex-fill">
                     <input type="text" placeholder="buscar en Tiempo Argentino_" />
@@ -139,7 +139,7 @@
                     <div>
                         <button class="btn btn-link d-none d-lg-flex" data-toggle="collapse" data-target="#searchBar"
                             aria-expanded="true" aria-controls="searchBar">
-                            <img src="../../assets/images/close.svg" class="img-fluid" alt="">
+                            <img src="/assets/images/close.svg" class="img-fluid" alt="">
                         </button>
                     </div>
                 </div>
@@ -150,7 +150,7 @@
         </div>
     </div>
 </div>
-<?php include_once('../../partes/menu.php');  ?>
+<?php include_once($_SERVER["DOCUMENT_ROOT"] . "/partes/menu.php");  ?>
 <div class="d-none d-lg-block">
-    <?php include_once('../../partes/banner-covid.php');  ?>
+    <?php include_once($_SERVER["DOCUMENT_ROOT"] . "/partes/banner-covid.php");  ?>
 </div>
