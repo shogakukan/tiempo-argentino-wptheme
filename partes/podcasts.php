@@ -6,7 +6,7 @@
                     <h4>PODCASTS DE TIEMPO</h4>
                 </div>
                 <div class="podcasts-block d-flex flex-column flex-md-row">
-                    <div class="col-12 col-md-8 podcast-preview first-podcast pb-3">
+                    <div class="col-12 col-md-6 podcast-preview first-podcast pb-3">
                         <div class="video-container position-relative mt-3">
                             <div class="video-wrapper">
                                 <img src="../../assets/images/video.png" alt="" class="img-fluid w-100" />
@@ -35,6 +35,13 @@
                                     </a>
                                 </div>
                             </div>
+                            <div class="podcast-player mt-3">
+                                <figure>
+                                    <audio class="audio" controls src="/assets/audio/podcast-test.mp3">
+                                    </audio>
+                                </figure>
+
+                            </div>
                             <div class="article-info-container mt-2">
                                 <div class="author">
                                     <p>Tiempo Argentino</p>
@@ -42,9 +49,12 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-4 podcast-preview-container">
-                        <div class="podcast-preview">
-                            <div class="content mt-3">
+                    <div class="col-12 col-md-6 podcast-preview-container">
+                        <div class="podcast-preview d-flex mt-3">
+                            <div class="col-5 pl-0 img-container d-none d-md-block">
+                                <div class="img-wrapper"></div>
+                            </div>
+                            <div class="col-12 col-md-7 content mt-3">
                                 <div class="d-flex justify-content-between">
                                     <div class="title">
                                         <a href="">
@@ -64,8 +74,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="podcast-preview">
-                            <div class="content mt-3">
+                        <div class="podcast-preview d-flex mt-3">
+                            <div class="col-5 pl-0 img-container d-none d-md-block">
+                                <div class="img-wrapper"></div>
+                            </div>
+                            <div class="col-12 col-md-7 content mt-3">
                                 <div class="d-flex justify-content-between">
                                     <div class="title">
                                         <a href="">
@@ -85,50 +98,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="podcast-preview">
-                            <div class="content mt-3">
-                                <div class="d-flex justify-content-between">
-                                    <div class="title">
-                                        <a href="">
-                                            <div>
-                                                <p class="episode-number">Episodio 4: </p>
-                                            </div>
-                                            <div>
-                                                <p class="nota-title">Cuando la realidad supera la ficción</p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="article-info-container mt-2">
-                                    <div class="author">
-                                        <p>Tiempo Argentino</p>
-                                    </div>
-                                </div>
+                        <div class="podcast-preview d-flex mt-3">
+                            <div class="col-5 pl-0 img-container d-none d-md-block">
+                                <div class="img-wrapper"></div>
                             </div>
-                        </div>
-                        <div class="podcast-preview">
-                            <div class="content mt-3">
-                                <div class="d-flex justify-content-between">
-                                    <div class="title">
-                                        <a href="">
-                                            <div>
-                                                <p class="episode-number">Episodio 4: </p>
-                                            </div>
-                                            <div>
-                                                <p class="nota-title">Cuando la realidad supera la ficción</p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="article-info-container mt-2">
-                                    <div class="author">
-                                        <p>Tiempo Argentino</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="podcast-preview">
-                            <div class="content mt-3">
+                            <div class="col-12 col-md-7 content mt-3">
                                 <div class="d-flex justify-content-between">
                                     <div class="title">
                                         <a href="">
