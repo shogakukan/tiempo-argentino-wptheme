@@ -7,6 +7,7 @@
   --ta-gris-subtexto: #849899;
   --ta-socios: #ffbb0f;
   --ta-socios-fondos: #ffe7a9;
+  --ta-socios-fondos2: #fff4d8;
   --ta-espectaculos: #ce0d54;
   --ta-espectaculos-bg: #f9f2f6;
   --ta-cultura: #48b1a7;
@@ -620,8 +621,35 @@ a {
   font-weight: 700;
   color: var(--ta-celeste);
 }
-.ta-context.asociate .separator {
+.ta-context.asociate .context-bg.amarillo .separator, .ta-context.participa .context-bg.amarillo .separator {
   background-color: var(--ta-socios);
+}
+.ta-context.asociate .context-bg.amarillo .participa-block-container .participa-items .item, .ta-context.participa .context-bg.amarillo .participa-block-container .participa-items .item {
+  background-color: var(--ta-socios-fondos2);
+}
+.ta-context.asociate .context-bg.amarillo .participa-block-container .participa-items .carousel-indicators li, .ta-context.participa .context-bg.amarillo .participa-block-container .participa-items .carousel-indicators li {
+  background-color: var(--ta-socios-fondos2);
+}
+.ta-context.asociate .context-bg.amarillo .participa-block-container .participa-items .carousel-indicators li.active, .ta-context.participa .context-bg.amarillo .participa-block-container .participa-items .carousel-indicators li.active {
+  background-color: var(--ta-socios);
+}
+.ta-context.asociate .context-bg.amarillo .participa-block-container .btns-container button, .ta-context.participa .context-bg.amarillo .participa-block-container .btns-container button {
+  background-color: var(--ta-socios);
+}
+.ta-context.asociate .context-bg.celeste .separator, .ta-context.participa .context-bg.celeste .separator {
+  background-color: var(--ta-celeste);
+}
+.ta-context.asociate .context-bg.celeste .participa-block-container .participa-items .item, .ta-context.participa .context-bg.celeste .participa-block-container .participa-items .item {
+  background-color: var(--ta-celeste-fondos);
+}
+.ta-context.asociate .context-bg.celeste .participa-block-container .participa-items .carousel-indicators li, .ta-context.participa .context-bg.celeste .participa-block-container .participa-items .carousel-indicators li {
+  background-color: var(--ta-celeste-fondos);
+}
+.ta-context.asociate .context-bg.celeste .participa-block-container .participa-items .carousel-indicators li.active, .ta-context.participa .context-bg.celeste .participa-block-container .participa-items .carousel-indicators li.active {
+  background-color: var(--ta-celeste);
+}
+.ta-context.asociate .context-bg.celeste .participa-block-container .btns-container button, .ta-context.participa .context-bg.celeste .participa-block-container .btns-container button {
+  background-color: var(--ta-celeste);
 }
 .ta-context.micrositio.ambiental .context-color .separator {
   background-color: var(--ta-ambiental);

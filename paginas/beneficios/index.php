@@ -23,6 +23,7 @@
 <body>
     <?php include_once($_SERVER["DOCUMENT_ROOT"] . "/partes/header.php");  ?>
     <?php include_once($_SERVER["DOCUMENT_ROOT"] . "/partes/beneficios/banner-beneficios.php");  ?>
+    <?php include_once($_SERVER["DOCUMENT_ROOT"] . "/partes/beneficios/buscador.php");  ?>
     <?php include_once($_SERVER["DOCUMENT_ROOT"] . "/partes/beneficios/filtros.php");  ?>
     <?php include_once($_SERVER["DOCUMENT_ROOT"] . "/partes/beneficios/articulos-beneficios.php");  ?>
     <?php include_once($_SERVER["DOCUMENT_ROOT"] . "/partes/footer.php");  ?>

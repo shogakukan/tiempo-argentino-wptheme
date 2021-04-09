@@ -819,9 +819,68 @@ a {
     }
   }
 
-  &.asociate {
-    .separator {
-      background-color: var(--ta-socios);
+  &.asociate,
+  &.participa {
+    .context-bg {
+      &.amarillo {
+        .separator {
+          background-color: var(--ta-socios);
+        }
+
+        .participa-block-container {
+          .participa-items {
+            .item {
+              background-color: var(--ta-socios-fondos2);
+            }
+
+            .carousel-indicators {
+              li {
+                background-color: var(--ta-socios-fondos2);
+
+                &.active {
+                  background-color: var(--ta-socios);
+                }
+              }
+            }
+          }
+
+          .btns-container {
+            button {
+              background-color: var(--ta-socios);
+            }
+          }
+        }
+      }
+
+      &.celeste {
+        .separator {
+          background-color: var(--ta-celeste);
+        }
+
+        .participa-block-container {
+          .participa-items {
+            .item {
+              background-color: var(--ta-celeste-fondos);
+            }
+
+            .carousel-indicators {
+              li {
+                background-color: var(--ta-celeste-fondos);
+
+                &.active {
+                  background-color: var(--ta-celeste);
+                }
+              }
+            }
+          }
+
+          .btns-container {
+            button {
+              background-color: var(--ta-celeste);
+            }
+          }
+        }
+      }
     }
   }
 

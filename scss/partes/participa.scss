@@ -1,0 +1,150 @@
+@import "../variables";
+@import "../mixins";
+
+.participa-block-container {
+  border: 1px solid var(--ta-gris-subtexto);
+  .title {
+    h4 {
+      @include red-hat-900;
+      font-size: 17px;
+      letter-spacing: 0.3px;
+
+      &.italic {
+        @include baskerville-italic;
+        font-size: 20px;
+        line-height: 24.8px;
+        letter-spacing: -0.2px;
+      }
+
+      &.pack-name {
+        @include caladea-700;
+        font-size: 27px;
+        letter-spacing: -1px;
+        margin: 0;
+      }
+
+      span {
+        background-color: var(--ta-socios-fondos);
+      }
+    }
+  }
+
+  .subtitle {
+    p {
+      font-size: 15px;
+      line-height: 20px;
+      text-align: center;
+      letter-spacing: -0.2px;
+      @include red-hat-400;
+    }
+  }
+
+  .participa-items {
+    max-width: 97%;
+    margin: 0 auto;
+
+    .item {
+      height: 320px;
+      img {
+        height: 180px;
+        width: auto;
+        margin: 0 auto;
+      }
+
+      .caption {
+        .title {
+          h3 {
+            font-size: 20px;
+            line-height: 112.3%;
+            @include caladea-700;
+            text-align: center;
+            letter-spacing: -0.5px;
+          }
+        }
+
+        .subtitle {
+          p {
+            font-size: 15px;
+            line-height: 20px;
+            text-align: center;
+            letter-spacing: -0.2px;
+            @include red-hat-400;
+          }
+        }
+      }
+    }
+
+    .carousel-indicators {
+      li {
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  .btns-container {
+    button {
+      border: none;
+      @include red-hat-900;
+      font-size: 15px;
+      line-height: 20px;
+      text-align: center;
+      text-transform: uppercase;
+      padding: 4px 10px;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .participa-block-container {
+    .title {
+      h4 {
+        &.italic {
+          font-size: 26px;
+          line-height: 32px;
+        }
+      }
+    }
+
+    .subtitle {
+      max-width: 80%;
+      margin: 30px auto;
+      p {
+        font-size: 24px;
+        line-height: 32px;
+        letter-spacing: -0.2px;
+        @include red-hat-500;
+      }
+    }
+
+    .participa-items {
+      .item {
+        height: auto;
+        .caption {
+          .title {
+            h3 {
+              font-size: 30px;
+              line-height: 112.3%;
+            }
+          }
+
+          .subtitle {
+            p {
+              font-size: 19px;
+              line-height: 25px;
+              letter-spacing: -0.1px;
+            }
+          }
+        }
+      }
+    }
+
+    .btns-container {
+      button {
+        font-size: 19px;
+        line-height: 25px;
+      }
+    }
+  }
+}
