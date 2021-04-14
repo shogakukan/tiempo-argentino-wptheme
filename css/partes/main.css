@@ -738,6 +738,9 @@ a {
 .ta-context.micrositio.medios .context-bg .topic-tag .content {
   border: 1px solid var(--ta-medios);
 }
+.ta-context.sumate .context-bg {
+  background-color: var(--ta-celeste-fondos);
+}
 
 .container-with-header .section-title h4 {
   font-family: "Red Hat Display";

@@ -1025,6 +1025,12 @@ a {
       }
     }
   }
+
+  &.sumate {
+    .context-bg {
+      background-color: var(--ta-celeste-fondos);
+    }
+  }
 }
 
 .container-with-header {

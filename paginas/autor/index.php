@@ -45,7 +45,7 @@
     const dots = document.getElementById("dots");
     const moreText = document.getElementById("more");
 
-    const readMore = document.getElementById("myBtn");
+    const readMore = document.querySelectorAll("#verMasDropdown");
     const readMoreContent =
         "ver más<span class='ml-3'><img src='/assets/images/right-arrow.png'alt=''/></span>";
 

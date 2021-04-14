@@ -79,8 +79,8 @@
             </div>
             <div class="btns-container">
                 <div class="ver-mas text-right">
-                    <button id="myBtn">ver más<span class="ml-3 "><img src="../../assets/images/right-arrow.png"
-                                alt="" /></span></button>
+                    <button id="verMasDropdown">ver más<span class="ml-3 "><img
+                                src="../../assets/images/right-arrow.png" alt="" /></span></button>
                 </div>
             </div>
         </div>
