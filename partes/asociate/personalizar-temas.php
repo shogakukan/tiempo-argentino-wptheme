@@ -16,112 +16,50 @@
                                 </p>
                             </div>
                             <div
-                                class="temas d-flex flex-column flex-md-row flex-wrap align-items-center justify-content-around">
-                                <div class="tema col-12 col-md-4 px-1">
-                                    <div class="bg-color">
-                                        <button>Política</button>
-                                    </div>
+                                class="temas d-flex flex-column flex-md-row flex-wrap align-items-center justify-content-center">
+                                <div class="tema col-12 col-md-4 px-1" id="politica">
+                                    <label>
+                                        <input type="checkbox" name="politica" value="politica">
+                                        Política
+                                    </label>
                                 </div>
-                                <div class="tema col-12 col-md-4 px-1">
-                                    <div class="bg-color">
-                                        <button>Género</button>
-                                    </div>
+                                <div class="tema col-12 col-md-4 px-1" id="genero">
+                                    <label>
+                                        <input type="checkbox" name="genero" value="genero">
+                                        Género
+                                    </label>
                                 </div>
-                                <div class="tema col-12 col-md-4 px-1">
-                                    <div class="bg-color">
-                                        <button>Género</button>
-                                    </div>
+                                <div class="tema col-12 col-md-4 px-1" id="economia">
+                                    <label>
+                                        <input type="checkbox" name="economia" value="economia">
+                                        Economía
+                                    </label>
                                 </div>
-                                <div class="tema col-12 col-md-4 px-1">
-                                    <div class="bg-color">
-                                        <button>Economía</button>
-                                    </div>
+                                <div class="tema col-12 col-md-4 px-1" id="violencia">
+                                    <label>
+                                        <input type="checkbox" name="violencia" value="violencia">
+                                        Violencia institucional
+                                    </label>
                                 </div>
-                                <div class="tema col-12 col-md-4 px-1">
-                                    <div class="bg-color">
-                                        <button>Violencia institucional</button>
-                                    </div>
+                                <div class="tema col-12 col-md-4 px-1" id="medios">
+                                    <label>
+                                        <input type="checkbox" name="medios" value="medios">
+                                        Medios
+                                    </label>
                                 </div>
-                                <div class="tema col-12 col-md-4 px-1">
-                                    <div class="bg-color">
-                                        <button>Medios</button>
-                                    </div>
+                                <div class="tema col-12 col-md-4 px-1" id="deportes">
+                                    <label>
+                                        <input type="checkbox" name="deportes" value="deportes">
+                                        Deportes
+                                    </label>
                                 </div>
-                                <div class="tema col-12 col-md-4 px-1">
-                                    <div class="bg-color">
-                                        <button>Deportes</button>
-                                    </div>
+                                <div class="tema col-12 col-md-4 px-1" id="ambiente">
+                                    <label>
+                                        <input type="checkbox" name="ambiente" value="ambiente">
+                                        Medio Ambiente
+                                    </label>
                                 </div>
-                                <div class="tema col-12 col-md-4 px-1">
-                                    <div class="bg-color">
-                                        <button>Política</button>
-                                    </div>
-                                </div>
-                                <div class="tema col-12 col-md-4 px-1">
-                                    <div class="bg-color">
-                                        <button>Género</button>
-                                    </div>
-                                </div>
-                                <div class="tema col-12 col-md-4 px-1">
-                                    <div class="bg-color">
-                                        <button>Medio Ambiente</button>
-                                    </div>
-                                </div>
-                                <div class="tema col-12 col-md-4 px-1">
-                                    <div class="bg-color">
-                                        <button>Economía</button>
-                                    </div>
-                                </div>
-                                <div class="tema col-12 col-md-4 px-1">
-                                    <div class="bg-color">
-                                        <button>Violencia institucional</button>
-                                    </div>
-                                </div>
-                                <div class="tema col-12 col-md-4 px-1">
-                                    <div class="bg-color">
-                                        <button>Medios</button>
-                                    </div>
-                                </div>
-                                <div class="tema col-12 col-md-4 px-1">
-                                    <div class="bg-color">
-                                        <button>Deportes</button>
-                                    </div>
-                                </div>
-                                <div class="tema col-12 col-md-4 px-1">
-                                    <div class="bg-color">
-                                        <button>Política</button>
-                                    </div>
-                                </div>
-                                <div class="tema col-12 col-md-4 px-1">
-                                    <div class="bg-color">
-                                        <button>Género</button>
-                                    </div>
-                                </div>
-                                <div class="tema col-12 col-md-4 px-1">
-                                    <div class="bg-color">
-                                        <button>Medio Ambiente</button>
-                                    </div>
-                                </div>
-                                <div class="tema col-12 col-md-4 px-1">
-                                    <div class="bg-color">
-                                        <button>Economía</button>
-                                    </div>
-                                </div>
-                                <div class="tema col-12 col-md-4 px-1">
-                                    <div class="bg-color">
-                                        <button>Violencia institucional</button>
-                                    </div>
-                                </div>
-                                <div class="tema col-12 col-md-4 px-1">
-                                    <div class="bg-color">
-                                        <button>Medios</button>
-                                    </div>
-                                </div>
-                                <div class="tema col-12 col-md-4 px-1">
-                                    <div class="bg-color">
-                                        <button>Deportes</button>
-                                    </div>
-                                </div>
+
                             </div>
                             <div class="subtitle text-center mt-4 d-none d-md-block">
                                 <a href="">

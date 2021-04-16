@@ -76,43 +76,37 @@
         $('#pagoExitoso').removeClass('active')
     });
 
-    $(".tema button").each(function(i, elem) {
-        var chosenTopic = false
-        $(elem).bind('click', function() {
-            if (!chosenTopic) {
-                $(elem).addClass('active')
-            } else {
-                $(elem).removeClass('active')
-            }
-            chosenTopic = !chosenTopic
-        })
-    });
 
-    $(".articulo button").each(function(i, elem) {
-        var chosenArticle = false
-        $(elem).bind('click', function() {
-            if (!chosenArticle) {
-                $(elem).addClass('active')
-            } else {
-                $(elem).removeClass('active')
-            }
-            chosenArticle = !chosenArticle
-        })
-    });
+    $(".articulo input").on('change', function() {
+        var temaID = $(this).attr('name')
+        var temaIDSelector = $('#' + temaID);
+        if ($(this).is(":checked")) {
+            $(temaIDSelector).addClass('art-selected')
+        } else {
+            $(temaIDSelector).removeClass('art-selected')
+        }
+    })
 
+    $(".foto .foto-checkbox").on('change', function() {
+        var temaID = $(this).attr('name')
+        var temaIDSelector = $('#' + temaID);
 
-    $(".foto button").each(function(i, elem) {
-        var chosenPhoto = false
-        $(elem).bind('click', function() {
-            if (!chosenPhoto) {
-                $(elem).addClass('active')
-            } else {
-                $(elem).removeClass('active')
-            }
-            chosenPhoto = !chosenPhoto
-            $(`#${elem.id} .foto-checkbox`).prop('checked', chosenPhoto)
-        })
-    });
+        if ($(this).is(":checked")) {
+            $(temaIDSelector).addClass('photo-selected')
+        } else {
+            $(temaIDSelector).removeClass('photo-selected')
+        }
+    })
+
+    $(".tema input").on('change', function() {
+        var temaID = $(this).attr('name')
+        var temaIDSelector = $('#' + temaID);
+        if ($(this).is(":checked")) {
+            $(temaIDSelector).addClass('theme-selected')
+        } else {
+            $(temaIDSelector).removeClass('theme-selected')
+        }
+    })
     </script>
 </body>
 

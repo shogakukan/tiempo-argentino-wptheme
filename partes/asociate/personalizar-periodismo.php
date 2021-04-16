@@ -21,8 +21,9 @@
                             </div>
                             <div
                                 class="articulos d-flex flex-column flex-md-row flex-wrap align-items-center align-items-md-start justify-content-around my-3">
-                                <div class="articulo col-12 col-md-4">
-                                    <button>
+                                <div class="articulo col-12 col-md-4" id="art-1">
+                                    <label>
+                                        <input type="checkbox" name="art-1" value="art-1">
                                         <div class="line-height-0">
                                             <div class="separator m-0"></div>
                                         </div>
@@ -35,10 +36,11 @@
                                                     flexible para atender que las posibilidades (...)</p>
                                             </div>
                                         </div>
-                                    </button>
+                                    </label>
                                 </div>
-                                <div class="articulo col-12 col-md-4">
-                                    <button>
+                                <div class="articulo col-12 col-md-4" id="art-2">
+                                    <label>
+                                        <input type="checkbox" name="art-2" value="art-2">
                                         <div class="line-height-0">
                                             <div class="separator m-0"></div>
                                         </div>
@@ -52,10 +54,11 @@
                                                     en Huracán</p>
                                             </div>
                                         </div>
-                                    </button>
+                                    </label>
                                 </div>
-                                <div class="articulo col-12 col-md-4">
-                                    <button>
+                                <div class="articulo col-12 col-md-4" id="art-3">
+                                    <label>
+                                        <input type="checkbox" name="art-3" value="art-3">
                                         <div class="line-height-0">
                                             <div class="separator m-0"></div>
                                         </div>
@@ -68,10 +71,11 @@
                                                     mujer"</p>
                                             </div>
                                         </div>
-                                    </button>
+                                    </label>
                                 </div>
-                                <div class="articulo col-12 col-md-4">
-                                    <button>
+                                <div class="articulo col-12 col-md-4" id="art-4">
+                                    <label>
+                                        <input type="checkbox" name="art-4" value="art-4">
                                         <div class="line-height-0">
                                             <div class="separator m-0"></div>
                                         </div>
@@ -84,10 +88,11 @@
                                                     flexible para atender que las posibilidades (...)</p>
                                             </div>
                                         </div>
-                                    </button>
+                                    </label>
                                 </div>
-                                <div class="articulo col-12 col-md-4">
-                                    <button>
+                                <div class="articulo col-12 col-md-4" id="art-5">
+                                    <label>
+                                        <input type="checkbox" name="art-5" value="art-5">
                                         <div class="line-height-0">
                                             <div class="separator m-0"></div>
                                         </div>
@@ -100,10 +105,11 @@
                                                     flexible para atender que las posibilidades (...)</p>
                                             </div>
                                         </div>
-                                    </button>
+                                    </label>
                                 </div>
-                                <div class="articulo col-12 col-md-4">
-                                    <button>
+                                <div class="articulo col-12 col-md-4" id="art-6">
+                                    <label>
+                                        <input type="checkbox" name="art-6" value="art-6">
                                         <div class="line-height-0">
                                             <div class="separator m-0"></div>
                                         </div>
@@ -117,10 +123,11 @@
                                                     en Huracán</p>
                                             </div>
                                         </div>
-                                    </button>
+                                    </label>
                                 </div>
-                                <div class="articulo col-12 col-md-4">
-                                    <button>
+                                <div class="articulo col-12 col-md-4" id="art-7">
+                                    <label>
+                                        <input type="checkbox" name="art-7" value="art-7">
                                         <div class="line-height-0">
                                             <div class="separator m-0"></div>
                                         </div>
@@ -133,10 +140,11 @@
                                                     mujer"</p>
                                             </div>
                                         </div>
-                                    </button>
+                                    </label>
                                 </div>
-                                <div class="articulo col-12 col-md-4">
-                                    <button>
+                                <div class="articulo col-12 col-md-4" id="art-8">
+                                    <label>
+                                        <input type="checkbox" name="art-8" value="art-8">
                                         <div class="line-height-0">
                                             <div class="separator m-0"></div>
                                         </div>
@@ -149,10 +157,11 @@
                                                     flexible para atender que las posibilidades (...)</p>
                                             </div>
                                         </div>
-                                    </button>
+                                    </label>
                                 </div>
-                                <div class="articulo col-12 col-md-4">
-                                    <button>
+                                <div class="articulo col-12 col-md-4" id="art-9">
+                                    <label>
+                                        <input type="checkbox" name="art-9" value="art-9">
                                         <div class="line-height-0">
                                             <div class="separator m-0"></div>
                                         </div>
@@ -165,7 +174,7 @@
                                                     flexible para atender que las posibilidades (...)</p>
                                             </div>
                                         </div>
-                                    </button>
+                                    </label>
                                 </div>
                             </div>
                         </div>
@@ -176,8 +185,8 @@
     </div>
     <div class="container">
         <div class="btns-container d-flex justify-content-between mt-3">
-            <button class="gray-btn-black-text w-50">omitir</button>
-            <button class="w-50">siguiente</button>
+            <button class="gray-btn-black-text w-50">omitir</label>
+                <button class="w-50">siguiente</label>
         </div>
     </div>
 
