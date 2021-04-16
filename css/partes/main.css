@@ -738,8 +738,17 @@ a {
 .ta-context.micrositio.medios .context-bg .topic-tag .content {
   border: 1px solid var(--ta-medios);
 }
-.ta-context.sumate .context-bg {
+.ta-context.sumate .context-bg, .ta-context.quienes-somos .context-bg {
   background-color: var(--ta-celeste-fondos);
+}
+.ta-context.sumate .article-preview.ambiental, .ta-context.quienes-somos .article-preview.ambiental {
+  border: 1px solid var(--ta-ambiental);
+}
+.ta-context.sumate .article-preview.habitat, .ta-context.quienes-somos .article-preview.habitat {
+  border: 1px solid var(--ta-habitat);
+}
+.ta-context.sumate .article-preview.medios, .ta-context.quienes-somos .article-preview.medios {
+  border: 1px solid var(--ta-medios);
 }
 
 .container-with-header .section-title h4 {

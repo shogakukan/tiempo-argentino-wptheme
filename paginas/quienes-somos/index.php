@@ -21,14 +21,14 @@
 
 <body>
     <?php include_once($_SERVER["DOCUMENT_ROOT"] . "/partes/header.php");  ?>
-    <?php include_once($_SERVER["DOCUMENT_ROOT"] . "/partes/sumate/sumate-opts.php");  ?>
-    <?php include_once($_SERVER["DOCUMENT_ROOT"] . "/partes/sumate/nuestro-compromiso.php");  ?>
-    <?php include_once($_SERVER["DOCUMENT_ROOT"] . "/partes/sumate/que-ofrecemos.php");  ?>
-    <?php include_once($_SERVER["DOCUMENT_ROOT"] . "/partes/sumate/sumate-formas.php");  ?>
+    <?php include_once($_SERVER["DOCUMENT_ROOT"] . "/partes/quienes-somos/ntra-historia.php");  ?>
+    <?php include_once($_SERVER["DOCUMENT_ROOT"] . "/partes/quienes-somos/ntro-compromiso-articulos.php");  ?>
     <?php include_once($_SERVER["DOCUMENT_ROOT"] . "/partes/sumate/ejes.php");  ?>
+    <?php include_once($_SERVER["DOCUMENT_ROOT"] . "/partes/quienes-somos/aporte-lectores.php");  ?>
     <?php include_once($_SERVER["DOCUMENT_ROOT"] . "/partes/sumate/open-source.php");  ?>
-    <?php include_once($_SERVER["DOCUMENT_ROOT"] . "/partes/sumate/vision.php");  ?>
+    <?php include_once($_SERVER["DOCUMENT_ROOT"] . "/partes/quienes-somos/conocenos.php");  ?>
     <?php include_once($_SERVER["DOCUMENT_ROOT"] . "/partes/sumate/sumate-opts-min.php");  ?>
+
     <?php include_once($_SERVER["DOCUMENT_ROOT"] . "/partes/footer.php");  ?>
 
     <script src="/js/index.js"></script>
@@ -56,6 +56,8 @@
                 item.classList.remove("show")
             }
         }
+
+
     });
     </script>
 </body>

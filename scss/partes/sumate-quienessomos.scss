@@ -1,7 +1,8 @@
 @import "../variables";
 @import "../mixins";
 
-.sumate {
+.sumate,
+.quienes-somos {
   .title {
     h3 {
       @include baskerville-italic;
@@ -148,6 +149,24 @@
     }
 
     .dropdown {
+      &.ntro-compromiso {
+        .ta-article-block {
+          .article-preview {
+            .img-container {
+              padding-bottom: 52.63%;
+
+              .img-wrapper {
+                height: 100%;
+                left: 0;
+                position: absolute;
+                top: 0;
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+
       &.vision-sumate {
         p {
           @include baskerville-italic;
@@ -164,6 +183,11 @@
           }
         }
       }
+
+      .media {
+        border: 1px solid var(--ta-celeste);
+      }
+
       p {
         @include red-hat-500;
         font-size: 17px;
@@ -236,10 +260,127 @@
         }
       }
     }
+
+    .user-block-container {
+      .user-tabs {
+        .nav {
+          &.nav-tabs {
+            overflow-y: hidden;
+            overflow-x: auto;
+            .nav-item {
+              .nav-link {
+                p {
+                  @include red-hat-400;
+                  font-size: 12px;
+                  line-height: 16px;
+                }
+
+                &.active {
+                  p {
+                    @include red-hat-900;
+                    border-bottom: none;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .tab-content {
+          .tab-pane {
+            .member {
+              .profile-img {
+                width: 80px;
+                .img-container {
+                  .img-wrapper {
+                    min-height: 80px;
+                    width: auto;
+                    background-image: url(/assets/images/author-photo.png);
+                    background-position: top left;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    border-radius: 50px;
+                    border: 1px solid var(--ta-gris-subtexto);
+                  }
+                }
+              }
+
+              .content {
+                p {
+                  margin-bottom: 0;
+                }
+
+                .name {
+                  p {
+                    @include baskerville-italic;
+                    font-size: 12px;
+                    line-height: 15px;
+                  }
+                }
+
+                .position {
+                  p {
+                    @include red-hat-700;
+                    font-size: 15px;
+                    line-height: 20px;
+                    letter-spacing: -0.2px;
+                  }
+                }
+
+                .social {
+                  p {
+                    @include baskerville-italic;
+                    font-size: 12px;
+                    line-height: 15px;
+
+                    a {
+                      color: var(--ta-celeste) !important;
+                    }
+                  }
+                }
+              }
+            }
+
+            .categories-filter {
+              .form-select {
+                @include red-hat-700;
+                font-size: 15px;
+                line-height: 20px;
+                letter-spacing: -0.2px;
+                width: 100%;
+                box-sizing: border-box;
+                position: relative;
+                height: 35px;
+                border: 1.5px solid var(--ta-gris-subtexto);
+                color: var(--ta-gris-subtexto);
+                border-radius: 20px;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                background: transparent;
+                background-image: url(/assets/images/gray-down-arrow.svg);
+                background-repeat: no-repeat;
+                background-position-x: 97%;
+                background-position-y: 12px;
+                padding: 0 10px;
+
+                &:focus {
+                  outline: none;
+                }
+              }
+            }
+
+            .separator {
+              background-color: var(--ta-celeste) !important;
+            }
+          }
+        }
+      }
+    }
   }
 
-  .open-source-sumate {
+  .ta-border-block {
     .opt-border {
+      background-color: white;
       border: 1px solid var(--ta-celeste);
 
       .title {
@@ -271,7 +412,8 @@
 }
 
 @media (min-width: 992px) {
-  .sumate {
+  .sumate,
+  .quienes-somos {
     .title {
       h3 {
         font-size: 26px;
@@ -431,9 +573,62 @@
           }
         }
       }
+
+      .user-block-container {
+        .user-tabs {
+          .tab-content {
+            .tab-pane {
+              .categories-filter {
+                max-width: 500px;
+              }
+
+              .member {
+                width: 205px;
+                .profile-img {
+                  width: 170px;
+                  .img-container {
+                    .img-wrapper {
+                      min-height: 170px;
+                      border-radius: 100px;
+                    }
+                  }
+                }
+
+                .content {
+                  max-width: 220px;
+                  .name {
+                    p {
+                      font-size: 16px;
+                      line-height: 20px;
+                      margin-top: 5px;
+                    }
+                  }
+
+                  .position {
+                    p {
+                      font-size: 19px;
+                      line-height: 25px;
+                      letter-spacing: -0.1px;
+                      margin-top: 5px;
+                    }
+                  }
+
+                  .social {
+                    p {
+                      font-size: 16px;
+                      line-height: 20px;
+                      margin-top: 5px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
 
-    .open-source-sumate {
+    .ta-border-block {
       max-width: 85%;
       margin: 0 auto;
 

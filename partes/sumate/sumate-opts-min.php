@@ -38,5 +38,11 @@
                 </div>
             </div>
         </div>
+        <div class="container">
+            <div class="info text-center mt-3 mt-md-4">
+                <p>Si tenés dudas llamanos al <span>47195655</span> o envianos un mail a <a
+                        href="mailto:suscripciones@tiempoargentino.com.ar">suscripciones@tiempoargentino.com.ar</a></p>
+            </div>
+        </div>
     </div>
 </div>

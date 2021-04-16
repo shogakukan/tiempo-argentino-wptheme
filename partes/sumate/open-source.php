@@ -1,7 +1,7 @@
-<div class="ta-context sumate  mt-3">
-    <div class="container">
-        <div class="open-source-sumate">
-            <div class="mt-4 mx-md-4">
+<div class="ta-context sumate">
+    <div class="container py-3">
+        <div class="ta-border-block">
+            <div class="mx-md-4">
                 <div class="opt-border">
                     <div class="container py-md-3">
                         <div class="title mt-3">

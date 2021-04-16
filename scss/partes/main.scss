@@ -1026,9 +1026,24 @@ a {
     }
   }
 
-  &.sumate {
+  &.sumate,
+  &.quienes-somos {
     .context-bg {
       background-color: var(--ta-celeste-fondos);
+    }
+
+    .article-preview {
+      &.ambiental {
+        border: 1px solid var(--ta-ambiental);
+      }
+
+      &.habitat {
+        border: 1px solid var(--ta-habitat);
+      }
+
+      &.medios {
+        border: 1px solid var(--ta-medios);
+      }
     }
   }
 }
