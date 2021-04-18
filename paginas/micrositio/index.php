@@ -22,6 +22,7 @@
 
 <body>
     <?php include_once('../../partes/micrositio/header-micrositio.php');  ?>
+    <?php include('../../partes/micrositio/asociate-banner-micrositio.php');  ?>
     <?php include('../../partes/micrositio/slider-micrositio.php');  ?>
     <?php include('../../partes/micrositio/slider-micrositio.php');  ?>
     <?php include('../../partes/micrositio/slider-micrositio.php');  ?>

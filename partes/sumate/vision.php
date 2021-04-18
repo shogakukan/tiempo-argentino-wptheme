@@ -6,6 +6,7 @@
             </div>
             <div class="context-bg py-3">
                 <div class="container">
+                    <a class="scrollTo" id="nosotrosFocus"></a>
                     <div class="section-title">
                         <h4>NOSOTROS</h4>
                     </div>

@@ -907,15 +907,24 @@ a {
           }
         }
 
+        .asociate-banner-micrositio {
+          p {
+            color: var(--ta-ambiental);
+          }
+
+          .banner {
+            p {
+              a {
+                color: var(--ta-ambiental) !important;
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+
         .header-content {
           .separator {
             background-color: white;
-          }
-
-          .asociate-banner-micrositio {
-            p {
-              color: var(--ta-ambiental);
-            }
           }
         }
       }

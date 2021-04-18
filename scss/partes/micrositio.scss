@@ -28,18 +28,31 @@
 
   .header-content {
     padding: 5px 0;
-    .asociate-banner-micrositio {
-      max-width: 35%;
-      .asociate-banner-content {
-        top: 0;
-        left: 0;
-        transform: none;
-        p {
-          @include baskerville-italic;
-          font-size: 20px;
-          text-decoration: underline;
-        }
-      }
+  }
+}
+
+.asociate-banner-micrositio {
+  max-width: 35%;
+  .asociate-banner-content {
+    top: 0;
+    left: 0;
+    transform: none;
+    p {
+      @include baskerville-italic;
+      font-size: 20px;
+      text-decoration: underline;
+    }
+  }
+
+  .banner {
+    max-width: 80%;
+    margin: 0 auto;
+    p {
+      @include baskerville-italic;
+      margin: 0;
+      font-size: 20px;
+      line-height: 25px;
+      letter-spacing: -0.2px;
     }
   }
 }
@@ -368,6 +381,17 @@
       }
     }
   }
+
+  .asociate-banner-micrositio {
+    .banner {
+      max-width: 90%;
+      p {
+        font-size: 26px;
+        line-height: 32px;
+      }
+    }
+  }
+
   .header-micrositio {
     .header-content {
       .search-and-profile {
@@ -433,6 +457,15 @@
           }
         }
       }
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .asociate-banner-micrositio {
+    .banner {
+      display: flex;
+      justify-content: center;
     }
   }
 }
