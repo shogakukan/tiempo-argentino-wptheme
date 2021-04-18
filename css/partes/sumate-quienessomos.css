@@ -56,6 +56,43 @@
 .quienes-somos .sumate-opts .opt .img-container img {
   max-width: 175px;
 }
+.sumate .sumate-opts .opt .opt-details button,
+.quienes-somos .sumate-opts .opt .opt-details button {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 900;
+  background-color: transparent;
+  border: none;
+  color: var(--ta-negro-texto);
+  font-size: 15px;
+  left: 50%;
+  line-height: 20px;
+  padding: 4px 10px;
+}
+.sumate .sumate-opts .opt .opt-details button:focus,
+.quienes-somos .sumate-opts .opt .opt-details button:focus {
+  outline: none;
+}
+.sumate .sumate-opts .opt .opt-details button .dropdown-icon img,
+.quienes-somos .sumate-opts .opt .opt-details button .dropdown-icon img {
+  transform: rotate(180deg);
+}
+.sumate .sumate-opts .opt .opt-details button p,
+.quienes-somos .sumate-opts .opt .opt-details button p {
+  margin: 0;
+}
+.sumate .sumate-opts .opt .opt-details .card-body,
+.quienes-somos .sumate-opts .opt .opt-details .card-body {
+  padding: 10px;
+}
+.sumate .sumate-opts .opt .opt-details .card-body h6,
+.quienes-somos .sumate-opts .opt .opt-details .card-body h6 {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 400;
+  margin-left: 10px;
+  margin-bottom: 0;
+}
 .sumate .sumate-opts .opt .btns-container button,
 .quienes-somos .sumate-opts .opt .btns-container button {
   font-family: "Red Hat Display";
@@ -460,6 +497,18 @@
     font-size: 26px;
     line-height: 32px;
   }
+  .sumate .sumate-opts .opt .opt-details button p,
+.quienes-somos .sumate-opts .opt .opt-details button p {
+    font-size: 19px;
+  }
+  .sumate .sumate-opts .opt .opt-details .card-body div,
+.quienes-somos .sumate-opts .opt .opt-details .card-body div {
+    margin-top: 5px;
+  }
+  .sumate .sumate-opts .opt .opt-details .card-body h6,
+.quienes-somos .sumate-opts .opt .opt-details .card-body h6 {
+    font-size: 19px;
+  }
   .sumate .sumate-opts .opt .btns-container button,
 .quienes-somos .sumate-opts .opt .btns-container button {
     font-size: 19px;
@@ -527,6 +576,10 @@
 .quienes-somos .content .dropdown .article-preview .article-info-container .author p {
     font-size: 16px;
     line-height: 20px;
+  }
+  .sumate .content .dropdown .eje a,
+.quienes-somos .content .dropdown .eje a {
+    text-decoration: none;
   }
   .sumate .content .dropdown .eje .img-container img,
 .quienes-somos .content .dropdown .eje .img-container img {

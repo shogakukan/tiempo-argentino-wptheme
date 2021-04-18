@@ -40,15 +40,17 @@
                                     </div>
                                 </div>
                                 <div class="eje mt-4 mx-md-4">
-                                    <div class="img-container">
-                                        <img src="/assets/images/sumate-contenidos.svg" alt="">
-                                    </div>
-                                    <div class="title mt-3">
-                                        <h3>Contenidos</h3>
-                                    </div>
-                                    <div class="subtitle">
-                                        <p>Producciones propias de TA.</p>
-                                    </div>
+                                    <a href="#nosotrosFocus">
+                                        <div class="img-container">
+                                            <img src="/assets/images/sumate-contenidos.svg" alt="">
+                                        </div>
+                                        <div class="title mt-3">
+                                            <h3>Contenidos</h3>
+                                        </div>
+                                        <div class="subtitle">
+                                            <p>Producciones propias de TA.</p>
+                                        </div>
+                                    </a>
                                 </div>
                                 <div class="eje mt-4 mx-md-4">
                                     <div class="img-container">

@@ -6,9 +6,11 @@
             </div>
             <div class="py-3">
                 <div class="container">
+                    <a class="scrollTo" id="nosotrosFocus"></a>
                     <div class="section-title">
                         <h4>NOSOTROS</h4>
                     </div>
+
                 </div>
                 <div class="content mt-3">
                     <div class="container">

@@ -1,6 +1,10 @@
 @import "../variables";
 @import "../mixins";
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   color: var(--ta-negro-texto);
   overflow-x: hidden !important;
@@ -9,6 +13,13 @@ body {
 
 a {
   color: var(--ta-negro-texto) !important;
+
+  &.scrollTo {
+    display: block;
+    position: relative;
+    top: -100px;
+    visibility: hidden;
+  }
 }
 
 .logged-user {

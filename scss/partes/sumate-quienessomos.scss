@@ -41,6 +41,35 @@
         }
       }
 
+      .opt-details {
+        button {
+          @include button(var(--ta-negro-texto), transparent);
+
+          &:focus {
+            outline: none;
+          }
+
+          .dropdown-icon {
+            img {
+              transform: rotate(180deg);
+            }
+          }
+
+          p {
+            margin: 0;
+          }
+        }
+
+        .card-body {
+          padding: 10px;
+          h6 {
+            @include red-hat-400;
+            margin-left: 10px;
+            margin-bottom: 0;
+          }
+        }
+      }
+
       .btns-container {
         button {
           @include red-hat-900;
@@ -464,6 +493,24 @@
           }
         }
 
+        .opt-details {
+          button {
+            p {
+              font-size: 19px;
+            }
+          }
+
+          .card-body {
+            div {
+              margin-top: 5px;
+            }
+
+            h6 {
+              font-size: 19px;
+            }
+          }
+        }
+
         .btns-container {
           button {
             font-size: 19px;
@@ -550,6 +597,10 @@
         }
 
         .eje {
+          a {
+            text-decoration: none;
+          }
+
           .img-container {
             img {
               max-width: 190px;

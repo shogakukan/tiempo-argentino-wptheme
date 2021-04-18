@@ -3,8 +3,7 @@
         <div class="user-tabs">
             <ul class="nav nav-tabs justify-content-between justify-content-md-start" id="tab">
                 <li class="nav-item position-relative">
-                    <a class="nav-link d-flex flex-row-reverse active" id="profile-tab" data-toggle="tab"
-                        href="#autoridades">
+                    <a class="nav-link d-flex flex-row-reverse" id="profile-tab" data-toggle="tab" href="#autoridades">
                         <div></div>
                         <p>Autoridades</p>
                     </a>
@@ -16,7 +15,7 @@
                     </a>
                 </li>
                 <li class="nav-item position-relative ">
-                    <a class="nav-link d-flex flex-row-reverse" id="subscriptions-tab" data-toggle="tab"
+                    <a class="nav-link d-flex flex-row-reverse active" id="subscriptions-tab" data-toggle="tab"
                         href="#contenidos">
                         <div></div>
                         <p>Contenidos</p>
@@ -25,7 +24,7 @@
                 </li>
             </ul>
             <div class="tab-content">
-                <div class="tab-pane my-md-4 active" id="autoridades">
+                <div class="tab-pane my-md-4" id="autoridades">
                     <div class="d-flex flex-column flex-md-row flex-wrap">
                         <div class="member d-flex flex-md-column align-items-center m-2">
                             <div class="profile-img mr-2">
@@ -275,7 +274,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="tab-pane my-md-4" id="contenidos">
+                <div class="tab-pane my-md-4 active" id="contenidos">
                     <div class="categories-filter mt-3">
                         <div class="container">
                             <select class="form-select" aria-label="Filtro Categorías">
