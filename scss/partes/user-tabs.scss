@@ -194,7 +194,6 @@
 
             p {
               margin-bottom: 0;
-
               border-bottom: none;
               padding: 5px;
             }
@@ -579,9 +578,9 @@
                       }
                     }
                   }
-                }                
+                }
               }
-              
+
               .btns-container {
                 #finishEditingPersonalInfo,
                 #finishEditingDeliveryInfo {
@@ -830,7 +829,6 @@
                 margin: -35px auto 0 auto;
                 max-width: 50%;
                 min-height: 45px;
-            
               }
             }
           }
@@ -849,10 +847,9 @@
       .nav {
         &.nav-tabs {
           .nav-item {
-            
             .nav-link {
               p {
-                font-size: 16px;
+                font-size: 14px;
                 padding: 7px 15px;
               }
             }
@@ -909,10 +906,17 @@
           }
 
           .user-block {
-            .notifications, .comments, .saved {
-              .notif, .comment, .saved-article {
-                .notif-body, .comment-body, .saved-body {
-                  .title, .article-title {
+            .notifications,
+            .comments,
+            .saved {
+              .notif,
+              .comment,
+              .saved-article {
+                .notif-body,
+                .comment-body,
+                .saved-body {
+                  .title,
+                  .article-title {
                     p {
                       font-size: 21px;
                       line-height: 24px;
@@ -920,7 +924,8 @@
                     }
                   }
 
-                  .author, .date {
+                  .author,
+                  .date {
                     small {
                       font-size: 16px;
                     }
@@ -943,12 +948,11 @@
                     }
 
                     .comment {
-                        p {
-                          font-size: 19px;
-                          line-height: 25px;
-                          letter-spacing: -0.1px;
-                        }
-                      
+                      p {
+                        font-size: 19px;
+                        line-height: 25px;
+                        letter-spacing: -0.1px;
+                      }
                     }
                   }
                 }
@@ -958,7 +962,8 @@
 
           .account-info {
             .info-forms {
-              .personal-info, .delivery-info {
+              .personal-info,
+              .delivery-info {
                 .form-container {
                   max-width: 1030px;
 
@@ -982,14 +987,16 @@
                   }
                 }
 
-                .delivery-info-dropdown, .support {
+                .delivery-info-dropdown,
+                .support {
                   p {
                     font-size: 19px;
                     line-height: 25px;
                   }
                 }
-                
-                .collapse, .collapsing {
+
+                .collapse,
+                .collapsing {
                   .subtitle {
                     p {
                       font-size: 19px;
@@ -1002,32 +1009,32 @@
               .personal-info {
                 .form-container {
                   .input-container {
-                    &:nth-child(1) { 
-                      order: 1; 
+                    &:nth-child(1) {
+                      order: 1;
                     }
-                    
-                    &:nth-child(2) { 
-                      order: 3; 
+
+                    &:nth-child(2) {
+                      order: 3;
                     }
-  
-                    &:nth-child(3) { 
-                      order: 2; 
+
+                    &:nth-child(3) {
+                      order: 2;
                     }
-  
-                    &:nth-child(4) { 
-                      order: 4; 
+
+                    &:nth-child(4) {
+                      order: 4;
                     }
-  
-                    &:nth-child(5) { 
+
+                    &:nth-child(5) {
                       order: 5;
                     }
-  
-                    &:nth-child(6) { 
-                      order: 7; 
+
+                    &:nth-child(6) {
+                      order: 7;
                     }
-  
+
                     &:nth-child(7) {
-                       order: 6;
+                      order: 6;
                     }
                   }
                 }
@@ -1036,8 +1043,6 @@
           }
 
           .subs-block {
-            
-
             .description {
               h4 {
                 font-size: 39px;
@@ -1071,8 +1076,6 @@
                 }
               }
             }
-
-            
           }
 
           .news-list {
@@ -1088,11 +1091,13 @@
                   }
                 }
 
-                .freq, .email-address, .theme {
+                .freq,
+                .email-address,
+                .theme {
                   p {
                     font-size: 19px;
-                      line-height: 25px;
-                      letter-spacing: -0.1px;
+                    line-height: 25px;
+                    letter-spacing: -0.1px;
                   }
                 }
 
@@ -1106,7 +1111,24 @@
           }
         }
       }
+    }
+  }
+}
 
+@media (min-width: 1200px) {
+  .user-block-container {
+    .user-tabs {
+      .nav {
+        &.nav-tabs {
+          .nav-item {
+            .nav-link {
+              p {
+                font-size: 16px;
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
