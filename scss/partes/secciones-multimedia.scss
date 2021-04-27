@@ -1,0 +1,310 @@
+@import "../variables";
+@import "../mixins";
+
+.fotografia,
+.audiovisual,
+.podcasts,
+.talleres {
+  .category-title {
+    h4 {
+      font-size: 16px;
+      line-height: 21.17px;
+    }
+  }
+  .title {
+    @include caladea-400;
+    font-size: 27px;
+    line-height: 31px;
+    letter-spacing: -1px;
+
+    span {
+      @include caladea-700;
+    }
+  }
+
+  .content {
+    @include red-hat-400;
+    font-size: 19px;
+    line-height: 25px;
+    letter-spacing: -0.1px;
+  }
+
+  .author {
+    @include baskerville-italic;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .type {
+    @include red-hat-700;
+    font-size: 16px;
+    line-height: 21px;
+
+    &.podcast,
+    &.taller {
+      color: var(--ta-celeste);
+    }
+  }
+
+  .video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+  }
+
+  .video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .podcast-player {
+    .mejs__container {
+      width: 100% !important;
+      background: transparent;
+
+      .mejs__controls {
+        background: transparent;
+        padding: 0;
+        display: flex;
+        align-items: center;
+
+        .mejs__button {
+          position: relative;
+          button {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            border: 0 !important;
+            background: transparent;
+            outline: none;
+
+            &:focus {
+              outline: none;
+            }
+          }
+        }
+
+        .mejs__play,
+        .mejs__replay {
+          &:after {
+            position: absolute;
+            content: "";
+            background: url("/assets/images/play-podcast.svg") no-repeat;
+            width: 25px;
+            height: 25px;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+            transition: all 100ms linear;
+            pointer-events: none;
+          }
+        }
+
+        .mejs__pause {
+          &:after {
+            position: absolute;
+            content: "";
+            background: url("/assets/images/pause-podcast.svg") no-repeat;
+            width: 25px;
+            height: 25px;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+            transition: all 100ms linear;
+            pointer-events: none;
+          }
+        }
+
+        .mejs__time-rail {
+          padding: 0;
+          .mejs__time-total {
+            background-color: white;
+            height: 20px;
+            border-radius: 10px;
+            border: 1px solid var(--ta-gris-subtexto);
+            margin: 10px 0;
+            overflow: hidden;
+
+            &:focus {
+              outline: none;
+            }
+
+            .mejs__time-buffering,
+            .mejs__time-loaded,
+            .mejs__time-handle,
+            .mejs__time-current,
+            .mejs__time-hovered,
+            .mejs__time-float {
+              height: 100%;
+              border-radius: 10px;
+            }
+
+            .mejs__time-loaded {
+              height: 100%;
+              border-radius: 10px;
+            }
+
+            .mejs__time-current {
+              background: var(--ta-celeste) !important;
+            }
+          }
+
+          .mejs__time-handle-content {
+            display: none;
+          }
+        }
+
+        .mejs__time {
+          color: var(--ta-celeste);
+          padding: 0;
+          display: flex;
+          align-items: center;
+          width: 55px;
+          span {
+            @include red-hat-700;
+            font-size: 16px;
+            margin: 0 auto;
+            line-height: 21px;
+            color: var(--ta-gris-subtexto);
+          }
+        }
+      }
+    }
+  }
+
+  .taller-info {
+    p {
+      @include red-hat-400;
+      font-size: 15px;
+      line-height: 20px;
+      letter-spacing: -0.2px;
+      margin: 0;
+      span {
+        @include red-hat-700;
+      }
+    }
+  }
+
+  .discount {
+    p {
+      @include red-hat-900;
+      color: var(--ta-celeste);
+      font-weight: 900;
+      font-size: 15px;
+      line-height: 20px;
+      text-decoration-line: underline;
+    }
+  }
+
+  .btns-container {
+    button {
+      @include button(var(--ta-celeste), transparent, 2px solid #16a1dc);
+      width: 165px;
+      font-size: 15px;
+      line-height: 20px;
+      text-align: center;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.talleres {
+  .ta-articles-block {
+    .container {
+      border: 1px solid var(--ta-gris-subtexto);
+    }
+
+    .article-preview {
+      .title {
+        p {
+          @include red-hat-500;
+          font-size: 17px;
+          line-height: 22px;
+          letter-spacing: -0.2px;
+        }
+      }
+    }
+  }
+}
+
+.podcasts {
+  .ta-articles-block {
+    .article-preview {
+      .content {
+        .title {
+          p {
+            @include red-hat-400;
+            font-size: 19px;
+            line-height: 25px;
+            letter-spacing: -0.1px;
+
+            span {
+              @include red-hat-700;
+            }
+          }
+        }
+      }
+
+      .podcast-player {
+        background-color: var(--ta-celeste-fondos);
+        border: 1px solid var(--ta-celeste);
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .fotografia,
+  .audiovisual,
+  .talleres {
+    .author {
+      color: var(--ta-gris-subtexto);
+    }
+
+    .btns-container {
+      button {
+        width: 200px;
+        font-size: 19px;
+        line-height: 25px;
+      }
+    }
+
+    .taller-info {
+      p {
+        font-size: 19px;
+        line-height: 25px;
+        letter-spacing: -0.1px;
+      }
+    }
+
+    .discount {
+      p {
+        font-size: 19px;
+        line-height: 25px;
+      }
+    }
+  }
+
+  .talleres {
+    .ta-articles-block {
+      .article-preview {
+        .title {
+          p {
+            @include red-hat-500;
+            font-size: 24px;
+            line-height: 32px;
+            letter-spacing: -0.2px;
+          }
+        }
+      }
+    }
+  }
+}

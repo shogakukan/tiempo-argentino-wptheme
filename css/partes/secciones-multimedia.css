@@ -1,0 +1,400 @@
+:root {
+  --ta-celeste: #16a1dc;
+  --ta-gris-fondos: #ebf1f2;
+  --ta-gris-imagen: #ebebeb;
+  --ta-celeste-fondos: #ebf7fe;
+  --ta-negro-texto: #252b2d;
+  --ta-gris-subtexto: #849899;
+  --ta-socios: #ffbb0f;
+  --ta-socios-fondos: #ffe7a9;
+  --ta-socios-fondos2: #fff4d8;
+  --ta-espectaculos: #ce0d54;
+  --ta-espectaculos-bg: #f9f2f6;
+  --ta-cultura: #48b1a7;
+  --ta-cultura-bg: #e0fbf9;
+  --ta-deportes: #ee813c;
+  --ta-deportes-bg: #fff3ec;
+  --ta-ambiental: #5e852a;
+  --ta-ambiental-bg: #f4f8ee;
+  --ta-habitat: #ba5749;
+  --ta-habitat-bg: #fff4f3;
+  --ta-medios: #5d9dd6;
+  --ta-medios-bg: #f3f9ff;
+}
+
+.fotografia .category-title h4,
+.audiovisual .category-title h4,
+.podcasts .category-title h4,
+.talleres .category-title h4 {
+  font-size: 16px;
+  line-height: 21.17px;
+}
+.fotografia .title,
+.audiovisual .title,
+.podcasts .title,
+.talleres .title {
+  font-family: "Caladea";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 27px;
+  line-height: 31px;
+  letter-spacing: -1px;
+}
+.fotografia .title span,
+.audiovisual .title span,
+.podcasts .title span,
+.talleres .title span {
+  font-family: "Caladea";
+  font-style: normal;
+  font-weight: 700;
+}
+.fotografia .content,
+.audiovisual .content,
+.podcasts .content,
+.talleres .content {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 25px;
+  letter-spacing: -0.1px;
+}
+.fotografia .author,
+.audiovisual .author,
+.podcasts .author,
+.talleres .author {
+  font-family: "Libre Baskerville";
+  font-style: italic;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+}
+.fotografia .type,
+.audiovisual .type,
+.podcasts .type,
+.talleres .type {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 21px;
+}
+.fotografia .type.podcast, .fotografia .type.taller,
+.audiovisual .type.podcast,
+.audiovisual .type.taller,
+.podcasts .type.podcast,
+.podcasts .type.taller,
+.talleres .type.podcast,
+.talleres .type.taller {
+  color: var(--ta-celeste);
+}
+.fotografia .video-wrapper,
+.audiovisual .video-wrapper,
+.podcasts .video-wrapper,
+.talleres .video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  /* 16:9 */
+  height: 0;
+}
+.fotografia .video-wrapper iframe,
+.audiovisual .video-wrapper iframe,
+.podcasts .video-wrapper iframe,
+.talleres .video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.fotografia .podcast-player .mejs__container,
+.audiovisual .podcast-player .mejs__container,
+.podcasts .podcast-player .mejs__container,
+.talleres .podcast-player .mejs__container {
+  width: 100% !important;
+  background: transparent;
+}
+.fotografia .podcast-player .mejs__container .mejs__controls,
+.audiovisual .podcast-player .mejs__container .mejs__controls,
+.podcasts .podcast-player .mejs__container .mejs__controls,
+.talleres .podcast-player .mejs__container .mejs__controls {
+  background: transparent;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+.fotografia .podcast-player .mejs__container .mejs__controls .mejs__button,
+.audiovisual .podcast-player .mejs__container .mejs__controls .mejs__button,
+.podcasts .podcast-player .mejs__container .mejs__controls .mejs__button,
+.talleres .podcast-player .mejs__container .mejs__controls .mejs__button {
+  position: relative;
+}
+.fotografia .podcast-player .mejs__container .mejs__controls .mejs__button button,
+.audiovisual .podcast-player .mejs__container .mejs__controls .mejs__button button,
+.podcasts .podcast-player .mejs__container .mejs__controls .mejs__button button,
+.talleres .podcast-player .mejs__container .mejs__controls .mejs__button button {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  border: 0 !important;
+  background: transparent;
+  outline: none;
+}
+.fotografia .podcast-player .mejs__container .mejs__controls .mejs__button button:focus,
+.audiovisual .podcast-player .mejs__container .mejs__controls .mejs__button button:focus,
+.podcasts .podcast-player .mejs__container .mejs__controls .mejs__button button:focus,
+.talleres .podcast-player .mejs__container .mejs__controls .mejs__button button:focus {
+  outline: none;
+}
+.fotografia .podcast-player .mejs__container .mejs__controls .mejs__play:after,
+.fotografia .podcast-player .mejs__container .mejs__controls .mejs__replay:after,
+.audiovisual .podcast-player .mejs__container .mejs__controls .mejs__play:after,
+.audiovisual .podcast-player .mejs__container .mejs__controls .mejs__replay:after,
+.podcasts .podcast-player .mejs__container .mejs__controls .mejs__play:after,
+.podcasts .podcast-player .mejs__container .mejs__controls .mejs__replay:after,
+.talleres .podcast-player .mejs__container .mejs__controls .mejs__play:after,
+.talleres .podcast-player .mejs__container .mejs__controls .mejs__replay:after {
+  position: absolute;
+  content: "";
+  background: url("/assets/images/play-podcast.svg") no-repeat;
+  width: 25px;
+  height: 25px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  transition: all 100ms linear;
+  pointer-events: none;
+}
+.fotografia .podcast-player .mejs__container .mejs__controls .mejs__pause:after,
+.audiovisual .podcast-player .mejs__container .mejs__controls .mejs__pause:after,
+.podcasts .podcast-player .mejs__container .mejs__controls .mejs__pause:after,
+.talleres .podcast-player .mejs__container .mejs__controls .mejs__pause:after {
+  position: absolute;
+  content: "";
+  background: url("/assets/images/pause-podcast.svg") no-repeat;
+  width: 25px;
+  height: 25px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  transition: all 100ms linear;
+  pointer-events: none;
+}
+.fotografia .podcast-player .mejs__container .mejs__controls .mejs__time-rail,
+.audiovisual .podcast-player .mejs__container .mejs__controls .mejs__time-rail,
+.podcasts .podcast-player .mejs__container .mejs__controls .mejs__time-rail,
+.talleres .podcast-player .mejs__container .mejs__controls .mejs__time-rail {
+  padding: 0;
+}
+.fotografia .podcast-player .mejs__container .mejs__controls .mejs__time-rail .mejs__time-total,
+.audiovisual .podcast-player .mejs__container .mejs__controls .mejs__time-rail .mejs__time-total,
+.podcasts .podcast-player .mejs__container .mejs__controls .mejs__time-rail .mejs__time-total,
+.talleres .podcast-player .mejs__container .mejs__controls .mejs__time-rail .mejs__time-total {
+  background-color: white;
+  height: 20px;
+  border-radius: 10px;
+  border: 1px solid var(--ta-gris-subtexto);
+  margin: 10px 0;
+  overflow: hidden;
+}
+.fotografia .podcast-player .mejs__container .mejs__controls .mejs__time-rail .mejs__time-total:focus,
+.audiovisual .podcast-player .mejs__container .mejs__controls .mejs__time-rail .mejs__time-total:focus,
+.podcasts .podcast-player .mejs__container .mejs__controls .mejs__time-rail .mejs__time-total:focus,
+.talleres .podcast-player .mejs__container .mejs__controls .mejs__time-rail .mejs__time-total:focus {
+  outline: none;
+}
+.fotografia .podcast-player .mejs__container .mejs__controls .mejs__time-rail .mejs__time-total .mejs__time-buffering,
+.fotografia .podcast-player .mejs__container .mejs__controls .mejs__time-rail .mejs__time-total .mejs__time-loaded,
+.fotografia .podcast-player .mejs__container .mejs__controls .mejs__time-rail .mejs__time-total .mejs__time-handle,
+.fotografia .podcast-player .mejs__container .mejs__controls .mejs__time-rail .mejs__time-total .mejs__time-current,
+.fotografia .podcast-player .mejs__container .mejs__controls .mejs__time-rail .mejs__time-total .mejs__time-hovered,
+.fotografia .podcast-player .mejs__container .mejs__controls .mejs__time-rail .mejs__time-total .mejs__time-float,
+.audiovisual .podcast-player .mejs__container .mejs__controls .mejs__time-rail .mejs__time-total .mejs__time-buffering,
+.audiovisual .podcast-player .mejs__container .mejs__controls .mejs__time-rail .mejs__time-total .mejs__time-loaded,
+.audiovisual .podcast-player .mejs__container .mejs__controls .mejs__time-rail .mejs__time-total .mejs__time-handle,
+.audiovisual .podcast-player .mejs__container .mejs__controls .mejs__time-rail .mejs__time-total .mejs__time-current,
+.audiovisual .podcast-player .mejs__container .mejs__controls .mejs__time-rail .mejs__time-total .mejs__time-hovered,
+.audiovisual .podcast-player .mejs__container .mejs__controls .mejs__time-rail .mejs__time-total .mejs__time-float,
+.podcasts .podcast-player .mejs__container .mejs__controls .mejs__time-rail .mejs__time-total .mejs__time-buffering,
+.podcasts .podcast-player .mejs__container .mejs__controls .mejs__time-rail .mejs__time-total .mejs__time-loaded,
+.podcasts .podcast-player .mejs__container .mejs__controls .mejs__time-rail .mejs__time-total .mejs__time-handle,
+.podcasts .podcast-player .mejs__container .mejs__controls .mejs__time-rail .mejs__time-total .mejs__time-current,
+.podcasts .podcast-player .mejs__container .mejs__controls .mejs__time-rail .mejs__time-total .mejs__time-hovered,
+.podcasts .podcast-player .mejs__container .mejs__controls .mejs__time-rail .mejs__time-total .mejs__time-float,
+.talleres .podcast-player .mejs__container .mejs__controls .mejs__time-rail .mejs__time-total .mejs__time-buffering,
+.talleres .podcast-player .mejs__container .mejs__controls .mejs__time-rail .mejs__time-total .mejs__time-loaded,
+.talleres .podcast-player .mejs__container .mejs__controls .mejs__time-rail .mejs__time-total .mejs__time-handle,
+.talleres .podcast-player .mejs__container .mejs__controls .mejs__time-rail .mejs__time-total .mejs__time-current,
+.talleres .podcast-player .mejs__container .mejs__controls .mejs__time-rail .mejs__time-total .mejs__time-hovered,
+.talleres .podcast-player .mejs__container .mejs__controls .mejs__time-rail .mejs__time-total .mejs__time-float {
+  height: 100%;
+  border-radius: 10px;
+}
+.fotografia .podcast-player .mejs__container .mejs__controls .mejs__time-rail .mejs__time-total .mejs__time-loaded,
+.audiovisual .podcast-player .mejs__container .mejs__controls .mejs__time-rail .mejs__time-total .mejs__time-loaded,
+.podcasts .podcast-player .mejs__container .mejs__controls .mejs__time-rail .mejs__time-total .mejs__time-loaded,
+.talleres .podcast-player .mejs__container .mejs__controls .mejs__time-rail .mejs__time-total .mejs__time-loaded {
+  height: 100%;
+  border-radius: 10px;
+}
+.fotografia .podcast-player .mejs__container .mejs__controls .mejs__time-rail .mejs__time-total .mejs__time-current,
+.audiovisual .podcast-player .mejs__container .mejs__controls .mejs__time-rail .mejs__time-total .mejs__time-current,
+.podcasts .podcast-player .mejs__container .mejs__controls .mejs__time-rail .mejs__time-total .mejs__time-current,
+.talleres .podcast-player .mejs__container .mejs__controls .mejs__time-rail .mejs__time-total .mejs__time-current {
+  background: var(--ta-celeste) !important;
+}
+.fotografia .podcast-player .mejs__container .mejs__controls .mejs__time-rail .mejs__time-handle-content,
+.audiovisual .podcast-player .mejs__container .mejs__controls .mejs__time-rail .mejs__time-handle-content,
+.podcasts .podcast-player .mejs__container .mejs__controls .mejs__time-rail .mejs__time-handle-content,
+.talleres .podcast-player .mejs__container .mejs__controls .mejs__time-rail .mejs__time-handle-content {
+  display: none;
+}
+.fotografia .podcast-player .mejs__container .mejs__controls .mejs__time,
+.audiovisual .podcast-player .mejs__container .mejs__controls .mejs__time,
+.podcasts .podcast-player .mejs__container .mejs__controls .mejs__time,
+.talleres .podcast-player .mejs__container .mejs__controls .mejs__time {
+  color: var(--ta-celeste);
+  padding: 0;
+  display: flex;
+  align-items: center;
+  width: 55px;
+}
+.fotografia .podcast-player .mejs__container .mejs__controls .mejs__time span,
+.audiovisual .podcast-player .mejs__container .mejs__controls .mejs__time span,
+.podcasts .podcast-player .mejs__container .mejs__controls .mejs__time span,
+.talleres .podcast-player .mejs__container .mejs__controls .mejs__time span {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  margin: 0 auto;
+  line-height: 21px;
+  color: var(--ta-gris-subtexto);
+}
+.fotografia .taller-info p,
+.audiovisual .taller-info p,
+.podcasts .taller-info p,
+.talleres .taller-info p {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: -0.2px;
+  margin: 0;
+}
+.fotografia .taller-info p span,
+.audiovisual .taller-info p span,
+.podcasts .taller-info p span,
+.talleres .taller-info p span {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 700;
+}
+.fotografia .discount p,
+.audiovisual .discount p,
+.podcasts .discount p,
+.talleres .discount p {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 900;
+  color: var(--ta-celeste);
+  font-weight: 900;
+  font-size: 15px;
+  line-height: 20px;
+  text-decoration-line: underline;
+}
+.fotografia .btns-container button,
+.audiovisual .btns-container button,
+.podcasts .btns-container button,
+.talleres .btns-container button {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 900;
+  background-color: transparent;
+  border: 2px solid #16a1dc;
+  color: var(--ta-celeste);
+  font-size: 15px;
+  left: 50%;
+  line-height: 20px;
+  padding: 4px 10px;
+  width: 165px;
+  font-size: 15px;
+  line-height: 20px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.talleres .ta-articles-block .container {
+  border: 1px solid var(--ta-gris-subtexto);
+}
+.talleres .ta-articles-block .article-preview .title p {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 22px;
+  letter-spacing: -0.2px;
+}
+
+.podcasts .ta-articles-block .article-preview .content .title p {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 25px;
+  letter-spacing: -0.1px;
+}
+.podcasts .ta-articles-block .article-preview .content .title p span {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 700;
+}
+.podcasts .ta-articles-block .article-preview .podcast-player {
+  background-color: var(--ta-celeste-fondos);
+  border: 1px solid var(--ta-celeste);
+}
+
+@media (min-width: 992px) {
+  .fotografia .author,
+.audiovisual .author,
+.talleres .author {
+    color: var(--ta-gris-subtexto);
+  }
+  .fotografia .btns-container button,
+.audiovisual .btns-container button,
+.talleres .btns-container button {
+    width: 200px;
+    font-size: 19px;
+    line-height: 25px;
+  }
+  .fotografia .taller-info p,
+.audiovisual .taller-info p,
+.talleres .taller-info p {
+    font-size: 19px;
+    line-height: 25px;
+    letter-spacing: -0.1px;
+  }
+  .fotografia .discount p,
+.audiovisual .discount p,
+.talleres .discount p {
+    font-size: 19px;
+    line-height: 25px;
+  }
+
+  .talleres .ta-articles-block .article-preview .title p {
+    font-family: "Red Hat Display";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: -0.2px;
+  }
+}
+
+/*# sourceMappingURL=secciones-multimedia.css.map */
