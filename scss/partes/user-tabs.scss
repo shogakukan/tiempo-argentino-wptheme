@@ -815,6 +815,60 @@
         }
       }
     }
+
+    &.mas-leidas {
+      .nav {
+        &.nav-tabs {
+          .nav-item {
+            .nav-link {
+              @include red-hat-900;
+              color: var(--ta-gris-subtexto) !important;
+              &.active {
+                &#related-tab {
+                  div {
+                    border-right: 1px solid var(--ta-celeste);
+                    border-top: 1px solid var(--ta-celeste);
+                  }
+                  p {
+                    border-color: var(--ta-celeste);
+                    color: var(--ta-celeste);
+                  }
+                }
+
+                &#most-read-tab {
+                  div {
+                    border-right: 1px solid var(--ta-negro-texto);
+                    border-top: 1px solid var(--ta-negro-texto);
+                  }
+                  p {
+                    border-color: var(--ta-negro-texto);
+                    color: var(--ta-negro-texto);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .tab-content {
+        border: none;
+
+        .tab-pane {
+          &.active {
+            &#related {
+              border: 1px solid var(--ta-celeste);
+              border-top: none;
+            }
+
+            &#most-read {
+              border: 1px solid var(--ta-negro-texto);
+              border-top: none;
+            }
+          }
+        }
+      }
+    }
   }
 }
 

@@ -1059,6 +1059,39 @@
 .user-block-container .user-tabs .tab-content .tab-pane .subs-block .clearall .btns-container button {
   max-width: 100%;
 }
+.user-block-container .user-tabs.mas-leidas .nav.nav-tabs .nav-item .nav-link {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 900;
+  color: var(--ta-gris-subtexto) !important;
+}
+.user-block-container .user-tabs.mas-leidas .nav.nav-tabs .nav-item .nav-link.active#related-tab div {
+  border-right: 1px solid var(--ta-celeste);
+  border-top: 1px solid var(--ta-celeste);
+}
+.user-block-container .user-tabs.mas-leidas .nav.nav-tabs .nav-item .nav-link.active#related-tab p {
+  border-color: var(--ta-celeste);
+  color: var(--ta-celeste);
+}
+.user-block-container .user-tabs.mas-leidas .nav.nav-tabs .nav-item .nav-link.active#most-read-tab div {
+  border-right: 1px solid var(--ta-negro-texto);
+  border-top: 1px solid var(--ta-negro-texto);
+}
+.user-block-container .user-tabs.mas-leidas .nav.nav-tabs .nav-item .nav-link.active#most-read-tab p {
+  border-color: var(--ta-negro-texto);
+  color: var(--ta-negro-texto);
+}
+.user-block-container .user-tabs.mas-leidas .tab-content {
+  border: none;
+}
+.user-block-container .user-tabs.mas-leidas .tab-content .tab-pane.active#related {
+  border: 1px solid var(--ta-celeste);
+  border-top: none;
+}
+.user-block-container .user-tabs.mas-leidas .tab-content .tab-pane.active#most-read {
+  border: 1px solid var(--ta-negro-texto);
+  border-top: none;
+}
 
 @media (min-width: 778px) {
   .user-block-container .user-tabs .tab-content .tab-pane .subs-block .plan-container .title {
