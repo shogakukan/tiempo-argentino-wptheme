@@ -13,7 +13,7 @@
                 <div class="col-12 col-md-4 text-left mt-3 mt-md-0">
                     <p class="title mt-3"><span>Formación en Tiempo: </span>está abierta la inscripción de la edición
                         Verano 21</p>
-                    <p class="content d-none d-md-block">Ya te podés inscribir en la cursada virtual de Género y
+                    <p class="content">Ya te podés inscribir en la cursada virtual de Género y
                         comunicación, Fotografía documental y Redacción periodística que inicia en febrero. Con nuevos
                         contenidos, enfoques y recursos a distancia.</p>
                     <div class="d-flex flex-row align-items-start">
@@ -32,9 +32,14 @@
                         <div class="discount mt-2">
                             <p>(25% dto. para Socios)</p>
                         </div>
-                        <div class="btns-container text-center mt-5">
-                            <button>Saber más</button>
-                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container d-md-flex">
+                <div class="col-12 col-md-8"></div>
+                <div class="col-12 col-md-4 mt-3 mt-md-0">
+                    <div class="btns-container text-center">
+                        <button>Saber más</button>
                     </div>
                 </div>
             </div>

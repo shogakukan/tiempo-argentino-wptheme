@@ -10,6 +10,20 @@
       font-size: 16px;
       line-height: 21.17px;
     }
+
+    &.play-icon {
+      h4 {
+        &::before {
+          content: "";
+          display: block;
+          background: url("/assets/images/play-icon-category.svg") no-repeat;
+          width: 20px;
+          height: 20px;
+          float: left;
+          margin: 0 6px 0 0;
+        }
+      }
+    }
   }
   .title {
     @include caladea-400;
@@ -27,9 +41,9 @@
     font-size: 19px;
     line-height: 25px;
     letter-spacing: -0.1px;
-  }
-
+  } 
   .author {
+    color: var(--ta-gris-subtexto);
     @include baskerville-italic;
     font-size: 16px;
     line-height: 20px;
@@ -265,10 +279,6 @@
   .fotografia,
   .audiovisual,
   .talleres {
-    .author {
-      color: var(--ta-gris-subtexto);
-    }
-
     .btns-container {
       button {
         width: 200px;

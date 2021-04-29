@@ -17,11 +17,11 @@
                 </div>
                 <div class="col-12 col-md-4 text-left mt-3 mt-md-0">
                     <div class="article-border"></div>
-                    <div class="category-title">
-                        <h4>agenda virtual</h4>
+                    <div class="category-title play-icon">
+                        <h4>video</h4>
                     </div>
-                    <p class="title mt-3">Fumigan, desmontan, queman, también en cuarentena</p>
-                    <p class="content d-none d-md-block">Aún en el actual contexto de aislamiento obligatorio por la
+                    <p class="title mt-3"><span>Fumigan, desmontan, queman, también en cuarentena</span></p>
+                    <p class="content">Aún en el actual contexto de aislamiento obligatorio por la
                         pandemia mundial de Covid-19, la desforestación, las fumigaciones con agrotóxicos o la quema
                         descontrolada de pastizales en el Delta, no sólo no se detuvieron, sino que se profundizaron.
                         Aún en el actual contexto de aislamiento obligatorio por la

@@ -29,6 +29,18 @@
   font-size: 16px;
   line-height: 21.17px;
 }
+.fotografia .category-title.play-icon h4::before,
+.audiovisual .category-title.play-icon h4::before,
+.podcasts .category-title.play-icon h4::before,
+.talleres .category-title.play-icon h4::before {
+  content: "";
+  display: block;
+  background: url("/assets/images/play-icon-category.svg") no-repeat;
+  width: 20px;
+  height: 20px;
+  float: left;
+  margin: 0 6px 0 0;
+}
 .fotografia .title,
 .audiovisual .title,
 .podcasts .title,
@@ -63,6 +75,7 @@
 .audiovisual .author,
 .podcasts .author,
 .talleres .author {
+  color: var(--ta-gris-subtexto);
   font-family: "Libre Baskerville";
   font-style: italic;
   font-weight: 400;
@@ -361,11 +374,6 @@
 }
 
 @media (min-width: 992px) {
-  .fotografia .author,
-.audiovisual .author,
-.talleres .author {
-    color: var(--ta-gris-subtexto);
-  }
   .fotografia .btns-container button,
 .audiovisual .btns-container button,
 .talleres .btns-container button {
