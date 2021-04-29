@@ -86,6 +86,13 @@
     <?php include_once($_SERVER["DOCUMENT_ROOT"] . "/partes/footer.php");  ?>
 
     <script src="/js/index.js"></script>
+    <script>
+        if ($("#tab .nav-item").length < 2) {
+            $("#tab").addClass('single-tab')
+
+            $(".tab-content").addClass("single-tab-content")
+        }
+    </script>
 </body>
 
 </html>

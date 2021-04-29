@@ -915,6 +915,27 @@ a.scrollTo {
   line-height: 16.5px;
 }
 
+.mas-leidas #tab.single-tab {
+  background-color: white;
+  border-top: 1px solid var(--ta-negro-texto);
+  border-right: 1px solid var(--ta-negro-texto);
+  border-color: var(--ta-celeste);
+}
+.mas-leidas #tab.single-tab .nav-item .nav-link > div {
+  display: none;
+}
+.mas-leidas #tab.single-tab .nav-item .nav-link p {
+  padding-top: 20px;
+  padding-bottom: 30px;
+  border-top: none;
+  border-color: var(--ta-celeste) !important;
+  color: var(--ta-celeste) !important;
+}
+.mas-leidas .single-tab-content .tab-pane {
+  border-color: var(--ta-celeste) !important;
+  padding-top: 50px !important;
+}
+
 .footer-content .tiempo-logo {
   max-width: 75%;
 }
