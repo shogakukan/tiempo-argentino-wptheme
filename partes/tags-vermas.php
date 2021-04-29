@@ -40,14 +40,6 @@
             </div>
             <div class="triangle"></div>
         </div>
-        <div class="tag selected d-flex justify-content-center my-2">
-            <div class="content p-1">
-                <a href="">
-                    <p class="m-0">Género</p>
-                </a>
-            </div>
-            <div class="triangle"></div>
-        </div>
         <div class="btns-container d-none d-md-flex align-items-center">
             <button type="button" data-toggle="collapse" data-target="#seeAllTags" aria-expanded="false"
                 aria-controls="seeAllTags" class="collapsed">ver más<img src="/assets/images/right-arrow.png" alt=""

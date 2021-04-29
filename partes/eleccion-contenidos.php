@@ -18,10 +18,12 @@
                         <div>
                             <p>Selecciona los <span>temas que te interesan</span> y sobre los que querés informarte:</p>
                         </div>
-                        <?php include('../../partes/tags.php');  ?>
+                        
+                        <?php include_once($_SERVER["DOCUMENT_ROOT"] . "/partes/tags-vermas.php");  ?>
+        
                     </div>
                     <div class="ver-mas d-flex justify-content-center mt-4">
-                        <button>VER MÁS</button>
+                        <button>LISTO</button>
                     </div>
                 </div>
             </div>
