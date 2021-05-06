@@ -23,7 +23,7 @@
                     <a href="">
                         <img src="../../assets/images/comentar.svg" alt="" />
                     </a>
-                    <a href="">
+                    <a tabindex="0" id="share-popover" data-bs-toggle="popover" data-bs-trigger="focus">
                         <img src="../../assets/images/compartir.svg" alt="" />
                     </a>
                     <a href="">

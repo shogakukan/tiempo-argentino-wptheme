@@ -43,6 +43,35 @@
     <?php include_once($_SERVER["DOCUMENT_ROOT"] . "/partes/podes-leer.php");  ?>
     <?php include_once($_SERVER["DOCUMENT_ROOT"] . "/partes/footer.php");  ?>
     <script src="/js/index.js"></script>
+    <script>
+    $("#share-popover").popover({
+        placement: 'bottom',
+        trigger: 'focus',
+        template: '<div class="popover share" role="tooltip"><div class="arrow"></div><h3 class="popover-header"></h3><div class="popover-body"></div></div>',
+        html: true,
+        sanitize: false,
+        title: '',
+        content: function() {
+            return '<ul class="d-flex justify-content-between m-0">' +
+                '<li class="mr-2 mt-0">' +
+                '<a href="">' +
+                '<img class="img-fluid m-0" src="/assets/images/fb-share-popover.svg">' +
+                '</a>' +
+                '</li>' +
+                '<li class="mr-2 mt-0">' +
+                '<a href="">' +
+                '<img class="img-fluid m-0" src="/assets/images/whatsapp-share-popover.svg">' +
+                '</a>' +
+                '</li>' +
+                '<li class="mt-0">' +
+                '<a href="">' +
+                '<img class="img-fluid m-0" src="/assets/images/twitter-share-popover.svg">' +
+                '</a>' +
+                '</li>' +
+                '</ul>';
+        }
+    })
+    </script>
 </body>
 
 </html>

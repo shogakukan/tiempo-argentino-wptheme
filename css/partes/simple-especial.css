@@ -7,6 +7,7 @@
   --ta-gris-subtexto: #849899;
   --ta-socios: #ffbb0f;
   --ta-socios-fondos: #ffe7a9;
+  --ta-socios-fondos2: #fff4d8;
   --ta-espectaculos: #ce0d54;
   --ta-espectaculos-bg: #f9f2f6;
   --ta-cultura: #48b1a7;
@@ -268,6 +269,49 @@
   color: white;
 }
 
+.popover {
+  margin: 0 auto;
+  background-color: var(--ta-celeste-fondos);
+}
+.popover.share {
+  top: 25px !important;
+  border-radius: 0 !important;
+  border-color: var(--ta-celeste) !important;
+  min-width: max-content !important;
+}
+.popover.share .arrow::before {
+  border-bottom-color: var(--ta-celeste) !important;
+}
+.popover.share .arrow::after {
+  border-bottom-color: var(--ta-celeste-fondos) !important;
+}
+.popover.share .popover-header {
+  background-color: var(--ta-celeste-fondos);
+  border: none;
+}
+.popover.share .popover-body {
+  padding: 5px !important;
+}
+.popover.share .popover-body ul {
+  padding: 0;
+}
+.popover.share .popover-body ul li {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 500;
+  align-items: center;
+  display: flex;
+  font-size: 17px;
+  letter-spacing: -0.2px;
+  line-height: 22px;
+  list-style: none;
+  margin-top: 5px;
+  max-width: 30px;
+}
+.popover.share .popover-body ul li a {
+  display: block;
+}
+
 @media (min-width: 992px) {
   .articulo-simple .img-container .img-wrapper,
 .articulo-especial .img-container .img-wrapper {
@@ -286,6 +330,14 @@
   .articulo-simple .art-column-w-padding,
 .articulo-especial .art-column-w-padding {
     padding-left: 85px;
+  }
+
+  .popover.share .popover-body {
+    padding: 15px 12px !important;
+  }
+  .popover.share .popover-body ul li {
+    max-width: 39px;
+    width: 100%;
   }
 }
 @media (min-width: 1200px) {
