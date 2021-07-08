@@ -15,8 +15,12 @@
             <div class="separator"></div>
         </div>
 
+<<<<<<< HEAD
         <?php //include_once(TA_THEME_PATH . '/markup/partes/mas-leidas.php');
         ?>
+=======
+        <?php include_once(TA_THEME_PATH . '/markup/partes/mas-leidas.php');?>
+>>>>>>> 893cc672e55cd8caf2a840784d5ceff408321d1e
     </div>
     <div class="container-md mb-2 p-0 d-none d-md-block">
         <div class="separator"></div>
