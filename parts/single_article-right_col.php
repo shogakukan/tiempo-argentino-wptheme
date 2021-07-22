@@ -15,7 +15,7 @@
             <div class="separator"></div>
         </div>
 
-        <?php //include_once(TA_THEME_PATH . '/markup/partes/mas-leidas.php');
+        <?php include_once(TA_THEME_PATH . '/markup/partes/mas-leidas.php');
         ?>
 
     </div>
