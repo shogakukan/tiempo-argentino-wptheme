@@ -14,7 +14,7 @@ define('TA_ASSETS_URL', TA_THEME_URL . "/assets");
 define('TA_IMAGES_URL', TA_ASSETS_URL . "/img");
 define('TA_ASSETS_CSS_URL', TA_THEME_URL . "/css");
 define('TA_ASSETS_JS_URL', TA_THEME_URL . "/js");
-define('TA_THEME_VERSION','1.2');
+define('TA_THEME_VERSION','1.2.1');
 
 require_once TA_THEME_PATH . '/inc/gen-base-theme/gen-base-theme.php';
 require_once TA_THEME_PATH . '/inc/rewrite-rules.php';
@@ -279,16 +279,19 @@ class TA_Theme
 			),
 		);
 
-		// TODO: Mover esto a su propio method. Controlar valor devuelvto por el WP_Query
 		add_action('wp_footer', function(){
+			// Se les hace accesibles variables relacionadas al balanceador a los scripts del componente
+			// de mas leidas y notas balancedas.
 			wp_localize_script(
-				'ta-balancer-front-block-js',
+				'ta-balancer-front-block-js', // utilizado tambien por ta-mas-leidas-front-js
 				'TABalancerApiData',
 				array(
 					'mostViewed' 			=> wp_list_pluck(self::$latest_most_viewed, 'ID'),
 					'apiEndpoint'			=> TA_Balancer_DB::get_api_endpoint(),
 					'themeUrl'				=> TA_THEME_URL,
 					'articlesShownOnRender'	=> ta_get_articles_previews_shown_ids(),
+					'balancerDaysAgo'		=> get_option('balancer_editorial_days') ?? 20,
+					'masLeidasDaysAgo'		=> 10,
 				),
 			);
 		});
@@ -404,6 +407,7 @@ class TA_Theme
 		remove_meta_box('dashboard_right_now', 'dashboard', 'normal');
 		remove_meta_box('dashboard_activity', 'dashboard', 'normal'); //since 3.8
 	}
+
 }
 
 TA_Theme::initialize();
@@ -608,4 +612,27 @@ add_filter('manage_edit-ta_article_sortable_columns', 'author_order_column');
 function author_order_column($columns){
 	$columns['author'] = 'author';
 	return $columns;
+}
+
+//deactivate new widgets
+add_filter( 'use_widgets_block_editor', '__return_false' );
+
+function subscription_user_type($user_id)
+{
+	if(is_user_logged_in()) {
+		$user_subscription = get_user_meta($user_id,'suscription',true);
+		$suscription_type = get_post_meta($user_subscription,'_is_type',true);
+		return $suscription_type;
+	}
+
+	return false;
+}
+
+function user_active($user_id) {
+	if(is_user_logged_in()) {
+		$user_active = get_user_meta(wp_get_current_user()->ID, '_user_status', true);
+		return $user_active;
+	}
+
+	return false;
 }
