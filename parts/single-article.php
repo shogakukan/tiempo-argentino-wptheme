@@ -56,8 +56,15 @@ $authors = $article->authors;
                         <?php endif; ?>
 
                         <?php get_template_part('parts/article','authors_data', array( 'article' => $article )); ?>
-
-                        <div class="article-body mt-3">
+                        
+                        <?php if (is_active_sidebar('note_mob_7')) { ?>
+                            <div class="row d-flex">
+                                <div class="col-12 d-block d-md-none d-sm-none mx-auto text-center mt-3">
+                                    <?php dynamic_sidebar('note_mob_7'); ?>
+                                </div>
+                            </div>
+                    <?php } ?>
+                           <div class="article-body mt-3">
                             <div class="art-column-w-lpadding">
                                 <?php echo apply_filters( 'the_content', $article->content ); ?>
                             </div>
@@ -73,11 +80,11 @@ $authors = $article->authors;
 
 
             <?php include_once(TA_THEME_PATH . '/markup/partes/tags.php');  ?>
-            <?php if (is_active_sidebar('note_mob_1')) { ?>
+            <?php if (is_active_sidebar('note_mob_2')) { ?>
 
                 <div class="row d-flex d-block d-sm-none d-md-none d-lg-none mt-md-3 mb-md-3 mt-3">
                     <div class="col-9 mx-auto">
-                        <?php dynamic_sidebar('note_mob_1'); ?>
+                        <?php dynamic_sidebar('note_mob_2'); ?>
                     </div>
                 </div>
 

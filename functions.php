@@ -108,7 +108,8 @@ class TA_Theme
 
 		self::redirect_searchs();
 		self::filter_contents();
-
+		self::searchpage();
+    
 		add_action('admin_head',[self::class,'not_admin']);
 	}
 
@@ -269,6 +270,14 @@ class TA_Theme
 		wp_enqueue_script('ta_comments', TA_ASSETS_JS_URL . '/src/comments.js', ['jquery'], TA_THEME_VERSION);
 		wp_enqueue_script("ta-balancer-front-block-js", ['react', 'reactdom']);
 		wp_enqueue_script("ta-mas-leidas-front-block-js",'',TA_THEME_VERSION);
+		wp_enqueue_script("ta-searchpage-front-block-js",'',TA_THEME_VERSION);
+		wp_localize_script(
+			'ta-searchpage-front-block-js',
+			'TASearchData',
+			array(
+				'searchpageUrl'	=> home_url( "/search/" ),
+			),
+		);
 
 		wp_localize_script(
 			'ta_comments',
@@ -314,6 +323,64 @@ class TA_Theme
 		RB_Wordpress_Framework::load_module('fields');
 		RB_Wordpress_Framework::load_module('customizer');
 		add_action('customize_register', array(self::class, 'require_customizer_panel'), 1000000);
+	}
+
+	/**
+	*	Steps related to the search results page
+	*/
+	static private function searchpage(){
+
+		function get_search_results_params(){
+			global $wp;
+			$url_info = wp_parse_url("http://base/{$wp->request}");
+			$path_parts = explode('/', $url_info['path']) ?? null;
+			return isset($path_parts[1]) && $path_parts[1] === 'search' ? array(
+				'query'	=> $path_parts[2] ?? null,
+				'page'		=> $path_parts[4] ?? 1,
+			) : null;
+		}
+		// Not used anymore. Redirect is made via js
+		// RB_Filters_Manager::add_action( 'ta_redirect_search_page', 'template_redirect', function($template) {
+		// 	if ( is_search() && ! empty( $_GET['s'] ) ) {
+		//         wp_redirect( home_url( "/search/" ) . urlencode( get_query_var( 's' ) ) );
+		//         exit();
+		//     }
+		// } );
+
+		/**
+		*	If the request has the search URL params, sets the correct template
+		*/
+		RB_Filters_Manager::add_action( 'ta_searchpage_front_script', 'template_include', function($template) {
+			$search_results_params = get_search_results_params();
+			if ( !$search_results_params )
+				return $template;
+
+			$template = TA_THEME_PATH . '/search-ta_article.php';
+
+			wp_localize_script(
+				'ta-searchpage-front-block-js',
+				'TASearchQuery',
+				array(
+					's' 			=> $search_results_params['query'],
+					'page' 			=> $search_results_params['page'],
+				),
+			);
+
+			return $template;
+		} );
+
+		/**
+		*	If search page, updates the main query params based on the URL params
+		*/
+		RB_Filters_Manager::add_action( 'ta_search_results_page_query_page', 'pre_get_posts', function( $query ){
+			$search_results_params = get_search_results_params();
+			if( $search_results_params && $query->is_main_query() ){
+				$query->set( 'paged', $search_results_params['page'] );
+				$query->is_search = true; // We making WP think it is Search page
+				$query->is_page = false; // disable unnecessary WP condition
+				$query->is_singular = false; // disable unnecessary WP condition
+			}
+		} );
 	}
 
 	static public function require_customizer_panel($wp_customize)
@@ -636,3 +703,19 @@ function user_active($user_id) {
 
 	return false;
 }
+
+function author_amp()
+{
+	$authors = get_the_terms(get_queried_object_id(),'ta_article_author');
+	$terms_string = join(', ', wp_list_pluck($authors, 'name'));
+	echo '<div class="amp-author">Por: '.$terms_string.'</div>';
+}
+
+add_action('ampforwp_below_the_title','author_amp');
+
+
+function publi_note_mob_before_related()
+{
+	widgets_ta()->note_mob_before_related();
+}
+add_action('ampforwp_above_related_post','publi_note_mob_before_related');
