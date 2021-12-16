@@ -14,7 +14,7 @@ define('TA_ASSETS_URL', TA_THEME_URL . "/assets");
 define('TA_IMAGES_URL', TA_ASSETS_URL . "/img");
 define('TA_ASSETS_CSS_URL', TA_THEME_URL . "/css");
 define('TA_ASSETS_JS_URL', TA_THEME_URL . "/js");
-define('TA_THEME_VERSION','1.2.1');
+define('TA_THEME_VERSION','1.3.5');
 
 require_once TA_THEME_PATH . '/inc/gen-base-theme/gen-base-theme.php';
 require_once TA_THEME_PATH . '/inc/rewrite-rules.php';
@@ -707,8 +707,10 @@ function user_active($user_id) {
 function author_amp()
 {
 	$authors = get_the_terms(get_queried_object_id(),'ta_article_author');
-	$terms_string = join(', ', wp_list_pluck($authors, 'name'));
-	echo '<div class="amp-author">Por: '.$terms_string.'</div>';
+	$terms_string = join(' / ', wp_list_pluck($authors, 'name'));
+	if($authors) {
+		echo '<div class="amp-author">Por: '.$terms_string.'</div>';
+	}
 }
 
 add_action('ampforwp_below_the_title','author_amp');
@@ -719,3 +721,13 @@ function publi_note_mob_before_related()
 	widgets_ta()->note_mob_before_related();
 }
 add_action('ampforwp_above_related_post','publi_note_mob_before_related');
+
+
+function search_filter($query) {
+    if ( ! is_admin() && $query->is_main_query() ) {
+        if ( $query->is_search ) {
+            $query->set( 'posts_per_page', -1 );
+        }
+    }
+}
+add_action( 'pre_get_posts', 'search_filter' );

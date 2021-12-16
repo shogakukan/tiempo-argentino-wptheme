@@ -83,13 +83,18 @@
                                             <label><?php echo __('Cambiar mi plan', 'gen-base-theme') ?></label>
                                             <?php membership()->get_subscriptions_names('form-control') ?>
                                         </div>
-                                        <div class="form-group checkbox-container" id="paper-option">
-                                            <input type="checkbox" class="paper-checkbox" name="paper" id="paper" value="<?php echo membership()->get_paper_value() ?>" <?php echo checked('1', membership()->get_membership(wp_get_current_user()->ID)['physical'], false) ?> />
-                                            <label for=""><?php echo __('Agrega diaro en papel', 'gen-base-theme') ?></label>
-                                            <p class="help"><?php echo __('Recorda llenar tu dirección para el envío', 'gen-base-theme') ?></p>
-                                        </div>
+                                            <div class="form-group checkbox-container" id="paper-option">
+                                                <input type="checkbox" 
+                                                class="paper-checkbox" 
+                                                name="paper" 
+                                                id="paper" 
+                                                value="<?php echo membership()->get_paper_value() ?>" 
+                                                <?php echo checked('1', get_user_meta(wp_get_current_user()->ID,'_user_paper',true), false) ?> />
+                                                <label for=""><?php echo __('Agregá el diario en papel', 'gen-base-theme') ?></label>
+                                                <p class="help"><?php echo __('Recorda llenar tu dirección para el envío', 'gen-base-theme') ?></p>
+                                            </div>
                                     <?php endif; ?>
-                                    <div class="from-group prices price-container mb-3">
+                                    <div class="from-group prices price-container mb-3" id="users-prices-container">
                                         <?php echo __('Selecionar monto: ', 'gen-base-theme') ?>
                                         <?php if (membership()->get_price()) : ?>
                                             <div class="amount">
@@ -116,8 +121,9 @@
                                     <input type="hidden" name="subscription_name" value="" id="subscription_name">
                                     <input type="hidden" name="action" value="edit_membership" />
                                     <input type="hidden" id="user_edit_email" name="user_edit_email" class="form-control" value="<?php echo wp_get_current_user()->user_email ?>" />
-                                    <div class="btns-container">
-                                        <button type="submit" name="send-edit-subscription" id="paymentMP"><?php echo __('Editar', 'gen-base-theme') ?></button>
+                                    <div id="msg-edit-mp"></div>
+                                    <div class="btns-container" id="panel-mp-buttons">
+                                        <button type="submit" name="send-edit-subscription" class="send-edit-subscription"><?php echo __('Editar', 'gen-base-theme') ?></button>
                                         <button type="button" id="cancel-edit-subscription" class="gray-btn-black-text ml-2"><?php echo __('Cancelar', 'gen-base-theme') ?></button>
                                     </div>
                                 </form>

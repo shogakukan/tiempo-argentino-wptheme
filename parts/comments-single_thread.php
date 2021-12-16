@@ -3,6 +3,7 @@ $template_args = ta_get_commment_display_data($args);
 if(!$template_args)
     return;
 extract($template_args);
+
 ?>
 <div class="comment-thread my-3 my-md-1">
     <div id="comment-<?php echo esc_attr($comment->comment_ID); ?>" class="single-comment position-relative input d-flex justify-content-between <?php echo esc_attr($container_class); ?>" data-id="<?php echo esc_attr($comment->comment_ID); ?>">

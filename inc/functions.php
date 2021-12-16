@@ -1102,6 +1102,20 @@ function ta_get_comment_reply_data($args = array()){
     return $result;
 }
 
+function check_member($user_id)
+{
+	$user_subscription = get_user_meta($user_id,'suscription',true);
+	$user_status = get_user_meta($user_id,'_user_status',true);
+	$user = get_userdata($user_id);
+	$roles = $user->roles;
+
+	if($user_subscription && $user_status == 'active' && in_array(get_option('subscription_digital_role'),$roles)) {
+		return true;
+	}
+
+	return false;
+		
+}
 function ta_get_commment_display_data($args = array()){
     $default_args = array(
         'comment'       => null,
@@ -1131,7 +1145,7 @@ function ta_get_commment_display_data($args = array()){
     );
 
     if($display_data['user_data']){
-        if(in_array('subscriber', $display_data['user_data']->roles)){
+        if(check_member($display_data['user_data']->ID)){
             $display_data['container_class'] .= " partner";
             $display_data['is_partner'] = true;
         }
@@ -1143,7 +1157,6 @@ function ta_get_commment_display_data($args = array()){
     if($show_reply){
         $display_data['reply_data'] = ta_get_comment_reply_data(array( 'comment_id' => $comment->comment_ID, ));
     }
-
     return $display_data;
 }
 
@@ -1152,3 +1165,20 @@ function ta_get_comment_form_fields_as_string(){
     get_template_part('parts/commentform','fields');
     return ob_get_clean();
 }
+
+function payment_user_role_sync()
+{
+  if(null !== Subscriptions_Sessions::get_session('subscriptions_add_session')) {
+        $type = Subscriptions_Sessions::get_session('subscriptions_add_session')['suscription_role'];
+        if($type === 'digital') {
+            $user = new WP_User(get_current_user_id());
+
+            if(in_array('subscriber', get_userdata(get_current_user_id())->roles)){
+                $user->set_role(get_option('subscription_digital_role'));
+            }
+
+        }
+    }
+}
+
+add_action('subscriptions_payment_page_header','payment_user_role_sync');
