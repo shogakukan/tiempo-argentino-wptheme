@@ -74,17 +74,17 @@ class DatosFooter {
 			'datos_footer_setting_section' // section
 		);
 
-		add_settings_field(
-			'n_edicin_3', // id
-			'Nº Edición', // title
-			array( $this, 'n_edicin_3_callback' ), // callback
-			'datos-footer-admin', // page
-			'datos_footer_setting_section' // section
-		);
+		// add_settings_field(
+		// 	'n_edicin_3', // id
+		// 	'Nº Edición', // title
+		// 	array( $this, 'n_edicin_3_callback' ), // callback
+		// 	'datos-footer-admin', // page
+		// 	'datos_footer_setting_section' // section
+		// );
 
 		add_settings_field(
 			'fecha_4', // id
-			'Fecha', // title
+			'Fecha inicial', // title
 			array( $this, 'fecha_4_callback' ), // callback
 			'datos-footer-admin', // page
 			'datos_footer_setting_section' // section
@@ -105,12 +105,12 @@ class DatosFooter {
 			$sanitary_values['registro_n_o_texto_2'] = sanitize_text_field( $input['registro_n_o_texto_2'] );
 		}
 
-		if ( isset( $input['n_edicin_3'] ) ) {
-			$sanitary_values['n_edicin_3'] = sanitize_text_field( $input['n_edicin_3'] );
-		}
+		// if ( isset( $input['n_edicin_3'] ) ) {
+		// 	$sanitary_values['n_edicin_3'] = sanitize_text_field( $input['n_edicin_3'] );
+		// }
 
 		if ( isset( $input['fecha_4'] ) ) {
-			$sanitary_values['fecha_4'] = sanitize_text_field( $input['fecha_4'] );
+			$sanitary_values['fecha_4'] = sanitize_text_field( $input['fecha_4'] );			
 		}
 
 		return $sanitary_values;
@@ -141,16 +141,16 @@ class DatosFooter {
 		);
 	}
 
-	public function n_edicin_3_callback() {
-		printf(
-			'<input class="regular-text" type="text" name="datos_footer_option_name[n_edicin_3]" id="n_edicin_3" value="%s">',
-			isset( $this->datos_footer_options['n_edicin_3'] ) ? esc_attr( $this->datos_footer_options['n_edicin_3']) : ''
-		);
-	}
+	// public function n_edicin_3_callback() {
+	// 	printf(
+	// 		'<input class="regular-text" type="text" name="datos_footer_option_name[n_edicin_3]" id="n_edicin_3" value="%s">',
+	// 		isset( $this->datos_footer_options['n_edicin_3'] ) ? esc_attr( $this->datos_footer_options['n_edicin_3']) : ''
+	// 	);
+	// }
 
 	public function fecha_4_callback() {
 		printf(
-			'<input class="regular-text" type="text" name="datos_footer_option_name[fecha_4]" id="fecha_4" value="%s">',
+			'<input class="regular-text" type="date" name="datos_footer_option_name[fecha_4]" id="fecha_4" value="%s">',
 			isset( $this->datos_footer_options['fecha_4'] ) ? esc_attr( $this->datos_footer_options['fecha_4']) : ''
 		);
 	}

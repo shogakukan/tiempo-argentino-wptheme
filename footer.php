@@ -20,7 +20,7 @@
                 </div>
             </div>
             <div class="edition mt-3">
-                <p class="mb-0"><span class="ta-celeste-color">Edición Nº <?php echo get_option( 'datos_footer_option_name' )['n_edicin_3']?></span> / <?php echo get_option( 'datos_footer_option_name' )['fecha_4']?></p>
+            <p class="mb-0"><span class="ta-celeste-color">Edición Nº <?php  echo (new DateTime(get_option( 'datos_footer_option_name' )['fecha_4']))->diff(new DateTime())->days;?></span> / <?php echo date_i18n('j') . " de " . date_i18n('F') . " de " . date_i18n('Y'); ?></p>
                 <p class="derechos">Algunos derechos reservados</p>
             </div>
         </div>
