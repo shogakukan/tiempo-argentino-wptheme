@@ -365,4 +365,13 @@
   }
 }
 
+.single-ta_article .img-container.video {
+  height: calc(100vw * 9 / 16);
+  max-height: calc(730px * 9 / 16);
+}
+
+.articulo-especial .img-container.video {
+  height: calc(100vw * 9 / 16);
+  max-height: 675px;
+}
 /*# sourceMappingURL=simple-especial.css.map */

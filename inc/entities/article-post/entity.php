@@ -146,5 +146,62 @@ return array(
         //         ),
         //     ),
         // ),
+        'ta_article_special_format' => array(
+            'settings'  => array(
+                'title'             => __('Formato especial', 'ta-genosha'),
+                'context'           => 'side',
+                'priority'          => 'high',
+                'classes'           => array('ta-metabox'),
+            ),
+            'input'  => array(
+                'controls'        => array(
+                    'text'   => array(
+                        //'label'             => __('Dejar vacío si es una nota normal', 'ta-genosha'),
+                        'description'    => __('Dejar vacío si es una nota normal', 'ta-genosha'),
+                        'input_type'        => 'select',
+                        'choices'            => array('audiovisual' => 'Audiovisual', 'fotogaleria' => 'Fotogalería')     
+                    ),
+                ),
+            ),
+        ),
+        'ta_article_video' => array(
+            'settings'  => array(
+                'title'             => __('Video', 'ta-genosha'),
+                'context'           => 'side',
+                'priority'          => 'high',
+                'classes'           => array('ta-metabox'),
+            ),
+            'input'  => array(
+                'controls'        => array(
+                    'text'   => array(
+                        'label'             => __('Código de YouTube', 'ta-genosha'),
+                        'description'       => __('Pegar la dirección URL entera del video', 'ta-genosha'),
+                        'input_type'            => 'text',
+                    ),
+                ),
+            ),
+        ),
+        'ta_article_gallery' => array(
+            'settings'  => array(
+                'title'             => __('Galeria', 'ta-genosha'),
+                'context'           => 'side',
+                'priority'          => 'high',
+                'classes'           => array('ta-metabox'),
+                'quick_edit'        => false,
+            ),
+            'input'  => array(
+                'repeater'          => array(
+                    'item_title'        => 'Media ($n)',
+                    'accordion'         => true,
+                ),
+                'controls'		=> array(
+                    'media'      => array(
+                        //'label'     => __('Logo a color', 'ta-genosha'),
+                        'type'          => 'RB_Media_Control',
+                        'store_value'   => 'id',
+                    ),
+                ),
+            ),
+        ),
     ),
 );

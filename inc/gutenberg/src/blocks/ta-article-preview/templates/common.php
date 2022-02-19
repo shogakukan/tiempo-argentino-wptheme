@@ -14,7 +14,13 @@ $preview_class = esc_attr($preview_class);
     ));
     ?>
 >
-    <?php if( $thumbnail_url ): ?>
+    <?php if ($article->video) : ?>
+        <div class="<?php echo esc_attr($thumb_cont_class); ?>">
+            <div class="img-container video">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/<?php echo esc_html($article->get_video()); ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>        
+        </div>
+    <?php elseif( $thumbnail_url ): ?>
     <div class="<?php echo esc_attr($thumb_cont_class); ?>">
         <a data-url href="<?php echo esc_attr($url); ?>">
             <div class="img-container">
