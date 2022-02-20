@@ -374,4 +374,27 @@
   height: calc(100vw * 9 / 16);
   max-height: 675px;
 }
+
+.galeria-fotos .credits-info,
+.credits.has-caption .credits-info {
+  background: #fff;
+  padding: 0px 5px;
+  margin-top: -32px;
+  z-index: 0;
+}
+
+.galeria-fotos .credits.ta-photographer .credits-info,
+.credits.has-caption.ta-photographer .credits-info {
+  margin-top: -52px;
+}
+
+.galeria-fotos .credits.ta-photographer .credits-icon,
+.credits.has-caption.ta-photographer .credits-icon {
+  display: none;
+}
+
+.galeria-fotos .credits,
+.credits.has-caption {
+  margin-top: 0 !important;
+}
 /*# sourceMappingURL=simple-especial.css.map */

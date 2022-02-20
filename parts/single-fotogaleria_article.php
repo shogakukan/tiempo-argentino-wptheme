@@ -37,7 +37,7 @@ if(!$article)
                 <div class="img-wrapper" id="article-main-image">
                     <img src="<?php echo esc_attr($article->thumbnail_common['url']); ?>" alt="" class="img-fluid w-100" />
                 </div>
-                <?php get_template_part('parts/image', 'copyright', array('photographer' => $article->thumbnail_common['author'])); ?>
+                <?php get_template_part('parts/image', 'copyright', array('photographer' => $article->thumbnail_common['author'], 'caption' => $article->thumbnail_common['caption'])); ?>
                 <?php if($article->thumbnail_common['caption']): ?>
                 <div class="bajada mt-3">
                     <p><?php echo esc_html($article->thumbnail_common['caption']); ?></p>
