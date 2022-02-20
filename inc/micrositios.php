@@ -41,3 +41,9 @@ new TA_Micrositio('radiografia-del-vaciamiento', array(
     'priority'              => 3,
     'custom_content'        => true,
 ));
+
+new TA_Micrositio('20historias', array(
+    'title'                 => '20 historias del saqueo económico',
+    'priority'              => 5,
+    'custom_content'        => true,
+));
