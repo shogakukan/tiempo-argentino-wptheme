@@ -37,9 +37,12 @@ html {
 
 .article-preview .img-container .img-wrapper, .article-preview.destacado .img-container .img-wrapper {
     background: initial;
-    background-size: cover;
-    background-position: top left;
+    /* background-size: cover; */
+    background-size: contain;
+    /* background-position: top left; */
+    background-position: center;
     margin-bottom: 10px;
+    background-repeat: no-repeat;
 }
 
 .article-preview.autor .img-container .img-wrapper {
@@ -104,9 +107,9 @@ button a {
 }
 
 /** HOT FIX FOTOS EN MICROSITIO SLIDER - SACAR CUANDO ANGIE SUBA ARREGLOS **/
-.slider-micrositio .carousel .carousel-item .carousel-caption a {
+/* .slider-micrositio .carousel .carousel-item .carousel-caption a {
     color: #fff !important;
-}
+} */
 
 /** END HOT FIX **/
 /* ESTILOS DE .btns-container .pagination button, adaptados para funcionar con el nav de wordpress

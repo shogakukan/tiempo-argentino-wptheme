@@ -24,7 +24,7 @@ $preview_class = esc_attr($preview_class);
     <div class="<?php echo esc_attr($thumb_cont_class); ?>">
         <a data-url href="<?php echo esc_attr($url); ?>">
             <div class="img-container">
-                <div class="img-wrapper d-flex align-items-end" data-thumbnail style='background-image: url("<?php echo $thumbnail_url; ?>")' alt="<?php echo esc_attr($thumbnail['alt']); ?>">
+                <div class="img-wrapper d-flex align-items-end lazy" data-thumbnail style='background-image: url("<?php echo $thumbnail_url; ?>")' alt="<?php echo esc_attr($thumbnail['alt']); ?>">
                     <div class="icons-container">
                         <div class="article-icons d-flex flex-column mb-2">
                             <?php get_template_part( 'parts/article', 'balancer_icons', array( 'article' => $article ) ); ?>

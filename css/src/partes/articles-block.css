@@ -46,6 +46,11 @@
 .article-preview.vertical-article .img-container .img-wrapper {
   min-height: 183px;
 }
+
+.img-wrapper.lazy {
+  background-image: none !important;
+}
+
 .article-preview.benefits.requested > .container {
   border: 1px solid var(--ta-celeste);
   background-color: var(--ta-celeste-fondos);

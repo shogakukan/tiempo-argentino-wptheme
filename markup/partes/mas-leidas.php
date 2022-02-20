@@ -29,7 +29,7 @@ $thumbnail_url = $thumbnail['url'] ?? '';
                                         <div class="col-5 p-0">
                                             <a data-link href="">
                                                 <div class="img-container position-relative">
-                                                    <div class="img-wrapper" data-thumbnail style="background-image:url('<?php echo $thumbnail_url ?>');"></div>
+                                                    <div class="img-wrapper lazy" data-thumbnail style="background-image:url('<?php echo $thumbnail_url ?>');"></div>
                                                 </div>
                                             </a>
                                         </div>
