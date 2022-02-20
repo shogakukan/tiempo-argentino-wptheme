@@ -46,7 +46,11 @@ $authors = $article->authors;
                                 <?php get_template_part( 'parts/article', 'social_buttons', array( 'class' => 'text-right mt-3' ) ); ?>
                             </div>
                         </div>
-                        <?php if( $thumbnail ): ?>
+                        <?php if ($article->video) : ?>
+                            <div class="img-container video mt-3">
+                                <iframe id="article-video" width="100%" height="100%" src="https://www.youtube.com/embed/<?php echo esc_html($article->get_video()); ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        <?php elseif( $thumbnail ): ?>
                         <div class="img-container mt-3">
                             <div class="img-wrapper" id="article-main-image">
                                 <img src="<?php echo esc_attr($thumbnail['url']); ?>" alt="<?php echo esc_attr($thumbnail['alt']); ?>" class="img-fluid w-100" />

@@ -425,6 +425,9 @@
   /* .article-preview.destacado .content {
     padding-left: 0;
   } */
+  .ta-articles-block.d-flex.flex-column .destacado .img-wrapper {
+		padding-bottom: calc(100% * 2 / 3 + 27px);
+  }
 }
 @media (min-width: 992px) {
   .article-preview .content .title p {

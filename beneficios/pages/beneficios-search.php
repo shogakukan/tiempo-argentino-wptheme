@@ -183,10 +183,18 @@
                                 'compare' => 'LIKE'
                             ],
                             [
-                                'key' => '_finish',
-                                'value' => date('Y-m-d'),
-                                'compare' => '>=',
-                                'type' => 'DATE'
+                                'relation' => 'OR',
+                                [
+                                    'key' => '_finish',
+                                    'value' => date('Y-m-d'),
+                                    'compare' => '>=',
+                                    'type' => 'DATE'
+                                ],
+                                [
+                                    'key' => '_finish',
+                                    'value' => '',
+                                    'compare' => 'LIKE'
+                                ]
                             ]
                         ]
                     ];

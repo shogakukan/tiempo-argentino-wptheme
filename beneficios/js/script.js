@@ -43,39 +43,48 @@
         });
     });
 
-    //Calcula height de art. destacado cuando es miscelanea
-    $(document).ready(function () {
-        if ($(window).width() >= 768) {
-            $(".ta-articles-block.d-flex.flex-column .destacado .img-wrapper").css(
-                "padding-bottom",
-                parseInt(
-                    $(
-                        ".ta-articles-block.d-flex.flex-column .destacado .img-wrapper"
-                    ).css("padding-bottom")
-                ) +
-                27 +
-                "px"
-            );
-            /* $('.ta-articles-block.d-flex.flex-column .destacado .img-wrapper').css("height",$('.ta-articles-block.d-flex.flex-column .destacado .img-wrapper').height() + 26 + 'px'); */
+    //Acomoda la altura de los videos en portada
+    function resizeVideoHome(){
+        $('.img-container.video').each(function(i, e){
+            e.setAttribute("style",`height:${e.scrollWidth * 2 / 3}px`);
+        });
+    }
+    $(window).resize(resizeVideoHome);
+    resizeVideoHome();
 
-            $(window).resize(function () {
-                $(".ta-articles-block.d-flex.flex-column .destacado .img-wrapper").css(
-                    "padding-bottom",
-                    "66.66%"
-                );
-                $(".ta-articles-block.d-flex.flex-column .destacado .img-wrapper").css(
-                    "padding-bottom",
-                    parseInt(
-                        $(
-                            ".ta-articles-block.d-flex.flex-column .destacado .img-wrapper"
-                        ).css("padding-bottom")
-                    ) +
-                    27 +
-                    "px"
-                );
-            });
-        }
-    });
+    //Calcula height de art. destacado cuando es miscelanea
+    // $(document).ready(function () {
+    //     if ($(window).width() >= 768) {
+    //         $(".ta-articles-block.d-flex.flex-column .destacado .img-wrapper").css(
+    //             "padding-bottom",
+    //             parseInt(
+    //                 $(
+    //                     ".ta-articles-block.d-flex.flex-column .destacado .img-wrapper"
+    //                 ).css("padding-bottom")
+    //             ) +
+    //             27 +
+    //             "px"
+    //         );
+    //         /* $('.ta-articles-block.d-flex.flex-column .destacado .img-wrapper').css("height",$('.ta-articles-block.d-flex.flex-column .destacado .img-wrapper').height() + 26 + 'px'); */
+
+    //         $(window).resize(function () {
+    //             $(".ta-articles-block.d-flex.flex-column .destacado .img-wrapper").css(
+    //                 "padding-bottom",
+    //                 "66.66%"
+    //             );
+    //             $(".ta-articles-block.d-flex.flex-column .destacado .img-wrapper").css(
+    //                 "padding-bottom",
+    //                 parseInt(
+    //                     $(
+    //                         ".ta-articles-block.d-flex.flex-column .destacado .img-wrapper"
+    //                     ).css("padding-bottom")
+    //                 ) +
+    //                 27 +
+    //                 "px"
+    //             );
+    //         });
+    //     }
+    // });
 
     $(document).on('click', '.abrir-beneficio', function (e) {
         e.preventDefault();

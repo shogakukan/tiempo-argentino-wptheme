@@ -239,4 +239,53 @@ class TA_Article extends TA_Article_Data{
         $article_id = get_post_meta( $this->post->ID, 'ta_article_sister_article', true );
         return !$article_id ? null : TA_Article_Factory::get_article( get_post($article_id) );
     }
+
+    /**
+    *   @return string
+    */
+
+    public function get_video(){
+        $video_code = get_post_meta($this->post->ID, 'ta_article_video', true);
+        $ytBreaker = 'youtu.be/';
+        $pos = strpos($video_code, $ytBreaker);
+        if ($pos){
+            $video_code = substr($video_code, strpos($video_code,$ytBreaker)+strlen($ytBreaker), 11);
+        } else {
+            $ytBreaker = 'watch?v=';
+            $pos = strpos($video_code, $ytBreaker);
+            $video_code = $pos ? substr($video_code, strpos($video_code,$ytBreaker)+strlen($ytBreaker), 11) : false;
+        }
+        return $video_code;
+    }
+
+    public function get_gallery(){
+        $gallery_ids = get_post_meta($this->post->ID, 'ta_article_gallery', true);
+        $result = [];
+        foreach ($gallery_ids as $photo_id) {
+            $attachment = get_post( $photo_id );
+
+            if( $attachment ){
+                $alt = get_post_meta( $attachment->ID, '_wp_attachment_image_alt', true );
+                $photo_data = array(
+                    'attachment'    => $attachment,
+                    'url'           => wp_get_attachment_image_url($attachment->ID, 'full', false),
+                    'caption'       => has_excerpt($attachment) ? get_the_excerpt($attachment) : '',
+                    'author'        => ta_get_attachment_photographer($attachment->ID),
+                    'position'      => ta_get_attachment_positions($attachment->ID),
+                    'alt'           => $alt ? $alt : '',
+                    'is_default'    => false,
+                );
+                array_push($result, $photo_data);
+            }
+        }
+
+        return $result;
+    }
+    /**
+    *   @return string
+    */
+
+    public function get_special_format(){
+        return get_post_meta($this->post->ID, 'ta_article_special_format', true);
+    }
 }
