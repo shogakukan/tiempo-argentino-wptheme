@@ -1,7 +1,7 @@
 <?php if (is_active_sidebar('down-single-note')) { ?>
     <div class="container d-none d-sm-none d-md-block mt-md-3 mb-md-3">
         <div class="row d-flex">
-            <div class="col-9 mx-auto">
+            <div class="text-center mx-auto">
                 <?php dynamic_sidebar('down-single-note'); ?>
             </div>
         </div>
@@ -51,7 +51,7 @@ $articles_interest_block->render(array(
 <?php if (is_active_sidebar('down-comments-note')) { ?>
     <div class="container d-none d-sm-none d-md-block mt-md-3 mb-md-3">
         <div class="row d-flex">
-            <div class="col-9 mx-auto">
+            <div class="text-center mx-auto">
                 <?php dynamic_sidebar('down-comments-note'); ?>
             </div>
         </div>
