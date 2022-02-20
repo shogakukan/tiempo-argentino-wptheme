@@ -37,8 +37,8 @@ html {
 
 .article-preview .img-container .img-wrapper, .article-preview.destacado .img-container .img-wrapper {
     background: initial;
-    /* background-size: cover; */
-    background-size: contain;
+    background-size: cover;
+    /* background-size: contain; */
     /* background-position: top left; */
     background-position: center;
     margin-bottom: 10px;
@@ -391,4 +391,9 @@ height: 18px;
 }
 #paymentFormBankEdit label{
     display: block !important;
+}
+
+.anuncio-side-single {
+    position: sticky;
+    top: 100px;
 }

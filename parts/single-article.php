@@ -16,7 +16,7 @@ $authors = $article->authors;
 ?>
 <?php get_template_part('parts/single_article', 'top'); ?>
 <div class="container-fluid container-lg p-0 ">
-    <div class="d-flex col-12 flex-column flex-lg-row align-items-start p-0">
+    <div class="d-flex col-12 flex-column flex-lg-row p-0">
         <div class="col-12 col-lg-8 p-0">
 
             <!-- ARTICLE BODY -->
