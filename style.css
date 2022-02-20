@@ -104,9 +104,9 @@ button a {
 }
 
 /** HOT FIX FOTOS EN MICROSITIO SLIDER - SACAR CUANDO ANGIE SUBA ARREGLOS **/
-.slider-micrositio .carousel .carousel-item .carousel-caption a {
+/* .slider-micrositio .carousel .carousel-item .carousel-caption a {
     color: #fff !important;
-}
+} */
 
 /** END HOT FIX **/
 /* ESTILOS DE .btns-container .pagination button, adaptados para funcionar con el nav de wordpress
