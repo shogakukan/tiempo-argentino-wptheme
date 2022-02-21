@@ -96,6 +96,7 @@ class TAArticlesSliderRow extends TAArticlesBlockRow{
                     </div>
             </div>
         </div>
+        <!-- row divider -->
 
 
         <?php

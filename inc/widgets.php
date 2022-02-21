@@ -29,6 +29,8 @@ class Widgets_Theme_TA
 
         add_filter('the_content', [$this, 'insert_custom_content_3']);
 
+        add_filter( 'the_content', [$this, 'home_ads_1']);
+
         add_action('widgets_init', [$this, 'footer_fixed_mobile']);
 
         add_action('widgets_init', [$this, 'footer_fixed']);
@@ -54,7 +56,7 @@ class Widgets_Theme_TA
 
     public function home_desktop_widgets()
     {
-        $widgets = ['home_desk_1' => __('Home Desktop 1', 'gen-base-theme'), 'home_desk_2' => __('Home Desktop 2', 'gen-base-theme')];
+        $widgets = ['home_desk_1' => __('Home Desktop 1', 'gen-base-theme'), 'home_desk_2' => __('Home Desktop 2', 'gen-base-theme'), 'home_desk_1_2' => __('Home Desktop 1-2', 'gen-base-theme')];
 
         foreach ($widgets as $key => $val) {
             register_sidebar(array(
@@ -498,7 +500,52 @@ class Widgets_Theme_TA
             ));
         }
     }
+
+    function home_ads_1( $content ) {
+        if (is_front_page()){
+            $divider = '<!-- row divider -->';
+            $preAdDesktop = '<div class="container d-none d-sm-none d-md-block mt-md-3 mb-md-3">' .
+                        '<div class="row d-flex">' .
+                            '<div class="mx-auto text-center">';
+            $postAdDesktop = '</div>' .
+                                '</div>' .
+                                    '</div>';
+                
+            $rows = explode($divider, $content);
+            $result = "";
+            foreach ($rows as $index => $row) {
+                $result .= $row;
+                if ($index + 1 == 1) {
+                    if (is_active_sidebar('home_desk_1_2')) {
+                        ob_start();
+                        dynamic_sidebar('home_desk_1_2');
+                        $widget = ob_get_clean();
+                        $result .= $preAdDesktop;
+                        $result .= $widget;
+                        $result .= $postAdDesktop;
+                    }
+                }
+                // if ($index + 1 == 2) {
+                //     if (is_active_sidebar('side-single-note')) {
+                //         ob_start();
+                //         dynamic_sidebar('down-single-note');
+                //         $widget = ob_get_clean();
+                //         $result .= $widget;
+                //     }
+                // }
+            }
+            return $result;
+        } else {
+            return $content;
+        }
+        
+    }
 }
+
+// only for dev use
+// function ampforwp_is_amp_endpoint(){
+//     return false;
+// }
 
 function widgets_ta()
 {
