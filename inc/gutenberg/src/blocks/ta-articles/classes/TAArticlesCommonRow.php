@@ -71,7 +71,7 @@ class TAArticlesCommonRow extends TAArticlesBlockRow{
                 }
             ?>
         </div>
-
+        <!-- row divider -->
         <?php
 
         return $cells_count;

@@ -43,7 +43,7 @@ class TAArticlesMiscelaneaRow extends TAArticlesBlockRow{
                 <?php $regular_3 ? ta_render_article_preview($regular_3, $regular_config) : null; ?>
             </div>
         </div>
-
+        <!-- row divider -->
         <?php
 
         return 4;
