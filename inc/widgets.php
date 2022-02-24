@@ -59,10 +59,10 @@ class Widgets_Theme_TA
         $widgets = ['home_desk_1' => __('Home Desktop 1', 'gen-base-theme'),
                     'home_desk_2' => __('Home Desktop 2', 'gen-base-theme'),
                     'home_desk_1_2' => __('Home Desktop fila 1-2', 'gen-base-theme'),
-                    'home_desk_4_5' => __('Home Desktop fila 4-5', 'gen-base-theme'),
-                    'home_desk_6_7' => __('Home Desktop fila 6-7', 'gen-base-theme'),
-                    'home_desk_8_9' => __('Home Desktop fila 8-9', 'gen-base-theme'),
-                    'home_desk_10_11' => __('Home Desktop fila 10-11', 'gen-base-theme')
+                    'home_desk_3_4' => __('Home Desktop fila 3-4', 'gen-base-theme'),
+                    'home_desk_5_6' => __('Home Desktop fila 5-6', 'gen-base-theme'),
+                    'home_desk_7_8' => __('Home Desktop fila 7-8', 'gen-base-theme'),
+                    'home_desk_9_10' => __('Home Desktop fila 9-10', 'gen-base-theme')
                 ];
 
         foreach ($widgets as $key => $val) {
