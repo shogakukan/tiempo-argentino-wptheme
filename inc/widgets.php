@@ -84,6 +84,7 @@ class Widgets_Theme_TA
             'down-single-note' => __('Abajo nota', 'gen-base-theme'),
             'down-comments-note' => __('Abajo comentarios', 'gen-base-theme'),
             'side-comments-note' => __('Lado comentarios', 'gen-base-theme'),
+            'note_calltoaction_desk' => __('Nota Desktop CallToAction', 'gen-base-theme')
         ];
 
         foreach ($widgets as $key => $val) {
@@ -218,7 +219,8 @@ class Widgets_Theme_TA
            // 'note_mob_4' => __('Note Bajo Newsletter Mobi', 'gen-base-theme'),
            // 'note_mob_5' => __('Note Comentarios Mobi', 'gen-base-theme'),
            // 'note_mob_6' => __('Relacionados Mobi', 'gen-base-theme'),
-            'note_mob_7' => __('Abajo de la foto Mobile', 'gen-base-theme')
+            'note_mob_7' => __('Abajo de la foto Mobile', 'gen-base-theme'),
+            'note_calltoaction_mob' => __('Nota Mobile CallToAction', 'gen-base-theme')
         ];
 
         foreach ($widgets as $key => $val) {

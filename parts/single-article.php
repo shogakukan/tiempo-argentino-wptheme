@@ -94,6 +94,20 @@ $authors = $article->authors;
 
             <?php } ?>
             <?php include_once(TA_THEME_PATH . '/markup/partes/mira-tambien.php');  ?>
+            <?php if (is_active_sidebar('note_calltoaction_mob')) : ?>
+                <div class="row d-flex d-block d-sm-none d-md-none d-lg-none mt-md-3 mb-md-3 mt-3">
+                    <div class="col-12 mx-auto">
+                        <?php dynamic_sidebar('note_calltoaction_mob'); ?>
+                    </div>
+                </div>
+            <?php endif; ?>
+            <?php if (is_active_sidebar('note_calltoaction_desk')) : ?>
+                <div class="row d-none d-sm-none d-md-flex d-lg-flex mt-md-3 mb-md-3 mt-3">
+                    <div class="col-12 mx-auto">
+                        <?php dynamic_sidebar('note_calltoaction_desk'); ?>
+                    </div>
+                </div>
+            <?php endif; ?>
         </div>
 
         <?php get_template_part('parts/single_article', 'right_col'); ?>
