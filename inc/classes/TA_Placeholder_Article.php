@@ -18,7 +18,7 @@ class TA_Placeholder_Article extends TA_Article_Data{
         return 'Cargando...';
     }
 
-    protected function get_thumbnail_common($variation = null, $size = 'full'){
+    public function get_thumbnail_common($variation = null, $size = 'full'){
         $thumb_data = array(
             'attachment'    => null,
             'url'           => TA_IMAGES_URL . '/article-preview-spinner.gif',

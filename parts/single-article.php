@@ -9,7 +9,7 @@ $article = TA_Article_Factory::get_article($post);
 
 $date = $article->get_date_day('d/m/Y');
 
-$thumbnail = $article->thumbnail_common;
+$thumbnail = $article->get_thumbnail_common(null, 'destacado');
 $section = $article->section;
 $author = $article->first_author;
 $authors = $article->authors;
