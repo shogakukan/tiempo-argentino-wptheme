@@ -531,14 +531,12 @@ class Widgets_Theme_TA
                 
             $rows = explode($divider, $content);
             $result = "";
-            $rowIndexDesktop = 1;
-            $rowIndexMobile = 1;
 
             foreach ($rows as $index => $row) {
                 $result .= $row;
 
                 if ($index < 11) {
-                    $adCode = 'home_desk_' . $index . "_" . ($index+1);
+                    $adCode = 'home_desk_' . ($index + 1) . "_" . ($index + 2);
                     if (is_active_sidebar($adCode)) {
                         ob_start();
                         dynamic_sidebar($adCode);
@@ -546,11 +544,10 @@ class Widgets_Theme_TA
                         $result .= $preAdDesktop;
                         $result .= $widget;
                         $result .= $postAd;
-                        $rowIndexDesktop += 2;
                     }
                     
                     if ($index < 6) {
-                        $adCode = 'home_mob_row_' . $index;
+                        $adCode = 'home_mob_row_' . ($index + 1);
                         if (is_active_sidebar($adCode)) {
                             ob_start();
                             dynamic_sidebar($adCode);
@@ -558,7 +555,6 @@ class Widgets_Theme_TA
                             $result .= $preAdMobile;
                             $result .= $widget;
                             $result .= $postAd;
-                            $rowIndexMobile ++;
                         }
                     }
                 }
