@@ -29,7 +29,7 @@ class Widgets_Theme_TA
 
         add_filter('the_content', [$this, 'insert_custom_content_3']);
 
-        add_filter( 'the_content', [$this, 'home_ads_1']);
+        add_filter( 'the_content', [$this, 'home_ads']);
 
         add_action('widgets_init', [$this, 'footer_fixed_mobile']);
 
@@ -56,7 +56,14 @@ class Widgets_Theme_TA
 
     public function home_desktop_widgets()
     {
-        $widgets = ['home_desk_1' => __('Home Desktop 1', 'gen-base-theme'), 'home_desk_2' => __('Home Desktop 2', 'gen-base-theme'), 'home_desk_1_2' => __('Home Desktop 1-2', 'gen-base-theme')];
+        $widgets = ['home_desk_1' => __('Home Desktop 1', 'gen-base-theme'),
+                    'home_desk_2' => __('Home Desktop 2', 'gen-base-theme'),
+                    'home_desk_1_2' => __('Home Desktop fila 1-2', 'gen-base-theme'),
+                    'home_desk_4_5' => __('Home Desktop fila 4-5', 'gen-base-theme'),
+                    'home_desk_6_7' => __('Home Desktop fila 6-7', 'gen-base-theme'),
+                    'home_desk_8_9' => __('Home Desktop fila 8-9', 'gen-base-theme'),
+                    'home_desk_10_11' => __('Home Desktop fila 10-11', 'gen-base-theme')
+                ];
 
         foreach ($widgets as $key => $val) {
             register_sidebar(array(
@@ -185,6 +192,11 @@ class Widgets_Theme_TA
     {
         $widgets = [
             'home_mob_2' => __('Home Mobile 1', 'gen-base-theme'),
+            'home_mob_row_1' => __('Home Mobile entre filas 1', 'gen-base-theme'),
+            'home_mob_row_2' => __('Home Mobile entre filas 2', 'gen-base-theme'),
+            'home_mob_row_3' => __('Home Mobile entre filas 3', 'gen-base-theme'),
+            'home_mob_row_4' => __('Home Mobile entre filas 4', 'gen-base-theme'),
+            'home_mob_row_5' => __('Home Mobile entre filas 5', 'gen-base-theme'),
         ];
 
         foreach ($widgets as $key => $val) {
@@ -501,44 +513,59 @@ class Widgets_Theme_TA
         }
     }
 
-    function home_ads_1( $content ) {
+    function home_ads( $content ) {
         if (is_front_page()){
             $divider = '<!-- row divider -->';
             $preAdDesktop = '<div class="container d-none d-sm-none d-md-block mt-md-3 mb-md-3">' .
-                        '<div class="row d-flex">' .
-                            '<div class="mx-auto text-center">';
-            $postAdDesktop = '</div>' .
-                                '</div>' .
-                                    '</div>';
+                                '<div class="row d-flex">' .
+                                    '<div class="mx-auto text-center">';
+            $postAd = '</div>' .
+                        '</div>' .
+                            '</div>';
+
+            $preAdMobile = '<div class="container d-block d-sm-none d-md-none d-lg-none mt-md-3 mb-md-3 text-center mt-3">' .
+                                '<div class="row d-flex">' .
+                                    '<div class="col-12 mx-auto text-center">';
                 
             $rows = explode($divider, $content);
             $result = "";
+            $rowIndexDesktop = 1;
+            $rowIndexMobile = 1;
+
             foreach ($rows as $index => $row) {
                 $result .= $row;
-                if ($index + 1 == 1) {
-                    if (is_active_sidebar('home_desk_1_2')) {
+
+                if ($index < 11) {
+                    $adCode = 'home_desk_' . $index . "_" . ($index+1);
+                    if (is_active_sidebar($adCode)) {
                         ob_start();
-                        dynamic_sidebar('home_desk_1_2');
+                        dynamic_sidebar($adCode);
                         $widget = ob_get_clean();
                         $result .= $preAdDesktop;
                         $result .= $widget;
-                        $result .= $postAdDesktop;
+                        $result .= $postAd;
+                        $rowIndexDesktop += 2;
+                    }
+                    
+                    if ($index < 6) {
+                        $adCode = 'home_mob_row_' . $index;
+                        if (is_active_sidebar($adCode)) {
+                            ob_start();
+                            dynamic_sidebar($adCode);
+                            $widget = ob_get_clean();
+                            $result .= $preAdMobile;
+                            $result .= $widget;
+                            $result .= $postAd;
+                            $rowIndexMobile ++;
+                        }
                     }
                 }
-                // if ($index + 1 == 2) {
-                //     if (is_active_sidebar('side-single-note')) {
-                //         ob_start();
-                //         dynamic_sidebar('down-single-note');
-                //         $widget = ob_get_clean();
-                //         $result .= $widget;
-                //     }
-                // }
+                
             }
             return $result;
         } else {
             return $content;
-        }
-        
+        }  
     }
 }
 

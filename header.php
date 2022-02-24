@@ -20,7 +20,7 @@
         <?php if (is_active_sidebar('home_desk_1')) { ?>
             <div class="container d-none d-sm-none d-md-block mt-md-3 mb-md-3">
                 <div class="row d-flex">
-                    <div class="col-9 mx-auto text-center">
+                    <div class="mx-auto text-center">
                         <?php dynamic_sidebar('home_desk_1'); ?>
                     </div>
                 </div>
@@ -33,7 +33,7 @@
         <?php if (is_active_sidebar('over-header-note')) { ?>
             <div class="container d-none d-sm-none d-md-block mt-md-3 mb-md-3">
                 <div class="row d-flex">
-                    <div class="col-9 mx-auto text-center">
+                    <div class="mx-auto text-center">
                         <?php dynamic_sidebar('over-header-note'); ?>
                     </div>
                 </div>
@@ -46,7 +46,7 @@
         <?php if (is_active_sidebar('seccion_head_1')) { ?>
             <div class="container d-none d-sm-none d-md-block mt-md-3 mb-md-3">
                 <div class="row d-flex">
-                    <div class="col-9 mx-auto text-center">
+                    <div class="mx-auto text-center">
                         <?php dynamic_sidebar('seccion_head_1'); ?>
                     </div>
                 </div>
@@ -187,7 +187,7 @@
         <?php if (is_active_sidebar('home_desk_2')) { ?>
             <div class="container d-none d-sm-none d-md-block mt-md-3 mb-md-3">
                 <div class="row d-flex">
-                    <div class="col-9 mx-auto text-center">
+                    <div class="mx-auto text-center">
                         <?php dynamic_sidebar('home_desk_2'); ?>
                     </div>
                 </div>
@@ -210,7 +210,7 @@
         <?php if (is_active_sidebar('seccion_head_2')) { ?>
             <div class="container d-none d-sm-none d-md-block mt-md-3 mb-md-3">
                 <div class="row d-flex">
-                    <div class="col-9 mx-auto text-center">
+                    <div class="mx-auto text-center">
                         <?php dynamic_sidebar('seccion_head_2'); ?>
                     </div>
                 </div>
