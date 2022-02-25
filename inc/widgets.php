@@ -29,6 +29,8 @@ class Widgets_Theme_TA
 
         add_filter('the_content', [$this, 'insert_custom_content_3']);
 
+        add_filter('the_content', [$this, 'insert_custom_content_4']);
+
         add_filter( 'the_content', [$this, 'home_ads']);
 
         add_action('widgets_init', [$this, 'footer_fixed_mobile']);
@@ -336,10 +338,10 @@ class Widgets_Theme_TA
         endif;
     }
 
-    public function insert_middle_mobile()
+    public function insert_middle_2() //no existe
     {
-        if (is_active_sidebar('middle-single-note-mobile')) :
-            return dynamic_sidebar('middle-single-note-mobile');
+        if (is_active_sidebar('middle-single-note-2')) :
+            return dynamic_sidebar('middle-single-note-2');
         endif;
     }
 
@@ -369,6 +371,20 @@ class Widgets_Theme_TA
     {
 
         ob_start();
+        $this->insert_middle_2();
+        $widget_area_html = ob_get_clean();
+
+        if (is_single() && !is_admin() && (!function_exists('ampforwp_is_amp_endpoint') || (function_exists('ampforwp_is_amp_endpoint') && !ampforwp_is_amp_endpoint()))) {
+            return $this->insert_after_paragraph($widget_area_html, 2, $content);
+        }
+
+        return $content;
+    }
+
+    public function insert_custom_content_3($content)
+    {
+
+        ob_start();
         $this->insert_middle_mobile();
         $widget_area_html_2 = ob_get_clean();
 
@@ -379,7 +395,7 @@ class Widgets_Theme_TA
         return $content;
     }
 
-    public function insert_custom_content_3($content)
+    public function insert_custom_content_4($content)
     {
 
         ob_start();
