@@ -357,6 +357,8 @@ class Widgets_Theme_TA
         ob_start();
         $this->insert_middle();
         $widget_area_html = ob_get_clean();
+        $class = 'widget-text wp_widget_plugin_box';
+        str_replace($class, $class . ' entre-1', $widget_area_html);
 
         if (is_single() && !is_admin() && (!function_exists('ampforwp_is_amp_endpoint') || (function_exists('ampforwp_is_amp_endpoint') && !ampforwp_is_amp_endpoint()))) {
             return $this->insert_after_paragraph($widget_area_html, 2, $content);
@@ -370,10 +372,12 @@ class Widgets_Theme_TA
 
         ob_start();
         $this->insert_middle_2();
-        $widget_area_html = ob_get_clean();
+        $widget_area_html_2 = ob_get_clean();
+        $class = 'widget-text wp_widget_plugin_box';
+        str_replace($class, $class . ' entre-2', $widget_area_html_2);
 
         if (is_single() && !is_admin() && (!function_exists('ampforwp_is_amp_endpoint') || (function_exists('ampforwp_is_amp_endpoint') && !ampforwp_is_amp_endpoint()))) {
-            return $this->insert_after_paragraph($widget_area_html, 3, $content);
+            return $this->insert_after_paragraph($widget_area_html_2, 3, $content);
         }
 
         return $content;
@@ -384,10 +388,10 @@ class Widgets_Theme_TA
 
         ob_start();
         $this->insert_middle_mob();
-        $widget_area_html_2 = ob_get_clean();
+        $widget_area_html_3 = ob_get_clean();
 
         if (is_single() && !is_admin() && (!function_exists('ampforwp_is_amp_endpoint') || (function_exists('ampforwp_is_amp_endpoint') && !ampforwp_is_amp_endpoint()))) {
-            return $this->insert_after_paragraph($widget_area_html_2, 2, $content);
+            return $this->insert_after_paragraph($widget_area_html_3, 2, $content);
         }
 
         return $content;
