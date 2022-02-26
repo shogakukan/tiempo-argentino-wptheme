@@ -15,8 +15,6 @@ if( !$article ){
 }
 
 $block_path = plugin_dir_path( __FILE__ );
-$thumbnail = $article->thumbnail_alt_common ? $article->thumbnail_alt_common : $article->thumbnail_common;
-$thumbnail_url = $thumbnail ? $thumbnail['url'] : '';
 $thumb_cont_class = $desktop_horizontal ? 'col-3 p-0' : '' ;
 $info_class = $desktop_horizontal ? 'mt-0 col-9' : '';
 $video = $article->video;
@@ -27,8 +25,15 @@ $cintillo = $article->cintillo;
 $url = $article->url;
 $authors = $show_authors ? $article->authors : null;
 
-if($size == 'large')
+if(str_contains($size, 'large')){
+    $imgSize = $size == 'mega-large' ? 'full' : 'destacado';
     $class .= ' destacado';
+} else {
+    $imgSize = 'medium';
+}
+$thumbnail = $article->get_thumbnail_common(null, $imgSize);//$article->thumbnail_alt_common ? $article->thumbnail_alt_common : $article->thumbnail_common;
+$thumbnail_url = $thumbnail ? $thumbnail['url'] : '';
+
 // if($desktop_horizontal == true)
 //     $class .= ' horizontal';
 
