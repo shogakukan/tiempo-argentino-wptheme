@@ -135,7 +135,7 @@ class TA_Edicion_Impresa extends TA_Article_Data{
     //     return get_the_date('H:i', $this->post);
     // }
 
-    protected function get_thumbnail_common($variation = null, $size = 'full'){
+    public function get_thumbnail_common($variation = null, $size = 'full'){
         $thumbnail_id = get_post_thumbnail_id($this->post);
         $attachment = $thumbnail_id ? get_post( $thumbnail_id ) : null;
         $thumb_data = null;
