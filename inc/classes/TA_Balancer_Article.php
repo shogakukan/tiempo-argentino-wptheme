@@ -60,7 +60,7 @@ class TA_Balancer_Article extends TA_Article_Data{
         return $this->authors ? $this->authors[0] : null;
     }
 
-    protected function get_thumbnail_common($variation = null, $size = 'full'){
+    public function get_thumbnail_common($variation = null, $size = 'full'){
         if( !$this->data['imgURL'] ){
             $thumb_data = array(
                 'attachment'    => null,
