@@ -24,9 +24,9 @@
         <?php //include(TA_THEME_PATH . '/markup/partes/taller-relacionado.php');
         ?>
     </div>
-    <?php if (is_active_sidebar('side-single-note')) { ?>
+    <?php if (is_active_sidebar('article_desktop_sidebar')) { ?>
         <div class="d-none d-sm-none d-md-block anuncio-side-single">
-            <?php dynamic_sidebar('side-single-note'); ?>
+            <?php dynamic_sidebar('article_desktop_sidebar'); ?>
         </div>
     <?php } ?>
 </div>

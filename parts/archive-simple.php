@@ -30,11 +30,11 @@ $articles_block = RB_Gutenberg_Block::get_block('ta/articles');
         </div>
         <div class="col-12 col-md-4 p-0">
 
-            <?php if (is_active_sidebar('seccion_mob_3')) { ?>
+            <?php if (is_active_sidebar('section_mobile_posarticles')) { ?>
                 <div class="container d-block d-sm-none d-md-none d-lg-none mt-md-3 mb-md-3 text-center mt-3">
                     <div class="row d-flex">
                         <div class="col-12 mx-auto text-center">
-                            <?php dynamic_sidebar('seccion_mob_3'); ?>
+                            <?php dynamic_sidebar('section_mobile_posarticles'); ?>
                         </div>
                     </div>
                 </div>
@@ -47,21 +47,21 @@ $articles_block = RB_Gutenberg_Block::get_block('ta/articles');
                 'btn'                       => "ASOCIATE",
             )); ?>
 
-            <?php if (is_active_sidebar('seccion_desk_1')) { ?>
+            <?php if (is_active_sidebar('section_desktop_sidebar_1')) { ?>
                 <div class="container d-none d-sm-none d-md-block mt-md-3 mb-md-3">
                     <div class="row d-flex">
                         <div class="mx-auto text-center">
-                            <?php dynamic_sidebar('seccion_desk_1'); ?>
+                            <?php dynamic_sidebar('section_desktop_sidebar_1'); ?>
                         </div>
                     </div>
                 </div>
             <?php } ?>
 
-            <?php if (is_active_sidebar('seccion_desk_2')) { ?>
+            <?php if (is_active_sidebar('section_desktop_sidebar_2')) { ?>
                 <div class="container d-none d-sm-none d-md-block mt-md-3 mb-md-3">
                     <div class="row d-flex">
                         <div class="mx-auto text-center">
-                            <?php dynamic_sidebar('seccion_desk_2'); ?>
+                            <?php dynamic_sidebar('section_desktop_sidebar_2'); ?>
                         </div>
                     </div>
                 </div>
@@ -76,13 +76,13 @@ $articles_block = RB_Gutenberg_Block::get_block('ta/articles');
         'current'   => $current_page,
     )); ?>
 
-    <?php if (is_active_sidebar('seccion_mob_4')) { ?>
+    <?php if (is_active_sidebar('section_mobile_pospagination')) { ?>
         <div class="row d-block d-sm-none d-md-none d-lg-none">
 
             <div class="container  mt-md-3 mb-md-3 text-center mt-3">
                 <div class="row d-flex">
                     <div class="col-12 mx-auto text-center">
-                        <?php dynamic_sidebar('seccion_mob_4'); ?>
+                        <?php dynamic_sidebar('section_mobile_pospagination'); ?>
                     </div>
                 </div>
             </div>
