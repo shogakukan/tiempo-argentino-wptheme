@@ -8,9 +8,11 @@ $sponsor = $article->micrositio->get_sponsor();
     <?php TA_Blocks_Container_Manager::open_new(); ?>
         <div class="text-left mx-auto">
             <div class="categories d-flex">
-                <h4 class="theme mr-2"><?php echo esc_html($article->micrositio->title); ?></h4>
+                <a href="<?php echo "/micrositio/" . esc_attr($article->micrositio->slug); ?>">
+                    <h4 class="theme mr-2"><?php echo esc_html($article->micrositio->title); ?></h4>
+                </a>
                 <?php if($article->section): ?>
-                <h4 class="subtheme"><?php echo $article->section->name; ?></h4>
+                    <a href="<?php echo esc_attr($article->section->archive_url); ?>"><h4 class="subtheme"><?php echo $article->section->name; ?></h4></a>
                 <?php endif; ?>
             </div>
             <div class="art-column-w-xpadding">

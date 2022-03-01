@@ -9,7 +9,7 @@ if(!$article)
             <div class="categories d-flex">
                 <h4 class="theme mr-2">Fotogalería</h4>
                 <?php if($article->section): ?>
-                <h4 class="subtheme"><?php echo $article->section->name; ?></h4>
+                    <a href="<?php echo esc_attr($article->section->archive_url); ?>"><h4 class="subtheme"><?php echo $article->section->name; ?></h4></a>
                 <?php endif; ?>
             </div>
             <div class="art-column-w-xpadding">

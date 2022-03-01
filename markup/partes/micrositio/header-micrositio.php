@@ -139,7 +139,9 @@ if (!$micrositio)
                 <div class="topic-tag d-flex justify-content-center">
                     <div class="triangle-left"></div>
                     <div class="content d-flex align-items-center justify-content-center">
-                        <p><?php echo esc_html($micrositio->title); ?></p>
+                        <a href="<?php echo "/micrositio/" . esc_attr($micrositio->slug); ?>">
+                            <p><?php echo esc_html($micrositio->title); ?></p>
+                        </a>
                     </div>
                     <div class="triangle-right"></div>
                 </div>
