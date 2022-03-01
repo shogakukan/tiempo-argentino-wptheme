@@ -505,6 +505,7 @@ function rb_get_posts($query_args = array(), $post_filter = null){
         'with_thumbnail'            => false,
         'include_terms'             => null,//array of taxonomies to search terms for
         'only_with_included_terms'  => false, //only return posts that has some of the terms from the taxonomies in 'include_terms'
+        'orderby' => 'date'
     );
     $args = $default_args;
     if(is_array($query_args))
