@@ -558,7 +558,9 @@ function rb_get_posts($query_args = array(), $post_filter = null){
     // =============================================================================
     // POST QUERY
     // =============================================================================
+    add_filter( 'posts_where', 'only_title_filter', 10, 2 );
     $posts_query = new WP_Query($args);
+    remove_filter( 'posts_where', 'only_title_filter' );
     if(!$posts_query || is_wp_error($posts_query))
         return $posts_query;
 
@@ -602,3 +604,12 @@ function rb_get_posts($query_args = array(), $post_filter = null){
         'total_pages'   => $total_pages,
     );
 }
+
+function only_title_filter( $where, &$wp_query ) {
+    global $wpdb;
+    if ( $search_term = $wp_query->get( 's' ) ) {
+       $where = ' AND ' . $wpdb->posts . '.post_title LIKE \'%' . $wpdb->esc_like( $search_term ) . '%\'' . $where;
+    }
+ 
+    return $where;
+ }
