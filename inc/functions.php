@@ -1130,7 +1130,7 @@ function ta_get_commment_display_data($args = array()){
     $user = get_user_by('ID', $comment->user_id);
     $display_data = array(
         'comment'                   => $comment,
-        'avatar_url'                => get_avatar_url($comment->user_id),
+        'avatar_url'                => get_profile_image($comment->user_id),
         'name'                      => $comment->comment_author,
         'date'                      => date("j F o - H:i", strtotime($comment->comment_date)),
         'content'                   => $comment->comment_content,
@@ -1164,6 +1164,16 @@ function ta_get_comment_form_fields_as_string(){
     ob_start();
     get_template_part('parts/commentform','fields');
     return ob_get_clean();
+}
+
+function get_profile_image($id)
+{
+    $profile_image = get_user_meta($id, '_profile_picture', true);
+    if ($profile_image) {
+        return $profile_image;
+    } else {
+        return get_avatar_url($id);
+    }
 }
 
 function payment_user_role_sync()
