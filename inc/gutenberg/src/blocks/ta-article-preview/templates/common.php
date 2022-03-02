@@ -1,8 +1,8 @@
 <?php
 
-$thumb_cont_class = $desktop_horizontal ? 'col-5 col-md-6 pr-0 pl-0' : 'col-5 col-md-12 pr-0 pl-0';
-$info_class = $desktop_horizontal ? 'col-7 col-md-6' : 'col-7 col-md-12 pr-md-0 pl-md-0';
-$preview_class = $desktop_horizontal ? 'd-flex' : 'd-flex d-md-block';
+$thumb_cont_class = $desktop_horizontal ? 'col-5 col-md-6 pr-0 pl-0' : ($size != 'large' && $size != 'mega-large' ? 'col-5 col-md-12 pr-0 pl-0' : '');
+$info_class = $desktop_horizontal ? 'col-7 col-md-6' : ($size != 'large' && $size != 'mega-large' ? 'col-7 col-md-12 pr-md-0 pl-md-0' : '');
+$preview_class = $desktop_horizontal ? 'd-flex' : ($size != 'large' && $size != 'mega-large' ? 'd-flex d-md-block' : '');
 $preview_class .= " $class";
 $preview_class = esc_attr($preview_class);
 ?>
