@@ -14,5 +14,6 @@ class TA_Author_Data extends Data_Manager{
         'quote'             => '',
         'bio'               => '',
         'networks'          => null,
+        'is_from_ta'        => false
     );
 }
