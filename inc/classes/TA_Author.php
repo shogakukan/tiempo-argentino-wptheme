@@ -84,4 +84,8 @@ class TA_Author extends TA_Author_Data{
         $networks = get_term_meta($this->term->term_id, "ta_author_networks", true);
         return $networks ? $networks : null;
     }
+    
+    public function get_is_from_ta(){
+        return get_term_meta($this->ID, "ta_author_is_from_tiempo_arg", true );
+    }
 }

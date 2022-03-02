@@ -94,7 +94,7 @@ $authors = $article->authors;
             <?php if (is_active_sidebar('article_mobile_postext')) { ?>
 
                 <div class="row d-flex d-block d-sm-none d-md-none d-lg-none mt-md-3 mb-md-3 mt-3">
-                    <div class="col-9 mx-auto">
+                    <div class="mx-auto">
                         <?php dynamic_sidebar('article_mobile_postext'); ?>
                     </div>
                 </div>

@@ -25,7 +25,7 @@ $articles_interest_block->render(array(
 <?php if (is_active_sidebar('article_mobile_precomments')) { ?>
     <div class="container d-block d-sm-none d-md-none d-lg-none mt-md-3 mb-md-3">
         <div class="row d-flex">
-            <div class="col-9 mx-auto">
+            <div class="mx-auto">
                 <?php dynamic_sidebar('article_mobile_precomments'); ?>
             </div>
         </div>

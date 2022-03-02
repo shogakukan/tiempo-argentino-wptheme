@@ -106,6 +106,22 @@ return array(
                 ),
             ),
         ),
+        'ta_author_is_from_tiempo_arg' => array(
+            'settings'  => array(
+                'title'             => __('Interno', 'ta-genosha'),
+                'context'           => 'side',
+                'priority'          => 'high',
+                'classes'           => array('ta-metabox'),
+            ),
+            'input'  => array(
+                'controls'        => array(
+                    'text'   => array(
+                        'label'             => __('Es de Tiempo Argentino', 'ta-genosha'),
+                        'input_type'            => 'checkbox',
+                    ),
+                ),
+            ),
+        ),
         'ta_author_bio' => array(
             'settings'  => array(
                 'title'             => __('Descripción', 'ta-genosha'),
