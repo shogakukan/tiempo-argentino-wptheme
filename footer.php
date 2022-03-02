@@ -27,18 +27,18 @@
 
     </div>
 </div>
-<?php if (is_active_sidebar('footer_fixed_mobile')) { ?>
-    <?php dynamic_sidebar('footer_fixed_mobile'); ?>
+<?php if (is_active_sidebar('home_mobile_fixed')) { ?>
+    <?php dynamic_sidebar('home_mobile_fixed'); ?>
 <?php } ?>
 <?php if (is_front_page()) : ?>
 
-<?php if (is_active_sidebar('footer_fixed')) { ?>
-    <?php dynamic_sidebar('footer_fixed'); ?>        
+<?php if (is_active_sidebar('home_desktop_fixed')) { ?>
+    <?php dynamic_sidebar('home_desktop_fixed'); ?>        
 <?php } ?>
 
 
-<?php if (is_active_sidebar('vslider_desktop')) { ?>
-    <?php dynamic_sidebar('vslider_desktop'); ?>
+<?php if (is_active_sidebar('home_desktop_vslider')) { ?>
+    <?php dynamic_sidebar('home_desktop_vslider'); ?>
 <?php } ?>
 
 

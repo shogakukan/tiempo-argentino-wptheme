@@ -9,7 +9,7 @@ if(!$article)
             <div class="categories d-flex">
                 <h4 class="theme mr-2">Tiempo Audiovisual</h4>
                 <?php if($article->section): ?>
-                <h4 class="subtheme"><?php echo $article->section->name; ?></h4>
+                    <a href="<?php echo esc_attr($article->section->archive_url); ?>"><h4 class="subtheme"><?php echo $article->section->name; ?></h4></a>
                 <?php endif; ?>
             </div>
             <div class="art-column-w-xpadding">
@@ -72,17 +72,17 @@ if(!$article)
     <?php //include_once(TA_THEME_PATH . "/markup/partes/newsletter-especial.php");  ?>
 </div>
 <div class="container">
-    <?php if (is_active_sidebar('note_calltoaction_mob')) : ?>
+    <?php if (is_active_sidebar('article_mobile_calltoaction')) : ?>
     <div class="row d-flex d-block d-sm-none d-md-none d-lg-none mt-md-3 mb-md-3 mt-3">
         <div class="col-12 mx-auto">
-            <?php dynamic_sidebar('note_calltoaction_mob'); ?>
+            <?php dynamic_sidebar('article_mobile_calltoaction'); ?>
         </div>
     </div>
     <?php endif; ?>
-    <?php if (is_active_sidebar('note_calltoaction_desk')) : ?>
+    <?php if (is_active_sidebar('article_desktop_calltoaction')) : ?>
     <div class="row d-none d-sm-none d-md-flex d-lg-flex mt-md-3 mb-md-3 mt-3">
         <div class="col-12 mx-auto">
-            <?php dynamic_sidebar('note_calltoaction_desk'); ?>
+            <?php dynamic_sidebar('article_desktop_calltoaction'); ?>
         </div>
     </div>
     <?php endif; ?>

@@ -42,7 +42,11 @@ extract($template_args);
                 <p><?php echo esc_html($date); ?></p>
             </div>
             <div class="input-body">
-                <p><?php echo esc_html($content); ?></p>
+                <?php if ($author || $user_manages_comments) : ?>
+                    <p><?php echo $content; ?></p>
+                <?php else : ?>
+                    <p><?php echo esc_html($content); ?></p>
+                <?php endif; ?>
             </div>
         </div>
     </div>

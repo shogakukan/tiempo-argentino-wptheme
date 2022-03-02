@@ -61,10 +61,10 @@ $authors = $article->authors;
 
                         <?php get_template_part('parts/article','authors_data', array( 'article' => $article )); ?>
                         
-                        <?php if (is_active_sidebar('note_mob_7')) { ?>
+                        <?php if (is_active_sidebar('article_mobile_postimage')) { ?>
                             <div class="row d-flex">
                                 <div class="col-12 d-block d-md-none d-sm-none mx-auto text-center mt-3">
-                                    <?php dynamic_sidebar('note_mob_7'); ?>
+                                    <?php dynamic_sidebar('article_mobile_postimage'); ?>
                                 </div>
                             </div>
                     <?php } ?>
@@ -73,6 +73,13 @@ $authors = $article->authors;
                                 <?php echo apply_filters( 'the_content', $article->content ); ?>
                             </div>
                         </div>
+                        <?php if (is_active_sidebar('article_mobile_calltoaction')) : ?>
+                            <div class="row d-flex d-block d-sm-none d-md-none d-lg-none mt-md-3 mb-md-3 mt-3">
+                                <div class="col-12 mx-auto">
+                                    <?php dynamic_sidebar('article_mobile_calltoaction'); ?>
+                                </div>
+                            </div>
+                        <?php endif; ?>
                         <?php get_template_part( 'parts/article', 'social_buttons', array( 'class' => 'text-right mt-3' ) ); ?>
                     </div>
                 </div>
@@ -84,27 +91,20 @@ $authors = $article->authors;
 
 
             <?php include_once(TA_THEME_PATH . '/markup/partes/tags.php');  ?>
-            <?php if (is_active_sidebar('note_mob_2')) { ?>
+            <?php if (is_active_sidebar('article_mobile_postext')) { ?>
 
                 <div class="row d-flex d-block d-sm-none d-md-none d-lg-none mt-md-3 mb-md-3 mt-3">
                     <div class="col-9 mx-auto">
-                        <?php dynamic_sidebar('note_mob_2'); ?>
+                        <?php dynamic_sidebar('article_mobile_postext'); ?>
                     </div>
                 </div>
 
             <?php } ?>
             <?php include_once(TA_THEME_PATH . '/markup/partes/mira-tambien.php');  ?>
-            <?php if (is_active_sidebar('note_calltoaction_mob')) : ?>
-                <div class="row d-flex d-block d-sm-none d-md-none d-lg-none mt-md-3 mb-md-3 mt-3">
-                    <div class="col-12 mx-auto">
-                        <?php dynamic_sidebar('note_calltoaction_mob'); ?>
-                    </div>
-                </div>
-            <?php endif; ?>
-            <?php if (is_active_sidebar('note_calltoaction_desk')) : ?>
+            <?php if (is_active_sidebar('article_desktop_calltoaction')) : ?>
                 <div class="row d-none d-sm-none d-md-flex d-lg-flex mt-md-3 mb-md-3 mt-3">
                     <div class="col-12 mx-auto">
-                        <?php dynamic_sidebar('note_calltoaction_desk'); ?>
+                        <?php dynamic_sidebar('article_desktop_calltoaction'); ?>
                     </div>
                 </div>
             <?php endif; ?>

@@ -720,7 +720,7 @@ add_action('ampforwp_below_the_title','author_amp');
 
 function publi_note_mob_before_related()
 {
-	widgets_ta()->note_mob_before_related();
+	widgets_ta()->article_amp_prerelated();
 }
 add_action('ampforwp_above_related_post','publi_note_mob_before_related');
 

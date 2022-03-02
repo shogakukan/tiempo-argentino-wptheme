@@ -1,3 +1,15 @@
+<?php 
+$userdata = get_userdata(get_current_user_id());
+$rol = $userdata->roles[0];
+if (is_user_logged_in() && get_user_meta(get_current_user_id(),'_user_status',true) == 'active' && $rol == get_option('subscription_digital_role')){
+    $link = get_permalink(get_option('beneficios_loop_page'));
+    $label = __('COMUNIDAD','gen-base-theme'); 
+} else {
+    $link = get_permalink(get_option('subscriptions_loop_page'));
+    $label = __('ASOCIATE','gen-base-theme'); 
+}
+?>
+
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 
@@ -17,11 +29,11 @@
     <?php wp_body_open(); ?>
     <!-- anuncio sobre portada -->
     <?php if (is_front_page()) : ?>
-        <?php if (is_active_sidebar('home_desk_1')) { ?>
+        <?php if (is_active_sidebar('home_desk_preheader')) { ?>
             <div class="container d-none d-sm-none d-md-block mt-md-3 mb-md-3">
                 <div class="row d-flex">
                     <div class="mx-auto text-center">
-                        <?php dynamic_sidebar('home_desk_1'); ?>
+                        <?php dynamic_sidebar('home_desk_preheader'); ?>
                     </div>
                 </div>
             </div>
@@ -30,11 +42,11 @@
     <!-- anuncio sobre portada -->
     <?php if (is_single()) : ?>
         <!-- anuncio single seccion autor tag-->
-        <?php if (is_active_sidebar('over-header-note')) { ?>
+        <?php if (is_active_sidebar('article_desktop_preheader')) { ?>
             <div class="container d-none d-sm-none d-md-block mt-md-3 mb-md-3">
                 <div class="row d-flex">
                     <div class="mx-auto text-center">
-                        <?php dynamic_sidebar('over-header-note'); ?>
+                        <?php dynamic_sidebar('article_desktop_preheader'); ?>
                     </div>
                 </div>
             </div>
@@ -43,11 +55,11 @@
     <?php endif; ?>
     <!-- taxonomia -->
     <?php if (is_tax()) : ?>
-        <?php if (is_active_sidebar('seccion_head_1')) { ?>
+        <?php if (is_active_sidebar('section_desktop_preheader')) { ?>
             <div class="container d-none d-sm-none d-md-block mt-md-3 mb-md-3">
                 <div class="row d-flex">
                     <div class="mx-auto text-center">
-                        <?php dynamic_sidebar('seccion_head_1'); ?>
+                        <?php dynamic_sidebar('section_desktop_preheader'); ?>
                     </div>
                 </div>
             </div>
@@ -162,11 +174,15 @@
                 </div>
                 <div class="asociate-banner position-relative ml-md-3">
                     <div class="asociate-banner-bg h-100 ">
-                        <a href="<?php echo get_permalink(get_option('subscriptions_loop_page')) ?>"> <img src="<?php echo TA_THEME_URL; ?>/markup/assets/images/asociate-banner.svg" class="img-fluid" alt=""></a>
+                        <a href="<?php echo $link ?>"> <img src="<?php echo TA_THEME_URL; ?>/markup/assets/images/asociate-banner.svg" class="img-fluid" alt=""></a>
                     </div>
                     <div class="asociate-banner-content position-absolute">
                         <div class="separator"></div>
-                        <p class="mt-1"><a href="<?php echo get_permalink(get_option('subscriptions_loop_page')) ?>"><?php echo __('ASOCIATE','gen-base-theme')?></a></p>
+                        <p class="mt-1">
+                            <a href="<?php echo $link; ?>">
+                                <?php echo $label; ?>
+                            </a>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -184,22 +200,22 @@
 
     <!-- anuncio sobre portada -->
     <?php if (is_front_page()) : ?>
-        <?php if (is_active_sidebar('home_desk_2')) { ?>
+        <?php if (is_active_sidebar('home_desk_posheader')) { ?>
             <div class="container d-none d-sm-none d-md-block mt-md-3 mb-md-3">
                 <div class="row d-flex">
                     <div class="mx-auto text-center">
-                        <?php dynamic_sidebar('home_desk_2'); ?>
+                        <?php dynamic_sidebar('home_desk_posheader'); ?>
                     </div>
                 </div>
             </div>
         <?php } ?>
     <?php endif; ?>
     <?php if (is_front_page()) : ?>
-        <?php if (is_active_sidebar('home_mob_2')) { ?>
+        <?php if (is_active_sidebar('home_mob_posheader')) { ?>
             <div class="container d-block d-sm-none d-md-none d-lg-none mt-md-3 mb-md-3 text-center mt-3">
                 <div class="row d-flex">
                     <div class="col-12 mx-auto text-center">
-                        <?php dynamic_sidebar('home_mob_2'); ?>
+                        <?php dynamic_sidebar('home_mob_posheader'); ?>
                     </div>
                 </div>
             </div>
@@ -207,21 +223,21 @@
     <?php endif; ?>
     <!-- taxonomia -->
     <?php if (is_tax()) : ?>
-        <?php if (is_active_sidebar('seccion_head_2')) { ?>
+        <?php if (is_active_sidebar('section_desktop_posheader')) { ?>
             <div class="container d-none d-sm-none d-md-block mt-md-3 mb-md-3">
                 <div class="row d-flex">
                     <div class="mx-auto text-center">
-                        <?php dynamic_sidebar('seccion_head_2'); ?>
+                        <?php dynamic_sidebar('section_desktop_posheader'); ?>
                     </div>
                 </div>
             </div>
         <?php } ?>
 
-        <?php if (is_active_sidebar('seccion_mob_1')) { ?>
+        <?php if (is_active_sidebar('section_mobile_posheader')) { ?>
             <div class="container d-block d-sm-none d-md-none d-lg-none mt-md-3 mb-md-3 text-center mt-3">
                 <div class="row d-flex">
                     <div class="col-12 mx-auto text-center">
-                        <?php dynamic_sidebar('seccion_mob_1'); ?>
+                        <?php dynamic_sidebar('section_mobile_posheader'); ?>
                     </div>
                 </div>
             </div>
@@ -230,19 +246,19 @@
     <!-- taxonomia -->
     <!-- pops -->
     <?php if (is_front_page()) : ?>
-        <?php if (is_active_sidebar('popup')) { ?>
-            <?php dynamic_sidebar('popup'); ?>
+        <?php if (is_active_sidebar('home_desktop_pop')) { ?>
+            <?php dynamic_sidebar('home_desktop_pop'); ?>
         <?php } ?>
     <?php endif; ?>
 
     <?php if (is_front_page()) : ?>
-        <?php if (is_active_sidebar('popup_mobile')) { ?>
-            <?php dynamic_sidebar('popup_mobile'); ?>
+        <?php if (is_active_sidebar('home_mobile_pop')) { ?>
+            <?php dynamic_sidebar('home_mobile_pop'); ?>
         <?php } ?>
     <?php endif; ?>
 
     <?php if (is_front_page()) : ?>
-        <?php if (is_active_sidebar('vslider_mobile')) { ?>
-            <?php dynamic_sidebar('vslider_mobile'); ?>               
+        <?php if (is_active_sidebar('home_mobile_vslider')) { ?>
+            <?php dynamic_sidebar('home_mobile_vslider'); ?>               
         <?php } ?>
     <?php endif; ?>
