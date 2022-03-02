@@ -3,7 +3,7 @@
     <?php if (is_active_sidebar('article_desktop_preheader')) { ?>
 <div class="container d-sm-none d-md-block mt-md-3 mb-md-3">
     <div class="row d-flex">
-        <div class="col-9 mx-auto">
+        <div class="mx-auto">
             <?php dynamic_sidebar('article_desktop_preheader'); ?>          
         </div>
     </div>
