@@ -733,3 +733,10 @@ function search_filter($query) {
     }
 }
 add_action( 'pre_get_posts', 'search_filter' );
+
+add_action( 'pre_get_posts',  'set_posts_per_page'  );
+function set_posts_per_page( $query ) {
+	$query->set( 'posts_per_page', 20 );
+	if($query->query['ta_article_section'])
+		$query->set( 'posts_per_page', 9 );
+}
