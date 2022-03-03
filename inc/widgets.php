@@ -21,11 +21,11 @@ class Widgets_Theme_TA
         add_action('widgets_init', [$this, 'article_desktop_widgets']);
         add_action('widgets_init', [$this, 'article_desktop_paragraph_2_3']);
         add_action('widgets_init', [$this, 'article_desktop_paragraph_3_4']);
-        
+
         //ARTICLE MOBILE
         add_action('widgets_init', [$this, 'article_mobile_widgets']);
         add_action('widgets_init', [$this, 'article_mobile_paragraph_2_3']);
-        
+
         //OTHERS
         add_action('widgets_init', [$this, 'section_widgets']);
         add_action('widgets_init', [$this, 'micrositio_widgets']);
@@ -45,14 +45,15 @@ class Widgets_Theme_TA
 
     public function home_desktop_widgets()
     {
-        $widgets = ['home_desk_preheader' => __('Home Desktop - Preheader', 'gen-base-theme'),
-                    'home_desk_posheader' => __('Home Desktop - Posheader', 'gen-base-theme'),
-                    'home_desk_row_1_2' => __('Home Desktop  - Fila 1-2', 'gen-base-theme'),
-                    'home_desk_row_3_4' => __('Home Desktop - Fila 3-4', 'gen-base-theme'),
-                    'home_desk_row_5_6' => __('Home Desktop - Fila 5-6', 'gen-base-theme'),
-                    'home_desk_row_7_8' => __('Home Desktop - Fila 7-8', 'gen-base-theme'),
-                    'home_desk_row_9_10' => __('Home Desktop - Fila 9-10', 'gen-base-theme')
-                ];
+        $widgets = [
+            'home_desk_preheader' => __('Home Desktop - Preheader', 'gen-base-theme'),
+            'home_desk_posheader' => __('Home Desktop - Posheader', 'gen-base-theme'),
+            'home_desk_row_1_2' => __('Home Desktop  - Fila 1-2', 'gen-base-theme'),
+            'home_desk_row_3_4' => __('Home Desktop - Fila 3-4', 'gen-base-theme'),
+            'home_desk_row_5_6' => __('Home Desktop - Fila 5-6', 'gen-base-theme'),
+            'home_desk_row_7_8' => __('Home Desktop - Fila 7-8', 'gen-base-theme'),
+            'home_desk_row_9_10' => __('Home Desktop - Fila 9-10', 'gen-base-theme')
+        ];
 
         foreach ($widgets as $key => $val) {
             register_sidebar(array(
@@ -95,7 +96,7 @@ class Widgets_Theme_TA
             'before_widget' => '<div id="sticky-abajo" class="d-block d-sm-none d-md-none d-lg-none position-fixed text-center">
             <div class="sticky-bajo mobile-fixed">
                 <span class="cerrar-pop-abajo mobile-pop-close">
-                    <img src="'.get_stylesheet_directory_uri().'/assets/img/times-circle-regular.svg" />
+                    <img src="' . get_stylesheet_directory_uri() . '/assets/img/times-circle-regular.svg" />
                 </span>',
             'after_widget'  => ' </div>
             </div>',
@@ -110,7 +111,7 @@ class Widgets_Theme_TA
             'before_widget' => '<div id="sticky-abajo" class="d-none d-sm-none d-md-block d-lg-block position-fixed text-center">
             <div class="sticky-bajo">
                 <span class="cerrar-pop-abajo">
-                    <img src="'.get_stylesheet_directory_uri().'/assets/img/times-circle-regular.svg" />
+                    <img src="' . get_stylesheet_directory_uri() . '/assets/img/times-circle-regular.svg" />
                 </span>',
             'after_widget'  => '</div>
             </div>',
@@ -125,7 +126,7 @@ class Widgets_Theme_TA
             'before_widget' => '<div id="popup-avis" class="d-block d-sm-none d-md-none d-lg-none position-fixed">
             <div class="popup popup-mobile">
                 <span class="cerrar-pop pop-mobile-close">
-                    <img src="'.get_stylesheet_directory_uri().'/assets/img/times-circle-regular.svg" />
+                    <img src="' . get_stylesheet_directory_uri() . '/assets/img/times-circle-regular.svg" />
                 </span>
                 ',
             'after_widget'  => ' </div>
@@ -141,7 +142,7 @@ class Widgets_Theme_TA
             'before_widget' => ' <div id="vslider" class="d-none d-sm-none d-md-block d-lg-block position-fixed text-center">
             <div class="video-bajo">
                 <span class="cerrar-vslider-desktop">
-                    <img src="'.get_stylesheet_directory_uri().'/assets/img/times-circle-regular.svg" />
+                    <img src="' . get_stylesheet_directory_uri() . '/assets/img/times-circle-regular.svg" />
                 </span>',
             'after_widget'  => '</div>
             </div>',
@@ -207,9 +208,9 @@ class Widgets_Theme_TA
             'article_mobile_calltoaction' => __('Nota Mobile CallToAction', 'gen-base-theme'),
             'article_mobile_postext' => __('Nota Mobile - Posnota', 'gen-base-theme'),
             'article_mobile_precomments' => __('Nota Mobile - Precomentarios', 'gen-base-theme'),
-           // 'note_mob_4' => __('Note Bajo Newsletter Mobi', 'gen-base-theme'),
-           // 'note_mob_5' => __('Note Comentarios Mobi', 'gen-base-theme'),
-           // 'note_mob_6' => __('Relacionados Mobi', 'gen-base-theme'),
+            // 'note_mob_4' => __('Note Bajo Newsletter Mobi', 'gen-base-theme'),
+            // 'note_mob_5' => __('Note Comentarios Mobi', 'gen-base-theme'),
+            // 'note_mob_6' => __('Relacionados Mobi', 'gen-base-theme'),
         ];
 
         foreach ($widgets as $key => $val) {
@@ -250,7 +251,7 @@ class Widgets_Theme_TA
     {
         $widgets = [
             'article_mobile_paragraph_2_3' => __('Nota Mobile - Párrafo 2-3', 'gen-base-theme'),
-          //  'note_mob_mid_2' => __('Nota Mobile - Párrafo 3-4', 'gen-base-theme'),
+            //  'note_mob_mid_2' => __('Nota Mobile - Párrafo 3-4', 'gen-base-theme'),
         ];
 
         foreach ($widgets as $key => $val) {
@@ -307,14 +308,15 @@ class Widgets_Theme_TA
 
     public function insert_article_amp_paragraph_3_4($content)
     {
-        ob_start();
-        $this->get_article_amp_paragraph_3_4();
-        $widget_area_html_2 = ob_get_clean();
+        if (get_post_type(get_the_ID()) == 'ta_article') {
+            ob_start();
+            $this->get_article_amp_paragraph_3_4();
+            $widget_area_html_2 = ob_get_clean();
 
-        if (is_single() && !is_admin() && function_exists('ampforwp_is_amp_endpoint') && ampforwp_is_amp_endpoint()) {
-            return $this->insert_after_paragraph($widget_area_html_2, 3, $content);
+            if (is_single() && !is_admin() && function_exists('ampforwp_is_amp_endpoint') && ampforwp_is_amp_endpoint()) {
+                return $this->insert_after_paragraph($widget_area_html_2, 3, $content);
+            }
         }
-
         return $content;
     }
 
@@ -339,53 +341,56 @@ class Widgets_Theme_TA
         endif;
     }
 
-   
+
     public function insert_article_desktop_paragraph_2_3($content)
     {
 
-        ob_start();
-        $this->get_article_desktop_paragraph_2_3();
-        $widget_area_html = ob_get_clean();
-        $class = 'widget-text wp_widget_plugin_box';
+        if (get_post_type(get_the_ID()) == 'ta_article') {
+            ob_start();
+            $this->get_article_desktop_paragraph_2_3();
+            $widget_area_html = ob_get_clean();
+            $class = 'widget-text wp_widget_plugin_box';
 
-        if (is_single() && !is_admin() && (!function_exists('ampforwp_is_amp_endpoint') || (function_exists('ampforwp_is_amp_endpoint') && !ampforwp_is_amp_endpoint()))) {
-            return $this->insert_after_paragraph($widget_area_html, 2, $content);
+            if (is_single() && !is_admin() && (!function_exists('ampforwp_is_amp_endpoint') || (function_exists('ampforwp_is_amp_endpoint') && !ampforwp_is_amp_endpoint()))) {
+                return $this->insert_after_paragraph($widget_area_html, 2, $content);
+            }
         }
-
         return $content;
     }
 
     public function insert_article_desktop_paragraph_3_4($content)
     {
 
-        ob_start();
-        $this->get_article_desktop_paragraph_3_4();
-        $widget_area_html_2 = ob_get_clean();
-        $class = 'widget-text wp_widget_plugin_box';
-        str_replace($class, $class . ' entre-2', $widget_area_html_2);
+        if (get_post_type(get_the_ID()) == 'ta_article') {
+            ob_start();
+            $this->get_article_desktop_paragraph_3_4();
+            $widget_area_html_2 = ob_get_clean();
+            $class = 'widget-text wp_widget_plugin_box';
+            str_replace($class, $class . ' entre-2', $widget_area_html_2);
 
-        if (is_single() && !is_admin() && (!function_exists('ampforwp_is_amp_endpoint') || (function_exists('ampforwp_is_amp_endpoint') && !ampforwp_is_amp_endpoint()))) {
-            return $this->insert_after_paragraph($widget_area_html_2, 3, $content);
+            if (is_single() && !is_admin() && (!function_exists('ampforwp_is_amp_endpoint') || (function_exists('ampforwp_is_amp_endpoint') && !ampforwp_is_amp_endpoint()))) {
+                return $this->insert_after_paragraph($widget_area_html_2, 3, $content);
+            }
         }
-
         return $content;
     }
 
     public function insert_article_mobile_paragraph_2_3($content)
     {
 
-        ob_start();
-        $this->get_article_mobile_paragraph_2_3();
-        $widget_area_html_3 = ob_get_clean();
+        if (get_post_type(get_the_ID()) == 'ta_article') {
+            ob_start();
+            $this->get_article_mobile_paragraph_2_3();
+            $widget_area_html_3 = ob_get_clean();
 
-        if (is_single() && !is_admin() && (!function_exists('ampforwp_is_amp_endpoint') || (function_exists('ampforwp_is_amp_endpoint') && !ampforwp_is_amp_endpoint()))) {
-            return $this->insert_after_paragraph($widget_area_html_3, 2, $content);
+            if (is_single() && !is_admin() && (!function_exists('ampforwp_is_amp_endpoint') || (function_exists('ampforwp_is_amp_endpoint') && !ampforwp_is_amp_endpoint()))) {
+                return $this->insert_after_paragraph($widget_area_html_3, 2, $content);
+            }
         }
-
         return $content;
     }
 
-   
+
 
 
     public function insert_after_paragraph($insertion, $paragraph_id, $content)
@@ -408,17 +413,18 @@ class Widgets_Theme_TA
 
     public function insert_article_amp_posimage($content)
     {
-        ob_start();
-        $this->get_article_amp_posimage();
-        $widget_area_html_2 = ob_get_clean();
+        if (get_post_type(get_the_ID()) == 'ta_article') {
+            ob_start();
+            $this->get_article_amp_posimage();
+            $widget_area_html_2 = ob_get_clean();
 
-        if (is_single() && !is_admin() && function_exists('ampforwp_is_amp_endpoint') && ampforwp_is_amp_endpoint()) {
-            return $this->insert_before_paragraph($widget_area_html_2, 1, $content);
+            if (is_single() && !is_admin() && function_exists('ampforwp_is_amp_endpoint') && ampforwp_is_amp_endpoint()) {
+                return $this->insert_before_paragraph($widget_area_html_2, 1, $content);
+            }
         }
-
         return $content;
     }
-    
+
     public function insert_before_paragraph($insertion, $paragraph_id, $content)
     {
         $closing_p = '<p>';
@@ -490,24 +496,25 @@ class Widgets_Theme_TA
         }
     }
 
-    function insert_home_rows( $content ) {
-        if (is_front_page()){
+    function insert_home_rows($content)
+    {
+        if (is_front_page()) {
             $divider = '<!-- row divider -->';
             $preAdDesktop = '<div class="container d-none d-sm-none d-md-block mt-md-3 mb-md-3">' .
-                                '<div class="row d-flex">' .
-                                    '<div class="mx-auto text-center">';
+                '<div class="row d-flex">' .
+                '<div class="mx-auto text-center">';
             $postAd = '</div>' .
-                        '</div>' .
-                            '</div>';
+                '</div>' .
+                '</div>';
 
             $preAdMobile = '<div class="container d-block d-sm-none d-md-none d-lg-none mt-md-3 mb-md-3 text-center mt-3">' .
-                                '<div class="row d-flex">' .
-                                    '<div class="col-12 mx-auto text-center">';
-                
+                '<div class="row d-flex">' .
+                '<div class="col-12 mx-auto text-center">';
+
             $rows = explode($divider, $content);
             $result = "";
 
-            $rows[0] = str_replace('lazy', '', $rows[0]); 
+            $rows[0] = str_replace('lazy', '', $rows[0]);
             foreach ($rows as $index => $row) {
                 $result .= $row;
 
@@ -521,7 +528,7 @@ class Widgets_Theme_TA
                         $result .= $widget;
                         $result .= $postAd;
                     }
-                    
+
                     if ($index < 6) {
                         $adCode = 'home_mob_row_' . ($index + 1) . "_" . ($index + 2);
                         if (is_active_sidebar($adCode)) {
@@ -534,12 +541,11 @@ class Widgets_Theme_TA
                         }
                     }
                 }
-                
             }
             return $result;
         } else {
             return $content;
-        }  
+        }
     }
 }
 
