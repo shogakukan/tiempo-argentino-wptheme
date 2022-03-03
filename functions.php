@@ -737,6 +737,11 @@ add_action( 'pre_get_posts', 'search_filter' );
 add_action( 'pre_get_posts',  'set_posts_per_page'  );
 function set_posts_per_page( $query ) {
 	$query->set( 'posts_per_page', 20 );
-	if($query->query['ta_article_section'])
+	$types = ['ta_article_section', 'ta_article_author', 's', 'ta_article_author', 'ta_article_tag'];
+	foreach ($types as $t) {
+		if ($query->query[$t])
+			$query->set( 'posts_per_page', 9 );
+	}
+	if ($query->query['post_type'] == "ta_ed_impresa")
 		$query->set( 'posts_per_page', 9 );
 }
