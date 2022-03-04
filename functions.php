@@ -736,7 +736,7 @@ add_action( 'pre_get_posts', 'search_filter' );
 
 add_action( 'pre_get_posts',  'set_posts_per_page'  );
 function set_posts_per_page( $query ) {
-	$query->set( 'posts_per_page', 20 );
+	$query->set( 'posts_per_page', 12 );
 	$types = ['ta_article_section', 'ta_article_author', 's', 'ta_article_author', 'ta_article_tag'];
 	foreach ($types as $t) {
 		if ($query->query[$t])
