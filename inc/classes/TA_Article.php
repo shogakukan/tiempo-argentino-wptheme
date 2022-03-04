@@ -162,7 +162,7 @@ class TA_Article extends TA_Article_Data{
         return $thumb_data;
     }
 
-    protected function get_thumbnail_alt_common($variation = null, $size = 'full'){
+    public function get_thumbnail_alt_common($variation = null, $size = 'full'){
         $thumbnail_id = get_post_meta($this->post->ID, 'ta_article_thumbnail_alt', true);
         $attachment = $thumbnail_id ? get_post( $thumbnail_id ) : null;
         $thumb_data = null;
