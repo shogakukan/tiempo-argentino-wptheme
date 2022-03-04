@@ -31,4 +31,8 @@ class TA_Placeholder_Article extends TA_Article_Data{
 
         return $thumb_data;
     }
+
+    public function get_thumbnail_alt_common($variation = null, $size = 'full'){
+        return false;
+    }
 }
