@@ -26,6 +26,9 @@ $authors = $article->authors;
                         <?php if( $section ): ?>
                         <div class="categories d-flex">
                             <a href="<?php echo esc_attr($section->archive_url); ?>"><h4 class="theme mr-2"><?php echo esc_html($section->name); ?></h4></a>
+                            <?php if($article->cintillo): ?>
+                                <h4 class="subtheme"><?php echo $article->cintillo; ?></h4></a>
+                            <?php endif; ?>
                         </div>
                         <?php endif; ?>
                         <div class="pl-lg-5">
