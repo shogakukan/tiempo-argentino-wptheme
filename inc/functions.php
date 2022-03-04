@@ -1192,3 +1192,17 @@ function payment_user_role_sync()
 }
 
 add_action('subscriptions_payment_page_header','payment_user_role_sync');
+
+function getSectionsOrder () {
+    return array(
+        'politica' => 0,
+        'informacion-general' => 1,
+        'generos' => 2,
+        'economia' => 3,
+        'mundo' => 4,
+        'gestion' => 5,
+        'cultura' => 6,
+        'espectaculos' => 7,
+        'deportes' => 8
+    );
+}

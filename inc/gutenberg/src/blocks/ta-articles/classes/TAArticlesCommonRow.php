@@ -52,7 +52,7 @@ class TAArticlesCommonRow extends TAArticlesBlockRow{
 
                         $col_lg_size = $i < $leftovers ? $col_lg_fill : $col_lg;
                         $col_class = "col-lg-$col_lg_size";
-                        if ($cells_amount == 1){
+                        if ($cells_amount == 1 && $fill){
                             $size = 'mega-large';
                         } else {
                             $size = $col_lg_size > 5 ? 'large' : 'common';

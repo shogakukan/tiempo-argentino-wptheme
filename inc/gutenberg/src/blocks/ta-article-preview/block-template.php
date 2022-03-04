@@ -31,7 +31,7 @@ if(str_contains($size, 'large')){
 } else {
     $imgSize = 'medium';
 }
-$thumbnail = $article->get_thumbnail_common(null, $imgSize);//$article->thumbnail_alt_common ? $article->thumbnail_alt_common : $article->thumbnail_common;
+$thumbnail = $article->get_thumbnail_alt_common(null, $imgSize) ? $article->get_thumbnail_alt_common(null, $imgSize) : $article->get_thumbnail_common(null, $imgSize);//$article->thumbnail_alt_common ? $article->thumbnail_alt_common : $article->thumbnail_common;
 $thumbnail_url = $thumbnail ? $thumbnail['url'] : '';
 
 // if($desktop_horizontal == true)

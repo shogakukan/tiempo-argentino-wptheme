@@ -33,12 +33,15 @@ class TA_Edicion_Impresa extends TA_Article_Data{
     protected function get_content(){
         $content = get_the_content($this->post->ID);
         ob_start();
+        remove_action( 'pre_get_posts',  'set_posts_per_page'  );
         $articles_query = new WP_Query(array(
             'post_type'         => 'ta_article',
             'meta_key'          => 'ta_article_edicion_impresa',
             'meta_value'        => $this->post->ID,
             'posts_per_page'    => -1,
         ));
+        add_action( 'pre_get_posts',  'set_posts_per_page'  );
+
         $articles = [];
 
         if( $articles_query->have_posts() ){
@@ -48,20 +51,46 @@ class TA_Edicion_Impresa extends TA_Article_Data{
         }
 
         if(!empty($articles)){
-            $articles_block = RB_Gutenberg_Block::get_block('ta/articles');
-            $articles_block->render(array(
-                'articles'          => $articles,
-                'container'         => array(
-                    'title'             => 'Artículos',
-                ),
-                'rows'              => array(
-                    array(
-                        'format'            => 'common',
-                        'cells_amount'      => -1,
-                        'cells_per_row'     => 2,
+            $grupedArticles = [];
+            $sectionsOrder = getSectionsOrder();
+            foreach ($articles as $a){
+                $section = get_the_terms($a->post->ID, 'ta_article_section')[0];
+                $sectionSlug = sanitize_text_field($section->slug);
+                if (!array_key_exists($sectionSlug, $grupedArticles)){
+                    $grupedArticles[$sectionSlug] = array(
+                        'title' => $section->name,
+                        'order' => isset($sectionsOrder[$sectionSlug]) ? $sectionsOrder[$sectionSlug] : 99,
+                        'list' => [],
+                    );
+                }
+                array_push($grupedArticles[$sectionSlug]['list'], $a);
+            }
+
+            usort($grupedArticles, function($a, $b) {
+                if ($a['order'] == $b['order']) {
+                    return 0;
+                }
+                    return ($a['order'] < $b['order']) ? -1 : 1;
+            });
+
+            foreach ($grupedArticles as $section){
+                $articles_block = RB_Gutenberg_Block::get_block('ta/articles');
+                $articles_block->render(array(
+                    'articles'          => $section['list'],
+                    'use_container'     => true,
+                    'container'         => array(
+                        'title'             => $section['title'],
+                        'header_type'		=> 'especial',
                     ),
-                ),
-            ));
+                    'rows'              => array(
+                        array(
+                            'format'            => 'common',
+                            'cells_amount'      => -1,
+                            'cells_per_row'     => 3                        ),
+                    ),
+                ));
+            }
+            
         }
 
         $content .= ob_get_clean();
@@ -167,7 +196,7 @@ class TA_Edicion_Impresa extends TA_Article_Data{
         return $thumb_data;
     }
 
-    protected function get_thumbnail_alt_common($variation = null, $size = 'full'){
+    public function get_thumbnail_alt_common($variation = null, $size = 'full'){
         $thumbnail_id = get_post_meta($this->post->ID, 'ta_article_thumbnail_alt', true);
         $attachment = $thumbnail_id ? get_post( $thumbnail_id ) : null;
         $thumb_data = null;
