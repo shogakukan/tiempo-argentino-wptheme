@@ -4,7 +4,7 @@ $issue = TA_Article_Factory::get_article($post);
 
 $date = $issue->get_date_day('d/m/Y');
 
-$thumbnail = $issue->get_thumbnail_common(null, 'medium');
+$thumbnail = $issue->get_thumbnail_common(null, 'destacado');
 
 $userdata = get_userdata(get_current_user_id());
 $rol = $userdata->roles[0];
