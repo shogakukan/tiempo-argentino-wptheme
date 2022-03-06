@@ -57,7 +57,8 @@ class TAArticlesCommonRow extends TAArticlesBlockRow{
                         } else {
                             $size = $col_lg_size > 5 ? 'large' : 'common';
                         }
-                        $class = "col-12 $col_class";
+                        $class = is_archive() ? 'col-6 ' : 'col-12 ';
+                        $class .= $col_class;
 
                         ?>
                         <div class="<?php echo esc_attr($class); ?>">

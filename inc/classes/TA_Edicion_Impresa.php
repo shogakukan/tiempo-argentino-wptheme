@@ -33,15 +33,12 @@ class TA_Edicion_Impresa extends TA_Article_Data{
     protected function get_content(){
         $content = get_the_content($this->post->ID);
         ob_start();
-        remove_action( 'pre_get_posts',  'set_posts_per_page'  );
         $articles_query = new WP_Query(array(
             'post_type'         => 'ta_article',
             'meta_key'          => 'ta_article_edicion_impresa',
             'meta_value'        => $this->post->ID,
             'posts_per_page'    => -1,
         ));
-        add_action( 'pre_get_posts',  'set_posts_per_page'  );
-
         $articles = [];
 
         if( $articles_query->have_posts() ){
