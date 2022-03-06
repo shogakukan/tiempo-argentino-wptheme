@@ -33,6 +33,7 @@ if(str_contains($size, 'large')){
 }
 $thumbnail = $article->get_thumbnail_alt_common(null, $imgSize) ? $article->get_thumbnail_alt_common(null, $imgSize) : $article->get_thumbnail_common(null, $imgSize);//$article->thumbnail_alt_common ? $article->thumbnail_alt_common : $article->thumbnail_common;
 $thumbnail_url = $thumbnail ? $thumbnail['url'] : '';
+$img_ratio_style = $thumbnail && str_contains($size, 'large') ? 'padding-bottom: calc(100% * ' . $thumbnail['ratio'] . ');': '';
 
 // if($desktop_horizontal == true)
 //     $class .= ' horizontal';
