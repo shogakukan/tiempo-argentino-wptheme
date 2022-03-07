@@ -1,8 +1,13 @@
 <?php
-
-$thumb_cont_class = $desktop_horizontal ? 'col-5 col-md-6 pr-0 pl-0' : ($size != 'large' && $size != 'mega-large' ? 'col-5 col-md-12 pr-0 pl-0' : '');
-$info_class = $desktop_horizontal ? 'col-7 col-md-6' : ($size != 'large' && $size != 'mega-large' ? 'col-7 col-md-12 pr-md-0 pl-md-0' : '');
-$preview_class = $desktop_horizontal ? 'd-flex' : ($size != 'large' && $size != 'mega-large' ? 'd-flex d-md-block' : '');
+if (is_archive()){
+    $thumb_cont_class = 'col-12 pr-0 pl-0';
+    $info_class = 'col-12 pr-0 pl-0';
+    $preview_class ='d-flex flex-column';
+} else {
+    $thumb_cont_class = $desktop_horizontal ? 'col-5 col-md-6 pr-0 pl-0' : ($size != 'large' && $size != 'mega-large' ? 'col-5 col-md-12 pr-0 pl-0' : '');
+    $info_class = $desktop_horizontal ? 'col-7 col-md-6' : ($size != 'large' && $size != 'mega-large' ? 'col-7 col-md-12 pr-md-0 pl-md-0' : '');
+    $preview_class = $desktop_horizontal ? 'd-flex' : ($size != 'large' && $size != 'mega-large' ? 'd-flex d-md-block' : '');
+}
 $preview_class .= " $class";
 $preview_class = esc_attr($preview_class);
 ?>
@@ -24,7 +29,7 @@ $preview_class = esc_attr($preview_class);
     <div class="<?php echo esc_attr($thumb_cont_class); ?>">
         <a data-url href="<?php echo esc_attr($url); ?>">
             <div class="img-container">
-                <div class="img-wrapper d-flex align-items-end lazy" data-thumbnail style='background-image: url("<?php echo $thumbnail_url; ?>")' alt="<?php echo esc_attr($thumbnail['alt']); ?>">
+                <div class="img-wrapper d-flex align-items-end lazy" data-thumbnail style='background-image: url("<?php echo $thumbnail_url; ?>");<?= $img_ratio_style?>' alt="<?php echo esc_attr($thumbnail['alt']); ?>">
                     <div class="icons-container">
                         <div class="article-icons d-flex flex-column mb-2">
                             <?php get_template_part( 'parts/article', 'balancer_icons', array( 'article' => $article ) ); ?>

@@ -37,12 +37,16 @@ html {
 
 .article-preview .img-container .img-wrapper, .article-preview.destacado .img-container .img-wrapper {
     background: initial;
-    background-size: cover;
-    /* background-size: contain; */
+    /* background-size: cover; */
+    background-size: contain;
     /* background-position: top left; */
     background-position: center;
     margin-bottom: 10px;
     background-repeat: no-repeat;
+}
+
+.ta-articles-block.d-flex.flex-column.flex-md-row.mt-3.row .article-preview:not(.destacado) .img-container .img-wrapper {
+    background-position: top center;
 }
 
 .article-preview.autor .img-container .img-wrapper {
@@ -64,7 +68,7 @@ button a {
 }
 
 .sub-blocks .ta-articles-block {
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .podcasts-block .podcast-playlist .podcast-preview.current {

@@ -1206,3 +1206,11 @@ function getSectionsOrder () {
         'deportes' => 8
     );
 }
+
+function getRatioAdjusted($w, $h) {
+    if ($h > 0) {
+        $ratio = $w / $h;
+        return $ratio > 3 / 2 ? $h .' / ' . $w : "2 / 3";
+    }
+    return null;
+}

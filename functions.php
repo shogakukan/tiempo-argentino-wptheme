@@ -736,12 +736,38 @@ add_action( 'pre_get_posts', 'search_filter' );
 
 add_action( 'pre_get_posts',  'set_posts_per_page'  );
 function set_posts_per_page( $query ) {
-	$query->set( 'posts_per_page', 12 );
-	$types = ['ta_article_section', 'ta_article_author', 's', 'ta_article_author', 'ta_article_tag'];
-	foreach ($types as $t) {
-		if ($query->query[$t])
-			$query->set( 'posts_per_page', 9 );
+	if (!$query->get( 'posts_per_page') || $query->get( 'posts_per_page') >= 0) {
+		$types = ['ta_article_section', 'ta_article_author', 's', 'ta_article_author', 'ta_article_tag'];
+		foreach ($types as $t) {
+			if ($query->query[$t])
+				$query->set( 'posts_per_page', 12 );
+		}
+		if ($query->query['post_type'] == "ta_ed_impresa")
+			$query->set( 'posts_per_page', 12 );
+		if ($query->query['post_type'] == "ta_article")
+			$query->set( 'posts_per_page', 12 );
 	}
-	if ($query->query['post_type'] == "ta_ed_impresa")
-		$query->set( 'posts_per_page', 9 );
 }
+
+/**
+ * This function runs only with blocks of type "core/image".
+ *
+ * @param $block_content
+ * @param $block
+ * @return string
+ */
+function show_copyright($block_content, $block)
+{
+
+    //echo $block['attrs']['id'];
+	$foto =ta_get_attachment_photographer($block['attrs']['id']);
+	$preBlock = '<div class="img-container mt-3">';
+	$posBlock = '</div>';
+	ob_start();
+	get_template_part('parts/image', 'copyright', array('photographer' => $foto));
+	$content = ob_get_clean();
+	return $preBlock . $block_content . $content . $posBlock;
+
+}
+
+add_filter('render_block_core/image', 'show_copyright', 10, 2);

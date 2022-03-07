@@ -144,10 +144,12 @@ class TA_Article extends TA_Article_Data{
                 'position'      => null,
                 'alt'           => __('No hay imagen', 'ta-genosha'),
                 'is_default'    => true,
+                'ratio'         => "2 / 3"
             );
         }
         else {
             $alt = get_post_meta( $attachment->ID, '_wp_attachment_image_alt', true );
+            $imageSrc = wp_get_attachment_image_src($attachment->ID, $size);
             $thumb_data = array(
                 'attachment'    => $attachment,
                 'url'           => wp_get_attachment_image_url($attachment->ID, $size, false),
@@ -156,6 +158,7 @@ class TA_Article extends TA_Article_Data{
                 'position'      => ta_get_attachment_positions($attachment->ID),
                 'alt'           => $alt ? $alt : '',
                 'is_default'    => false,
+                'ratio'         => getRatioAdjusted($imageSrc[1], $imageSrc[2]),
             );
         }
 
@@ -169,6 +172,7 @@ class TA_Article extends TA_Article_Data{
 
         if( $attachment ){
             $alt = get_post_meta( $attachment->ID, '_wp_attachment_image_alt', true );
+            $imageSrc = wp_get_attachment_image_src($attachment->ID, $size);
             $thumb_data = array(
                 'attachment'    => $attachment,
                 'url'           => wp_get_attachment_image_url($attachment->ID, $size, false),
@@ -177,6 +181,7 @@ class TA_Article extends TA_Article_Data{
                 'position'      => ta_get_attachment_positions($attachment->ID),
                 'alt'           => $alt ? $alt : '',
                 'is_default'    => false,
+                'ratio'         => getRatioAdjusted($imageSrc[1], $imageSrc[2])
             );
         }
 
