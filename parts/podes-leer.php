@@ -43,7 +43,7 @@ $query = get_posts([
                             <div class="col-5 col-md-12 p-0">
                                 <a href="">
                                     <div class="img-container position-relative">
-                                        <div class="img-wrapper" style="background: url('<?php echo get_the_post_thumbnail_url($art->{'ID'})?>') center no-repeat !important; background-size:cover">
+                                        <div class="img-wrapper" style="background: url('<?php echo get_the_post_thumbnail_url($art->{'ID'}, 'medium')?>') center no-repeat !important; background-size:cover">
 
                                         </div>
                                     </div>

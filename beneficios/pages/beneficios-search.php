@@ -208,7 +208,7 @@
                                     <div class="">
                                         <a href="#" data-content="#content<?php echo get_the_ID() ?>" class="abrir-beneficio">
                                             <div class="img-container position-relative">
-                                                <div class="img-wrapper" style="background:url('<?php echo get_the_post_thumbnail_url(get_the_ID()) ?>')center no-repeat;"></div>
+                                                <div class="img-wrapper" style="background:url('<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium') ?>')center no-repeat;"></div>
                                             </div>
                                         </a>
                                     </div>
