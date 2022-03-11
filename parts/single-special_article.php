@@ -15,7 +15,7 @@ $sponsor = $article->micrositio->get_sponsor();
                     <a href="<?php echo esc_attr($article->section->archive_url); ?>"><h4 class="subtheme"><?php echo $article->section->name; ?></h4></a>
                 <?php endif; ?>
             </div>
-            <div class="art-column-w-xpadding">
+            <div class="col-md-10 p-0 mx-auto">
                 <?php if($article->title): ?>
                 <div class="title mt-2">
                     <h1><?php echo esc_html($article->title); ?></h1>
@@ -52,7 +52,7 @@ $sponsor = $article->micrositio->get_sponsor();
             <?php get_template_part('parts/article','authors_data', array( 'article' => $article )); ?>
 
             <div class="article-body mt-3">
-                <div class="art-column-w-xpadding">
+                <div class="col-md-8 p-0 mx-auto">
                     <?php if ($article->special_format == 'fotogaleria' && $article->gallery) : ?>
                         <div class="galeria-fotos">
                             <?php foreach ($article->gallery as $photo) : ?>

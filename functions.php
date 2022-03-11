@@ -14,7 +14,7 @@ define('TA_ASSETS_URL', TA_THEME_URL . "/assets");
 define('TA_IMAGES_URL', TA_ASSETS_URL . "/img");
 define('TA_ASSETS_CSS_URL', TA_THEME_URL . "/css");
 define('TA_ASSETS_JS_URL', TA_THEME_URL . "/js");
-define('TA_THEME_VERSION','1.3.7');
+define('TA_THEME_VERSION','1.3.9');
 
 require_once TA_THEME_PATH . '/inc/gen-base-theme/gen-base-theme.php';
 require_once TA_THEME_PATH . '/inc/rewrite-rules.php';
@@ -492,7 +492,7 @@ function ta_article_image_control($post, $meta_key, $attachment_id, $args = arra
 		'description'	=> '',
 	);
 	extract(array_merge($default_args, $args));
-	$image_url = wp_get_attachment_image_url($attachment_id);
+	$image_url = wp_get_attachment_url($attachment_id);
 	$empty = !$image_url;
 ?>
 	<div id="test" class="ta-articles-images-controls" data-id="<?php echo esc_attr($post->ID); ?>" data-type="<?php echo esc_attr($post->post_type); ?>" data-metakey="<?php echo esc_attr($meta_key); ?>" data-metavalue="<?php echo esc_attr($attachment_id); ?>">
