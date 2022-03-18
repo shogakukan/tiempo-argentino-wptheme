@@ -14,7 +14,7 @@ define('TA_ASSETS_URL', TA_THEME_URL . "/assets");
 define('TA_IMAGES_URL', TA_ASSETS_URL . "/img");
 define('TA_ASSETS_CSS_URL', TA_THEME_URL . "/css");
 define('TA_ASSETS_JS_URL', TA_THEME_URL . "/js");
-define('TA_THEME_VERSION','1.3.7');
+define('TA_THEME_VERSION','1.3.9');
 
 require_once TA_THEME_PATH . '/inc/gen-base-theme/gen-base-theme.php';
 require_once TA_THEME_PATH . '/inc/rewrite-rules.php';
@@ -736,7 +736,7 @@ add_action( 'pre_get_posts', 'search_filter' );
 
 add_action( 'pre_get_posts',  'set_posts_per_page'  );
 function set_posts_per_page( $query ) {
-	if (!$query->get( 'posts_per_page') || $query->get( 'posts_per_page') >= 0) {
+	if (!$query->get( 'posts_per_page') || $query->get( 'posts_per_page') >= 0 && $query->get( 'posts_per_page') < 13) {
 		$types = ['ta_article_section', 'ta_article_author', 's', 'ta_article_author', 'ta_article_tag'];
 		foreach ($types as $t) {
 			if ($query->query[$t])
