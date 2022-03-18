@@ -292,6 +292,35 @@
 .articulo-especial .art-column-w-xpadding {
     padding: 0 115px;
   }
+
+  .articulo-especial .author {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .articulo-especial .author-icon {
+    flex: 0 0 16.6666666667%;
+    max-width: 16.6666666667%;
+    text-align: right;
+  }
+
+  .articulo-especial .author-info {
+    flex: 0 0 83.3333333333%;
+    max-width: 83.3333333333%;
+  }
+
+  .articulo-especial .article-body .img-container {
+    position: relative;
+    width: 120%;
+    max-width: 100vw;
+    left: -10%;
+  }
+
+  .articulo-especial .author {margin: 0 !important;}
+  .articulo-especial .author-icon {
+    margin: 0 !important;
+    padding-right: 0.5rem !important;
+  }
 }
 @media (min-width: 1200px) {
   .articulo-simple .title h1,

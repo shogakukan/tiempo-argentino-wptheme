@@ -197,7 +197,7 @@ class Beneficios_Assets
         $html .= ' <div class="">
             <a href="#" data-content="#content' . $id . '" class="abrir-beneficio">
                 <div class="img-container position-relative">
-                    <div class="img-wrapper" style="background:url(' . get_the_post_thumbnail_url($id) . ')center no-repeat;"></div>
+                    <div class="img-wrapper" style="background:url(' . get_the_post_thumbnail_url($id, 'medium') . ')center no-repeat;"></div>
                 </div>
             </a>
         </div>';
