@@ -47,3 +47,9 @@ new TA_Micrositio('20historias', array(
     'priority'              => 5,
     'custom_content'        => true,
 ));
+
+new TA_Micrositio('malvinas', array(
+    'title'                 => 'Malvinas - 40 años',
+    'priority'              => 6,
+    'custom_content'        => true,
+));
