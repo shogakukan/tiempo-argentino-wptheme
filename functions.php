@@ -492,7 +492,7 @@ function ta_article_image_control($post, $meta_key, $attachment_id, $args = arra
 		'description'	=> '',
 	);
 	extract(array_merge($default_args, $args));
-	$image_url = wp_get_attachment_url($attachment_id);
+	$image_url = wp_get_attachment_image_src($attachment_id)[0];
 	$empty = !$image_url;
 ?>
 	<div id="test" class="ta-articles-images-controls" data-id="<?php echo esc_attr($post->ID); ?>" data-type="<?php echo esc_attr($post->post_type); ?>" data-metakey="<?php echo esc_attr($meta_key); ?>" data-metavalue="<?php echo esc_attr($attachment_id); ?>">
