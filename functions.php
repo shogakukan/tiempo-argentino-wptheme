@@ -66,6 +66,7 @@ class TA_Theme
 		require_once TA_THEME_PATH . '/inc/classes/TA_Section.php';
 		require_once TA_THEME_PATH . '/inc/classes/TA_Photographer.php';
 		require_once TA_THEME_PATH . '/inc/classes/TA_Balancer_DB.php';
+		require_once TA_THEME_PATH . '/inc/classes/TA_Taller.php';
 
 		//$most_viewed_query = ta_get_latest_most_viewed_query(array( 'posts_per_page'	=> -1 ));
 		//self::$latest_most_viewed = $most_viewed_query->posts;

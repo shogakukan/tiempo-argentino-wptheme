@@ -1,5 +1,5 @@
 <?php
-if (is_archive()){
+if (is_archive() && get_queried_object()->taxonomy != 'ta_article_micrositio'){
     $thumb_cont_class = 'col-12 pr-0 pl-0';
     $info_class = 'col-12 pr-0 pl-0';
     $preview_class ='d-flex flex-column';
