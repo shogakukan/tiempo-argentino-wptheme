@@ -66,6 +66,7 @@ class TA_Theme
 		require_once TA_THEME_PATH . '/inc/classes/TA_Section.php';
 		require_once TA_THEME_PATH . '/inc/classes/TA_Photographer.php';
 		require_once TA_THEME_PATH . '/inc/classes/TA_Balancer_DB.php';
+		require_once TA_THEME_PATH . '/inc/classes/TA_Taller.php';
 
 		//$most_viewed_query = ta_get_latest_most_viewed_query(array( 'posts_per_page'	=> -1 ));
 		//self::$latest_most_viewed = $most_viewed_query->posts;
@@ -492,7 +493,7 @@ function ta_article_image_control($post, $meta_key, $attachment_id, $args = arra
 		'description'	=> '',
 	);
 	extract(array_merge($default_args, $args));
-	$image_url = wp_get_attachment_url($attachment_id);
+	$image_url = wp_get_attachment_image_src($attachment_id)[0];
 	$empty = !$image_url;
 ?>
 	<div id="test" class="ta-articles-images-controls" data-id="<?php echo esc_attr($post->ID); ?>" data-type="<?php echo esc_attr($post->post_type); ?>" data-metakey="<?php echo esc_attr($meta_key); ?>" data-metavalue="<?php echo esc_attr($attachment_id); ?>">
