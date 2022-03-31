@@ -10,13 +10,13 @@ $args = array(
 );
 $postslist = get_posts($args);
 $talleres_count = count($postslist);
-$colClass = $talleres_count < 3 ? 'col' : 'col-lg-4 col-12';
+$colClass = $talleres_count < 3 ? 'col-lg' : 'col-lg-4';
 ?>
 <div class="row justify-content-around">
     <?php foreach ($postslist as $post) : ?>
         <?php $taller = TA_Article_Factory::get_article($post, 'ta_taller'); ?>
         <?php if ($taller) : ?>
-            <div class="taller <?= $colClass ?> mb-3">
+            <div class="taller mb-3 col-12 <?= $colClass ?> ">
                 <div class="taller-container p-2">
                     <?php if ($taller->thumbnail_common['url']) : ?>
                         <a href="<?php echo $taller->url ?>">
