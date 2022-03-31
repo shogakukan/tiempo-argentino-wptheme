@@ -234,7 +234,7 @@ class TA_Theme
 	{
 		add_theme_support('post-thumbnails');
 
-		add_image_size('destacado', 767, 767);
+		add_image_size('destacado', 767, 1050);
 
 		//svg support
 		function cc_mime_types($mimes)
@@ -676,13 +676,31 @@ add_action('restrict_manage_posts', 'filter_by_the_author');
 add_filter('manage_ta_article_posts_columns', 'author_column');
 function author_column($columns){
 	$columns['author'] = __('Creador');
+	$columns['ta_article_author'] = __('Autor/a(s)');
 	return $columns;
 }
 add_filter('manage_edit-ta_article_sortable_columns', 'author_order_column');
 function author_order_column($columns){
 	$columns['author'] = 'author';
+	$columns['ta_article_author'] = 'ta_article_author';
 	return $columns;
 }
+
+function author_column_data( $column, $post_id ) {
+    switch ( $column ) {
+        case 'ta_article_author':
+            $terms = get_the_term_list( $post_id, 'ta_article_author', '', ', ', '' );
+            if ( is_string( $terms ) ) {
+                echo $terms;
+            }
+            break;
+ 
+        case 'publisher':
+            echo get_post_meta( $post_id, 'publisher', true ); 
+            break;
+    }
+}
+add_action( 'manage_posts_custom_column' , 'author_column_data', 10, 2 );
 
 //deactivate new widgets
 add_filter( 'use_widgets_block_editor', '__return_false' );
