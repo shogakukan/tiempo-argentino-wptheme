@@ -169,13 +169,13 @@ class Widgets_Theme_TA
         register_sidebar(array(
             'name'          => __('Home Mobile - Popup', 'gen-base-theme'),
             'id'            => 'home_mobile_pop',
-            'before_widget' => '<div id="popup-avis-pop" class="popup-mobile popup d-block d-sm-none d-md-none d-lg-none position-fixed">
-            <div class="popup">
-                <span class="cerrar-pop cerrar-pop-mobile">
-                    <img src="' . get_stylesheet_directory_uri() . '/assets/img/times-circle-regular.svg" />
-                </span>',
-            'after_widget'  => '</div>
-            </div>',
+            // 'before_widget' => '<div id="popup-avis-pop" class="popup-mobile popup d-block d-sm-none d-md-none d-lg-none position-fixed">
+            // <div class="popup">
+            //     <span class="cerrar-pop cerrar-pop-mobile">
+            //         <img src="' . get_stylesheet_directory_uri() . '/assets/img/times-circle-regular.svg" />
+            //     </span>',
+            // 'after_widget'  => '</div>
+            // </div>',
         ));
     }
 
@@ -208,6 +208,7 @@ class Widgets_Theme_TA
             'article_mobile_calltoaction' => __('Nota Mobile CallToAction', 'gen-base-theme'),
             'article_mobile_postext' => __('Nota Mobile - Posnota', 'gen-base-theme'),
             'article_mobile_precomments' => __('Nota Mobile - Precomentarios', 'gen-base-theme'),
+            'article_mobile_popup' => __('Nota Mobile - Popup', 'gen-base-theme'),
             // 'note_mob_4' => __('Note Bajo Newsletter Mobi', 'gen-base-theme'),
             // 'note_mob_5' => __('Note Comentarios Mobi', 'gen-base-theme'),
             // 'note_mob_6' => __('Relacionados Mobi', 'gen-base-theme'),
