@@ -256,7 +256,27 @@ if (is_user_logged_in() && get_user_meta(get_current_user_id(),'_user_status',tr
 
     <?php if (is_front_page()) : ?>
         <?php if (is_active_sidebar('home_mobile_pop')) { ?>
-            <?php dynamic_sidebar('home_mobile_pop'); ?>
+            <div id="popup-avis-pop" class="popup-mobile popup d-block d-sm-none d-md-none d-lg-none position-fixed">
+                <div class="popup">
+                    <span class="cerrar-pop cerrar-pop-mobile">
+                        <img src="<?= get_stylesheet_directory_uri() . '/assets/img/times-circle-regular.svg' ?>" />
+                    </span>
+                    <?php dynamic_sidebar('home_mobile_pop'); ?>
+                </div>
+            </div>
+        <?php } ?>
+    <?php endif; ?>
+
+    <?php if (get_post_type() === 'ta_article') : ?>
+        <?php if (is_active_sidebar('article_mobile_popup')) { ?>
+            <div id="popup-avis-pop" class="popup-mobile popup d-block d-sm-none d-md-none d-lg-none position-fixed">
+                <div class="popup">
+                    <span class="cerrar-pop cerrar-pop-mobile">
+                        <img src="<?= get_stylesheet_directory_uri() . '/assets/img/times-circle-regular.svg' ?>" />
+                    </span>
+                    <?php dynamic_sidebar('article_mobile_popup'); ?>
+                </div>
+            </div>
         <?php } ?>
     <?php endif; ?>
 
