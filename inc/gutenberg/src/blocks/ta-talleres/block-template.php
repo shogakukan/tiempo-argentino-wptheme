@@ -40,8 +40,8 @@ $colClass = $talleres_count < 3 ? 'col-lg' : 'col-lg-4';
                     <p class="taller-descripcion">
                     </p>
                     */ ?>
-                    <div class="wp-block-columns m-0">
-                        <div class="wp-block-column">
+                    <div class="m-0">
+                        <div class="p-0 mb-2">
                             <div class="wp-block-buttons btn-campus">
                                 <div class="wp-block-button m-0 has-custom-width wp-block-button__width-100 btn-programa">
                                     <a class="wp-block-button__link no-border-radius" href="<?php echo $taller->url ?>">
@@ -51,7 +51,7 @@ $colClass = $talleres_count < 3 ? 'col-lg' : 'col-lg-4';
                             </div>
                         </div>
                         <?php if($taller->inscription_button): ?>
-                        <div class="wp-block-column">
+                        <div class="p-0">
                             <div class="wp-block-buttons btn-campus">
                                 <div class="wp-block-button m-0 has-custom-width wp-block-button__width-100 btn-programa">
                                     <a class="wp-block-button__link no-border-radius" href="<?php echo $taller->inscription_button ?>">
@@ -59,9 +59,13 @@ $colClass = $talleres_count < 3 ? 'col-lg' : 'col-lg-4';
                                     </a>
                                 </div>
                             </div>
-                        </div>
-                        <?php endif; ?>
+                        </div></div>
+                        <?php else: ?>
                     </div>
+                    <span class="w-100 text-center d-block" style="text-transform:uppercase;background-color:var(--ta-celeste);color:white;font-family: 'Red Hat Display', sans-serif;padding: 0.6rem !important;">
+                        <?= __('Inscripción cerrada', 'gen-base-theme'); ?>
+                    </span>
+                    <?php endif; ?>
                 </div>
             </div>
         <?php endif; ?>
