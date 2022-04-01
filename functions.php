@@ -673,20 +673,22 @@ add_action('restrict_manage_posts', 'filter_by_the_author');
 /**
  * columnas
  */
-add_filter('manage_ta_article_posts_columns', 'author_column');
-function author_column($columns){
-	$columns['author'] = __('Creador');
+add_filter('manage_ta_article_posts_columns', 'article_columns');
+function article_columns($columns){
+	$columns['ta_article_section'] = __('Sección');
 	$columns['ta_article_author'] = __('Autor/a(s)');
+	$columns['author'] = __('Editor/a');
 	return $columns;
 }
-add_filter('manage_edit-ta_article_sortable_columns', 'author_order_column');
-function author_order_column($columns){
+add_filter('manage_edit-ta_article_sortable_columns', 'article_order_columns');
+function article_order_columns($columns){
 	$columns['author'] = 'author';
+	$columns['ta_article_section'] = 'ta_article_section';
 	$columns['ta_article_author'] = 'ta_article_author';
 	return $columns;
 }
 
-function author_column_data( $column, $post_id ) {
+function article_columns_data( $column, $post_id ) {
     switch ( $column ) {
         case 'ta_article_author':
             $terms = get_the_term_list( $post_id, 'ta_article_author', '', ', ', '' );
@@ -695,12 +697,15 @@ function author_column_data( $column, $post_id ) {
             }
             break;
  
-        case 'publisher':
-            echo get_post_meta( $post_id, 'publisher', true ); 
+        case 'ta_article_section':
+			$terms = get_the_term_list( $post_id, 'ta_article_section', '', ', ', '' );
+            if ( is_string( $terms ) ) {
+                echo $terms;
+            }
             break;
     }
 }
-add_action( 'manage_posts_custom_column' , 'author_column_data', 10, 2 );
+add_action( 'manage_posts_custom_column' , 'article_columns_data', 10, 2 );
 
 //deactivate new widgets
 add_filter( 'use_widgets_block_editor', '__return_false' );
@@ -790,3 +795,34 @@ function show_copyright($block_content, $block)
 }
 
 add_filter('render_block_core/image', 'show_copyright', 10, 2);
+
+function photographer_column( $cols ) {
+    $cols["photographer"] = "Fotógrafo";
+    return $cols;
+}
+
+function photographer_value( $column_name, $id ) {
+    $meta = ta_get_attachment_photographer( $id );
+    foreach($meta as $key => $value){
+		if ($key == "term"){
+			foreach($value as $k => $v){
+				if ($k == "name"){
+					echo $v;
+					break;
+				}
+			}
+		};
+	}
+}
+
+function photographer_column_sortable( $cols ) {
+    $cols["photographer"] = "name";
+    return $cols;
+}
+
+function hook_new_media_columns() {
+    add_filter( 'manage_media_columns', 'photographer_column' );
+    add_action( 'manage_media_custom_column', 'photographer_value', 10, 2 );
+    add_filter( 'manage_upload_sortable_columns', 'photographer_column_sortable' );
+}
+add_action( 'admin_init', 'hook_new_media_columns' );
