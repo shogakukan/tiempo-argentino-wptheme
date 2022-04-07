@@ -1214,3 +1214,7 @@ function getRatioAdjusted($w, $h) {
     }
     return null;
 }
+
+function isHexaColor ($color) {
+    return (strlen($color) == 7 || strlen($color) == 4) && substr($color, 0, 1) == '#';
+}
