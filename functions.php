@@ -826,3 +826,28 @@ function hook_new_media_columns() {
     add_filter( 'manage_upload_sortable_columns', 'photographer_column_sortable' );
 }
 add_action( 'admin_init', 'hook_new_media_columns' );
+
+add_action( 'add_attachment', 'delete_image_meta_caption' );
+function delete_image_meta_caption( $post_ID ) {
+    if ( wp_attachment_is_image( $post_ID )) {		
+        $my_image_meta = array(
+            'ID' => $post_ID,
+            'post_excerpt' => "",
+        );
+        wp_update_post( $my_image_meta );   
+    }
+}
+
+add_action( 'admin_enqueue_scripts', 'wptuts_add_color_picker' );
+function wptuts_add_color_picker( $hook ) {
+ 
+    if( is_admin() ) { 
+     
+        // Add the color picker css file       
+        wp_enqueue_style( 'wp-color-picker' ); 
+         
+        // Include our custom jQuery file with WordPress Color Picker dependency
+		wp_enqueue_script('color_picker_js', TA_ASSETS_JS_URL . '/src/color.js', array( 'wp-color-picker' ), false, true );
+
+    }
+}

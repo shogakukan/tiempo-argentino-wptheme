@@ -64,6 +64,22 @@ return array(
         ),
     ),
     'metaboxes'     => array(
+        'ta_micrositio_color' => array(
+            'settings'  => array(
+                'title'             => __('Color', 'ta-genosha'),
+                'context'           => 'side',
+                'priority'          => 'high',
+                'classes'           => array('ta-metabox','color-field'),
+                'quick_edit'        => true,
+            ),
+            'input'  => array(
+                'controls'		 => array(
+                    'color'      => array(
+                        'input_type'    => 'text',
+                    ),
+                ),
+            ),
+        ),
         'ta_micrositio_sponsor' => array(
             'settings'  => array(
                 'title'             => __('Sponsor', 'ta-genosha'),

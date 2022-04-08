@@ -53,3 +53,9 @@ new TA_Micrositio('malvinas', array(
     'priority'              => 6,
     'custom_content'        => true,
 ));
+
+new TA_Micrositio('tiempo-de-viajes', array(
+    'title'                 => 'Tiempo de viajes',
+    'priority'              => 7,
+    'custom_content'        => true,
+));

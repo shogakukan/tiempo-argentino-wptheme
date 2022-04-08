@@ -248,6 +248,11 @@ class TA_Micrositio{
 
         return $result;
     }
+
+    public function get_color(){
+        
+        return get_term_meta($this->term->term_id, 'ta_micrositio_color', true);
+    }
 }
 
 TA_Micrositio::initialize();
