@@ -75,6 +75,7 @@ class Widgets_Theme_TA
             'article_desktop_postext' => __('Nota Desktop - Abajo nota', 'gen-base-theme'),
             'article_desktop_postcomments' => __('Nota Desktop - Abajo comentarios', 'gen-base-theme'),
             'article_desktop_sidecomments' => __('Nota Desktop - Lado comentarios', 'gen-base-theme'),
+            'article_desktop_popup' => __('Nota Desktop - Popup', 'gen-base-theme'),
         ];
 
         foreach ($widgets as $key => $val) {
@@ -154,13 +155,13 @@ class Widgets_Theme_TA
         register_sidebar(array(
             'name'          => __('Home Desktop - Popup', 'gen-base-theme'),
             'id'            => 'home_desktop_pop',
-            'before_widget' => '<div id="popup-avis" class="d-none d-sm-none d-md-block d-lg-block position-fixed">
-            <div class="popup">
-                <span class="cerrar-pop">
-                    <img src="' . get_stylesheet_directory_uri() . '/assets/img/times-circle-regular.svg" />
-                </span>',
-            'after_widget'  => '</div>
-            </div>',
+            // 'before_widget' => '<div id="popup-avis" class="d-none d-sm-none d-md-block d-lg-block position-fixed">
+            // <div class="popup">
+            //     <span class="cerrar-pop">
+            //         <img src="' . get_stylesheet_directory_uri() . '/assets/img/times-circle-regular.svg" />
+            //     </span>',
+            // 'after_widget'  => '</div>
+            // </div>',
         ));
     }
 

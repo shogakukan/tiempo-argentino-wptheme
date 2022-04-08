@@ -87,11 +87,11 @@ window.addEventListener("resize", function () {
       });
     });
 
-    setTimeout(function () {
-      $("#popup-avis").fadeOut(400, function () {
-        $("#popup-avis").remove();
-      });
-    }, 5000);
+    // setTimeout(function () {
+    //   $("#popup-avis").fadeOut(400, function () {
+    //     $("#popup-avis").remove();
+    //   });
+    // }, 5000);
 
     $(".cerrar-pop-abajo").on("click", function () {
       $("#sticky-abajo").fadeOut(400, function () {
