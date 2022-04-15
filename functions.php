@@ -851,3 +851,43 @@ function wptuts_add_color_picker( $hook ) {
 
     }
 }
+add_action( 'fix_printed_articles_date_cron', 'fix_printed_articles_date' );
+
+function fix_printed_articles_date () {
+	$args = [
+		'post_type' => 'ta_ed_impresa',
+		'posts_per_page' => -1,
+		'orderby' => 'date',
+		'order' => 'DESC',
+		'date_query'            => array(
+			'column'        => 'post_date',
+			'after'         => '- 7 days'
+		),
+	];
+	$issues = get_posts($args);
+	foreach($issues as $issue) {
+		$issueId = $issue->ID;
+		$issueDate = get_the_date("Y-m-d H:i:s", $issue);
+		$args = [
+			'post_type' => 'ta_article',
+			'posts_per_page' => -1,
+			'meta_query' => array(
+				array(
+					'key'   => 'ta_article_edicion_impresa',
+					'value' => $issueId,
+				)
+			),
+		];
+		$articles = get_posts($args);
+		foreach($articles as $article){
+			$articleId = $article->ID;
+			wp_update_post(
+				array (
+					'ID' => $articleId,
+					'post_date' => $issueDate,
+					'post_date_gmt' => get_gmt_from_date( $issueDate ),
+					)
+			);
+		}
+	}
+}
