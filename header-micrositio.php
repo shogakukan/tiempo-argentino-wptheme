@@ -14,15 +14,6 @@
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
     <?php include_once(TA_THEME_PATH . '/markup/partes/micrositio/header-micrositio.php');  ?>
-    <?php $color = $micrositio->get_color() ;?>
-    <?php if ($color && isHexaColor($color)) : ?>
-        <style>
-            <?= "." . $micrositio->slug; ?> .triangle-left, <?= "." . $micrositio->slug; ?> .triangle-right, <?= "." . $micrositio->slug; ?> .banner-micrositio .content{
-                background-color: <?= $color; ?> !important;
-            }
-            <?= "." . $micrositio->slug; ?> .category-title h4 {color: <?= $color; ?>;}
-        </style>
-    <?php endif; ?>
     <?php if (is_active_sidebar('micrositio_desktop_posheader')) { ?>
         <div class="container d-none d-sm-block d-md-block d-lg-block mt-md-3 mb-md-3 text-center mt-3">
             <div class="row d-flex">

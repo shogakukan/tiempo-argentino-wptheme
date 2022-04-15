@@ -144,7 +144,8 @@ class TA_Article extends TA_Article_Data{
                 'position'      => null,
                 'alt'           => __('No hay imagen', 'ta-genosha'),
                 'is_default'    => true,
-                'ratio'         => "2 / 3"
+                'ratio'         => "2 / 3",
+                'real_ratio'    => "1 / 1",
             );
         }
         else {
@@ -159,6 +160,7 @@ class TA_Article extends TA_Article_Data{
                 'alt'           => $alt ? $alt : '',
                 'is_default'    => false,
                 'ratio'         => getRatioAdjusted($imageSrc[1], $imageSrc[2]),
+                'real_ratio'    => getRealRatio($imageSrc[1], $imageSrc[2]),
             );
         }
 
@@ -181,7 +183,8 @@ class TA_Article extends TA_Article_Data{
                 'position'      => ta_get_attachment_positions($attachment->ID),
                 'alt'           => $alt ? $alt : '',
                 'is_default'    => false,
-                'ratio'         => getRatioAdjusted($imageSrc[1], $imageSrc[2])
+                'ratio'         => getRatioAdjusted($imageSrc[1], $imageSrc[2]),
+                'real_ratio'    => getRealRatio($imageSrc[1], $imageSrc[2]),
             );
         }
 

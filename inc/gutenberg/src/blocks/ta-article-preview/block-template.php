@@ -26,14 +26,20 @@ $url = $article->url;
 $authors = $show_authors ? $article->authors : null;
 
 if(str_contains($size, 'large')){
-    $imgSize = $size == 'mega-large' ? 'full' : 'destacado';
+    if ($size == 'mega-large'){
+        $imgSize = 'full';
+        $ratioKey = 'real_ratio';
+    } else {
+        $imgSize = 'destacado';
+        $ratioKey = 'ratio';  
+    }
     $class .= ' destacado';
 } else {
     $imgSize = 'medium';
 }
 $thumbnail = $article->get_thumbnail_alt_common(null, $imgSize) ? $article->get_thumbnail_alt_common(null, $imgSize) : $article->get_thumbnail_common(null, $imgSize);//$article->thumbnail_alt_common ? $article->thumbnail_alt_common : $article->thumbnail_common;
 $thumbnail_url = $thumbnail ? $thumbnail['url'] : '';
-$img_ratio_style = $thumbnail && str_contains($size, 'large') ? 'padding-bottom: calc(100% * ' . $thumbnail['ratio'] . ');': '';
+$img_ratio_style = $thumbnail && isset($ratioKey) ? 'padding-bottom: calc(100% * ' . $thumbnail[$ratioKey] . ');': '';
 
 // if($desktop_horizontal == true)
 //     $class .= ' horizontal';
