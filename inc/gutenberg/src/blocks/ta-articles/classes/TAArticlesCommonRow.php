@@ -57,7 +57,7 @@ class TAArticlesCommonRow extends TAArticlesBlockRow{
                         } else {
                             $size = $col_lg_size > 5 ? 'large' : 'common';
                         }
-                        $class = is_archive() ? 'col-6 ' : 'col-12 ';
+                        $class = is_archive() && get_queried_object()->taxonomy != 'ta_article_micrositio' ? 'col-6 ' : 'col-12 ';
                         $class .= $col_class;
 
                         ?>

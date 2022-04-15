@@ -24,7 +24,15 @@ if (is_user_logged_in() && get_user_meta(get_current_user_id(),'_user_status',tr
     $label = __('ASOCIATE','gen-base-theme'); 
 }
 ?>
-
+<?php $color = $micrositio->get_color() ;?>
+<?php if ($color && isHexaColor($color)) : ?>
+    <style>
+        <?= "." . $micrositio->slug; ?> .triangle-left, <?= "." . $micrositio->slug; ?> .triangle-right, <?= "." . $micrositio->slug; ?> .banner-micrositio .content{
+            background-color: <?= $color; ?> !important;
+        }
+        <?= "." . $micrositio->slug; ?> .category-title h4 {color: <?= $color; ?>;}
+    </style>
+<?php endif; ?>
 <div class="header header-micrositio ta-context micrositio <?php echo esc_attr($micrositio->slug); ?>">
     <div class="context-bg">
         <div class="context-color">
