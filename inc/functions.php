@@ -1230,6 +1230,7 @@ function getTodayAuthors(){
 	$query_args = array(
 		'post_type' 	=> 'ta_article',
 		'order' 		=> 'DESC',
+        'posts_per_page' => -1,
 		'date_query'            => array(
 			'column'        => 'post_date',
 			'after'         => '- 1 days'
