@@ -1225,3 +1225,44 @@ function getRealRatio($w, $h) {
 function isHexaColor ($color) {
     return (strlen($color) == 7 || strlen($color) == 4) && substr($color, 0, 1) == '#';
 }
+
+function getTodayAuthors(){
+	$query_args = array(
+		'post_type' 	=> 'ta_article',
+		'order' 		=> 'DESC',
+		'date_query'            => array(
+			'column'        => 'post_date',
+			'after'         => '- 1 days'
+		),
+	);
+
+	$articles = get_posts($query_args);
+    $authors = [];
+    foreach ($articles as $a){
+        $authorsFromArticle = get_the_terms($a->ID, 'ta_article_author');
+        foreach ($authorsFromArticle as $author){
+            if (!array_key_exists($author->term_id, $authors)){
+                $authors[$author->term_id] = TA_Author_Factory::get_author($author);
+            }
+        }
+
+    }
+    return $authors;
+}
+
+add_filter('the_content', 'insert_escriben_hoy', 1);
+
+function insert_escriben_hoy($content){
+    if (is_front_page()) {
+        $divider = '<!-- row divider -->';
+        $rows = explode($divider, $content);
+        $rows[0] = str_replace('lazy', '', $rows[0]);
+        ob_start();
+        include_once(TA_THEME_PATH . "/markup/partes/escriben-hoy.php");;  
+        $rows[0] .= ob_get_clean();
+        $result = implode($divider, $rows);
+        return $result;
+    } else {
+        return $content;
+    }
+}

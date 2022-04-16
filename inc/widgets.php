@@ -516,7 +516,7 @@ class Widgets_Theme_TA
             $rows = explode($divider, $content);
             $result = "";
 
-            $rows[0] = str_replace('lazy', '', $rows[0]);
+            //$rows[0] = str_replace('lazy', '', $rows[0]);
             foreach ($rows as $index => $row) {
                 $result .= $row;
 
