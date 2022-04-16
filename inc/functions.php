@@ -1249,20 +1249,3 @@ function getTodayAuthors(){
     }
     return $authors;
 }
-
-add_filter('the_content', 'insert_escriben_hoy', 1);
-
-function insert_escriben_hoy($content){
-    if (is_front_page()) {
-        $divider = '<!-- row divider -->';
-        $rows = explode($divider, $content);
-        $rows[0] = str_replace('lazy', '', $rows[0]);
-        ob_start();
-        include_once(TA_THEME_PATH . "/markup/partes/escriben-hoy.php");;  
-        $rows[0] .= ob_get_clean();
-        $result = implode($divider, $rows);
-        return $result;
-    } else {
-        return $content;
-    }
-}
