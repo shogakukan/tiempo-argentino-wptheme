@@ -917,7 +917,7 @@ function insert_escriben_hoy($content){
 			'<div class="author"><p>';
 			foreach ($authors as $i => $author) {
 				$rows[0] .= '<a href="' . $author->archive_url . '">' . $author->name . '</a>';
-				if ($i !== array_key_last($authors)) $rows[0] .= "|";
+				if ($i !== array_key_last($authors)) $rows[0] .= " | ";
 			}
 			$rows[0] .= '</p>' .
 						'</div>' .
