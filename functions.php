@@ -891,3 +891,45 @@ function fix_printed_articles_date () {
 		}
 	}
 }
+
+add_filter('the_content', 'insert_escriben_hoy', 1);
+
+function insert_escriben_hoy($content){
+    if (is_front_page()) {
+		$divider = '<!-- row divider -->';
+        $rows = explode($divider, $content);
+        $rows[0] = str_replace('lazy', '', $rows[0]);
+		$authors = getTodayAuthors();
+		if ($authors){
+			$rows[0] .= '<div class="container-with-header ta-context dark-blue py-3">' .
+			'<div class="context-color">' .
+			'<div class="container line-height-0">' .
+			'<div class="separator m-0"></div>' .
+			'</div>' .
+			'<div class="context-bg py-3 article-preview">' .
+			'<div class="container ">' .
+			'<a class="section-title">' .
+			'<h4>Escriben hoy</h4>' .
+			'</a>' .
+			'</div>' .
+			'<div class="sub-blocks mt-3 content">' .
+			'<div class="container article-info-container">' .
+			'<div class="author"><p>';
+			foreach ($authors as $i => $author) {
+				$rows[0] .= '<a href="' . $author->archive_url . '">' . $author->name . '</a>';
+				if ($i !== array_key_last($authors)) $rows[0] .= "|";
+			}
+			$rows[0] .= '</p>' .
+						'</div>' .
+						'</div>' .
+						'</div>' .
+						'</div>' .
+						'</div>' .
+						'</div>';
+		}
+		$result = implode($divider, $rows);
+        return $result;
+    } else {
+        return $content;
+    }
+}
