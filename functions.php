@@ -895,13 +895,15 @@ function fix_printed_articles_date () {
 add_filter('the_content', 'insert_escriben_hoy', 1);
 
 function insert_escriben_hoy($content){
-    if (is_front_page()) {
+    if (is_front_page() && get_option( 'escriben_hoy_option_name' )['semana_' . date('w')]) {
+		$today = date('w');
 		$divider = '<!-- row divider -->';
         $rows = explode($divider, $content);
+		$location = get_option( 'escriben_hoy_option_name' )['ubicacion'] > 0 ? get_option( 'escriben_hoy_option_name' )['ubicacion'] - 1 : 0;
         $rows[0] = str_replace('lazy', '', $rows[0]);
 		$authors = getTodayAuthors();
-		if ($authors){
-			$rows[0] .= '<div class="container-with-header ta-context dark-blue py-3">' .
+		if ($authors && isset($rows[$location])){
+			$rows[$location] .= '<div class="container-with-header ta-context dark-blue py-3">' .
 			'<div class="context-color">' .
 			'<div class="container line-height-0">' .
 			'<div class="separator m-0"></div>' .
@@ -916,10 +918,10 @@ function insert_escriben_hoy($content){
 			'<div class="container article-info-container">' .
 			'<div class="author"><p>';
 			foreach ($authors as $i => $author) {
-				$rows[0] .= '<a href="' . $author->archive_url . '">' . $author->name . '</a>';
-				if ($i !== array_key_last($authors)) $rows[0] .= " | ";
+				$rows[$location] .= '<a href="' . $author->archive_url . '">' . $author->name . '</a>';
+				if ($i !== array_key_last($authors)) $rows[$location] .= " | ";
 			}
-			$rows[0] .= '</p>' .
+			$rows[$location] .= '</p>' .
 						'</div>' .
 						'</div>' .
 						'</div>' .

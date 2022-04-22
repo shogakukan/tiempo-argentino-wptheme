@@ -157,4 +157,4 @@ $sponsor = $article->micrositio->get_sponsor();
 </div>
 
 <?php //include(TA_THEME_PATH . "/markup/partes/mas-leidas-especial.php");  ?>
-<?php get_template_part('parts/article', 'tambien_podes_leer', ['post_id' => get_the_ID()]); ?>
+<?php get_template_part('parts/article', 'tambien_podes_leer', ['post_id' => get_the_ID(), 'micrositio_slug' => $article->micrositio->slug]); ?>

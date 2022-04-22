@@ -1227,13 +1227,14 @@ function isHexaColor ($color) {
 }
 
 function getTodayAuthors(){
+    $daysAfter = get_option( 'escriben_hoy_option_name' )['dias'] > 0 ? get_option( 'escriben_hoy_option_name' )['dias'] : 2;
 	$query_args = array(
 		'post_type' 	=> 'ta_article',
 		'order' 		=> 'DESC',
         'posts_per_page' => -1,
 		'date_query'            => array(
 			'column'        => 'post_date',
-			'after'         => '- 1 days'
+			'after'         => '- ' . $daysAfter . ' days'
 		),
 	);
 
