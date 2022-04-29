@@ -60,7 +60,7 @@ $sponsor = $article->micrositio->get_sponsor();
                                     <div class="img-wrapper" id="article-main-image">
                                         <img src="<?php echo esc_attr($photo['url']); ?>" alt="" class="img-fluid w-100" loading="lazy"/>
                                     </div>
-                                    <?php get_template_part('parts/image', 'copyright', array('photographer' => $article->thumbnail_common['author'], 'caption' => $article->thumbnail_common['caption'])); ?>
+                                    <?php get_template_part('parts/image', 'copyright', array('photographer' => $photo['author'], 'caption' => $photo['caption'])); ?>
                                     <?php if($photo['caption']): ?>
                                     <div class="bajada mt-3">
                                         <p><?php echo esc_html($photo['caption']); ?></p>
