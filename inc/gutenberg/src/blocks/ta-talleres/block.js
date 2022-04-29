@@ -21,8 +21,6 @@ registerBlockType( 'ta/talleres', {
             'post_type': "ta_taller",
             'meta_query': [{'ta_taller_vidriera': true}]
         });
-
-        console.log("Nachito", post);
         
         return (
 			<>
