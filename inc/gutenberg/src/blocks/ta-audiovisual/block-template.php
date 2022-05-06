@@ -33,7 +33,7 @@ $posts_list = array_slice($posts_list, 0, 10);
                             <?php $av_artcile = TA_Article_Factory::get_article($post, 'article_post'); ?>
                             <?php if ($av_artcile) : ?>
                                 <?php if ($i === array_key_first($posts_list)) : ?>
-                                    <div class="col-md-9 col-12 article-preview">
+                                    <div class="col-md-9 col-12 article-preview video-preview">
                                         <div class="img-container video" id="player"></div>
                                         <div class="content mt-2">
                                             <div class="title" id="video-main-title">
@@ -80,6 +80,14 @@ $posts_list = array_slice($posts_list, 0, 10);
 
                                         function onYouTubeIframeAPIReady() {
                                             getPlayer();
+                                            let videoColumn = document.querySelector(".video-preview");
+                                            let innerDivs = videoColumn.querySelectorAll("div, iframe");
+                                            let feauteredHeight = 0;
+                                            innerDivs.forEach(d => {
+                                                feauteredHeight += d.offsetHeight;
+                                            });
+                                            let videoList = document.querySelector(".video-list");
+                                            videoList.style.height = feauteredHeight + "px";
                                         }
 
                                         function setVideoId(videoEl) {
@@ -97,13 +105,13 @@ $posts_list = array_slice($posts_list, 0, 10);
                                         }
                                     </script>
                                     <div class="separator d-block d-md-none m-3"></div>
-                                    <div class="col-md-3 col-12 article-preview" style="overflow: scroll;white-space:nowrap">
+                                    <div class="col-md-3 col-12 article-preview video-list" style="overflow: scroll;">
                                     <?php endif; ?>
                                     <div class="row content" data-titulo="<?= $av_artcile->title ?>" data-cintillo="<?= $av_artcile->cintillo ?>" data-video="<?php echo esc_html($av_artcile->get_video()); ?>" onclick="setVideoId(this);" style="cursor: pointer;">
                                         <div class="col-md-5 col-12">
                                             <!-- <img width="100%" src="<?= $av_artcile->get_thumbnail_common(null, 'medium')['url'] ?>" /> -->
                                             <div class="img-container">
-                                                <div class="img-wrapper d-flex align-items-end lazy" data-thumbnail style='background-image: url("<?php echo $av_artcile->get_thumbnail_common(null, 'medium')['url']; ?>");'>
+                                                <div class="img-wrapper d-flex align-items-end lazy" data-thumbnail style='background-image: url("https://img.youtube.com/vi/<?php echo esc_html($av_artcile->get_video()); ?>/mqdefault.jpg");'>
                                                 </div>
                                             </div>
                                         </div>
@@ -126,8 +134,23 @@ $posts_list = array_slice($posts_list, 0, 10);
 <style>
     @media(max-width:767px) {
         .tiempo-audiovisual .row.content {
-            display: inline-block;
+            display: inline-flex;
             margin: 0 !important;
+            width: 150px;
+            height: 100%;
+            align-content: flex-start;
+        }
+        .tiempo-audiovisual .video-list {
+            white-space: nowrap;
+            height: auto !important;
+        }
+
+        .tiempo-audiovisual .video-list .img-wrapper {
+            padding-bottom: 100px;
+        }
+
+        .tiempo-audiovisual .video-list .title p {
+            white-space: pre-wrap;
         }
     }
 </style>
