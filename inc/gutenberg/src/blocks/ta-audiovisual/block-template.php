@@ -111,7 +111,7 @@ $posts_list = array_slice($posts_list, 0, 10);
                                         <div class="col-md-5 col-12">
                                             <!-- <img width="100%" src="<?= $av_artcile->get_thumbnail_common(null, 'medium')['url'] ?>" /> -->
                                             <div class="img-container">
-                                                <div class="img-wrapper d-flex align-items-end lazy" data-thumbnail style='background-image: url("<?php echo $av_artcile->get_thumbnail_common(null, 'medium')['url']; ?>");'>
+                                                <div class="img-wrapper d-flex align-items-end lazy" data-thumbnail style='background-image: url("https://img.youtube.com/vi/<?php echo esc_html($av_artcile->get_video()); ?>/mqdefault.jpg");'>
                                                 </div>
                                             </div>
                                         </div>
