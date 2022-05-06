@@ -33,7 +33,7 @@ $posts_list = array_slice($posts_list, 0, 10);
                             <?php $av_artcile = TA_Article_Factory::get_article($post, 'article_post'); ?>
                             <?php if ($av_artcile) : ?>
                                 <?php if ($i === array_key_first($posts_list)) : ?>
-                                    <div class="col-md-9 col-12 article-preview video-preview">
+                                    <div class="col-md-8 col-12 article-preview video-preview">
                                         <div class="img-container video" id="player"></div>
                                         <div class="content mt-2">
                                             <div class="title" id="video-main-title">
@@ -105,7 +105,7 @@ $posts_list = array_slice($posts_list, 0, 10);
                                         }
                                     </script>
                                     <div class="separator d-block d-md-none m-3"></div>
-                                    <div class="col-md-3 col-12 article-preview video-list" style="overflow: scroll;">
+                                    <div class="col-md-4 col-12 article-preview video-list" style="overflow: scroll;">
                                     <?php endif; ?>
                                     <div class="row content" data-titulo="<?= $av_artcile->title ?>" data-cintillo="<?= $av_artcile->cintillo ?>" data-video="<?php echo esc_html($av_artcile->get_video()); ?>" onclick="setVideoId(this);" style="cursor: pointer;">
                                         <div class="col-md-5 col-12">
