@@ -381,7 +381,93 @@ class EscribenHoy {
 	}
 
 }
+
+class UltimoMomento {
+	private $ultimo_momento;
+
+	public function __construct() {
+		add_action( 'admin_menu', array( $this, 'ultimo_momento_add_plugin_page' ) );
+		add_action( 'admin_init', array( $this, 'ultimo_momento_page_init' ) );
+	}
+
+	public function ultimo_momento_add_plugin_page() {
+		add_theme_page(
+			'Último momento', // page_title
+			'Último momento', // menu_title
+			'manage_options', // capability
+			'ultimo-momento', // menu_slug
+			array( $this, 'ultimo_momento_create_admin_page' ) // function
+		);
+	}
+
+	public function ultimo_momento_create_admin_page() {
+		$this->ultimo_momento_options = get_option( 'ultimo_momento_option_name' ); ?>
+
+		<div class="wrap">
+			<h2>Último momento</h2>
+			<p></p>
+			<?php settings_errors(); ?>
+
+			<form method="post" action="options.php">
+				<?php
+					settings_fields( 'ultimo_momento_option_group' );
+					do_settings_sections( 'ultimo-momento-admin' );
+					submit_button();
+				?>
+			</form>
+		</div>
+	<?php }
+
+	public function ultimo_momento_page_init() {
+		register_setting(
+			'ultimo_momento_option_group', // option_group
+			'ultimo_momento_option_name', // option_name
+			array( $this, 'ultimo_momento_sanitize' ) // sanitize_callback
+		);
+
+		add_settings_section(
+			'ultimo_momento_setting_section', // id
+			'¿Qué pasó?', // title
+			array( $this, 'ultimo_momento_section_info' ), // callback
+			'ultimo-momento-admin' // page
+		);
+
+		add_settings_field(
+			'ultimo_momento', // id
+			'Título', // title
+			array( $this, 'ultimo_momento_callback' ), // callback
+			'ultimo-momento-admin', // page
+			'ultimo_momento_setting_section' // section
+		);
+
+		
+	}
+
+	public function ultimo_momento_sanitize($input) {
+		$sanitary_values = array();
+		if ( isset( $input['ultimo_momento'] ) ) {
+			$sanitary_values['ultimo_momento'] = sanitize_text_field( $input['ultimo_momento'] );
+		}
+
+		return $sanitary_values;
+	}
+
+	public function ultimo_momento_section_info() {
+		
+	}
+
+	public function ultimo_momento_callback() {
+		printf(
+			'<input class="regular-text" type="text" name="ultimo_momento_option_name[ultimo_momento]" id="ultimo_momento" value="%s">',
+			isset( $this->ultimo_momento_options['ultimo_momento'] ) ? esc_attr( $this->ultimo_momento_options['ultimo_momento']) : ''
+		);
+	}
+
+
+}
+
 if ( is_admin() ) {
 	$datos_footer = new DatosFooter();
 	$escriben_hoy = new EscribenHoy();
+	$ultimo_momento = new UltimoMomento();
 }
