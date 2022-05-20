@@ -45,40 +45,40 @@ export const useLRArticlesTaxonomies = (props = {}) => {
     let taxQuery = {};
 
     //Suplementos
-    if(useSuplements){
-        const {terms: micrositios = [], queryArgs: micrositiosQueryArgs = {}, fetchArgs: micrositiosFetchArgs = {}, required: micrositiosRequired = false} = micrositioProps;
-        finalData.micrositio = useRbTerms("ta_article_micrositio", micrositios, {
-            termsQueryArgs: {
-                only_include: true,
-                ...micrositiosQueryArgs,
-                taxonomy: "ta_article_micrositio",
-            },
-            fetchArgs: micrositiosFetchArgs,
-        });
-        taxQuery["ta_article_micrositio"] = {
-            required: micrositiosRequired,
-            field: micrositiosQueryArgs.field,
-            terms: micrositios,
-        };
-    }
+    // if(useSuplements){
+    //     const {terms: micrositios = [], queryArgs: micrositiosQueryArgs = {}, fetchArgs: micrositiosFetchArgs = {}, required: micrositiosRequired = false} = micrositioProps;
+    //     finalData.micrositio = useRbTerms("ta_article_micrositio", micrositios, {
+    //         termsQueryArgs: {
+    //             only_include: true,
+    //             ...micrositiosQueryArgs,
+    //             taxonomy: "ta_article_micrositio",
+    //         },
+    //         fetchArgs: micrositiosFetchArgs,
+    //     });
+    //     taxQuery["ta_article_micrositio"] = {
+    //         required: micrositiosRequired,
+    //         field: micrositiosQueryArgs.field,
+    //         terms: micrositios,
+    //     };
+    // }
 
     //Tags
-    if(useTags){
-        const {terms: tags = [], queryArgs: tagsQueryArgs = {}, fetchArgs: tagsFetchArgs = {}, required: tagsRequired = false} = tagProps;
-        finalData.tag = useRbTerms("ta_article_tag", tags, {
-            termsQueryArgs: {
-                only_include: true,
-                ...tagsQueryArgs,
-                taxonomy: "ta_article_tag",
-            },
-            fetchArgs: tagsFetchArgs,
-        });
-        taxQuery["ta_article_tag"] = {
-            required: tagsRequired,
-            field: tagsQueryArgs.field,
-            terms: tags,
-        };
-    }
+    // if(useTags){
+    //     const {terms: tags = [], queryArgs: tagsQueryArgs = {}, fetchArgs: tagsFetchArgs = {}, required: tagsRequired = false} = tagProps;
+    //     finalData.tag = useRbTerms("ta_article_tag", tags, {
+    //         termsQueryArgs: {
+    //             only_include: true,
+    //             ...tagsQueryArgs,
+    //             taxonomy: "ta_article_tag",
+    //         },
+    //         fetchArgs: tagsFetchArgs,
+    //     });
+    //     taxQuery["ta_article_tag"] = {
+    //         required: tagsRequired,
+    //         field: tagsQueryArgs.field,
+    //         terms: tags,
+    //     };
+    // }
 
     //Secciones
     if(useSections){
@@ -99,22 +99,22 @@ export const useLRArticlesTaxonomies = (props = {}) => {
     }
 
     //Secciones
-    if(useAuthors){
-        const {terms: authors = [], queryArgs: authorsQueryArgs = {}, fetchArgs: authorsFetchArgs = {}, required: authorsRequired = false} = authorProps;
-        finalData.author = useRbTerms("ta_article_author", authors, {
-            termsQueryArgs: {
-                only_include: true,
-                ...authorsQueryArgs,
-                taxonomy: "ta_article_author",
-            },
-            fetchArgs: authorsFetchArgs,
-        });
-        taxQuery["ta_article_author"] = {
-            required: authorsRequired,
-            field: authorsQueryArgs.field,
-            terms: authors,
-        };
-    }
+    // if(useAuthors){
+    //     const {terms: authors = [], queryArgs: authorsQueryArgs = {}, fetchArgs: authorsFetchArgs = {}, required: authorsRequired = false} = authorProps;
+    //     finalData.author = useRbTerms("ta_article_author", authors, {
+    //         termsQueryArgs: {
+    //             only_include: true,
+    //             ...authorsQueryArgs,
+    //             taxonomy: "ta_article_author",
+    //         },
+    //         fetchArgs: authorsFetchArgs,
+    //     });
+    //     taxQuery["ta_article_author"] = {
+    //         required: authorsRequired,
+    //         field: authorsQueryArgs.field,
+    //         terms: authors,
+    //     };
+    // }
 
     finalData.taxQuery = rbTaxQuery(taxQuery);
     return finalData;

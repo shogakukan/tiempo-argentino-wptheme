@@ -50,7 +50,7 @@ export const LRArticlesSelector = (props = {}) => {
     };
 
     const lrTaxonomies = useTaxonomiesFilters ? useLRArticlesTaxonomies({
-        usage: {micrositio: true, tag: true, section: true, author: true},
+        usage: {micrositio: false, tag: false, section: true, author: false},
         micrositioProps: filtersAttributes.micrositio,
         tagProps: filtersAttributes.tags,
         sectionProps: filtersAttributes.sections,
