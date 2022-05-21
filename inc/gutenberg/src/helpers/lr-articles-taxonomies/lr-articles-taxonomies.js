@@ -45,22 +45,22 @@ export const useLRArticlesTaxonomies = (props = {}) => {
     let taxQuery = {};
 
     //Suplementos
-    // if(useSuplements){
-    //     const {terms: micrositios = [], queryArgs: micrositiosQueryArgs = {}, fetchArgs: micrositiosFetchArgs = {}, required: micrositiosRequired = false} = micrositioProps;
-    //     finalData.micrositio = useRbTerms("ta_article_micrositio", micrositios, {
-    //         termsQueryArgs: {
-    //             only_include: true,
-    //             ...micrositiosQueryArgs,
-    //             taxonomy: "ta_article_micrositio",
-    //         },
-    //         fetchArgs: micrositiosFetchArgs,
-    //     });
-    //     taxQuery["ta_article_micrositio"] = {
-    //         required: micrositiosRequired,
-    //         field: micrositiosQueryArgs.field,
-    //         terms: micrositios,
-    //     };
-    // }
+    if(useSuplements){
+        const {terms: micrositios = [], queryArgs: micrositiosQueryArgs = {}, fetchArgs: micrositiosFetchArgs = {}, required: micrositiosRequired = false} = micrositioProps;
+        finalData.micrositio = useRbTerms("ta_article_micrositio", micrositios, {
+            termsQueryArgs: {
+                only_include: true,
+                ...micrositiosQueryArgs,
+                taxonomy: "ta_article_micrositio",
+            },
+            fetchArgs: micrositiosFetchArgs,
+        });
+        taxQuery["ta_article_micrositio"] = {
+            required: micrositiosRequired,
+            field: micrositiosQueryArgs.field,
+            terms: micrositios,
+        };
+    }
 
     //Tags
     // if(useTags){
