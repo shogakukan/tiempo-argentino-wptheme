@@ -14,7 +14,7 @@ define('TA_ASSETS_URL', TA_THEME_URL . "/assets");
 define('TA_IMAGES_URL', TA_ASSETS_URL . "/img");
 define('TA_ASSETS_CSS_URL', TA_THEME_URL . "/css");
 define('TA_ASSETS_JS_URL', TA_THEME_URL . "/js");
-define('TA_THEME_VERSION','1.3.12');
+define('TA_THEME_VERSION','1.3.13');
 
 require_once TA_THEME_PATH . '/inc/gen-base-theme/gen-base-theme.php';
 require_once TA_THEME_PATH . '/inc/rewrite-rules.php';
@@ -105,7 +105,7 @@ class TA_Theme
 			add_comment_meta($comment->comment_ID, 'is_visitor', $comment->user_id == 0, true);
 		}, 2, 10);
 
-		add_action('wp_head',[self::class,'head_script']);
+		//add_action('wp_head',[self::class,'head_script']);
 
 		self::redirect_searchs();
 		self::filter_contents();
@@ -890,6 +890,41 @@ function fix_printed_articles_date () {
 			);
 		}
 	}
+}
+
+add_action( 'clean_cloudflare_cache_cron', 'clean_cloudflare_cache' );
+
+function clean_cloudflare_cache () {
+	$url = "https://api.cloudflare.com/client/v4/zones/43a5e7686794ede36458229cae39be8e/purge_cache";
+	$curl = curl_init();
+
+	curl_setopt_array($curl, array(
+	CURLOPT_URL => 'https://api.cloudflare.com/client/v4/zones/43a5e7686794ede36458229cae39be8e/purge_cache',
+	CURLOPT_RETURNTRANSFER => true,
+	CURLOPT_ENCODING => '',
+	CURLOPT_MAXREDIRS => 10,
+	CURLOPT_TIMEOUT => 0,
+	CURLOPT_FOLLOWLOCATION => true,
+	CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+	CURLOPT_CUSTOMREQUEST => 'POST',
+	CURLOPT_POSTFIELDS =>'{"files":[
+		"https://www.tiempoar.com.ar/comunidad-tiempo",
+		"https://www.tiempoar.com.ar/comunidad-tiempo/",
+		"https://www.tiempoar.com.ar/micrositio/tiempo-de-viajes/",
+		"https://www.tiempoar.com.ar/micrositio/tiempo-de-viajes",
+		"https://www.tiempoar.com.ar/newsletter",
+		"https://www.tiempoar.com.ar/newsletter/"
+	]}',
+	CURLOPT_HTTPHEADER => array(
+		'X-Auth-Email: ignacio.sbaraglia@tiempoar.com.ar',
+		'X-Auth-Key: ebad878c959740da72a54c46e53f77c8d4a4f',
+		'Content-Type: application/json'
+	),
+	));
+
+	$response = curl_exec($curl);
+
+	curl_close($curl);
 }
 
 add_filter('the_content', 'insert_escriben_hoy', 1);
