@@ -475,7 +475,8 @@ class CloudflareCachePurge {
 	}
 
 	public function cloudflare_cache_purge_add_plugin_page() {
-		add_theme_page(
+		add_submenu_page(
+			'options-general.php',
 			'Cloudflare Cache Purge', // page_title
 			'Cloudflare Cache Purge', // menu_title
 			'manage_options', // capability
