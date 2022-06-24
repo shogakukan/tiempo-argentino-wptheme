@@ -913,11 +913,20 @@ function clean_cloudflare_cache () {
 		"https://www.tiempoar.com.ar/micrositio/tiempo-de-viajes/",
 		"https://www.tiempoar.com.ar/micrositio/tiempo-de-viajes",
 		"https://www.tiempoar.com.ar/newsletter",
-		"https://www.tiempoar.com.ar/newsletter/"
+		"https://www.tiempoar.com.ar/newsletter/",
+		"https://www.tiempoar.com.ar/micrositio/ambiental/",
+		"https://www.tiempoar.com.ar/micrositio/ambiental",
+		"https://www.tiempoar.com.ar/micrositio/habitat/",
+		"https://www.tiempoar.com.ar/micrositio/habitat",
+		"https://www.tiempoar.com.ar/micrositio/medios/",
+		"https://www.tiempoar.com.ar/micrositio/medios",
+		"https://www.tiempoar.com.ar/espectaculos/",
+		"https://www.tiempoar.com.ar/espectaculos"
+
 	]}',
 	CURLOPT_HTTPHEADER => array(
-		'X-Auth-Email: ignacio.sbaraglia@tiempoar.com.ar',
-		'X-Auth-Key: ebad878c959740da72a54c46e53f77c8d4a4f',
+		'X-Auth-Email: ' . get_option('cloudflare_cache_purge_option_name')['email'],
+		'X-Auth-Key: ' . get_option('cloudflare_cache_purge_option_name')['key'],
 		'Content-Type: application/json'
 	),
 	));

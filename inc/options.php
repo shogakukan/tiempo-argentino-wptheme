@@ -466,8 +466,109 @@ class UltimoMomento {
 
 }
 
+class CloudflareCachePurge {
+	private $cloudflare_cache_purge_options;
+
+	public function __construct() {
+		add_action( 'admin_menu', array( $this, 'cloudflare_cache_purge_add_plugin_page' ) );
+		add_action( 'admin_init', array( $this, 'cloudflare_cache_purge_page_init' ) );
+	}
+
+	public function cloudflare_cache_purge_add_plugin_page() {
+		add_theme_page(
+			'Cloudflare Cache Purge', // page_title
+			'Cloudflare Cache Purge', // menu_title
+			'manage_options', // capability
+			'cloudflare-cache-purge', // menu_slug
+			array( $this, 'cloudflare_cache_purge_create_admin_page' ) // function
+		);
+	}
+
+	public function cloudflare_cache_purge_create_admin_page() {
+		$this->cloudflare_cache_purge_options = get_option( 'cloudflare_cache_purge_option_name' ); ?>
+
+		<div class="wrap">
+			<h2>Cloudflare Cache Purge</h2>
+			<p></p>
+			<?php settings_errors(); ?>
+
+			<form method="post" action="options.php">
+				<?php
+					settings_fields( 'cloudflare_cache_purge_option_group' );
+					do_settings_sections( 'cloudflare-cache-purge-admin' );
+					submit_button();
+				?>
+			</form>
+		</div>
+	<?php }
+
+	public function cloudflare_cache_purge_page_init() {
+		register_setting(
+			'cloudflare_cache_purge_option_group', // option_group
+			'cloudflare_cache_purge_option_name', // option_name
+			array( $this, 'cloudflare_cache_purge_sanitize' ) // sanitize_callback
+		);
+
+		add_settings_section(
+			'cloudflare_cache_purge_setting_section', // id
+			'Credenciales', // title
+			array( $this, 'cloudflare_cache_purge_section_info' ), // callback
+			'cloudflare-cache-purge-admin' // page
+		);
+
+		add_settings_field(
+			'email', // id
+			'Email', // title
+			array( $this, 'email_callback' ), // callback
+			'cloudflare-cache-purge-admin', // page
+			'cloudflare_cache_purge_setting_section' // section
+		);
+
+		add_settings_field(
+			'key', // id
+			'Key', // title
+			array( $this, 'key_callback' ), // callback
+			'cloudflare-cache-purge-admin', // page
+			'cloudflare_cache_purge_setting_section' // section
+		);
+
+		
+	}
+
+	public function cloudflare_cache_purge_sanitize($input) {
+		$sanitary_values = array();
+		if ( isset( $input['email'] ) ) {
+			$sanitary_values['email'] = sanitize_text_field( $input['email'] );
+		}
+		if ( isset( $input['key'] ) ) {
+			$sanitary_values['key'] = sanitize_text_field( $input['key'] );
+		}
+
+		return $sanitary_values;
+	}
+
+	public function cloudflare_cache_purge_section_info() {
+		
+	}
+
+	public function email_callback() {
+		printf(
+			'<input class="regular-text" type="text" name="cloudflare_cache_purge_option_name[email]" id="email" value="%s">',
+			isset( $this->cloudflare_cache_purge_options['email'] ) ? esc_attr( $this->cloudflare_cache_purge_options['email']) : ''
+		);
+	}
+
+	public function key_callback() {
+		printf(
+			'<input class="regular-text" type="text" name="cloudflare_cache_purge_option_name[key]" id="key" value="%s">',
+			isset( $this->cloudflare_cache_purge_options['key'] ) ? esc_attr( $this->cloudflare_cache_purge_options['key']) : ''
+		);
+	}
+}
+
 if ( is_admin() ) {
 	$datos_footer = new DatosFooter();
 	$escriben_hoy = new EscribenHoy();
 	$ultimo_momento = new UltimoMomento();
+	$cloudflare_cache_purge = new CloudflareCachePurge();
 }
