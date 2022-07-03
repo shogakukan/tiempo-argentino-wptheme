@@ -520,6 +520,10 @@ a.ab-item {
 .ta-context.blue-tiempo .context-bg {
   background-color: var(--ta-celeste);
 }
+.dark-blue .title p,
+.dark-blue .carousel-indicators li {
+  color: #fff;
+}
 .ta-context.dark-blue .context-color .article-preview .content p {
   color: white !important;
 }

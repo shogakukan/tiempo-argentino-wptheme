@@ -71,6 +71,13 @@ div#popup-avis {
   height: 100%;
 }
 
+.popup {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
 div#popup-avis .popup {
   margin-left: auto;
   margin-right: auto;
@@ -92,7 +99,7 @@ span.cerrar-pop {
   right: 10px;
   /* top: -20px; 
   right: auto;*/
-  top: 0;
+  top: 32px;
   border-radius: 100%;
   background: white;
   cursor: pointer;

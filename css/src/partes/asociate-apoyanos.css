@@ -109,6 +109,11 @@
 .apoyanos-block-container {
   border: 1px solid var(--ta-gris-subtexto);
 }
+@media (min-width: 992px) {
+  .asociate-block-container {
+    min-height: 0;
+  }
+}
 .asociate-block-container .title h4,
 .apoyanos-block-container .title h4 {
   font-family: "Red Hat Display";
@@ -275,6 +280,11 @@
   font-weight: 400;
   margin-left: 10px;
   margin-bottom: 0;
+}
+@media (min-width: 768px) {
+  .asociate-block-container .subs-opt {
+    margin-top: 1rem !important;
+  }
 }
 .asociate-block-container .form-container .input-container,
 .apoyanos-block-container .form-container .input-container {

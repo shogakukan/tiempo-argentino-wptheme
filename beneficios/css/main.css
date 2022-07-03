@@ -1170,5 +1170,7 @@ body {
     font-size: 19px;
   }
 }
-
+#beneficios-loop .article-preview .img-container .img-wrapper {
+  background-size: contain !important;
+}
 /*# sourceMappingURL=main.css.map */
