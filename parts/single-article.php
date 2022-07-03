@@ -15,7 +15,7 @@ $author = $article->first_author;
 $authors = $article->authors;
 ?>
 <?php get_template_part('parts/single_article', 'top'); ?>
-<div class="container-fluid container-lg p-0 ">
+<div class="container-fluid container-lg p-0 <?php echo esc_attr($section->slug); ?>">
     <div class="d-flex col-12 flex-column flex-lg-row p-0">
         <div class="col-12 col-lg-8 p-0">
 
@@ -40,6 +40,7 @@ $authors = $article->authors;
                                 <h3><?php echo esc_html($article->excerpt); ?></h3>
                             </div>
                             <?php endif; ?>
+                            <?php get_template_part('parts/article','authors_data', array( 'article' => $article, 'size' => 'mobile' )); ?>
                             <div class="d-flex justify-content-between align-items-end mt-3">
                                 <?php if( $show_date && $date ): ?>
                                 <p class="date mb-0"><?php echo $date; ?></p>
@@ -66,8 +67,7 @@ $authors = $article->authors;
                             <?php endif; ?>
                         </div>
                         <?php endif; ?>
-
-                        <?php get_template_part('parts/article','authors_data', array( 'article' => $article )); ?>
+                        <?php get_template_part('parts/article','authors_data', array( 'article' => $article, 'size' => 'desktop' )); ?>
                         
                         <?php if (is_active_sidebar('article_mobile_postimage')) { ?>
                             <div class="row d-flex">

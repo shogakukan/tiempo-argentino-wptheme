@@ -23,6 +23,7 @@ if(!$article)
                     <h3><?php echo esc_html($article->excerpt); ?></h3>
                 </div>
                 <?php endif; ?>
+                <?php get_template_part('parts/article','authors_data', array( 'article' => $article, 'size' => 'mobile' )); ?>
             </div>
             <div class="d-flex justify-content-between align-items-center mt-3">
                 <p class="date mb-0"><?php echo esc_html($article->get_date_day('d/m/Y')); ?></p>
@@ -46,7 +47,7 @@ if(!$article)
             </div>
             <?php endif; ?>
 
-            <?php get_template_part('parts/article','authors_data', array( 'article' => $article )); ?>
+            <?php get_template_part('parts/article','authors_data', array( 'article' => $article, 'size' => 'desktop', 'special_format' => true)); ?>
 
             <div class="article-body mt-3">
                 <div class="col-md-8 p-0 mx-auto">

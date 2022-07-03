@@ -298,15 +298,15 @@
     max-width: 100%;
   }
 
-  .articulo-especial .author-icon {
+  .articulo-especial .author-icon:first-child {
     flex: 0 0 16.6666666667%;
     max-width: 16.6666666667%;
     text-align: right;
   }
 
   .articulo-especial .author-info {
-    flex: 0 0 83.3333333333%;
-    max-width: 83.3333333333%;
+    /* flex: 0 0 83.3333333333%;
+    max-width: 83.3333333333%; */
   }
 
   .articulo-especial .article-body .img-container {
@@ -317,6 +317,9 @@
   }
 
   .articulo-especial .author {margin: 0 !important;}
+  .articulo-especial .author-icon:not(:first-child) {
+    margin-left: 1rem !important;
+  }
   .articulo-especial .author-icon {
     margin: 0 !important;
     padding-right: 0.5rem !important;
