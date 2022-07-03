@@ -2,13 +2,12 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-07 16:59-0300\n"
+"POT-Creation-Date: 2022-03-02 22:31+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,766 +15,1114 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"X-Generator: Loco https://localise.biz/"
 
-#: customizer.php:17
-msgid "Ajustes Globales"
+#: subscriptions-theme/pages/donations.php:387
+#: subscriptions-theme/pages/subscriptions-loop.php:374
+#, php-format
+msgid "%s para terminar de asociarte a Tiempo Argentino"
 msgstr ""
 
-#: customizer.php:18
-msgid "Configuración que afecta a diversos modulos del sitio."
+#: beneficios/pages/taxonomy-cat_beneficios.php:38
+#: beneficios/pages/beneficios-loop.php:34
+#: beneficios/pages/beneficios-search.php:29
+msgid "1"
 msgstr ""
 
-#: customizer.php:72
-msgid "Título"
+#: subscriptions-theme/pages/subscriptions-payment-page.php:110
+msgid "15 días"
 msgstr ""
 
-#: functions.php:112 inc/entities/article-section/entity.php:24
-#: inc/entities/article-section/entity.php:27
-msgid "Secciones"
+#: beneficios/pages/taxonomy-cat_beneficios.php:48
+#: beneficios/pages/beneficios-loop.php:44
+#: beneficios/pages/beneficios-search.php:39
+msgid "2"
 msgstr ""
 
-#: functions.php:113
-msgid "Especiales"
+#: beneficios/pages/taxonomy-cat_beneficios.php:57
+#: beneficios/pages/beneficios-loop.php:53
+#: beneficios/pages/beneficios-search.php:48
+msgid "3"
 msgstr ""
 
-#: functions.php:114
-msgid "Extra"
+#: 404.php:6
+msgid "404"
 msgstr ""
 
-#: inc/attachments.php:4
-msgid "Autor"
+#: subscriptions-theme/auth/user-panel.php:113
+msgid "Abonar más"
 msgstr ""
 
-#: inc/attachments.php:19
-msgid "Posición Vertical"
+#: subscriptions-theme/pages/subscriptions-loop.php:129
+msgid "abonar más"
 msgstr ""
 
-#: inc/attachments.php:43
-msgid "Posición Horizontal"
+#: mailtrain/pages/mailtrain.php:136
+msgid "Acepto"
 msgstr ""
 
-#: inc/menu-items.php:14
-msgid "Imagen del item"
+#: subscriptions-theme/auth/user-panel.php:93
+msgid "Agregá el diario en papel"
 msgstr ""
 
-#: inc/menu-items.php:15
-msgid "Solo se utiliza en el último menú"
+#: subscriptions-theme/pages/subscriptions-loop.php:352
+msgid "Agregá el diario en papel por"
 msgstr ""
 
-#: inc/widgets.php:18
-msgid "Sobre header en nota"
+#: mailtrain/pages/mailtrain.php:172
+msgid ""
+"Ahora recibirás información de Tiempo Argentino. Un medio autogestionado, es "
+"posible."
 msgstr ""
 
-#: inc/widgets.php:28
-msgid "Sobre la nota"
+#: subscriptions-theme/pages/donations.php:527
+#: subscriptions-theme/pages/subscriptions-loop.php:505
+#, php-format
+msgid "Al hacer click en registrarse, estás aceptando nuestros %s"
 msgstr ""
 
-#: inc/widgets.php:38
-msgid "Sidebar nota"
+#: mailtrain/pages/mailtrain.php:140
+msgid "anterior"
+msgstr ""
+
+#: subscriptions-theme/pages/donations.php:87
+msgid "aportar más"
+msgstr ""
+
+#: subscriptions-theme/pages/donations.php:11
+#: subscriptions-theme/pages/donations.php:315
+#: subscriptions-theme/pages/donations.php:362
+msgid "apoyanos"
+msgstr ""
+
+#: header.php:9 markup/partes/menu.php:84
+#: markup/partes/micrositio/header-micrositio.php:24
+msgid "ASOCIATE"
+msgstr ""
+
+#: subscriptions-theme/pages/donations.php:427
+#: subscriptions-theme/pages/donations.php:489
+#: subscriptions-theme/pages/subscriptions-payment-page.php:16
+#: subscriptions-theme/pages/subscriptions-loop.php:33
+#: subscriptions-theme/pages/subscriptions-loop.php:251
+#: subscriptions-theme/pages/subscriptions-loop.php:299
+#: subscriptions-theme/pages/subscriptions-loop.php:408
+#: subscriptions-theme/pages/subscriptions-loop.php:462
+msgid "asociate"
+msgstr ""
+
+#: inc/cooperativa.php:24 inc/cooperativa.php:25 inc/cooperativa.php:27
+msgid "Añadir"
+msgstr ""
+
+#: subscriptions-theme/auth/user-panel.php:66
+msgid "become a member"
+msgstr ""
+
+#: subscriptions-theme/auth/user-panel.php:137
+#: beneficios/pages/taxonomy-cat_beneficios.php:18
+#: beneficios/pages/beneficios-loop.php:14
+#: beneficios/pages/beneficios-search.php:9
+msgid "Beneficios"
+msgstr ""
+
+#: markup/partes/menu.php:91
+msgid "Beneficios para la comunidad"
+msgstr ""
+
+#: beneficios/pages/beneficios-loop.php:25
+msgid "Beneficios para la Comunidad Tiempo"
+msgstr ""
+
+#: beneficios/functions.php:272
+#: beneficios/pages/taxonomy-cat_beneficios.php:302
+#: beneficios/pages/beneficios-loop.php:289
+#: beneficios/pages/beneficios-search.php:282
+msgid "Beneficios tiempo"
+msgstr ""
+
+#: inc/delete-tool/posts.php:140 inc/delete-tool/posts.php:141
+msgid "Borrar Articulos"
+msgstr ""
+
+#: markup/partes/menu.php:56 beneficios/pages/taxonomy-cat_beneficios.php:98
+#: beneficios/pages/taxonomy-cat_beneficios.php:111
+#: beneficios/pages/beneficios-loop.php:94
+#: beneficios/pages/beneficios-loop.php:107
+#: beneficios/pages/beneficios-search.php:89
+#: beneficios/pages/beneficios-search.php:102
+msgid "BUSCAR"
+msgstr ""
+
+#: inc/cooperativa.php:30
+msgid "Buscar"
+msgstr ""
+
+#: subscriptions-theme/pages/subscriptions-payment-page.php:75
+msgid "Calle"
+msgstr ""
+
+#: subscriptions-theme/auth/user-panel.php:83
+msgid "Cambiar mi plan"
+msgstr ""
+
+#: subscriptions-theme/auth/user-panel.php:127
+msgid "Cancelar"
+msgstr ""
+
+#: subscriptions-theme/auth/lost-password.php:34
+msgid "Cancelar y volver"
+msgstr ""
+
+#: header.php:6 markup/partes/micrositio/header-micrositio.php:21
+msgid "COMUNIDAD"
+msgstr ""
+
+#: header.php:74 markup/partes/micrositio/header-micrositio.php:35
+msgid "Comunidad Tiempo"
+msgstr ""
+
+#: subscriptions-theme/pages/subscriptions-payment-page.php:104
+msgid "Confirmar"
+msgstr ""
+
+#: inc/extra/banner-home-qs.php:5
+msgid "Conocé el nuevo Tiempo Argentino"
+msgstr ""
+
+#: subscriptions-theme/pages/donations.php:96
+#: subscriptions-theme/pages/subscriptions-loop.php:138
+msgid "continuar"
+msgstr ""
+
+#: subscriptions-theme/pages/donations.php:381
+#: subscriptions-theme/pages/subscriptions-loop.php:368
+msgid "CONTINUAR AL PAGO"
+msgstr ""
+
+#: subscriptions-theme/auth/suscription-login.php:28
+msgid "Contraseña"
+msgstr ""
+
+#: subscriptions-theme/auth/user-panel.php:65
+msgid "Convert your contribution in a subscription"
+msgstr ""
+
+#: inc/cooperativa.php:20 inc/cooperativa.php:21 inc/cooperativa.php:22
+#: inc/cooperativa.php:36
+msgid "Cooperativa"
+msgstr ""
+
+#: subscriptions-theme/pages/subscriptions-payment-page.php:82
+msgid "CP"
+msgstr ""
+
+#: subscriptions-theme/pages/donations.php:390
+#: subscriptions-theme/pages/donations.php:469
+#: subscriptions-theme/pages/subscriptions-loop.php:377
+msgid "CREAR CUENTA"
+msgstr ""
+
+#: subscriptions-theme/auth/subscriptions-register.php:13
+#: subscriptions-theme/auth/subscriptions-register.php:21
+msgid "Crear cuenta"
+msgstr ""
+
+#: subscriptions-theme/pages/donations.php:387
+#: subscriptions-theme/pages/subscriptions-loop.php:374
+msgid "Creá tu cuenta"
+msgstr ""
+
+#: subscriptions-theme/pages/donations.php:404
+#: subscriptions-theme/pages/subscriptions-payment-page.php:143
+#: subscriptions-theme/pages/subscriptions-loop.php:276
+#: subscriptions-theme/pages/subscriptions-loop.php:391
+msgid "cuando quieras desde tu perfil de usuario"
+msgstr ""
+
+#: user-panel/functions.php:43
+msgid "Cuenta"
+msgstr ""
+
+#: subscriptions-theme/auth/user-panel.php:61
+msgid "dar de baja"
+msgstr ""
+
+#: markup/partes/newsletter.php:11
+msgid "De lunes a viernes, la información necesaria para arrancar el día."
+msgstr ""
+
+#: user-panel/pages/account.php:47
+msgid "dejar en blanco si no se va a cambiar"
+msgstr ""
+
+#: mailtrain/pages/mailtrain.php:25
+msgid "Deseamos conocerte, indicanos tu nombre y tu e-mail:"
+msgstr ""
+
+#: subscriptions-theme/pages/subscriptions-payment-page.php:90
+msgid "Dpto"
+msgstr ""
+
+#: inc/cooperativa.php:26 subscriptions-theme/auth/user-panel.php:126
+msgid "Editar"
+msgstr ""
+
+#: subscriptions-theme/auth/user-panel.php:77
+msgid "Editar membresía"
+msgstr ""
+
+#: beneficios/pages/beneficios-loop.php:38
+msgid "El orden en que los elijas se tomará como el orden de prioridad."
+msgstr ""
+
+#: beneficios/pages/taxonomy-cat_beneficios.php:42
+#: beneficios/pages/beneficios-search.php:33
+msgid "El orden en que los elijas se tomará cómo el orden de prioridad."
+msgstr ""
+
+#: subscriptions-theme/pages/subscriptions-loop.php:224
+msgid "elegir y continuar"
+msgstr ""
+
+#: subscriptions-theme/pages/donations.php:369
+msgid "Elegiste colaborar con:"
+msgstr ""
+
+#: subscriptions-theme/pages/subscriptions-loop.php:306
+msgid "Elegiste el paquete"
+msgstr ""
+
+#: subscriptions-theme/pages/donations.php:11
+msgid "ELEGÍ TU APORTE"
+msgstr ""
+
+#: subscriptions-theme/pages/subscriptions-loop.php:33
+msgid "ELEGÍ TU PAQUETE"
+msgstr ""
+
+#: subscriptions-theme/pages/subscriptions-loop.php:101
+msgid "Elegí el monto de tu abono mensual"
+msgstr ""
+
+#: beneficios/pages/taxonomy-cat_beneficios.php:42
+#: beneficios/pages/beneficios-loop.php:38
+#: beneficios/pages/beneficios-search.php:33
+msgid "Elegí hasta 3 beneficios."
+msgstr ""
+
+#: balancer/pages/personalize.php:117
+msgid "Eligí los que más te interesen:"
+msgstr ""
+
+#: subscriptions-theme/auth/suscription-login.php:25
+#: mailtrain/pages/mailtrain.php:32
+msgid "Email"
+msgstr ""
+
+#: beneficios/pages/taxonomy-cat_beneficios.php:61
+#: beneficios/pages/beneficios-loop.php:57
+#: beneficios/pages/beneficios-search.php:52
+msgid "email"
+msgstr ""
+
+#: balancer/pages/personalize.php:188
+msgid "emociones"
+msgstr ""
+
+#: subscriptions-theme/pages/subscriptions-payment-page.php:94
+msgid "Entre calles"
+msgstr ""
+
+#: balancer/pages/personalize.php:289
+msgid ""
+"Estamos trabajando para que disfrutes de una experiencia informativa única"
+msgstr ""
+
+#: subscriptions-theme/pages/subscriptions-loop.php:41
+msgid "estas son las mejores opciones para asociarte"
+msgstr ""
+
+#: balancer/pages/personalize.php:113
+msgid ""
+"Estos son algunos artículos de Tiempo Argentino publicados recientemente."
+msgstr ""
+
+#: subscriptions-theme/auth/user-panel.php:28
+msgid "Estás suscrita/o a:"
+msgstr ""
+
+#: markup/partes/newsletter.php:27
+msgid "Explorar Newsletters"
+msgstr ""
+
+#: beneficios/pages/taxonomy-cat_beneficios.php:125
+#: beneficios/pages/beneficios-loop.php:120
+#: beneficios/pages/beneficios-search.php:115
+msgid "FILTRAR POR:"
+msgstr ""
+
+#: balancer/pages/personalize.php:277
+msgid "Finalizar"
+msgstr ""
+
+#: mailtrain/pages/mailtrain.php:161
+msgid "finalizar"
+msgstr ""
+
+#. Author of the theme
+msgid "Genosha"
+msgstr ""
+
+#: balancer/pages/personalize.php:284
+#: subscriptions-theme/pages/subscriptions-thankyou.php:40
+msgid "Gracias"
+msgstr ""
+
+#: mailtrain/pages/mailtrain.php:168
+#, php-format
+msgid "Gracias %s"
+msgstr ""
+
+#: user-panel/pages/profile.php:73
+msgid "Guardadas"
+msgstr ""
+
+#: user-panel/pages/profile.php:52
+msgid "Guardados"
+msgstr ""
+
+#: subscriptions-theme/auth/user-panel.php:14
+msgid ""
+"Hacete socio de Tiempo Argentino, mantenete informado apoyando al periedismo "
+"independiente y colaborá con un proyecto autogestivo. Vos decidís con que "
+"monto colaborar."
+msgstr ""
+
+#: beneficios/pages/taxonomy-cat_beneficios.php:52
+#: beneficios/pages/beneficios-loop.php:48
+#: beneficios/pages/beneficios-search.php:43
+#, php-format
+msgid "Haremos un %s para distribuirlos."
+msgstr ""
+
+#: subscriptions-theme/auth/user-panel.php:163
+msgid "Historial de beneficios"
+msgstr ""
+
+#: balancer/pages/personalize.php:15
+msgid "Hola"
+msgstr ""
+
+#: subscriptions-theme/pages/subscriptions-loop.php:13
+#, php-format
+msgid "Hola %s"
+msgstr ""
+
+#: subscriptions-theme/auth/lost-password.php:47
+#, php-format
+msgid "Hola %s, ya estas logueado."
+msgstr ""
+
+#: subscriptions-theme/functions.php:120 subscriptions-theme/functions.php:131
+msgid "Hola :"
+msgstr ""
+
+#: subscriptions-theme/pages/subscriptions-loop.php:41
+msgid "Hola, "
+msgstr ""
+
+#: subscriptions-theme/pages/subscriptions-thankyou.php:18
+#: subscriptions-theme/pages/subscriptions-payment-page.php:30
+msgid "Hola, antes debés seleccionar "
+msgstr ""
+
+#: inc/widgets.php:50
+msgid "Home Desktop  - Fila 1-2"
+msgstr ""
+
+#: inc/widgets.php:108
+msgid "Home Desktop - Fija Abajo"
+msgstr ""
+
+#: inc/widgets.php:51
+msgid "Home Desktop - Fila 3-4"
+msgstr ""
+
+#: inc/widgets.php:52
+msgid "Home Desktop - Fila 5-6"
+msgstr ""
+
+#: inc/widgets.php:53
+msgid "Home Desktop - Fila 7-8"
+msgstr ""
+
+#: inc/widgets.php:54
+msgid "Home Desktop - Fila 9-10"
+msgstr ""
+
+#: inc/widgets.php:154
+msgid "Home Desktop - Popup"
+msgstr ""
+
+#: inc/widgets.php:49
+msgid "Home Desktop - Posheader"
 msgstr ""
 
 #: inc/widgets.php:48
-msgid "Abajo nota"
+msgid "Home Desktop - Preheader"
 msgstr ""
 
-#: inc/widgets.php:58
-msgid "Abajo comentarios"
+#: inc/widgets.php:139
+msgid "Home Desktop - VSlider"
 msgstr ""
 
-#: inc/widgets.php:68
-msgid "Lado comentarios"
+#: inc/widgets.php:185
+msgid "Home Mobile - Entre filas 1-2"
 msgstr ""
 
-#: inc/classes/TA_Article.php:119 inc/classes/TA_Article.php:151
-msgid "No hay imagen"
+#: inc/widgets.php:186
+msgid "Home Mobile - Entre filas 2-3"
 msgstr ""
 
-#: inc/entities/article-author/entity.php:9
-msgctxt "taxonomy general name"
-msgid "Autores"
+#: inc/widgets.php:187
+msgid "Home Mobile - Entre filas 3-4"
 msgstr ""
 
-#: inc/entities/article-author/entity.php:10
-msgctxt "taxonomy singular name"
-msgid "Autor"
+#: inc/widgets.php:188
+msgid "Home Mobile - Entre filas 4-5"
 msgstr ""
 
-#: inc/entities/article-author/entity.php:11
-msgid "Buscar Autor"
+#: inc/widgets.php:189
+msgid "Home Mobile - Entre filas 5-6"
 msgstr ""
 
-#: inc/entities/article-author/entity.php:12
-msgid "Autores Populares"
+#: inc/widgets.php:93
+msgid "Home Mobile - Fija Abajo"
 msgstr ""
 
-#: inc/entities/article-author/entity.php:13
-msgid "Todos los autores"
+#: inc/widgets.php:169
+msgid "Home Mobile - Popup"
 msgstr ""
 
-#: inc/entities/article-author/entity.php:16
-msgid "Editar Autor"
+#: inc/widgets.php:184
+msgid "Home Mobile - Posheader"
 msgstr ""
 
-#: inc/entities/article-author/entity.php:17
-msgid "Actualizar Autor"
+#: inc/widgets.php:123
+msgid "Home Mobile - VSlider"
 msgstr ""
 
-#: inc/entities/article-author/entity.php:18
-msgid "Agregar un nuevo Autor"
+#. Author URI of the theme
+msgid "http://www.genosha.com.ar"
 msgstr ""
 
-#: inc/entities/article-author/entity.php:19
-msgid "Nuevo Autor"
+#: inc/gen-base-theme/inc/modules/entities/errors.php:21
+msgid ""
+"If you have no control over some entity, the error can be ignored using the "
+"\"<b>gen_check_post_type_name_dash_error</b>\" or \"<b>"
+"gen_check_taxonomy_name_dash_error</b>\" filters."
 msgstr ""
 
-#: inc/entities/article-author/entity.php:20
-msgid "Separar Autores con comas"
+#: mailtrain/pages/mailtrain.php:14 mailtrain/pages/mailtrain.php:62
+#: mailtrain/pages/mailtrain.php:161
+msgid "informate"
 msgstr ""
 
-#: inc/entities/article-author/entity.php:21
-msgid "Agregar o remover Autores"
+#: subscriptions-theme/pages/donations.php:398
+#: subscriptions-theme/pages/subscriptions-loop.php:385
+msgid "INGRESA"
 msgstr ""
 
-#: inc/entities/article-author/entity.php:22
-msgid "Seleccionar de los Autores mas usados"
+#: subscriptions-theme/pages/donations.php:117
+msgid "INGRESA ACÁ"
 msgstr ""
 
-#: inc/entities/article-author/entity.php:23
-msgid "No se encontraron Autores."
+#: markup/partes/menu.php:71
+msgid "INGRESAR"
 msgstr ""
 
-#: inc/entities/article-author/entity.php:24
-#: inc/entities/article-author/entity.php:27
-msgid "Autores"
+#: header.php:155 subscriptions-theme/auth/suscription-login.php:32
+#: subscriptions-theme/pages/donations.php:427
+#: subscriptions-theme/pages/donations.php:451
+#: subscriptions-theme/pages/subscriptions-loop.php:408
+#: subscriptions-theme/pages/subscriptions-loop.php:432
+msgid "Ingresar"
 msgstr ""
 
-#: inc/entities/article-author/entity.php:36
-msgid "Foto"
+#: subscriptions-theme/pages/donations.php:327
+#: subscriptions-theme/pages/subscriptions-loop.php:263
+msgid "Ingresá acá el importe que desees:"
 msgstr ""
 
-#: inc/entities/article-author/entity.php:54
-msgid "Cita"
+#: subscriptions-theme/functions.php:84
+msgid "Inicia sesión"
 msgstr ""
 
-#: inc/entities/article-author/entity.php:71
-msgid "Tema"
+#: subscriptions-theme/auth/suscription-login.php:11
+#: subscriptions-theme/auth/suscription-login.php:18
+msgid "Iniciar Sesión"
 msgstr ""
 
-#: inc/entities/article-author/entity.php:88
-msgid "Cargo"
+#: beneficios/functions.php:253
+#: beneficios/pages/taxonomy-cat_beneficios.php:284
+#: beneficios/pages/beneficios-loop.php:271
+#: beneficios/pages/beneficios-search.php:264
+msgid "Iniciar Sesión."
 msgstr ""
 
-#: inc/entities/article-author/entity.php:105
-#: inc/entities/article-tag/entity.php:54
-msgid "Descripción"
+#: mailtrain/pages/mailtrain.php:14
+msgid "inicio"
 msgstr ""
 
-#: inc/entities/article-author/entity.php:120
-msgid "Redes y Contacto"
-msgstr ""
-
-#: inc/entities/article-author/entity.php:138
-#: inc/entities/article-author/entity.php:151
-msgid "Nombre de usuario:"
-msgstr ""
-
-#: inc/entities/article-author/entity.php:164
-msgid "Dirección de Email:"
-msgstr ""
-
-#: inc/entities/article-micrositio/entity.php:8
-msgctxt "taxonomy general name"
-msgid "Micrositios"
-msgstr ""
-
-#: inc/entities/article-micrositio/entity.php:9
-msgctxt "taxonomy singular name"
-msgid "Micrositio"
-msgstr ""
-
-#: inc/entities/article-micrositio/entity.php:10
-msgid "Buscar Micrositio"
-msgstr ""
-
-#: inc/entities/article-micrositio/entity.php:11
-msgid "Micrositios Populares"
-msgstr ""
-
-#: inc/entities/article-micrositio/entity.php:12
-msgid "Todos los Micrositios"
-msgstr ""
-
-#: inc/entities/article-micrositio/entity.php:15
-msgid "Editar Micrositio"
-msgstr ""
-
-#: inc/entities/article-micrositio/entity.php:16
-msgid "Actualizar Micrositio"
-msgstr ""
-
-#: inc/entities/article-micrositio/entity.php:17
-msgid "Agregar un nuevo Micrositio"
-msgstr ""
-
-#: inc/entities/article-micrositio/entity.php:18
-msgid "Nuevo Micrositio"
-msgstr ""
-
-#: inc/entities/article-micrositio/entity.php:19
-msgid "Separar Micrositios con comas"
-msgstr ""
-
-#: inc/entities/article-micrositio/entity.php:20
-msgid "Agregar o remover Micrositios"
-msgstr ""
-
-#: inc/entities/article-micrositio/entity.php:21
-msgid "Seleccionar de los Micrositios mas usados"
-msgstr ""
-
-#: inc/entities/article-micrositio/entity.php:22
-msgid "No se encontraron Micrositios."
-msgstr ""
-
-#: inc/entities/article-micrositio/entity.php:23
-#: inc/entities/article-micrositio/entity.php:26
-msgid "Micrositios"
-msgstr ""
-
-#: inc/entities/article-post/entity.php:9
-#: inc/gen-base-theme/tests/entities.php:17
-msgid "Artículos"
-msgstr ""
-
-#: inc/entities/article-post/entity.php:10
-#: inc/entities/article-post/entity.php:137
-#: inc/gen-base-theme/tests/entities.php:18
-msgid "Artículo"
-msgstr ""
-
-#: inc/entities/article-post/entity.php:11
-#: inc/entities/audiovisual-post/entity.php:11
-#: inc/entities/edicion-impresa-post/entity.php:11
-#: inc/entities/fotogalerias-post/entity.php:11
-#: inc/entities/taller-post/entity.php:11
-#: inc/gen-base-theme/tests/entities.php:19
-msgid "Agregar"
-msgstr ""
-
-#: inc/entities/article-post/entity.php:12
-msgid "Agregar nuevo Artículo"
-msgstr ""
-
-#: inc/entities/article-post/entity.php:13
-msgid "Editar Artículo"
-msgstr ""
-
-#: inc/entities/article-post/entity.php:14
-msgid "Nuevo Artículo"
-msgstr ""
-
-#: inc/entities/article-post/entity.php:15
-#: inc/entities/audiovisual-post/entity.php:15
-#: inc/entities/edicion-impresa-post/entity.php:15
-#: inc/entities/fotogalerias-post/entity.php:15
-#: inc/entities/taller-post/entity.php:15
-#: inc/gen-base-theme/tests/entities.php:23
-msgid "Ver"
-msgstr ""
-
-#: inc/entities/article-post/entity.php:16
-msgid "Buscar Artículo"
-msgstr ""
-
-#: inc/entities/article-post/entity.php:17
-#: inc/entities/article-post/entity.php:18
-#: inc/gen-base-theme/tests/entities.php:25
-#: inc/gen-base-theme/tests/entities.php:26
-msgid "No se encontraron artículos"
-msgstr ""
-
-#: inc/entities/article-post/entity.php:46
-msgid "Thumb changed"
-msgstr ""
-
-#: inc/entities/article-post/entity.php:61
-msgid "Thumb alt changed"
-msgstr ""
-
-#: inc/entities/article-post/entity.php:77
-msgid "Imagen en bloques"
-msgstr ""
-
-#: inc/entities/article-post/entity.php:95
-#: inc/entities/audiovisual-post/entity.php:42
-msgid "Cintillo"
-msgstr ""
-
-#: inc/entities/article-post/entity.php:103
-#: inc/entities/audiovisual-post/entity.php:50
-msgid "Texto del cintillo"
-msgstr ""
-
-#: inc/entities/article-post/entity.php:112
-msgid "Opinión"
-msgstr ""
-
-#: inc/entities/article-post/entity.php:120
-msgid "Es artículo de opinión"
-msgstr ""
-
-#: inc/entities/article-post/entity.php:129
-msgid "Nota Hermana"
-msgstr ""
-
-#: inc/entities/article-section/entity.php:9
-msgctxt "taxonomy general name"
-msgid "Secciones"
-msgstr ""
-
-#: inc/entities/article-section/entity.php:10
-msgctxt "taxonomy singular name"
-msgid "Sección"
-msgstr ""
-
-#: inc/entities/article-section/entity.php:11
-msgid "Buscar Sección"
-msgstr ""
-
-#: inc/entities/article-section/entity.php:12
-msgid "Secciones Populares"
-msgstr ""
-
-#: inc/entities/article-section/entity.php:13
-msgid "Todas las Secciones"
-msgstr ""
-
-#: inc/entities/article-section/entity.php:16
-msgid "Editar Sección"
-msgstr ""
-
-#: inc/entities/article-section/entity.php:17
-msgid "Actualizar Sección"
-msgstr ""
-
-#: inc/entities/article-section/entity.php:18
-msgid "Agregar una nueva Sección"
-msgstr ""
-
-#: inc/entities/article-section/entity.php:19
-msgid "Nueva Sección"
-msgstr ""
-
-#: inc/entities/article-section/entity.php:20
-msgid "Separar Secciones con comas"
-msgstr ""
-
-#: inc/entities/article-section/entity.php:21
-msgid "Agregar o remover Secciones"
-msgstr ""
-
-#: inc/entities/article-section/entity.php:22
-msgid "Seleccionar de las Sección mas usadas"
-msgstr ""
-
-#: inc/entities/article-section/entity.php:23
-msgid "No se encontraron Secciones."
-msgstr ""
-
-#: inc/entities/article-subject/entity(unused).php:9
-msgctxt "taxonomy general name"
-msgid "Temas"
-msgstr ""
-
-#: inc/entities/article-subject/entity(unused).php:10
-msgctxt "taxonomy singular name"
-msgid "Tema"
-msgstr ""
-
-#: inc/entities/article-subject/entity(unused).php:11
-msgid "Buscar Tema"
-msgstr ""
-
-#: inc/entities/article-subject/entity(unused).php:12
-msgid "Temas Populares"
-msgstr ""
-
-#: inc/entities/article-subject/entity(unused).php:13
-msgid "Todos los Temas"
-msgstr ""
-
-#: inc/entities/article-subject/entity(unused).php:16
-msgid "Editar Tema"
-msgstr ""
-
-#: inc/entities/article-subject/entity(unused).php:17
-msgid "Actualizar Tema"
-msgstr ""
-
-#: inc/entities/article-subject/entity(unused).php:18
-msgid "Agregar un nuevo Tema"
-msgstr ""
-
-#: inc/entities/article-subject/entity(unused).php:19
-msgid "Nuevo Tema"
-msgstr ""
-
-#: inc/entities/article-subject/entity(unused).php:20
-msgid "Separar Temas con comas"
-msgstr ""
-
-#: inc/entities/article-subject/entity(unused).php:21
-msgid "Agregar o remover Temas"
-msgstr ""
-
-#: inc/entities/article-subject/entity(unused).php:22
-msgid "Seleccionar de los Temas mas usados"
-msgstr ""
-
-#: inc/entities/article-subject/entity(unused).php:23
-msgid "No se encontraron Temas."
-msgstr ""
-
-#: inc/entities/article-subject/entity(unused).php:24
-#: inc/entities/article-subject/entity(unused).php:27
-msgid "Temas"
-msgstr ""
-
-#: inc/entities/article-tag/entity.php:9
-msgctxt "taxonomy general name"
-msgid "Etiquetas"
-msgstr ""
-
-#: inc/entities/article-tag/entity.php:10
-msgctxt "taxonomy singular name"
-msgid "Etiqueta"
-msgstr ""
-
-#: inc/entities/article-tag/entity.php:11
-msgid "Buscar Etiqueta"
-msgstr ""
-
-#: inc/entities/article-tag/entity.php:12
-msgid "Etiquetas Populares"
-msgstr ""
-
-#: inc/entities/article-tag/entity.php:13
-msgid "Todas las Etiquetas"
-msgstr ""
-
-#: inc/entities/article-tag/entity.php:16
-msgid "Editar Etiqueta"
-msgstr ""
-
-#: inc/entities/article-tag/entity.php:17
-msgid "Actualizar Etiqueta"
-msgstr ""
-
-#: inc/entities/article-tag/entity.php:18
-msgid "Agregar una nueva Etiqueta"
-msgstr ""
-
-#: inc/entities/article-tag/entity.php:19
-msgid "Nueva Etiqueta"
-msgstr ""
-
-#: inc/entities/article-tag/entity.php:20
-msgid "Separar Etiquetas con comas"
-msgstr ""
-
-#: inc/entities/article-tag/entity.php:21
-msgid "Agregar o remover Etiquetas"
-msgstr ""
-
-#: inc/entities/article-tag/entity.php:22
-msgid "Seleccionar de las Etiqueta mas usadas"
-msgstr ""
-
-#: inc/entities/article-tag/entity.php:23
-msgid "No se encontraron Etiquetas."
-msgstr ""
-
-#: inc/entities/article-tag/entity.php:24
-#: inc/entities/article-tag/entity.php:27
-msgid "Etiquetas"
-msgstr ""
-
-#: inc/entities/article-tag/entity.php:36
-msgid "Imagen Destacada"
-msgstr ""
-
-#: inc/entities/audiovisual-post/entity.php:9
-#: inc/entities/audiovisual-post/entity.php:10
-msgid "Audiovisual"
-msgstr ""
-
-#: inc/entities/audiovisual-post/entity.php:12
-msgid "Agregar nuevo Audiovisual"
-msgstr ""
-
-#: inc/entities/audiovisual-post/entity.php:13
-msgid "Editar Audiovisual"
-msgstr ""
-
-#: inc/entities/audiovisual-post/entity.php:14
-msgid "Nuevo Audiovisual"
-msgstr ""
-
-#: inc/entities/audiovisual-post/entity.php:16
-msgid "Buscar Audiovisual"
-msgstr ""
-
-#: inc/entities/audiovisual-post/entity.php:17
-#: inc/entities/audiovisual-post/entity.php:18
-msgid "No se encontraron Audiovisuales"
-msgstr ""
-
-#: inc/entities/edicion-impresa-post/entity.php:9
-msgid "Ediciones Impresas"
-msgstr ""
-
-#: inc/entities/edicion-impresa-post/entity.php:10
-msgid "Edición Impresa"
-msgstr ""
-
-#: inc/entities/edicion-impresa-post/entity.php:12
-msgid "Agregar nueva Edición Impresa"
-msgstr ""
-
-#: inc/entities/edicion-impresa-post/entity.php:13
-msgid "Editar Edición Impresa"
-msgstr ""
-
-#: inc/entities/edicion-impresa-post/entity.php:14
-msgid "Nueva Edición Impresa"
-msgstr ""
-
-#: inc/entities/edicion-impresa-post/entity.php:16
-msgid "Buscar Edición Impresa"
-msgstr ""
-
-#: inc/entities/edicion-impresa-post/entity.php:17
-#: inc/entities/edicion-impresa-post/entity.php:18
-msgid "No se encontraron Ediciones Impresas"
-msgstr ""
-
-#: inc/entities/fotogalerias-post/entity.php:9
-msgid "Fotogalerias"
-msgstr ""
-
-#: inc/entities/fotogalerias-post/entity.php:10
-msgid "Fotogaleria"
-msgstr ""
-
-#: inc/entities/fotogalerias-post/entity.php:12
-msgid "Agregar nueva Fotogaleria"
-msgstr ""
-
-#: inc/entities/fotogalerias-post/entity.php:13
-msgid "Editar Fotogaleria"
-msgstr ""
-
-#: inc/entities/fotogalerias-post/entity.php:14
-msgid "Nueva Fotogaleria"
-msgstr ""
-
-#: inc/entities/fotogalerias-post/entity.php:16
-msgid "Buscar Fotogaleria"
-msgstr ""
-
-#: inc/entities/fotogalerias-post/entity.php:17
-#: inc/entities/fotogalerias-post/entity.php:18
-msgid "No se encontraron Fotogalerias"
-msgstr ""
-
-#: inc/entities/taller-post/entity.php:9
-msgid "Talleres"
-msgstr ""
-
-#: inc/entities/taller-post/entity.php:10
-msgid "Taller"
-msgstr ""
-
-#: inc/entities/taller-post/entity.php:12
-msgid "Agregar nuevo Taller"
-msgstr ""
-
-#: inc/entities/taller-post/entity.php:13
-msgid "Editar Taller"
-msgstr ""
-
-#: inc/entities/taller-post/entity.php:14
-msgid "Nuevo Taller"
-msgstr ""
-
-#: inc/entities/taller-post/entity.php:16
-msgid "Buscar Taller"
-msgstr ""
-
-#: inc/entities/taller-post/entity.php:17
-#: inc/entities/taller-post/entity.php:18
-msgid "No se encontraron Talleres"
+#. Name of the template
+msgid "Institucional 1"
 msgstr ""
 
 #: inc/gen-base-theme/inc/modules/entities/errors.php:19
 msgid "Invalid Entity Names"
 msgstr ""
 
-#: inc/gen-base-theme/inc/modules/entities/errors.php:20
+#: subscriptions-theme/auth/lost-password.php:51
+msgid "Ir a tu perfil"
+msgstr ""
+
+#: balancer/pages/personalize.php:293
+#: subscriptions-theme/pages/subscriptions-thankyou.php:56
+msgid "ir al sitio"
+msgstr ""
+
+#: subscriptions-theme/pages/subscriptions-payment-page.php:110
+#, php-format
 msgid ""
-"The following entities were unregistered for containing dashes (<b>-</b>) in "
-"their names, which are not allowed."
+"La distribuidora necesita %s para asignar el envío del diario para que lo "
+"recibas en tu casa"
 msgstr ""
 
-#: inc/gen-base-theme/inc/modules/entities/errors.php:21
+#: subscriptions-theme/auth/user-panel.php:203
+#: subscriptions-theme/auth/user-panel.php:256 user-panel/pages/profile.php:96
+msgid "limpiar lista"
+msgstr ""
+
+#: balancer/tags/topics-cloud.php:50
+msgid "Listo"
+msgstr ""
+
+#: markup/partes/newsletter.php:14
+msgid "lo que pasó y lo que va a pasar, en un minuto."
+msgstr ""
+
+#: balancer/pages/personalize.php:8
+msgid "LOCALIZACIÓN"
+msgstr ""
+
+#: subscriptions-theme/functions.php:124 subscriptions-theme/functions.php:135
+msgid "Mi Perfil"
+msgstr ""
+
+#: inc/widgets.php:479
+msgid "Micrositio Desktop - Posheader"
+msgstr ""
+
+#: inc/widgets.php:480
+msgid "Micrositio Mobile - Posheader"
+msgstr ""
+
+#: subscriptions-theme/pages/subscriptions-payment-page.php:16
+msgid "MÉTODO DE PAGO"
+msgstr ""
+
+#: subscriptions-theme/pages/subscriptions-payment-page.php:135
+msgid "método de pago:"
+msgstr ""
+
+#: subscriptions-theme/pages/donations.php:339
+#: subscriptions-theme/pages/subscriptions-loop.php:275
+msgid "mínimo es"
+msgstr ""
+
+#: mailtrain/functions.php:39
+msgid "News"
+msgstr ""
+
+#: mailtrain/functions.php:28
+msgid "Newsletter Notas"
+msgstr ""
+
+#: 404.php:7
+msgid "No encontramos la página, te pedimos disculpas."
+msgstr ""
+
+#: beneficios/pages/beneficios-search.php:301
+msgid "No hay beneficios con ese criterio"
+msgstr ""
+
+#: user-panel/pages/profile.php:103
+msgid "No tienes ninguna noticia guarda"
+msgstr ""
+
+#: mailtrain/pages/mailtrain.php:29
+msgid "Nombre"
+msgstr ""
+
+#: inc/widgets.php:271
+msgid "Nota AMP - Arriba de relacionadas"
+msgstr ""
+
+#: inc/widgets.php:269
+msgid "Nota AMP - Posfoto"
+msgstr ""
+
+#: inc/widgets.php:270
+msgid "Nota AMP - Párrafos 3-4"
+msgstr ""
+
+#: inc/widgets.php:75
+msgid "Nota Desktop - Abajo comentarios"
+msgstr ""
+
+#: inc/widgets.php:74
+msgid "Nota Desktop - Abajo nota"
+msgstr ""
+
+#: inc/widgets.php:73
+msgid "Nota Desktop - Call to action"
+msgstr ""
+
+#: inc/widgets.php:76
+msgid "Nota Desktop - Lado comentarios"
+msgstr ""
+
+#: inc/widgets.php:71
+msgid "Nota Desktop - Posheader"
+msgstr ""
+
+#: inc/widgets.php:70
+msgid "Nota Desktop - Preheader en nota"
+msgstr ""
+
+#: inc/widgets.php:232
+msgid "Nota Desktop - Párrafo 2-3"
+msgstr ""
+
+#: inc/widgets.php:242
+msgid "Nota Desktop - Párrafo 3-4"
+msgstr ""
+
+#: inc/widgets.php:72
+msgid "Nota Desktop - Sidebar"
+msgstr ""
+
+#: inc/widgets.php:206
+msgid "Nota Mobile - Posfoto"
+msgstr ""
+
+#: inc/widgets.php:205
+msgid "Nota Mobile - Posheader"
+msgstr ""
+
+#: inc/widgets.php:208
+msgid "Nota Mobile - Posnota"
+msgstr ""
+
+#: inc/widgets.php:209
+msgid "Nota Mobile - Precomentarios"
+msgstr ""
+
+#: inc/widgets.php:252
+msgid "Nota Mobile - Párrafo 2-3"
+msgstr ""
+
+#: inc/widgets.php:207
+msgid "Nota Mobile CallToAction"
+msgstr ""
+
+#: subscriptions-theme/pages/subscriptions-payment-page.php:79
+msgid "Número"
+msgstr ""
+
+#: subscriptions-theme/auth/user-panel.php:111
+msgid "o agrega un monto"
+msgstr ""
+
+#: subscriptions-theme/pages/subscriptions-payment-page.php:97
+msgid "Observaciones"
+msgstr ""
+
+#: subscriptions-theme/pages/subscriptions-payment-page.php:22
+msgid "Ocurrio un error con tu pago"
+msgstr ""
+
+#: balancer/pages/personalize.php:43 balancer/pages/personalize.php:92
+#: balancer/pages/personalize.php:174
+msgid "omitir"
+msgstr ""
+
+#: subscriptions-theme/pages/donations.php:315
+#: subscriptions-theme/pages/subscriptions-loop.php:251
+msgid "OTRO IMPORTE"
+msgstr ""
+
+#: subscriptions-theme/pages/subscriptions-thankyou.php:23
+#: subscriptions-theme/pages/subscriptions-payment-page.php:35
 msgid ""
-"If you have no control over some entity, the error can be ignored using the "
-"\"<b>gen_check_post_type_name_dash_error</b>\" or "
-"\"<b>gen_check_taxonomy_name_dash_error</b>\" filters."
+"Para continuar al pago, primero debes seleccionar un paquete, haz click en "
+"el bóton para volver."
 msgstr ""
 
-#: inc/gen-base-theme/inc/rb-wp-library/modules/customizer/inc/rb-customizer-routes.php:25
-msgid "No settings were passed"
+#: subscriptions-theme/pages/subscriptions-payment-page.php:135
+msgid "Para continuar con el proceso selecciona un"
 msgstr ""
 
-#: inc/gen-base-theme/inc/rb-wp-library/modules/fields/examples/customizer-example.php:35
-msgid "Test de single field"
+#: subscriptions-theme/pages/donations.php:112
+#, php-format
+msgid ""
+"Para recibir ayuda con el proceso de tu colaboración podés escribir un mail "
+"a %s"
 msgstr ""
 
-#: inc/gen-base-theme/inc/rb-wp-library/modules/fields/examples/customizer-example.php:36
-#: inc/gen-base-theme/inc/rb-wp-library/modules/fields/examples/customizer-example.php:65
-#: inc/gen-base-theme/inc/rb-wp-library/modules/fields/examples/customizer-example.php:98
-#: inc/gen-base-theme/inc/rb-wp-library/modules/fields/examples/customizer-example.php:154
-#: inc/gen-base-theme/inc/rb-wp-library/modules/fields/examples/customizer-example.php:212
-#: inc/gen-base-theme/inc/rb-wp-library/modules/fields/examples/customizer-example.php:242
-#: inc/gen-base-theme/inc/rb-wp-library/modules/fields/examples/metabox-example.php:56
-#: inc/gen-base-theme/inc/rb-wp-library/modules/fields/examples/metabox-example.php:88
-#: inc/gen-base-theme/inc/rb-wp-library/modules/fields/examples/metabox-example.php:141
-#: inc/gen-base-theme/inc/rb-wp-library/modules/fields/examples/metabox-example.php:210
-#: inc/gen-base-theme/inc/rb-wp-library/modules/fields/examples/metabox-example.php:235
-#: inc/gen-base-theme/inc/rb-wp-library/modules/fields/examples/taxonomy-example.php:70
-#: inc/gen-base-theme/inc/rb-wp-library/modules/fields/examples/taxonomy-example.php:103
-#: inc/gen-base-theme/inc/rb-wp-library/modules/fields/examples/taxonomy-example.php:157
-#: inc/gen-base-theme/inc/rb-wp-library/modules/fields/examples/taxonomy-example.php:227
-#: inc/gen-base-theme/inc/rb-wp-library/modules/fields/examples/taxonomy-example.php:253
-msgid "Soy la descripcion del controller"
+#: markup/partes/newsletter.php:26
+msgid "Para ver más opciones ingresá acá:"
 msgstr ""
 
-#: inc/gen-base-theme/inc/rb-wp-library/modules/fields/examples/customizer-example.php:64
-#: inc/gen-base-theme/inc/rb-wp-library/modules/fields/examples/metabox-example.php:55
-#: inc/gen-base-theme/inc/rb-wp-library/modules/fields/examples/taxonomy-example.php:69
-msgid "Test de grupo de singles"
+#: subscriptions-theme/functions.php:120
+msgid ""
+"parece que tu membresía caducó o no tienes una, puedes actualizarla en tu "
+"perfil."
 msgstr ""
 
-#: inc/gen-base-theme/inc/rb-wp-library/modules/fields/examples/customizer-example.php:97
-#: inc/gen-base-theme/inc/rb-wp-library/modules/fields/examples/metabox-example.php:87
-#: inc/gen-base-theme/inc/rb-wp-library/modules/fields/examples/taxonomy-example.php:102
-msgid "Test de grupo de grupos"
+#: subscriptions-theme/functions.php:131
+msgid ""
+"parece que tu membresía no es para este contenido, puedes cambiar el tipo en "
+"tu perfil personal."
 msgstr ""
 
-#: inc/gen-base-theme/inc/rb-wp-library/modules/fields/examples/customizer-example.php:153
-#: inc/gen-base-theme/inc/rb-wp-library/modules/fields/examples/metabox-example.php:140
-#: inc/gen-base-theme/inc/rb-wp-library/modules/fields/examples/taxonomy-example.php:156
-msgid "Test de grupo de repetidores"
+#: beneficios/pages/taxonomy-cat_beneficios.php:29
+#: beneficios/pages/beneficios-search.php:20
+msgid "Participá de los sorteos semanales"
 msgstr ""
 
-#: inc/gen-base-theme/inc/rb-wp-library/modules/fields/examples/customizer-example.php:211
-#: inc/gen-base-theme/inc/rb-wp-library/modules/fields/examples/metabox-example.php:209
-#: inc/gen-base-theme/inc/rb-wp-library/modules/fields/examples/taxonomy-example.php:226
-msgid "Repetidor de singles"
+#: markup/partes/menu.php:69
+msgid "PERFIL"
 msgstr ""
 
-#: inc/gen-base-theme/inc/rb-wp-library/modules/fields/examples/customizer-example.php:241
-#: inc/gen-base-theme/inc/rb-wp-library/modules/fields/examples/metabox-example.php:234
-#: inc/gen-base-theme/inc/rb-wp-library/modules/fields/examples/taxonomy-example.php:252
-msgid "Repetidor de grupos"
+#: user-panel/functions.php:33
+msgid "Perfil"
 msgstr ""
 
-#: inc/gen-base-theme/inc/rb-wp-library/modules/fields/examples/customizer-example.php:280
-#: inc/gen-base-theme/inc/rb-wp-library/modules/fields/examples/metabox-example.php:267
-#: inc/gen-base-theme/inc/rb-wp-library/modules/fields/examples/taxonomy-example.php:286
-msgid "Repetidor de repetidores"
+#: balancer/pages/personalize.php:105
+msgid "PERIODISMO"
 msgstr ""
 
-#: inc/gen-base-theme/inc/rb-wp-library/modules/fields/examples/customizer-example.php:281
-#: inc/gen-base-theme/inc/rb-wp-library/modules/fields/examples/metabox-example.php:268
-#: inc/gen-base-theme/inc/rb-wp-library/modules/fields/examples/taxonomy-example.php:287
-msgid "Genero repetidores"
+#: balancer/pages/personalize.php:8 balancer/pages/personalize.php:55
+#: balancer/pages/personalize.php:105 balancer/pages/personalize.php:188
+#: balancer/pages/personalize.php:277 markup/partes/segun-tus-intereses.php:36
+#: markup/partes/segun-tus-intereses.php:45
+msgid "PERSONALIZAR"
 msgstr ""
 
-#: inc/gen-base-theme/inc/rb-wp-library/modules/fields/examples/metabox-example.php:22
-#: inc/gen-base-theme/inc/rb-wp-library/modules/fields/examples/taxonomy-example.php:34
-msgid "Single"
+#: subscriptions-theme/pages/subscriptions-thankyou.php:55
+msgid "Personalizar"
 msgstr ""
 
-#: inc/gen-base-theme/inc/rb-wp-library/modules/fields/examples/metabox-example.php:49
-#: inc/gen-base-theme/inc/rb-wp-library/modules/fields/examples/taxonomy-example.php:62
-msgid "Grupo de singles"
+#: subscriptions-theme/pages/subscriptions-payment-page.php:87
+msgid "Piso"
 msgstr ""
 
-#: inc/gen-base-theme/inc/rb-wp-library/modules/fields/examples/metabox-example.php:81
-#: inc/gen-base-theme/inc/rb-wp-library/modules/fields/examples/taxonomy-example.php:95
-msgid "Grupo de grupos"
+#: subscriptions-theme/pages/subscriptions-thankyou.php:52
+msgid "Podemos ofrecerte contenidos de acuerdo a tus preferencias"
 msgstr ""
 
-#: inc/gen-base-theme/inc/rb-wp-library/modules/fields/examples/metabox-example.php:134
-#: inc/gen-base-theme/inc/rb-wp-library/modules/fields/examples/taxonomy-example.php:149
-msgid "Grupo de repeaters"
+#: subscriptions-theme/pages/donations.php:404
+#: subscriptions-theme/pages/subscriptions-payment-page.php:143
+#, php-format
+msgid "Podrás %s %s"
 msgstr ""
 
-#: inc/gen-base-theme/inc/rb-wp-library/modules/fields/examples/metabox-example.php:203
-#: inc/gen-base-theme/inc/rb-wp-library/modules/fields/examples/taxonomy-example.php:219
-msgid "Repeater de singles"
+#: mailtrain/pages/mailtrain.php:188
+msgid ""
+"Podrás editar tus preferencias, desde tu perfil de usuario, cuando quieras."
 msgstr ""
 
-#: inc/gen-base-theme/inc/rb-wp-library/modules/fields/examples/metabox-example.php:228
-#: inc/gen-base-theme/inc/rb-wp-library/modules/fields/examples/taxonomy-example.php:245
-msgid "Repeater de grupos"
+#: subscriptions-theme/pages/subscriptions-loop.php:276
+#, php-format
+msgid "Podés %s"
 msgstr ""
 
-#: inc/gen-base-theme/inc/rb-wp-library/modules/fields/examples/metabox-example.php:261
-#: inc/gen-base-theme/inc/rb-wp-library/modules/fields/examples/taxonomy-example.php:279
-msgid "Repeater de repeaters"
+#: subscriptions-theme/pages/subscriptions-loop.php:391
+#, php-format
+msgid "Podés %s %s"
 msgstr ""
 
-#: inc/gen-base-theme/inc/rb-wp-library/modules/fields/examples/old-examples.php:5
-msgid "Información del producto"
+#: mailtrain/pages/mailtrain.php:74
+msgid "Podés elegir entre estas alternativas para informarte."
 msgstr ""
 
-#: inc/gen-base-theme/inc/rb-wp-library/modules/fields/examples/old-examples.php:38
-msgid "Testeando"
+#: subscriptions-theme/pages/subscriptions-payment-page.php:130
+msgid "por apoyar Tiempo Argentino!"
 msgstr ""
 
-#: inc/gen-base-theme/inc/rb-wp-library/modules/fields/examples/old-examples.php:75
-msgid "Test gallery control"
+#: subscriptions-theme/pages/subscriptions-thankyou.php:41
+msgid ""
+"por elegir Tiempo Argentino. ¡Un medio autogestionado es posible gracias a "
+"personas como vos!"
 msgstr ""
 
-#: inc/gen-base-theme/inc/rb-wp-library/modules/fields/examples/old-examples.php:93
-msgid "Variaciones"
+#: subscriptions-theme/auth/user-panel.php:46
+msgid "Por un abono mensual de"
 msgstr ""
 
-#: inc/gen-base-theme/inc/rb-wp-library/modules/posts/RB_Posts_Views_Database.php:113
-msgid "This view already exists"
+#: subscriptions-theme/pages/subscriptions-loop.php:308
+msgid "por un abono mensual de:"
 msgstr ""
 
-#: inc/gen-base-theme/inc/rb-wp-library/modules/posts/RB_Posts_Views_Database.php:114
-msgid "No se pudo insertar el voto. Error desconocido."
+#: user-panel/pages/profile.php:89
+msgid "Por:"
 msgstr ""
 
-#: inc/gen-base-theme/tests/entities.php:20
-msgid "Agregar nuevo artículo"
+#: subscriptions-theme/auth/user-panel.php:114
+msgid "Price"
 msgstr ""
 
-#: inc/gen-base-theme/tests/entities.php:21
-msgid "Editar artículo"
+#: balancer/pages/personalize.php:23
+msgid ""
+"Queremos ofrecerte contenido acorde a tu localización. Por ello, indicanos "
+"desde dónde nos leés:"
 msgstr ""
 
-#: inc/gen-base-theme/tests/entities.php:22
-msgid "Nuevo artículo"
+#: balancer/tags/topics-cloud.php:15
+msgid "Queremos ofrecerte mejor contenido:"
 msgstr ""
 
-#: inc/gen-base-theme/tests/entities.php:24
-msgid "Buscar artículo"
+#: mailtrain/user-panel/lists.php:8
+msgid "Recibes actualizaciones de estos temas:"
+msgstr ""
+
+#: mailtrain/pages/mailtrain.php:22
+msgid "Recibí actualizaciones con la mirada de Tiempo."
+msgstr ""
+
+#: subscriptions-theme/auth/user-panel.php:94
+msgid "Recorda llenar tu dirección para el envío"
+msgstr ""
+
+#: subscriptions-theme/auth/user-panel.php:78
+msgid "Recorda, el mínimo es de: "
+msgstr ""
+
+#: subscriptions-theme/pages/donations.php:339
+#: subscriptions-theme/pages/subscriptions-loop.php:275
+#, php-format
+msgid "Recordá que el valor %s"
+msgstr ""
+
+#: subscriptions-theme/pages/donations.php:461
+#: subscriptions-theme/pages/subscriptions-loop.php:442
+msgid "RECUPERAR"
+msgstr ""
+
+#: subscriptions-theme/auth/lost-password.php:10
+#: subscriptions-theme/auth/lost-password.php:18
+msgid "Recuperar contraseña"
+msgstr ""
+
+#: subscriptions-theme/pages/donations.php:522
+#: subscriptions-theme/pages/subscriptions-loop.php:500
+msgid "REGISTRARSE"
+msgstr ""
+
+#: subscriptions-theme/pages/donations.php:489
+#: subscriptions-theme/pages/subscriptions-loop.php:462
+msgid "Registrarse"
+msgstr ""
+
+#: beneficios/functions.php:249
+#: beneficios/pages/taxonomy-cat_beneficios.php:280
+#: beneficios/pages/beneficios-loop.php:267
+msgid "Renovar membresía."
+msgstr ""
+
+#: beneficios/pages/taxonomy-cat_beneficios.php:175
+#: beneficios/pages/beneficios-loop.php:170
+#: beneficios/pages/beneficios-search.php:165
+msgid "RESULTADOS POR FILTRO Y/O BÚSQUEDA"
+msgstr ""
+
+#: inc/extra/banner-home-qs.php:9
+msgid "saber más"
+msgstr ""
+
+#: header.php:172
+msgid "Salir"
+msgstr ""
+
+#: subscriptions-theme/functions.php:80
+msgid "Seamos socios"
+msgstr ""
+
+#: markup/partes/menu.php:141
+msgid "SECCIONES"
+msgstr ""
+
+#: inc/widgets.php:455
+msgid "Sección Desktop  - Posheader"
+msgstr ""
+
+#: inc/widgets.php:456
+msgid "Sección Desktop  - Sidebar 1"
+msgstr ""
+
+#: inc/widgets.php:457
+msgid "Sección Desktop  - Sidebar 2"
+msgstr ""
+
+#: inc/widgets.php:454
+msgid "Sección Desktop - Preheader"
+msgstr ""
+
+#: inc/widgets.php:458
+msgid "Sección Mobile  - Posheader"
+msgstr ""
+
+#: inc/widgets.php:459
+msgid "Sección Mobile - Posnotas"
+msgstr ""
+
+#: inc/widgets.php:460
+msgid "Sección Mobile - Pospaginación"
+msgstr ""
+
+#: inc/cooperativa.php:72
+msgid "Sector"
+msgstr ""
+
+#: inc/cooperativa.php:71 inc/cooperativa.php:73 inc/cooperativa.php:78
+msgid "Sectores"
+msgstr ""
+
+#: markup/partes/segun-tus-intereses.php:31
+msgid "SEGÚN TUS INTERESES"
+msgstr ""
+
+#: balancer/tags/topics-cloud.php:18
+#, php-format
+msgid "Selecciona los %s y sobre los que querés informarte:"
+msgstr ""
+
+#: balancer/pages/personalize.php:63
+msgid "Seleccioná los temas que más te interesan"
+msgstr ""
+
+#: subscriptions-theme/auth/user-panel.php:98
+msgid "Selecionar monto: "
+msgstr ""
+
+#: subscriptions-theme/pages/subscriptions-payment-page.php:146
+msgid ""
+"Si deseas obtener ayuda con el proceso de pago, podés escribir un mail a"
+msgstr ""
+
+#: subscriptions-theme/pages/subscriptions-loop.php:20
+msgid "Si deseás actualizarla, puedes hacerlo desde tu perfil de usuario"
+msgstr ""
+
+#: subscriptions-theme/pages/donations.php:342
+#: subscriptions-theme/pages/donations.php:407
+msgid ""
+"Si deseás obtener ayuda con el proceso de tu colaboración, podés escribir un "
+"mail a"
+msgstr ""
+
+#: subscriptions-theme/pages/subscriptions-loop.php:279
+msgid "Si necesitás ayuda escribinos a"
+msgstr ""
+
+#: subscriptions-theme/pages/donations.php:115
+msgid "Si sos jubilado, estudiante o podés colaborar con un importe menor"
+msgstr ""
+
+#: subscriptions-theme/functions.php:82
+msgid "Si ya eres socio:"
+msgstr ""
+
+#: subscriptions-theme/pages/donations.php:335
+#: subscriptions-theme/pages/subscriptions-loop.php:271
+msgid "SIGUIENTE"
+msgstr ""
+
+#: mailtrain/pages/mailtrain.php:35
+msgid "Siguiente"
+msgstr ""
+
+#: balancer/pages/personalize.php:44 balancer/pages/personalize.php:93
+#: balancer/pages/personalize.php:175 mailtrain/pages/mailtrain.php:142
+msgid "siguiente"
+msgstr ""
+
+#: markup/partes/menu.php:104 markup/partes/menu.php:269
+msgid "SOBRE TIEMPO"
+msgstr ""
+
+#: mailtrain/pages/mailtrain.php:147
+msgid "Sorry, no lists there."
+msgstr ""
+
+#: beneficios/pages/taxonomy-cat_beneficios.php:52
+#: beneficios/pages/beneficios-loop.php:48
+#: beneficios/pages/beneficios-search.php:43
+msgid "sorteo"
+msgstr ""
+
+#: markup/partes/menu.php:198
+msgid "SPECIALES"
+msgstr ""
+
+#: subscriptions-theme/functions.php:43
+msgid "Subscripciones"
+msgstr ""
+
+#: markup/partes/newsletter.php:8
+msgid "Sumate a nuestro NEWSLETTER"
+msgstr ""
+
+#: inc/cooperativa.php:31 inc/cooperativa.php:32
+msgid "Superior"
+msgstr ""
+
+#: subscriptions-theme/auth/user-panel.php:17
+msgid "SUSCRIBITE"
+msgstr ""
+
+#: subscriptions-theme/pages/donations.php:404
+#: subscriptions-theme/pages/subscriptions-payment-page.php:143
+#: subscriptions-theme/pages/subscriptions-loop.php:276
+#: subscriptions-theme/pages/subscriptions-loop.php:391
+msgid "suspender tu abono"
+msgstr ""
+
+#: beneficios/pages/taxonomy-cat_beneficios.php:61
+#: beneficios/pages/beneficios-search.php:52
+#, php-format
+msgid ""
+"Te enviaremos un %s si fuiste favorecido. Te sugerimos solicitar más de uno "
+"para no quedarte sin nada."
+msgstr ""
+
+#: beneficios/pages/beneficios-loop.php:57
+#, php-format
+msgid ""
+"Te enviaremos un %s si ganaste. Te sugerimos solicitar más de uno para no "
+"quedarte sin nada."
+msgstr ""
+
+#: balancer/pages/personalize.php:55
+msgid "temas"
+msgstr ""
+
+#: balancer/tags/topics-cloud.php:18
+msgid "temas que te interesan"
 msgstr ""
 
 #: inc/gen-base-theme/tests/entities.php:93
@@ -786,674 +1133,143 @@ msgstr ""
 msgid "The following entities are BAD."
 msgstr ""
 
+#: inc/gen-base-theme/inc/modules/entities/errors.php:20
+msgid ""
+"The following entities contain dashes (<b>-</b>) in their names, which are "
+"not allowed."
+msgstr ""
+
 #: inc/gen-base-theme/tests/entities.php:95
 msgid ""
 "This is the footer message. A tip on how to solve the problem can be placed "
 "here."
 msgstr ""
 
-#: inc/gen-base-theme/tests/metabox.php:4
-msgid "GEN Base"
-msgstr ""
-
-#: mailtrain/functions.php:28
-msgid "Newsletter Notas"
-msgstr ""
-
-#: mailtrain/functions.php:39
-msgid "News"
-msgstr ""
-
-#: mailtrain/pages/mailtrain.php:14 mailtrain/pages/mailtrain.php:62
-#: mailtrain/pages/mailtrain.php:160
-msgid "informate"
-msgstr ""
-
-#: mailtrain/pages/mailtrain.php:14
-msgid "inicio"
-msgstr ""
-
-#: mailtrain/pages/mailtrain.php:22
-msgid "Recibí actualizaciones con la mirada de Tiempo."
-msgstr ""
-
-#: mailtrain/pages/mailtrain.php:25
-msgid "Deseamos conocerte, indicanos tu nombre y tu e-mail:"
-msgstr ""
-
-#: mailtrain/pages/mailtrain.php:29
-msgid "Nombre"
-msgstr ""
-
-#: mailtrain/pages/mailtrain.php:32
-#: subscriptions-theme/auth/suscription-login.php:25
-msgid "Email"
-msgstr ""
-
-#: mailtrain/pages/mailtrain.php:35
-msgid "Siguiente"
-msgstr ""
-
-#: mailtrain/pages/mailtrain.php:62
-msgid "tus temas"
-msgstr ""
-
-#: mailtrain/pages/mailtrain.php:70
-msgid "¡Hola "
-msgstr ""
-
-#: mailtrain/pages/mailtrain.php:74
-msgid "Podés elegir entre estas alternativas para informarte."
-msgstr ""
-
-#: mailtrain/pages/mailtrain.php:135
-msgid "Acepto"
-msgstr ""
-
-#: mailtrain/pages/mailtrain.php:135
-msgid "Términos y Condiciones"
-msgstr ""
-
-#: mailtrain/pages/mailtrain.php:139
-msgid "anterior"
-msgstr ""
-
-#: mailtrain/pages/mailtrain.php:141
-msgid "siguiente"
-msgstr ""
-
-#: mailtrain/pages/mailtrain.php:146
-msgid "Sorry, no lists there."
-msgstr ""
-
-#: mailtrain/pages/mailtrain.php:160
-msgid "finalizar"
-msgstr ""
-
-#: mailtrain/pages/mailtrain.php:167
-#, php-format
-msgid "Gracias %s"
-msgstr ""
-
-#: mailtrain/pages/mailtrain.php:171
-msgid ""
-"Ahora recibirás información de Tiempo Argentino. Un medio autogestionado, es "
-"posible."
-msgstr ""
-
-#: mailtrain/pages/mailtrain.php:187
-msgid ""
-"Podrás editar tus preferencias, desde tu perfil de usuario, cuando quieras."
-msgstr ""
-
-#: markup/partes/newsletter.php:9
-msgid "Sumate a nuestro NEWSLETTER"
-msgstr ""
-
-#: markup/partes/newsletter.php:12
-msgid ""
-"Podés ajustar tus preferencias y garantizar un contenido adecuado para tus "
-"intereses:"
-msgstr ""
-
-#: markup/partes/newsletter.php:15
-msgid ""
-"Para recibir newsletters relacionados a este tema, dejanos tu e-mail acá:"
-msgstr ""
-
-#: markup/partes/newsletter.php:27
-msgid "Para ver más opciones ingresá acá:"
-msgstr ""
-
-#: markup/partes/newsletter.php:28
-msgid "PERSONALIZAR"
-msgstr ""
-
-#: subscriptions-theme/functions.php:34
-msgid "Subscripciones"
-msgstr ""
-
+#. Name of the theme
+#: subscriptions-theme/auth/suscription-login.php:11
 #: subscriptions-theme/auth/lost-password.php:10
 #: subscriptions-theme/auth/subscriptions-register.php:13
-#: subscriptions-theme/auth/suscription-login.php:11
 msgid "Tiempo Argentino"
 msgstr ""
 
-#: subscriptions-theme/auth/lost-password.php:10
-#: subscriptions-theme/auth/lost-password.php:18
-#: subscriptions-theme/auth/lost-password.php:29
-msgid "Recuperar contraseña"
+#: inc/cooperativa.php:23
+msgid "Todes"
 msgstr ""
 
-#: subscriptions-theme/auth/lost-password.php:26
-msgid "Ingresa tu email"
+#: beneficios/pages/taxonomy-cat_beneficios.php:134
+#: beneficios/pages/beneficios-loop.php:129
+#: beneficios/pages/beneficios-search.php:124
+msgid "Todos"
 msgstr ""
 
-#: subscriptions-theme/auth/lost-password.php:34
-msgid "Cancelar y volver"
-msgstr ""
-
-#: subscriptions-theme/auth/lost-password.php:47
-#, php-format
-msgid "Hola %s, ya estas logueado."
-msgstr ""
-
-#: subscriptions-theme/auth/lost-password.php:51
-msgid "Ir a tu perfil"
-msgstr ""
-
-#: subscriptions-theme/auth/subscriptions-register.php:13
-#: subscriptions-theme/auth/subscriptions-register.php:21
-#: subscriptions-theme/auth/suscription-login.php:42
-msgid "Crear cuenta"
-msgstr ""
-
-#: subscriptions-theme/auth/subscriptions-register.php:43
-#: subscriptions-theme/pages/donations.php:310
-#: subscriptions-theme/pages/subscriptions-loop.php:467
-msgid "Registrarse"
-msgstr ""
-
-#: subscriptions-theme/auth/suscription-login.php:11
-#: subscriptions-theme/auth/suscription-login.php:18
-msgid "Iniciar Sesión"
-msgstr ""
-
-#: subscriptions-theme/auth/suscription-login.php:28
-msgid "Contraseña"
-msgstr ""
-
-#: subscriptions-theme/auth/suscription-login.php:32
-#: subscriptions-theme/pages/donations.php:248
-#: subscriptions-theme/pages/donations.php:272
-#: subscriptions-theme/pages/subscriptions-loop.php:405
-#: subscriptions-theme/pages/subscriptions-loop.php:429
-msgid "Ingresar"
-msgstr ""
-
-#: subscriptions-theme/auth/suscription-login.php:39
-msgid "¿No sos miembro?"
-msgstr ""
-
-#: subscriptions-theme/auth/user-panel.php:10
-msgid "¡Suscribite a Tiempo Argentino!"
-msgstr ""
-
-#: subscriptions-theme/auth/user-panel.php:14
-msgid ""
-"Hacete socio de Tiempo Argentino, mantenete informado apoyando al periedismo "
-"independiente y colaborá con un proyecto autogestivo. Vos decidís con que "
-"monto colaborar."
-msgstr ""
-
-#: subscriptions-theme/auth/user-panel.php:17
-msgid "SUSCRIBITE"
-msgstr ""
-
-#: subscriptions-theme/auth/user-panel.php:28
-msgid "Estás suscrita/o a:"
-msgstr ""
-
-#: subscriptions-theme/auth/user-panel.php:30
-msgid "Tu aporte:"
-msgstr ""
-
-#: subscriptions-theme/auth/user-panel.php:46
-msgid "Por un abono mensual de"
-msgstr ""
-
-#: subscriptions-theme/auth/user-panel.php:61
-msgid "dar de baja"
-msgstr ""
-
-#: subscriptions-theme/auth/user-panel.php:65
-msgid "Convert your contribution in a subscription"
-msgstr ""
-
-#: subscriptions-theme/auth/user-panel.php:66
-msgid "become a member"
-msgstr ""
-
-#: subscriptions-theme/auth/user-panel.php:77
-msgid "Edit your subscription"
-msgstr ""
-
-#: subscriptions-theme/auth/user-panel.php:78
-msgid "Remember, the minimun for this transaction is: "
-msgstr ""
-
-#: subscriptions-theme/auth/user-panel.php:83
-msgid "Cambiar mi plan"
-msgstr ""
-
-#: subscriptions-theme/auth/user-panel.php:88
-msgid "Agrega diaro en papel"
-msgstr ""
-
-#: subscriptions-theme/auth/user-panel.php:89
-msgid "Recorda llenar tu dirección para el envío"
-msgstr ""
-
-#: subscriptions-theme/auth/user-panel.php:93
-msgid "Selecionar monto: "
-msgstr ""
-
-#: subscriptions-theme/auth/user-panel.php:106
-msgid "o agrega un monto"
-msgstr ""
-
-#: subscriptions-theme/auth/user-panel.php:108
-msgid "Abonar más"
-msgstr ""
-
-#: subscriptions-theme/auth/user-panel.php:109
-msgid "Price"
-msgstr ""
-
-#: subscriptions-theme/auth/user-panel.php:120
-msgid "Editar"
-msgstr ""
-
-#: subscriptions-theme/auth/user-panel.php:121
-msgid "Cancelar"
-msgstr ""
-
-#: subscriptions-theme/pages/donations.php:11
-#: subscriptions-theme/pages/donations.php:136
-#: subscriptions-theme/pages/donations.php:183
-msgid "apoyanos"
-msgstr ""
-
-#: subscriptions-theme/pages/donations.php:11
-msgid "ELEGÍ TU APORTE"
+#: subscriptions-theme/auth/user-panel.php:216
+msgid "Todos tus beneficios"
 msgstr ""
 
 #: subscriptions-theme/pages/donations.php:19
 msgid "Tu aporte nos hace posible llevar adelante nuestra labor periodística"
 msgstr ""
 
-#: subscriptions-theme/pages/donations.php:87
-msgid "aportar más"
+#: subscriptions-theme/auth/user-panel.php:30
+msgid "Tu aporte:"
 msgstr ""
 
-#: subscriptions-theme/pages/donations.php:96
-#: subscriptions-theme/pages/subscriptions-loop.php:139
-msgid "continuar"
-msgstr ""
-
-#: subscriptions-theme/pages/donations.php:111
-#, php-format
-msgid ""
-"Para recibir ayuda con el proceso de tu colaboración podés escribir un mail "
-"a %s"
-msgstr ""
-
-#: subscriptions-theme/pages/donations.php:114
-msgid "Si sos jubilado, estudiante o podés colaborar con un importe menor"
-msgstr ""
-
-#: subscriptions-theme/pages/donations.php:116
-msgid "INGRESA ACÁ"
-msgstr ""
-
-#: subscriptions-theme/pages/donations.php:136
-#: subscriptions-theme/pages/subscriptions-loop.php:252
-msgid "OTRO IMPORTE"
-msgstr ""
-
-#: subscriptions-theme/pages/donations.php:143
-msgid "¿Con qué importe deseas colaborar?"
-msgstr ""
-
-#: subscriptions-theme/pages/donations.php:148
-#: subscriptions-theme/pages/subscriptions-loop.php:264
-msgid "Ingresá acá el importe que desees:"
-msgstr ""
-
-#: subscriptions-theme/pages/donations.php:156
-#: subscriptions-theme/pages/subscriptions-loop.php:272
-msgid "SIGUIENTE"
-msgstr ""
-
-#: subscriptions-theme/pages/donations.php:160
-#: subscriptions-theme/pages/subscriptions-loop.php:276
-#, php-format
-msgid "Recordá que el valor %s"
-msgstr ""
-
-#: subscriptions-theme/pages/donations.php:160
-#: subscriptions-theme/pages/subscriptions-loop.php:276
-msgid "mínimo es"
-msgstr ""
-
-#: subscriptions-theme/pages/donations.php:163
-#: subscriptions-theme/pages/donations.php:228
-msgid ""
-"Si deseas obtener ayuda con el proceso de tu colaboración, podés escribir un "
-"mail a"
-msgstr ""
-
-#: subscriptions-theme/pages/donations.php:183
+#: subscriptions-theme/pages/donations.php:362
 msgid "Tu colaboración"
 msgstr ""
 
-#: subscriptions-theme/pages/donations.php:190
-msgid "Elegiste colaborar con:"
+#: subscriptions-theme/pages/subscriptions-loop.php:299
+msgid "Tu paquete"
 msgstr ""
 
-#: subscriptions-theme/pages/donations.php:202
-#: subscriptions-theme/pages/subscriptions-loop.php:365
-msgid "CONTINUAR AL PAGO"
+#: mailtrain/pages/mailtrain.php:62
+msgid "tus temas"
 msgstr ""
 
-#: subscriptions-theme/pages/donations.php:208
-#: subscriptions-theme/pages/subscriptions-loop.php:371
-#, php-format
-msgid "%s para terminar de asociarte a Tiempo Argentino"
+#: mailtrain/pages/mailtrain.php:136
+msgid "Términos y Condiciones"
 msgstr ""
 
-#: subscriptions-theme/pages/donations.php:208
-#: subscriptions-theme/pages/subscriptions-loop.php:371
-msgid "Creá tu cuenta"
-msgstr ""
-
-#: subscriptions-theme/pages/donations.php:211
-#: subscriptions-theme/pages/donations.php:290
-#: subscriptions-theme/pages/subscriptions-loop.php:374
-#: subscriptions-theme/pages/subscriptions-loop.php:447
-msgid "CREAR CUENTA"
-msgstr ""
-
-#: subscriptions-theme/pages/donations.php:216
-#: subscriptions-theme/pages/subscriptions-loop.php:379
-msgid "¿Ya tenés cuenta?"
-msgstr ""
-
-#: subscriptions-theme/pages/donations.php:219
-#: subscriptions-theme/pages/subscriptions-loop.php:382
-msgid "INGRESA"
-msgstr ""
-
-#: subscriptions-theme/pages/donations.php:225
-#: subscriptions-theme/pages/subscriptions-loop.php:388
-#: subscriptions-theme/pages/subscriptions-payment-page.php:118
-#, php-format
-msgid "Podrás %s %s"
-msgstr ""
-
-#: subscriptions-theme/pages/donations.php:225
-#: subscriptions-theme/pages/subscriptions-loop.php:277
-#: subscriptions-theme/pages/subscriptions-loop.php:388
-#: subscriptions-theme/pages/subscriptions-payment-page.php:118
-msgid "suspender tu abono"
-msgstr ""
-
-#: subscriptions-theme/pages/donations.php:225
-#: subscriptions-theme/pages/subscriptions-loop.php:277
-#: subscriptions-theme/pages/subscriptions-loop.php:388
-#: subscriptions-theme/pages/subscriptions-payment-page.php:118
-msgid "cuando quieras desde tu perfil de usuario"
-msgstr ""
-
-#: subscriptions-theme/pages/donations.php:248
-#: subscriptions-theme/pages/donations.php:310
-#: subscriptions-theme/pages/subscriptions-loop.php:34
-#: subscriptions-theme/pages/subscriptions-loop.php:252
-#: subscriptions-theme/pages/subscriptions-loop.php:300
-#: subscriptions-theme/pages/subscriptions-loop.php:405
-#: subscriptions-theme/pages/subscriptions-loop.php:467
-#: subscriptions-theme/pages/subscriptions-payment-page.php:15
-msgid "asociate"
-msgstr ""
-
-#: subscriptions-theme/pages/donations.php:279
-#: subscriptions-theme/pages/subscriptions-loop.php:436
-msgid "¿Olvidaste tu contraseña?"
-msgstr ""
-
-#: subscriptions-theme/pages/donations.php:282
-#: subscriptions-theme/pages/subscriptions-loop.php:439
-msgid "RECUPERAR"
-msgstr ""
-
-#: subscriptions-theme/pages/donations.php:287
-#: subscriptions-theme/pages/subscriptions-loop.php:444
-msgid "¿No tenés cuenta?"
-msgstr ""
-
-#: subscriptions-theme/pages/donations.php:343
-#: subscriptions-theme/pages/subscriptions-loop.php:500
-msgid "REGISTRARSE"
-msgstr ""
-
-#: subscriptions-theme/pages/donations.php:348
-#: subscriptions-theme/pages/subscriptions-loop.php:505
-#, php-format
-msgid "Al hacer click en registrarse, estás aceptando nuestros %s"
-msgstr ""
-
-#: subscriptions-theme/pages/donations.php:348
+#: subscriptions-theme/pages/donations.php:527
 #: subscriptions-theme/pages/subscriptions-loop.php:505
 msgid "términos y condiciones"
 msgstr ""
 
-#: subscriptions-theme/pages/subscriptions-loop.php:14
-#, php-format
-msgid "Hola %s"
+#: subscriptions-theme/pages/subscriptions-thankyou.php:18
+#: subscriptions-theme/pages/subscriptions-payment-page.php:30
+msgid "un paquete."
 msgstr ""
 
-#: subscriptions-theme/pages/subscriptions-loop.php:18
+#: inc/cooperativa.php:28 inc/cooperativa.php:29
+msgid "Ver"
+msgstr ""
+
+#: subscriptions-theme/auth/user-panel.php:153
+msgid "Ver todos tus beneficios"
+msgstr ""
+
+#: subscriptions-theme/auth/user-panel.php:145
+msgid "Ver tu Historial"
+msgstr ""
+
+#: subscriptions-theme/pages/subscriptions-thankyou.php:26
+#: subscriptions-theme/pages/subscriptions-payment-page.php:38
+msgid "Volver."
+msgstr ""
+
+#: subscriptions-theme/pages/subscriptions-loop.php:17
 #, php-format
 msgid "Ya cuentas con una %s"
 msgstr ""
 
-#: subscriptions-theme/pages/subscriptions-loop.php:18
-msgid "suscripción"
-msgstr ""
-
-#: subscriptions-theme/pages/subscriptions-loop.php:21
-msgid "Si deseas actualizarla, puedes hacerlo desde tu perfil de usuario"
-msgstr ""
-
-#: subscriptions-theme/pages/subscriptions-loop.php:34
-msgid "ELEGÍ TU PAQUETE"
-msgstr ""
-
-#: subscriptions-theme/pages/subscriptions-loop.php:42
-msgid "Hola, "
-msgstr ""
-
-#: subscriptions-theme/pages/subscriptions-loop.php:42
-msgid "estas son las mejores opciones para asociarte"
-msgstr ""
-
-#: subscriptions-theme/pages/subscriptions-loop.php:102
-msgid "Elegí el monto de tu abono mensual"
-msgstr ""
-
-#: subscriptions-theme/pages/subscriptions-loop.php:130
-msgid "abonar más"
-msgstr ""
-
-#: subscriptions-theme/pages/subscriptions-loop.php:149
-msgid "¿Qué trae este paquete?"
-msgstr ""
-
-#: subscriptions-theme/pages/subscriptions-loop.php:225
-msgid "elegir y continuar"
-msgstr ""
-
-#: subscriptions-theme/pages/subscriptions-loop.php:259
-msgid "¿Con qué importe deseas asociarte?"
-msgstr ""
-
-#: subscriptions-theme/pages/subscriptions-loop.php:277
-#, php-format
-msgid "Podrás %s"
-msgstr ""
-
-#: subscriptions-theme/pages/subscriptions-loop.php:280
-msgid ""
-"Si deseas obtener ayuda con el proceso de asociación, podés escribir un mail "
-"a"
-msgstr ""
-
-#: subscriptions-theme/pages/subscriptions-loop.php:300
-msgid "Tu paquete"
-msgstr ""
-
-#: subscriptions-theme/pages/subscriptions-loop.php:307
-msgid "Elegiste el paquete"
-msgstr ""
-
-#: subscriptions-theme/pages/subscriptions-loop.php:309
-msgid "por un abono mensual de:"
-msgstr ""
-
-#: subscriptions-theme/pages/subscriptions-loop.php:353
-msgid "Agregá el diario en papel por"
-msgstr ""
-
-#: subscriptions-theme/pages/subscriptions-payment-page.php:15
-msgid "MÉTODO DE PAGO"
-msgstr ""
-
-#: subscriptions-theme/pages/subscriptions-payment-page.php:22
-#: subscriptions-theme/pages/subscriptions-thankyou.php:18
-msgid "Hola, antes debés seleccionar "
-msgstr ""
-
-#: subscriptions-theme/pages/subscriptions-payment-page.php:22
-#: subscriptions-theme/pages/subscriptions-thankyou.php:18
-msgid "un paquete."
-msgstr ""
-
-#: subscriptions-theme/pages/subscriptions-payment-page.php:27
-#: subscriptions-theme/pages/subscriptions-thankyou.php:23
-msgid ""
-"Para continuar al pago, primero debes seleccionar un paquete, haz click en "
-"el bóton para volver."
-msgstr ""
-
-#: subscriptions-theme/pages/subscriptions-payment-page.php:30
-#: subscriptions-theme/pages/subscriptions-thankyou.php:26
-msgid "Volver."
-msgstr ""
-
-#: subscriptions-theme/pages/subscriptions-payment-page.php:47
-msgid "Por favor, indicamos un domicilio donde se te enviará el diario."
-msgstr ""
-
-#: subscriptions-theme/pages/subscriptions-payment-page.php:53
-msgid "Provincia"
-msgstr ""
-
-#: subscriptions-theme/pages/subscriptions-payment-page.php:56
-msgid "Ciudad / Localidad"
-msgstr ""
-
-#: subscriptions-theme/pages/subscriptions-payment-page.php:59
-msgid "Calle"
-msgstr ""
-
-#: subscriptions-theme/pages/subscriptions-payment-page.php:63
-msgid "Número"
-msgstr ""
-
-#: subscriptions-theme/pages/subscriptions-payment-page.php:66
-msgid "CP"
-msgstr ""
-
-#: subscriptions-theme/pages/subscriptions-payment-page.php:70
-msgid "Dirección linea 2"
-msgstr ""
-
-#: subscriptions-theme/pages/subscriptions-payment-page.php:73
-msgid "Entre calles"
-msgstr ""
-
-#: subscriptions-theme/pages/subscriptions-payment-page.php:76
-msgid "Observaciones"
-msgstr ""
-
-#: subscriptions-theme/pages/subscriptions-payment-page.php:79
-msgid "Confirmar"
-msgstr ""
-
-#: subscriptions-theme/pages/subscriptions-payment-page.php:85
-#, php-format
-msgid ""
-"La distribuidora necesita %s para asignar el envío del diario para que lo "
-"recibas en tu casa"
-msgstr ""
-
-#: subscriptions-theme/pages/subscriptions-payment-page.php:85
-msgid "15 días"
-msgstr ""
-
-#: subscriptions-theme/pages/subscriptions-payment-page.php:105
+#: subscriptions-theme/pages/subscriptions-payment-page.php:130
 msgid "¡Gracias"
 msgstr ""
 
-#: subscriptions-theme/pages/subscriptions-payment-page.php:105
-msgid "por apoyar Tiempo Argentino!"
+#: mailtrain/pages/mailtrain.php:70
+msgid "¡Hola "
 msgstr ""
 
-#: subscriptions-theme/pages/subscriptions-payment-page.php:110
-msgid "Para continuar con el proceso selecciona un"
+#: subscriptions-theme/auth/user-panel.php:10
+msgid "¡Suscribite a Tiempo Argentino!"
 msgstr ""
 
-#: subscriptions-theme/pages/subscriptions-payment-page.php:110
-msgid "método de pago:"
+#: subscriptions-theme/pages/subscriptions-loop.php:258
+msgid "¿Con qué importe deseás asociarte?"
 msgstr ""
 
-#: subscriptions-theme/pages/subscriptions-payment-page.php:121
-msgid ""
-"Si deseas obtener ayuda con el proceso de pago, podés escribir un mail a"
+#: subscriptions-theme/pages/donations.php:322
+msgid "¿Con qué importe deseás colaborar?"
 msgstr ""
 
-#: subscriptions-theme/pages/subscriptions-thankyou.php:40
-msgid "Gracias"
+#: balancer/pages/personalize.php:196
+msgid "¿Cuáles de estas fotos te emocionan?"
 msgstr ""
 
-#: subscriptions-theme/pages/subscriptions-thankyou.php:41
-msgid ""
-"por elegir Tiempo Argentino, un medio autogestionado es posible gracias a "
-"personas como vos!"
+#: beneficios/pages/taxonomy-cat_beneficios.php:33
+#: beneficios/pages/beneficios-loop.php:29
+#: beneficios/pages/beneficios-search.php:24
+msgid "¿Cómo hago para obtener beneficios?"
 msgstr ""
 
-#: user-panel/functions.php:33
-msgid "Perfil"
+#: subscriptions-theme/pages/donations.php:466
+msgid "¿No tenés cuenta?"
 msgstr ""
 
-#: user-panel/functions.php:43
-msgid "Cuenta"
+#: subscriptions-theme/pages/donations.php:458
+#: subscriptions-theme/pages/subscriptions-loop.php:439
+msgid "¿Olvidaste tu contraseña?"
 msgstr ""
 
-#: user-panel/functions.php:60
-msgid "Tus comentarios: "
+#: subscriptions-theme/pages/subscriptions-thankyou.php:49
+msgid "¿Querés contarnos un poco más de vos?"
 msgstr ""
 
-#: user-panel/pages/account.php:48
-msgid "dejar en blanco sino se va a cambiar"
+#: subscriptions-theme/pages/subscriptions-loop.php:148
+msgid "¿Qué trae este paquete?"
 msgstr ""
 
-#: user-panel/pages/profile.php:52
-msgid "Guardados"
-msgstr ""
-
-#: user-panel/pages/profile.php:73
-msgid "Guardadas"
-msgstr ""
-
-#: user-panel/pages/profile.php:89
-msgid "Por:"
-msgstr ""
-
-#: user-panel/pages/profile.php:96
-msgid "limpiar lista"
-msgstr ""
-
-#: user-panel/pages/profile.php:103
-msgid "No tienes ninguna noticia guarda"
+#: subscriptions-theme/pages/donations.php:395
+#: subscriptions-theme/pages/subscriptions-loop.php:382
+msgid "¿Ya tenés cuenta?"
 msgstr ""

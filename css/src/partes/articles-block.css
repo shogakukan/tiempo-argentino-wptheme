@@ -47,6 +47,10 @@
   min-height: 183px;
 }
 
+#beneficios-loop .article-preview .img-container .img-wrapper {
+  background-size: contain !important;
+}
+
 .img-wrapper.lazy {
   background-image: none !important;
 }

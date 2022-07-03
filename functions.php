@@ -77,7 +77,7 @@ class TA_Theme
 		RB_Filters_Manager::add_action('ta_theme_admin_scripts', 'admin_enqueue_scripts', array(self::class, 'admin_scripts'));
 
 		add_filter('gen_check_post_type_name_dash_error', function ($check, $post_type) {
-			if ($post_type == 'tribe-ea-record')
+			if ($post_type == 'tribe-ea-record' || $post_type == 'ep-pointer' || $post_type == 'ep-synonym')
 				return false;
 			return $check;
 		}, 10, 2);

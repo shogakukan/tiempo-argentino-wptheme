@@ -67,7 +67,8 @@
   font-family: "Libre Baskerville";
   font-style: italic;
   font-weight: 400;
-  font-size: 12px;
+  /* font-size: 12px; */
+  font-size: 0.8rem;
 }
 .articulo-simple .author .author-img,
 .articulo-especial .author .author-img {
