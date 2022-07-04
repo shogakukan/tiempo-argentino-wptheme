@@ -533,6 +533,13 @@ class CloudflareCachePurge {
 			'cloudflare_cache_purge_setting_section' // section
 		);
 
+		add_settings_field(
+			'zone', // id
+			'Zone', // title
+			array( $this, 'zone_callback' ), // callback
+			'cloudflare-cache-purge-admin', // page
+			'cloudflare_cache_purge_setting_section' // section
+		);
 		
 	}
 
@@ -543,6 +550,9 @@ class CloudflareCachePurge {
 		}
 		if ( isset( $input['key'] ) ) {
 			$sanitary_values['key'] = sanitize_text_field( $input['key'] );
+		}
+		if ( isset( $input['zone'] ) ) {
+			$sanitary_values['zone'] = sanitize_text_field( $input['zone'] );
 		}
 
 		return $sanitary_values;
@@ -563,6 +573,13 @@ class CloudflareCachePurge {
 		printf(
 			'<input class="regular-text" type="text" name="cloudflare_cache_purge_option_name[key]" id="key" value="%s">',
 			isset( $this->cloudflare_cache_purge_options['key'] ) ? esc_attr( $this->cloudflare_cache_purge_options['key']) : ''
+		);
+	}
+
+	public function zone_callback() {
+		printf(
+			'<input class="regular-text" type="text" name="cloudflare_cache_purge_option_name[zone]" id="key" value="%s">',
+			isset( $this->cloudflare_cache_purge_options['zone'] ) ? esc_attr( $this->cloudflare_cache_purge_options['zone']) : ''
 		);
 	}
 }

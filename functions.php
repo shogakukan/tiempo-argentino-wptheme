@@ -895,19 +895,7 @@ function fix_printed_articles_date () {
 add_action( 'clean_cloudflare_cache_cron', 'clean_cloudflare_cache' );
 
 function clean_cloudflare_cache () {
-	$url = "https://api.cloudflare.com/client/v4/zones/43a5e7686794ede36458229cae39be8e/purge_cache";
-	$curl = curl_init();
-
-	curl_setopt_array($curl, array(
-	CURLOPT_URL => 'https://api.cloudflare.com/client/v4/zones/43a5e7686794ede36458229cae39be8e/purge_cache',
-	CURLOPT_RETURNTRANSFER => true,
-	CURLOPT_ENCODING => '',
-	CURLOPT_MAXREDIRS => 10,
-	CURLOPT_TIMEOUT => 0,
-	CURLOPT_FOLLOWLOCATION => true,
-	CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-	CURLOPT_CUSTOMREQUEST => 'POST',
-	CURLOPT_POSTFIELDS =>'{"files":[
+	$urls_array = [
 		"https://www.tiempoar.com.ar/comunidad-tiempo",
 		"https://www.tiempoar.com.ar/comunidad-tiempo/",
 		"https://www.tiempoar.com.ar/micrositio/tiempo-de-viajes/",
@@ -923,17 +911,8 @@ function clean_cloudflare_cache () {
 		"https://www.tiempoar.com.ar/espectaculos/",
 		"https://www.tiempoar.com.ar/espectaculos"
 
-	]}',
-	CURLOPT_HTTPHEADER => array(
-		'X-Auth-Email: ' . get_option('cloudflare_cache_purge_option_name')['email'],
-		'X-Auth-Key: ' . get_option('cloudflare_cache_purge_option_name')['key'],
-		'Content-Type: application/json'
-	),
-	));
-
-	$response = curl_exec($curl);
-
-	curl_close($curl);
+	];
+	purge_cloudflare($urls_array);
 }
 
 add_filter('the_content', 'insert_escriben_hoy', 1);
@@ -978,4 +957,51 @@ function insert_escriben_hoy($content){
     } else {
         return $content;
     }
+}
+
+add_action('save_post_ta_article', 'clear_article_cache', 10, 3);
+function clear_article_cache ($post_id, $post){
+	$link = get_permalink($post);
+	$last_char = substr($link, -1);
+	if ($last_char == '/') {
+		$link = substr($link, 0, -1);
+	}
+	$urls_array = array(
+		$link,
+		$link . '/',
+		$link . '/amp',
+		$link . '/amp' . '/'
+	);
+	purge_cloudflare ($urls_array);
+}
+
+function purge_cloudflare ($urls_array) {
+	$email = get_option('cloudflare_cache_purge_option_name')['email'];
+	$key = get_option('cloudflare_cache_purge_option_name')['key'];
+	$zone = get_option('cloudflare_cache_purge_option_name')['zone'];
+	if ($email && $key){
+		$url = "https://api.cloudflare.com/client/v4/zones/" . $zone . "/purge_cache";
+		$curl = curl_init();
+		$payload = json_encode(array('files' => $urls_array));
+		curl_setopt_array($curl,
+			array(
+				CURLOPT_URL => $url,
+				CURLOPT_RETURNTRANSFER => true,
+				CURLOPT_ENCODING => '',
+				CURLOPT_MAXREDIRS => 10,
+				CURLOPT_TIMEOUT => 0,
+				CURLOPT_FOLLOWLOCATION => true,
+				CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+				CURLOPT_CUSTOMREQUEST => 'POST',
+				CURLOPT_POSTFIELDS => $payload,
+				CURLOPT_HTTPHEADER => array(
+					'X-Auth-Email: ' . $email,
+					'X-Auth-Key: ' . $key,
+					'Content-Type: application/json'
+					),
+			)
+		);
+		$response = curl_exec($curl);
+		curl_close($curl);
+	}
 }
