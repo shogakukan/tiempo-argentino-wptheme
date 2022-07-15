@@ -67,6 +67,7 @@ if(!$article)
                         <?php endforeach ?>
                     </div>
                     <?php echo apply_filters( 'the_content', $article->content ); ?>
+                    <?php get_template_part('parts/article','authors_subdata', array( 'article' => $article )); ?>
                 </div>
             </div>
 

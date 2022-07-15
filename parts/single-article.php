@@ -79,6 +79,7 @@ $authors = $article->authors;
                            <div class="article-body mt-3">
                             <div class="art-column-w-lpadding">
                                 <?php echo apply_filters( 'the_content', $article->content ); ?>
+                                <?php get_template_part('parts/article','authors_subdata', array( 'article' => $article )); ?>
                             </div>
                         </div>
                         <?php if (is_active_sidebar('article_mobile_calltoaction')) : ?>

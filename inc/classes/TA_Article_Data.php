@@ -19,6 +19,7 @@ class TA_Article_Data extends Data_Manager{
         'content'               => '',
         'authors'               => null,
         'authors_roles'         => null,
+        'authors_subroles'      => null,
         'first_author'          => null,
         'thumbnail_common'      => null,
         'thumbnail_square'      => null,

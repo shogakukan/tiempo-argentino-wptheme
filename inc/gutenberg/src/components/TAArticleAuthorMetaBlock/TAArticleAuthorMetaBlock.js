@@ -26,11 +26,17 @@ const TAArticleAuthorMetaBlock = (props) => {
     );
 
     const metaFieldValue = meta && meta['ta_article_authors_rols'] ? meta['ta_article_authors_rols'] : {};
+    const metaFieldValueSub = meta && meta['ta_article_authors_subrols'] ? meta['ta_article_authors_subrols'] : {};
 
     function updateMetaValue( newRol ) {
         const mutatedValue = {...metaFieldValue};
         mutatedValue[author.ID] = newRol;
         setMeta( { ...meta, 'ta_article_authors_rols': mutatedValue } );
+    }
+    function updateMetaValueSub( newSubrol ) {
+        const mutatedValueSub = {...metaFieldValueSub};
+        mutatedValueSub[author.ID] = newSubrol;
+        setMeta( { ...meta, 'ta_article_authors_subrols': mutatedValueSub } );
     }
 
     const panelBody = () => {
@@ -38,6 +44,7 @@ const TAArticleAuthorMetaBlock = (props) => {
             return null;
 
         const rol = metaFieldValue[author.ID];
+        const subrol = metaFieldValueSub[author.ID];
         const photoStyle = {
             backgroundImage: `url("${author.photo}")`,
         };
@@ -55,6 +62,13 @@ const TAArticleAuthorMetaBlock = (props) => {
                             label="Rol"
                             value={ rol ? rol : '' }
                             onChange={ updateMetaValue }
+                        />
+                    </div>
+                    <div className="input-container">
+                        <TextControl
+                            label="Rol subterráneo"
+                            value={ subrol ? subrol : '' }
+                            onChange={ updateMetaValueSub }
                         />
                     </div>
                     <div className="remove-author" onClick = { onRemove ? onRemove : false }>

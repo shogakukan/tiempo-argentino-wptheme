@@ -574,6 +574,22 @@ function ta_article_authors_rols_meta_register(){
 }
 add_action('init', 'ta_article_authors_rols_meta_register');
 
+function ta_article_authors_subrols_meta_register(){
+	register_post_meta('ta_article', 'ta_article_authors_subrols', array(
+		'single' => true,
+		'type' => 'object',
+		'show_in_rest' => array(
+			'schema' => array(
+				'type'  => 'object',
+				'additionalProperties' => array(
+					'type' => 'string',
+				),
+			),
+		),
+	));
+}
+add_action('init', 'ta_article_authors_subrols_meta_register');
+
 function ta_article_thumbnail_alt_meta_register(){
 	register_post_meta('ta_article', 'ta_article_thumbnail_alt', array(
 		'single' 	=> true,

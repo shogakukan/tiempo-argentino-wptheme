@@ -34,7 +34,8 @@ if (!$article->authors || empty($article->authors))
                         </div>
                     <?php endif; ?>
                         <div class="author-info mr-2">
-                            <p>Por: <a href="<?php echo esc_attr($author->archive_url); ?>"><?php echo esc_html($author->name); ?></a></p>
+                            <?php $isSubrol = (isset($article->authors_subroles[$author->ID]) && $article->authors_subroles[$author->ID]); ?>
+                            <p>Por: <a href="<?php echo esc_attr($author->archive_url); ?>"><?php echo esc_html($author->name); ?></a><?= $isSubrol ? " *" : "" ?></p>
                             <?php if (isset($article->authors_roles[$author->ID]) && $article->authors_roles[$author->ID]) : ?>
                                 <p><?php echo esc_html($article->authors_roles[$author->ID]); ?></p>
                             <?php endif; ?>

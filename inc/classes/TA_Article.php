@@ -102,6 +102,11 @@ class TA_Article extends TA_Article_Data{
         return $roles && is_array($roles) ? $roles : [];
     }
 
+    protected function get_authors_subroles(){
+        $roles = get_post_meta($this->post->ID, 'ta_article_authors_subrols', true);
+        return $roles && is_array($roles) ? $roles : [];
+    }
+
     /**
     *   Publication details
     *   @return string[]
