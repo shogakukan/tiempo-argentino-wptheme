@@ -14,7 +14,7 @@ define('TA_ASSETS_URL', TA_THEME_URL . "/assets");
 define('TA_IMAGES_URL', TA_ASSETS_URL . "/img");
 define('TA_ASSETS_CSS_URL', TA_THEME_URL . "/css");
 define('TA_ASSETS_JS_URL', TA_THEME_URL . "/js");
-define('TA_THEME_VERSION','1.3.13');
+define('TA_THEME_VERSION','1.3.14');
 
 require_once TA_THEME_PATH . '/inc/gen-base-theme/gen-base-theme.php';
 require_once TA_THEME_PATH . '/inc/rewrite-rules.php';
@@ -539,7 +539,7 @@ if(current_user_can('edit_articles')){
 		));
 		ta_article_image_control($post, 'ta_article_thumbnail_alt', $featured_alt_attachment_id, array(
 			'title'			=> 'Imagen Portada',
-			'description'	=> 'Sobrescribe la imagen principal en la portada',
+			//'description'	=> 'Sobrescribe la imagen principal en la portada',
 		));
 	}, array(
 		'position'      => 4,

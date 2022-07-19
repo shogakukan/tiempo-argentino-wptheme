@@ -1,5 +1,6 @@
 .ta-articles-images-controls {
     margin-bottom: 2rem;
+    display: table-cell;
 }
 
 .ta-articles-images-controls:not(.empty) .when-empty, .ta-articles-images-controls:not(.loading) .when-loading {
