@@ -10,7 +10,7 @@ $args = array(
 );
 $postslist = get_posts($args);
 $talleres_count = count($postslist);
-$colClass = $talleres_count < 3 ? 'col-lg' : 'col-lg-4';
+$colClass = $talleres_count < 3 ? 'col-lg' : ($talleres_count % 2 == 0 && $talleres_count % 3 != 0 ? 'col-lg-6' :'col-lg-4');
 ?>
 <div class="row justify-content-around">
     <?php foreach ($postslist as $post) : ?>
