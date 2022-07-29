@@ -975,8 +975,11 @@ function insert_escriben_hoy($content){
     }
 }
 
-add_action('save_post_ta_article', 'clear_article_cache', 10, 3);
+add_action('save_post', 'clear_article_cache', 10, 3);
 function clear_article_cache ($post_id, $post){
+	if( array_search($post->post_type, TA_ARTICLES_COMPATIBLE_POST_TYPES) === false )
+		return;
+
 	$link = get_permalink($post);
 	$last_char = substr($link, -1);
 	if ($last_char == '/') {
