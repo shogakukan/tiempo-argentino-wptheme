@@ -11,7 +11,7 @@
 
 .rb-autocomplete .dropdown {
     background: #fff;
-    /* height: 5rem; */
+    height: 10rem;
     width: 100%;
     position: absolute;
     z-index: 10;
@@ -19,6 +19,7 @@
     border: solid 1px grey;
     border-top: 0;
     box-sizing: border-box;
+    overflow: auto;
 }
 
 .rb-autocomplete .result-item {
