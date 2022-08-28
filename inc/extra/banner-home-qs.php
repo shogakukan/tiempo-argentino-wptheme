@@ -1,5 +1,5 @@
 <?php if (get_option('ultimo_momento_option_name')['ultimo_momento'] == '') : ?>
-<div class="banner-nuevo-tiempo tiempo-blue-bg">
+<!-- <div class="banner-nuevo-tiempo tiempo-blue-bg">
     <div class="container">
         <a style="text-decoration: none;" href="<?php echo get_permalink(65814)?>" class="d-flex flex-column flex-md-row justify-content-md-center text-center py-3">
         <div class="title">
@@ -12,7 +12,7 @@
         </div>
         </a>
     </div>
-</div>
+</div> -->
 <?php else: ?>
     <div class="wp-block-columns urgente-portada mb-0">
         <div class="wp-block-column" style="flex-basis:33%">

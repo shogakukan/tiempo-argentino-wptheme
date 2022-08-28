@@ -146,7 +146,7 @@ window.addEventListener("resize", function () {
       link + "?post_type=ta_article"
     );
   });
-
+  /*
   $(document).ready(function () {
     var onboardingClose = localStorage.getItem("onboardingClose");
 
@@ -359,7 +359,7 @@ window.addEventListener("resize", function () {
       }
     }
   });
-
+  */
 
   $(document).ready(function () {
     console.log($('#subs_change').find(':selected').data('physical'));
