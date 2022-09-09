@@ -11,6 +11,11 @@
       const buttonID = $(this).data("id");
       $("#button" + buttonID).addClass("active");
       $(this).addClass("active");
+      gtag('event', 'choose_price', {
+        'event_category' : 'asociate',
+        'event_label' : buttonID,
+        'value' : $(this).data("price")
+      });
     });
 
     $(".open-price").on("click", function () {
@@ -44,7 +49,11 @@
       var name = $(this).data("name");
       var paper = $(this).data("paper");
       var type = $(this).data("role");
-      
+      gtag('event', 'continue_1', {
+        'event_category' : 'asociate',
+        'event_label' : name,
+        'value' : $(this).data("price")
+      });
       if (paper === 1) {
         $("#paper-option").hide();
       }
@@ -75,6 +84,10 @@
     });
 
     $("#login-button").on("click", function () {
+      gtag('event', 'login_action', {
+        'event_category' : 'asociate',
+        'event_label' : 'Ingresa',
+      });
       $("#paquete-elegido").slideUp(400, function () {
         $("#login-form").slideDown();
       });
@@ -119,6 +132,10 @@
     });
 
     $("#register-button").on("click", function () {
+      gtag('event', 'create_account', {
+        'event_category' : 'asociate',
+        'event_label' : 'Crear cuenta',
+      });
       $("#paquete-elegido").slideUp(400, function () {
         $("#register-form").slideDown();
       });
