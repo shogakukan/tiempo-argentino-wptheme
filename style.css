@@ -346,7 +346,22 @@ reemplazar en styles de angie
     font-weight: 900;
 }
 
-.btn-campus .wp-block-button__link:hover{
+.btn-inscripcion .wp-block-button__link {
+    background: #16a1dc;
+    color: #fff !important;
+    border: solid 2px #16a1dc;
+    border-radius: 0 !important;
+    font-family: "Red Hat Display", sans-serif;
+    text-decoration: none;
+    text-align: center;
+    font-size: 19px;
+    padding: 0.6rem 2rem;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+.btn-campus .wp-block-button__link:hover,
+.btn-inscripcion .wp-block-button__link:hover {
 	text-decoration: none;
 }
 

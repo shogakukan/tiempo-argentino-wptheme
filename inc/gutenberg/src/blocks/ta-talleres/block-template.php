@@ -52,7 +52,7 @@ $colClass = $talleres_count < 3 ? 'col-lg' : ($talleres_count % 2 == 0 && $talle
                         </div>
                         <?php if($taller->inscription_button): ?>
                         <div class="p-0">
-                            <div class="wp-block-buttons btn-campus">
+                            <div class="wp-block-buttons btn-inscripcion">
                                 <div class="wp-block-button m-0 has-custom-width wp-block-button__width-100 btn-programa">
                                     <a class="wp-block-button__link no-border-radius" href="<?php echo $taller->inscription_button ?>">
                                     <?= __('Inscribirse', 'gen-base-theme'); ?>
@@ -62,7 +62,7 @@ $colClass = $talleres_count < 3 ? 'col-lg' : ($talleres_count % 2 == 0 && $talle
                         </div></div>
                         <?php else: ?>
                     </div>
-                    <span class="w-100 text-center d-block" style="text-transform:uppercase;background-color:var(--ta-celeste);color:white;font-family: 'Red Hat Display', sans-serif;padding: 0.6rem !important;">
+                    <span class="w-100 text-center d-block" style="text-transform:uppercase;background-color:var(--ta-gris-imagen);color:#16a1dc;font-family: 'Red Hat Display', sans-serif;padding: 0.6rem !important;">
                         <?= __('Inscripción cerrada', 'gen-base-theme'); ?>
                     </span>
                     <?php endif; ?>
