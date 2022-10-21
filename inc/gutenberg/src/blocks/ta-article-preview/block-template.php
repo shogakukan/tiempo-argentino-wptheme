@@ -40,6 +40,7 @@ if(str_contains($size, 'large')){
 $thumbnail = $article->get_thumbnail_alt_common(null, $imgSize) ? $article->get_thumbnail_alt_common(null, $imgSize) : $article->get_thumbnail_common(null, $imgSize);//$article->thumbnail_alt_common ? $article->thumbnail_alt_common : $article->thumbnail_common;
 $thumbnail_url = $thumbnail ? $thumbnail['url'] : '';
 $img_ratio_style = $thumbnail && isset($ratioKey) ? 'padding-bottom: calc(100% * ' . $thumbnail[$ratioKey] . ');': '';
+$img_mobile_ratio_style = $thumbnail && $imgSize == 'destacado' && isset($thumbnail['mobile_ratio']) ? 'padding-bottom: calc(100% * ' . $thumbnail['mobile_ratio'] . ') !important;': '';
 
 // if($desktop_horizontal == true)
 //     $class .= ' horizontal';
