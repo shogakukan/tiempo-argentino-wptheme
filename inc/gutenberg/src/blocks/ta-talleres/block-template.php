@@ -1,6 +1,7 @@
 <?php
 $args = array(
     'post_type'  => 'ta_taller',
+    'numberposts' => -1,
     'meta_query' => array(
         array(
             'key'   => 'ta_taller_vidriera',
