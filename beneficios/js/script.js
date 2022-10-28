@@ -116,14 +116,12 @@
 
     window.onscroll = function () {
         if (desktop.matches) {
-            if (window.pageYOffset > 140) {
-                $("body").css("padding-top", "139px");
+            if (window.pageYOffset >=  $('.container', headerStickyDesktop).height()) {
                 headerStickyDesktop.addClass("sticky-default");
                 menuSticky.removeClass('menu-desktop');
                 menuSticky.addClass('menu-sticky-desktop');
                 searchBar.addClass('searchBarFixed');
             } else {
-                $("body").css("padding-top", "0");
                 headerStickyDesktop.removeClass("sticky-default");
                 menuSticky.removeClass('menu-sticky-desktop');
                 menuSticky.addClass('menu-desktop');
