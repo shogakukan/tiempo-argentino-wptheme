@@ -99,7 +99,7 @@
                             <span><?= number_format($elecciones_brasil_data['votos_bolsonaro'], 0, ",", ".") ?> votos</span>
                         </div>
                     </div>
-                    <div class="wp-block-columns mb-0 h-100" style="width: 5px;border:2px solid;position: relative;top: -100%;margin: 0 auto !important;"></div>
+                    <!--div class="wp-block-columns mb-0 h-100" style="width: 5px;border:2px solid;position: relative;top: -100%;margin: 0 auto !important;"></div-->
                 </div>
                 <div class="wp-block-column cara-bolsonaro" style="flex-basis:10%">
                     <div></div>
@@ -113,8 +113,8 @@
                 </div>
                 <div class="wp-block-column centro">
                     Escrutado <?= $elecciones_brasil_data['porc'] ?>%<br />
-                    <?= number_format($votos_totales, 0, ",", ".") ?> votos<br />
-                    (<?= number_format($elecciones_brasil_data['votos_nulos'], 0, ",", ".") ?> blancos/nulos)
+                    <?= number_format($votos_totales, 0, ",", ".") ?> votos | 
+                    <?= number_format($elecciones_brasil_data['votos_nulos'], 0, ",", ".") ?> blancos/nulos
                 </div>
                 <div class="wp-block-column bolsonaro" style="flex-basis:10%;text-align:center">
                     <p>Bolsonaro</p>
@@ -122,7 +122,7 @@
                     <span><?= number_format($elecciones_brasil_data['votos_bolsonaro'], 0, ",", ".") ?> votos</span>
                 </div>
             </div>
-            <div class="wp-block-column centro-mob">
+            <div class="wp-block-column centro-mob pt-4">
                     Escrutado <?= $elecciones_brasil_data['porc'] ?>%<br />
                     <?= number_format($votos_totales, 0, ",", ".") ?> votos<br />
                     (<?= number_format($elecciones_brasil_data['votos_nulos'], 0, ",", ".") ?> blancos/nulos)
@@ -147,23 +147,23 @@
                 .datos{flex-direction: row;}
             }
             .cara-lula div {
-                background-image: url('http://localhost:10014/wp-content/uploads/2022/03/Captura-de-Pantalla-2022-02-07-a-las-23.20.10.png');
+                background-image: url('https://www.tiempoar.com.ar/wp-content/uploads/2022/10/lula-cara-e1667000645390.jpg');
                 padding-bottom: 100%;
                 background-size: cover;
                 border-radius: 50%;
                 background-position: center;
-                border: 5px solid var(--red);
+                border: 5px solid #e67a7a;
             }
             .cara-bolsonaro div {
-                background-image: url('http://localhost:10014/wp-content/uploads/2022/03/Captura-de-Pantalla-2022-02-07-a-las-23.20.10.png');
+                background-image: url('https://www.tiempoar.com.ar/wp-content/uploads/2022/10/bolsonaro-cara-e1667000501658.jpg');
                 padding-bottom: 100%;
                 background-size: cover;
                 border-radius: 50%;
                 background-position: center;
-                border: 5px solid var(--ta-socios);
+                border: 5px solid #f8d988;
             }
             .col-lula  {
-                background: var(--red);
+                background: #e67a7a;
                 margin: 1rem 0 1rem 0;
                 display: flex;
                 align-items: flex-start;
@@ -174,7 +174,7 @@
                 margin-left: 25px;
             }
             .col-bolsonaro  {
-                background: var(--ta-socios);
+                background: #f8d988;
                 margin: 1rem 0 1rem 0;
                 display: flex;
                 align-items: flex-end;
