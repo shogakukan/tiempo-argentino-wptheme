@@ -466,6 +466,146 @@ class UltimoMomento {
 
 }
 
+class EleccionesBrasil {
+	private $elecciones_brasil;
+
+	public function __construct() {
+		add_action( 'admin_menu', array( $this, 'elecciones_brasil_add_plugin_page' ) );
+		add_action( 'admin_init', array( $this, 'elecciones_brasil_page_init' ) );
+	}
+
+	public function elecciones_brasil_add_plugin_page() {
+		add_theme_page(
+			'Brasil 2022', // page_title
+			'Brasil 2022', // menu_title
+			'manage_options', // capability
+			'elecciones-brasil', // menu_slug
+			array( $this, 'elecciones_brasil_create_admin_page' ) // function
+		);
+	}
+
+	public function elecciones_brasil_create_admin_page() {
+		$this->elecciones_brasil_options = get_option( 'elecciones_brasil_option_name' ); ?>
+
+		<div class="wrap">
+			<h2>Brasil 2022</h2>
+			<p></p>
+			<?php settings_errors(); ?>
+
+			<form method="post" action="options.php">
+				<?php
+					settings_fields( 'elecciones_brasil_option_group' );
+					do_settings_sections( 'elecciones-brasil-admin' );
+					submit_button();
+				?>
+			</form>
+		</div>
+	<?php }
+
+	public function elecciones_brasil_page_init() {
+		register_setting(
+			'elecciones_brasil_option_group', // option_group
+			'elecciones_brasil_option_name', // option_name
+			array( $this, 'elecciones_brasil_sanitize' ) // sanitize_callback
+		);
+
+		add_settings_section(
+			'elecciones_brasil_setting_section', // id
+			'Resultados', // title
+			array( $this, 'elecciones_brasil_section_info' ), // callback
+			'elecciones-brasil-admin' // page
+		);
+
+		add_settings_field(
+			'votos_lula', // id
+			'Votos Lula', // title
+			array( $this, 'votos_lula_callback' ), // callback
+			'elecciones-brasil-admin', // page
+			'elecciones_brasil_setting_section' // section
+		);
+
+		add_settings_field(
+			'votos_bolsonaro', // id
+			'Votos Bolsonaro', // title
+			array( $this, 'votos_bolsonaro_callback' ), // callback
+			'elecciones-brasil-admin', // page
+			'elecciones_brasil_setting_section' // section
+		);
+
+		add_settings_field(
+			'votos_nulos', // id
+			'Votos nulos/blancos/etc', // title
+			array( $this, 'votos_nulos_callback' ), // callback
+			'elecciones-brasil-admin', // page
+			'elecciones_brasil_setting_section' // section
+		);
+
+		add_settings_field(
+			'porc', // id
+			'Porcentaje escrutado', // title
+			array( $this, 'porc_callback' ), // callback
+			'elecciones-brasil-admin', // page
+			'elecciones_brasil_setting_section' // section
+		);
+
+		
+	}
+
+	public function elecciones_brasil_sanitize($input) {
+		$sanitary_values = array();
+		if ( isset( $input['votos_lula'] ) ) {
+			$sanitary_values['votos_lula'] = sanitize_text_field( $input['votos_lula'] );
+		}
+
+		if ( isset( $input['votos_bolsonaro'] ) ) {
+			$sanitary_values['votos_bolsonaro'] = sanitize_text_field( $input['votos_bolsonaro'] );
+		}
+
+		if ( isset( $input['votos_nulos'] ) ) {
+			$sanitary_values['votos_nulos'] = sanitize_text_field( $input['votos_nulos'] );
+		}
+
+		if ( isset( $input['porc'] ) ) {
+			$sanitary_values['porc'] = sanitize_text_field( $input['porc'] );
+		}
+
+		return $sanitary_values;
+	}
+
+	public function elecciones_brasil_section_info() {
+		
+	}
+
+	public function votos_lula_callback() {
+		printf(
+			'<input class="regular-text" type="number" name="elecciones_brasil_option_name[votos_lula]" id="votos_lula" value="%s">',
+			isset( $this->elecciones_brasil_options['votos_lula'] ) ? esc_attr( $this->elecciones_brasil_options['votos_lula']) : ''
+		);
+	}
+
+	public function votos_bolsonaro_callback() {
+		printf(
+			'<input class="regular-text" type="number" name="elecciones_brasil_option_name[votos_bolsonaro]" id="votos_bolsonaro" value="%s">',
+			isset( $this->elecciones_brasil_options['votos_bolsonaro'] ) ? esc_attr( $this->elecciones_brasil_options['votos_bolsonaro']) : ''
+		);
+	}
+
+	public function votos_nulos_callback() {
+		printf(
+			'<input class="regular-text" type="number" name="elecciones_brasil_option_name[votos_nulos]" id="votos_nulos" value="%s">',
+			isset( $this->elecciones_brasil_options['votos_nulos'] ) ? esc_attr( $this->elecciones_brasil_options['votos_nulos']) : ''
+		);
+	}
+
+	public function porc_callback() {
+		printf(
+			'<input class="regular-text" type="number" name="elecciones_brasil_option_name[porc]" id="votos_nulos" value="%s"><br />(Dejar en -1 para que no se muestre en portada)',
+			isset( $this->elecciones_brasil_options['porc'] ) ? esc_attr( $this->elecciones_brasil_options['porc']) : ''
+		);
+	}
+
+
+}
 class CloudflareCachePurge {
 	private $cloudflare_cache_purge_options;
 
@@ -589,4 +729,6 @@ if ( is_admin() ) {
 	$escriben_hoy = new EscribenHoy();
 	$ultimo_momento = new UltimoMomento();
 	$cloudflare_cache_purge = new CloudflareCachePurge();
+	$elecciones_brasil = new EleccionesBrasil();
+
 }
