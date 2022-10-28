@@ -54,10 +54,15 @@ if (!$article->authors || empty($article->authors))
         <div class="author d-flex mr-2">
             <div class="author-info">
                 <p>Por:
-                    <?php $authors = $article->authors;
-                    $amount = count($authors); ?>
+                    <?php 
+                    $authors = $article->authors;
+                    $amount = count($authors);
+                    ?>
                     <?php for ($i = 0; $i < $amount; $i++) : ?>
                         <a href="<?php echo esc_attr($authors[$i]->archive_url); ?>"><?php echo esc_html($authors[$i]->name); ?></a>
+                        <?php if ($amount == 1 && $authors[$i]->social) : ?>
+                            <br /><i class="fa-brands fa-twitter"></i><a href="<?php echo esc_attr($authors[$i]->social['url']); ?>">@<?php echo esc_html($authors[$i]->social['user']); ?></a>
+                        <?php endif; ?>
                         <?php
                         if (isset($authors[$i + 1])) {
                             if ($i + 2 == $amount) {
