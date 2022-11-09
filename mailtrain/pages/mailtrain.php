@@ -81,7 +81,7 @@
                                 ];
 
                                 $query = new WP_Query($args);
-                                if (true || $query->have_posts()) : while ($query->have_posts()) : $query->the_post();
+                                if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post();
                                 ?>
                                         <!-- lista -->
                                         <div class="articulo with-thumbnail mt-3">
