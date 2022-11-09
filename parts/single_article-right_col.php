@@ -3,7 +3,7 @@
         <div class="container-md p-0 line-height-0 mt-3 d-block d-md-none">
             <div class="separator"></div>
         </div>
-        <div class="ta-context light-blue-bg">
+        <div class="ta-context light-blue-bg" style="background:#d49e4261">
             <?php  include_once(TA_THEME_PATH . '/markup/partes/newsletter.php');  ?>
         </div>
         <?php if (is_active_sidebar('note_mob_4')) { ?>
@@ -32,3 +32,7 @@
         </div>
     <?php } ?>
 </div>
+<style>
+.newsletter .newsletter-form input::placeholder {color: #B0621C !important;}
+#the_email:focus-visible {outline: none;}
+</style>
