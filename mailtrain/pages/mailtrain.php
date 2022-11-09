@@ -81,7 +81,7 @@
                                 ];
 
                                 $query = new WP_Query($args);
-                                if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post();
+                                if (true || $query->have_posts()) : while ($query->have_posts()) : $query->the_post();
                                 ?>
                                         <!-- lista -->
                                         <div class="articulo with-thumbnail mt-3">
@@ -132,8 +132,8 @@
     </div>
     <div class="container">
         <div class="checkbox-container text-center mt-2">
-            <input type="checkbox" class="terms-checkbox" name="terms" id="terms-and-conditions" value="">
-            <label for="terminos"><?php echo __('Acepto', 'gen-base-theme') ?><a href="<?php echo get_permalink(get_option('mailtrain_terms_page'))?>"><u><?php echo __('Términos y Condiciones', 'gen-base-theme') ?></u></a></label>
+            <input type="checkbox" checked class="terms-checkbox" name="terms" id="terms-and-conditions" value="">
+            <label for="terminos"><?php echo __('Acepto', 'gen-base-theme') ?> <a href="<?php echo get_permalink(get_option('mailtrain_terms_page'))?>"><u><?php echo __('Términos y Condiciones', 'gen-base-theme') ?></u></a></label>
         </div>
         <div class="btns-container <?php echo !is_user_logged_in() ? 'd-flex justify-content-between align-items-center' : 'text-center'; ?> mt-3">
             <?php if (!is_user_logged_in()) : ?>
