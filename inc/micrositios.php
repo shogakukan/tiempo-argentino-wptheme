@@ -59,3 +59,9 @@ new TA_Micrositio('tiempo-de-viajes', array(
     'priority'              => 7,
     'custom_content'        => true,
 ));
+
+new TA_Micrositio('qatar-2022', array(
+    'title'                 => 'Qatar 2022',
+    'priority'              => 8,
+    'custom_content'        => true,
+));
