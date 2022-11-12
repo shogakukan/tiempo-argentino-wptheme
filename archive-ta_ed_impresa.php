@@ -19,7 +19,7 @@ if( $wp_query->have_posts() ){
                 <h4>Ediciones Impresas</h4>
             </div>
         </div>
-        <?php get_template_part('parts/archive', 'simple', array(
+        <?php get_template_part('parts/archive', 'issues', array(
             'articles'              => $articles,
             // 'max_num_pages'         => $wp_query->max_num_pages,
             // 'current_page'          => max(1, get_query_var('paged')),
