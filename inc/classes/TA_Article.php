@@ -204,6 +204,12 @@ class TA_Article extends TA_Article_Data{
     }
 
     /**
+    *   @return string
+    */
+    public function get_alt_title(){
+        return get_post_meta($this->post->ID, 'ta_article_alt_title', true);
+    }
+    /**
     *   @return mixed[]
     */
     public function get_participation(){

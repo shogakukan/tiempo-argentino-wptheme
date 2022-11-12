@@ -8,6 +8,7 @@ class TA_Article_Data extends Data_Manager{
     protected $defaults = array(
         'ID'                    => null,
         'title'                 => '',
+        'alt_title'                 => '',
         'excerpt'               => '',
         'excerpt_trimmed'       => '',
         'date'                  => '',
