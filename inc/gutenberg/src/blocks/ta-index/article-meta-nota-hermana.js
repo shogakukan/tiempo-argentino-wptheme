@@ -22,6 +22,7 @@ const TANotaHermanaPanel = () => {
         postType,
         'meta'
     );
+    console.log("NACHITO", wp.data.select( 'core/editor' ))
 
     const metaValue = meta && meta['ta_article_sister_article'] ? meta['ta_article_sister_article'] : null;
     function updateMetaValue( posts ) {
@@ -49,7 +50,7 @@ const TANotaHermanaPanel = () => {
         <PluginDocumentSettingPanel
             name="ta-nota-hermana"
             title="Nota Hermana"
-            className="custom-panel"
+            className="custom-panel ta-nota-hermana"
         >
             <LRArticlesSelector
                 articles = { postData ? [postData] : [] }
@@ -68,6 +69,7 @@ const TANotaHermanaPanel = () => {
 registerPlugin( 'ta-article-nota-hermana', {
     render: TANotaHermanaPanel,
     icon: 'media-document',
+    priority: 10
 } );
 
 

@@ -50,7 +50,7 @@ const TAEdicionImpresaPanel = () => {
         <PluginDocumentSettingPanel
             name="ta-ed-impresa"
             title="Edición Impresa"
-            className="custom-panel"
+            className="custom-panel ta-ed-impresa"
         >
             <RBPostsSelector
                 posts = { postData ? [postData] : [] }

@@ -66,7 +66,7 @@ const TAParticipationMeta = () => {
         <PluginDocumentSettingPanel
             name="ta-participation"
             title="Comentarios / Participación"
-            className="custom-panel"
+            className="custom-panel participacion"
         >
             <CheckboxControl
                 label="Permitir comentarios"

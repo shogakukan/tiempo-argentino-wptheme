@@ -87,3 +87,14 @@
 .cell.empty.huge {
     min-height: 20rem;
 }
+
+.components-panel {
+    display: flex;
+    flex-direction: column;
+}
+
+.ta-alt-img {order: 10;}
+.ta-nota-hermana {order: 20;}
+.participacion {order: 100;}
+.ta-ed-impresa {order:5}
+.components-panel .components-panel__body:nth-child(14) {order: -1;}

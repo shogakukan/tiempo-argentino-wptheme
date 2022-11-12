@@ -28,7 +28,7 @@ const TAArticleAltThumbnailPanel = () => {
         <PluginDocumentSettingPanel
             name="ta-alt-img"
             title="Imagen Portada"
-            className="custom-panel"
+            className="custom-panel ta-alt-img"
         >
             <RBAttachmentControl
                 attachmentsIDs = {metaImageId ? [metaImageId] : []}
