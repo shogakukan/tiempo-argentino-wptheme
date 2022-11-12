@@ -15,7 +15,7 @@ $preview_class = esc_attr($preview_class);
     <?php
     ta_print_article_preview_attr($article, array(
         'class'                 => "mb-3 $preview_class",
-        'use_balancer_icons'    => true
+        'use_balancer_icons'    => false
     ));
     ?>
 >
@@ -26,9 +26,9 @@ $preview_class = esc_attr($preview_class);
             </div>        
         </div>
     <?php elseif( $thumbnail_url ): ?>
-    <div class="<?php echo esc_attr($thumb_cont_class); ?>">
-        <a data-url href="<?php echo esc_attr($url); ?>">
-            <div class="img-container">
+        <div class="<?php echo esc_attr($thumb_cont_class); ?>">
+            <a data-url href="<?php echo esc_attr($url); ?>">
+                <div class="img-container">
                 <div class="img-wrapper d-flex align-items-end lazy" data-thumbnail style='background-image: url("<?php echo $thumbnail_url; ?>");<?= $img_ratio_style?>' alt="<?php echo esc_attr($thumbnail['alt']); ?>">
                     <div class="icons-container">
                         <div class="article-icons d-flex flex-column mb-2">
@@ -60,6 +60,11 @@ $preview_class = esc_attr($preview_class);
                 <p>Por <?php get_template_part('parts/article','authors_links', array( 'authors' => $authors )); ?></p>
             </div>
         </div>
+        <?php endif; ?>
+        <?php if ($show_excerpt) : ?>
+            <div class="subtitle">
+                <p><?php echo $article->excerpt; ?></p>
+            </div>
         <?php endif; ?>
     </div>
 </div>

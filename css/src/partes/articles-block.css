@@ -518,6 +518,14 @@
     line-height: 24.15px;
     letter-spacing: -0.1px;
   }
+  .article-preview .content .subtitle p {
+    font-family: "Red Hat Display";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 22.49px;
+    letter-spacing: -0.2px;
+  }
   /* .article-preview.destacado .img-container .img-wrapper, .article-preview.destacado-md .img-container .img-wrapper {
     min-height: 360px;
   } */

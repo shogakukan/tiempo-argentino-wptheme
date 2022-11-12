@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import TAArticlePreview from '../TAArticlePreview/TAArticlePreview';
 import useArticleRowData from '../../helpers/useArticleRowData/useArticleRowData';
-const { Spinner, RangeControl } = wp.components;
+const { Spinner, RangeControl, ToggleControl } = wp.components;
 import './css/editor.css';
 
 export function getCellsAmount(rowConfig){
@@ -11,7 +11,31 @@ export function getCellsAmount(rowConfig){
     return rowConfig.cells_amount ? rowConfig.cells_amount : 4;
 }
 
-const Controls = null;
+//const Controls = null;
+const Controls = ( { row, index, onUpdate } ) => {
+    const updateRow = (attribute, value) => {
+        if(!onUpdate)
+            return;
+
+        const rowConfig = {...row};
+        rowConfig[attribute] = value;
+
+        onUpdate({
+            row: rowConfig,
+            index,
+        });
+    };
+
+    return (
+        <>
+            <ToggleControl
+                label = "Mostrar copete"
+                checked = { row.show_excerpt }
+                onChange={ (value) => updateRow('show_excerpt', value) }
+            />
+        </>
+    );
+}
 
 const TAArticlesMiscelaneaRow = (props = {}) => {
     const {
@@ -20,6 +44,7 @@ const TAArticlesMiscelaneaRow = (props = {}) => {
         offset,
         isSelected,
         cells_amount,
+        show_excerpt = false,
     } = props;
     const cellsAmount = getCellsAmount(props);
 
@@ -84,6 +109,7 @@ const data = {
     Controls,
     defaultConfig: {
         cells_amount: 4,
+        show_excerpt: false,
     },
 };
 
