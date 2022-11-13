@@ -14,7 +14,7 @@ define('TA_ASSETS_URL', TA_THEME_URL . "/assets");
 define('TA_IMAGES_URL', TA_ASSETS_URL . "/img");
 define('TA_ASSETS_CSS_URL', TA_THEME_URL . "/css");
 define('TA_ASSETS_JS_URL', TA_THEME_URL . "/js");
-define('TA_THEME_VERSION','1.3.14');
+define('TA_THEME_VERSION','1.3.15');
 
 require_once TA_THEME_PATH . '/inc/gen-base-theme/gen-base-theme.php';
 require_once TA_THEME_PATH . '/inc/rewrite-rules.php';
@@ -916,6 +916,8 @@ function clean_cloudflare_cache () {
 		"https://www.tiempoar.com.ar/comunidad-tiempo/",
 		"https://www.tiempoar.com.ar/micrositio/tiempo-de-viajes/",
 		"https://www.tiempoar.com.ar/micrositio/tiempo-de-viajes",
+		"https://www.tiempoar.com.ar/micrositio/qatar-2022/",
+		"https://www.tiempoar.com.ar/micrositio/qatar-2022",
 		"https://www.tiempoar.com.ar/newsletter",
 		"https://www.tiempoar.com.ar/newsletter/",
 		"https://www.tiempoar.com.ar/micrositio/ambiental/",
@@ -925,8 +927,9 @@ function clean_cloudflare_cache () {
 		"https://www.tiempoar.com.ar/micrositio/medios/",
 		"https://www.tiempoar.com.ar/micrositio/medios",
 		"https://www.tiempoar.com.ar/espectaculos/",
-		"https://www.tiempoar.com.ar/espectaculos"
-
+		"https://www.tiempoar.com.ar/espectaculos",
+		"https://www.tiempoar.com.ar/asociate/",
+		"https://www.tiempoar.com.ar/asociate",
 	];
 	purge_cloudflare($urls_array);
 }
@@ -975,7 +978,7 @@ function insert_escriben_hoy($content){
     }
 }
 
-add_action('save_post', 'clear_article_cache', 10, 3);
+add_action('save_post', 'clear_article_cache', 100, 2);
 function clear_article_cache ($post_id, $post){
 	if( array_search($post->post_type, TA_ARTICLES_COMPATIBLE_POST_TYPES) === false )
 		return;
