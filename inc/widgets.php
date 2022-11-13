@@ -234,7 +234,7 @@ class Widgets_Theme_TA
         register_sidebar(array(
             'name'          => __('Nota Desktop - Párrafo 2-3', 'gen-base-theme'),
             'id'            => 'article_desktop_paragraph_2_3',
-            'before_widget' => '<div class="col-7 entre-1 mx-auto mt-5 mb-5 d-none d-sm-none d-md-block d-lg-block">',
+            'before_widget' => '<div class="col-7 entre-1 d-none d-sm-none d-md-block d-lg-block" style="height:0">',
             'after_widget'  => '</div>',
         ));
     }
