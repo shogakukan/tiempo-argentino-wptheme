@@ -65,3 +65,9 @@ new TA_Micrositio('qatar-2022', array(
     'priority'              => 8,
     'custom_content'        => true,
 ));
+
+new TA_Micrositio('universitario', array(
+    'title'                 => 'Tiempo Universitario',
+    'priority'              => 9,
+    'custom_content'        => true,
+));
