@@ -5,6 +5,7 @@
  */
 ?>
 <?php get_header(); ?>
+<?php do_action('nota_apertura'); ?>
 <?php if (is_front_page()) :
 
     $articles = [];

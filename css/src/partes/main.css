@@ -144,6 +144,7 @@ a.ab-item {
 .header .header-content .tiempo-logo {
   max-width: 50%;
   align-self: center;
+  transition: all 0.5s ease-in-out;
 }
 .header .header-content .weather p {
   font-family: "Libre Baskerville";
@@ -1331,5 +1332,9 @@ a.ab-item {
     font-size: 19px;
   }
 }
-
+.desktop-ribbon {
+  transition: all 0.5s ease-out;
+  opacity: 1;
+  height: auto;
+}
 /*# sourceMappingURL=main.css.map */

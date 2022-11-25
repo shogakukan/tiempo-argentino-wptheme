@@ -133,7 +133,7 @@ if (is_user_logged_in() && get_user_meta(get_current_user_id(),'_user_status',tr
                         <a href="<?php echo home_url() ?>"><img src="<?php echo TA_THEME_URL; ?>/markup/assets/images/tiempo-logo.svg" class="img-fluid" alt=""></a>
 
                     </div>
-                    <div class="weather d-none d-lg-flex flex-column align-content-center justify-content-start text-left  mr-5">
+                    <div class="weather d-none d-xl-flex flex-column align-content-center justify-content-start text-left  mr-5">
                         <div class="mt-2">
                             <div class="date">
                                 <p class="text-capitalize"><?php echo date_i18n('l, j F , Y'); ?></p>
