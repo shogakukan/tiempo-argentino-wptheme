@@ -1022,6 +1022,23 @@ function clear_article_cache ($post_id, $post){
 		$link . '/amp',
 		$link . '/amp' . '/'
 	);
+	
+	$terms = get_the_terms($post, "ta_article_section");
+    if ($terms && isset($terms[0])){
+        $terms_array = $terms[0]->to_array();
+        if (isset($terms_array['slug'])){
+            $slug = $terms_array['slug'];
+			if (str_contains($link, $slug)){
+				$link = str_replace('/' . $slug . '/', '/ta_article' . '/', $link);
+				array_push($urls_array,
+					$link,
+					$link . '/',
+					$link . '/amp',
+					$link . '/amp' . '/'
+				);
+			}
+        }
+    }
 	purge_cloudflare ($urls_array);
 }
 
