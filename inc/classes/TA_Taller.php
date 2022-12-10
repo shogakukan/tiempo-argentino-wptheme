@@ -157,8 +157,9 @@ class TA_Taller extends Data_Manager{
         $date = isset($datetime['date']) ? $datetime['date'] : "";
         $time = isset($datetime['time']) ? $datetime['time'] : "";
         if ($date) {
+            setlocale(LC_ALL,"es_AR");
             $format = 'j \d\e F \d\e Y';
-            $datetimeFormated = date($format, strtotime($date));
+            $datetimeFormated = date_i18n($format, strtotime($date));
             if ($time) $datetimeFormated .= " a las " . $time . "hs";
             return $datetimeFormated;
         }
