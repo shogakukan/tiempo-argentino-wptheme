@@ -34,7 +34,7 @@ class TAArticlesMiscelaneaRow extends TAArticlesBlockRow{
                 ta_render_article_preview($featured, array(
                     'size'                      => 'large',
                     'class'                     => '',
-                    'deactivate_opinion_layout' => $deactivate_opinion_layout,
+                    'deactivate_opinion_layout' => true,//$deactivate_opinion_layout,
                     'show_excerpt' => $show_excerpt,
                 ));
                 ?>
