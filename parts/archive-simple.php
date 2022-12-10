@@ -25,6 +25,7 @@ $articles_block = RB_Gutenberg_Block::get_block('ta/articles');
                         'deactivate_opinion_layout' => true,
                     ),
                 ),
+                'most_recent' => false
             ));
             ?>
         </div>
