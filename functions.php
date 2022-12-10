@@ -624,10 +624,21 @@ add_action('init', 'ta_article_sister_article_meta_register');
 function page_nota_apertura_meta_register(){
 	register_post_meta('page', 'page_nota_apertura', array(
 		'single' 	=> true,
-		'type' 		=> 'number',
+		'type' 		=> 'object',
 		'show_in_rest' => array(
 			'schema' => array(
-				'type'  => 'number',
+				'type'  => 'object',
+				'properties' => array(
+					'post' => array(
+						'type' => 'number',
+					),
+					'white_logo' => array(
+						'type' => 'boolean',
+					),
+					'white_title' => array(
+						'type' => 'boolean',
+					)
+				),
 			),
 		),
 	));

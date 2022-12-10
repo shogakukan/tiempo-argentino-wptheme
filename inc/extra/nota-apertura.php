@@ -1,13 +1,18 @@
 <?php
-$article_id = get_post_meta(get_the_ID(), 'page_nota_apertura', true);
+$article_data = get_post_meta(get_the_ID(), 'page_nota_apertura', true);
+$article_id = isset($article_data['post']) ? $article_data['post'] : null;
 $article = !$article_id ? null : TA_Article_Factory::get_article(get_post($article_id));
-$thumbnail_common_url = $article->thumbnail_common && $article->thumbnail_common['url'] ? $article->thumbnail_common['url'] : '';
-$thumbnail_alt_common_url = $article->thumbnail_alt_common && $article->thumbnail_alt_common['url'] ? $article->thumbnail_alt_common['url'] : '';
-$thumbnail_url = $thumbnail_alt_common_url ? $thumbnail_alt_common_url : $thumbnail_common_url;
-$title = $article->alt_title ? $article->alt_title : $article->title;
 ?>
 
 <?php if ($article) : ?>
+    <?php 
+    $thumbnail_common_url = $article->thumbnail_common && $article->thumbnail_common['url'] ? $article->thumbnail_common['url'] : '';
+    $thumbnail_alt_common_url = $article->thumbnail_alt_common && $article->thumbnail_alt_common['url'] ? $article->thumbnail_alt_common['url'] : '';
+    $thumbnail_url = $thumbnail_alt_common_url ? $thumbnail_alt_common_url : $thumbnail_common_url;
+    $title = $article->alt_title ? $article->alt_title : $article->title;
+    $white_logo = isset($article_data['white_logo']) ? $article_data['white_logo'] : null;
+    $white_title = isset($article_data['white_title']) ? $article_data['white_title'] : null;
+    ?>
     <div class="big-block-container">
         <div class="big-block-content">
             <a href="">
@@ -72,11 +77,6 @@ $title = $article->alt_title ? $article->alt_title : $article->title;
             font-family: "Red Hat Display";
             font-style: normal;
             font-weight: 900;
-            color: white;
-        }
-        .big-block-caption a {
-            text-decoration-color: #fff !important;
-            color: #fff !important;
         }
 
         .big-block-caption .title p {
@@ -86,11 +86,22 @@ $title = $article->alt_title ? $article->alt_title : $article->title;
             font-size: 70px;
             letter-spacing: -0.5px;
             line-height: 1;
-            color: white;
         }
-        .header:not(.sticky) .tiempo-logo img {
-            filter: invert(1);
+        <?php if ($white_title) : ?>
+        .big-block-caption h4,
+        .big-block-caption .title p {
+            color: white
         }
+        .big-block-caption a {
+            text-decoration-color: #fff !important;
+            color: #fff !important;
+        }
+        <?php endif; ?>
+
+        <?php if ($white_logo) : ?>
+        .header:not(.sticky) .tiempo-logo img {filter: invert(1);}
+        <?php endif; ?>
+
         @media(min-width:992px) {
             .big-block-caption h4 {
                 font-size: 16px;
@@ -103,8 +114,11 @@ $title = $article->alt_title ? $article->alt_title : $article->title;
             }
 
         }
-        @media(max-width:991px) {
-
-        }
+        /* .big-block-container .overlay {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(46, 42, 38, 0) 49.04%, #252b2d 86.07%);
+            position: relative;
+        } */
     </style>
 <?php endif; ?>

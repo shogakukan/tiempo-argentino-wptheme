@@ -7,7 +7,7 @@ const { registerPlugin } = wp.plugins;
 const { PluginDocumentSettingPanel } = wp.editPost;
 const { __ } = wp.i18n;
 const { useEntityProp } = wp.coreData;
-const { Spinner } = wp.components;
+const { Spinner, ToggleControl } = wp.components;
 
 const TANotaAperturaPanel = () => {
     const postType = wp.data.select( 'core/editor' ).getCurrentPostType();
@@ -20,19 +20,30 @@ const TANotaAperturaPanel = () => {
         'meta'
     );
 
-    const metaValue = meta && meta['page_nota_apertura'] ? meta['page_nota_apertura'] : null;
-    function updateMetaValue( posts ) {
-        const postData = posts ? posts[0] : null;
-        const postID = postData ? postData.ID : null;
-        setArticlesData(postData ? [{ data: postData, loading: false, originalValue: postID }] : []);
-        setMeta( { ...meta, 'page_nota_apertura': postID } );
+    const metaValue = meta && meta['page_nota_apertura'] ? meta['page_nota_apertura'] : {};
+    const {
+        post,
+        white_logo,
+        white_title
+    } = metaValue;
+
+    function updateMetaValue( { key, value } ) {
+        if (key == 'post'){
+            const postData = value ? value[0] : null;
+            value = postData ? postData.ID : 0;
+            setArticlesData(postData ? [{ data: postData, loading: false, originalValue: value }] : []);
+        }
+        setMeta( { ...meta, 'page_nota_apertura': {
+            ...metaValue,
+            [key]: value,
+        } } );
     }
 
     const {
         articlesData,
         setArticlesData,
     } = useTAArticles( {
-        posts: metaValue ? [metaValue] : [],
+        posts: post ? [post] : [],
         postsQueryArgs: {
             post_type: 'ta_article',
         },
@@ -53,11 +64,27 @@ const TANotaAperturaPanel = () => {
                 postsArgs = {{
                     post_type: 'ta_article',
                 }}
-                max = {1}
-                onSelectionChange = { (data) => updateMetaValue(data) }
+                max = {1} 
+                onSelectionChange = { (value) => updateMetaValue({ key: 'post', value }) }
                 sortable = {false}
             />
             { loading && <Spinner/> }
+            {postData && 
+                <>
+                    <br />
+                    <ToggleControl
+                        label={"¿Logo en blanco?"}
+                        checked={ white_logo }
+                        onChange={ ( value ) => updateMetaValue( { key: 'white_logo', value } ) }
+                    />
+                    <ToggleControl
+                        label={"¿Título en blanco?"}
+                        checked={ white_title }
+                        onChange={ ( value ) => updateMetaValue( { key: 'white_title', value } ) }
+                    />
+                </>
+            }
+            
         </PluginDocumentSettingPanel>
     );
 };

@@ -26,7 +26,7 @@
 
     // Usar placeholder de carga
 ?>
-
+    <?php /*
     <div class="fullpage-onboarding">
         <div class="container">
             <div class="popovers position-relative text-left">
@@ -57,7 +57,7 @@
             </div>
         </div>
     </div>
-
+    */ ?>
 <?php endif; ?>
 
 <?php TA_Blocks_Container_Manager::open_new(); ?>
