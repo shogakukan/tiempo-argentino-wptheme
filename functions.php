@@ -14,7 +14,7 @@ define('TA_ASSETS_URL', TA_THEME_URL . "/assets");
 define('TA_IMAGES_URL', TA_ASSETS_URL . "/img");
 define('TA_ASSETS_CSS_URL', TA_THEME_URL . "/css");
 define('TA_ASSETS_JS_URL', TA_THEME_URL . "/js");
-define('TA_THEME_VERSION','1.3.15');
+define('TA_THEME_VERSION','1.3.16');
 
 require_once TA_THEME_PATH . '/inc/gen-base-theme/gen-base-theme.php';
 require_once TA_THEME_PATH . '/inc/rewrite-rules.php';
@@ -101,6 +101,7 @@ class TA_Theme
 		self::sync_articles_topics_and_places();
 
 		add_action('quienes_somos_banner', [self::class, 'extra_home_content']);
+		add_action('nota_apertura', [self::class, 'nota_apertura_content']);
 		add_action('wp_insert_comment', function ($id, $comment) {
 			add_comment_meta($comment->comment_ID, 'is_visitor', $comment->user_id == 0, true);
 		}, 2, 10);
@@ -465,6 +466,11 @@ class TA_Theme
 		require_once TA_THEME_PATH . '/inc/extra/banner-home-qs.php';
 	}
 
+	public static function nota_apertura_content()
+	{
+		require_once TA_THEME_PATH . '/inc/extra/nota-apertura.php';
+	}
+
 	static public function clean_dashboard()
 	{
 		remove_meta_box('dashboard_incoming_links', 'dashboard', 'normal');
@@ -615,7 +621,29 @@ function ta_article_sister_article_meta_register(){
 	));
 }
 add_action('init', 'ta_article_sister_article_meta_register');
-
+function page_nota_apertura_meta_register(){
+	register_post_meta('page', 'page_nota_apertura', array(
+		'single' 	=> true,
+		'type' 		=> 'object',
+		'show_in_rest' => array(
+			'schema' => array(
+				'type'  => 'object',
+				'properties' => array(
+					'post' => array(
+						'type' => 'number',
+					),
+					'white_logo' => array(
+						'type' => 'boolean',
+					),
+					'white_title' => array(
+						'type' => 'boolean',
+					)
+				),
+			),
+		),
+	));
+}
+add_action('init', 'page_nota_apertura_meta_register');
 function ta_article_edicion_impresa_meta_register(){
 	register_post_meta('ta_article', 'ta_article_edicion_impresa', array(
 		'single' 	=> true,
@@ -994,6 +1022,23 @@ function clear_article_cache ($post_id, $post){
 		$link . '/amp',
 		$link . '/amp' . '/'
 	);
+	
+	$terms = get_the_terms($post, "ta_article_section");
+    if ($terms && isset($terms[0])){
+        $terms_array = $terms[0]->to_array();
+        if (isset($terms_array['slug'])){
+            $slug = $terms_array['slug'];
+			if (str_contains($link, $slug)){
+				$link = str_replace('/' . $slug . '/', '/ta_article' . '/', $link);
+				array_push($urls_array,
+					$link,
+					$link . '/',
+					$link . '/amp',
+					$link . '/amp' . '/'
+				);
+			}
+        }
+    }
 	purge_cloudflare ($urls_array);
 }
 

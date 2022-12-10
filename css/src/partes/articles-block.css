@@ -42,6 +42,12 @@
   padding-bottom: 66.66%;
   height: initial;
 }
+@media(min-width:992px){
+  .double .article-preview .img-container .img-wrapper,
+  .double .article-preview.destacado .img-container .img-wrapper  {
+    padding-bottom: calc(100% / 3 * 2) !important;
+  }
+}
 
 .article-preview.vertical-article .img-container .img-wrapper {
   min-height: 183px;

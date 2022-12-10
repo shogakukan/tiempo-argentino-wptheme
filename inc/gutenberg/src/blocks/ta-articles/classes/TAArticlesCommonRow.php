@@ -41,7 +41,7 @@ class TAArticlesCommonRow extends TAArticlesBlockRow{
 
         //ta-articles-block d-flex flex-column flex-lg-row overflow-hidden justify-content-lg-between
         ?>
-        <div class="ta-articles-block row">
+        <div class="ta-articles-block row<?php if ($cells_amount == 2) echo ' double' ?>">
             <?php
                 if( $articles ){
                     for ($i=0; $i < $cells_amount; $i++) {

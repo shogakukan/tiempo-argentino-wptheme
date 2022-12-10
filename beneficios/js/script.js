@@ -135,6 +135,11 @@
                 menuSticky.removeClass('menu-sticky-desktop');
             }
         }
+        if (window.pageYOffset > screen.height - $('.container', headerStickyDesktop).height() * 2){
+            headerStickyDesktop.addClass('sticky');
+        } else {
+            headerStickyDesktop.removeClass('sticky');
+        }
     };
 
 

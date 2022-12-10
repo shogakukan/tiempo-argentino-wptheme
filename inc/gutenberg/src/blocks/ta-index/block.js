@@ -3,6 +3,7 @@ import './etiquetador';
 import './authors-selector';
 import './article-alt-img-meta';
 import './article-meta-nota-hermana';
+import './page-meta-nota-apertura';
 import './article-meta-edicion-impresa';
 import './media-popup-photographer';
 import './commentary-author-selector';
