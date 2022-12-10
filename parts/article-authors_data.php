@@ -61,7 +61,7 @@ if (!$article->authors || empty($article->authors))
                     <?php for ($i = 0; $i < $amount; $i++) : ?>
                         <a href="<?php echo esc_attr($authors[$i]->archive_url); ?>"><?php echo esc_html($authors[$i]->name); ?></a>
                         <?php if ($amount == 1 && $authors[$i]->social) : ?>
-                            <br /><i class="fa-brands fa-twitter"></i><a href="<?php echo esc_attr($authors[$i]->social['url']); ?>">@<?php echo esc_html($authors[$i]->social['user']); ?></a>
+                            <br /><img style="height: 20px;" src="/wp-content/themes/tiempo-argentino/markup/assets/images/twitter-grey-icon.svg" /><a style="line-height: 20px;vertical-align: bottom;" href="<?php echo esc_attr($authors[$i]->social['url']); ?>">@<?php echo esc_html($authors[$i]->social['user']); ?></a>
                         <?php endif; ?>
                         <?php
                         if (isset($authors[$i + 1])) {
