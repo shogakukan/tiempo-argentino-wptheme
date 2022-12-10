@@ -97,8 +97,8 @@
   left: 50%;
   margin-left: -50vw;
 }
-.articulo-simple .img-container .credits p,
-.articulo-especial .img-container .credits p {
+.articulo-simple .img-container .credits span,
+.articulo-especial .img-container .credits span {
   font-family: "Libre Baskerville";
   font-style: italic;
   font-weight: 400;
@@ -337,8 +337,8 @@
     font-size: 19px;
     line-height: 25.14px;
   }
-  .articulo-simple .img-container .credits p,
-.articulo-especial .img-container .credits p {
+  .articulo-simple .img-container .credits span,
+.articulo-especial .img-container .credits span {
     font-size: 13px;
     line-height: 16.12px;
   }
