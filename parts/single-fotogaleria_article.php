@@ -27,7 +27,12 @@ if(!$article)
             </div>
             <div class="d-flex justify-content-between align-items-center mt-3">
                 <p class="date mb-0"><?php echo esc_html($article->get_date_day('d/m/Y')); ?></p>
-                <?php get_template_part( 'parts/article', 'social_buttons', array( 'class' => 'text-right mt-3' ) ); ?>
+                <?php get_template_part( 'parts/article', 'social_buttons', array(
+                    'class' => 'text-right mt-3',
+                    'title' => $article->title,
+                    'authors' => $article->authors
+                    ) );
+                ?>
             </div>
             <?php if ($article->video) : ?>
                 <div class="img-container video mt-3">
@@ -71,7 +76,12 @@ if(!$article)
                 </div>
             </div>
 
-            <?php get_template_part( 'parts/article', 'social_buttons', array( 'class' => 'text-right mt-3' ) ); ?>
+            <?php get_template_part( 'parts/article', 'social_buttons', array(
+                'class' => 'text-right mt-3',
+                'title' => $article->title,
+                'authors' => $article->authors
+                ) );
+            ?>
         </div>
     <?php TA_Blocks_Container_Manager::close(); ?>
     <div class="container-md mb-2 p-0">

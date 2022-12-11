@@ -19,9 +19,10 @@ if ($article->micrositio) {
 <?php get_template_part('parts/single', $article_part_slug); ?>
 
 <?php get_footer(); ?>
+<?php /*
 <script>
 (function($){
-     /** share */
+
  $(document).ready(function () {
     $(".share-popover").popover({
       placement: "bottom",
@@ -57,3 +58,4 @@ if ($article->micrositio) {
 })(jQuery);
 
 </script>
+*/ ?>

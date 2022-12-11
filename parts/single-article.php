@@ -47,7 +47,12 @@ $authors = $article->authors;
                                 <?php endif; ?>
                                 <?php if(is_callable($before_social_buttons)){ call_user_func($before_social_buttons); } ?>
                                 <div></div>
-                                <?php get_template_part( 'parts/article', 'social_buttons', array( 'class' => 'text-right mt-3' ) ); ?>
+                                <?php get_template_part( 'parts/article', 'social_buttons', array(
+                                    'class' => 'text-right mt-3',
+                                    'title' => $article->title,
+                                    'authors' => $authors
+                                    ) );
+                                ?>
                             </div>
                         </div>
                         <?php if ($article->video) : ?>
@@ -89,7 +94,12 @@ $authors = $article->authors;
                                 </div>
                             </div>
                         <?php endif; ?>
-                        <?php get_template_part( 'parts/article', 'social_buttons', array( 'class' => 'text-right mt-3' ) ); ?>
+                        <?php get_template_part( 'parts/article', 'social_buttons', array(
+                            'class' => 'text-right mt-3',
+                            'title' => $article->title,
+                            'authors' => $authors
+                            ));
+                            ?>
                     </div>
                 </div>
                 <div class="container-md mb-2 p-0">
