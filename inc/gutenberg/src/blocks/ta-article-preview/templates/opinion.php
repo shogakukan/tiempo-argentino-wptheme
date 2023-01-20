@@ -2,7 +2,7 @@
 
 $author = $article->first_author;
 $thumb_cont_class = $desktop_horizontal ? 'col-5 col-md-6 p-0' : 'col-4 col-md-12 p-0';
-$info_class = $desktop_horizontal ? 'col-7 col-md-6' : 'col-8 col-md-12 text-md-center';
+$info_class = $desktop_horizontal ? 'col-7 col-md-6 d-flex flex-column justify-content-center' : 'col-8 col-md-12 text-md-center';
 $title_class = $desktop_horizontal ? '' : 'w-75 mx-md-auto';
 $preview_class = $desktop_horizontal ? 'd-flex py-3' : 'py-2 d-flex flex-row flex-md-column';
 ?>

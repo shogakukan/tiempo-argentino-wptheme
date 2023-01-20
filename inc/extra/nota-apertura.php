@@ -15,7 +15,7 @@ $article = !$article_id ? null : TA_Article_Factory::get_article(get_post($artic
     ?>
     <div class="big-block-container">
         <div class="big-block-content">
-            <a href="">
+            <a href="<?=  $article->url; ?>">
                 <div class="img-container">
                     <div class="overlay"></div>
                 </div>
@@ -110,7 +110,7 @@ $article = !$article_id ? null : TA_Article_Factory::get_article(get_post($artic
 
             .big-block-caption .title p {
                 font-size: 75px;
-                line-height: 45px;
+                line-height: 75px;
             }
 
         }

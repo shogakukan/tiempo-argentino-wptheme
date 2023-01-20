@@ -39,7 +39,9 @@ class TAArticlesSliderRow extends TAArticlesBlockRow{
                                 if(!isset($articles[$i]))
                                     break;
                                 $article = $articles[$i];
-                                $thumbnail_url = $article->thumbnail_common && $article->thumbnail_common['url'] ? $article->thumbnail_common['url'] : '';
+                                $thumbnail = $article->get_thumbnail_alt_common(null, $imgSize) ? $article->get_thumbnail_alt_common(null, $imgSize) : $article->get_thumbnail_common(null, $imgSize);//$article->thumbnail_alt_common ? $article->thumbnail_alt_common : $article->thumbnail_common;
+                                $thumbnail_url = $thumbnail ? $thumbnail['url'] : '';
+                                //$thumbnail_url = $article->thumbnail_common && $article->thumbnail_common['url'] ? $article->thumbnail_common['url'] : '';
                                 $item_class = $printed_slides == 0 ? 'active' : '';
                             ?>
                             <div class="carousel-item <?php echo esc_attr($item_class); ?>">

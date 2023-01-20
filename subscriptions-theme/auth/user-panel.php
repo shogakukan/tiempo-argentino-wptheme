@@ -118,7 +118,7 @@
                                     <input type="hidden" name="payment_min" id="payment_min_s" value="<?php echo membership()->get_minimun() ?>" />
                                     <input type="hidden" name="membership_id" value="<?php echo membership()->get_membership(wp_get_current_user()->ID)['id'] ?>" />
                                     <input type="hidden" name="user_id" value="<?php echo wp_get_current_user()->ID ?>">
-                                    <input type="hidden" name="subscription_name" value="" id="subscription_name">
+                                    <input type="hidden" name="subscription_name" value="<?php echo membership()->get_membership(wp_get_current_user()->ID)['title'] ?>" id="subscription_name">
                                     <input type="hidden" name="action" value="edit_membership" />
                                     <input type="hidden" id="user_edit_email" name="user_edit_email" class="form-control" value="<?php echo wp_get_current_user()->user_email ?>" />
                                     <div id="msg-edit-mp"></div>

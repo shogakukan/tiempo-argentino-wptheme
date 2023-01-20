@@ -85,6 +85,7 @@ class TA_Edicion_Impresa extends TA_Article_Data{
                             'cells_amount'      => -1,
                             'cells_per_row'     => 3                        ),
                     ),
+                    'most_recent' => false
                 ));
             }
             

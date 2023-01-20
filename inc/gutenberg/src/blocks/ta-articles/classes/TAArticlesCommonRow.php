@@ -66,7 +66,7 @@ class TAArticlesCommonRow extends TAArticlesBlockRow{
                             ta_render_article_preview($article, array(
                                 'size'                      => $size,
                                 'class'                     => $preview_class,
-                                'deactivate_opinion_layout' => $deactivate_opinion_layout,
+                                'deactivate_opinion_layout' => $cells_amount < 3 ? true : $deactivate_opinion_layout,
                             ));
                             ?>
                         </div>

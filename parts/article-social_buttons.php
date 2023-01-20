@@ -10,17 +10,17 @@ if ($authors){
     $tw_text .= " - Por ";
     $amount = count($authors);
     for ($i = 0; $i < $amount; $i++){
-        $text .= $authors[$i]->name;
-        $text .= $authors[$i]->social ? " (@". $authors[$i]->social['user'] . ")" : "";
+        $tw_text .= $authors[$i]->name;
+        $tw_text .= $authors[$i]->social ? " (@". $authors[$i]->social['user'] . ")" : "";
         if (isset($authors[$i + 1])) {
             if ($i + 2 == $amount) {
                 if (strtoupper($authors[$i + 1]->name[0]) == 'I') {
-                    $text .= " e ";
+                    $tw_text .= " e ";
                 } else {
-                    $text .= " y ";
+                    $tw_text .= " y ";
                 }
             } else {
-                $text .= ", ";
+                $tw_text .= ", ";
             }
         }
     }
