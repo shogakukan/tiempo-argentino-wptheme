@@ -1133,7 +1133,8 @@
   
     .asociate-block-container,
   .apoyanos-block-container {
-      min-height: 600px;
+      /* min-height: 600px; */
+      padding-bottom: 15px;
     }
     .asociate-block-container .title h4,
   .apoyanos-block-container .title h4 {

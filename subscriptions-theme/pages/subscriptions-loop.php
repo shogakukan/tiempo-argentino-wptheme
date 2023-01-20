@@ -5,7 +5,28 @@
         <div class="separator m-0"></div>
     </div>
     <div class="asociate-block-container">
-        <?php if (subscriptions_proccess()->verify_subscription(wp_get_current_user()->ID)) : ?>
+        <?php 
+        $userdata = get_userdata(get_current_user_id());
+        $rol = $userdata->roles[0];
+        $isActive = get_user_meta(get_current_user_id(),'_user_status',true) == 'active';
+        if (!$isActive){
+            $args = [
+                'post_type' => 'memberships',
+                'fields' => 'ids',
+                'numberposts' => -1,
+                'meta_query' => [
+                    'relation' => 'AND',
+                    [
+                        'key' => '_member_order_status',
+                        'value' => array('completed', 'hold'),
+                        'compare' => 'IN'
+                    ]
+                ]
+            ];
+            if (get_posts($args)) $isActive = true;
+        }
+        ?>
+        <?php if (is_user_logged_in() && $isActive && $rol == get_option('subscription_digital_role')): //if (subscriptions_proccess()->verify_subscription(wp_get_current_user()->ID)) : ?>
             <div class="delivery-zones-popup">
                 <div class="popup">
                     <div class="container text-center">
@@ -26,6 +47,7 @@
                     </div>
                 </div>
             </div>
+    </div>
         <?php else : ?>
 
             <!-- loop container -->
