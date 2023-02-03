@@ -711,9 +711,31 @@ function filter_by_the_author() {
 	wp_dropdown_users( $params ); // print the ready author list
 }
 
-add_action('restrict_manage_posts', 'filter_by_the_author');
+//add_action('restrict_manage_posts', 'filter_by_the_author');
 
+/**
+ * filtro por sección
+ */
+function filter_by_the_section() {
 
+	if ('ta_article' != $_REQUEST['post_type']) {
+		return;
+	}
+
+	$params = array(
+		'name' => 'ta_article_section',
+		'show_option_all' => 'Sección',
+		'value_field' => 'slug',
+		'taxonomy' => 'ta_article_section'
+	);
+
+	if ( isset($_GET['ta_article_section']) )
+		$params['selected'] = $_GET['ta_article_section'];
+
+	wp_dropdown_categories( $params );
+}
+
+add_action('restrict_manage_posts', 'filter_by_the_section');
 /**
  * columnas
  */
