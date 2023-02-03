@@ -36,6 +36,7 @@ const TAEdicionImpresaPanel = () => {
         posts: metaValue ? [metaValue] : [],
         postsQueryArgs: {
             post_type: 'ta_ed_impresa',
+            post_status: ['publish', 'future']
         },
         // onChange: (data) => {
         //     console.log('ON CHANGE', data);

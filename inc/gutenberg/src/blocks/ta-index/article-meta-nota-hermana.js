@@ -22,7 +22,6 @@ const TANotaHermanaPanel = () => {
         postType,
         'meta'
     );
-    console.log("NACHITO", wp.data.select( 'core/editor' ))
 
     const metaValue = meta && meta['ta_article_sister_article'] ? meta['ta_article_sister_article'] : null;
     function updateMetaValue( posts ) {
