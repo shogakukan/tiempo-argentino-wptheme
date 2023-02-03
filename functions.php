@@ -722,6 +722,7 @@ function article_columns($columns){
 	$columns['ta_article_section'] = __('Sección');
 	$columns['ta_article_author'] = __('Autor/a(s)');
 	$columns['author'] = __('Editor/a');
+	$columns['ta_article_edicion_impresa'] = __('Ed. impresa');
 	return $columns;
 }
 add_filter('manage_edit-ta_article_sortable_columns', 'article_order_columns');
@@ -747,6 +748,15 @@ function article_columns_data( $column, $post_id ) {
                 echo $terms;
             }
             break;
+		case 'ta_article_edicion_impresa':
+			$issue_id = get_post_meta($post_id, 'ta_article_edicion_impresa', true);
+			if ($issue_id){
+				$issue_title = get_the_title($issue_id);
+				if ( is_string( $issue_title ) ) {
+					echo $issue_title;
+				}
+			}
+			break;
     }
 }
 add_action( 'manage_posts_custom_column' , 'article_columns_data', 10, 2 );
