@@ -47,5 +47,6 @@ $articles_block->render(array(
         // 'header_link'			=> '',
         // 'use_term_format'		=> false,
     ),
+    'most_recent' => false
 ));
 ?>

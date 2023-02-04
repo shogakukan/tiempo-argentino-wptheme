@@ -14,6 +14,7 @@ if(!$articles_block)
 $articles = array_map(function($post){ return TA_Article_Factory::get_article($post); }, $posts);
 $articles_block->render(array(
     'articles'          => $articles,
+    'most_recent'       => false,
     'rows'              => array(
         array(
             'format'                    => 'common',
