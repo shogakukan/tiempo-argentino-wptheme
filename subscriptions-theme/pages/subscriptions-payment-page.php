@@ -20,9 +20,13 @@ do_action('subscriptions_payment_page_header');
             $args = [
                 'post_type' => 'memberships',
                 'fields' => 'ids',
-                'numberposts' => -1,
+                'numberposts' => 1,
                 'meta_query' => [
                     'relation' => 'AND',
+                    [
+                        'key' => '_member_user_id',
+                        'value' => get_current_user_id()
+                    ],
                     [
                         'key' => '_member_order_status',
                         'value' => array('completed', 'hold'),
