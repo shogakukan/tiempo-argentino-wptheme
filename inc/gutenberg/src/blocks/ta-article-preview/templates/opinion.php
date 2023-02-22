@@ -19,7 +19,7 @@ $preview_class = $desktop_horizontal ? 'd-flex py-3' : 'py-2 d-flex flex-row fle
         <div class="<?php echo esc_attr($thumb_cont_class); ?>">
             <a href="<?php echo esc_attr($url); ?>">
                 <div class="img-container position-relative">
-                    <div class="img-wrapper" style='background-image: url("<?php echo $author->photo; ?>")' alt="<?php echo esc_attr($author->name); ?>"></div>
+                    <div class="img-wrapper lazy" style='background-image: url("<?php echo $author->photo; ?>")' alt="<?php echo esc_attr($author->name); ?>"></div>
                 </div>
             </a>
         </div>
