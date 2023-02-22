@@ -43,9 +43,9 @@ extract($template_args);
             </div>
             <div class="input-body">
                 <?php if ($author || $user_manages_comments) : ?>
-                    <p><?php echo $content; ?></p>
+                    <p class="overflow-auto"><?php echo $content; ?></p>
                 <?php else : ?>
-                    <p><?php echo esc_html($content); ?></p>
+                    <p class="overflow-auto"><?php echo esc_html($content); ?></p>
                 <?php endif; ?>
             </div>
         </div>
