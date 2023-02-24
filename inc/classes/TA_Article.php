@@ -265,16 +265,7 @@ class TA_Article extends TA_Article_Data{
 
     public function get_video(){
         $video_code = get_post_meta($this->post->ID, 'ta_article_video', true);
-        $ytBreaker = 'youtu.be/';
-        $pos = strpos($video_code, $ytBreaker);
-        if ($pos){
-            $video_code = substr($video_code, strpos($video_code,$ytBreaker)+strlen($ytBreaker), 11);
-        } else {
-            $ytBreaker = 'watch?v=';
-            $pos = strpos($video_code, $ytBreaker);
-            $video_code = $pos ? substr($video_code, strpos($video_code,$ytBreaker)+strlen($ytBreaker), 11) : false;
-        }
-        return $video_code;
+        return get_youtube_code($video_code);
     }
 
     public function get_gallery(){

@@ -1251,3 +1251,22 @@ function getTodayAuthors(){
     }
     return $authors;
 }
+
+function get_youtube_code($video_code){
+    $ytBreakers = array(
+        'youtu.be/',
+        'watch?v=',
+        'live/'
+        );
+    $pos = '';
+    $i = 0;
+    while (!$pos && $i < count($ytBreakers)){
+        $ytBreaker = $ytBreakers[$i];
+        $pos = strpos($video_code, $ytBreaker);
+        $i++;
+    }
+    if ($pos && isset($ytBreaker)){
+        $video_code = substr($video_code, strpos($video_code,$ytBreaker)+strlen($ytBreaker), 11);
+    }
+    return $video_code;
+}
