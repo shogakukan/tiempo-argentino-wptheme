@@ -21,10 +21,12 @@ class Widgets_Theme_TA
         add_action('widgets_init', [$this, 'article_desktop_widgets']);
         add_action('widgets_init', [$this, 'article_desktop_paragraph_2_3']);
         add_action('widgets_init', [$this, 'article_desktop_paragraph_3_4']);
+        add_action('widgets_init', [$this, 'article_desktop_fixed']);
 
         //ARTICLE MOBILE
         add_action('widgets_init', [$this, 'article_mobile_widgets']);
         add_action('widgets_init', [$this, 'article_mobile_paragraph_2_3']);
+        add_action('widgets_init', [$this, 'article_mobile_fixed']);
 
         //OTHERS
         add_action('widgets_init', [$this, 'section_widgets']);
@@ -109,6 +111,37 @@ class Widgets_Theme_TA
         register_sidebar(array(
             'name'          => __('Home Desktop - Fija Abajo', 'gen-base-theme'),
             'id'            => 'home_desktop_fixed',
+            'before_widget' => '<div id="sticky-abajo" class="d-none d-sm-none d-md-block d-lg-block position-fixed text-center">
+            <div class="sticky-bajo">
+                <span class="cerrar-pop-abajo">
+                    <img src="' . get_stylesheet_directory_uri() . '/assets/img/times-circle-regular.svg" />
+                </span>',
+            'after_widget'  => '</div>
+            </div>',
+        ));
+    }
+
+    public function article_mobile_fixed()
+    {
+
+        register_sidebar(array(
+            'name'          => __('Nota Mobile - Fija Abajo', 'gen-base-theme'),
+            'id'            => 'article_mobile_fixed',
+            'before_widget' => '<div id="sticky-abajo" class="d-block d-sm-none d-md-none d-lg-none position-fixed text-center">
+            <div class="sticky-bajo mobile-fixed">
+                <span class="cerrar-pop-abajo mobile-pop-close">
+                    <img src="' . get_stylesheet_directory_uri() . '/assets/img/times-circle-regular.svg" />
+                </span>',
+            'after_widget'  => ' </div>
+            </div>',
+        ));
+    }
+
+    public function article_desktop_fixed()
+    {
+        register_sidebar(array(
+            'name'          => __('Nota Desktop - Fija Abajo', 'gen-base-theme'),
+            'id'            => 'article_desktop_fixed',
             'before_widget' => '<div id="sticky-abajo" class="d-none d-sm-none d-md-block d-lg-block position-fixed text-center">
             <div class="sticky-bajo">
                 <span class="cerrar-pop-abajo">

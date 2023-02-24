@@ -27,20 +27,17 @@
 
     </div>
 </div>
-<?php if (is_active_sidebar('home_mobile_fixed')) { ?>
-    <?php dynamic_sidebar('home_mobile_fixed'); ?>
-<?php } ?>
+
 <?php if (is_front_page()) : ?>
 
-<?php if (is_active_sidebar('home_desktop_fixed')) { ?>
-    <?php dynamic_sidebar('home_desktop_fixed'); ?>        
-<?php } ?>
+    <?php if (is_active_sidebar('home_mobile_fixed')) dynamic_sidebar('home_mobile_fixed'); ?>
+    <?php if (is_active_sidebar('home_desktop_fixed')) dynamic_sidebar('home_desktop_fixed'); ?>
+    <?php if (is_active_sidebar('home_desktop_vslider')) dynamic_sidebar('home_desktop_vslider'); ?>
 
+<?php elseif (get_post_type() === 'ta_article') : ?>
 
-<?php if (is_active_sidebar('home_desktop_vslider')) { ?>
-    <?php dynamic_sidebar('home_desktop_vslider'); ?>
-<?php } ?>
-
+    <?php if (is_active_sidebar('article_mobile_fixed')) dynamic_sidebar('article_mobile_fixed'); ?>
+    <?php if (is_active_sidebar('article_desktop_fixed')) dynamic_sidebar('article_desktop_fixed'); ?>        
 
 <?php endif?>
 <?php wp_footer(); ?>
