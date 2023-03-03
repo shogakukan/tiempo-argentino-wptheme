@@ -123,3 +123,6 @@ body.taxonomy-ta_article_micrositio #col-right {
 #custom_content_editor, #ampforwp_title_meta{
     display: none !important;
 }
+#wp-admin-bar-new-content:not(.show){
+    display: none !important;
+}

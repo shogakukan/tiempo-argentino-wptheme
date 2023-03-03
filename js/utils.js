@@ -145,6 +145,7 @@ window.addEventListener("resize", function () {
       "href",
       link + "?post_type=ta_article"
     );
+    $('#wp-admin-bar-new-content').addClass('show');
   });
   /*
   $(document).ready(function () {

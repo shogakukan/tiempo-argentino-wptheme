@@ -1337,4 +1337,7 @@ a.ab-item {
   opacity: 1;
   height: auto;
 }
+#wp-admin-bar-new-content:not(.show){
+  display: none !important;
+}
 /*# sourceMappingURL=main.css.map */
