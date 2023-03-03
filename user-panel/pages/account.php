@@ -62,7 +62,7 @@
                             <div>
                                 <p>Datos para recibir la Edición Impresa</p>
                             </div>
-                            <div class="dropdown-icon mr-2">
+                            <div class="dropdown-icon mx-2">
                                 <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/arrow.svg" alt="" />
                             </div>
                         </div>

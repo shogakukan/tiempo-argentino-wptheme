@@ -1167,7 +1167,7 @@ if ( function_exists( 'lazyblocks' ) ) :
                                                             <button class="w-100" type="button" data-toggle="collapse" data-target="#benefitsSumate"
                                                                     aria-expanded="false" aria-controls="benefitsSumate">
                                                                     <div class="d-flex justify-content-center">
-                                                                            <div class="dropdown-icon mr-2">
+                                                                            <div class="dropdown-icon mx-2">
                                                                                     <img src="<?php echo get_stylesheet_directory_uri()?>/assets/img/arrow.svg" alt="" />
                                                                             </div>
                                                                             <div>
@@ -1222,7 +1222,7 @@ if ( function_exists( 'lazyblocks' ) ) :
                                                             <button class="w-100" type="button" data-toggle="collapse" data-target="#benefitsDonation"
                                                                     aria-expanded="false" aria-controls="benefitsDonation">
                                                                     <div class="d-flex justify-content-center">
-                                                                            <div class="dropdown-icon mr-2">
+                                                                            <div class="dropdown-icon mx-2">
                                                                                     <img src="<?php echo get_stylesheet_directory_uri()?>/assets/img/arrow.svg" alt="" />
                                                                             </div>
                                                                             <div>

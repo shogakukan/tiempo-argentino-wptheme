@@ -14,7 +14,7 @@ define('TA_ASSETS_URL', TA_THEME_URL . "/assets");
 define('TA_IMAGES_URL', TA_ASSETS_URL . "/img");
 define('TA_ASSETS_CSS_URL', TA_THEME_URL . "/css");
 define('TA_ASSETS_JS_URL', TA_THEME_URL . "/js");
-define('TA_THEME_VERSION','1.3.18');
+define('TA_THEME_VERSION','1.3.19');
 
 require_once TA_THEME_PATH . '/inc/gen-base-theme/gen-base-theme.php';
 require_once TA_THEME_PATH . '/inc/rewrite-rules.php';
@@ -265,11 +265,11 @@ class TA_Theme
 		wp_enqueue_style('fontawesome', TA_ASSETS_CSS_URL . '/libs/fontawesome/css/all.min.css');
 		wp_enqueue_style('ta_style', TA_ASSETS_CSS_URL . '/src/style.css');
 		wp_enqueue_style('ta_style_utils', TA_ASSETS_CSS_URL . '/utils.css');
-		wp_enqueue_style('onboarding', TA_ASSETS_CSS_URL . '/onboarding.css');
-		wp_enqueue_script('popper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js', ['jquery'], TA_THEME_VERSION);
+		//wp_enqueue_style('onboarding', TA_ASSETS_CSS_URL . '/onboarding.css');
+		//wp_enqueue_script('popper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js', ['jquery'], TA_THEME_VERSION);
 		wp_enqueue_script('bootstrap', TA_ASSETS_JS_URL . '/libs/bootstrap/bootstrap.min.js', ['jquery'], TA_THEME_VERSION);
-		wp_enqueue_script('ta-podcast', TA_ASSETS_JS_URL . '/src/ta-podcast.js', ['jquery'], TA_THEME_VERSION);
-		wp_enqueue_script('tw-js', 'https://platform.twitter.com/widgets.js');
+		//wp_enqueue_script('ta-podcast', TA_ASSETS_JS_URL . '/src/ta-podcast.js', ['jquery'], TA_THEME_VERSION);
+		//wp_enqueue_script('tw-js', 'https://platform.twitter.com/widgets.js');
 		wp_enqueue_script('ta_utils_js', TA_ASSETS_JS_URL . '/utils.js', ['jquery'], TA_THEME_VERSION);
 		wp_enqueue_script('ta_comments', TA_ASSETS_JS_URL . '/src/comments.js', ['jquery'], TA_THEME_VERSION);
 		wp_enqueue_script("ta-balancer-front-block-js", ['react', 'reactdom']);

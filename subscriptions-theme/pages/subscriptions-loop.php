@@ -202,7 +202,7 @@
                                                                 <div class="opt-details mt-3">
                                                                     <button type="button" class="toggle" data-toggle="collapse" data-target="#benefitsDigital-<?php echo get_the_ID() ?>" aria-expanded="false" aria-controls="benefitsDigital">
                                                                         <div class="d-flex">
-                                                                            <div class="dropdown-icon mr-2">
+                                                                            <div class="dropdown-icon mx-2">
                                                                                 <img src="<?php echo get_template_directory_uri() ?>/assets/img/arrow.svg" alt="" />
                                                                             </div>
                                                                             <div>

@@ -287,6 +287,24 @@
     padding: 0 15px;
     width: 100%;
   }
+  .asociate-block-container .form-container .input-container.empty input,
+  .asociate-block-container .form-container .input-container.empty select,
+  .apoyanos-block-container .form-container .input-container.empty input,
+  .apoyanos-block-container .form-container .input-container.empty select{
+    border-color: var(--ta-espectaculos);
+  }
+  .asociate-block-container .form-container .input-container.empty:after,
+  .asociate-block-container .form-container .input-container.empty:after,
+  .apoyanos-block-container .form-container .input-container.empty:after,
+  .apoyanos-block-container .form-container .input-container.empty:after {
+    content: "Campo obligatorio";
+    font-size: 11px;
+    position: absolute;
+    display: block;
+    color: var(--ta-espectaculos);
+    right: 16px;
+    bottom: 0px;
+  }
   .asociate-block-container .form-container .input-container input::placeholder,
   .asociate-block-container .form-container .input-container select::placeholder,
   .apoyanos-block-container .form-container .input-container input::placeholder,
@@ -1595,7 +1613,7 @@ a.block-button {
   font-style: normal;
   font-weight: 900;
   background-color: var(--ta-socios);
-  border: none;
+  border: none;ty
   color: var(--ta-negro-texto);
   font-size: 16px;
   max-width: 169px;
