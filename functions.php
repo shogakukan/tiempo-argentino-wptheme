@@ -1106,3 +1106,13 @@ function purge_cloudflare ($urls_array) {
 		curl_close($curl);
 	}
 }
+function block_admin_access() {
+	if(is_admin() && !defined('DOING_AJAX')) {
+		$user = wp_get_current_user();
+		$roles = $user->roles;
+		if(in_array('digital',$roles) || in_array('subscriber',$roles)) {
+			wp_redirect( home_url() ); exit;
+		}
+	}
+}
+add_action( 'admin_init', 'block_admin_access' );
