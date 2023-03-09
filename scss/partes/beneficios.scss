@@ -1,0 +1,106 @@
+@import "../variables";
+@import "../mixins";
+
+.banner-beneficios {
+  background-color: var(--ta-celeste);
+
+  .title {
+    h2 {
+      @include caladea-700;
+      color: white;
+      font-size: 23px;
+      line-height: 112.3%;
+      margin: 0;
+      letter-spacing: -0.5px;
+    }
+  }
+
+  .subtitle {
+    p {
+      @include baskerville-italic;
+      color: white;
+      font-size: 23px;
+      line-height: 25px;
+      letter-spacing: -0.2px;
+    }
+  }
+
+  .beneficios-icon {
+    max-width: 43px;
+    height: auto;
+  }
+
+  .beneficios-steps {
+    .step {
+      .step-icon {
+        div {
+          @include red-hat-900;
+          font-size: 17px;
+          line-height: 22px;
+          letter-spacing: 0.3px;
+          color: white;
+        }
+      }
+
+      .content {
+        p {
+          @include red-hat-500;
+          font-size: 17px;
+          line-height: 22px;
+          letter-spacing: -0.2px;
+
+          span {
+            @include red-hat-900;
+            letter-spacing: 0.3px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.beneficio {
+  .btns-container {
+    button {
+      background-color: transparent;
+      border: 2px solid var(--ta-celeste);
+      color: var(--ta-celeste);
+      @include red-hat-900;
+      font-size: 19px;
+      line-height: 25px;
+      text-align: center;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .banner-beneficios {
+    .title {
+      h2 {
+        font-size: 30px;
+        line-height: 112.3%;
+        letter-spacing: -0.5px;
+      }
+    }
+
+    .subtitle {
+      margin-left: 55px;
+      p {
+        font-size: 26px;
+        line-height: 32px;
+      }
+    }
+
+    .beneficios-steps {
+      .step {
+        .content {
+          p {
+            font-size: 20px;
+            line-height: 28px;
+            letter-spacing: -0.2px;
+          }
+        }
+      }
+    }
+  }
+}
