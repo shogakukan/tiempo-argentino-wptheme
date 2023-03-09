@@ -8,7 +8,8 @@
             </div>
             <div class="info-forms">
                 <div class="personal-info">
-                    <?php $address = get_user_meta(get_current_user_id(), '_user_address', false); ?>
+                    <?php //$address = get_user_meta(get_current_user_id(), '_user_address', false); ?>
+                    <?php $address = Subscriptions_Address_Helper::get_address_by_user_id(get_current_user_id()); ?>
                     <form method="post" id="edit-info-form">
                         <div class="form-container d-flex flex-wrap justify-content-md-between mx-auto mt-4">
                             <div class="input-container col-12 col-md-5 mx-1 d-flex align-items-center" id="">

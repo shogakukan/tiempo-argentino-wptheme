@@ -37,7 +37,8 @@ do_action('header_thankyou_page');
                     <div class="py-2">
                         <div class="subs-opt mw-md-60 mx-auto mt-3 mt-md-5">
                             <?php if (Subscriptions_Sessions::get_session('subscriptions_add_session')['suscription_address'] === '1') : ?>
-                                <?php $address = get_user_meta(get_current_user_id(), '_user_address', false); ?>
+                                <?php //$address = get_user_meta(get_current_user_id(), '_user_address', false); ?>
+                                <?php $address = Subscriptions_Address_Helper::get_address_by_user_id(get_current_user_id()); ?>
                                 <div class="asociate-wrapper address">
                                     <div class="address-block">
                                         <div class="title text-center mt-4">
