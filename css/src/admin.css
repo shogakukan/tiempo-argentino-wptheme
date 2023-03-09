@@ -1,5 +1,6 @@
 .ta-articles-images-controls {
     margin-bottom: 2rem;
+    display: table-cell;
 }
 
 .ta-articles-images-controls:not(.empty) .when-empty, .ta-articles-images-controls:not(.loading) .when-loading {
@@ -120,5 +121,8 @@ body.taxonomy-ta_article_micrositio #col-right {
     width: 100%;
 }
 #custom_content_editor, #ampforwp_title_meta{
+    display: none !important;
+}
+#wp-admin-bar-new-content:not(.show){
     display: none !important;
 }

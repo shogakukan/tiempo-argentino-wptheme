@@ -10,11 +10,11 @@ $articles = get_ta_articles_from_query($wp_query);
 
 <?php get_header();?>
 
-    <?php //if( $author->bio || $author->quote ): ?>
+    <?php if( $author->bio || $author->quote|| $author->position || $author->subject ): ?>
     <div class="mt-3">
         <div class="container">
             <div class="section-title">
-                <h4>Más del autor</h4>
+                <h4><?= __( 'Más sobre el autor', 'ta-theme' ) ?></h4>
             </div>
         </div>
         <div class="container">
@@ -35,7 +35,9 @@ $articles = get_ta_articles_from_query($wp_query);
                         <?php endif; ?>
                         <div class="author-name mt-3 d-none d-md-block">
                             <p class="m-0"><?php echo esc_html($author->name); ?></p>
+                            <?php if ($author->is_from_ta) : ?>
                             <p><span>Tiempo Argentino</span></p>
+                            <?php endif ?>
                         </div>
                         <?php if( $author->networks ): ?>
                         <div class="social-btns d-flex flex-column flex-md-row justify-content-around justify-content-md-start my-3 ml-3">
@@ -93,7 +95,7 @@ $articles = get_ta_articles_from_query($wp_query);
             </div>
         </div>
     </div>
-    <?php //endif; ?>
+    <?php endif; ?>
     <div class="py-3">
         <div class="container">
             <div class="section-title">

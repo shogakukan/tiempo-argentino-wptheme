@@ -14,21 +14,21 @@
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
     <?php include_once(TA_THEME_PATH . '/markup/partes/micrositio/header-micrositio.php');  ?>
-    <?php if (is_active_sidebar('micrositio_head_1')) { ?>
-        <div class="container d-block d-sm-none d-md-none d-lg-none mt-md-3 mb-md-3 text-center mt-3">
+    <?php if (is_active_sidebar('micrositio_desktop_posheader')) { ?>
+        <div class="container d-none d-sm-block d-md-block d-lg-block mt-md-3 mb-md-3 text-center mt-3">
             <div class="row d-flex">
                 <div class="col-12 mx-auto text-center">
-                    <?php dynamic_sidebar('micrositio_head_1'); ?>
+                    <?php dynamic_sidebar('micrositio_desktop_posheader'); ?>
                 </div>
             </div>
         </div>
     <?php } ?>
 
-    <?php if (is_active_sidebar('micrositio_mob_1')) { ?>
+    <?php if (is_active_sidebar('micrositio_mobile_posheader')) { ?>
         <div class="container d-block d-sm-none d-md-none d-lg-none mt-md-3 mb-md-3 text-center mt-3">
             <div class="row d-flex">
                 <div class="col-12 mx-auto text-center">
-                    <?php dynamic_sidebar('micrositio_mob_1'); ?>
+                    <?php dynamic_sidebar('micrositio_mobile_posheader'); ?>
                 </div>
             </div>
         </div>

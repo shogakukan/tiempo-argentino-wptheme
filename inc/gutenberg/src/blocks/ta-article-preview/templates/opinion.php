@@ -2,7 +2,7 @@
 
 $author = $article->first_author;
 $thumb_cont_class = $desktop_horizontal ? 'col-5 col-md-6 p-0' : 'col-4 col-md-12 p-0';
-$info_class = $desktop_horizontal ? 'col-7 col-md-6' : 'col-8 col-md-12 text-md-center';
+$info_class = $desktop_horizontal ? 'col-7 col-md-6 d-flex flex-column justify-content-center' : 'col-8 col-md-12 text-md-center';
 $title_class = $desktop_horizontal ? '' : 'w-75 mx-md-auto';
 $preview_class = $desktop_horizontal ? 'd-flex py-3' : 'py-2 d-flex flex-row flex-md-column';
 ?>
@@ -19,7 +19,7 @@ $preview_class = $desktop_horizontal ? 'd-flex py-3' : 'py-2 d-flex flex-row fle
         <div class="<?php echo esc_attr($thumb_cont_class); ?>">
             <a href="<?php echo esc_attr($url); ?>">
                 <div class="img-container position-relative">
-                    <div class="img-wrapper" style='background-image: url("<?php echo $author->photo; ?>")' alt="<?php echo esc_attr($author->name); ?>"></div>
+                    <div class="img-wrapper lazy" style='background-image: url("<?php echo $author->photo; ?>")' alt="<?php echo esc_attr($author->name); ?>"></div>
                 </div>
             </a>
         </div>

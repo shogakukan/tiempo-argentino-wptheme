@@ -14,7 +14,7 @@ define('TA_ASSETS_URL', TA_THEME_URL . "/assets");
 define('TA_IMAGES_URL', TA_ASSETS_URL . "/img");
 define('TA_ASSETS_CSS_URL', TA_THEME_URL . "/css");
 define('TA_ASSETS_JS_URL', TA_THEME_URL . "/js");
-define('TA_THEME_VERSION','1.3.5');
+define('TA_THEME_VERSION','1.3.19');
 
 require_once TA_THEME_PATH . '/inc/gen-base-theme/gen-base-theme.php';
 require_once TA_THEME_PATH . '/inc/rewrite-rules.php';
@@ -66,6 +66,7 @@ class TA_Theme
 		require_once TA_THEME_PATH . '/inc/classes/TA_Section.php';
 		require_once TA_THEME_PATH . '/inc/classes/TA_Photographer.php';
 		require_once TA_THEME_PATH . '/inc/classes/TA_Balancer_DB.php';
+		require_once TA_THEME_PATH . '/inc/classes/TA_Taller.php';
 
 		//$most_viewed_query = ta_get_latest_most_viewed_query(array( 'posts_per_page'	=> -1 ));
 		//self::$latest_most_viewed = $most_viewed_query->posts;
@@ -76,7 +77,7 @@ class TA_Theme
 		RB_Filters_Manager::add_action('ta_theme_admin_scripts', 'admin_enqueue_scripts', array(self::class, 'admin_scripts'));
 
 		add_filter('gen_check_post_type_name_dash_error', function ($check, $post_type) {
-			if ($post_type == 'tribe-ea-record')
+			if ($post_type == 'tribe-ea-record' || $post_type == 'ep-pointer' || $post_type == 'ep-synonym')
 				return false;
 			return $check;
 		}, 10, 2);
@@ -100,11 +101,12 @@ class TA_Theme
 		self::sync_articles_topics_and_places();
 
 		add_action('quienes_somos_banner', [self::class, 'extra_home_content']);
+		add_action('nota_apertura', [self::class, 'nota_apertura_content']);
 		add_action('wp_insert_comment', function ($id, $comment) {
 			add_comment_meta($comment->comment_ID, 'is_visitor', $comment->user_id == 0, true);
 		}, 2, 10);
 
-		add_action('wp_head',[self::class,'head_script']);
+		//add_action('wp_head',[self::class,'head_script']);
 
 		self::redirect_searchs();
 		self::filter_contents();
@@ -233,6 +235,8 @@ class TA_Theme
 	{
 		add_theme_support('post-thumbnails');
 
+		add_image_size('destacado', 767, 1050);
+
 		//svg support
 		function cc_mime_types($mimes)
 		{
@@ -261,11 +265,11 @@ class TA_Theme
 		wp_enqueue_style('fontawesome', TA_ASSETS_CSS_URL . '/libs/fontawesome/css/all.min.css');
 		wp_enqueue_style('ta_style', TA_ASSETS_CSS_URL . '/src/style.css');
 		wp_enqueue_style('ta_style_utils', TA_ASSETS_CSS_URL . '/utils.css');
-		wp_enqueue_style('onboarding', TA_ASSETS_CSS_URL . '/onboarding.css');
-		wp_enqueue_script('popper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js', ['jquery'], TA_THEME_VERSION);
+		//wp_enqueue_style('onboarding', TA_ASSETS_CSS_URL . '/onboarding.css');
+		//wp_enqueue_script('popper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js', ['jquery'], TA_THEME_VERSION);
 		wp_enqueue_script('bootstrap', TA_ASSETS_JS_URL . '/libs/bootstrap/bootstrap.min.js', ['jquery'], TA_THEME_VERSION);
-		wp_enqueue_script('ta-podcast', TA_ASSETS_JS_URL . '/src/ta-podcast.js', ['jquery'], TA_THEME_VERSION);
-		wp_enqueue_script('tw-js', 'https://platform.twitter.com/widgets.js');
+		//wp_enqueue_script('ta-podcast', TA_ASSETS_JS_URL . '/src/ta-podcast.js', ['jquery'], TA_THEME_VERSION);
+		//wp_enqueue_script('tw-js', 'https://platform.twitter.com/widgets.js');
 		wp_enqueue_script('ta_utils_js', TA_ASSETS_JS_URL . '/utils.js', ['jquery'], TA_THEME_VERSION);
 		wp_enqueue_script('ta_comments', TA_ASSETS_JS_URL . '/src/comments.js', ['jquery'], TA_THEME_VERSION);
 		wp_enqueue_script("ta-balancer-front-block-js", ['react', 'reactdom']);
@@ -462,6 +466,11 @@ class TA_Theme
 		require_once TA_THEME_PATH . '/inc/extra/banner-home-qs.php';
 	}
 
+	public static function nota_apertura_content()
+	{
+		require_once TA_THEME_PATH . '/inc/extra/nota-apertura.php';
+	}
+
 	static public function clean_dashboard()
 	{
 		remove_meta_box('dashboard_incoming_links', 'dashboard', 'normal');
@@ -490,7 +499,7 @@ function ta_article_image_control($post, $meta_key, $attachment_id, $args = arra
 		'description'	=> '',
 	);
 	extract(array_merge($default_args, $args));
-	$image_url = wp_get_attachment_url($attachment_id);
+	$image_url = wp_get_attachment_image_src($attachment_id)[0];
 	$empty = !$image_url;
 ?>
 	<div id="test" class="ta-articles-images-controls" data-id="<?php echo esc_attr($post->ID); ?>" data-type="<?php echo esc_attr($post->post_type); ?>" data-metakey="<?php echo esc_attr($meta_key); ?>" data-metavalue="<?php echo esc_attr($attachment_id); ?>">
@@ -536,7 +545,7 @@ if(current_user_can('edit_articles')){
 		));
 		ta_article_image_control($post, 'ta_article_thumbnail_alt', $featured_alt_attachment_id, array(
 			'title'			=> 'Imagen Portada',
-			'description'	=> 'Sobrescribe la imagen principal en la portada',
+			//'description'	=> 'Sobrescribe la imagen principal en la portada',
 		));
 	}, array(
 		'position'      => 4,
@@ -571,6 +580,22 @@ function ta_article_authors_rols_meta_register(){
 }
 add_action('init', 'ta_article_authors_rols_meta_register');
 
+function ta_article_authors_subrols_meta_register(){
+	register_post_meta('ta_article', 'ta_article_authors_subrols', array(
+		'single' => true,
+		'type' => 'object',
+		'show_in_rest' => array(
+			'schema' => array(
+				'type'  => 'object',
+				'additionalProperties' => array(
+					'type' => 'string',
+				),
+			),
+		),
+	));
+}
+add_action('init', 'ta_article_authors_subrols_meta_register');
+
 function ta_article_thumbnail_alt_meta_register(){
 	register_post_meta('ta_article', 'ta_article_thumbnail_alt', array(
 		'single' 	=> true,
@@ -596,7 +621,29 @@ function ta_article_sister_article_meta_register(){
 	));
 }
 add_action('init', 'ta_article_sister_article_meta_register');
-
+function page_nota_apertura_meta_register(){
+	register_post_meta('page', 'page_nota_apertura', array(
+		'single' 	=> true,
+		'type' 		=> 'object',
+		'show_in_rest' => array(
+			'schema' => array(
+				'type'  => 'object',
+				'properties' => array(
+					'post' => array(
+						'type' => 'number',
+					),
+					'white_logo' => array(
+						'type' => 'boolean',
+					),
+					'white_title' => array(
+						'type' => 'boolean',
+					)
+				),
+			),
+		),
+	));
+}
+add_action('init', 'page_nota_apertura_meta_register');
 function ta_article_edicion_impresa_meta_register(){
 	register_post_meta('ta_article', 'ta_article_edicion_impresa', array(
 		'single' 	=> true,
@@ -664,22 +711,77 @@ function filter_by_the_author() {
 	wp_dropdown_users( $params ); // print the ready author list
 }
 
-add_action('restrict_manage_posts', 'filter_by_the_author');
+//add_action('restrict_manage_posts', 'filter_by_the_author');
 
+/**
+ * filtro por sección
+ */
+function filter_by_the_section() {
 
+	if ('ta_article' != $_REQUEST['post_type']) {
+		return;
+	}
+
+	$params = array(
+		'name' => 'ta_article_section',
+		'show_option_all' => 'Sección',
+		'value_field' => 'slug',
+		'taxonomy' => 'ta_article_section'
+	);
+
+	if ( isset($_GET['ta_article_section']) )
+		$params['selected'] = $_GET['ta_article_section'];
+
+	wp_dropdown_categories( $params );
+}
+
+add_action('restrict_manage_posts', 'filter_by_the_section');
 /**
  * columnas
  */
-add_filter('manage_ta_article_posts_columns', 'author_column');
-function author_column($columns){
-	$columns['author'] = __('Creador');
+add_filter('manage_ta_article_posts_columns', 'article_columns');
+function article_columns($columns){
+	$columns['ta_article_section'] = __('Sección');
+	$columns['ta_article_author'] = __('Autor/a(s)');
+	$columns['author'] = __('Editor/a');
+	$columns['ta_article_edicion_impresa'] = __('Ed. impresa');
 	return $columns;
 }
-add_filter('manage_edit-ta_article_sortable_columns', 'author_order_column');
-function author_order_column($columns){
+add_filter('manage_edit-ta_article_sortable_columns', 'article_order_columns');
+function article_order_columns($columns){
 	$columns['author'] = 'author';
+	$columns['ta_article_section'] = 'ta_article_section';
+	$columns['ta_article_author'] = 'ta_article_author';
 	return $columns;
 }
+
+function article_columns_data( $column, $post_id ) {
+    switch ( $column ) {
+        case 'ta_article_author':
+            $terms = get_the_term_list( $post_id, 'ta_article_author', '', ', ', '' );
+            if ( is_string( $terms ) ) {
+                echo $terms;
+            }
+            break;
+ 
+        case 'ta_article_section':
+			$terms = get_the_term_list( $post_id, 'ta_article_section', '', ', ', '' );
+            if ( is_string( $terms ) ) {
+                echo $terms;
+            }
+            break;
+		case 'ta_article_edicion_impresa':
+			$issue_id = get_post_meta($post_id, 'ta_article_edicion_impresa', true);
+			if ($issue_id){
+				$issue_title = get_the_title($issue_id);
+				if ( is_string( $issue_title ) ) {
+					echo $issue_title;
+				}
+			}
+			break;
+    }
+}
+add_action( 'manage_posts_custom_column' , 'article_columns_data', 10, 2 );
 
 //deactivate new widgets
 add_filter( 'use_widgets_block_editor', '__return_false' );
@@ -718,7 +820,7 @@ add_action('ampforwp_below_the_title','author_amp');
 
 function publi_note_mob_before_related()
 {
-	widgets_ta()->note_mob_before_related();
+	widgets_ta()->article_amp_prerelated();
 }
 add_action('ampforwp_above_related_post','publi_note_mob_before_related');
 
@@ -731,3 +833,286 @@ function search_filter($query) {
     }
 }
 add_action( 'pre_get_posts', 'search_filter' );
+
+add_action( 'pre_get_posts',  'set_posts_per_page'  );
+function set_posts_per_page( $query ) {
+	if (!$query->get( 'posts_per_page') || $query->get( 'posts_per_page') >= 0 && $query->get( 'posts_per_page') < 13) {
+		$types = ['ta_article_section', 'ta_article_author', 's', 'ta_article_author', 'ta_article_tag'];
+		foreach ($types as $t) {
+			if ($query->query[$t])
+				$query->set( 'posts_per_page', 12 );
+		}
+		if ($query->query['post_type'] == "ta_ed_impresa")
+			$query->set( 'posts_per_page', 12 );
+		if ($query->query['post_type'] == "ta_article")
+			$query->set( 'posts_per_page', 12 );
+	}
+}
+
+/**
+ * This function runs only with blocks of type "core/image".
+ *
+ * @param $block_content
+ * @param $block
+ * @return string
+ */
+function show_copyright($block_content, $block)
+{
+
+    //echo $block['attrs']['id'];
+	$foto =ta_get_attachment_photographer($block['attrs']['id']);
+	$preBlock = '<div class="img-container mt-3">';
+	$posBlock = '</div>';
+	ob_start();
+	get_template_part('parts/image', 'copyright', array('photographer' => $foto));
+	$content = ob_get_clean();
+	return $preBlock . $block_content . $content . $posBlock;
+
+}
+
+add_filter('render_block_core/image', 'show_copyright', 10, 2);
+
+function photographer_column( $cols ) {
+    $cols["photographer"] = "Fotógrafo";
+    return $cols;
+}
+
+function photographer_value( $column_name, $id ) {
+    $meta = ta_get_attachment_photographer( $id );
+    foreach($meta as $key => $value){
+		if ($key == "term"){
+			foreach($value as $k => $v){
+				if ($k == "name"){
+					echo $v;
+					break;
+				}
+			}
+		};
+	}
+}
+
+function photographer_column_sortable( $cols ) {
+    $cols["photographer"] = "name";
+    return $cols;
+}
+
+function hook_new_media_columns() {
+    add_filter( 'manage_media_columns', 'photographer_column' );
+    add_action( 'manage_media_custom_column', 'photographer_value', 10, 2 );
+    add_filter( 'manage_upload_sortable_columns', 'photographer_column_sortable' );
+}
+add_action( 'admin_init', 'hook_new_media_columns' );
+
+add_action( 'add_attachment', 'delete_image_meta_caption' );
+function delete_image_meta_caption( $post_ID ) {
+    if ( wp_attachment_is_image( $post_ID )) {		
+        $my_image_meta = array(
+            'ID' => $post_ID,
+            'post_excerpt' => "",
+        );
+        wp_update_post( $my_image_meta );   
+    }
+}
+
+add_action( 'admin_enqueue_scripts', 'wptuts_add_color_picker' );
+function wptuts_add_color_picker( $hook ) {
+ 
+    if( is_admin() ) { 
+     
+        // Add the color picker css file       
+        wp_enqueue_style( 'wp-color-picker' ); 
+         
+        // Include our custom jQuery file with WordPress Color Picker dependency
+		wp_enqueue_script('color_picker_js', TA_ASSETS_JS_URL . '/src/color.js', array( 'wp-color-picker' ), false, true );
+
+    }
+}
+add_action( 'fix_printed_articles_date_cron', 'fix_printed_articles_date' );
+
+function fix_printed_articles_date () {
+	$args = [
+		'post_type' => 'ta_ed_impresa',
+		'posts_per_page' => -1,
+		'orderby' => 'date',
+		'order' => 'DESC',
+		'date_query'            => array(
+			'column'        => 'post_date',
+			'after'         => '- 7 days'
+		),
+	];
+	$issues = get_posts($args);
+	foreach($issues as $issue) {
+		$issueId = $issue->ID;
+		$issueDate = get_the_date("Y-m-d H:i:s", $issue);
+		$args = [
+			'post_type' => 'ta_article',
+			'posts_per_page' => -1,
+			'meta_query' => array(
+				array(
+					'key'   => 'ta_article_edicion_impresa',
+					'value' => $issueId,
+				)
+			),
+		];
+		$articles = get_posts($args);
+		foreach($articles as $article){
+			$articleId = $article->ID;
+			wp_update_post(
+				array (
+					'ID' => $articleId,
+					'post_date' => $issueDate,
+					'post_date_gmt' => get_gmt_from_date( $issueDate ),
+					)
+			);
+		}
+	}
+}
+
+add_action( 'clean_cloudflare_cache_cron', 'clean_cloudflare_cache' );
+
+function clean_cloudflare_cache () {
+	$urls_array = [
+		"https://www.tiempoar.com.ar/comunidad-tiempo",
+		"https://www.tiempoar.com.ar/comunidad-tiempo/",
+		"https://www.tiempoar.com.ar/micrositio/tiempo-de-viajes/",
+		"https://www.tiempoar.com.ar/micrositio/tiempo-de-viajes",
+		"https://www.tiempoar.com.ar/micrositio/qatar-2022/",
+		"https://www.tiempoar.com.ar/micrositio/qatar-2022",
+		"https://www.tiempoar.com.ar/newsletter",
+		"https://www.tiempoar.com.ar/newsletter/",
+		"https://www.tiempoar.com.ar/micrositio/ambiental/",
+		"https://www.tiempoar.com.ar/micrositio/ambiental",
+		"https://www.tiempoar.com.ar/micrositio/habitat/",
+		"https://www.tiempoar.com.ar/micrositio/habitat",
+		"https://www.tiempoar.com.ar/micrositio/medios/",
+		"https://www.tiempoar.com.ar/micrositio/medios",
+		"https://www.tiempoar.com.ar/micrositio/universitario/",
+		"https://www.tiempoar.com.ar/micrositio/universitario",
+		"https://www.tiempoar.com.ar/espectaculos/",
+		"https://www.tiempoar.com.ar/espectaculos",
+		"https://www.tiempoar.com.ar/asociate/",
+		"https://www.tiempoar.com.ar/asociate",
+	];
+	purge_cloudflare($urls_array);
+}
+
+add_filter('the_content', 'insert_escriben_hoy', 1);
+
+function insert_escriben_hoy($content){
+    if (is_front_page() && get_option( 'escriben_hoy_option_name' )['semana_' . date('w')]) {
+		$today = date('w');
+		$divider = '<!-- row divider -->';
+        $rows = explode($divider, $content);
+		$location = get_option( 'escriben_hoy_option_name' )['ubicacion'] > 0 ? get_option( 'escriben_hoy_option_name' )['ubicacion'] - 1 : 0;
+        $rows[0] = str_replace('lazy', '', $rows[0]);
+		$authors = getTodayAuthors();
+		if ($authors && isset($rows[$location])){
+			$rows[$location] .= '<div class="container-with-header ta-context dark-blue py-3">' .
+			'<div class="context-color">' .
+			'<div class="container line-height-0">' .
+			'<div class="separator m-0"></div>' .
+			'</div>' .
+			'<div class="context-bg py-3 article-preview">' .
+			'<div class="container ">' .
+			'<a class="section-title">' .
+			'<h4>Escriben hoy</h4>' .
+			'</a>' .
+			'</div>' .
+			'<div class="sub-blocks mt-3 content">' .
+			'<div class="container article-info-container">' .
+			'<div class="author"><p>';
+			foreach ($authors as $i => $author) {
+				$rows[$location] .= '<a href="' . $author->archive_url . '">' . $author->name . '</a>';
+				if ($i !== array_key_last($authors)) $rows[$location] .= " | ";
+			}
+			$rows[$location] .= '</p>' .
+						'</div>' .
+						'</div>' .
+						'</div>' .
+						'</div>' .
+						'</div>' .
+						'</div>';
+		}
+		$result = implode($divider, $rows);
+        return $result;
+    } else {
+        return $content;
+    }
+}
+
+add_action('save_post', 'clear_article_cache', 100, 2);
+function clear_article_cache ($post_id, $post){
+	if( array_search($post->post_type, TA_ARTICLES_COMPATIBLE_POST_TYPES) === false )
+		return;
+
+	$link = get_permalink($post);
+	$last_char = substr($link, -1);
+	if ($last_char == '/') {
+		$link = substr($link, 0, -1);
+	}
+	$urls_array = array(
+		$link,
+		$link . '/',
+		$link . '/amp',
+		$link . '/amp' . '/'
+	);
+	
+	$terms = get_the_terms($post, "ta_article_section");
+    if ($terms && isset($terms[0])){
+        $terms_array = $terms[0]->to_array();
+        if (isset($terms_array['slug'])){
+            $slug = $terms_array['slug'];
+			if (str_contains($link, $slug)){
+				$link = str_replace('/' . $slug . '/', '/ta_article' . '/', $link);
+				array_push($urls_array,
+					$link,
+					$link . '/',
+					$link . '/amp',
+					$link . '/amp' . '/'
+				);
+			}
+        }
+    }
+	purge_cloudflare ($urls_array);
+}
+
+function purge_cloudflare ($urls_array) {
+	$email = get_option('cloudflare_cache_purge_option_name')['email'];
+	$key = get_option('cloudflare_cache_purge_option_name')['key'];
+	$zone = get_option('cloudflare_cache_purge_option_name')['zone'];
+	if ($email && $key){
+		$url = "https://api.cloudflare.com/client/v4/zones/" . $zone . "/purge_cache";
+		$curl = curl_init();
+		$payload = json_encode(array('files' => $urls_array));
+		curl_setopt_array($curl,
+			array(
+				CURLOPT_URL => $url,
+				CURLOPT_RETURNTRANSFER => true,
+				CURLOPT_ENCODING => '',
+				CURLOPT_MAXREDIRS => 10,
+				CURLOPT_TIMEOUT => 0,
+				CURLOPT_FOLLOWLOCATION => true,
+				CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+				CURLOPT_CUSTOMREQUEST => 'POST',
+				CURLOPT_POSTFIELDS => $payload,
+				CURLOPT_HTTPHEADER => array(
+					'X-Auth-Email: ' . $email,
+					'X-Auth-Key: ' . $key,
+					'Content-Type: application/json'
+					),
+			)
+		);
+		$response = curl_exec($curl);
+		curl_close($curl);
+	}
+}
+function block_admin_access() {
+	if(is_admin() && !defined('DOING_AJAX')) {
+		$user = wp_get_current_user();
+		$roles = $user->roles;
+		if(in_array('digital',$roles) || in_array('subscriber',$roles)) {
+			wp_redirect( home_url() ); exit;
+		}
+	}
+}
+add_action( 'admin_init', 'block_admin_access' );

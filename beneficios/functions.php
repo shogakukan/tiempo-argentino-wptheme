@@ -111,10 +111,18 @@ class Beneficios_Assets
                     'compare' => 'LIKE'
                 ],
                 [
-                    'key' => '_finish',
-                    'value' => date('Y-m-d'),
-                    'compare' => '>=',
-                    'type' => 'DATE'
+                    'relation' => 'OR',
+                    [
+                        'key' => '_finish',
+                        'value' => date('Y-m-d'),
+                        'compare' => '>=',
+                        'type' => 'DATE'
+                    ],
+                    [
+                        'key' => '_finish',
+                        'value' => '',
+                        'compare' => 'LIKE'
+                    ]
                 ]
             ]
         ];
@@ -146,10 +154,18 @@ class Beneficios_Assets
                     'compare' => 'LIKE'
                 ],
                 [
-                    'key' => '_finish',
-                    'value' => date('Y-m-d'),
-                    'compare' => '>=',
-                    'type' => 'DATE'
+                    'relation' => 'OR',
+                    [
+                        'key' => '_finish',
+                        'value' => date('Y-m-d'),
+                        'compare' => '>=',
+                        'type' => 'DATE'
+                    ],
+                    [
+                        'key' => '_finish',
+                        'value' => '',
+                        'compare' => 'LIKE'
+                    ]
                 ]
             ]
         ];
@@ -166,7 +182,13 @@ class Beneficios_Assets
     public function show_beneficio($id, $title, $logged, $userid)
     {
 
-        $by_user = beneficios_front()->get_beneficio_by_user($userid, $id) ? 'requested' : '';
+        $beneficio_status = beneficios_front()->get_beneficio_by_user(wp_get_current_user()->ID, get_the_ID());
+        $beneficio_btn = __('Solicitar', 'beneficios');
+        if ($beneficio_status && $beneficio_status !== true && $beneficio_status === 'taken'){
+            $beneficio_btn = __('Volver a solicitar', 'beneficios');
+        } elseif($beneficio_status) {
+            $beneficio_btn = __('Solicitado', 'beneficios');
+        }
         $term = beneficios_front()->show_terms_slug_by_post($id);
         $discount = get_post_meta($id, '_beneficio_discount', true) !== null || get_post_meta($id, '_beneficio_discount', true) !== '' ? get_post_meta($id, '_beneficio_discount', true) : '';
 
@@ -175,13 +197,13 @@ class Beneficios_Assets
         $rol = $userdata->roles[0];
 
 
-        $html = '<div class="article-preview vertical-article benefits d-flex flex-column mb-3 col-12 col-md-4 px-0 px-md-2 ' . $by_user . '" data-term="' . $term . '">';
+        $html = '<div class="article-preview vertical-article benefits d-flex flex-column mb-3 col-12 col-md-4 px-0 px-md-2 ' . $beneficio_status . '" data-term="' . $term . '">';
         $html .= '<div class="container p-2">';
 
         $html .= ' <div class="">
             <a href="#" data-content="#content' . $id . '" class="abrir-beneficio">
                 <div class="img-container position-relative">
-                    <div class="img-wrapper" style="background:url(' . get_the_post_thumbnail_url($id) . ')center no-repeat;"></div>
+                    <div class="img-wrapper" style="background:url(' . get_the_post_thumbnail_url($id, 'medium') . ')center no-repeat;"></div>
                 </div>
             </a>
         </div>';
@@ -195,8 +217,8 @@ class Beneficios_Assets
         </div>';
 
         $html .= '<div class="options mt-4">';
-        if ($logged == 1 && $status == 'active' && $rol == get_option('subscription_digital_role') || $rol == 'administrator' ) :
-            if (!beneficios_front()->get_beneficio_by_user($userid, $id)) :
+        if ($logged == 1 && $status == 'active' && ($rol == get_option('subscription_digital_role') || $rol == 'administrator' )) :
+            if (!$beneficio_status) :
                 if (get_post_meta($id, '_beneficio_date', true)) :
                     $html .= '<div id="fechas">';
                     foreach (get_post_meta($id, '_beneficio_date', true) as $key => $val) :
@@ -205,8 +227,11 @@ class Beneficios_Assets
                     endforeach;
                     $html .= '</div>';
                 endif;
-            else :
-                $html .= '<p>Fecha elegida ' . beneficios_front()->get_beneficio_data($userid, $id)->{'date_hour'} . '</p>';
+            elseif($beneficio_status === 'requested') :
+                $requested_date = beneficios_front()->get_beneficio_data($userid, $id)->{'date_hour'};
+                if ($requested_date) :
+                    $html .= '<p>Fecha elegida ' . $requested_date . '</p>';
+                endif;
             endif;
         endif;
 
@@ -214,7 +239,7 @@ class Beneficios_Assets
         if ($logged == 1 && $status == 'active' && $rol == get_option('subscription_digital_role') || $rol == 'administrator') :
             $html .= '<div class="request">';
             $disabled = get_post_meta($id, '_beneficio_date', true) ? 'disabled' : '';
-            $text = beneficios_front()->get_beneficio_by_user($userid, $id) ? __('Solicitado', 'beneficios') : __('Solicitar', 'beneficios');
+            $text = $beneficio_btn;
 
             $html .= '<button type="button" ' . $disabled . ' class="solicitar" data-id="' . $id . '" data-user="' . $userid . '" data-date="" id="solicitar-' . $id . '"> ' . $text . '</button>';
             $html .= '</div>';
@@ -261,7 +286,7 @@ class Beneficios_Assets
                 </div>
             </div>
             <div class="description mt-3">
-                ' . get_the_content($id) . '
+                ' . get_post_field('post_content', $id) . '
             </div>
         </div>';
         $html .= '</div>';

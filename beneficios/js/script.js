@@ -43,39 +43,57 @@
         });
     });
 
-    //Calcula height de art. destacado cuando es miscelanea
-    $(document).ready(function () {
-        if ($(window).width() >= 768) {
-            $(".ta-articles-block.d-flex.flex-column .destacado .img-wrapper").css(
-                "padding-bottom",
-                parseInt(
-                    $(
-                        ".ta-articles-block.d-flex.flex-column .destacado .img-wrapper"
-                    ).css("padding-bottom")
-                ) +
-                27 +
-                "px"
-            );
-            /* $('.ta-articles-block.d-flex.flex-column .destacado .img-wrapper').css("height",$('.ta-articles-block.d-flex.flex-column .destacado .img-wrapper').height() + 26 + 'px'); */
+    //Acomoda la altura de los videos en portada
+    function resizeVideoHome(){
+        $('.img-container.video').each(function(i, e){
+            e.setAttribute("style",`height:${e.scrollWidth * 2 / 3}px`);
+        });
 
-            $(window).resize(function () {
-                $(".ta-articles-block.d-flex.flex-column .destacado .img-wrapper").css(
-                    "padding-bottom",
-                    "66.66%"
-                );
-                $(".ta-articles-block.d-flex.flex-column .destacado .img-wrapper").css(
-                    "padding-bottom",
-                    parseInt(
-                        $(
-                            ".ta-articles-block.d-flex.flex-column .destacado .img-wrapper"
-                        ).css("padding-bottom")
-                    ) +
-                    27 +
-                    "px"
-                );
-            });
+        let $tav_container = $('.tiempo-audiovisual .img-container.video');
+        if ($tav_container && $tav_container.get(0)){
+            let new_height = $tav_container.get(0).scrollWidth * 9 /16;
+            $tav_container.css('height', new_height);
+    
+            $('.tiempo-audiovisual .col-3.article-preview').css('height', new_height);
         }
-    });
+
+    }
+    $(window).resize(resizeVideoHome);
+    resizeVideoHome();
+
+    //Calcula height de art. destacado cuando es miscelanea
+    // $(document).ready(function () {
+    //     if ($(window).width() >= 768) {
+    //         $(".ta-articles-block.d-flex.flex-column .destacado .img-wrapper").css(
+    //             "padding-bottom",
+    //             parseInt(
+    //                 $(
+    //                     ".ta-articles-block.d-flex.flex-column .destacado .img-wrapper"
+    //                 ).css("padding-bottom")
+    //             ) +
+    //             27 +
+    //             "px"
+    //         );
+    //         /* $('.ta-articles-block.d-flex.flex-column .destacado .img-wrapper').css("height",$('.ta-articles-block.d-flex.flex-column .destacado .img-wrapper').height() + 26 + 'px'); */
+
+    //         $(window).resize(function () {
+    //             $(".ta-articles-block.d-flex.flex-column .destacado .img-wrapper").css(
+    //                 "padding-bottom",
+    //                 "66.66%"
+    //             );
+    //             $(".ta-articles-block.d-flex.flex-column .destacado .img-wrapper").css(
+    //                 "padding-bottom",
+    //                 parseInt(
+    //                     $(
+    //                         ".ta-articles-block.d-flex.flex-column .destacado .img-wrapper"
+    //                     ).css("padding-bottom")
+    //                 ) +
+    //                 27 +
+    //                 "px"
+    //             );
+    //         });
+    //     }
+    // });
 
     $(document).on('click', '.abrir-beneficio', function (e) {
         e.preventDefault();
@@ -98,14 +116,12 @@
 
     window.onscroll = function () {
         if (desktop.matches) {
-            if (window.pageYOffset > 140) {
-                $("body").css("padding-top", "139px");
+            if (window.pageYOffset >=  $('.container', headerStickyDesktop).height()) {
                 headerStickyDesktop.addClass("sticky-default");
                 menuSticky.removeClass('menu-desktop');
                 menuSticky.addClass('menu-sticky-desktop');
                 searchBar.addClass('searchBarFixed');
             } else {
-                $("body").css("padding-top", "0");
                 headerStickyDesktop.removeClass("sticky-default");
                 menuSticky.removeClass('menu-sticky-desktop');
                 menuSticky.addClass('menu-desktop');
@@ -118,6 +134,11 @@
             } else {
                 menuSticky.removeClass('menu-sticky-desktop');
             }
+        }
+        if (window.pageYOffset > screen.height - $('.container', headerStickyDesktop).height() * 2){
+            headerStickyDesktop.addClass('sticky');
+        } else {
+            headerStickyDesktop.removeClass('sticky');
         }
     };
 

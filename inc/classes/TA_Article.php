@@ -102,6 +102,11 @@ class TA_Article extends TA_Article_Data{
         return $roles && is_array($roles) ? $roles : [];
     }
 
+    protected function get_authors_subroles(){
+        $roles = get_post_meta($this->post->ID, 'ta_article_authors_subrols', true);
+        return $roles && is_array($roles) ? $roles : [];
+    }
+
     /**
     *   Publication details
     *   @return string[]
@@ -130,7 +135,7 @@ class TA_Article extends TA_Article_Data{
         return get_the_date('H:i', $this->post);
     }
 
-    protected function get_thumbnail_common($variation = null, $size = 'full'){
+    public function get_thumbnail_common($variation = null, $size = 'full'){
         $thumbnail_id = get_post_thumbnail_id($this->post);
         $attachment = $thumbnail_id ? get_post( $thumbnail_id ) : null;
         $thumb_data = null;
@@ -144,10 +149,13 @@ class TA_Article extends TA_Article_Data{
                 'position'      => null,
                 'alt'           => __('No hay imagen', 'ta-genosha'),
                 'is_default'    => true,
+                'ratio'         => "2 / 3",
+                'real_ratio'    => "1 / 1",
             );
         }
         else {
             $alt = get_post_meta( $attachment->ID, '_wp_attachment_image_alt', true );
+            $imageSrc = wp_get_attachment_image_src($attachment->ID, $size);
             $thumb_data = array(
                 'attachment'    => $attachment,
                 'url'           => wp_get_attachment_image_url($attachment->ID, $size, false),
@@ -156,19 +164,22 @@ class TA_Article extends TA_Article_Data{
                 'position'      => ta_get_attachment_positions($attachment->ID),
                 'alt'           => $alt ? $alt : '',
                 'is_default'    => false,
+                'ratio'         => getRatioAdjusted($imageSrc[1], $imageSrc[2]),
+                'real_ratio'    => getRealRatio($imageSrc[1], $imageSrc[2]),
             );
         }
 
         return $thumb_data;
     }
 
-    protected function get_thumbnail_alt_common($variation = null, $size = 'full'){
+    public function get_thumbnail_alt_common($variation = null, $size = 'full'){
         $thumbnail_id = get_post_meta($this->post->ID, 'ta_article_thumbnail_alt', true);
         $attachment = $thumbnail_id ? get_post( $thumbnail_id ) : null;
         $thumb_data = null;
 
         if( $attachment ){
             $alt = get_post_meta( $attachment->ID, '_wp_attachment_image_alt', true );
+            $imageSrc = wp_get_attachment_image_src($attachment->ID, $size);
             $thumb_data = array(
                 'attachment'    => $attachment,
                 'url'           => wp_get_attachment_image_url($attachment->ID, $size, false),
@@ -177,6 +188,8 @@ class TA_Article extends TA_Article_Data{
                 'position'      => ta_get_attachment_positions($attachment->ID),
                 'alt'           => $alt ? $alt : '',
                 'is_default'    => false,
+                'ratio'         => getRatioAdjusted($imageSrc[1], $imageSrc[2]),
+                'real_ratio'    => getRealRatio($imageSrc[1], $imageSrc[2]),
             );
         }
 
@@ -190,6 +203,12 @@ class TA_Article extends TA_Article_Data{
         return get_post_meta($this->post->ID, 'ta_article_cintillo', true);
     }
 
+    /**
+    *   @return string
+    */
+    public function get_alt_title(){
+        return get_post_meta($this->post->ID, 'ta_article_alt_title', true);
+    }
     /**
     *   @return mixed[]
     */
@@ -238,5 +257,45 @@ class TA_Article extends TA_Article_Data{
     public function get_sister_article(){
         $article_id = get_post_meta( $this->post->ID, 'ta_article_sister_article', true );
         return !$article_id ? null : TA_Article_Factory::get_article( get_post($article_id) );
+    }
+
+    /**
+    *   @return string
+    */
+
+    public function get_video(){
+        $video_code = get_post_meta($this->post->ID, 'ta_article_video', true);
+        return get_youtube_code($video_code);
+    }
+
+    public function get_gallery(){
+        $gallery_ids = get_post_meta($this->post->ID, 'ta_article_gallery', true);
+        $result = [];
+        foreach ($gallery_ids as $photo_id) {
+            $attachment = get_post( $photo_id );
+
+            if( $attachment ){
+                $alt = get_post_meta( $attachment->ID, '_wp_attachment_image_alt', true );
+                $photo_data = array(
+                    'attachment'    => $attachment,
+                    'url'           => wp_get_attachment_image_url($attachment->ID, 'full', false),
+                    'caption'       => has_excerpt($attachment) ? get_the_excerpt($attachment) : '',
+                    'author'        => ta_get_attachment_photographer($attachment->ID),
+                    'position'      => ta_get_attachment_positions($attachment->ID),
+                    'alt'           => $alt ? $alt : '',
+                    'is_default'    => false,
+                );
+                array_push($result, $photo_data);
+            }
+        }
+
+        return $result;
+    }
+    /**
+    *   @return string
+    */
+
+    public function get_special_format(){
+        return get_post_meta($this->post->ID, 'ta_article_special_format', true);
     }
 }

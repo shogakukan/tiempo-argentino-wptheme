@@ -14,24 +14,24 @@ do_action('beneficios_post_header');
                     <div class="title mt-2">
                         <h1><?php echo get_the_title() ?></h1>
                     </div>
-                    <div class="subtitle">
+                    <!-- <div class="subtitle">
                         <h3><?php echo get_the_excerpt(get_the_ID()) ?></h3>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="d-flex justify-content-between align-items-center mt-3">
                     <p class="date mb-0"><?php echo get_the_date('d/m/Y', get_the_ID()) ?></p>
-                    <div class="social-btns">
+                    <!-- <div class="social-btns">
                         <a href="">
                             <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/compartir.svg" alt="" />
                         </a>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="img-container mt-3">
                     <div class="img-wrapper">
-                        <img src="<?php echo get_the_post_thumbnail_url(get_the_ID()) ?>" alt="" class="img-fluid w-100" />
+                        <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full') ?>" alt="" class="img-fluid w-100" />
                     </div>
                 </div>
-                <div class="d-flex flex-column flex-md-row mt-5">
+                <!-- <div class="d-flex flex-column flex-md-row mt-5">
                     <div class="author d-flex align-items-center mx-2">
                         <div class="author-icon mr-2">
                             <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/tiempo-gift.svg" alt="" />
@@ -46,7 +46,7 @@ do_action('beneficios_post_header');
                             ?>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <div class="article-body mt-3">
                     <div class="art-column-w-xpadding">
                         <?php the_content() ?>
@@ -69,7 +69,7 @@ do_action('beneficios_post_header');
                             <!-- fecha -->
                         <?php endif ?>
 
-                        <div class="btns-container text-center mt-5">
+                        <!-- <div class="btns-container text-center mt-5">
                         <?php if(is_user_logged_in()):?>
                             <button type="button" 
                             class="solicitar"
@@ -92,14 +92,14 @@ do_action('beneficios_post_header');
                           <?php else: ?>
                                <button><a href="<?php echo get_permalink( get_option('subscriptions_login_register_page') )?>"><?php echo __('Inicia sesión para solicitar el beneficio', 'beneficios') ?></a></button>
                           <?php endif; ?>
-                        </div>
+                        </div> -->
                     <?php endif ?>
                 </div>
-                <div class="social-btns text-right mt-5">
+                <!-- <div class="social-btns text-right mt-5">
                     <a href="">
                         <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/compartir.svg" alt="" />
                     </a>
-                </div>
+                </div> -->
             <?php
             endwhile;
             ?>

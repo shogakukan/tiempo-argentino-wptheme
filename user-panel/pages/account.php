@@ -56,12 +56,13 @@
                     </form>
                 </div>
                 <div class="delivery-info text-md-center mt-3">
+                    <?php if (is_user_logged_in() && get_user_meta(get_current_user_id(),'_user_status',true) == 'active' && get_post_meta(get_user_meta(get_current_user_id(),'suscription',true), '_physical', true)) : ?>
                     <button class="delivery-info-dropdown collapsed" type="button" data-toggle="collapse" data-target="#deliveryInfo" aria-expanded="false" aria-controls="deliveryInfo">
                         <div class="d-flex">
                             <div>
                                 <p>Datos para recibir la Edición Impresa</p>
                             </div>
-                            <div class="dropdown-icon mr-2">
+                            <div class="dropdown-icon mx-2">
                                 <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/arrow.svg" alt="" />
                             </div>
                         </div>
@@ -120,6 +121,7 @@
                             </div>
                         </div>
                     </div>
+                    <?php endif; ?>
                     <div class="support text-center">
                         <p>Deseo <a href="mailto:pagostiempo@gmail.com"><b>contactar con soporte</b></a></p>
                     </div>

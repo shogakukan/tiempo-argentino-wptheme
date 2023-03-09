@@ -67,7 +67,8 @@
   font-family: "Libre Baskerville";
   font-style: italic;
   font-weight: 400;
-  font-size: 12px;
+  /* font-size: 12px; */
+  font-size: 0.8rem;
 }
 .articulo-simple .author .author-img,
 .articulo-especial .author .author-img {
@@ -96,8 +97,8 @@
   left: 50%;
   margin-left: -50vw;
 }
-.articulo-simple .img-container .credits p,
-.articulo-especial .img-container .credits p {
+.articulo-simple .img-container .credits span,
+.articulo-especial .img-container .credits span {
   font-family: "Libre Baskerville";
   font-style: italic;
   font-weight: 400;
@@ -292,6 +293,38 @@
 .articulo-especial .art-column-w-xpadding {
     padding: 0 115px;
   }
+
+  .articulo-especial .author {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .articulo-especial .author-icon:first-child {
+    flex: 0 0 16.6666666667%;
+    max-width: 16.6666666667%;
+    text-align: right;
+  }
+
+  .articulo-especial .author-info {
+    /* flex: 0 0 83.3333333333%;
+    max-width: 83.3333333333%; */
+  }
+
+  .articulo-especial .article-body .img-container {
+    position: relative;
+    width: 120%;
+    max-width: 100vw;
+    left: -10%;
+  }
+
+  .articulo-especial .author {margin: 0 !important;}
+  .articulo-especial .author-icon:not(:first-child) {
+    margin-left: 1rem !important;
+  }
+  .articulo-especial .author-icon {
+    margin: 0 !important;
+    padding-right: 0.5rem !important;
+  }
 }
 @media (min-width: 1200px) {
   .articulo-simple .title h1,
@@ -304,13 +337,14 @@
     font-size: 19px;
     line-height: 25.14px;
   }
-  .articulo-simple .img-container .credits p,
-.articulo-especial .img-container .credits p {
+  .articulo-simple .img-container .credits span,
+.articulo-especial .img-container .credits span {
     font-size: 13px;
     line-height: 16.12px;
   }
   .articulo-simple .article-body p,
-.articulo-especial .article-body p {
+.articulo-especial .article-body p,
+.cine-series .cuerpo {
     font-size: 19px;
     line-height: 25.14px;
     margin-bottom: 1rem;
@@ -365,4 +399,36 @@
   }
 }
 
+.single-ta_article .img-container.video {
+  height: calc(100vw * 9 / 16);
+  max-height: calc(730px * 9 / 16);
+}
+
+.articulo-especial .img-container.video {
+  height: calc(100vw * 9 / 16);
+  max-height: 675px;
+}
+
+.galeria-fotos .credits-info,
+.credits.has-caption .credits-info {
+  background: #fff;
+  padding: 0px 5px;
+  margin-top: -32px;
+  z-index: 0;
+}
+
+.galeria-fotos .credits.ta-photographer .credits-info,
+.credits.has-caption.ta-photographer .credits-info {
+  margin-top: -52px;
+}
+
+.galeria-fotos .credits.ta-photographer .credits-icon,
+.credits.has-caption.ta-photographer .credits-icon {
+  display: none;
+}
+
+.galeria-fotos .credits,
+.credits.has-caption {
+  margin-top: 0 !important;
+}
 /*# sourceMappingURL=simple-especial.css.map */

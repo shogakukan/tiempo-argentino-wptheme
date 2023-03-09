@@ -85,9 +85,15 @@ $header_title = $article->participation['use'] ? 'PREGUNTÁ Y PARTICIPÁ' : 'COM
             </div>
         </div>
     </div>
-    <?php
-            if(function_exists('tweets_search_front')){
-                echo tweets_search_front()->get_tweets(get_queried_object_id());
-            }
-        ?>
+    <?php if(function_exists('tweets_search_front')): ?>
+        <?php $tweets = tweets_search_front()->get_tweets(get_queried_object_id()); ?>
+        <?php if ($tweets) : ?>
+            <div class="mb-3 section-title">
+                <h4><?php echo __('CONVERSEMOS','gen-base-theme'); ?></h4>
+            </div>
+            <div class="px-md-5">
+                <?php echo $tweets; ?>
+            </div>
+        <?php endif; ?>
+    <?php endif; ?>
 </div>

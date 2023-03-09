@@ -14,8 +14,25 @@ if (isset($queried_object->taxonomy) && $queried_object->taxonomy == 'ta_article
 if (!$micrositio)
     return;
 
+$userdata = get_userdata(get_current_user_id());
+$rol = $userdata->roles[0];
+if (is_user_logged_in() && get_user_meta(get_current_user_id(),'_user_status',true) == 'active' && $rol == get_option('subscription_digital_role')){
+    $link = get_permalink(get_option('beneficios_loop_page'));
+    $label = __('COMUNIDAD','gen-base-theme'); 
+} else {
+    $link = get_permalink(get_option('subscriptions_loop_page'));
+    $label = __('ASOCIATE','gen-base-theme'); 
+}
 ?>
-
+<?php $color = $micrositio->get_color() ;?>
+<?php if ($color && isHexaColor($color)) : ?>
+    <style>
+        <?= "." . $micrositio->slug; ?> .triangle-left, <?= "." . $micrositio->slug; ?> .triangle-right, <?= "." . $micrositio->slug; ?> .banner-micrositio .content{
+            background-color: <?= $color; ?> !important;
+        }
+        <?= "." . $micrositio->slug; ?> .category-title h4 {color: <?= $color; ?>;}
+    </style>
+<?php endif; ?>
 <div class="header header-micrositio ta-context micrositio <?php echo esc_attr($micrositio->slug); ?>">
     <div class="context-bg">
         <div class="context-color">
@@ -125,11 +142,11 @@ if (!$micrositio)
                 </div>
                 <div class="asociate-banner position-relative ml-md-3">
                     <div class="asociate-banner-bg h-100 ">
-                        <a href="<?php echo get_permalink(get_option('subscriptions_loop_page')) ?>"> <img src="<?php echo TA_THEME_URL; ?>/markup/assets/images/asociate-banner.svg" class="img-fluid" alt=""></a>
+                        <a href="<?php echo $link ?>"> <img src="<?php echo TA_THEME_URL; ?>/markup/assets/images/asociate-banner.svg" class="img-fluid" alt=""></a>
                     </div>
                     <div class="asociate-banner-content position-absolute">
                         <div class="separator"></div>
-                        <p class="mt-1"><a href="<?php echo get_permalink(get_option('subscriptions_loop_page')) ?>"><?php echo __('ASOCIATE','gen-base-theme')?></a></p>
+                        <p class="mt-1"><a href="<?php echo $link ?>"><?php echo $label ?></a></p>
                     </div>
                 </div>
             </div>
@@ -139,7 +156,9 @@ if (!$micrositio)
                 <div class="topic-tag d-flex justify-content-center">
                     <div class="triangle-left"></div>
                     <div class="content d-flex align-items-center justify-content-center">
-                        <p><?php echo esc_html($micrositio->title); ?></p>
+                        <a href="<?php echo "/micrositio/" . esc_attr($micrositio->slug); ?>">
+                            <p><?php echo esc_html($micrositio->title); ?></p>
+                        </a>
                     </div>
                     <div class="triangle-right"></div>
                 </div>

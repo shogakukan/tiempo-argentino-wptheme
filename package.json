@@ -21,6 +21,7 @@
     "homepage": "https://bitbucket.org/genosha/gen-base-theme#readme",
     "dependencies": {
         "array-move": "^3.0.1",
+        "cacheable-request": "10.2.7",
         "react-sortable-hoc": "^1.11.0"
     }
 }

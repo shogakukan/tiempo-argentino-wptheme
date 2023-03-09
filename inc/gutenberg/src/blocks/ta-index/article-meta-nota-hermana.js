@@ -49,7 +49,7 @@ const TANotaHermanaPanel = () => {
         <PluginDocumentSettingPanel
             name="ta-nota-hermana"
             title="Nota Hermana"
-            className="custom-panel"
+            className="custom-panel ta-nota-hermana"
         >
             <LRArticlesSelector
                 articles = { postData ? [postData] : [] }
@@ -68,6 +68,7 @@ const TANotaHermanaPanel = () => {
 registerPlugin( 'ta-article-nota-hermana', {
     render: TANotaHermanaPanel,
     icon: 'media-document',
+    priority: 10
 } );
 
 

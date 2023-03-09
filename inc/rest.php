@@ -343,7 +343,7 @@ add_action( 'rest_api_init', function () {
 							'ID'				=> $article->ID,
 							'title'				=> $article->title,
 							'excerpt'			=> $article->excerpt,
-							'thumbnail_common'	=> $article->thumbnail_common,
+							'thumbnail_common'	=> $article->get_thumbnail_common(null, 'thumbnail'),
 							'date'				=> $article->date,
 							'isopinion'			=> $article->isopinion,
 							'cintillo'			=> $article->cintillo,

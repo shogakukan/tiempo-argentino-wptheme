@@ -187,10 +187,18 @@ $post_per_page = 12;
                                 'compare' => 'LIKE'
                             ],
                             [
-                                'key' => '_finish',
-                                'value' => date('Y-m-d'),
-                                'compare' => '>=',
-                                'type' => 'DATE'
+                                'relation' => 'OR',
+                                [
+                                    'key' => '_finish',
+                                    'value' => date('Y-m-d'),
+                                    'compare' => '>=',
+                                    'type' => 'DATE'
+                                ],
+                                [
+                                    'key' => '_finish',
+                                    'value' => '',
+                                    'compare' => 'LIKE'
+                                ]
                             ]
                         ]
                     ];
@@ -199,12 +207,21 @@ $post_per_page = 12;
                     ?>
                     <?php if ($beneficios->have_posts()) : ?>
                         <?php while ($beneficios->have_posts()) : $beneficios->the_post(); ?>
-                            <div class="article-preview vertical-article benefits d-flex flex-column mb-3 col-12 col-md-4 px-0 px-md-2 <?php echo beneficios_front()->get_beneficio_by_user(wp_get_current_user()->ID, get_the_ID()) ? 'requested' : '' ?>" data-term="<?php echo beneficios_front()->show_terms_slug_by_post(get_the_ID()) ?>">
+                            <?php 
+                                $beneficio_status = beneficios_front()->get_beneficio_by_user(wp_get_current_user()->ID, get_the_ID());
+                                $beneficio_btn = __('Solicitar', 'beneficios');
+                                if ($beneficio_status && $beneficio_status !== true && $beneficio_status === 'taken'){
+                                    $beneficio_btn = __('Volver a solicitar', 'beneficios');
+                                } elseif($beneficio_status) {
+                                    $beneficio_btn = __('Solicitado', 'beneficios');
+                                }
+                            ?>
+                            <div class="article-preview vertical-article benefits d-flex flex-column mb-3 col-12 col-md-4 px-0 px-md-2 <?php echo $beneficio_status ?>" data-term="<?php echo beneficios_front()->show_terms_slug_by_post(get_the_ID()) ?>">
                                 <div class="container p-2">
                                     <div class="">
                                         <a href="#" data-content="#content<?php echo get_the_ID() ?>" class="abrir-beneficio">
                                             <div class="img-container position-relative">
-                                                <div class="img-wrapper" style="background:url('<?php echo get_the_post_thumbnail_url(get_the_ID()) ?>')center no-repeat;"></div>
+                                                <div class="img-wrapper" style="background:url('<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium') ?>')center no-repeat;"></div>
                                             </div>
                                         </a>
                                     </div>
@@ -220,8 +237,8 @@ $post_per_page = 12;
                                         </div>
                                         <div class="options mt-4">
                                             <?php if (is_user_logged_in() && $status == 'active' && ($rol == get_option('subscription_digital_role') || $rol == 'administrator')) : ?>
-                                                <!-- fcha -->
-                                                <?php if (!beneficios_front()->get_beneficio_by_user(wp_get_current_user()->ID, get_the_ID())) : ?>
+                                                <!-- fecha -->
+                                                <?php if (!$beneficio_status) : ?>
                                                     <?php if (get_post_meta(get_the_ID(), '_beneficio_date', true)) : ?>
                                                         <div id="fechas">
                                                             <?php foreach (get_post_meta(get_the_ID(), '_beneficio_date', true) as $key => $val) : ?>
@@ -229,8 +246,11 @@ $post_per_page = 12;
                                                             <?php endforeach; ?>
                                                         </div>
                                                     <?php endif; ?>
-                                                <?php else : ?>
-                                                    <p>Fecha elegida <?php echo beneficios_front()->get_beneficio_data(wp_get_current_user()->ID, get_the_ID())->{'date_hour'} ?></p>
+                                                <?php elseif($beneficio_status === 'requested') : ?>
+                                                <?php $requested_date = beneficios_front()->get_beneficio_data(wp_get_current_user()->ID, get_the_ID())->{'date_hour'}; ?>
+                                                    <?php if ($requested_date) : ?>
+                                                    <p>Fecha elegida <?php echo $requested_date ?></p>
+                                                    <?php endif ?>
                                                 <?php endif ?>
                                                 <!-- fecha -->
                                             <?php endif ?>
@@ -241,7 +261,7 @@ $post_per_page = 12;
                                                         <button type="button" <?php if (get_post_meta(get_the_ID(), '_beneficio_date', true)) {
                                                                                     echo 'disabled';
                                                                                 } ?> class="solicitar" data-id="<?php echo get_the_ID() ?>" data-user="<?php echo wp_get_current_user()->ID ?>" data-date="" id="solicitar-<?php echo get_the_ID() ?>">
-                                                            <?php echo beneficios_front()->get_beneficio_by_user(wp_get_current_user()->ID, get_the_ID()) ? __('Solicitado', 'beneficios') : __('Solicitar', 'beneficios') ?>
+                                                            <?php echo $beneficio_btn ?>
                                                         </button>
                                                     </div>
 

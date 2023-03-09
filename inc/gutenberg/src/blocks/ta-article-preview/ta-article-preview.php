@@ -45,6 +45,10 @@ return array(
 			'type'				=> 'boolean',
 			'default'			=> false,
 		),
+		'show_excerpt'	=> array(
+			'type'				=> 'boolean',
+			'default'			=> false,
+		),
 	),
 	'render_callback'	=> function($attributes, $content = ''){
 		ob_start();

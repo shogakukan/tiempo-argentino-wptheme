@@ -36,6 +36,7 @@ const TAEdicionImpresaPanel = () => {
         posts: metaValue ? [metaValue] : [],
         postsQueryArgs: {
             post_type: 'ta_ed_impresa',
+            post_status: ['publish', 'future']
         },
         // onChange: (data) => {
         //     console.log('ON CHANGE', data);
@@ -50,7 +51,7 @@ const TAEdicionImpresaPanel = () => {
         <PluginDocumentSettingPanel
             name="ta-ed-impresa"
             title="Edición Impresa"
-            className="custom-panel"
+            className="custom-panel ta-ed-impresa"
         >
             <RBPostsSelector
                 posts = { postData ? [postData] : [] }

@@ -20,7 +20,7 @@
                 </div>
             </div>
             <div class="edition mt-3">
-                <p class="mb-0"><span class="ta-celeste-color">Edición Nº <?php echo get_option( 'datos_footer_option_name' )['n_edicin_3']?></span> / <?php echo get_option( 'datos_footer_option_name' )['fecha_4']?></p>
+            <p class="mb-0"><span class="ta-celeste-color">Edición Nº <?php  echo (new DateTime(get_option( 'datos_footer_option_name' )['fecha_4']))->diff(new DateTime())->days;?></span> / <?php echo date_i18n('j') . " de " . date_i18n('F') . " de " . date_i18n('Y'); ?></p>
                 <p class="derechos">Algunos derechos reservados</p>
             </div>
         </div>
@@ -30,18 +30,14 @@
 
 <?php if (is_front_page()) : ?>
 
-<?php if (is_active_sidebar('footer_fixed')) { ?>
-    <?php dynamic_sidebar('footer_fixed'); ?>        
-<?php } ?>
+    <?php if (is_active_sidebar('home_mobile_fixed')) dynamic_sidebar('home_mobile_fixed'); ?>
+    <?php if (is_active_sidebar('home_desktop_fixed')) dynamic_sidebar('home_desktop_fixed'); ?>
+    <?php if (is_active_sidebar('home_desktop_vslider')) dynamic_sidebar('home_desktop_vslider'); ?>
 
-<?php if (is_active_sidebar('footer_fixed_mobile')) { ?>
-    <?php dynamic_sidebar('footer_fixed_mobile'); ?>
-<?php } ?>
+<?php elseif (get_post_type() === 'ta_article') : ?>
 
-<?php if (is_active_sidebar('vslider_desktop')) { ?>
-    <?php dynamic_sidebar('vslider_desktop'); ?>
-<?php } ?>
-
+    <?php if (is_active_sidebar('article_mobile_fixed')) dynamic_sidebar('article_mobile_fixed'); ?>
+    <?php if (is_active_sidebar('article_desktop_fixed')) dynamic_sidebar('article_desktop_fixed'); ?>        
 
 <?php endif?>
 <?php wp_footer(); ?>

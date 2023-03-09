@@ -297,3 +297,9 @@ $extra_menu_items = RB_Menu::get_menu_items('extra-menu');
 
     </div>
 </div>
+<script>
+if (window.innerWidth < 768) {
+    let menus = document.querySelectorAll('.menu-items-container .card-header [data-toggle="collapse"]');
+    menus.forEach(m => {m.click();});
+} 
+</script>

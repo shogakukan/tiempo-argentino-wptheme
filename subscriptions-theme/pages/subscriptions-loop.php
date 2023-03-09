@@ -5,7 +5,34 @@
         <div class="separator m-0"></div>
     </div>
     <div class="asociate-block-container">
-        <?php if (subscriptions_proccess()->verify_subscription(wp_get_current_user()->ID)) : ?>
+        <?php 
+        $userdata = get_userdata(get_current_user_id());
+        $rol = $userdata->roles[0];
+        $isActive = get_user_meta(get_current_user_id(),'_user_status',true) == 'active';
+        
+        if (!$isActive){
+            $args = [
+                'post_type' => 'memberships',
+                'fields' => 'ids',
+                'numberposts' => 1,
+                'meta_query' => [
+                    'relation' => 'AND',
+                    [
+                        'key' => '_member_user_id',
+                        'value' => get_current_user_id()
+                    ],
+                    [
+                        'key' => '_member_order_status',
+                        'value' => array('completed', 'hold'),
+                        'compare' => 'IN'
+                    ]
+                ]
+            ];
+            if (get_posts($args)) $isActive = true;
+        }
+        ?>
+        
+        <?php if (is_user_logged_in() && $isActive && $rol == get_option('subscription_digital_role')): //if (subscriptions_proccess()->verify_subscription(wp_get_current_user()->ID)) : ?>
             <div class="delivery-zones-popup">
                 <div class="popup">
                     <div class="container text-center">
@@ -26,6 +53,7 @@
                     </div>
                 </div>
             </div>
+    </div>
         <?php else : ?>
 
             <!-- loop container -->
@@ -101,26 +129,59 @@
                                                                     <p><?php echo __('Elegí el monto de tu abono mensual', 'gen-base-theme') ?></p>
                                                                 </div>
                                                                 <div class="amounts d-flex flex-wrap">
-                                                                    <div class="col-6 col-lg-4 p-1">
+                                                                <?php $prices_extra = get_post_meta(get_the_ID(), '_prices_extra', true); ?>
+                                                                <?php if ($prices_extra && count($prices_extra) > 0) : ?>
+                                                                <?php
+                                                                    $prices_amount = count($prices_extra) + 1;?>
+                                                                   <?php
+                                                                   if ($prices_amount % 2 == 0) { 
+                                                                        $first_class = 'col-6';
+                                                                        $second_class =  'col-6';
+                                                                        $last_row_class = 'col-6';
+                                                                        $last_row_begins = 0;
+                                                                    } else {
+                                                                        $first_class = $prices_amount == 2 ? 'col-6' : 'col-6 col-lg-4';
+                                                                        $second_class = $prices_amount == 2 ? 'col-6' : 'col-6 col-lg-4';
+                                                                        $last_row_class = $prices_amount % 3 == 0 ? 'col-6 col-lg-4' : ($prices_amount % 3 == 1 ? 'col-12': 'col-6');
+                                                                        $last_row_begins = floor($prices_amount / 3) * 3;
+                                                                    }
+                                                                     ?>
+
+                                                                    <div class="<?= $first_class ?> p-1">
                                                                         <div class="amount">
                                                                             <button class="price" data-id="<?php echo get_the_ID() ?>" data-price="<?php echo get_post_meta(get_the_ID(), '_s_price', true) ?>">
                                                                                 <p><?php echo get_option('subscriptions_currency_symbol', 'ARS') . ' ' . get_post_meta(get_the_ID(), '_s_price', true) ?></p>
                                                                             </button>
                                                                         </div>
                                                                     </div>
-                                                                    <?php
-                                                                    if (get_post_meta(get_the_ID(), '_prices_extra', true) && count(get_post_meta(get_the_ID(), '_prices_extra', true)) > 0) {
-                                                                        foreach (get_post_meta(get_the_ID(), '_prices_extra', true) as $key => $value) {
-                                                                            echo '<div class="col-6 col-lg-4 p-1">
-                                                                                <div class="amount">
-                                                                                    <button class="price" data-id="' . get_the_ID() . '" data-price="' . $value . '">
-                                                                                        <p>' . get_option('subscriptions_currency_symbol', 'ARS') . ' ' . $value . '</p>
-                                                                                    </button>
-                                                                                </div>
-                                                                            </div>';
+                                                                    <?php foreach ($prices_extra as $i => $value) : ?>
+                                                                        <?php
+                                                                        $element_class = 'col-6 col-lg-4';
+                                                                        if ($i == 0) {
+                                                                            $element_class = $first_class;
+                                                                        } else if ($i +1 >= $last_row_begins) {
+                                                                            $element_class = $last_row_class;
                                                                         }
-                                                                    }
-                                                                    ?>
+                                                                        ?>
+                                                                        <div class="<?= $element_class ?> p-1">
+                                                                            <div class="amount">
+                                                                                <button class="price" data-id="<?= get_the_ID() ?>" data-price="<?= $value ?>">
+                                                                                    <p><?= get_option('subscriptions_currency_symbol', 'ARS') ?> <?= $value ?></p>
+                                                                                </button>
+                                                                            </div>
+                                                                        </div>
+                                                                    <?php endforeach; ?>
+
+                                                                <?php else : ?>
+                                                                    <div class="col-12 p-1">
+                                                                        <div class="amount">
+                                                                            <button class="price" data-id="<?php echo get_the_ID() ?>" data-price="<?php echo get_post_meta(get_the_ID(), '_s_price', true) ?>">
+                                                                                <p><?php echo get_option('subscriptions_currency_symbol', 'ARS') . ' ' . get_post_meta(get_the_ID(), '_s_price', true) ?></p>
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                <?php endif; ?>
+                                                   
                                                                     <?php
                                                                     if (get_post_meta(get_the_ID(), '_price_custom', true)) {
                                                                         echo ' <div class="col-6 col-lg-12 p-1">
@@ -141,7 +202,7 @@
                                                                 <div class="opt-details mt-3">
                                                                     <button type="button" class="toggle" data-toggle="collapse" data-target="#benefitsDigital-<?php echo get_the_ID() ?>" aria-expanded="false" aria-controls="benefitsDigital">
                                                                         <div class="d-flex">
-                                                                            <div class="dropdown-icon mr-2">
+                                                                            <div class="dropdown-icon mx-2">
                                                                                 <img src="<?php echo get_template_directory_uri() ?>/assets/img/arrow.svg" alt="" />
                                                                             </div>
                                                                             <div>

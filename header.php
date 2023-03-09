@@ -1,13 +1,28 @@
+<?php 
+$userdata = get_userdata(get_current_user_id());
+$rol = $userdata->roles[0];
+if (is_user_logged_in() && get_user_meta(get_current_user_id(),'_user_status',true) == 'active' && $rol == get_option('subscription_digital_role')){
+    $link = get_permalink(get_option('beneficios_loop_page'));
+    $label = __('COMUNIDAD','gen-base-theme'); 
+} else {
+    $link = get_permalink(get_option('subscriptions_loop_page'));
+    $label = __('ASOCIATE','gen-base-theme'); 
+}
+?>
+
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@1&family=Merriweather:wght@900&family=Red+Hat+Display:wght@400;500;700;900&family=Caladea:wght@700&display=swap" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@1&family=Merriweather:wght@900&family=Red+Hat+Display:wght@400;500;700;900&family=Caladea:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caladea:wght@700&family=Libre+Baskerville:ital@1&family=Red+Hat+Display:wght@400;500;700;900&display=swap" rel="stylesheet">
     <?php wp_head(); ?>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mediaelement/4.2.16/mediaelement-and-player.min.js" integrity="sha512-MgxzaA7Bkq7g2ND/4XYgoxUbehuHr3Q/bTuGn4lJkCxfxHEkXzR1Bl0vyCoHhKlMlE2ZaFymsJrRFLiAxQOpPg==" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mediaelement/4.2.16/mediaelementplayer.min.css" integrity="sha512-RZKnkU75qu9jzuyC+OJGffPEsJKQa7oNARCA6/8hYsHk2sd7Sj89tUCWZ+mV4uAaUbuzay7xFZhq7RkKFtP4Dw==" crossorigin="anonymous" />
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/mediaelement/4.2.16/mediaelement-and-player.min.js" integrity="sha512-MgxzaA7Bkq7g2ND/4XYgoxUbehuHr3Q/bTuGn4lJkCxfxHEkXzR1Bl0vyCoHhKlMlE2ZaFymsJrRFLiAxQOpPg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mediaelement/4.2.16/mediaelementplayer.min.css" integrity="sha512-RZKnkU75qu9jzuyC+OJGffPEsJKQa7oNARCA6/8hYsHk2sd7Sj89tUCWZ+mV4uAaUbuzay7xFZhq7RkKFtP4Dw==" crossorigin="anonymous" /> -->
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
     <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
 </head>
@@ -17,11 +32,11 @@
     <?php wp_body_open(); ?>
     <!-- anuncio sobre portada -->
     <?php if (is_front_page()) : ?>
-        <?php if (is_active_sidebar('home_desk_1')) { ?>
+        <?php if (is_active_sidebar('home_desk_preheader')) { ?>
             <div class="container d-none d-sm-none d-md-block mt-md-3 mb-md-3">
                 <div class="row d-flex">
-                    <div class="col-9 mx-auto text-center">
-                        <?php dynamic_sidebar('home_desk_1'); ?>
+                    <div class="mx-auto text-center">
+                        <?php dynamic_sidebar('home_desk_preheader'); ?>
                     </div>
                 </div>
             </div>
@@ -30,11 +45,11 @@
     <!-- anuncio sobre portada -->
     <?php if (is_single()) : ?>
         <!-- anuncio single seccion autor tag-->
-        <?php if (is_active_sidebar('over-header-note')) { ?>
+        <?php if (is_active_sidebar('article_desktop_preheader')) { ?>
             <div class="container d-none d-sm-none d-md-block mt-md-3 mb-md-3">
                 <div class="row d-flex">
-                    <div class="col-9 mx-auto text-center">
-                        <?php dynamic_sidebar('over-header-note'); ?>
+                    <div class="mx-auto text-center">
+                        <?php dynamic_sidebar('article_desktop_preheader'); ?>
                     </div>
                 </div>
             </div>
@@ -43,11 +58,11 @@
     <?php endif; ?>
     <!-- taxonomia -->
     <?php if (is_tax()) : ?>
-        <?php if (is_active_sidebar('seccion_head_1')) { ?>
+        <?php if (is_active_sidebar('section_desktop_preheader')) { ?>
             <div class="container d-none d-sm-none d-md-block mt-md-3 mb-md-3">
                 <div class="row d-flex">
-                    <div class="col-9 mx-auto text-center">
-                        <?php dynamic_sidebar('seccion_head_1'); ?>
+                    <div class="mx-auto text-center">
+                        <?php dynamic_sidebar('section_desktop_preheader'); ?>
                     </div>
                 </div>
             </div>
@@ -119,8 +134,9 @@
                     </div>
                     <div class="tiempo-logo mr-lg-5">
                         <a href="<?php echo home_url() ?>"><img src="<?php echo TA_THEME_URL; ?>/markup/assets/images/tiempo-logo.svg" class="img-fluid" alt=""></a>
+
                     </div>
-                    <div class="weather d-none d-lg-flex flex-column align-content-center justify-content-start text-left  mr-5">
+                    <div class="weather d-none d-xl-flex flex-column align-content-center justify-content-start text-left  mr-5">
                         <div class="mt-2">
                             <div class="date">
                                 <p class="text-capitalize"><?php echo date_i18n('l, j F , Y'); ?></p>
@@ -139,8 +155,11 @@
                     </button>
                     <?php if (!is_user_logged_in()) : ?>
                         <div class="profile-icon">
-                            <a href="<?php echo get_permalink(get_option('user_panel_page')) ?>"><img src="<?php echo TA_THEME_URL; ?>/markup/assets/images/profile-icon.svg" class="img-fluid" alt=""></a>
+                            <a href="<?php echo get_permalink(get_option('subscriptions_login_register_page')) ?>"><img src="<?php echo TA_THEME_URL; ?>/markup/assets/images/profile-icon.svg" class="img-fluid" alt=""></a>
+                            <a href="<?php echo get_permalink(get_option('subscriptions_login_register_page')); ?>"><?php echo __('Ingresar','gen-base-theme')?></a>
                         </div>
+                        
+
                     <?php else : ?>
                         <div class="logged-user mx-2">
                             <div class="d-flex align-items-center">
@@ -154,7 +173,7 @@
                                 </div>
                                 <div class="user-img ml-2">
                                     <a href="<?php echo get_permalink(get_option('user_panel_page')) ?>"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/logged-profile-icon.svg" alt=""></a>
-                                    <a href="<?php echo wp_logout_url(home_url()); ?>">Salir</a>
+                                    <a href="<?php echo wp_logout_url(home_url()); ?>"><?php echo __('Salir','gen-base-theme')?></a>
                                 </div>
                             </div>
                         </div>
@@ -162,11 +181,15 @@
                 </div>
                 <div class="asociate-banner position-relative ml-md-3">
                     <div class="asociate-banner-bg h-100 ">
-                        <a href="<?php echo get_permalink(get_option('subscriptions_loop_page')) ?>"> <img src="<?php echo TA_THEME_URL; ?>/markup/assets/images/asociate-banner.svg" class="img-fluid" alt=""></a>
+                        <a href="<?php echo $link ?>"> <img src="<?php echo TA_THEME_URL; ?>/markup/assets/images/asociate-banner.svg" class="img-fluid" alt=""></a>
                     </div>
                     <div class="asociate-banner-content position-absolute">
                         <div class="separator"></div>
-                        <p class="mt-1"><a href="<?php echo get_permalink(get_option('subscriptions_loop_page')) ?>"><?php echo __('ASOCIATE','gen-base-theme')?></a></p>
+                        <p class="mt-1">
+                            <a href="<?php echo $link; ?>">
+                                <?php echo $label; ?>
+                            </a>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -184,22 +207,22 @@
 
     <!-- anuncio sobre portada -->
     <?php if (is_front_page()) : ?>
-        <?php if (is_active_sidebar('home_desk_2')) { ?>
+        <?php if (is_active_sidebar('home_desk_posheader')) { ?>
             <div class="container d-none d-sm-none d-md-block mt-md-3 mb-md-3">
                 <div class="row d-flex">
-                    <div class="col-9 mx-auto text-center">
-                        <?php dynamic_sidebar('home_desk_2'); ?>
+                    <div class="mx-auto text-center">
+                        <?php dynamic_sidebar('home_desk_posheader'); ?>
                     </div>
                 </div>
             </div>
         <?php } ?>
     <?php endif; ?>
     <?php if (is_front_page()) : ?>
-        <?php if (is_active_sidebar('home_mob_2')) { ?>
+        <?php if (is_active_sidebar('home_mob_posheader')) { ?>
             <div class="container d-block d-sm-none d-md-none d-lg-none mt-md-3 mb-md-3 text-center mt-3">
                 <div class="row d-flex">
                     <div class="col-12 mx-auto text-center">
-                        <?php dynamic_sidebar('home_mob_2'); ?>
+                        <?php dynamic_sidebar('home_mob_posheader'); ?>
                     </div>
                 </div>
             </div>
@@ -207,21 +230,21 @@
     <?php endif; ?>
     <!-- taxonomia -->
     <?php if (is_tax()) : ?>
-        <?php if (is_active_sidebar('seccion_head_2')) { ?>
+        <?php if (is_active_sidebar('section_desktop_posheader')) { ?>
             <div class="container d-none d-sm-none d-md-block mt-md-3 mb-md-3">
                 <div class="row d-flex">
-                    <div class="col-9 mx-auto text-center">
-                        <?php dynamic_sidebar('seccion_head_2'); ?>
+                    <div class="mx-auto text-center">
+                        <?php dynamic_sidebar('section_desktop_posheader'); ?>
                     </div>
                 </div>
             </div>
         <?php } ?>
 
-        <?php if (is_active_sidebar('seccion_mob_1')) { ?>
+        <?php if (is_active_sidebar('section_mobile_posheader')) { ?>
             <div class="container d-block d-sm-none d-md-none d-lg-none mt-md-3 mb-md-3 text-center mt-3">
                 <div class="row d-flex">
                     <div class="col-12 mx-auto text-center">
-                        <?php dynamic_sidebar('seccion_mob_1'); ?>
+                        <?php dynamic_sidebar('section_mobile_posheader'); ?>
                     </div>
                 </div>
             </div>
@@ -230,19 +253,59 @@
     <!-- taxonomia -->
     <!-- pops -->
     <?php if (is_front_page()) : ?>
-        <?php if (is_active_sidebar('popup')) { ?>
-            <?php dynamic_sidebar('popup'); ?>
+        <?php if (is_active_sidebar('home_desktop_pop')) { ?>
+            <div id="popup-avis" class="d-none d-sm-none d-md-block d-lg-block position-fixed">
+                <div class="popup">
+                    <span class="cerrar-pop">
+                        <img src="<?= get_stylesheet_directory_uri() . '/assets/img/times-circle-regular.svg' ?>" />
+                    </span>
+                    <?php dynamic_sidebar('home_desktop_pop'); ?>
+                </div>
+            </div>
         <?php } ?>
     <?php endif; ?>
 
     <?php if (is_front_page()) : ?>
-        <?php if (is_active_sidebar('popup_mobile')) { ?>
-            <?php dynamic_sidebar('popup_mobile'); ?>
+        <?php if (is_active_sidebar('home_mobile_pop')) { ?>
+            <div id="popup-avis-pop" class="popup-mobile popup d-block d-sm-none d-md-none d-lg-none position-fixed">
+                <div class="popup">
+                    <span class="cerrar-pop cerrar-pop-mobile">
+                        <img src="<?= get_stylesheet_directory_uri() . '/assets/img/times-circle-regular.svg' ?>" />
+                    </span>
+                    <?php dynamic_sidebar('home_mobile_pop'); ?>
+                </div>
+            </div>
+        <?php } ?>
+    <?php endif; ?>
+
+    <?php if (get_post_type() === 'ta_article') : ?>
+        <?php if (is_active_sidebar('article_desktop_popup')) { ?>
+            <div id="popup-avis" class="d-none d-sm-none d-md-block d-lg-block position-fixed">
+                <div class="popup">
+                    <span class="cerrar-pop">
+                        <img src="<?= get_stylesheet_directory_uri() . '/assets/img/times-circle-regular.svg' ?>" />
+                    </span>
+                    <?php dynamic_sidebar('article_desktop_popup'); ?>
+                </div>
+            </div>
+        <?php } ?>
+    <?php endif; ?>
+
+    <?php if (get_post_type() === 'ta_article') : ?>
+        <?php if (is_active_sidebar('article_mobile_popup')) { ?>
+            <div id="popup-avis-pop" class="popup-mobile popup d-block d-sm-none d-md-none d-lg-none position-fixed">
+                <div class="popup">
+                    <span class="cerrar-pop cerrar-pop-mobile">
+                        <img src="<?= get_stylesheet_directory_uri() . '/assets/img/times-circle-regular.svg' ?>" />
+                    </span>
+                    <?php dynamic_sidebar('article_mobile_popup'); ?>
+                </div>
+            </div>
         <?php } ?>
     <?php endif; ?>
 
     <?php if (is_front_page()) : ?>
-        <?php if (is_active_sidebar('vslider_mobile')) { ?>
-            <?php dynamic_sidebar('vslider_mobile'); ?>               
+        <?php if (is_active_sidebar('home_mobile_vslider')) { ?>
+            <?php dynamic_sidebar('home_mobile_vslider'); ?>               
         <?php } ?>
     <?php endif; ?>

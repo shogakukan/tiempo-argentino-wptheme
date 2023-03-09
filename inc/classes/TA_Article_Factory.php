@@ -33,6 +33,15 @@ class TA_Article_Factory{
                         return self::$ta_articles[$post->ID];
                     }
                 break;
+                case 'ta_taller':
+                    $post = get_post($data);
+                    if( $post->post_type == 'ta_taller' ){
+                        if( self::$use_cache && array_key_exists($post->ID, self::$ta_articles) )
+                            return self::$ta_articles[$post->ID];
+                        self::$ta_articles[$post->ID] = new TA_Taller($post);
+                        return self::$ta_articles[$post->ID];
+                    }
+                break;
             }
         }
 

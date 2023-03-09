@@ -1,8 +1,8 @@
-<?php if (is_active_sidebar('down-single-note')) { ?>
+<?php if (is_active_sidebar('article_desktop_postext')) { ?>
     <div class="container d-none d-sm-none d-md-block mt-md-3 mb-md-3">
         <div class="row d-flex">
-            <div class="col-9 mx-auto">
-                <?php dynamic_sidebar('down-single-note'); ?>
+            <div class="text-center mx-auto">
+                <?php dynamic_sidebar('article_desktop_postext'); ?>
             </div>
         </div>
     </div>
@@ -22,11 +22,11 @@ $articles_interest_block->render(array(
 
 <?php include_once(TA_THEME_PATH . '/markup/partes/segun-tus-intereses.php');  ?>
 
-<?php if (is_active_sidebar('note_mob_3')) { ?>
+<?php if (is_active_sidebar('article_mobile_precomments')) { ?>
     <div class="container d-block d-sm-none d-md-none d-lg-none mt-md-3 mb-md-3">
         <div class="row d-flex">
-            <div class="col-9 mx-auto">
-                <?php dynamic_sidebar('note_mob_3'); ?>
+            <div class="mx-auto">
+                <?php dynamic_sidebar('article_mobile_precomments'); ?>
             </div>
         </div>
     </div>
@@ -38,9 +38,9 @@ $articles_interest_block->render(array(
             <?php include_once(TA_THEME_PATH . '/markup/partes/comentarios.php');  ?>
         </div>
         <div class="col-12 col-lg-4">
-            <?php if (is_active_sidebar('side-comments-note')) { ?>
+            <?php if (is_active_sidebar('article_desktop_sidecomments')) { ?>
                 <div class="d-none d-sm-none d-md-block anuncio-side-comments-single">
-                    <?php dynamic_sidebar('side-comments-note'); ?>
+                    <?php dynamic_sidebar('article_desktop_sidecomments'); ?>
                 </div>
             <?php } ?>
         </div>
@@ -48,11 +48,11 @@ $articles_interest_block->render(array(
 </div>
 
 <!-- abajo comentarios -->
-<?php if (is_active_sidebar('down-comments-note')) { ?>
+<?php if (is_active_sidebar('article_desktop_postcomments')) { ?>
     <div class="container d-none d-sm-none d-md-block mt-md-3 mb-md-3">
         <div class="row d-flex">
-            <div class="col-9 mx-auto">
-                <?php dynamic_sidebar('down-comments-note'); ?>
+            <div class="text-center mx-auto">
+                <?php dynamic_sidebar('article_desktop_postcomments'); ?>
             </div>
         </div>
     </div>

@@ -4,6 +4,7 @@ class TAArticlesMiscelaneaRow extends TAArticlesBlockRow{
 
     protected $default_args = array(
         'deactivate_opinion_layout' => false,
+        'show_excerpt' => false,
     );
 
     public function get_cells_count_if_balanced(){
@@ -33,7 +34,8 @@ class TAArticlesMiscelaneaRow extends TAArticlesBlockRow{
                 ta_render_article_preview($featured, array(
                     'size'                      => 'large',
                     'class'                     => '',
-                    'deactivate_opinion_layout' => $deactivate_opinion_layout,
+                    'deactivate_opinion_layout' => true,//$deactivate_opinion_layout,
+                    'show_excerpt' => $show_excerpt,
                 ));
                 ?>
             </div>
@@ -43,7 +45,7 @@ class TAArticlesMiscelaneaRow extends TAArticlesBlockRow{
                 <?php $regular_3 ? ta_render_article_preview($regular_3, $regular_config) : null; ?>
             </div>
         </div>
-
+        <!-- row divider -->
         <?php
 
         return 4;

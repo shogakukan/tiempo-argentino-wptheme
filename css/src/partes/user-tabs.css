@@ -274,10 +274,12 @@
 }
 .user-block-container .user-tabs .tab-content {
   border: 1px solid var(--ta-gris-subtexto);
-  border-top: none;
+  /* border-top: none; */
   position: relative;
-  z-index: 10;
+  /* z-index: 10; */
+  z-index: 2;
   padding-top: 1px;
+  margin-top: -1px;
 }
 .user-block-container .user-tabs .tab-content .tab-pane .user-profile .img-container {
   width: 174px;

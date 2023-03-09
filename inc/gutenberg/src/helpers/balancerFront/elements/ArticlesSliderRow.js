@@ -26,7 +26,7 @@ export default function ArticlesSliderRow(props = {}){
             <div class={`carousel-item ${$item_class}`}>
                 <a href={$article?.url ?? ''}>
                     <div class="img-container">
-                        <img class="d-block w-100" src={$article?.imgURL ?? ''}/>
+                        <img class="d-block w-100" loading="lazy" src={$article?.imgURL ?? ''}/>
                         <div class="overlay"></div>
                     </div>
                 </a>
@@ -73,7 +73,7 @@ export default function ArticlesSliderRow(props = {}){
     ) : null;
 
     return (
-        <div class="slider-micrositio ta-context micrositio ambiental my-3">
+        <div class="slider-micrositio ta-context micrositio my-3">
             <div class="context-bg">
                 <div id={$slider_id} class="carousel slide context-color pt-3" data-ride="carousel">
                     <div class="carousel-inner">

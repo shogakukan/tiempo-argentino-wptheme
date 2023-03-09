@@ -42,10 +42,25 @@
   padding-bottom: 66.66%;
   height: initial;
 }
+@media(min-width:992px){
+  .double .article-preview .img-container .img-wrapper,
+  .double .article-preview.destacado .img-container .img-wrapper  {
+    padding-bottom: calc(100% / 3 * 2) !important;
+  }
+}
 
 .article-preview.vertical-article .img-container .img-wrapper {
   min-height: 183px;
 }
+
+#beneficios-loop .article-preview .img-container .img-wrapper {
+  background-size: contain !important;
+}
+
+.img-wrapper.lazy {
+  background-image: none !important;
+}
+
 .article-preview.benefits.requested > .container {
   border: 1px solid var(--ta-celeste);
   background-color: var(--ta-celeste-fondos);
@@ -353,8 +368,8 @@
 }
 
 .sub-blocks .ta-articles-block {
-  overflow: scroll;
-  overflow-y: hidden;
+  /* overflow: scroll;
+  overflow-y: hidden; */
 }
 .sub-blocks .ta-articles-block.fullwidth-row {
   overflow: hidden;
@@ -425,6 +440,17 @@
   /* .article-preview.destacado .content {
     padding-left: 0;
   } */
+  .ta-articles-block.d-flex.flex-column .destacado .img-wrapper {
+		/* padding-bottom: calc(100% * 2 / 3 + 27px); */
+  }
+
+  .ta-articles-block.d-flex.flex-column.flex-md-row.mt-3.row .destacado{
+    position: sticky;
+    /* top: 0px;
+    padding-top: 100px;
+    margin-top: -100px; */
+    top: 100px;
+  }
 }
 @media (min-width: 992px) {
   .article-preview .content .title p {
@@ -497,6 +523,14 @@
     font-size: 21px;
     line-height: 24.15px;
     letter-spacing: -0.1px;
+  }
+  .article-preview .content .subtitle p {
+    font-family: "Red Hat Display";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 22.49px;
+    letter-spacing: -0.2px;
   }
   /* .article-preview.destacado .img-container .img-wrapper, .article-preview.destacado-md .img-container .img-wrapper {
     min-height: 360px;

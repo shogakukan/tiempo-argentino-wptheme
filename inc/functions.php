@@ -228,23 +228,23 @@ function get_ta_articles_block_articles($block_attributes){
     extract($block_attributes);
     $final_articles = null;
 
-    if( $articles && is_array($articles) && !empty($articles) ){
-        return $articles;
-    }
-    else if( $articles_data && is_array($articles_data) && !empty($articles_data) ){
-        foreach($articles_data as $article_data){
-            $article = TA_Article_Factory::get_article($article_data['data'], isset($article_data['type']) ? $article_data['type'] : 'article_post');
-            if($article && ( !$article->post || $article->post->post_status == 'publish' ) )
-                $final_articles[] = $article;
-        }
-    }
-    else if( $most_recent ){
+    if ( $most_recent ){
         $query_args = array(
             'post_type'		=> 'ta_article',
 			'post_status'	=> 'publish',
         );
         $query_args = array_merge(lr_get_query_args_from_articles_filters($block_attributes), $query_args);
         $final_articles = get_ta_articles_from_query($query_args);
+    }
+    else if ( $articles && is_array($articles) && !empty($articles) ){
+        return $articles;
+    }
+    else if ( $articles_data && is_array($articles_data) && !empty($articles_data) ){
+        foreach($articles_data as $article_data){
+            $article = TA_Article_Factory::get_article($article_data['data'], isset($article_data['type']) ? $article_data['type'] : 'article_post');
+            if($article && ( !$article->post || $article->post->post_status == 'publish' ) )
+                $final_articles[] = $article;
+        }
     }
 
     return $final_articles;
@@ -1130,7 +1130,7 @@ function ta_get_commment_display_data($args = array()){
     $user = get_user_by('ID', $comment->user_id);
     $display_data = array(
         'comment'                   => $comment,
-        'avatar_url'                => get_avatar_url($comment->user_id),
+        'avatar_url'                => get_profile_image($comment->user_id),
         'name'                      => $comment->comment_author,
         'date'                      => date("j F o - H:i", strtotime($comment->comment_date)),
         'content'                   => $comment->comment_content,
@@ -1166,6 +1166,16 @@ function ta_get_comment_form_fields_as_string(){
     return ob_get_clean();
 }
 
+function get_profile_image($id)
+{
+    $profile_image = get_user_meta($id, '_profile_picture', true);
+    if ($profile_image) {
+        return $profile_image;
+    } else {
+        return get_avatar_url($id);
+    }
+}
+
 function payment_user_role_sync()
 {
   if(null !== Subscriptions_Sessions::get_session('subscriptions_add_session')) {
@@ -1182,3 +1192,81 @@ function payment_user_role_sync()
 }
 
 add_action('subscriptions_payment_page_header','payment_user_role_sync');
+
+function getSectionsOrder () {
+    return array(
+        'politica' => 0,
+        'informacion-general' => 1,
+        'generos' => 2,
+        'economia' => 3,
+        'mundo' => 4,
+        'gestion' => 5,
+        'cultura' => 6,
+        'espectaculos' => 7,
+        'deportes' => 8
+    );
+}
+
+function getRatioAdjusted($w, $h) {
+    if ($h > 0) {
+        $ratio = $w / $h;
+        return $ratio > 3 / 2 ? $h .' / ' . $w : "2 / 3";
+    }
+    return null;
+}
+
+function getRealRatio($w, $h) {
+    if ($h > 0) {
+        return $h .' / ' . $w;
+    }
+    return null;
+}
+
+function isHexaColor ($color) {
+    return (strlen($color) == 7 || strlen($color) == 4) && substr($color, 0, 1) == '#';
+}
+
+function getTodayAuthors(){
+    $daysAfter = get_option( 'escriben_hoy_option_name' )['dias'] > 0 ? get_option( 'escriben_hoy_option_name' )['dias'] : 2;
+	$query_args = array(
+		'post_type' 	=> 'ta_article',
+		'order' 		=> 'DESC',
+        'posts_per_page' => -1,
+		'date_query'            => array(
+			'column'        => 'post_date',
+			'after'         => '- ' . $daysAfter . ' days'
+		),
+	);
+
+	$articles = get_posts($query_args);
+    $authors = [];
+    foreach ($articles as $a){
+        $authorsFromArticle = get_the_terms($a->ID, 'ta_article_author');
+        foreach ($authorsFromArticle as $author){
+            if (!array_key_exists($author->term_id, $authors)){
+                $authors[$author->term_id] = TA_Author_Factory::get_author($author);
+            }
+        }
+
+    }
+    return $authors;
+}
+
+function get_youtube_code($video_code){
+    $ytBreakers = array(
+        'youtu.be/',
+        'watch?v=',
+        'live/'
+        );
+    $pos = '';
+    $i = 0;
+    while (!$pos && $i < count($ytBreakers)){
+        $ytBreaker = $ytBreakers[$i];
+        $pos = strpos($video_code, $ytBreaker);
+        $i++;
+    }
+    if ($pos && isset($ytBreaker)){
+        $video_code = substr($video_code, strpos($video_code,$ytBreaker)+strlen($ytBreaker), 11);
+    }
+    return $video_code;
+}

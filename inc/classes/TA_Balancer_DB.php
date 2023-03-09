@@ -81,7 +81,7 @@ class TA_Balancer_DB{
             'url'				=> fn($article) => $article->url,
             'headband'			=> fn($article) => $article->cintillo,
             'imgURL'			=> function($article){
-                $thumbnail = $article->thumbnail_alt_common ? $article->thumbnail_alt_common : $article->thumbnail_common;
+                $thumbnail = $article->get_thumbnail_alt_common(null, 'medium') ? $article->get_thumbnail_alt_common(null, 'medium') : $article->get_thumbnail_common(null, 'medium');
                 $thumbnail_url = $thumbnail ? $thumbnail['url'] : '';
                 return $thumbnail_url;
             },

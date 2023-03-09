@@ -66,7 +66,7 @@
   font-family: "Libre Baskerville";
   font-style: italic;
   font-weight: 400;
-  font-size: 12px;
+  font-size: 0.8rem;
 }
 .articulo-simple .author .author-img,
 .articulo-especial .author .author-img {
@@ -124,7 +124,8 @@
   color: var(--ta-celeste) !important;
 }
 .articulo-simple .article-body p,
-.articulo-especial .article-body p {
+.articulo-especial .article-body p,
+.cine-series .cuerpo {
   font-family: "Red Hat Display";
   font-style: normal;
   font-weight: 400;
@@ -309,7 +310,8 @@
     line-height: 16.12px;
   }
   .articulo-simple .article-body p,
-.articulo-especial .article-body p {
+.articulo-especial .article-body p,
+.cine-series .cuerpo {
     font-size: 19px;
     line-height: 25.14px;
     margin-bottom: 1rem;

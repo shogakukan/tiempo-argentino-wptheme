@@ -41,7 +41,7 @@ class TAArticlesCommonRow extends TAArticlesBlockRow{
 
         //ta-articles-block d-flex flex-column flex-lg-row overflow-hidden justify-content-lg-between
         ?>
-        <div class="ta-articles-block row">
+        <div class="ta-articles-block row<?php if ($cells_amount == 2) echo ' double' ?>">
             <?php
                 if( $articles ){
                     for ($i=0; $i < $cells_amount; $i++) {
@@ -52,8 +52,13 @@ class TAArticlesCommonRow extends TAArticlesBlockRow{
 
                         $col_lg_size = $i < $leftovers ? $col_lg_fill : $col_lg;
                         $col_class = "col-lg-$col_lg_size";
-                        $size = $col_lg_size > 5 ? 'large' : 'common';
-                        $class = "col-12 $col_class";
+                        if ($cells_amount == 1 && $fill){
+                            $size = 'mega-large';
+                        } else {
+                            $size = $col_lg_size > 5 ? 'large' : 'common';
+                        }
+                        $class = is_archive() && get_queried_object()->taxonomy != 'ta_article_micrositio' ? 'col-6 ' : 'col-12 ';
+                        $class .= $col_class;
 
                         ?>
                         <div class="<?php echo esc_attr($class); ?>">
@@ -61,7 +66,7 @@ class TAArticlesCommonRow extends TAArticlesBlockRow{
                             ta_render_article_preview($article, array(
                                 'size'                      => $size,
                                 'class'                     => $preview_class,
-                                'deactivate_opinion_layout' => $deactivate_opinion_layout,
+                                'deactivate_opinion_layout' => $cells_amount < 3 ? true : $deactivate_opinion_layout,
                             ));
                             ?>
                         </div>
@@ -71,7 +76,7 @@ class TAArticlesCommonRow extends TAArticlesBlockRow{
                 }
             ?>
         </div>
-
+        <!-- row divider -->
         <?php
 
         return $cells_count;

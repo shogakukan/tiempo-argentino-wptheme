@@ -20,6 +20,7 @@
   --ta-habitat-bg: #fff4f3;
   --ta-medios: #5d9dd6;
   --ta-medios-bg: #f3f9ff;
+  --ta-malvinas: #0076bf;
 }
 
 @keyframes fadeIn {
@@ -126,8 +127,14 @@
   color: white;
   z-index: 10;
 }
+.banner-micrositio .topic-tag .content a:hover {
+  color: #fff;
+  text-decoration-color: #fff;
+}
 .banner-micrositio .topic-tag .content p {
   margin: 0;
+  color: #fff;
+  text-decoration-color: #fff;
 }
 .banner-micrositio .topic-tag .triangle-left,
 .banner-micrositio .topic-tag .triangle-right {
@@ -190,8 +197,10 @@
   font-weight: 400;
 }
 .slider-micrositio .carousel .carousel-indicators li.active {
-  background-color: var(--ta-negro-texto);
-  color: white;
+  /* background-color: var(--ta-negro-texto);
+  color: white; */
+  color: var(--ta-negro-texto);
+  background-color: #fff;
   border: none;
 }
 .slider-micrositio .carousel .carousel-indicators li.active p {
@@ -274,7 +283,8 @@
     position: absolute;
   }
   .slider-micrositio .carousel .carousel-item .carousel-caption a {
-    text-decoration-color: white;
+    text-decoration-color: #fff !important;
+    color: #fff !important;
   }
   .slider-micrositio .carousel .carousel-item .carousel-caption .separator {
     background-color: #f4f8ee;
@@ -345,17 +355,21 @@
     flex: 1;
   }
   .header-micrositio .banner-micrositio .topic-tag {
-    max-width: 50%;
+    /* max-width: 50%; */
     margin: 0 auto;
+    max-width: 1170px;
+    width: 100%;
   }
   .header-micrositio .banner-micrositio .topic-tag .content {
     height: 50px;
+    width: 100%;
   }
   .header-micrositio .banner-micrositio .topic-tag .triangle-right,
 .header-micrositio .banner-micrositio .topic-tag .triangle-left {
     width: 35.6px;
     height: 35.6px;
     transform: rotate(45deg) translate(-7.5px, 17px);
+    display: none;
   }
   .header-micrositio .banner-micrositio .topic-tag .triangle-left {
     transform: rotate(225deg) translate(-18.5px, 8px);
@@ -393,5 +407,26 @@
     justify-content: center;
   }
 }
+
+.\32 0historias .triangle-left, .\32 0historias .triangle-right, .\32 0historias .banner-micrositio .content{
+  background-color: var(--gray-dark) !important;
+}
+
+.\32 0historias .category-title h4 {color: var(--gray-dark);}
+
+@media(max-width:600px){
+  .\32 0historias .banner-micrositio .topic-tag .content {
+    display: -webkit-box !important;line-height: 34px;overflow: hidden;
+  }
+  .slider-micrositio .carousel .carousel-item .carousel-caption .author p a {
+    color: var(--ta-gris-subtexto) !important;
+  }
+}
+
+.malvinas .triangle-left, .malvinas .triangle-right, .malvinas .banner-micrositio .content{
+  background-color: var(--ta-malvinas) !important;
+}
+
+.malvinas .category-title h4 {color: var(--ta-malvinas);}
 
 /*# sourceMappingURL=micrositio.css.map */

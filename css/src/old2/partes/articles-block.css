@@ -7,12 +7,19 @@
   --ta-gris-subtexto: #849899;
   --ta-socios: #ffbb0f;
   --ta-socios-fondos: #ffe7a9;
+  --ta-socios-fondos2: #fff4d8;
   --ta-espectaculos: #ce0d54;
   --ta-espectaculos-bg: #f9f2f6;
   --ta-cultura: #48b1a7;
   --ta-cultura-bg: #e0fbf9;
   --ta-deportes: #ee813c;
   --ta-deportes-bg: #fff3ec;
+  --ta-ambiental: #5e852a;
+  --ta-ambiental-bg: #f4f8ee;
+  --ta-habitat: #ba5749;
+  --ta-habitat-bg: #fff4f3;
+  --ta-medios: #5d9dd6;
+  --ta-medios-bg: #f3f9ff;
 }
 
 .article-preview {
@@ -53,8 +60,8 @@
   width: 100%;
 }
 .article-preview .img-container .img-wrapper {
-  min-height: 79px;
-  max-width: 100%;
+  /* min-height: 79px;
+  max-width: 100%; */
   background: url("../../assets/images/interest-img.png") center no-repeat;
   background-size: cover;
 }
@@ -65,9 +72,20 @@
   transform: translateY(-50%); */
 }
 .article-preview .img-container .icons-container .article-icons img {
-  max-width: 48px;
+  /* max-width: 48px;
   height: auto;
-  margin: 5px 0;
+  margin: 5px 0; */
+  width: 35px;
+  height: 100%;
+  margin-top: 5px;
+}
+.article-preview .col-5.col-md-6 .img-container .icons-container .article-icons img {
+  /* max-width: 48px;
+  height: auto;
+  margin: 5px 0; */
+  width: 20px;
+  height: 100%;
+  margin-top: 5px;
 }
 .article-preview .content .category-title h4 {
   font-family: "Red Hat Display";
@@ -136,8 +154,17 @@
   font-style: normal;
   font-weight: 700;
 }
+.article-preview.destacado {
+  /*  &.aspect-2-3 {
+    .img-container {
+      .img-wrapper {
+        min-height: 478px;
+      }
+    }
+  } */
+}
 .article-preview.destacado .img-container .img-wrapper {
-  height: 200px;
+  /* height: 200px; */
   width: 100%;
   background: url("../../assets/images/interest-img.png") center no-repeat;
   background-size: cover;
@@ -178,9 +205,6 @@
 }
 .article-preview.destacado.principal .content .article-info-container .author p {
   color: white;
-}
-.article-preview.destacado.aspect-2-3 .img-container .img-wrapper {
-  min-height: 478px;
 }
 .article-preview.autor .img-container .img-wrapper {
   margin: 0 auto;
@@ -231,6 +255,30 @@
   height: auto;
 }
 
+@media (min-width: 360px) {
+  .article-preview .img-container .icons-container .article-icons img {
+    width: 40px;
+  }
+  .article-preview .col-5.col-md-6 .img-container .icons-container .article-icons img {
+    width: 20px;
+  }
+}
+@media (min-width: 400px) {
+  .article-preview .img-container .icons-container .article-icons img {
+    width: 50px;
+  }
+  .article-preview .col-5.col-md-6 .img-container .icons-container .article-icons img {
+    width: 25px;
+  }
+}
+@media (min-width: 500px) {
+  .article-preview .img-container .icons-container .article-icons img {
+    width: 60px;
+  }
+  .article-preview .col-5.col-md-6 .img-container .icons-container .article-icons img {
+    width: 30px;
+  }
+}
 @media (min-width: 768px) {
   .article-preview .img-container .icons-container .article-icons img {
     max-width: 25px;
@@ -269,7 +317,7 @@
     width: 211px;
   }
   .article-preview.destacado .img-container .img-wrapper {
-    height: 300px;
+    height: initial;
   }
   .article-preview.destacado.principal .content .title p {
     font-size: 55px;
@@ -302,13 +350,6 @@
     min-height: 472px;
   }
 
-  .column-x3 .article-preview {
-    /*  max-width: 258px; */
-  }
-  .column-x3 .article-preview .img-container .img-wrapper {
-    min-height: 254px;
-  }
-
   .article-preview {
     /*  max-width: 258px; */
   }
@@ -323,18 +364,23 @@
     line-height: 24.15px;
     letter-spacing: -0.1px;
   }
-  .article-preview.destacado .img-container .img-wrapper, .article-preview.destacado-md .img-container .img-wrapper {
-    min-height: 360px;
+  .article-preview.destacado, .article-preview.destacado-md {
+    /* .img-container {
+      .img-wrapper {
+        min-height: 360px;
+      }
+    } */
+    /* &.principal {
+      .img-container {
+        .img-wrapper {
+          min-height: 675px;
+        }
+      }
+    } */
   }
   .article-preview.destacado .content .title p, .article-preview.destacado-md .content .title p {
     font-size: 30px;
     line-height: 33.69px;
-  }
-  .article-preview.destacado.principal .img-container .img-wrapper, .article-preview.destacado-md.principal .img-container .img-wrapper {
-    min-height: 675px;
-  }
-  .article-preview.large-thumbnail .img-container .img-wrapper {
-    min-height: 381px;
   }
   .article-preview.autor .img-container .img-wrapper {
     min-height: 157px;

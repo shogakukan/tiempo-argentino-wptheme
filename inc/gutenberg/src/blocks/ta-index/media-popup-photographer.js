@@ -77,6 +77,6 @@ hookComponentToNode({
 
         return <MediaPopupPhotographerSelector node = {nodeBeforeMount} onUpdate = { onUpdate } />
     },
-    querySelector: `.media-sidebar .compat-field-ta_photographer .field`,
+    querySelector: `.compat-field-ta_photographer .field`,
     removeOldHtml: false,
 });

@@ -41,3 +41,33 @@ new TA_Micrositio('radiografia-del-vaciamiento', array(
     'priority'              => 3,
     'custom_content'        => true,
 ));
+
+new TA_Micrositio('20historias', array(
+    'title'                 => '20 historias del saqueo económico',
+    'priority'              => 5,
+    'custom_content'        => true,
+));
+
+new TA_Micrositio('malvinas', array(
+    'title'                 => 'Malvinas - 40 años',
+    'priority'              => 6,
+    'custom_content'        => true,
+));
+
+new TA_Micrositio('tiempo-de-viajes', array(
+    'title'                 => 'Tiempo de viajes',
+    'priority'              => 7,
+    'custom_content'        => true,
+));
+
+new TA_Micrositio('qatar-2022', array(
+    'title'                 => 'Qatar 2022',
+    'priority'              => 8,
+    'custom_content'        => true,
+));
+
+new TA_Micrositio('universitario', array(
+    'title'                 => 'Tiempo Universitario',
+    'priority'              => 9,
+    'custom_content'        => true,
+));

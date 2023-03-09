@@ -30,7 +30,7 @@ class TAArticlesSliderRow extends TAArticlesBlockRow{
 
         ?>
 
-        <div class="slider-micrositio ta-context micrositio ambiental my-3">
+        <div class="slider-micrositio ta-context ambiental my-3">
             <div class="context-bg">
                 <div id="<?php echo esc_attr($slider_id); ?>" class="carousel slide context-color pt-3" data-ride="carousel">
                         <div class="carousel-inner">
@@ -39,13 +39,15 @@ class TAArticlesSliderRow extends TAArticlesBlockRow{
                                 if(!isset($articles[$i]))
                                     break;
                                 $article = $articles[$i];
-                                $thumbnail_url = $article->thumbnail_common && $article->thumbnail_common['url'] ? $article->thumbnail_common['url'] : '';
+                                $thumbnail = $article->get_thumbnail_alt_common(null, $imgSize) ? $article->get_thumbnail_alt_common(null, $imgSize) : $article->get_thumbnail_common(null, $imgSize);//$article->thumbnail_alt_common ? $article->thumbnail_alt_common : $article->thumbnail_common;
+                                $thumbnail_url = $thumbnail ? $thumbnail['url'] : '';
+                                //$thumbnail_url = $article->thumbnail_common && $article->thumbnail_common['url'] ? $article->thumbnail_common['url'] : '';
                                 $item_class = $printed_slides == 0 ? 'active' : '';
                             ?>
                             <div class="carousel-item <?php echo esc_attr($item_class); ?>">
                                 <a href="<?php echo esc_attr($article->url); ?>">
                                     <div class="img-container">
-                                        <img class="d-block w-100" src="<?php echo esc_attr($thumbnail_url); ?>"
+                                        <img class="d-block w-100" loading="lazy" src="<?php echo esc_attr($thumbnail_url); ?>"
                                             alt="Third slide">
                                         <div class="overlay"></div>
                                     </div>
@@ -96,6 +98,7 @@ class TAArticlesSliderRow extends TAArticlesBlockRow{
                     </div>
             </div>
         </div>
+        <!-- row divider -->
 
 
         <?php

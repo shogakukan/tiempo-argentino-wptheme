@@ -59,7 +59,7 @@ class Balancer_TA
                 $topics = get_user_meta(wp_get_current_user()->ID, '_personalizer_topics', true);
             }
             if ($topics === null) {
-                require_once TA_THEME_PATH . '/balancer/tags/topics-cloud.php';
+                //require_once TA_THEME_PATH . '/balancer/tags/topics-cloud.php';
             }
         }
     }

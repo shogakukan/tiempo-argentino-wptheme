@@ -5,16 +5,24 @@
 */
 $article = TA_Article_Factory::get_article($post);
 $header_slug = $article->micrositio ? 'micrositio' : '';
-$article_part_slug = $article->micrositio ? 'special_article' : 'article';
+//$article_part_slug = $article->micrositio ? 'special_article' : 'article';
+if ($article->micrositio) {
+  $article_part_slug = 'special_article';
+} elseif (($article->special_format == 'fotogalería' && $article->gallery) || ($article->special_format && $article->special_format != 'fotogalería')) {
+  $article_part_slug = $article->special_format . '_article';
+} else {
+  $article_part_slug = 'article';
+}
 ?>
 <?php get_header($header_slug); ?>
 
 <?php get_template_part('parts/single', $article_part_slug); ?>
 
 <?php get_footer(); ?>
+<?php /*
 <script>
 (function($){
-     /** share */
+
  $(document).ready(function () {
     $(".share-popover").popover({
       placement: "bottom",
@@ -50,3 +58,4 @@ $article_part_slug = $article->micrositio ? 'special_article' : 'article';
 })(jQuery);
 
 </script>
+*/ ?>
