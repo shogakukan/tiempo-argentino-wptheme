@@ -9,7 +9,7 @@
             <div class="info-forms">
                 <div class="personal-info">
                     <?php //$address = get_user_meta(get_current_user_id(), '_user_address', false); ?>
-                    <?php $address = Subscriptions_Address_Helper::get_address_by_user_id(get_current_user_id()); ?>
+                    <?php $address = Subscriptions_Address_Helper::get_address_by_user_id(get_current_user_id());?>
                     <form method="post" id="edit-info-form">
                         <div class="form-container d-flex flex-wrap justify-content-md-between mx-auto mt-4">
                             <div class="input-container col-12 col-md-5 mx-1 d-flex align-items-center" id="">
@@ -57,71 +57,71 @@
                     </form>
                 </div>
                 <div class="delivery-info text-md-center mt-3">
-                    <?php if (is_user_logged_in() && get_user_meta(get_current_user_id(),'_user_status',true) == 'active' && get_post_meta(get_user_meta(get_current_user_id(),'suscription',true), '_physical', true)) : ?>
-                    <button class="delivery-info-dropdown collapsed" type="button" data-toggle="collapse" data-target="#deliveryInfo" aria-expanded="false" aria-controls="deliveryInfo">
-                        <div class="d-flex">
-                            <div>
-                                <p>Datos para recibir la Edición Impresa</p>
+                    <?php if ($address && is_user_logged_in() && get_user_meta(get_current_user_id(),'_user_status',true) == 'active' && get_post_meta(get_user_meta(get_current_user_id(),'suscription',true), '_physical', true)) : ?>
+                        <button class="delivery-info-dropdown collapsed" type="button" data-toggle="collapse" data-target="#deliveryInfo" aria-expanded="false" aria-controls="deliveryInfo">
+                            <div class="d-flex">
+                                <div>
+                                    <p>Datos para recibir la Edición Impresa</p>
+                                </div>
+                                <div class="dropdown-icon mx-2">
+                                    <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/arrow.svg" alt="" />
+                                </div>
                             </div>
-                            <div class="dropdown-icon mx-2">
-                                <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/arrow.svg" alt="" />
+                        </button>
+                        <div class="collapse" id="deliveryInfo">
+                            <div class="card card-body p-0">
+                                <div class="subtitle">
+                                    <p>Por favor, indicamos un domicilio donde se te enviará el diario.</p>
+                                </div>
+                                <div class="form-container d-flex flex-wrap justify-content-md-between mx-auto">
+                                    <div class="input-container col-12 col-md-5 mx-1 d-flex align-items-center d-flex align-items-center" id="">
+                                        <label for="Provincia">Provincia: </label>
+                                        <select name="state" id="state" required>
+                                            <option value=""> -- seleccionar -- </option>
+                                            <option value="CABA" <?php selected('CABA', $address[0]['state']) ?>>CABA</option>
+                                            <option value="gba" <?php selected('gba', $address[0]['state']) ?>>Gran Buenos Aires</option>
+                                            <option value="PBA" <?php selected('PBA', $address[0]['state']) ?>>Provincia de Buenos Aires</option>
+                                        </select>
+                                    </div>
+                                    <div class="input-container  col-12 col-md-5 mx-1 d-flex align-items-center d-flex align-items-center" id="">
+                                        <label for="Localidad">Localidad: </label>
+                                        <select name="city" id="city" required>
+                                            <option value=""> -- seleccionar --</option>
+                                        </select>
+                                        <input type="hidden" id="localidad" value="<?php echo $address[0]['city'] ?>">
+                                    </div>
+                                    <div class="input-container  col-12 col-md-5 mx-1 d-flex align-items-center d-flex align-items-center" id="">
+                                        <label for="Calle">Calle: </label>
+                                        <input type="text" id="address" class="input-account" name="address" required placeholder=" " value="<?php echo $address[0]['address'] !== null ? $address[0]['address'] : ''; ?>" required disabled>
+                                    </div>
+                                    <div class="input-container  col-12 col-md-5 mx-1 d-flex align-items-center d-flex align-items-center" id="">
+                                        <label for="Numero">Número: </label>
+                                        <input type="number" name="number" class="input-account" id="number" placeholder=" " value="<?php echo $address[0]['number'] !== null ? $address[0]['number'] : ''; ?>" required disabled>
+                                    </div>
+                                    <div class="input-container  col-12 col-md-5 mx-1 d-flex align-items-center d-flex align-items-center" id="">
+                                        <label for="cp">CP: </label>
+                                        <input type="text" id="zip" name="zip" placeholder=" " class="input-account" value="<?php echo $address[0]['zip'] !== null ? $address[0]['zip'] : ''; ?>" disabled>
+                                    </div>
+                                    <div class="input-container col-12 col-md-5 mx-1 d-flex align-items-center d-flex align-items-center" id="">
+                                            <label for="cp">Piso: </label>
+                                            <input type="text" placeholder=" " class="input-account" name="floor" id="floor" value="<?php echo $address[0]['floor'] !== null ? $address[0]['floor'] : ''; ?>"/>
+                                    </div>
+                                    <div class="input-container col-12 col-md-5 mx-1 d-flex align-items-center d-flex align-items-center" id="">
+                                        <label for="cp">Departamento: </label>
+                                        <input type="text" placeholder=" " class="input-account" name="apt" id="apt" value="<?php echo $address[0]['apt'] !== null ? $address[0]['apt'] : ''; ?>" />
+                                    </div>
+                                    <div class="input-container col-12 col-md-5 mx-1 d-flex align-items-center d-flex align-items-center" id="">
+                                        <label for="">Entre calles</label>
+                                        <input type="text" placeholder=" " class="input-account" name="bstreet" id="bstreet" value="<?php echo $address[0]['bstreet'] !== null ? $address[0]['bstreet'] : ''; ?>" />
+                                    </div>
+                                </div>
+                                <div class="btns-container text-center d-flex justify-content-center my-4">
+                                    <button type="button" id="editDeliveryInfo">Editar datos</button>
+                                    <button type="button" id="address-button-2" style="display: none;">Guardar</button>
+                                    <button type="button" id="finishEditingDeliveryInfo" class="gray-btn-black-text">Cerrar</button>
+                                </div>
                             </div>
                         </div>
-                    </button>
-                    <div class="collapse" id="deliveryInfo">
-                        <div class="card card-body p-0">
-                            <div class="subtitle">
-                                <p>Por favor, indicamos un domicilio donde se te enviará el diario.</p>
-                            </div>
-                            <div class="form-container d-flex flex-wrap justify-content-md-between mx-auto">
-                                <div class="input-container col-12 col-md-5 mx-1 d-flex align-items-center d-flex align-items-center" id="">
-                                    <label for="Provincia">Provincia: </label>
-                                    <select name="state" id="state" required>
-                                        <option value=""> -- seleccionar -- </option>
-                                        <option value="CABA" <?php selected('CABA', $address[0]['state']) ?>>CABA</option>
-                                        <option value="gba" <?php selected('gba', $address[0]['state']) ?>>Gran Buenos Aires</option>
-                                        <option value="PBA" <?php selected('PBA', $address[0]['state']) ?>>Provincia de Buenos Aires</option>
-                                    </select>
-                                </div>
-                                <div class="input-container  col-12 col-md-5 mx-1 d-flex align-items-center d-flex align-items-center" id="">
-                                    <label for="Localidad">Localidad: </label>
-                                    <select name="city" id="city" required>
-                                        <option value=""> -- seleccionar --</option>
-                                    </select>
-                                    <input type="hidden" id="localidad" value="<?php echo $address[0]['city'] ?>">
-                                </div>
-                                <div class="input-container  col-12 col-md-5 mx-1 d-flex align-items-center d-flex align-items-center" id="">
-                                    <label for="Calle">Calle: </label>
-                                    <input type="text" id="address" class="input-account" name="address" required placeholder=" " value="<?php echo $address[0]['address'] !== null ? $address[0]['address'] : ''; ?>" required disabled>
-                                </div>
-                                <div class="input-container  col-12 col-md-5 mx-1 d-flex align-items-center d-flex align-items-center" id="">
-                                    <label for="Numero">Número: </label>
-                                    <input type="number" name="number" class="input-account" id="number" placeholder=" " value="<?php echo $address[0]['number'] !== null ? $address[0]['number'] : ''; ?>" required disabled>
-                                </div>
-                                <div class="input-container  col-12 col-md-5 mx-1 d-flex align-items-center d-flex align-items-center" id="">
-                                    <label for="cp">CP: </label>
-                                    <input type="text" id="zip" name="zip" placeholder=" " class="input-account" value="<?php echo $address[0]['zip'] !== null ? $address[0]['zip'] : ''; ?>" disabled>
-                                </div>
-                                <div class="input-container col-12 col-md-5 mx-1 d-flex align-items-center d-flex align-items-center" id="">
-                                        <label for="cp">Piso: </label>
-                                        <input type="text" placeholder=" " class="input-account" name="floor" id="floor" value="<?php echo $address[0]['floor'] !== null ? $address[0]['floor'] : ''; ?>"/>
-                                </div>
-                                <div class="input-container col-12 col-md-5 mx-1 d-flex align-items-center d-flex align-items-center" id="">
-                                    <label for="cp">Departamento: </label>
-                                    <input type="text" placeholder=" " class="input-account" name="apt" id="apt" value="<?php echo $address[0]['apt'] !== null ? $address[0]['apt'] : ''; ?>" />
-                                </div>
-                                <div class="input-container col-12 col-md-5 mx-1 d-flex align-items-center d-flex align-items-center" id="">
-                                    <label for="">Entre calles</label>
-                                    <input type="text" placeholder=" " class="input-account" name="bstreet" id="bstreet" value="<?php echo $address[0]['bstreet'] !== null ? $address[0]['bstreet'] : ''; ?>" />
-                                </div>
-                            </div>
-                            <div class="btns-container text-center d-flex justify-content-center my-4">
-                                <button type="button" id="editDeliveryInfo">Editar datos</button>
-                                <button type="button" id="address-button-2" style="display: none;">Guardar</button>
-                                <button type="button" id="finishEditingDeliveryInfo" class="gray-btn-black-text">Cerrar</button>
-                            </div>
-                        </div>
-                    </div>
                     <?php endif; ?>
                     <div class="support text-center">
                         <p>Deseo <a href="mailto:pagostiempo@gmail.com"><b>contactar con soporte</b></a></p>
