@@ -71,3 +71,9 @@ new TA_Micrositio('universitario', array(
     'priority'              => 9,
     'custom_content'        => true,
 ));
+
+new TA_Micrositio('democracia', array(
+    'title'                 => '40 años de democracia',
+    'priority'              => 10,
+    'custom_content'        => true,
+));
