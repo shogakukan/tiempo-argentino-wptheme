@@ -31,6 +31,7 @@ if (is_user_logged_in() && get_user_meta(get_current_user_id(),'_user_status',tr
             background-color: <?= $color; ?> !important;
         }
         <?= "." . $micrositio->slug; ?> .category-title h4 {color: <?= $color; ?>;}
+        <?= "." . $micrositio->slug; ?> .article-border {border-color:<?= $color; ?>;}
     </style>
 <?php endif; ?>
 <div class="header header-micrositio ta-context micrositio <?php echo esc_attr($micrositio->slug); ?>">
