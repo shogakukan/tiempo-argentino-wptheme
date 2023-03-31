@@ -7,7 +7,7 @@ $defaults = array(
 extract(array_merge($defaults, $args));
 $tw_text = $title;
 if ($authors){
-    $tw_text .= " - Por ";
+    $tw_text .= "%0A%0A✍️ ";
     $amount = count($authors);
     for ($i = 0; $i < $amount; $i++){
         $tw_text .= $authors[$i]->name;
@@ -39,7 +39,7 @@ if ($authors){
     <a href="https://facebook.com/sharer.php?u=<?php echo get_permalink( get_queried_object_id() )?>" target="_blank">
         <img class="img-fluid m-0" src="<?php echo get_stylesheet_directory_uri()?>/assets/img/fb-share-popover.svg">
     </a>
-    <a href="https://twitter.com/intent/tweet?url=<?php echo $tw_text . " " . get_permalink( get_queried_object_id() )?>" target="_blank">
+    <a href="https://twitter.com/intent/tweet?url=<?php echo $tw_text . "%0A%0A" . get_permalink( get_queried_object_id() )?>" target="_blank">
         <img class="img-fluid m-0" src="<?php echo get_stylesheet_directory_uri()?>/assets/img/twitter-share-popover.svg">
     </a>
     <a href="whatsapp://send/?text=<?php echo get_permalink( get_queried_object_id() )?>" target="_blank" class="d-lg-none">
