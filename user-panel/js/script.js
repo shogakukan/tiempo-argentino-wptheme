@@ -62,7 +62,9 @@
           var floor = $("#floor").val();
           var apt = $("#apt").val();
           var zip = $("#zip").val();
-          var bstreet = $("#bstreet").val();
+          var bstreet_1 = $("#bstreet_1").val();
+          var bstreet_2 = $("#bstreet_2").val();
+          var telephone = $("#telephone").val();
           $.ajax({
             type: "post",
             url: ajax_address.url,
@@ -77,7 +79,9 @@
               floor: floor,
               apt: apt,
               zip: zip,
-              bstreet: bstreet,
+              bstreet_1: bstreet_1,
+              bstreet_2: bstreet_2,
+              telephone: telephone,
               observations: '',
             },
             success: function (result) {

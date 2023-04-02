@@ -81,7 +81,10 @@ do_action('header_thankyou_page');
                                                     </div>
                                                 </div>
                                                 <div class="input-container">
-                                                    <input type="text" placeholder="<?php echo __('Entre calles', 'gen-base-theme') ?>" name="bstreet" id="bstreet" value="<?php echo $address[0]['bstreet'] !== null ? $address[0]['bstreet'] : ''; ?>" />
+                                                    <input type="text" placeholder="<?php echo __('Entre calles 1', 'gen-base-theme') ?>" name="bstreet_1" id="bstreet_1" value="<?php echo $address[0]['bstreet_1'] !== null ? $address[0]['bstreet_1'] : ''; ?>" />
+                                                </div>
+                                                <div class="input-container">
+                                                    <input type="text" placeholder="<?php echo __('Entre calles 2', 'gen-base-theme') ?>" name="bstreet_2" id="bstreet_2" value="<?php echo $address[0]['bstreet_2'] !== null ? $address[0]['bstreet_2'] : ''; ?>" />
                                                 </div>
                                                 <div class="input-container">
                                                     <textarea name="observations" placeholder="<?php echo __('Observaciones', 'gen-base-theme') ?>" class="form-control" id="observations" cols="30" rows="4"><?php echo $address[0]['observations'] !== null ? $address[0]['observations'] : ''; ?></textarea>

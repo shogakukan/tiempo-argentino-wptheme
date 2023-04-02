@@ -61,7 +61,8 @@ class Users_Api
                             $floor = array_key_exists('floor',$d) ? $d['floor'] : '';
                             $number = array_key_exists('number',$d) ? $d['number'] : '';
                             $CPA = array_key_exists('CPA',$d) ? $d['CPA'] : '';
-                            $between_streets = array_key_exists('between_streets',$d) ? $d['between_streets'] : '';
+                            $between_streets_1 = array_key_exists('between_streets_1',$d) ? $d['between_streets_1'] : '';
+                            $between_streets_2 = array_key_exists('between_streets_2',$d) ? $d['between_streets_2'] : '';
 
                             $address = [
                                 'state' =>  '-',
@@ -71,7 +72,8 @@ class Users_Api
                                 'floor' => $floor,
                                 'apt' => $number,
                                 'zip' => $CPA,
-                                'bstreet' => $between_streets,
+                                'bstreet_1' => $between_streets_1,
+                                'bstreet_2' => $between_streets_2,
                                 'observations' => ''
                             ];
                             update_user_meta($new, '_user_address', $address);

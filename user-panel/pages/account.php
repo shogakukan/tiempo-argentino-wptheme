@@ -20,10 +20,12 @@
                                 <label for="Apellido">Apellido: </label>
                                 <input type="text" placeholder=" " class="input-account" name="last_name_account" id="last_name_account" value="<?php echo wp_get_current_user()->last_name ?>" required disabled>
                             </div>
+                            <?php /*
                             <div class="input-container col-12 col-md-5 mx-1 d-flex align-items-center" id="">
                                 <label for="Contacto">Tel. Contacto: </label>
                                 <input type="tel" placeholder=" " class="input-account" name="user_phone" id="user_phone" value="<?php echo user_panel_proccess()->get_user_phone(wp_get_current_user()->ID) ?>" disabled>
                             </div>
+                            */ ?>
                             <div class="input-container col-12 col-md-5 mx-1 d-flex align-items-center">
                                 <label for="email">E-mail: </label>
                                 <input type="email" placeholder=" " name="user_email_account" id="user_email_account" value="<?php echo wp_get_current_user()->user_email ?>" disabled>
@@ -98,10 +100,6 @@
                                         <label for="Numero">Número: </label>
                                         <input type="number" name="number" class="input-account" id="number" placeholder=" " value="<?php echo $address[0]['number'] !== null ? $address[0]['number'] : ''; ?>" required disabled>
                                     </div>
-                                    <div class="input-container  col-12 col-md-5 mx-1 d-flex align-items-center d-flex align-items-center" id="">
-                                        <label for="cp">CP: </label>
-                                        <input type="text" id="zip" name="zip" placeholder=" " class="input-account" value="<?php echo $address[0]['zip'] !== null ? $address[0]['zip'] : ''; ?>" disabled>
-                                    </div>
                                     <div class="input-container col-12 col-md-5 mx-1 d-flex align-items-center d-flex align-items-center" id="">
                                             <label for="cp">Piso: </label>
                                             <input type="text" placeholder=" " class="input-account" name="floor" id="floor" value="<?php echo $address[0]['floor'] !== null ? $address[0]['floor'] : ''; ?>"/>
@@ -111,8 +109,20 @@
                                         <input type="text" placeholder=" " class="input-account" name="apt" id="apt" value="<?php echo $address[0]['apt'] !== null ? $address[0]['apt'] : ''; ?>" />
                                     </div>
                                     <div class="input-container col-12 col-md-5 mx-1 d-flex align-items-center d-flex align-items-center" id="">
-                                        <label for="">Entre calles</label>
-                                        <input type="text" placeholder=" " class="input-account" name="bstreet" id="bstreet" value="<?php echo $address[0]['bstreet'] !== null ? $address[0]['bstreet'] : ''; ?>" />
+                                        <label for="">Entre calles 1:</label>
+                                        <input type="text" placeholder=" " class="input-account" name="bstreet_1" id="bstreet_1" value="<?php echo $address[0]['bstreet_1'] !== null ? $address[0]['bstreet_1'] : ''; ?>" />
+                                    </div>
+                                    <div class="input-container col-12 col-md-5 mx-1 d-flex align-items-center d-flex align-items-center" id="">
+                                        <label for="">Entre calles 2:</label>
+                                        <input type="text" placeholder=" " class="input-account" name="bstreet_2" id="bstreet_2" value="<?php echo $address[0]['bstreet_2'] !== null ? $address[0]['bstreet_2'] : ''; ?>" />
+                                    </div>
+                                    <div class="input-container col-12 col-md-5 mx-1 d-flex align-items-center d-flex align-items-center" id="">
+                                        <label for="telephone">Teléfono:</label>
+                                        <input type="tel" placeholder=" " class="input-account" name="telephone" id="telephone" value="<?php echo $address[0]['telephone'] !== null ? $address[0]['telephone'] : ''; ?>" />
+                                    </div>
+                                    <div class="input-container  col-12 col-md-5 mx-1 d-flex align-items-center d-flex align-items-center" id="">
+                                        <label for="cp">CP: </label>
+                                        <input type="text" id="zip" name="zip" placeholder=" " class="input-account" value="<?php echo $address[0]['zip'] !== null ? $address[0]['zip'] : ''; ?>" disabled>
                                     </div>
                                 </div>
                                 <div class="btns-container text-center d-flex justify-content-center my-4">
