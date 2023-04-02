@@ -23,7 +23,7 @@ do_action('header_thankyou_page');
                                     <p><?php echo __('Para continuar al pago, primero debes seleccionar un paquete, haz click en el bóton para volver.', 'gen-base-theme') ?></b>
                                 </div>
                                 <div class="btns-container text-center mt-4">
-                                    <button><a href="<?php echo get_permalink(get_option('subscriptions_loop_page')) ?>"><?php echo __('Volver.', 'gen-base-theme') ?></a></button>
+                                    <button><a href="<?php echo get_permalink(get_option('subscriptions_loop_page')) ?>"><?php echo __('Volver', 'gen-base-theme') ?></a></button>
                                 </div>
                             </div>
                         </div>
