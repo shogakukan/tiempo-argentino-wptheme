@@ -217,6 +217,10 @@
   font-weight: 900;
   font-size: 12px;
 }
+
+.article-preview .content .category-title a:hover {
+    text-decoration: none;
+}
 .article-preview .content .title p {
   font-family: "Caladea";
   font-style: normal;

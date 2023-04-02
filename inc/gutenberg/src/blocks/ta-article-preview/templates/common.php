@@ -46,7 +46,9 @@ $preview_class = esc_attr($preview_class);
         <?php if($cintillo): ?>
         <div class="article-border"></div>
         <div class="category-title">
-            <h4 data-headband><?php echo $cintillo; ?></h4>
+            <a data-url href="<?php echo esc_attr($url); ?>">
+                <h4 data-headband><?php echo $cintillo; ?></h4>
+            </a>
         </div>
         <?php endif; ?>
         <div class="title">
