@@ -49,13 +49,13 @@
             e.setAttribute("style",`height:${e.scrollWidth * 2 / 3}px`);
         });
 
-        let $tav_container = $('.tiempo-audiovisual .img-container.video');
-        if ($tav_container && $tav_container.get(0)){
-            let new_height = $tav_container.get(0).scrollWidth * 9 /16;
-            $tav_container.css('height', new_height);
+        // let $tav_container = $('.tiempo-audiovisual .img-container.video');
+        // if ($tav_container && $tav_container.get(0)){
+        //     let new_height = $tav_container.get(0).scrollWidth * 9 /16;
+        //     $tav_container.css('height', new_height);
     
-            $('.tiempo-audiovisual .col-3.article-preview').css('height', new_height);
-        }
+        //     $('.tiempo-audiovisual .col-3.article-preview').css('height', new_height);
+        // }
 
     }
     $(window).resize(resizeVideoHome);
