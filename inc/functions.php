@@ -1266,7 +1266,7 @@ function get_youtube_code($video_code){
         $i++;
     }
     if ($pos && isset($ytBreaker)){
-        $video_code = substr($video_code, strpos($video_code,$ytBreaker)+strlen($ytBreaker), 11);
+        return substr($video_code, strpos($video_code,$ytBreaker)+strlen($ytBreaker), 11);
     }
-    return $video_code;
+    return false;
 }

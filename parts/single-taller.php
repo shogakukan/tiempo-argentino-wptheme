@@ -47,7 +47,7 @@ if (!$taller)
         </div>
         <?php /*if ($taller->video) : ?>
                 <div class="img-container video mt-3">
-                    <iframe id="article-video" width="100%" height="100%" src="https://www.youtube.com/embed/<?php echo esc_html($taller->get_video()); ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe loading="lazy" id="article-video" width="100%" height="100%" src="https://www.youtube.com/embed/<?php echo esc_html($taller->get_video()); ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             <?php elseif( !$taller->thumbnail_common['is_default'] ): ?>
                 <div class="img-container mt-3">

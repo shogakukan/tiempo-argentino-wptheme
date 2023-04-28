@@ -15,7 +15,7 @@ if (!$posts_list) return;
 $posts_list = array_slice($posts_list, 0, 10);
 
 ?>
-<div class="container-with-header ta-context dark-blue py-3">
+<div class="tiempo-audiovisual-container container-with-header ta-context dark-blue py-3" style="display:none;">
     <div class="context-color">
         <div class="container line-height-0">
             <div class="separator m-0"></div>
@@ -33,8 +33,13 @@ $posts_list = array_slice($posts_list, 0, 10);
                             <?php $av_artcile = TA_Article_Factory::get_article($post, 'article_post'); ?>
                             <?php if ($av_artcile) : ?>
                                 <?php if ($i === array_key_first($posts_list)) : ?>
+                                    <?php $first_video = esc_html($av_artcile->get_video()); ?>
+                                    <?php $first_title = $av_artcile->title; ?>
                                     <div class="col-md-8 col-12 article-preview video-preview">
-                                        <div class="img-container video" id="player"></div>
+                                        <div class="img-container video" id="player">
+                                            <iframe width="100%" height="100%" loading="lazy" src="https://www.youtube.com/embed/<?php echo $first_video; ?>" title="<?= $first_title ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen onload="onYouTubeIframeAPIReady()">
+                                            </iframe>
+                                        </div>
                                         <div class="content mt-2">
                                             <div class="title" id="video-main-title">
                                                 <p>
@@ -43,67 +48,11 @@ $posts_list = array_slice($posts_list, 0, 10);
                                                             <?= $av_artcile->cintillo . " | " ?>
                                                         <?php endif; ?>
                                                     </span>
-                                                    <span class="titulo"><?= $av_artcile->title ?></span>
+                                                    <span class="titulo"><?= $first_title ?></span>
                                                 </p>
                                             </div>
                                         </div>
                                     </div>
-                                    <script>
-                                        var tag = document.createElement('script');
-
-                                        tag.src = "https://www.youtube.com/iframe_api";
-                                        var firstScriptTag = document.getElementsByTagName('script')[0];
-                                        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-
-                                        var player;
-                                        var video_id = '<?php echo esc_html($av_artcile->get_video()); ?>';
-                                        var divTitle = document.getElementById('video-main-title');
-                                        var spanTitulo = divTitle.querySelector('.titulo');
-                                        var spanCintillo = divTitle.querySelector('.cintillo');
-
-                                        function getPlayer() {
-                                            if (typeof player === 'object') {
-                                                return player;
-                                            } else {
-                                                player = new YT.Player('player', {
-                                                    height: '100%',
-                                                    width: '100%',
-                                                    videoId: video_id,
-                                                    playerVars: {
-                                                        'modestbranding': 1,
-                                                        'controls': 0
-                                                    },
-                                                });
-                                            }
-                                        }
-
-                                        function onYouTubeIframeAPIReady() {
-                                            getPlayer();
-                                            let videoColumn = document.querySelector(".video-preview");
-                                            let innerDivs = videoColumn.querySelectorAll("div, iframe");
-                                            let feauteredHeight = 0;
-                                            innerDivs.forEach(d => {
-                                                feauteredHeight += d.offsetHeight;
-                                            });
-                                            let videoList = document.querySelector(".video-list");
-                                            videoList.style.height = feauteredHeight + "px";
-                                        }
-
-                                        function setVideoId(videoEl) {
-                                            if (videoEl.dataset.video && videoEl.dataset.video != video_id) {
-                                                getPlayer().stopVideo();
-                                                video_id = videoEl.dataset.video;
-
-                                                spanTitulo.innerText = videoEl.dataset.titulo;
-                                                spanCintillo.innerText = videoEl.dataset.cintillo ? videoEl.dataset.cintillo + " | " : "";
-
-                                                getPlayer().loadVideoById({
-                                                    videoId: video_id
-                                                });
-                                            }
-                                        }
-                                    </script>
                                     <div class="separator d-block d-md-none m-3"></div>
                                     <div class="col-md-4 col-12 article-preview video-list" style="overflow: scroll;">
                                     <?php endif; ?>
@@ -140,6 +89,7 @@ $posts_list = array_slice($posts_list, 0, 10);
             height: 100%;
             align-content: flex-start;
         }
+
         .tiempo-audiovisual .video-list {
             white-space: nowrap;
             height: auto !important;
@@ -154,3 +104,42 @@ $posts_list = array_slice($posts_list, 0, 10);
         }
     }
 </style>
+
+<script>
+    window.onload = function() {
+        console.log(1, document.querySelector('#player').style.height)
+        document.querySelector(".tiempo-audiovisual-container").style.display = "block";
+    }
+    var video_id = '<?php echo $first_video; ?>';
+
+    function onYouTubeIframeAPIReady() {
+        console.log(2, document.querySelector('#player').style.height)
+
+        let videoColumn = document.querySelector(".video-preview");
+        let innerDivs = videoColumn.querySelectorAll("div.video, div.content");
+        (function($) {
+            let $tav_container = $('.tiempo-audiovisual .img-container.video');
+            if ($tav_container && $tav_container.get(0)) {
+                let new_height = $tav_container.get(0).scrollWidth * 9 / 16;
+                $tav_container.css('height', new_height);
+                $('.tiempo-audiovisual .col-3.article-preview').css('height', new_height);
+            }
+        })(jQuery);
+        let feauteredHeight = 0;
+        innerDivs.forEach(d => {
+            feauteredHeight += d.offsetHeight;
+        });
+        let videoList = document.querySelector(".video-list");
+        videoList.style.height = feauteredHeight + "px";
+
+    }
+
+    function setVideoId(videoEl) {
+        if (videoEl.dataset.video && videoEl.dataset.video != video_id) {
+            video_id = videoEl.dataset.video;
+            document.querySelector('#player').innerHTML = `<iframe width="100%" height="100%" loading="lazy" src="https://www.youtube.com/embed/${video_id}" title="${videoEl.dataset.titulo}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+            spanTitulo.innerText = videoEl.dataset.titulo;
+            spanCintillo.innerText = videoEl.dataset.cintillo ? videoEl.dataset.cintillo + " | " : "";
+        }
+    }
+</script>
