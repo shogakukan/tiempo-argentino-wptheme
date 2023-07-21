@@ -1,7 +1,7 @@
 <?php
 if(!isset($args['post_id']) || !$args['post_id'])
     return;
-if ($args['micrositio_slug']) {
+if (isset($args['micrositio_slug']) && $args['micrositio_slug']) {
     $terms_slugs = array($args['micrositio_slug']);
     $taxonomy = 'ta_article_micrositio';
 } else {
