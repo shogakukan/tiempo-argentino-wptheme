@@ -839,13 +839,16 @@ function set_posts_per_page( $query ) {
 	if (!$query->get( 'posts_per_page') || $query->get( 'posts_per_page') >= 0 && $query->get( 'posts_per_page') < 13) {
 		$types = ['ta_article_section', 'ta_article_author', 's', 'ta_article_author', 'ta_article_tag'];
 		foreach ($types as $t) {
-			if ($query->query[$t])
+			if (isset($query->query[$t]) && $query->query[$t])
 				$query->set( 'posts_per_page', 12 );
 		}
-		if ($query->query['post_type'] == "ta_ed_impresa")
+		if (isset($query->query['post_type'])){
+			if ($query->query['post_type'] == "ta_ed_impresa")
 			$query->set( 'posts_per_page', 12 );
-		if ($query->query['post_type'] == "ta_article")
-			$query->set( 'posts_per_page', 12 );
+			if ($query->query['post_type'] == "ta_article")
+				$query->set( 'posts_per_page', 12 );
+		}
+
 	}
 }
 

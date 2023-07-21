@@ -29,7 +29,7 @@ do_action('subscriptions_payment_page_header');
                     ],
                     [
                         'key' => '_member_order_status',
-                        'value' => array('completed', 'hold'),
+                        'value' => array('completed', 'on-hold'),
                         'compare' => 'IN'
                     ]
                 ]
