@@ -1,0 +1,257 @@
+{
+    "13": {
+      "agrupacion": "Movimiento al Socialismo",
+      "nombreCorto": "MAS",
+      "color": "#a60c07",
+      "order": 9,
+      "listas": {
+        "3017": {
+          "candidate": "Castañeira",
+          "order": 9,
+          "foto": "p3017.jpg"
+        }
+      }
+    },
+    "20": {
+      "agrupacion": "Unión del Centro Democrático ",
+      "nombreCorto": "Ucedé",
+      "color": "#f2f5f3",
+      "order": 9,
+      "listas": {
+        "3018": {
+          "candidate": "Passamonti",
+          "order": 9,
+          "foto": ""
+        }
+      }
+    },
+    "40": {
+      "agrupacion": "Libres del Sur",
+      "nombreCorto": "Libres del Sur",
+      "color": "#8713ed",
+      "order": 9,
+      "listas": {
+        "3019": {
+          "candidate": "Escobar",
+          "order": 9,
+          "foto": "p3019.jpg"
+        }
+      }
+    },
+    "57": {
+      "agrupacion": "Movimiento de Acción Vecinal",
+      "nombreCorto": "Acción Vecinal",
+      "order": 9,
+      "color": "#076e1b",
+      "listas": {
+        "3025": {
+          "candidate": "Albarracín",
+          "order": 9,
+          "foto": ""
+        }
+      }
+    },
+    "90": {
+      "agrupacion": "Movimiento Izquierda Juventud Dignidad",
+      "nombreCorto": "MIJD",
+      "color": "#303015",
+      "order": 9,
+      "listas": {
+        "3026": {
+          "candidate": "Castells",
+          "order": 1,
+          "foto": "p3026.jpg"
+        },
+        "3027": {
+          "candidate": "Cúneo",
+          "order": 2,
+          "foto": "p3027.jpg"
+        }
+      }
+    },
+    "92": {
+      "agrupacion": "Política Obrera",
+      "nombreCorto": "Política Obrera",
+      "color": "#590b0b",
+      "order": 9,
+      "listas": {
+        "3020": {
+          "candidate": "Ramal",
+          "order": 9,
+          "foto": "p3020.jpg"
+        }
+      }
+    },
+    "94": {
+      "agrupacion": "Proyecto Joven",
+      "nombreCorto": "Proyecto Joven",
+      "color": "#22db0d",
+      "order": 9,
+      "listas": {
+        "3022": {
+          "candidate": "Giardinelli",
+          "order": 9,
+          "foto": "p3022.jpg"
+        },
+        "3023": {
+          "candidate": "Ayerbe",
+          "order": 9,
+          "foto": ""
+        },
+        "3024": {
+          "candidate": "Ibáñez",
+          "order": 9,
+          "foto": ""
+        }
+      }
+    },
+    "95": {
+      "agrupacion": "Frente Patriota Federal",
+      "order": 9,
+      "nombreCorto": "Frente patriota",
+      "color": "#1169f7",
+      "listas": {
+        "3021": {
+          "candidate": "Biondini",
+          "order": 9,
+          "foto": "p3021.jpg"
+        }
+      }
+    },
+    "131": {
+      "agrupacion": "Frente Liber.Ar",
+      "order": 9,
+      "nombreCorto": "Liber.Ar",
+      "color": "#08fcf4",
+      "listas": {
+        "3002": {
+          "candidate": "Etchepare",
+          "order": 9,
+          "foto": ""
+        },
+        "3003": {
+          "candidate": "Vasena",
+          "order": 9,
+          "foto": ""
+        },
+        "3004": {
+          "candidate": "Bárbaro",
+          "order": 1,
+          "foto": "p3004.jpg"
+        }
+      }
+    },
+    "132": {
+      "agrupacion": "Juntos por el Cambio",
+      "nombreCorto": "Juntos por el Cambio",
+      "order": 2,
+      "color": "#faf214",
+      "listas": {
+        "3007": {
+          "candidate": "R. Larreta",
+          "order": 2,
+          "foto": "p3007.jpg"
+        },
+        "3008": {
+          "candidate": "Bullrich",
+          "order": 1,
+          "foto": "p3008.jpg"
+        }
+      }
+    },
+    "133": {
+      "agrupacion": "Hacemos por Nuestro País",
+      "nombreCorto": "Hacemos",
+      "order": 5,
+      "color": "#e408fc",
+      "listas": {
+        "3001": {
+          "candidate": "Schiaretti",
+          "order": 1,
+          "foto": "p3001.jpg"
+        }
+      }
+    },
+    "134": {
+      "agrupacion": "Unión por la Patria",
+      "nombreCorto": "Unión por la Patria",
+      "order": 1,
+      "color": "#00B5EF",
+      "listas": {
+        "3005": {
+          "candidate": "Massa",
+          "order": 1,
+          "foto": "p3005.jpg"
+        },
+        "3006": {
+          "candidate": "Grabois",
+          "order": 2,
+          "foto": "p3006.jpg"
+        }
+      }
+    },
+    "135": {
+      "agrupacion": "La Libertad Avanza",
+      "nombreCorto": "La Libertad Avanza",
+      "order": 3,
+      "color": "#050505",
+      "listas": {
+        "3016": {
+          "candidate": "Milei",
+          "order": 1,
+          "foto": "p3016.jpg"
+        }
+      }
+    },
+    "136": {
+      "agrupacion": "Frente de Izquierda y de los Trabajadores - Unidad",
+      "nombreCorto": "FITU",
+      "order": 4,
+      "color": "#ff0000",
+      "listas": {
+        "3009": {
+          "candidate": "Bregman",
+          "order": 1,
+          "foto": "p3009.jpg"
+        },
+        "3010": {
+          "candidate": "Solano",
+          "order": 2,
+          "foto": "p3010.jpg"
+        }
+      }
+    },
+    "137": {
+      "agrupacion": "Principios y Valores",
+      "nombreCorto": "PyV",
+      "order": 6,
+      "color": "#062b33",
+      "listas": {
+        "3011": {
+          "candidate": "Moreno",
+          "order": 1,
+          "foto": "p3011.jpg"
+        },
+        "3012": {
+          "candidate": "Martínez",
+          "order": 9,
+          "foto": ""
+        },
+        "3013": {
+          "candidate": "Oliver",
+          "order": 9,
+          "foto": ""
+        },
+        "3014": {
+          "candidate": "Bartolini",
+          "order": 9,
+          "foto": ""
+        },
+        "3015": {
+          "candidate": "Arias",
+          "order": 9,
+          "foto": ""
+        }
+      }
+    }
+  }

@@ -71,6 +71,15 @@
         do_action('cloud_tag');
     }
 
+    if (is_front_page()) {
+        do_action('elecciones');
+    } else {
+        global $post;
+        if($post->post_name == 'resultados'){
+            do_action('elecciones');
+        }
+    }
+
     the_content();
 endif; ?>
 <?php TA_Blocks_Container_Manager::close(); ?>

@@ -1,0 +1,122 @@
+{
+    "cargo": "JEF",
+    "resultados": [
+    {
+    "cant_votos": 186312,
+    "id_candidatura": "4.6",
+    "clase_candidatura": "Lista",
+    "descripcion_candidatura": "Horizonte de Esperanza"
+    },
+    {
+    "cant_votos": 90731,
+    "id_candidatura": "4.5",
+    "clase_candidatura": "Lista",
+    "descripcion_candidatura": "Movimiento por el VAR"
+    },
+    {
+    "cant_votos": 48107,
+    "id_candidatura": "5.7",
+    "clase_candidatura": "Lista",
+    "descripcion_candidatura": "Agrupación Supremacía Cuántica"
+    },
+    {
+    "cant_votos": 23212,
+    "id_candidatura": "2.2",
+    "clase_candidatura": "Lista",
+    "descripcion_candidatura": "Igualando Variables"
+    },
+    {
+    "cant_votos": 11560,
+    "id_candidatura": "1.1",
+    "clase_candidatura": "Lista",
+    "descripcion_candidatura": "Escritores Unidos"
+    },
+    {
+    "cant_votos": 5326,
+    "id_candidatura": "7.9",
+    "clase_candidatura": "Lista",
+    "descripcion_candidatura": "Sensasionalistas del Basketball"
+    },
+    {
+    "cant_votos": 2929,
+    "id_candidatura": "6.8",
+    "clase_candidatura": "Lista",
+    "descripcion_candidatura": "Unión Arte y Letras"
+    },
+    {
+    "cant_votos": 1646,
+    "id_candidatura": "3.3",
+    "clase_candidatura": "Lista",
+    "descripcion_candidatura": "Partido del Triunfo"
+    },
+    {
+    "cant_votos": 1245,
+    "id_candidatura": "3.4",
+    "clase_candidatura": "Lista",
+    "descripcion_candidatura": "Programadoras"
+    },
+    {
+    "cant_votos": 1003,
+    "id_candidatura": "9.11",
+    "clase_candidatura": "Lista",
+    "descripcion_candidatura": "Lista del Cuadro en Blanco"
+    },
+    {
+    "cant_votos": 939,
+    "id_candidatura": "11.13",
+    "clase_candidatura": "Lista",
+    "descripcion_candidatura": "Surrealistas por el Cambio"
+    },
+    {
+    "cant_votos": 908,
+    "id_candidatura": "10.12",
+    "clase_candidatura": "Lista",
+    "descripcion_candidatura": "Movimiento Artístico"
+    },
+    {
+    "cant_votos": 14313,
+    "id_candidatura": "BLC",
+    "clase_candidatura": "Blanco",
+    "descripcion_candidatura": "Voto en Blanco"
+    },
+    {
+    "cant_votos": 14005,
+    "id_candidatura": "IMP",
+    "clase_candidatura": "Especial",
+    "descripcion_candidatura": "Votos de identidad impugnada"
+    },
+    {
+    "cant_votos": 13864,
+    "id_candidatura": "NUL",
+    "clase_candidatura": "Especial",
+    "descripcion_candidatura": "Votos Nulos"
+    },
+    {
+    "cant_votos": 13973,
+    "id_candidatura": "REC",
+    "clase_candidatura": "Especial",
+    "descripcion_candidatura": "Votos Recurridos"
+    }
+    ],
+    "hora_proceso": "2023-07-26 12:57:45",
+    "id_ubicacion": "CABA",
+    "cant_votantes": 430974,
+    "id_publicacion": 1,
+    "clase_ubicacion": "Distrito",
+    "cant_votos_negativos": 41842,
+    "cant_votos_positivos": 389132,
+    "cant_mesas_procesadas": 900,
+    "descripcion_ubicacion": "Ciudad Autonoma de Buenos Aires",
+    "porcentaje_participacion": 95.772,
+    "porcentaje_mesas_procesadas": 10.2622,
+    "actas": {
+    "porcentaje_publicadas": 0.10262257696693272,
+    "porcentaje_en_verificacion": 0,
+    "porcentaje_en_definitivo": 0,
+    "porcentaje_espera": 0.8973774230330672,
+    "porcentaje_ok": 0,
+    "porcentaje_verificando": 0,
+    "porcentaje_en_aprobacion": 0,
+    "porcentaje_aprobando": 0
+    }
+    }
