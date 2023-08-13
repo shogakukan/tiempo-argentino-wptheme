@@ -1,9 +1,11 @@
 <?php
-if (!isset(get_option('elecciones_option_name')['enabled'])){
-    return;
-}
-if (!get_option('elecciones_option_name')['enabled']){
-    return;
+if (is_front_page()){
+    if (!isset(get_option('elecciones_option_name')['enabled'])){
+        return;
+    }
+    if (!get_option('elecciones_option_name')['enabled']){
+        return;
+    }
 }
 
 $defaultImg = "https://www.tiempoar.com.ar/wp-content/uploads/2021/09/silueta-e1631385327305.png";
