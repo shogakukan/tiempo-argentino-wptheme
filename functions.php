@@ -1133,7 +1133,7 @@ function elecciones_get_results(){
 	$url_caba = isset($options['url_caba']) ? $options['url_caba'] : '';
 	
 	if ($url_nacion && $token_nacion){
-		$data_nacion = update_elecciones_data($url_nacion .'/resultados/getResultados?distritoId=01&categoriaId=1', $token_nacion);
+		$data_nacion = update_elecciones_data($url_nacion .'/resultados/getResultados?categoriaId=1', $token_nacion);
 		if ($data_nacion){
 			update_option('resultados_nacion', prosess_data_nacion($data_nacion, 'Presidenciales', 'Presidenciales', 'Todo el país', 100, 'nacion'));
 		}
