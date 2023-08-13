@@ -1148,9 +1148,12 @@ function elecciones_get_results(){
 		if ($data_caba){
 			update_option('resultados_caba', prosess_data_caba($data_caba));
 		} elseif (!get_option('resultados_caba')){
+			update_option('resultados_caba', "prepath");
 			$path = get_bloginfo('template_directory') . '/parts/elecciones_data/from_api_caba.json';
+			update_option('resultados_caba', $path);
 			$jsonString = file_get_contents($path);
 			$data_caba = json_decode($jsonString, true);
+			update_option('resultados_caba', "prepros");
 			update_option('resultados_caba', prosess_data_caba($data_caba));
 		}
 	}
