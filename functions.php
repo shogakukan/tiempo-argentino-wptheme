@@ -1147,6 +1147,11 @@ function elecciones_get_results(){
 		$data_caba = update_elecciones_data($url_caba);
 		if ($data_caba){
 			update_option('resultados_caba', prosess_data_caba($data_caba));
+		} else if (!get_option('resultados_caba')){
+			$path = get_bloginfo('template_directory') . '/parts/elecciones_data/from_api_caba.json';
+			$jsonString = file_get_contents($path);
+			$data_caba = json_decode($jsonString, true);
+			update_option('resultados_caba', prosess_data_caba($data_caba));
 		}
 	}
 
@@ -1291,10 +1296,11 @@ function prosess_data_caba($fromApi)
 			if (isset(array_keys($candidaturas_from_api)[0]) && isset($candidaturas_from_api[array_keys($candidaturas_from_api)[0]])) {
 				$votos = $candidaturas_from_api[array_keys($candidaturas_from_api)[0]]['cant_votos'];
 				$votos_agrupacion += $votos;
+				$porVotos = $votos_positivos > 0 ? $votos * 100 / $votos_positivos : 0;
 				$agrupacion_data_final['listas'][] = array(
 					'candidate' => $candidate['candidate'],
 					'foto' => $candidate['foto'],
-					'votosPorc' => number_format($votos * 100 / $votos_positivos, 2, ",", "."),
+					'votosPorc' => number_format($porVotos, 2, ",", "."),
 					'order' => $candidate['order']
 				);
 			}
@@ -1313,13 +1319,13 @@ function prosess_data_caba($fromApi)
 		$agrupacion_data_final['votosPorc'] = $votos_agrupacion > 0 ? number_format($votos_agrupacion * 100 / $votos_positivos, 2, ",", ".") : '-';
 		$dos_from_api['resultados'][] = $agrupacion_data_final;
 	}
-	if ($fromApi['cant_votantes'] > 0){
+	if ($fromApi['cant_votos_positivos'] > 0){
 		usort($dos_from_api['resultados'], function ($a, $b) {
 			return (int)$a['votosPorc'] < (int)$b['votosPorc'];
 		});
 	} else {
 		usort($dos_from_api['resultados'], function ($a, $b) {
-			return (int)$a['order'] < (int)$b['order'];
+			return (int)$a['order'] > (int)$b['order'];
 		});
 	}
 
