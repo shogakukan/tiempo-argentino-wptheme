@@ -1148,12 +1148,9 @@ function elecciones_get_results(){
 		if ($data_caba){
 			update_option('resultados_caba', prosess_data_caba($data_caba));
 		} elseif (!get_option('resultados_caba')){
-			update_option('resultados_caba', "prepath");
 			$path = get_bloginfo('template_directory') . '/parts/elecciones_data/from_api_caba.json';
-			update_option('resultados_caba', $path);
 			$jsonString = file_get_contents($path);
 			$data_caba = json_decode($jsonString, true);
-			update_option('resultados_caba', "prepros");
 			update_option('resultados_caba', prosess_data_caba($data_caba));
 		}
 	}
@@ -1265,6 +1262,7 @@ function prosess_data_caba($fromApi)
 	$path = get_bloginfo('template_directory') . '/parts/elecciones_data/caba.json';
 	$jsonString = file_get_contents($path);
 	$agrupaciones = json_decode($jsonString, true);
+	$valoresTotalizadosOtros = $fromApi['cant_votantes'] > 0 ? $fromApi['cant_votos_negativos'] * 100 / $fromApi['cant_votantes'] : 0;
 	$dos_from_api =     array(
 		"tagCode" => '101',
 		'tagName' => "CABA - Jefatura de gobierno",
@@ -1273,7 +1271,7 @@ function prosess_data_caba($fromApi)
 		'fuente' => 'Instituto de Gestión Electoral (CABA)',
 		'mesasTotalizadasPorcentaje' => number_format($fromApi["porcentaje_mesas_procesadas"], 2, ",", "."),
 		'participacionPorcentaje' => number_format($fromApi["porcentaje_participacion"], 2, ",", "."),
-		'valoresTotalizadosOtros' => number_format($fromApi['cant_votos_negativos'] * 100 / $fromApi['cant_votantes'], 2, ",", "."),
+		'valoresTotalizadosOtros' => number_format($valoresTotalizadosOtros, 2, ",", "."),
 		'resultados' => [],
 	);
 	$votos_positivos = $fromApi['cant_votos_positivos'];
