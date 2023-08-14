@@ -1154,7 +1154,11 @@ function elecciones_get_results(){
 			update_option('resultados_caba', prosess_data_caba($data_caba));
 		}
 	}
-
+	$urls_array = [
+		"https://www.tiempoar.com.ar/resultados",
+		"https://www.tiempoar.com.ar/resultados/",
+	];
+	purge_cloudflare($urls_array);
 
 	
 }
