@@ -1143,7 +1143,7 @@ function elecciones_get_results(){
 
 		}
 	}
-	if ($url_caba){
+	if (false && $url_caba){
 		$data_caba = update_elecciones_data($url_caba);
 		if ($data_caba){
 			update_option('resultados_caba', prosess_data_caba($data_caba));
