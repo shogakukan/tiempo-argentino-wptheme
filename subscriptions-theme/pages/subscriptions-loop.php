@@ -238,28 +238,28 @@
                                             <p><?= __('Elegí el monto de tu abono mensual', 'gen-base-theme') ?></p>
                                         </div>
                                         <div class="amounts d-flex flex-wrap">
-                                            <div class="col-12 col-lg-3 p-1">
+                                            <div class="col-12 col-md-6 col-lg-3 p-1">
                                                 <div class="amount">
                                                     <a class="price" href="https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-81U26777BA1011942MJDBXCY" target="_blank">
                                                     <p>u$s 5</p>
                                                     </a>
                                                 </div>
                                             </div>
-                                            <div class="col-12 col-lg-3 p-1">
+                                            <div class="col-12 col-md-6 col-lg-3 p-1">
                                                 <div class="amount">
                                                     <a class="price" href="https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-6AL802312A910845CMJDBZZY" target="_blank">
                                                         <p>u$s 10</p>
                                                     </a>
                                                 </div>
                                             </div>
-                                            <div class="col-12 col-lg-3 p-1">
+                                            <div class="col-12 col-md-6 col-lg-3 p-1">
                                                 <div class="amount">
                                                     <a class="price" href="https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-7NG419567J7258053MTGX7II" target="_blank">
                                                         <p>u$s 20</p>
                                                     </a>
                                                 </div>
                                             </div>
-                                            <div class="col-12 col-lg-3 p-1">
+                                            <div class="col-12 col-md-6 col-lg-3 p-1">
                                                 <div class="amount">
                                                     <a class="price" href="https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-3N8639087E9602430MTGYADQ" target="_blank">
                                                         <p>u$s 50</p>
