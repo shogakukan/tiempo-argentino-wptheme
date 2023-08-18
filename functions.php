@@ -1337,12 +1337,12 @@ function prosess_data_caba($fromApi)
 	return $dos_from_api;
 }
 add_action( 'elecciones_cron', 'elecciones_get_results' );
-add_action( 'rest_api_init', function () {
-	register_rest_route( 'theme/v1', '/caba', array(
-	  'methods' => 'POST',
-	  'callback' => 'save_caba_data',
-	) );
-  } );
+// add_action( 'rest_api_init', function () {
+// 	register_rest_route( 'theme/v1', '/caba', array(
+// 	  'methods' => 'POST',
+// 	  'callback' => 'save_caba_data',
+// 	) );
+//   } );
 
   function save_caba_data(WP_REST_Request $request){
 	$data_caba = $request['data'];
