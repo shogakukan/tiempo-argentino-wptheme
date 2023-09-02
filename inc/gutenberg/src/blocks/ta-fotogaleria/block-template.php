@@ -34,9 +34,9 @@ $posts_list = array_slice($posts_list, 0, 10);
                             <?php if ($fg_article) : ?>
                                 <?php if ($i === array_key_first($posts_list)) : ?>
                                     <?php
-                                        $thumbnail = $fg_article->get_thumbnail_alt_common() ? $fg_article->get_thumbnail_alt_common() : $fg_article->get_thumbnail_common();
-                                        $first_image_url = $thumbnail ? $thumbnail['url'] : '';
-                                        ?>
+                                    $thumbnail = $fg_article->get_thumbnail_alt_common() ? $fg_article->get_thumbnail_alt_common() : $fg_article->get_thumbnail_common();
+                                    $first_image_url = $thumbnail ? $thumbnail['url'] : '';
+                                    ?>
                                     <?php $first_title = $fg_article->title; ?>
                                     <div class="col-md-8 col-12 article-preview main-preview">
                                         <div class="img-container" id="main-fotogaleria">
@@ -108,27 +108,28 @@ $posts_list = array_slice($posts_list, 0, 10);
             white-space: pre-wrap;
         }
     }
+
     #main-fotogaleria img {
-            width: 100%;
-            height: auto;
-        }
+        width: 100%;
+        height: auto;
+    }
 </style>
 
 <script>
     window.onload = function() {
         document.querySelector(".tiempo-fotogaleria-container").style.display = "block";
-        document.querySelector('.main-preview')
         (function($) {
-            let $fg_container = $('.tiempo-audiovisual .main-preview');
+            let $fg_container = $('.tiempo-fotogaleria .main-preview');
             if ($fg_container && $fg_container.get(0)) {
                 let new_height = $fg_container.get(0).scrollHeight;
-                $('.tiempo-audiovisual .fotogaleria-list').css('height', new_height);
+                console.log(new_height, "nacho");
+                $('.tiempo-fotogaleria .fotogaleria-list').css('height', new_height);
             }
         })(jQuery);
     }
     var image_url = '<?php echo $first_image_url; ?>';
-    
-    
+
+
     function setGaleria(fotogaleriaEl) {
         if (fotogaleriaEl.dataset.img && fotogaleriaEl.dataset.img != image_url) {
             image_url = fotogaleriaEl.dataset.img;
