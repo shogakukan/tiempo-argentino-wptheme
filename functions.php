@@ -499,7 +499,7 @@ function ta_article_image_control($post, $meta_key, $attachment_id, $args = arra
 		'description'	=> '',
 	);
 	extract(array_merge($default_args, $args));
-	$image_url = wp_get_attachment_image_src($attachment_id)[0];
+	$image_url = isset(wp_get_attachment_image_src($attachment_id)[0]) ? wp_get_attachment_image_src($attachment_id)[0] : '';
 	$empty = !$image_url;
 ?>
 	<div id="test" class="ta-articles-images-controls" data-id="<?php echo esc_attr($post->ID); ?>" data-type="<?php echo esc_attr($post->post_type); ?>" data-metakey="<?php echo esc_attr($meta_key); ?>" data-metavalue="<?php echo esc_attr($attachment_id); ?>">
@@ -537,8 +537,8 @@ if(current_user_can('edit_articles')){
 			return;
 		}
 
-		$featured_attachment_id = $article->thumbnail_common['is_default'] ? '' : $article->thumbnail_common['attachment']->ID;
-		$featured_alt_attachment_id = $article->thumbnail_alt_common['is_default'] ? '' : $article->thumbnail_alt_common['attachment']->ID;
+		$featured_attachment_id = isset($article->thumbnail_common['is_default']) && $article->thumbnail_common['is_default'] ? '' : (isset($article->thumbnail_common['attachment']->ID) ? $article->thumbnail_common['attachment']->ID : '');
+		$featured_alt_attachment_id = isset($article->thumbnail_alt_common['is_default']) && $article->thumbnail_alt_common['is_default'] ? '' : (isset($article->thumbnail_alt_common['attachment']->ID) ? $article->thumbnail_alt_common['attachment']->ID : '');
 
 		ta_article_image_control($post, '_thumbnail_id', $featured_attachment_id, array(
 			'title'			=> 'Imagen Destacada',

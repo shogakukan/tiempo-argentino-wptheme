@@ -325,43 +325,43 @@ class EscribenHoy {
 
 	public function semana_1_callback() {
 		printf(
-			'<input class="regular-text" type="checkbox" name="escriben_hoy_option_name[semana_1]" id="enable_0"  value="1"' . checked( '1', $this->escriben_hoy_options['semana_1'], false )  . '/>'
+			'<input class="regular-text" type="checkbox" name="escriben_hoy_option_name[semana_1]" id="enable_0"  value="1"' . checked( '1', isset($this->escriben_hoy_options['semana_1']) ? $this->escriben_hoy_options['semana_1'] : false, false )  . '/>'
 		);
 	}
 
 	public function semana_2_callback() {
 		printf(
-			'<input class="regular-text" type="checkbox" name="escriben_hoy_option_name[semana_2]" id="enable_0"  value="1"' . checked( '1', $this->escriben_hoy_options['semana_2'], false )  . '/>'
+			'<input class="regular-text" type="checkbox" name="escriben_hoy_option_name[semana_2]" id="enable_0"  value="1"' . checked( '1', isset($this->escriben_hoy_options['semana_2']) ? $this->escriben_hoy_options['semana_2'] : false, false )  . '/>'
 		);
 	}
 
 	public function semana_3_callback() {
 		printf(
-			'<input class="regular-text" type="checkbox" name="escriben_hoy_option_name[semana_3]" id="enable_0"  value="1"' . checked( '1', $this->escriben_hoy_options['semana_3'], false )  . '/>'
+			'<input class="regular-text" type="checkbox" name="escriben_hoy_option_name[semana_3]" id="enable_0"  value="1"' . checked( '1', isset($this->escriben_hoy_options['semana_3']) ? $this->escriben_hoy_options['semana_3'] : false, false )  . '/>'
 		);
 	}
 
 	public function semana_4_callback() {
 		printf(
-			'<input class="regular-text" type="checkbox" name="escriben_hoy_option_name[semana_4]" id="enable_0"  value="1"' . checked( '1', $this->escriben_hoy_options['semana_4'], false )  . '/>'
+			'<input class="regular-text" type="checkbox" name="escriben_hoy_option_name[semana_4]" id="enable_0"  value="1"' . checked( '1', isset($this->escriben_hoy_options['semana_4']) ? $this->escriben_hoy_options['semana_4'] : false, false )  . '/>'
 		);
 	}
 
 	public function semana_5_callback() {
 		printf(
-			'<input class="regular-text" type="checkbox" name="escriben_hoy_option_name[semana_5]" id="enable_0"  value="1"' . checked( '1', $this->escriben_hoy_options['semana_5'], false )  . '/>'
+			'<input class="regular-text" type="checkbox" name="escriben_hoy_option_name[semana_5]" id="enable_0"  value="1"' . checked( '1', isset($this->escriben_hoy_options['semana_5']) ? $this->escriben_hoy_options['semana_5'] : false, false )  . '/>'
 		);
 	}
 
 	public function semana_6_callback() {
 		printf(
-			'<input class="regular-text" type="checkbox" name="escriben_hoy_option_name[semana_6]" id="enable_0"  value="1"' . checked( '1', $this->escriben_hoy_options['semana_6'], false )  . '/>'
+			'<input class="regular-text" type="checkbox" name="escriben_hoy_option_name[semana_6]" id="enable_0"  value="1"' . checked( '1', isset($this->escriben_hoy_options['semana_6']) ? $this->escriben_hoy_options['semana_6'] : false, false )  . '/>'
 		);
 	}
 
 	public function semana_0_callback() {
 		printf(
-			'<input class="regular-text" type="checkbox" name="escriben_hoy_option_name[semana_0]" id="enable_0"  value="1"' . checked( '1', $this->escriben_hoy_options['semana_0'], false )  . '/>'
+			'<input class="regular-text" type="checkbox" name="escriben_hoy_option_name[semana_0]" id="enable_0"  value="1"' . checked( '1', isset($this->escriben_hoy_options['semana_0']) ? $this->escriben_hoy_options['semana_0'] : false, false )  . '/>'
 		);
 	}
 
