@@ -23,6 +23,7 @@
         "array-move": "^3.0.1",
         "cacheable-request": "10.2.7",
         "decode-uri-component": "^0.2.1",
+        "fast-xml-parser": "^4.2.7",
         "got": "^11.8.5",
         "http-cache-semantics": "^4.1.1",
         "json5": "^2.2.2",
