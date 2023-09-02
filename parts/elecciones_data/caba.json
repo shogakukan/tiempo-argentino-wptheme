@@ -1,0 +1,142 @@
+{
+    "6": {
+      "agrupacion": "Movimiento Libres del Sur",
+      "nombreCorto": "Libres del Sur",
+      "color": "#395A94",
+      "order": 9,
+      "listas": {
+        "6.8": {
+          "candidate": "Buzzo",
+          "foto": "6.8.1340.webp",
+          "order": 9
+        }
+      }
+    },
+    "7": {
+      "agrupacion": "Política Obrera",
+      "nombreCorto": "Política Obrera",
+      "color": "#D66756",
+      "order": 9,
+      "listas": {
+        "7.9": {
+          "candidate": "Viglieca",
+          "foto": "7.9.1438.webp",
+          "order": 9
+        }
+      }
+    },
+    "9": {
+      "agrupacion": "Frente Patriota Federal",
+      "nombreCorto": "FPF",
+      "color": "#003DA5",
+      "order": 9,
+      "listas": {
+        "9.11": {
+          "order": 9,
+          "candidate": "Nizzero",
+          "foto": "9.11.1782.webp"
+        }
+      }
+    },
+    "5": {
+      "agrupacion": "Aptitud Renovadora",
+      "nombreCorto": "AR",
+      "color": "#f04e98",
+      "order": 9,
+      "listas": {
+        "5.7": {
+          "candidate": "Chiesa",
+          "order": 9,
+          "foto": "5.7.1221.webp"
+        }
+      }
+    },
+    "11": {
+      "agrupacion": "La Izquierda en la Ciudad",
+      "nombreCorto": "IC",
+      "color": "#DA291C",
+      "order": 9,
+      "listas": {
+        "11.13": {
+          "candidate": "Heberling",
+          "order": 9,
+          "foto": "11.13.2001.webp"
+        }
+      }
+    },
+    "10": {
+      "agrupacion": "Principios y Valores",
+      "nombreCorto": "PyV",
+      "order": 5,
+      "color": "#71C5E8",
+      "listas": {
+        "10.12": {
+          "candidate": "Graham",
+          "order": 1,
+          "foto": "10.12.1823.webp"
+        }
+      }
+    },
+    "1": {
+      "agrupacion": "La Libertad Avanza",
+      "nombreCorto": "LLA",
+      "color": "#753BBD",
+      "order": 3,
+      "listas": {
+        "1.1": {
+          "candidate": "Marra",
+          "order": 1,
+          "foto": "1.1.1.webp"
+        }
+      }
+    },
+    "2": {
+      "agrupacion": "Unión por la Patria",
+      "nombreCorto": "UP",
+      "color": "#00B5EF",
+      "order": 2,
+      "listas": {
+        "2.2": {
+          "candidate": "Santoro",
+          "order": 1,
+          "foto": "2.2.196.webp"
+        }
+      }
+    },
+    "3": {
+      "agrupacion": "Juntos por el Cambio",
+      "nombreCorto": "Juntos",
+      "color": "#faf214",
+      "order": 1,
+      "listas": {
+        "3.3": {
+          "candidate": "Lousteau",
+          "order": 2,
+          "foto": "3.3.401.webp"
+        },
+        "3.4": {
+          "candidate": "Macri",
+          "order": 1,
+          "foto": "3.4.605.webp"
+        }
+      }
+    },
+    "4": {
+      "agrupacion": "Frente de Izquierda y de los Trabajadores - Unidad",
+      "nombreCorto": "FIT",
+      "color": "#F65058",
+      "order": 4,
+      "listas": {
+        "4.6": {
+          "candidate": "Adaro",
+          "order": 1,
+          "foto": "4.6.1015.webp"
+        },
+        "4.5": {
+          "candidate": "Biasi",
+          "order": 2,
+          "foto": "4.5.811.webp"
+        }
+      }
+    }
+  }

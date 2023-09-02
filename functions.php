@@ -499,7 +499,7 @@ function ta_article_image_control($post, $meta_key, $attachment_id, $args = arra
 		'description'	=> '',
 	);
 	extract(array_merge($default_args, $args));
-	$image_url = wp_get_attachment_image_src($attachment_id)[0];
+	$image_url = isset(wp_get_attachment_image_src($attachment_id)[0]) ? wp_get_attachment_image_src($attachment_id)[0] : '';
 	$empty = !$image_url;
 ?>
 	<div id="test" class="ta-articles-images-controls" data-id="<?php echo esc_attr($post->ID); ?>" data-type="<?php echo esc_attr($post->post_type); ?>" data-metakey="<?php echo esc_attr($meta_key); ?>" data-metavalue="<?php echo esc_attr($attachment_id); ?>">
@@ -537,8 +537,8 @@ if(current_user_can('edit_articles')){
 			return;
 		}
 
-		$featured_attachment_id = $article->thumbnail_common['is_default'] ? '' : $article->thumbnail_common['attachment']->ID;
-		$featured_alt_attachment_id = $article->thumbnail_alt_common['is_default'] ? '' : $article->thumbnail_alt_common['attachment']->ID;
+		$featured_attachment_id = isset($article->thumbnail_common['is_default']) && $article->thumbnail_common['is_default'] ? '' : (isset($article->thumbnail_common['attachment']->ID) ? $article->thumbnail_common['attachment']->ID : '');
+		$featured_alt_attachment_id = isset($article->thumbnail_alt_common['is_default']) && $article->thumbnail_alt_common['is_default'] ? '' : (isset($article->thumbnail_alt_common['attachment']->ID) ? $article->thumbnail_alt_common['attachment']->ID : '');
 
 		ta_article_image_control($post, '_thumbnail_id', $featured_attachment_id, array(
 			'title'			=> 'Imagen Destacada',
@@ -839,13 +839,16 @@ function set_posts_per_page( $query ) {
 	if (!$query->get( 'posts_per_page') || $query->get( 'posts_per_page') >= 0 && $query->get( 'posts_per_page') < 13) {
 		$types = ['ta_article_section', 'ta_article_author', 's', 'ta_article_author', 'ta_article_tag'];
 		foreach ($types as $t) {
-			if ($query->query[$t])
+			if (isset($query->query[$t]) && $query->query[$t])
 				$query->set( 'posts_per_page', 12 );
 		}
-		if ($query->query['post_type'] == "ta_ed_impresa")
+		if (isset($query->query['post_type'])){
+			if ($query->query['post_type'] == "ta_ed_impresa")
 			$query->set( 'posts_per_page', 12 );
-		if ($query->query['post_type'] == "ta_article")
-			$query->set( 'posts_per_page', 12 );
+			if ($query->query['post_type'] == "ta_article")
+				$query->set( 'posts_per_page', 12 );
+		}
+
 	}
 }
 
@@ -999,7 +1002,7 @@ function clean_cloudflare_cache () {
 add_filter('the_content', 'insert_escriben_hoy', 1);
 
 function insert_escriben_hoy($content){
-    if (is_front_page() && get_option( 'escriben_hoy_option_name' )['semana_' . date('w')]) {
+    if (is_front_page() && isset(get_option( 'escriben_hoy_option_name' )['semana_' . date('w')]) && get_option( 'escriben_hoy_option_name' )['semana_' . date('w')]) {
 		$today = date('w');
 		$divider = '<!-- row divider -->';
         $rows = explode($divider, $content);
@@ -1116,3 +1119,233 @@ function block_admin_access() {
 	}
 }
 add_action( 'admin_init', 'block_admin_access' );
+
+function bloque_elecciones()
+{
+	require_once TA_THEME_PATH . '/parts/elecciones.php';
+}
+add_action('elecciones', 'bloque_elecciones');
+
+function elecciones_get_results(){
+	$options = get_option('elecciones_option_name');
+	$url_nacion = isset($options['url_nacion']) ? $options['url_nacion'] : '';
+	$token_nacion = isset($options['token_nacion']) ? $options['token_nacion'] : '';
+	$url_caba = isset($options['url_caba']) ? $options['url_caba'] : '';
+	
+	if ($url_nacion && $token_nacion){
+		$data_nacion = update_elecciones_data($url_nacion .'/resultados/getResultados?categoriaId=1', $token_nacion);
+		if ($data_nacion){
+			update_option('resultados_nacion', prosess_data_nacion($data_nacion, 'Presidenciales', 'Presidenciales', 'Todo el país', 100, 'nacion'));
+		}
+		$data_pba = update_elecciones_data($url_nacion .'/resultados/getResultados?distritoId=02&categoriaId=4', $token_nacion);
+		if ($data_pba){
+			update_option('resultados_pba', prosess_data_nacion($data_pba, 'Gobernación', 'PBA - Gobernación', 'Provincia de Buenos Aires', 102, 'pba'));
+
+		}
+	}
+	if (false && $url_caba){
+		$data_caba = update_elecciones_data($url_caba);
+		if ($data_caba){
+			update_option('resultados_caba', prosess_data_caba($data_caba));
+		} elseif (!get_option('resultados_caba')){
+			$path = get_bloginfo('template_directory') . '/parts/elecciones_data/from_api_caba.json';
+			$jsonString = file_get_contents($path);
+			$data_caba = json_decode($jsonString, true);
+			update_option('resultados_caba', prosess_data_caba($data_caba));
+		}
+	}
+	$urls_array = [
+		"https://www.tiempoar.com.ar/resultados",
+		"https://www.tiempoar.com.ar/resultados/",
+	];
+	purge_cloudflare($urls_array);
+
+	
+}
+
+function update_elecciones_data($url, $token = null){
+	$curl = curl_init();
+	$options = array(
+		CURLOPT_URL => $url,
+		CURLOPT_RETURNTRANSFER => true,
+		CURLOPT_ENCODING => '',
+		CURLOPT_MAXREDIRS => 10,
+		CURLOPT_TIMEOUT => 0,
+		CURLOPT_FOLLOWLOCATION => true,
+		CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+		CURLOPT_CUSTOMREQUEST => 'GET',
+	);
+	if ($token){
+		$options[CURLOPT_HTTPHEADER] = array(
+			'Accept: application/json',
+			'Authorization: Bearer ' . $token);
+	}
+	curl_setopt_array($curl, $options);
+	
+
+	$jsonData = curl_exec($curl);
+	$http_status = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+	curl_close($curl);
+	if ($http_status >= 200 && $http_status < 300){
+		return json_decode($jsonData, true);
+	}
+	return false;
+}
+
+function prosess_data_nacion($fromApi, $eleccion, $tagName, $region, $tagCode, $file_name){
+	$path = get_bloginfo('template_directory')."/parts/elecciones_data/$file_name.json";
+	$jsonString = file_get_contents($path);
+	$agrupaciones = json_decode($jsonString, true);
+	$una_from_api =     array(
+		"tagCode" => $tagCode,
+		'tagName' => $tagName,
+		'region' => $region,
+		'eleccion' => $eleccion,
+		'fuente' => 'Dirección Nacional Electoral',
+		'mesasTotalizadasPorcentaje' => number_format($fromApi["estadoRecuento"]['mesasTotalizadasPorcentaje'], 2, ",", "."),
+		'participacionPorcentaje' => number_format($fromApi["estadoRecuento"]['participacionPorcentaje'], 2, ",", "."),
+		'valoresTotalizadosOtros' => number_format($fromApi['valoresTotalizadosOtros']['votosNulosPorcentaje'] + $fromApi['valoresTotalizadosOtros']['votosEnBlancoPorcentaje'] + $fromApi['valoresTotalizadosOtros']['votosRecurridosComandoImpugnadosPorcentaje'], 2, ",", "."),
+		'resultados' => [],
+	);
+	foreach ($fromApi["valoresTotalizadosPositivos"] as $agrupacion) {
+		$agrupacion_id = $agrupacion["idAgrupacion"];
+		if (!isset($agrupaciones[$agrupacion_id])) {
+			continue;
+		}
+		$data = $agrupaciones[$agrupacion_id];
+		$votos = $agrupacion['votos'] > 0 ? number_format($agrupacion['votos'], 0, ",", ".") : "-";
+		$votosPorc = $agrupacion['votos'] > 0 ? number_format($agrupacion['votosPorcentaje'], 2, ",", ".") : '-';
+		$agrupacion_data_final = array(
+			'votos' => $votos,
+			'votosPorc' => $votosPorc,
+			'color' => $data['color'],
+			'order' => $data['order'],
+			'agrupacion' => $data['agrupacion'],
+			'nombreCorto' => $data['nombreCorto'],
+			'listas' => array()
+		);
+		foreach ($agrupacion['listas'] as $lista) {
+			if (isset($data['listas'][$lista['idLista']])) {
+				$agrupacion_data_final['listas'][] = array(
+					'candidate' => $data['listas'][$lista['idLista']]['candidate'],
+					'foto' => $data['listas'][$lista['idLista']]['foto'],
+					'order' => $data['listas'][$lista['idLista']]['order'],
+					'votosPorc' => number_format($lista['votosPorcentaje'] * $agrupacion['votosPorcentaje'] / 100, 2, ",", ".")
+				);
+				if($agrupacion['votos'] > 0){
+					usort($agrupacion_data_final['listas'],function($a,$b){
+						return (int)$a['votosPorc'] < (int)$b['votosPorc'];
+					});
+				} else {
+					usort($agrupacion_data_final['listas'],function($a,$b){
+						return (int)$a['order'] > (int)$b['order'];
+					});
+				}
+
+			}
+		}
+		$una_from_api['resultados'][] = $agrupacion_data_final;
+	}
+	
+	usort($una_from_api['resultados'],function($a,$b){
+		return (int)$a['votosPorc'] < (int)$b['votosPorc'];
+	});
+	if ($fromApi['estadoRecuento']['cantidadVotantes'] > 0){
+		usort($una_from_api['resultados'],function($a,$b){
+			return (int)$a['votosPorc'] < (int)$b['votosPorc'];
+		});
+	} else {
+		usort($una_from_api['resultados'], function ($a, $b) {
+			return (int)$a['order'] > (int)$b['order'];
+		});
+	}
+	return $una_from_api;
+}
+function prosess_data_caba($fromApi)
+{
+	$path = get_bloginfo('template_directory') . '/parts/elecciones_data/caba.json';
+	$jsonString = file_get_contents($path);
+	$agrupaciones = json_decode($jsonString, true);
+	$valoresTotalizadosOtros = $fromApi['cant_votantes'] > 0 ? $fromApi['cant_votos_negativos'] * 100 / $fromApi['cant_votantes'] : 0;
+	$dos_from_api =     array(
+		"tagCode" => '101',
+		'tagName' => "CABA - Jefatura de gobierno",
+		'region' => 'CABA',
+		'eleccion' => "Jefatura de gobierno",
+		'fuente' => 'Instituto de Gestión Electoral (CABA)',
+		'mesasTotalizadasPorcentaje' => number_format($fromApi["porcentaje_mesas_procesadas"], 2, ",", "."),
+		'participacionPorcentaje' => number_format($fromApi["porcentaje_participacion"], 2, ",", "."),
+		'valoresTotalizadosOtros' => number_format($valoresTotalizadosOtros, 2, ",", "."),
+		'resultados' => [],
+	);
+	$votos_positivos = $fromApi['cant_votos_positivos'];
+	$resultados_from_api =  $fromApi['resultados'];
+	foreach ($agrupaciones as $agrupacion) {
+		$agrupacion_data_final = array(
+			'votos' => 0,
+			'votosPorc' => number_format(0, 2, ",", "."),
+			'color' => $agrupacion['color'],
+			'agrupacion' => $agrupacion['agrupacion'],
+			'nombreCorto' => $agrupacion['nombreCorto'],
+			'order' => $agrupacion['order'],
+			'listas' => array()
+		);
+		$votos_agrupacion = 0;
+		foreach ($agrupacion['listas'] as $id_candidatura => $candidate) {
+			$candidaturas_from_api = array_filter($resultados_from_api, function ($v, $k) use ($id_candidatura) {
+				if (isset($v['id_candidatura'])) {
+					return $v['id_candidatura'] == $id_candidatura;
+				}
+				return false;
+			}, ARRAY_FILTER_USE_BOTH);
+			if (isset(array_keys($candidaturas_from_api)[0]) && isset($candidaturas_from_api[array_keys($candidaturas_from_api)[0]])) {
+				$votos = $candidaturas_from_api[array_keys($candidaturas_from_api)[0]]['cant_votos'];
+				$votos_agrupacion += $votos;
+				$porVotos = $votos_positivos > 0 ? $votos * 100 / $votos_positivos : 0;
+				$agrupacion_data_final['listas'][] = array(
+					'candidate' => $candidate['candidate'],
+					'foto' => $candidate['foto'],
+					'votosPorc' => number_format($porVotos, 2, ",", "."),
+					'order' => $candidate['order']
+				);
+			}
+		}
+		if ($votos_agrupacion > 0){
+			usort($agrupacion_data_final['listas'], function ($a, $b) {
+				return (int)$a['votosPorc'] < (int)$b['votosPorc'];
+			});
+		} else {
+			usort($agrupacion_data_final['listas'], function ($a, $b) {
+				return (int)$a['order'] > (int)$b['order'];
+			});
+		}
+
+		$agrupacion_data_final['votos'] = $votos_agrupacion > 0 ? $votos_agrupacion : '-';
+		$agrupacion_data_final['votosPorc'] = $votos_agrupacion > 0 ? number_format($votos_agrupacion * 100 / $votos_positivos, 2, ",", ".") : '-';
+		$dos_from_api['resultados'][] = $agrupacion_data_final;
+	}
+	if ($fromApi['cant_votos_positivos'] > 0){
+		usort($dos_from_api['resultados'], function ($a, $b) {
+			return (int)$a['votosPorc'] < (int)$b['votosPorc'];
+		});
+	} else {
+		usort($dos_from_api['resultados'], function ($a, $b) {
+			return (int)$a['order'] > (int)$b['order'];
+		});
+	}
+
+	return $dos_from_api;
+}
+add_action( 'elecciones_cron', 'elecciones_get_results' );
+// add_action( 'rest_api_init', function () {
+// 	register_rest_route( 'theme/v1', '/caba', array(
+// 	  'methods' => 'POST',
+// 	  'callback' => 'save_caba_data',
+// 	) );
+//   } );
+
+  function save_caba_data(WP_REST_Request $request){
+	$data_caba = $request['data'];
+	update_option('resultados_caba', prosess_data_caba($data_caba));
+	wp_send_json( $data_caba ) ;
+  }

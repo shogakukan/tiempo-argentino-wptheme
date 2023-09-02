@@ -325,43 +325,43 @@ class EscribenHoy {
 
 	public function semana_1_callback() {
 		printf(
-			'<input class="regular-text" type="checkbox" name="escriben_hoy_option_name[semana_1]" id="enable_0"  value="1"' . checked( '1', $this->escriben_hoy_options['semana_1'], false )  . '/>'
+			'<input class="regular-text" type="checkbox" name="escriben_hoy_option_name[semana_1]" id="enable_0"  value="1"' . checked( '1', isset($this->escriben_hoy_options['semana_1']) ? $this->escriben_hoy_options['semana_1'] : false, false )  . '/>'
 		);
 	}
 
 	public function semana_2_callback() {
 		printf(
-			'<input class="regular-text" type="checkbox" name="escriben_hoy_option_name[semana_2]" id="enable_0"  value="1"' . checked( '1', $this->escriben_hoy_options['semana_2'], false )  . '/>'
+			'<input class="regular-text" type="checkbox" name="escriben_hoy_option_name[semana_2]" id="enable_0"  value="1"' . checked( '1', isset($this->escriben_hoy_options['semana_2']) ? $this->escriben_hoy_options['semana_2'] : false, false )  . '/>'
 		);
 	}
 
 	public function semana_3_callback() {
 		printf(
-			'<input class="regular-text" type="checkbox" name="escriben_hoy_option_name[semana_3]" id="enable_0"  value="1"' . checked( '1', $this->escriben_hoy_options['semana_3'], false )  . '/>'
+			'<input class="regular-text" type="checkbox" name="escriben_hoy_option_name[semana_3]" id="enable_0"  value="1"' . checked( '1', isset($this->escriben_hoy_options['semana_3']) ? $this->escriben_hoy_options['semana_3'] : false, false )  . '/>'
 		);
 	}
 
 	public function semana_4_callback() {
 		printf(
-			'<input class="regular-text" type="checkbox" name="escriben_hoy_option_name[semana_4]" id="enable_0"  value="1"' . checked( '1', $this->escriben_hoy_options['semana_4'], false )  . '/>'
+			'<input class="regular-text" type="checkbox" name="escriben_hoy_option_name[semana_4]" id="enable_0"  value="1"' . checked( '1', isset($this->escriben_hoy_options['semana_4']) ? $this->escriben_hoy_options['semana_4'] : false, false )  . '/>'
 		);
 	}
 
 	public function semana_5_callback() {
 		printf(
-			'<input class="regular-text" type="checkbox" name="escriben_hoy_option_name[semana_5]" id="enable_0"  value="1"' . checked( '1', $this->escriben_hoy_options['semana_5'], false )  . '/>'
+			'<input class="regular-text" type="checkbox" name="escriben_hoy_option_name[semana_5]" id="enable_0"  value="1"' . checked( '1', isset($this->escriben_hoy_options['semana_5']) ? $this->escriben_hoy_options['semana_5'] : false, false )  . '/>'
 		);
 	}
 
 	public function semana_6_callback() {
 		printf(
-			'<input class="regular-text" type="checkbox" name="escriben_hoy_option_name[semana_6]" id="enable_0"  value="1"' . checked( '1', $this->escriben_hoy_options['semana_6'], false )  . '/>'
+			'<input class="regular-text" type="checkbox" name="escriben_hoy_option_name[semana_6]" id="enable_0"  value="1"' . checked( '1', isset($this->escriben_hoy_options['semana_6']) ? $this->escriben_hoy_options['semana_6'] : false, false )  . '/>'
 		);
 	}
 
 	public function semana_0_callback() {
 		printf(
-			'<input class="regular-text" type="checkbox" name="escriben_hoy_option_name[semana_0]" id="enable_0"  value="1"' . checked( '1', $this->escriben_hoy_options['semana_0'], false )  . '/>'
+			'<input class="regular-text" type="checkbox" name="escriben_hoy_option_name[semana_0]" id="enable_0"  value="1"' . checked( '1', isset($this->escriben_hoy_options['semana_0']) ? $this->escriben_hoy_options['semana_0'] : false, false )  . '/>'
 		);
 	}
 
@@ -582,11 +582,143 @@ class CloudflareCachePurge {
 			isset( $this->cloudflare_cache_purge_options['zone'] ) ? esc_attr( $this->cloudflare_cache_purge_options['zone']) : ''
 		);
 	}
-}
 
+	
+}
+class Elecciones {
+	private $enable;
+	private $url_nacion;
+	private $token_nacion;
+	private $url_caba;
+	private $elecciones_options;
+	public function __construct() {
+		add_action( 'admin_menu', array( $this, 'elecciones_add_plugin_page' ) );
+		add_action( 'admin_init', array( $this, 'elecciones_page_init' ) );
+	}
+
+	public function elecciones_add_plugin_page() {
+		add_theme_page(
+			'Elecciones', // page_title
+			'Elecciones', // menu_title
+			'manage_options', // capability
+			'elecciones', // menu_slug
+			array( $this, 'elecciones_create_admin_page' ) // function
+		);
+	}
+
+	public function elecciones_create_admin_page() {
+		$this->elecciones_options = get_option( 'elecciones_option_name' ); ?>
+
+		<div class="wrap">
+			<h2>Elecciones</h2>
+			<p></p>
+			<?php settings_errors(); ?>
+
+			<form method="post" action="options.php">
+				<?php
+					settings_fields( 'elecciones_option_group' );
+					do_settings_sections( 'elecciones-admin' );
+					submit_button();
+				?>
+			</form>
+		</div>
+	<?php }
+
+	public function elecciones_page_init() {
+		register_setting(
+			'elecciones_option_group', // option_group
+			'elecciones_option_name', // option_name
+			array( $this, 'elecciones_sanitize' ) // sanitize_callback
+		);
+		add_settings_section(
+			'elecciones_setting_section', // id
+			'Credenciales', // title
+			array( $this, 'elecciones_section_info' ), // callback
+			'elecciones-admin' // page
+		);
+		add_settings_field(
+			'enabled', // id
+			'Mostrar', // title
+			array( $this, 'enabled_callback' ), // callback
+			'elecciones-admin', // page
+			'elecciones_setting_section' // section
+		);
+		add_settings_field(
+			'url_nacion', // id
+			'URL Nación', // title
+			array( $this, 'url_nacion_callback' ), // callback
+			'elecciones-admin', // page
+			'elecciones_setting_section' // section
+		);
+		add_settings_field(
+			'token_nacion', // id
+			'Token Nación', // title
+			array( $this, 'token_nacion_callback' ), // callback
+			'elecciones-admin', // page
+			'elecciones_setting_section' // section
+		);
+		add_settings_field(
+			'url_caba', // id
+			'URL CABA', // title
+			array( $this, 'url_caba_callback' ), // callback
+			'elecciones-admin', // page
+			'elecciones_setting_section' // section
+		);
+
+		
+	}
+
+	public function elecciones_sanitize($input) {
+		$sanitary_values = array();
+		if ( isset( $input['enabled'] ) ) {
+			$sanitary_values['enabled'] = sanitize_text_field($input['enabled']);
+		}
+		if ( isset( $input['url_nacion'] ) ) {
+			$sanitary_values['url_nacion'] = sanitize_text_field( $input['url_nacion'] );
+		}
+		if ( isset( $input['token_nacion'] ) ) {
+			$sanitary_values['token_nacion'] = sanitize_text_field( $input['token_nacion'] );
+		}
+		if ( isset( $input['url_caba'] ) ) {
+			$sanitary_values['url_caba'] = sanitize_text_field( $input['url_caba'] );
+		}
+
+		return $sanitary_values;
+	}
+
+	public function elecciones_section_info() {
+	}
+
+	public function enabled_callback() {
+		printf(
+			'<input class="regular-text" type="checkbox" name="elecciones_option_name[enabled]"  value="1"' . checked( '1', isset($this->elecciones_options['enabled']) ? $this->elecciones_options['enabled'] : false, false )  . '/>'
+		);
+	}
+	public function url_nacion_callback() {
+		printf(
+			'<input class="regular-text" type="text" name="elecciones_option_name[url_nacion]" value="%s">',
+			isset( $this->elecciones_options['url_nacion'] ) ? esc_attr( $this->elecciones_options['url_nacion']) : ''
+		);
+	}
+	public function token_nacion_callback() {
+		printf(
+			'<input class="regular-text" type="text" name="elecciones_option_name[token_nacion]" value="%s">',
+			isset( $this->elecciones_options['token_nacion'] ) ? esc_attr( $this->elecciones_options['token_nacion']) : ''
+		);
+	}
+	public function url_caba_callback() {
+		printf(
+			'<input class="regular-text" type="text" name="elecciones_option_name[url_caba]" value="%s">',
+			isset( $this->elecciones_options['url_caba'] ) ? esc_attr( $this->elecciones_options['url_caba']) : ''
+		);
+	}
+
+
+}
 if ( is_admin() ) {
 	$datos_footer = new DatosFooter();
 	$escriben_hoy = new EscribenHoy();
 	$ultimo_momento = new UltimoMomento();
 	$cloudflare_cache_purge = new CloudflareCachePurge();
+	$elecciones = new Elecciones();
 }

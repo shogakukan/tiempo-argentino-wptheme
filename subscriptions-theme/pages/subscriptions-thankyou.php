@@ -23,7 +23,7 @@ do_action('header_thankyou_page');
                                     <p><?php echo __('Para continuar al pago, primero debes seleccionar un paquete, haz click en el bóton para volver.', 'gen-base-theme') ?></b>
                                 </div>
                                 <div class="btns-container text-center mt-4">
-                                    <button><a href="<?php echo get_permalink(get_option('subscriptions_loop_page')) ?>"><?php echo __('Volver.', 'gen-base-theme') ?></a></button>
+                                    <button><a href="<?php echo get_permalink(get_option('subscriptions_loop_page')) ?>"><?php echo __('Volver', 'gen-base-theme') ?></a></button>
                                 </div>
                             </div>
                         </div>
@@ -37,7 +37,8 @@ do_action('header_thankyou_page');
                     <div class="py-2">
                         <div class="subs-opt mw-md-60 mx-auto mt-3 mt-md-5">
                             <?php if (Subscriptions_Sessions::get_session('subscriptions_add_session')['suscription_address'] === '1') : ?>
-                                <?php $address = get_user_meta(get_current_user_id(), '_user_address', false); ?>
+                                <?php //$address = get_user_meta(get_current_user_id(), '_user_address', false); ?>
+                                <?php $address = Subscriptions_Address_Helper::get_address_by_user_id(get_current_user_id()); ?>
                                 <div class="asociate-wrapper address">
                                     <div class="address-block">
                                         <div class="title text-center mt-4">
@@ -80,7 +81,10 @@ do_action('header_thankyou_page');
                                                     </div>
                                                 </div>
                                                 <div class="input-container">
-                                                    <input type="text" placeholder="<?php echo __('Entre calles', 'gen-base-theme') ?>" name="bstreet" id="bstreet" value="<?php echo $address[0]['bstreet'] !== null ? $address[0]['bstreet'] : ''; ?>" />
+                                                    <input type="text" placeholder="<?php echo __('Entre calles 1', 'gen-base-theme') ?>" name="bstreet_1" id="bstreet_1" value="<?php echo $address[0]['bstreet_1'] !== null ? $address[0]['bstreet_1'] : ''; ?>" />
+                                                </div>
+                                                <div class="input-container">
+                                                    <input type="text" placeholder="<?php echo __('Entre calles 2', 'gen-base-theme') ?>" name="bstreet_2" id="bstreet_2" value="<?php echo $address[0]['bstreet_2'] !== null ? $address[0]['bstreet_2'] : ''; ?>" />
                                                 </div>
                                                 <div class="input-container">
                                                     <textarea name="observations" placeholder="<?php echo __('Observaciones', 'gen-base-theme') ?>" class="form-control" id="observations" cols="30" rows="4"><?php echo $address[0]['observations'] !== null ? $address[0]['observations'] : ''; ?></textarea>

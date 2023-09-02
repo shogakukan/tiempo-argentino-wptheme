@@ -1,6 +1,6 @@
 <?php 
 $userdata = get_userdata(get_current_user_id());
-$rol = $userdata->roles[0];
+$rol = isset($userdata->roles[0]) ? $userdata->roles[0] : '';
 if (is_user_logged_in() && get_user_meta(get_current_user_id(),'_user_status',true) == 'active' && $rol == get_option('subscription_digital_role')){
     $link = get_permalink(get_option('beneficios_loop_page'));
     $label = __('COMUNIDAD','gen-base-theme'); 

@@ -1,0 +1,294 @@
+{
+    "fechaTotalizacion": "Aug 12, 2023, 1:55:48 PM",
+    "estadoRecuento": {
+        "mesasEsperadas": 7326,
+        "mesasTotalizadas": 1,
+        "mesasTotalizadasPorcentaje": 0.01,
+        "cantidadElectores": 344,
+        "cantidadVotantes": 27,
+        "participacionPorcentaje": 7.84
+    },
+    "valoresTotalizadosPositivos": [
+        {
+            "idAgrupacion": "131",
+            "idAgrupacionTelegrama": "131",
+            "nombreAgrupacion": "FRENTE LIBER.AR",
+            "votos": 3,
+            "votosPorcentaje": 12.5,
+            "listas": [
+                {
+                    "idLista": "3002",
+                    "nombreLista": "A- DEMOS",
+                    "votos": 1,
+                    "votosPorcentaje": 33.33
+                },
+                {
+                    "idLista": "3003",
+                    "nombreLista": "B- RECONQUISTA",
+                    "votos": 1,
+                    "votosPorcentaje": 33.33
+                },
+                {
+                    "idLista": "3004",
+                    "nombreLista": "C- ANTICORRUPCIÓN",
+                    "votos": 1,
+                    "votosPorcentaje": 33.33
+                }
+            ]
+        },
+        {
+            "idAgrupacion": "94",
+            "idAgrupacionTelegrama": "94",
+            "nombreAgrupacion": "PROYECTO JOVEN",
+            "votos": 3,
+            "votosPorcentaje": 12.5,
+            "listas": [
+                {
+                    "idLista": "3022",
+                    "nombreLista": "A- COALICION PAZ DEMOCRACIA SOBERANIA",
+                    "votos": 1,
+                    "votosPorcentaje": 33.33
+                },
+                {
+                    "idLista": "3023",
+                    "nombreLista": "B- PATRIA UNIDA",
+                    "votos": 1,
+                    "votosPorcentaje": 33.33
+                },
+                {
+                    "idLista": "3024",
+                    "nombreLista": "C- TODEX",
+                    "votos": 1,
+                    "votosPorcentaje": 33.33
+                }
+            ]
+        },
+        {
+            "idAgrupacion": "136",
+            "idAgrupacionTelegrama": "136",
+            "nombreAgrupacion": "FRENTE DE IZQUIERDA Y DE TRABAJADORES - UNIDAD",
+            "votos": 2,
+            "votosPorcentaje": 8.33,
+            "listas": [
+                {
+                    "idLista": "3009",
+                    "nombreLista": "A- UNIR Y FORTALECER LA IZQUIERDA",
+                    "votos": 1,
+                    "votosPorcentaje": 50
+                },
+                {
+                    "idLista": "3010",
+                    "nombreLista": "B- UNIDAD DE LUCHADORES Y LA IZQUIERDA",
+                    "votos": 1,
+                    "votosPorcentaje": 50
+                }
+            ]
+        },
+        {
+            "idAgrupacion": "132",
+            "idAgrupacionTelegrama": "132",
+            "nombreAgrupacion": "JUNTOS POR EL CAMBIO",
+            "votos": 2,
+            "votosPorcentaje": 8.33,
+            "listas": [
+                {
+                    "idLista": "3007",
+                    "nombreLista": "A- EL CAMBIO DE NUESTRAS VIDAS",
+                    "votos": 1,
+                    "votosPorcentaje": 50
+                },
+                {
+                    "idLista": "3008",
+                    "nombreLista": "B- LA FUERZA DEL CAMBIO",
+                    "votos": 1,
+                    "votosPorcentaje": 50
+                }
+            ]
+        },
+        {
+            "idAgrupacion": "90",
+            "idAgrupacionTelegrama": "90",
+            "nombreAgrupacion": "MOVIMIENTO IZQUIERDA JUVENTUD Y DIGNIDAD",
+            "votos": 2,
+            "votosPorcentaje": 8.33,
+            "listas": [
+                {
+                    "idLista": "3026",
+                    "nombreLista": "A- DIGNIDAD",
+                    "votos": 1,
+                    "votosPorcentaje": 50
+                },
+                {
+                    "idLista": "3027",
+                    "nombreLista": "B- CONFEDERAL",
+                    "votos": 1,
+                    "votosPorcentaje": 50
+                }
+            ]
+        },
+        {
+            "idAgrupacion": "134",
+            "idAgrupacionTelegrama": "134",
+            "nombreAgrupacion": "UNION POR LA PATRIA",
+            "votos": 2,
+            "votosPorcentaje": 8.33,
+            "listas": [
+                {
+                    "idLista": "3005",
+                    "nombreLista": "A- CELESTE Y BLANCA",
+                    "votos": 1,
+                    "votosPorcentaje": 50
+                },
+                {
+                    "idLista": "3006",
+                    "nombreLista": "B- JUSTA Y SOBERANA",
+                    "votos": 1,
+                    "votosPorcentaje": 50
+                }
+            ]
+        },
+        {
+            "idAgrupacion": "95",
+            "idAgrupacionTelegrama": "95",
+            "nombreAgrupacion": "FRENTE PATRIOTA FEDERAL",
+            "votos": 1,
+            "votosPorcentaje": 4.16,
+            "listas": [
+                {
+                    "idLista": "3021",
+                    "nombreLista": "A- PRIMERO LA PATRIA",
+                    "votos": 1,
+                    "votosPorcentaje": 100
+                }
+            ]
+        },
+        {
+            "idAgrupacion": "133",
+            "idAgrupacionTelegrama": "133",
+            "nombreAgrupacion": "HACEMOS POR NUESTRO PAIS",
+            "votos": 1,
+            "votosPorcentaje": 4.16,
+            "listas": [
+                {
+                    "idLista": "3001",
+                    "nombreLista": "A- HACEMOS",
+                    "votos": 1,
+                    "votosPorcentaje": 100
+                }
+            ]
+        },
+        {
+            "idAgrupacion": "135",
+            "idAgrupacionTelegrama": "135",
+            "nombreAgrupacion": "LA LIBERTAD AVANZA",
+            "votos": 1,
+            "votosPorcentaje": 4.16,
+            "listas": [
+                {
+                    "idLista": "3016",
+                    "nombreLista": "A- LIBERTAD POR SIEMPRE",
+                    "votos": 1,
+                    "votosPorcentaje": 100
+                }
+            ]
+        },
+        {
+            "idAgrupacion": "13",
+            "idAgrupacionTelegrama": "13",
+            "nombreAgrupacion": "MOVIMIENTO AL SOCIALISMO",
+            "votos": 1,
+            "votosPorcentaje": 4.16,
+            "listas": [
+                {
+                    "idLista": "3017",
+                    "nombreLista": "A- IZQUIERDA ANTICAPITALISTA",
+                    "votos": 1,
+                    "votosPorcentaje": 100
+                }
+            ]
+        },
+        {
+            "idAgrupacion": "57",
+            "idAgrupacionTelegrama": "57",
+            "nombreAgrupacion": "MOVIMIENTO DE ACCION VECINAL",
+            "votos": 1,
+            "votosPorcentaje": 4.16,
+            "listas": [
+                {
+                    "idLista": "3025",
+                    "nombreLista": "A- COMPROMISO VECINAL",
+                    "votos": 1,
+                    "votosPorcentaje": 100
+                }
+            ]
+        },
+        {
+            "idAgrupacion": "40",
+            "idAgrupacionTelegrama": "40",
+            "nombreAgrupacion": "MOVIMIENTO LIBRES DEL SUR",
+            "votos": 1,
+            "votosPorcentaje": 4.16,
+            "listas": [
+                {
+                    "idLista": "3019",
+                    "nombreLista": "A- AZUL Y ROJO",
+                    "votos": 1,
+                    "votosPorcentaje": 100
+                }
+            ]
+        },
+        {
+            "idAgrupacion": "92",
+            "idAgrupacionTelegrama": "92",
+            "nombreAgrupacion": "POLITICA OBRERA",
+            "votos": 1,
+            "votosPorcentaje": 4.16,
+            "listas": [
+                {
+                    "idLista": "3020",
+                    "nombreLista": "A- UNIDAD OBRERA",
+                    "votos": 1,
+                    "votosPorcentaje": 100
+                }
+            ]
+        },
+        {
+            "idAgrupacion": "137",
+            "idAgrupacionTelegrama": "137",
+            "nombreAgrupacion": "PRINCIPIOS Y VALORES",
+            "votos": 1,
+            "votosPorcentaje": 4.16,
+            "listas": [
+                {
+                    "idLista": "3011",
+                    "nombreLista": "1A- TIERRA, TECHO  Y TRABAJO",
+                    "votos": 1,
+                    "votosPorcentaje": 100
+                }
+            ]
+        },
+        {
+            "idAgrupacion": "20",
+            "idAgrupacionTelegrama": "20",
+            "nombreAgrupacion": "UNION DEL CENTRO DEMOCRATICO",
+            "votos": 1,
+            "votosPorcentaje": 4.16,
+            "listas": [
+                {
+                    "idLista": "3018",
+                    "nombreLista": "A- APERTURA LIBERAL ARGENTINA",
+                    "votos": 1,
+                    "votosPorcentaje": 100
+                }
+            ]
+        }
+    ],
+    "valoresTotalizadosOtros": {
+        "votosNulos": 1,
+        "votosNulosPorcentaje": 3.7,
+        "votosEnBlanco": 1,
+        "votosEnBlancoPorcentaje": 3.7,
+        "votosRecurridosComandoImpugnados": 2,
+        "votosRecurridosComandoImpugnadosPorcentaje": 7.4
+    }
+}

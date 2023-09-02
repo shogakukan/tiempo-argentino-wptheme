@@ -5,12 +5,12 @@
         <div class="separator m-0"></div>
     </div>
     <div class="asociate-block-container">
-        <?php 
+        <?php
         $userdata = get_userdata(get_current_user_id());
-        $rol = $userdata->roles[0];
-        $isActive = get_user_meta(get_current_user_id(),'_user_status',true) == 'active';
-        
-        if (!$isActive){
+        $rol = isset($userdata->roles[0]) ? $userdata->roles[0] : null;
+        $isActive = get_user_meta(get_current_user_id(), '_user_status', true) == 'active';
+
+        if (!$isActive) {
             $args = [
                 'post_type' => 'memberships',
                 'fields' => 'ids',
@@ -23,7 +23,7 @@
                     ],
                     [
                         'key' => '_member_order_status',
-                        'value' => array('completed', 'hold'),
+                        'value' => array('completed', 'on-hold'),
                         'compare' => 'IN'
                     ]
                 ]
@@ -31,8 +31,9 @@
             if (get_posts($args)) $isActive = true;
         }
         ?>
-        
-        <?php if (is_user_logged_in() && $isActive && $rol == get_option('subscription_digital_role')): //if (subscriptions_proccess()->verify_subscription(wp_get_current_user()->ID)) : ?>
+
+        <?php if (is_user_logged_in() && $isActive && $rol === get_option('subscription_digital_role')) : //if (subscriptions_proccess()->verify_subscription(wp_get_current_user()->ID)) : 
+        ?>
             <div class="delivery-zones-popup">
                 <div class="popup">
                     <div class="container text-center">
@@ -54,179 +55,22 @@
                 </div>
             </div>
     </div>
-        <?php else : ?>
+<?php else : ?>
 
-            <!-- loop container -->
-            <div class="section-title p-2">
-                <h4><?php echo __('asociate', 'gen-base-theme') ?><span class="ml-2"><?php echo __('ELEGÍ TU PAQUETE', 'gen-base-theme') ?></span></h4>
-            </div>
+    <!-- loop container -->
+    <div class="section-title p-2">
+        <h4><?php echo __('asociate', 'gen-base-theme') ?><span class="ml-2"><?php echo __('ELEGÍ TU PAQUETE', 'gen-base-theme') ?></span></h4>
+    </div>
 
-            <div class="container">
-                <div class="container-with-header">
-                    <div class="py-2">
-                        <div class="subs-opt mt-3 mt-md-5">
-                            <div class="title text-center">
-                                <h4 class="italic"><?php echo is_user_logged_in() ? wp_get_current_user()->user_firstname : __('Hola, ', 'gen-base-theme') ?> <?php echo __('estas son las mejores opciones para asociarte', 'gen-base-theme') ?></h4>
-                            </div>
-                            <div class="opt-list mt-3">
-                                <div class="d-flex flex-column flex-lg-row justify-content-center">
-                                    <?php
-                                    $args = array(
-                                        'post_type' => 'subscriptions',
-                                        'meta_query' => [
-                                            'relation' => 'AND',
-                                            [
-                                                'relation' => 'OR',
-                                                [
-                                                    'key' => '_is_donation',
-                                                    'compare' => 'NOT EXISTS'
-                                                ],
-                                                [
-                                                    'key' => '_is_donation',
-                                                    'value' => ['1'],
-                                                    'compare' => 'NOT IN'
-                                                ],
-                                            ],
-                                            [
-                                                'relation' => 'OR',
-                                                [
-                                                    'key' => '_is_special',
-                                                    'compare' => 'NOT EXISTS'
-                                                ],
-                                                [
-                                                    'key' => '_is_special',
-                                                    'value' => ['1'],
-                                                    'compare' => 'NOT IN'
-                                                ],
-                                            ]
-
-                                        ]
-                                    );
-                                    $query = new WP_Query($args);
-
-                                    if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post();
-
-
-                                            $price_main = get_post_meta(get_the_ID(), '_s_price', true);
-                                            $prices_extra = get_post_meta(get_the_ID(), '_prices_extra', true);
-                                            if ($prices_extra) {
-                                                array_push($prices_extra, $price_main);
-                                            }
-                                            $price_min = !$prices_extra ? $price_main : min($prices_extra);
-                                            $paper = get_post_meta($post->ID, '_physical', true);
-
-                                    ?>
-                                            <div class="col-12 col-lg-6 p-0 pr-lg-3 item-subscription">
-                                                <div class="opt digital py-3">
-                                                    <div class="container">
-                                                        <div class="icon d-flex justify-content-center">
-                                                            <img src="<?php echo get_the_post_thumbnail_url(get_the_ID()) ?>" alt="<?php echo get_the_title(get_the_ID()) ?>">
-                                                        </div>
-                                                        <div class="content">
-                                                            <div class="container p-0">
-                                                                <div class="description text-center">
-                                                                    <h4 class="m-0"><?php echo get_the_title(get_the_ID()) ?></h4>
-                                                                    <p><?php echo __('Elegí el monto de tu abono mensual', 'gen-base-theme') ?></p>
-                                                                </div>
-                                                                <div class="amounts d-flex flex-wrap">
-                                                                <?php $prices_extra = get_post_meta(get_the_ID(), '_prices_extra', true); ?>
-                                                                <?php if ($prices_extra && count($prices_extra) > 0) : ?>
-                                                                <?php
-                                                                    $prices_amount = count($prices_extra) + 1;?>
-                                                                   <?php
-                                                                   if ($prices_amount % 2 == 0) { 
-                                                                        $first_class = 'col-6';
-                                                                        $second_class =  'col-6';
-                                                                        $last_row_class = 'col-6';
-                                                                        $last_row_begins = 0;
-                                                                    } else {
-                                                                        $first_class = $prices_amount == 2 ? 'col-6' : 'col-6 col-lg-4';
-                                                                        $second_class = $prices_amount == 2 ? 'col-6' : 'col-6 col-lg-4';
-                                                                        $last_row_class = $prices_amount % 3 == 0 ? 'col-6 col-lg-4' : ($prices_amount % 3 == 1 ? 'col-12': 'col-6');
-                                                                        $last_row_begins = floor($prices_amount / 3) * 3;
-                                                                    }
-                                                                     ?>
-
-                                                                    <div class="<?= $first_class ?> p-1">
-                                                                        <div class="amount">
-                                                                            <button class="price" data-id="<?php echo get_the_ID() ?>" data-price="<?php echo get_post_meta(get_the_ID(), '_s_price', true) ?>">
-                                                                                <p><?php echo get_option('subscriptions_currency_symbol', 'ARS') . ' ' . get_post_meta(get_the_ID(), '_s_price', true) ?></p>
-                                                                            </button>
-                                                                        </div>
-                                                                    </div>
-                                                                    <?php foreach ($prices_extra as $i => $value) : ?>
-                                                                        <?php
-                                                                        $element_class = 'col-6 col-lg-4';
-                                                                        if ($i == 0) {
-                                                                            $element_class = $first_class;
-                                                                        } else if ($i +1 >= $last_row_begins) {
-                                                                            $element_class = $last_row_class;
-                                                                        }
-                                                                        ?>
-                                                                        <div class="<?= $element_class ?> p-1">
-                                                                            <div class="amount">
-                                                                                <button class="price" data-id="<?= get_the_ID() ?>" data-price="<?= $value ?>">
-                                                                                    <p><?= get_option('subscriptions_currency_symbol', 'ARS') ?> <?= $value ?></p>
-                                                                                </button>
-                                                                            </div>
-                                                                        </div>
-                                                                    <?php endforeach; ?>
-
-                                                                <?php else : ?>
-                                                                    <div class="col-12 p-1">
-                                                                        <div class="amount">
-                                                                            <button class="price" data-id="<?php echo get_the_ID() ?>" data-price="<?php echo get_post_meta(get_the_ID(), '_s_price', true) ?>">
-                                                                                <p><?php echo get_option('subscriptions_currency_symbol', 'ARS') . ' ' . get_post_meta(get_the_ID(), '_s_price', true) ?></p>
-                                                                            </button>
-                                                                        </div>
-                                                                    </div>
-                                                                <?php endif; ?>
-                                                   
-                                                                    <?php
-                                                                    if (get_post_meta(get_the_ID(), '_price_custom', true)) {
-                                                                        echo ' <div class="col-6 col-lg-12 p-1">
-                                                                        <div class="amount other price-custom">
-                                                                            <button class="custom-price-button open-price" data-role="'.get_post_meta(get_the_ID(),'_is_type',true).'" data-address="' . get_post_meta(get_the_ID(), '_physical', true) . '" data-id="' . get_the_ID() . '" data-min="' . $price_min . '" data-title="' . get_the_title() . '">
-                                                                                <p>' . __('abonar más', 'gen-base-theme') . '</p>
-                                                                            </button>
-                                                                        </div>
-                                                                    </div>';
-                                                                    }
-                                                                    ?>
-                                                                </div>
-                                                                <div class="btns-container">
-                                                                    <div class="d-flex justify-content-center mx-auto uppercase mt-3">
-                                                                        <button class="continue-btn yellow-btn-yellow-text button-suscribe-1" data-role="<?php echo get_post_meta(get_the_ID(),'_is_type',true)?>" data-type="subscription" id="button<?php echo get_the_ID() ?>" data-address="<?php echo get_post_meta(get_the_ID(), '_physical', true) ?>" disabled data-id="<?php echo get_the_ID() ?>" data-price="" data-name="<?php echo get_the_title() ?>" data-paper="<?php echo $paper === '1' ? 1 : 0 ?>"><?php echo __('continuar', 'gen-base-theme') ?></button>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="opt-details mt-3">
-                                                                    <button type="button" class="toggle" data-toggle="collapse" data-target="#benefitsDigital-<?php echo get_the_ID() ?>" aria-expanded="false" aria-controls="benefitsDigital">
-                                                                        <div class="d-flex">
-                                                                            <div class="dropdown-icon mx-2">
-                                                                                <img src="<?php echo get_template_directory_uri() ?>/assets/img/arrow.svg" alt="" />
-                                                                            </div>
-                                                                            <div>
-                                                                                <p><?php echo __('¿Qué trae este paquete?', 'gen-base-theme') ?></p>
-                                                                            </div>
-                                                                        </div>
-                                                                    </button>
-                                                                    <div class="collapse subscription-content" id="benefitsDigital-<?php echo get_the_ID() ?>">
-                                                                        <div class="card-body">
-                                                                            <?php echo get_the_content(get_the_ID()) ?>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        <?php
-                                        endwhile;
-                                        wp_reset_postdata();
-                                        ?>
-                                </div>
-                            <?php endif; ?>
+    <div class="container">
+        <div class="container-with-header">
+            <div class="py-2">
+                <div class="subs-opt mt-3 mt-md-5">
+                    <div class="title text-center">
+                        <h4 class="italic"><?php echo is_user_logged_in() ? wp_get_current_user()->user_firstname : __('Hola, ', 'gen-base-theme') ?> <?php echo __('estas son las mejores opciones para asociarte', 'gen-base-theme') ?></h4>
+                    </div>
+                    <div class="opt-list mt-3">
+                        <div class="d-flex flex-column flex-lg-row justify-content-center">
                             <?php
                             $args = array(
                                 'post_type' => 'subscriptions',
@@ -245,62 +89,283 @@
                                         ],
                                     ],
                                     [
-                                        'relation' => 'AND',
+                                        'relation' => 'OR',
                                         [
                                             'key' => '_is_special',
-                                            'compare' => 'EXISTS'
+                                            'compare' => 'NOT EXISTS'
                                         ],
                                         [
                                             'key' => '_is_special',
                                             'value' => ['1'],
-                                            'compare' => 'IN'
+                                            'compare' => 'NOT IN'
                                         ],
                                     ]
 
                                 ]
                             );
                             $query = new WP_Query($args);
+
                             if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post();
+
+
+                                    $price_main = get_post_meta(get_the_ID(), '_s_price', true);
+                                    $prices_extra = get_post_meta(get_the_ID(), '_prices_extra', true);
+                                    if ($prices_extra) {
+                                        array_push($prices_extra, $price_main);
+                                    }
+                                    $price_min = !$prices_extra ? $price_main : min($prices_extra);
+                                    $paper = get_post_meta($post->ID, '_physical', true);
+
                             ?>
-                                    <div class="opt papel py-3 py-lg-4">
-                                        <div class="container">
-                                            <div class="content">
-                                                <div class="container d-lg-flex justify-content-center align-items-center p-0">
-                                                    <div class="description text-center mt-2 mt-lg-0">
-                                                        <div class="d-flex justify-content-center mr-lg-3">
-                                                            <div class="paper-icon mr-2">
-                                                                <img src="<?php echo get_the_post_thumbnail_url(get_the_ID()) ?>" alt="">
-                                                            </div>
-                                                            <div class="d-flex align-items-center">
-                                                                <h4 class="m-0"><?php echo get_the_title(get_the_ID()) ?></h4>
+                                    <div class="col-12 col-lg-6 p-0 item-subscription main-subscriptions">
+                                        <div class="opt digital py-3">
+                                            <div class="container">
+                                                <div class="icon d-flex justify-content-center">
+                                                    <img src="<?php echo get_the_post_thumbnail_url(get_the_ID()) ?>" alt="<?php echo get_the_title(get_the_ID()) ?>">
+                                                </div>
+                                                <div class="content">
+                                                    <div class="container p-0">
+                                                        <div class="description text-center">
+                                                            <h4 class="m-0"><?php echo get_the_title(get_the_ID()) ?></h4>
+                                                            <p><?php echo __('Elegí el monto de tu abono mensual', 'gen-base-theme') ?></p>
+                                                        </div>
+                                                        <div class="amounts d-flex flex-wrap">
+                                                            <?php $prices_extra = get_post_meta(get_the_ID(), '_prices_extra', true); ?>
+                                                            <?php if ($prices_extra && count($prices_extra) > 0) : ?>
+                                                                <?php
+                                                                $prices_amount = count($prices_extra) + 1; ?>
+                                                                <?php
+                                                                if ($prices_amount % 2 == 0) {
+                                                                    $first_class = 'col-6';
+                                                                    $second_class =  'col-6';
+                                                                    $last_row_class = 'col-6';
+                                                                    $last_row_begins = 0;
+                                                                } else {
+                                                                    $first_class = $prices_amount == 2 ? 'col-6' : 'col-6 col-lg-4';
+                                                                    $second_class = $prices_amount == 2 ? 'col-6' : 'col-6 col-lg-4';
+                                                                    $last_row_class = $prices_amount % 3 == 0 ? 'col-6 col-lg-4' : ($prices_amount % 3 == 1 ? 'col-12' : 'col-6');
+                                                                    $last_row_begins = floor($prices_amount / 3) * 3;
+                                                                }
+                                                                ?>
+
+                                                                <div class="<?= $first_class ?> p-1">
+                                                                    <div class="amount">
+                                                                        <button class="price" data-id="<?php echo get_the_ID() ?>" data-price="<?php echo get_post_meta(get_the_ID(), '_s_price', true) ?>">
+                                                                            <p><?php echo get_option('subscriptions_currency_symbol', 'ARS') . ' ' . get_post_meta(get_the_ID(), '_s_price', true) ?></p>
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                                <?php foreach ($prices_extra as $i => $value) : ?>
+                                                                    <?php
+                                                                    $element_class = 'col-6 col-lg-4';
+                                                                    if ($i == 0) {
+                                                                        $element_class = $first_class;
+                                                                    } else if ($i + 1 >= $last_row_begins) {
+                                                                        $element_class = $last_row_class;
+                                                                    }
+                                                                    ?>
+                                                                    <div class="<?= $element_class ?> p-1">
+                                                                        <div class="amount">
+                                                                            <button class="price" data-id="<?= get_the_ID() ?>" data-price="<?= $value ?>">
+                                                                                <p><?= get_option('subscriptions_currency_symbol', 'ARS') ?> <?= $value ?></p>
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                <?php endforeach; ?>
+
+                                                            <?php else : ?>
+                                                                <div class="col-12 p-1">
+                                                                    <div class="amount">
+                                                                        <button class="price" data-id="<?php echo get_the_ID() ?>" data-price="<?php echo get_post_meta(get_the_ID(), '_s_price', true) ?>">
+                                                                            <p><?php echo get_option('subscriptions_currency_symbol', 'ARS') . ' ' . get_post_meta(get_the_ID(), '_s_price', true) ?></p>
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                            <?php endif; ?>
+
+                                                            <?php
+                                                            if (get_post_meta(get_the_ID(), '_price_custom', true)) {
+                                                                echo ' <div class="col-6 col-lg-12 p-1">
+                                                                        <div class="amount other price-custom">
+                                                                            <button class="custom-price-button open-price" data-role="' . get_post_meta(get_the_ID(), '_is_type', true) . '" data-address="' . get_post_meta(get_the_ID(), '_physical', true) . '" data-id="' . get_the_ID() . '" data-min="' . $price_min . '" data-title="' . get_the_title() . '">
+                                                                                <p>' . __('abonar más', 'gen-base-theme') . '</p>
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>';
+                                                            }
+                                                            ?>
+                                                        </div>
+                                                        <div class="btns-container">
+                                                            <div class="d-flex justify-content-center mx-auto uppercase mt-3">
+                                                                <button class="continue-btn yellow-btn-yellow-text button-suscribe-1" data-role="<?php echo get_post_meta(get_the_ID(), '_is_type', true) ?>" data-type="subscription" id="button<?php echo get_the_ID() ?>" data-address="<?php echo get_post_meta(get_the_ID(), '_physical', true) ?>" disabled data-id="<?php echo get_the_ID() ?>" data-price="" data-name="<?php echo get_the_title() ?>" data-paper="<?php echo $paper === '1' ? 1 : 0 ?>"><?php echo __('continuar', 'gen-base-theme') ?></button>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="btns-container">
-                                                        <?php
-                                                        $price_main = get_post_meta(get_the_ID(), '_s_price', true);
-                                                        $paper = get_post_meta($post->ID, '_physical', true);
-                                                        ?>
-                                                        <div class=" d-flex justify-content-center mx-auto uppercase mt-3 mt-lg-0">
-                                                            <button class="yellow-btn-white-text button-suscribe-1" data-role="<?php echo get_post_meta(get_the_ID(),'_is_type',true)?>" data-type="subscription" id="button<?php echo get_the_ID() ?>" data-id="<?php echo get_the_ID() ?>" data-address="<?php echo get_post_meta(get_the_ID(), '_physical', true) ?>" data-price="<?php echo $price_main ?>" data-name="<?php echo get_the_title() ?>" data-paper="<?php echo $paper === '1' ? 1 : 0 ?>"><?php echo __('elegir y continuar', 'gen-base-theme') ?></button>
+                                                        <div class="opt-details mt-3">
+                                                            <button type="button" class="toggle" data-toggle="collapse" data-target="#benefitsDigital-<?php echo get_the_ID() ?>" aria-expanded="false" aria-controls="benefitsDigital">
+                                                                <div class="d-flex">
+                                                                    <div class="dropdown-icon mx-2">
+                                                                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/arrow.svg" alt="" />
+                                                                    </div>
+                                                                    <div>
+                                                                        <p><?php echo __('¿Qué trae este paquete?', 'gen-base-theme') ?></p>
+                                                                    </div>
+                                                                </div>
+                                                            </button>
+                                                            <div class="collapse subscription-content" id="benefitsDigital-<?php echo get_the_ID() ?>">
+                                                                <div class="card-body">
+                                                                    <?php echo get_the_content(get_the_ID()) ?>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                            <?php
+                                <?php
                                 endwhile;
                                 wp_reset_postdata();
-                            endif;
-                            ?>
+                                ?>
+                        </div>
+                    <?php endif; ?>
+                    <div class="col-12 p-0 item-subscription">
+                        <div class="opt paypal mt-3 py-3">
+                            <div class="container">
+                                <div class="content">
+                                    <div class="container p-0">
+                                        <div class="description text-center">
+                                            <h4 class="m-0"><?= __('Socio/a internacional', 'gen-base-theme') ?></h4>
+                                            <p><?= __('Elegí el monto de tu abono mensual', 'gen-base-theme') ?></p>
+                                        </div>
+                                        <div class="amounts d-flex flex-wrap">
+                                            <div class="col-12 col-md-6 col-lg-3 p-1">
+                                                <div class="amount">
+                                                    <a class="price" href="https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-81U26777BA1011942MJDBXCY" target="_blank">
+                                                    <p>u$s 5</p>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-md-6 col-lg-3 p-1">
+                                                <div class="amount">
+                                                    <a class="price" href="https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-6AL802312A910845CMJDBZZY" target="_blank">
+                                                        <p>u$s 10</p>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-md-6 col-lg-3 p-1">
+                                                <div class="amount">
+                                                    <a class="price" href="https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-7NG419567J7258053MTGX7II" target="_blank">
+                                                        <p>u$s 20</p>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-md-6 col-lg-3 p-1">
+                                                <div class="amount">
+                                                    <a class="price" href="https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-3N8639087E9602430MTGYADQ" target="_blank">
+                                                        <p>u$s 50</p>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="opt-details mt-3">
+                                            <button type="button" class="toggle" data-toggle="collapse" data-target="#benefitsDigital-25" aria-expanded="false" aria-controls="benefitsDigital">
+                                                <div class="d-flex">
+                                                    <div class="dropdown-icon mx-2">
+                                                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/arrow.svg" alt="" />
+                                                    </div>
+                                                    <div>
+                                                    <p><?php echo __('¿Qué trae este paquete?', 'gen-base-theme') ?></p>
+                                                    </div>
+                                                </div>
+                                            </button>
+                                            <div class="collapse subscription-content" id="benefitsDigital-25">
+                                                <div class="card-body">
+                                                    <p class="d-flex align-items-center">Comentarios destacados en las notas.</p>
+                                                    <p class="d-flex align-items-center">Diario de cada domingo en versión digital. </p>
+                                                    <p class="d-flex align-items-center">Beneficios y descuentos exclusivos de la Comunidad Tiempo.</p>
+                                                    <p class="d-flex align-items-center">Espacios de participación con periodistas y otros socios y socias de Tiempo. </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <?php
+                    $args = array(
+                        'post_type' => 'subscriptions',
+                        'meta_query' => [
+                            'relation' => 'AND',
+                            [
+                                'relation' => 'OR',
+                                [
+                                    'key' => '_is_donation',
+                                    'compare' => 'NOT EXISTS'
+                                ],
+                                [
+                                    'key' => '_is_donation',
+                                    'value' => ['1'],
+                                    'compare' => 'NOT IN'
+                                ],
+                            ],
+                            [
+                                'relation' => 'AND',
+                                [
+                                    'key' => '_is_special',
+                                    'compare' => 'EXISTS'
+                                ],
+                                [
+                                    'key' => '_is_special',
+                                    'value' => ['1'],
+                                    'compare' => 'IN'
+                                ],
+                            ]
+
+                        ]
+                    );
+                    $query = new WP_Query($args);
+                    if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post();
+                    ?>
+                            <div class="opt papel py-3 py-lg-4">
+                                <div class="container">
+                                    <div class="content">
+                                        <div class="container d-lg-flex justify-content-center align-items-center p-0">
+                                            <div class="description text-center mt-2 mt-lg-0">
+                                                <div class="d-flex justify-content-center mr-lg-3">
+                                                    <div class="paper-icon mr-2">
+                                                        <img src="<?php echo get_the_post_thumbnail_url(get_the_ID()) ?>" alt="">
+                                                    </div>
+                                                    <div class="d-flex align-items-center">
+                                                        <h4 class="m-0"><?php echo get_the_title(get_the_ID()) ?></h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="btns-container">
+                                                <?php
+                                                $price_main = get_post_meta(get_the_ID(), '_s_price', true);
+                                                $paper = get_post_meta($post->ID, '_physical', true);
+                                                ?>
+                                                <div class=" d-flex justify-content-center mx-auto uppercase mt-3 mt-lg-0">
+                                                    <button class="yellow-btn-white-text button-suscribe-1" data-role="<?php echo get_post_meta(get_the_ID(), '_is_type', true) ?>" data-type="subscription" id="button<?php echo get_the_ID() ?>" data-id="<?php echo get_the_ID() ?>" data-address="<?php echo get_post_meta(get_the_ID(), '_physical', true) ?>" data-price="<?php echo $price_main ?>" data-name="<?php echo get_the_title() ?>" data-paper="<?php echo $paper === '1' ? 1 : 0 ?>"><?php echo __('elegir y continuar', 'gen-base-theme') ?></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    <?php
+                        endwhile;
+                        wp_reset_postdata();
+                    endif;
+                    ?>
+                    </div>
                 </div>
             </div>
-            <!-- loop container -->
+        </div>
     </div>
+    <!-- loop container -->
+</div>
 </div>
 <!-- custom price -->
 <div class="container ta-context asociate gray-border mt-2 my-lg-5" id="custom-price-row">
@@ -552,7 +617,7 @@
                                                     <div class="password2_error text-center alert alert-danger"></div>
                                                 </div>
                                                 <input type="hidden" name="register_redirect" id="register_redirect" value="<?php echo get_permalink(get_option('subscriptions_payment_page')); ?>">
-                                                <input type="hidden" name="subscriptor_type" id="subscriptor_type" value="<?php echo Subscriptions_Sessions::get_session('subscriptions_add_session') !== null ? Subscriptions_Sessions::get_session('subscriptions_add_session')['suscription_role'] : ''?>">
+                                                <input type="hidden" name="subscriptor_type" id="subscriptor_type" value="<?php echo Subscriptions_Sessions::get_session('subscriptions_add_session') !== null ? Subscriptions_Sessions::get_session('subscriptions_add_session')['suscription_role'] : '' ?>">
                                                 <div class="btns-container text-center mt-4">
                                                     <span class="d-none" id="loader-address">
                                                         <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/loader-button.gif" />
@@ -638,3 +703,23 @@
 </div>
 
 <?php get_footer(); ?>
+<style>
+    a.price p {
+        font-family: "Caladea";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 27px;
+        line-height: 31px;
+        letter-spacing: -1px;
+        margin: 0;
+        text-transform: uppercase;
+        color: var(--ta-gris-subtexto);
+        text-align: center;
+    }
+    .main-subscriptions:first-of-type {
+        padding-right: 0.5rem !important;
+    }
+    .main-subscriptions:last-of-type {
+        padding-left: 0.5rem !important;
+    }
+</style>
