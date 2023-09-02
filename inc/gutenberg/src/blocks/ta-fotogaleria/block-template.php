@@ -119,7 +119,7 @@ $posts_list = array_slice($posts_list, 0, 10);
     window.onload = function() {
         document.querySelector(".tiempo-fotogaleria-container").style.display = "block";
         (function($) {
-            let $fg_container = $('.tiempo-fotogaleria .main-preview');
+            let $fg_container = $('.tiempo-fotogaleria #main-fotogaleria');
             if ($fg_container && $fg_container.get(0)) {
                 let new_height = $fg_container.get(0).scrollHeight;
                 console.log(new_height, "nacho");
