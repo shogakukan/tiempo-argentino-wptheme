@@ -40,7 +40,9 @@ $posts_list = array_slice($posts_list, 0, 10);
                                     <?php $first_title = $fg_article->title; ?>
                                     <div class="col-md-8 col-12 article-preview main-preview">
                                         <div class="img-container" id="main-fotogaleria">
-                                            <img src="<?= $first_image_url ?>" />
+                                            <a href="<?= $fg_article->url ?>">
+                                                <img src="<?= $first_image_url ?>" />
+                                            </a>
                                         </div>
                                         <div class="content mt-2">
                                             <div class="title" id="fotogaleria-main-title">
@@ -50,7 +52,7 @@ $posts_list = array_slice($posts_list, 0, 10);
                                                             <?= $fg_article->cintillo . " | " ?>
                                                         <?php endif; ?>
                                                     </span>
-                                                    <span class="titulo"><?= $first_title ?></span>
+                                                    <a href="<?= $fg_article->url ?>"><span class="titulo"><?= $first_title ?></span></a>
                                                 </p>
                                             </div>
                                         </div>
@@ -62,7 +64,7 @@ $posts_list = array_slice($posts_list, 0, 10);
                                     $thumbnail = $fg_article->get_thumbnail_alt_common() ? $fg_article->get_thumbnail_alt_common() : $fg_article->get_thumbnail_common();
                                     $image_url = $thumbnail ? $thumbnail['url'] : '';
                                     ?>
-                                    <div class="row content" data-titulo="<?= $fg_article->title ?>" data-cintillo="<?= $fg_article->cintillo ?>" data-img="<?php echo $image_url ?>" onclick="setGaleria(this);" style="cursor: pointer;">
+                                    <div class="row content" data-titulo="<?= $fg_article->title ?>" data-cintillo="<?= $fg_article->cintillo ?>" data-url="<?= $fg_article->url ?> " data-img="<?php echo $image_url ?>" onclick="setGaleria(this);" style="cursor: pointer;">
                                         <div class="col-md-5 col-12">
                                             <div class="img-container">
                                                 <div class="img-wrapper d-flex align-items-end lazy" data-thumbnail style='background-image: url("<?php echo $image_url ?>");'>
@@ -113,29 +115,39 @@ $posts_list = array_slice($posts_list, 0, 10);
         width: 100%;
         height: auto;
     }
+
+    .tiempo-fotogaleria .titulo {
+        color: #fff;
+    }
 </style>
 
 <script>
-    window.onload = function() {
-        document.querySelector(".tiempo-fotogaleria-container").style.display = "block";
-        (function($) {
+    document.querySelector(".tiempo-fotogaleria-container").style.display = "block";
+    (function($) {
+        $(document).ready(function() {
             let $fg_container = $('.tiempo-fotogaleria #main-fotogaleria');
             if ($fg_container && $fg_container.get(0)) {
                 let new_height = $fg_container.get(0).scrollHeight;
-                console.log(new_height, "nacho");
                 $('.tiempo-fotogaleria .fotogaleria-list').css('height', new_height);
             }
-        })(jQuery);
-    }
-    var image_url = '<?php echo $first_image_url; ?>';
+        })
+    })(jQuery);
 
+    var image_url = '<?php echo $first_image_url; ?>';
+    let spanTituloFg = document.querySelector('#fotogaleria-main-title .titulo');
+    let spanCintilloFg = document.querySelector('#fotogaleria-main-title .cintillo');
+    let tituloFv = document.querySelector('#fotogaleria-main-title a');
+    let mainImageFg = document.querySelector('#main-fotogaleria img');
+    let mainImageLinkFg = document.querySelector('#main-fotogaleria a');
 
     function setGaleria(fotogaleriaEl) {
         if (fotogaleriaEl.dataset.img && fotogaleriaEl.dataset.img != image_url) {
             image_url = fotogaleriaEl.dataset.img;
-            document.querySelector('#main-fotogaleria img').src = image_url;
-            spanTitulo.innerText = fotogaleriaEl.dataset.titulo;
-            spanCintillo.innerText = fotogaleriaEl.dataset.cintillo ? fotogaleriaEl.dataset.cintillo + " | " : "";
+            mainImageFg.src = image_url;
+            spanTituloFg.innerText = fotogaleriaEl.dataset.titulo;
+            spanCintilloFg.innerText = fotogaleriaEl.dataset.cintillo ? fotogaleriaEl.dataset.cintillo + " | " : "";
+            tituloFv.href = fotogaleriaEl.dataset.url;
+            mainImageLinkFg.href = fotogaleriaEl.dataset.url;
         }
     }
 </script>
