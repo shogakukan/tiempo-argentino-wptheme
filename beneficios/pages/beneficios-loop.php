@@ -10,22 +10,7 @@ if (is_user_logged_in()){
 if ($isSocio){
     get_template_part('beneficios/pages/parts/beneficios', 'content');
 } else {
-    //get_template_part('beneficios/pages/parts/beneficios', 'landing');
-    $front_page_id = get_option('beneficios_landing_page');
-    $content_post = get_post($front_page_id);
-    if ($content_post){
-        $content = $content_post->post_content;
-        $content = apply_filters('the_content', $content);
-        $content = str_replace(']]>', ']]&gt;', $content);
-        ?>
-        <div class="landing-beneficios container">
-        <?php echo $content; ?>
-        </div>
-        <?php
-        } else {
-            get_template_part('beneficios/pages/parts/beneficios', 'content');
-        }
-    
+    get_template_part('beneficios/pages/parts/beneficios', 'landing');
  }
 
 get_footer();
