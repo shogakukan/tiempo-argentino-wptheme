@@ -107,13 +107,11 @@ $posts_list = array_slice($posts_list, 0, 10);
 
 <script>
     window.onload = function() {
-        console.log(1, document.querySelector('#player').style.height)
         document.querySelector(".tiempo-audiovisual-container").style.display = "block";
     }
     var video_id = '<?php echo $first_video; ?>';
 
     function onYouTubeIframeAPIReady() {
-        console.log(2, document.querySelector('#player').style.height)
 
         let videoColumn = document.querySelector(".video-preview");
         let innerDivs = videoColumn.querySelectorAll("div.video, div.content");
@@ -133,13 +131,14 @@ $posts_list = array_slice($posts_list, 0, 10);
         videoList.style.height = feauteredHeight + "px";
 
     }
-
+    let spanTituloAv = document.querySelector('#video-main-title .titulo');
+    let spanCintilloAv = document.querySelector('#video-main-title .cintillo');
     function setVideoId(videoEl) {
         if (videoEl.dataset.video && videoEl.dataset.video != video_id) {
             video_id = videoEl.dataset.video;
             document.querySelector('#player').innerHTML = `<iframe width="100%" height="100%" loading="lazy" src="https://www.youtube.com/embed/${video_id}" title="${videoEl.dataset.titulo}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
-            spanTitulo.innerText = videoEl.dataset.titulo;
-            spanCintillo.innerText = videoEl.dataset.cintillo ? videoEl.dataset.cintillo + " | " : "";
+            spanTituloAv.innerText = videoEl.dataset.titulo;
+            spanCintilloAv.innerText = videoEl.dataset.cintillo ? videoEl.dataset.cintillo + " | " : "";
         }
     }
 </script>
