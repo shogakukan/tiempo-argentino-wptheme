@@ -1,311 +1,34 @@
 {
-    "40": {
-      "agrupacion": "Libres del Sur",
-      "nombreCorto": "Libres del Sur",
-      "order": 9,
-      "color": "#8713ed",
-      "listas": {
-        "3019": {
-          "candidate": "Saravia",
-          "order": 9,
-          "foto": ""
-        }
-      }
-    },
-    "92": {
-      "agrupacion": "Política Obrera",
-      "nombreCorto": "Política Obrera",
-      "order": 9,
-      "color": "#590b0b",
-      "listas": {
-        "3020": {
-          "candidate": "Busch",
-          "order": 9,
-          "foto": ""
-        }
-      }
-    },
-    "94": {
-      "agrupacion": "Proyecto Joven",
-      "nombreCorto": "Proyecto Joven",
-      "order": 9,
-      "color": "#22db0d",
-      "listas": {
-        "3165": {
-          "candidate": "Pedernera",
-          "order": 9,
-          "foto": ""
-        }
-      }
-    },
-    "95": {
-      "agrupacion": "Frente Patriota Federal",
-      "nombreCorto": "Frente patriota",
-      "order": 9,
-      "color": "#1169f7",
-      "listas": {
-        "3021": {
-          "candidate": "Guarnieri",
-          "order": 9,
-          "foto": ""
-        }
-      }
-    },
     "132": {
       "agrupacion": "Juntos por el Cambio",
       "order": 2,
       "nombreCorto": "Juntos",
       "color": "#faf214",
-      "listas": {
-        "3602": {
-          "candidate": "Santilli",
-          "order": 1,
-          "foto": "pba3602.jpg"
-        },
-        "3603": {
-          "candidate": "Grindetti",
-          "order": 2,
-          "foto": "pba3603.jpg"
-        }
-      }
+      "candidate": "Grindetti",
+      "foto": "pba3603.jpg"
     },
     "134": {
       "agrupacion": "Unión por la Patria",
       "order": 1,
       "nombreCorto": "UP",
       "color": "#00B5EF",
-      "listas": {
-        "3604": {
-          "candidate": "Kicillof",
-          "order": 1,
-          "foto": "pba3604.jpg"
-        }
-      }
+      "candidate": "Kicillof",
+      "foto": "pba3604.jpg"
     },
     "135": {
       "agrupacion": "La Libertad Avanza",
       "order": 3,
       "nombreCorto": "LLA",
-      "color": "#050505",
-      "listas": {
-        "3612": {
-          "candidate": "Píparo",
-          "order": 1,
-          "foto": "pba3612.jpg"
-        }
-      }
+      "color": "#6c4c99;",
+      "candidate": "Píparo",
+      "foto": "pba3612.jpg"
     },
     "136": {
       "agrupacion": "Frente de Izquierda y de los Trabajadores - Unidad",
       "nombreCorto": "FITU",
       "order": 4,
       "color": "#ff0000",
-      "listas": {
-        "3009": {
-          "candidate": "Sobrero",
-          "order": 1,
-          "foto": "pba3009.jpg"
-        },
-        "3010": {
-          "candidate": "Bodart",
-          "order": 2,
-          "foto": "pba3010.jpg"
-        }
-      }
-    },
-    "191": {
-      "agrupacion": "POLITICA ABIERTA PARA LA INTEGRIDAD SOCIAL",
-      "nombreCorto": "PAIS",
-      "order": 9,
-      "color": "#318CE7",
-      "listas": {
-        "3116": {
-          "candidate": "Alva",
-          "order": 9,
-          "foto": ""
-        }
-      }
-    },
-    "220": {
-      "agrupacion": "MOVIMIENTO DE INTEGRACION FEDERAL (MIF)",
-      "nombreCorto": "MIF",
-      "order": 9,
-      "color": "#005eb8",
-      "listas": {
-        "3140": {
-          "candidate": "Guillermo Baque",
-          "order": 9,
-          "foto": ""
-        }
-      }
-    },
-    "258": {
-      "agrupacion": "CORRIENTE DE PENSAMIENTO BONAERENSE",
-      "nombreCorto": "CPB",
-      "order": 9,
-      "color": "#afd8eb",
-      "listas": {
-        "3137": {
-          "candidate": "Ludueña",
-          "order": 9,
-          "foto": ""
-        }
-      }
-    },
-    "268": {
-      "agrupacion": "BUENOS AIRES PRIMERO (BAP)",
-      "nombreCorto": "BAP",
-      "order": 9,
-      "color": "#509e2f",
-      "listas": {
-        "3288": {
-          "candidate": "Sobrero",
-          "order": 9,
-          "foto": ""
-        }
-      }
-    },
-    "276": {
-      "agrupacion": "Nuevo MAS",
-      "order": 6,
-      "nombreCorto": "MAS",
-      "color": "#a60c07",
-      "listas": {
-        "3614": {
-          "candidate": "Yapura",
-          "order": 1,
-          "foto": "pba3614.jpg"
-        }
-      }
-    },
-    "298": {
-      "agrupacion": "Todos por Buenos Aires",
-      "nombreCorto": "TOBA",
-      "order": 9,
-      "color": "#509e2f",
-      "listas": {
-        "3620": {
-          "candidate": "Díaz",
-          "order": 9,
-          "foto": ""
-        }
-      }
-    },
-    "304": {
-      "agrupacion": "FRENTE FEDERAL DE ACCION SOLIDARIA DE LA PROVINCIA DE BUENOS AIRES",
-      "nombreCorto": "Acción solidaria",
-      "order": 9,
-      "color": "#ffffff",
-      "listas": {
-        "3610": {
-          "candidate": "Contreras",
-          "order": 9,
-          "foto": ""
-        }
-      }
-    },
-    "311": {
-      "agrupacion": "Confianza pública",
-      "order": 9,
-      "nombreCorto": "Confianza pública",
-      "color": "#509e2f",
-      "listas": {
-        "3606": {
-          "candidate": "Guerrero",
-          "order": 9,
-          "foto": ""
-        }
-      }
-    },
-    "317": {
-      "agrupacion": "VOCACION SOCIAL",
-      "nombreCorto": "Vocación social",
-      "order": 9,
-      "color": "#71c5e8",
-      "listas": {
-        "3621": {
-          "candidate": "Vázquez",
-          "order": 9,
-          "foto": ""
-        }
-      }
-    },
-    "318": {
-      "agrupacion": "Liber.Ar",
-      "nombreCorto": "Liber.Ar",
-      "order": 9,
-      "color": "#08fcf4",
-      "listas": {
-        "3004": {
-          "candidate": "Mollard",
-          "order": 9,
-          "foto": ""
-        }
-      }
-    },
-    "319": {
-      "agrupacion": "UNIDAD SOCIAL",
-      "nombreCorto": "Unidad social",
-      "order": 9,
-      "color": "#5c068c",
-      "listas": {
-        "3295": {
-          "candidate": "Canalda",
-          "order": 9,
-          "foto": ""
-        }
-      }
-    },
-    "323": {
-      "agrupacion": "JUSTICIA Y DIGNIDAD PATRIOTICA",
-      "nombreCorto": "JDP",
-      "order": 9,
-      "color": "#007367;",
-      "listas": {
-        "3611": {
-          "candidate": "Gobbi",
-          "order": 9,
-          "foto": "pba3611.jpg"
-        }
-      }
-    },
-    "324": {
-      "agrupacion": "ESPERANZA DEL PUEBLO",
-      "nombreCorto": "Esperanza",
-      "order": 9,
-      "color": "#73c92d",
-      "listas": {
-        "3609": {
-          "candidate": "Gereiro",
-          "order": 9,
-          "foto": ""
-        }
-      }
-    },
-    "329": {
-      "agrupacion": "Principios y Valores",
-      "nombreCorto": "PyV",
-      "order": 5,
-      "color": "#062b33",
-      "listas": {
-        "3011": {
-          "candidate": "D'Elía",
-          "order": 1,
-          "foto": ""
-        }
-      }
-    },
-    "534": {
-      "agrupacion": "CELESTE PROVIDA",
-      "nombreCorto": "Celeste provida",
-      "color": "#1C99D5",
-      "order": 9,
-      "listas": {
-        "3617": {
-          "candidate": "Alancay",
-          "order": 9,
-          "foto": ""
-        }
-      }
+      "candidate": "Sobrero",
+      "foto": "pba3009.jpg"
     }
   }

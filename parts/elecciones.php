@@ -28,19 +28,22 @@ $data[] = get_option('resultados_caba');
                 <div class="col-6 col-lg-2-4 candidate-container flex-column d-flex<?= ($key === key($election["resultados"])) ? ' last-candidate' : '' ?>">
                     <div class="row">
                         <div class="col-6 caritas">
-                            <?php foreach ($agrupacion["listas"] as $i => $lista) : ?>
+                            <?php /*foreach ($agrupacion["listas"] as $i => $lista) : ?>
                                 <img class="candidate" src="<?= $lista["foto"] != "" ? get_bloginfo('template_directory').'/parts/elecciones_data/' . $lista["foto"] : $defaultImg ?>" style="border-color:<?= $agrupacion["color"] != "" ? $agrupacion["color"] : "black" ?>;" />
                                 <?php if ($i == 1) break; ?>
-                            <?php endforeach; ?>
+                            <?php endforeach;*/ ?>
+                            <img class="candidate" src="<?= $agrupacion["foto"] != "" ? get_bloginfo('template_directory').'/parts/elecciones_data/' . $agrupacion["foto"] : $defaultImg ?>" style="border-color:<?= $agrupacion["color"] != "" ? $agrupacion["color"] : "black" ?>;" />
                         </div>
                         <div class="col-6 flex-column votos-container">
                             <?php if($agrupacion["votosPorc"] != '-') :?>
                                 <strong><?= $agrupacion["votosPorc"] ?>%</strong>
                             <?php endif; ?>
-                            <?php foreach ($agrupacion["listas"] as $lista) : ?>
+                            <?php /*foreach ($agrupacion["listas"] as $lista) : ?>
                                 <strong></strong>
                                 <p class="cant-votos"><?= $lista["candidate"] != "" ? $lista["candidate"] : $lista["nom"] ?> <?= $lista["votosPorc"] ?>%</p>
-                            <?php endforeach; ?>
+                            <?php endforeach; */?>
+                            <strong></strong>
+                            <p class="cant-votos"><?= $agrupacion["candidate"] != "" ? $agrupacion["candidate"] : '' ?></p>
                         </div>
                     </div>
                     <div class="alianza d-flex flex-column">

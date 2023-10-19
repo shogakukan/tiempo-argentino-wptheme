@@ -1140,18 +1140,10 @@ function elecciones_get_results(){
 		$data_pba = update_elecciones_data($url_nacion .'/resultados/getResultados?distritoId=02&categoriaId=4', $token_nacion);
 		if ($data_pba){
 			update_option('resultados_pba', prosess_data_nacion($data_pba, 'Gobernación', 'PBA - Gobernación', 'Provincia de Buenos Aires', 102, 'pba'));
-
 		}
-	}
-	if (false && $url_caba){
-		$data_caba = update_elecciones_data($url_caba);
+		$data_caba = update_elecciones_data($url_nacion .'/resultados/getResultados?distritoId=01&categoriaId=11', $token_nacion);
 		if ($data_caba){
-			update_option('resultados_caba', prosess_data_caba($data_caba));
-		} elseif (!get_option('resultados_caba')){
-			$path = get_bloginfo('template_directory') . '/parts/elecciones_data/from_api_caba.json';
-			$jsonString = file_get_contents($path);
-			$data_caba = json_decode($jsonString, true);
-			update_option('resultados_caba', prosess_data_caba($data_caba));
+			update_option('resultados_caba', prosess_data_nacion($data_pba, 'Jefatura de gobierno', 'CABA - Jefatura de gobierno', 'CABA', 101, 'caba'));
 		}
 	}
 	$urls_array = [
@@ -1208,7 +1200,7 @@ function prosess_data_nacion($fromApi, $eleccion, $tagName, $region, $tagCode, $
 		'resultados' => [],
 	);
 	foreach ($fromApi["valoresTotalizadosPositivos"] as $agrupacion) {
-		$agrupacion_id = $agrupacion["idAgrupacion"];
+		$agrupacion_id = $agrupacion["idAgrupacionTelegrama"];
 		if (!isset($agrupaciones[$agrupacion_id])) {
 			continue;
 		}
@@ -1222,28 +1214,30 @@ function prosess_data_nacion($fromApi, $eleccion, $tagName, $region, $tagCode, $
 			'order' => $data['order'],
 			'agrupacion' => $data['agrupacion'],
 			'nombreCorto' => $data['nombreCorto'],
-			'listas' => array()
+			//'listas' => array()
+			'candidate' => $data['candidate'],
+			'foto' => $data['foto']
 		);
-		foreach ($agrupacion['listas'] as $lista) {
-			if (isset($data['listas'][$lista['idLista']])) {
-				$agrupacion_data_final['listas'][] = array(
-					'candidate' => $data['listas'][$lista['idLista']]['candidate'],
-					'foto' => $data['listas'][$lista['idLista']]['foto'],
-					'order' => $data['listas'][$lista['idLista']]['order'],
-					'votosPorc' => number_format($lista['votosPorcentaje'] * $agrupacion['votosPorcentaje'] / 100, 2, ",", ".")
-				);
-				if($agrupacion['votos'] > 0){
-					usort($agrupacion_data_final['listas'],function($a,$b){
-						return (int)$a['votosPorc'] < (int)$b['votosPorc'];
-					});
-				} else {
-					usort($agrupacion_data_final['listas'],function($a,$b){
-						return (int)$a['order'] > (int)$b['order'];
-					});
-				}
+		// foreach ($agrupacion['listas'] as $lista) {
+		// 	if (isset($data['listas'][$lista['idLista']])) {
+		// 		$agrupacion_data_final['listas'][] = array(
+		// 			'candidate' => $data['listas'][$lista['idLista']]['candidate'],
+		// 			'foto' => $data['listas'][$lista['idLista']]['foto'],
+		// 			'order' => $data['listas'][$lista['idLista']]['order'],
+		// 			'votosPorc' => number_format($lista['votosPorcentaje'] * $agrupacion['votosPorcentaje'] / 100, 2, ",", ".")
+		// 		);
+		// 		if($agrupacion['votos'] > 0){
+		// 			usort($agrupacion_data_final['listas'],function($a,$b){
+		// 				return (int)$a['votosPorc'] < (int)$b['votosPorc'];
+		// 			});
+		// 		} else {
+		// 			usort($agrupacion_data_final['listas'],function($a,$b){
+		// 				return (int)$a['order'] > (int)$b['order'];
+		// 			});
+		// 		}
 
-			}
-		}
+		// 	}
+		// }
 		$una_from_api['resultados'][] = $agrupacion_data_final;
 	}
 	
@@ -1261,91 +1255,5 @@ function prosess_data_nacion($fromApi, $eleccion, $tagName, $region, $tagCode, $
 	}
 	return $una_from_api;
 }
-function prosess_data_caba($fromApi)
-{
-	$path = get_bloginfo('template_directory') . '/parts/elecciones_data/caba.json';
-	$jsonString = file_get_contents($path);
-	$agrupaciones = json_decode($jsonString, true);
-	$valoresTotalizadosOtros = $fromApi['cant_votantes'] > 0 ? $fromApi['cant_votos_negativos'] * 100 / $fromApi['cant_votantes'] : 0;
-	$dos_from_api =     array(
-		"tagCode" => '101',
-		'tagName' => "CABA - Jefatura de gobierno",
-		'region' => 'CABA',
-		'eleccion' => "Jefatura de gobierno",
-		'fuente' => 'Instituto de Gestión Electoral (CABA)',
-		'mesasTotalizadasPorcentaje' => number_format($fromApi["porcentaje_mesas_procesadas"], 2, ",", "."),
-		'participacionPorcentaje' => number_format($fromApi["porcentaje_participacion"], 2, ",", "."),
-		'valoresTotalizadosOtros' => number_format($valoresTotalizadosOtros, 2, ",", "."),
-		'resultados' => [],
-	);
-	$votos_positivos = $fromApi['cant_votos_positivos'];
-	$resultados_from_api =  $fromApi['resultados'];
-	foreach ($agrupaciones as $agrupacion) {
-		$agrupacion_data_final = array(
-			'votos' => 0,
-			'votosPorc' => number_format(0, 2, ",", "."),
-			'color' => $agrupacion['color'],
-			'agrupacion' => $agrupacion['agrupacion'],
-			'nombreCorto' => $agrupacion['nombreCorto'],
-			'order' => $agrupacion['order'],
-			'listas' => array()
-		);
-		$votos_agrupacion = 0;
-		foreach ($agrupacion['listas'] as $id_candidatura => $candidate) {
-			$candidaturas_from_api = array_filter($resultados_from_api, function ($v, $k) use ($id_candidatura) {
-				if (isset($v['id_candidatura'])) {
-					return $v['id_candidatura'] == $id_candidatura;
-				}
-				return false;
-			}, ARRAY_FILTER_USE_BOTH);
-			if (isset(array_keys($candidaturas_from_api)[0]) && isset($candidaturas_from_api[array_keys($candidaturas_from_api)[0]])) {
-				$votos = $candidaturas_from_api[array_keys($candidaturas_from_api)[0]]['cant_votos'];
-				$votos_agrupacion += $votos;
-				$porVotos = $votos_positivos > 0 ? $votos * 100 / $votos_positivos : 0;
-				$agrupacion_data_final['listas'][] = array(
-					'candidate' => $candidate['candidate'],
-					'foto' => $candidate['foto'],
-					'votosPorc' => number_format($porVotos, 2, ",", "."),
-					'order' => $candidate['order']
-				);
-			}
-		}
-		if ($votos_agrupacion > 0){
-			usort($agrupacion_data_final['listas'], function ($a, $b) {
-				return (int)$a['votosPorc'] < (int)$b['votosPorc'];
-			});
-		} else {
-			usort($agrupacion_data_final['listas'], function ($a, $b) {
-				return (int)$a['order'] > (int)$b['order'];
-			});
-		}
 
-		$agrupacion_data_final['votos'] = $votos_agrupacion > 0 ? $votos_agrupacion : '-';
-		$agrupacion_data_final['votosPorc'] = $votos_agrupacion > 0 ? number_format($votos_agrupacion * 100 / $votos_positivos, 2, ",", ".") : '-';
-		$dos_from_api['resultados'][] = $agrupacion_data_final;
-	}
-	if ($fromApi['cant_votos_positivos'] > 0){
-		usort($dos_from_api['resultados'], function ($a, $b) {
-			return (int)$a['votosPorc'] < (int)$b['votosPorc'];
-		});
-	} else {
-		usort($dos_from_api['resultados'], function ($a, $b) {
-			return (int)$a['order'] > (int)$b['order'];
-		});
-	}
-
-	return $dos_from_api;
-}
 add_action( 'elecciones_cron', 'elecciones_get_results' );
-// add_action( 'rest_api_init', function () {
-// 	register_rest_route( 'theme/v1', '/caba', array(
-// 	  'methods' => 'POST',
-// 	  'callback' => 'save_caba_data',
-// 	) );
-//   } );
-
-  function save_caba_data(WP_REST_Request $request){
-	$data_caba = $request['data'];
-	update_option('resultados_caba', prosess_data_caba($data_caba));
-	wp_send_json( $data_caba ) ;
-  }
