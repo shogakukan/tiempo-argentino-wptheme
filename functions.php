@@ -1143,7 +1143,7 @@ function elecciones_get_results(){
 		}
 		$data_caba = update_elecciones_data($url_nacion .'/resultados/getResultados?distritoId=01&categoriaId=11', $token_nacion);
 		if ($data_caba){
-			update_option('resultados_caba', prosess_data_nacion($data_pba, 'Jefatura de gobierno', 'CABA - Jefatura de gobierno', 'CABA', 101, 'caba'));
+			update_option('resultados_caba', prosess_data_nacion($data_caba, 'Jefatura de gobierno', 'CABA - Jefatura de gobierno', 'CABA', 101, 'caba'));
 		}
 	}
 	$urls_array = [
