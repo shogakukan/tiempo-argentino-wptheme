@@ -1,0 +1,26 @@
+{
+  "503": {
+    "agrupacion": "Juntos por el Cambio",
+    "order": 2,
+    "nombreCorto": "Juntos",
+    "color": "#faf214",
+    "candidate": "J. Fama",
+    "foto": "c503.jpg"
+  },
+  "502": {
+    "agrupacion": "Unión por la Patria",
+    "order": 1,
+    "nombreCorto": "UP",
+    "color": "#00B5EF",
+    "candidate": "Jalil",
+    "foto": "c502.jpg"
+  },
+  "501": {
+    "agrupacion": "La Libertad Avanza",
+    "order": 3,
+    "nombreCorto": "LLA",
+    "color": "#6c4c99;",
+    "candidate": "Jalil Colomé",
+    "foto": "c501.jpg"
+  }
+}

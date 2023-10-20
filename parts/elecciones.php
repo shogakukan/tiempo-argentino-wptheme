@@ -14,6 +14,7 @@ $data = array();
 $data[] = get_option('resultados_nacion');
 $data[] = get_option('resultados_pba');
 $data[] = get_option('resultados_caba');
+$data[] = get_option('resultados_catamarca');
 ?>
 <?php foreach ($data as $election) : ?>
     <div class="eleccion-container e-<?= $election["tagCode"] ?>">
