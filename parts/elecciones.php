@@ -1,261 +1,192 @@
 <?php
-if (is_front_page()){
-    if (!isset(get_option('elecciones_option_name')['enabled'])){
+if (is_front_page()) {
+    if (!isset(get_option('elecciones_option_name')['enabled'])) {
         return;
     }
-    if (!get_option('elecciones_option_name')['enabled']){
+    if (!get_option('elecciones_option_name')['enabled']) {
         return;
     }
 }
-
 $defaultImg = "https://www.tiempoar.com.ar/wp-content/uploads/2021/09/silueta-e1631385327305.png";
-
-$data = array();
-$data[] = get_option('resultados_nacion');
-$data[] = get_option('resultados_pba');
-$data[] = get_option('resultados_caba');
-$data[] = get_option('resultados_catamarca');
+$election = get_option('resultados_nacion');
+$ganador = $election['resultados'][0];
+$fotoGanador = $ganador["foto"] != "" ? get_bloginfo('template_directory') . '/parts/elecciones_data/' . $ganador["foto"] : $defaultImg;
+$colorGanador = $ganador["color"];
+$perdedor = $election['resultados'][1];
+$fotoPerdedor = $perdedor["foto"] != "" ? get_bloginfo('template_directory') . '/parts/elecciones_data/' . $perdedor["foto"] : $defaultImg;;
+$colorPerdedor = $perdedor["color"];
 ?>
-<?php foreach ($data as $election) : ?>
-    <div class="eleccion-container e-<?= $election["tagCode"] ?>">
-        <div class="title-container">
-            <h4 class="elecciones-title">
-                <span class="region"><?= $election["region"] ?></span> -
-                <strong class="cargo"><?= $election["eleccion"] ?></strong>
-            </h4>
+<div class="title-container">
+    <h4 class="elecciones-title">
+        <span class="region">Todo el país</span> -
+        <strong class="cargo">Presidenciales</strong>
+    </h4>
+</div>
+<div class="container py-3 argentina-2023" style="padding:0;">
+    <div class="wp-block-columns mb-0 caras">
+        <div class="wp-block-column cara-ganador" style="flex-basis:10%">
+            <div></div>
         </div>
-        <div class="row elecciones-container">
-            <?php foreach ($election["resultados"] as $key => $agrupacion) : ?>
-                <div class="col-6 col-lg-2-4 candidate-container flex-column d-flex<?= ($key === key($election["resultados"])) ? ' last-candidate' : '' ?>">
-                    <div class="row">
-                        <div class="col-6 caritas">
-                            <?php /*foreach ($agrupacion["listas"] as $i => $lista) : ?>
-                                <img class="candidate" src="<?= $lista["foto"] != "" ? get_bloginfo('template_directory').'/parts/elecciones_data/' . $lista["foto"] : $defaultImg ?>" style="border-color:<?= $agrupacion["color"] != "" ? $agrupacion["color"] : "black" ?>;" />
-                                <?php if ($i == 1) break; ?>
-                            <?php endforeach;*/ ?>
-                            <img class="candidate" src="<?= $agrupacion["foto"] != "" ? get_bloginfo('template_directory').'/parts/elecciones_data/' . $agrupacion["foto"] : $defaultImg ?>" style="border-color:<?= $agrupacion["color"] != "" ? $agrupacion["color"] : "black" ?>;" />
-                        </div>
-                        <div class="col-6 flex-column votos-container">
-                            <?php if($agrupacion["votosPorc"] != '-') :?>
-                                <strong><?= $agrupacion["votosPorc"] ?>%</strong>
-                            <?php endif; ?>
-                            <?php /*foreach ($agrupacion["listas"] as $lista) : ?>
-                                <strong></strong>
-                                <p class="cant-votos"><?= $lista["candidate"] != "" ? $lista["candidate"] : $lista["nom"] ?> <?= $lista["votosPorc"] ?>%</p>
-                            <?php endforeach; */?>
-                            <strong></strong>
-                            <p class="cant-votos"><?= $agrupacion["candidate"] != "" ? $agrupacion["candidate"] : '' ?></p>
-                        </div>
-                    </div>
-                    <div class="alianza d-flex flex-column">
-                        <div class="elecciones-separator"></div>
-                        <p class="lista">
-                            <strong class="lista"><?= $agrupacion["nombreCorto"] != "" ? $agrupacion["nombreCorto"] : $agrupacion["agrupacion"] ?></strong><br /><?= $agrupacion["votos"] ?> votos
-                        </p>
-                    </div>
+        <div class="wp-block-column barra">
+            <div class="wp-block-columns mb-0 h-100">
+                <div class="wp-block-column col-ganador" style="flex-basis:<?= $ganador['votosPorc'] != '-' ? str_replace(',', '.', $ganador['votosPorc']) : 50 ?>%;">
+                    <p class="mb-0"><?= $ganador['candidate'] ?></p>
+                    <h3 class="mb-0"><?= $ganador['votosPorc'] ?>%</h3>
+                    <span><?= $ganador['votos'] ?> votos</span>
                 </div>
-            <?php endforeach; ?>
+                <div class="wp-block-column col-perdedor">
+                    <p class="mb-0"><?= $perdedor['candidate'] ?></p>
+                    <h3 class="mb-0"><?= $perdedor['votosPorc'] ?>%</h3>
+                    <span><?= $perdedor['votos'] ?> votos</span>
+                </div>
+            </div>
+            <!--div class="wp-block-columns mb-0 h-100" style="width: 5px;border:2px solid;position: relative;top: -100%;margin: 0 auto !important;"></div-->
         </div>
-        <div class="votos-pie">
+        <div class="wp-block-column cara-perdedor" style="flex-basis:10%">
+            <div></div>
+        </div>
+    </div>
+    <div class="wp-block-columns mb-0 datos">
+        <div class="wp-block-column ganador" style="flex-basis:10%;text-align:center">
+            <p><?= $ganador['candidate'] ?></p>
+            <h3 class="mb-0"><?= $ganador['votosPorc'] ?>%</h3>
+            <span><?= $ganador['votos'] ?> votos</span>
+        </div>
+        <div class="wp-block-column centro">
             <p>Mesas escrutadas: <?= $election["mesasTotalizadasPorcentaje"] ?>% | Participación: <?= $election["participacionPorcentaje"] ?>% | Votos no positivos: <?= $election["valoresTotalizadosOtros"] ?>%</p>
             <p><?= $election["fuente"] ?></p>
             <button onClick="window.location.reload();">Actualizar</button>
-            <a class="button" href="/resultados">Resultados completos</a>
+        </div>
+        <div class="wp-block-column perdedor" style="flex-basis:10%;text-align:center">
+            <p><?= $perdedor['candidate'] ?></p>
+            <h3 class="mb-0"><?= $perdedor['votosPorc'] ?>%</h3>
+            <span><?= $perdedor['votos'] ?> votos</span>
         </div>
     </div>
-<?php endforeach;?>
-<div class="article-tags elecciones-tags d-flex flex-wrap mt-4">
-    <?php foreach ($data as $election) : ?>
-        <div class="tag d-flex justify-content-center my-2">
-            <div class="content p-1">
-                <a class="btn-<?= $election["tagCode"] ?>" href="#">
-                    <p class="m-0" data-tag="e-<?= $election["tagCode"] ?>"><?= $election["tagName"] ?></p>
-                </a>
-            </div>
-            <div class="triangle"></div>
-        </div>
-    <?php endforeach;?>
+    <div class="wp-block-column centro-mob pt-4">
+        <p>Mesas escrutadas: <?= $election["mesasTotalizadasPorcentaje"] ?>% | Participación: <?= $election["participacionPorcentaje"] ?>% | Votos no positivos: <?= $election["valoresTotalizadosOtros"] ?>%</p>
+        <p><?= $election["fuente"] ?></p>
+        <button onClick="window.location.reload();">Actualizar</button>
+    </div>
 </div>
 <style>
-    .wp-block-lazyblock-elecciones {
-        margin-top: 10px;
-    }
+    @media(min-width: 768px) {
+        .cara-ganador {
+            position: relative;
+            left: 20px;
+        }
 
-    .lista,
-    .votos-pie {
-        font-size: 0.85em;
-        width: 100%;
-        margin-bottom: 0;
-        align-self: flex-end;
-    }
+        .cara-perdedor {
+            position: relative;
+            right: 20px;
+        }
 
-    .votos-pie {
-        text-align: center;
-        margin-top: 10px;
-    }
-    @media (min-width: 992px){
-        .col-lg-2-4 {
-            flex: 0 0 20%;
-            max-width: 20%;
+        .datos .ganador,
+        .datos .perdedor,
+        .centro-mob {
+            display: none;
         }
     }
-    .candidate {
+
+    @media(max-width: 767px) {
+
+        .caras,
+        .datos {
+            flex-wrap: nowrap !important;
+            column-gap: 1.5rem;
+        }
+
+        .barra,
+        .datos .centro {
+            display: none;
+        }
+
+        .datos {
+            flex-direction: row;
+        }
+    }
+    .barra * {
+            color: #fff;
+        }
+    .cara-ganador div {
+        background-image: url('<?= $fotoGanador ?>');
+        padding-bottom: 100%;
+        background-size: cover;
         border-radius: 50%;
-        border: 3px solid;
-        width: 100%;
+        background-position: center;
+        border: 5px solid <?= $colorGanador ?>;
     }
 
-    img.candidate:nth-child(2) {
-        position: absolute;
-        width: 40%;
-        right: 3px;
-        bottom: 0;
-    }
-    .eleccion-container .caritas {
-        height: fit-content;
-    }
-    .votos-container {
-        /* align-self: center; */
-        padding: 0;
-        font-size: 1.5em;
+    .cara-perdedor div {
+        background-image: url('<?= $fotoPerdedor ?>');
+        padding-bottom: 100%;
+        background-size: cover;
+        border-radius: 50%;
+        background-position: center;
+        border: 5px solid <?= $colorPerdedor ?>;
     }
 
-    .votos-container p,
-    .porc-votos,
-    .votos-pie p {
-        margin-bottom: 0;
+    .col-ganador {
+        background: <?= $colorGanador ?>;
+        margin: 1rem 0 1rem 0;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
     }
 
-    .votos-pie button,
-    .votos-pie .button {
+    .col-ganador * {
+        margin-left: 25px;
+    }
+
+    .col-perdedor {
+        background: <?= $colorPerdedor ?>;
+        margin: 1rem 0 1rem 0;
+        display: flex;
+        align-items: flex-end;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .col-perdedor * {
+        margin-right: 25px;
+    }
+
+    .datos {
+        justify-content: space-between;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .centro,
+    .centro-mob {
+        text-align: center;
+        font-family: caladea;
+    }
+
+    .argentina-2023 h3,
+    .argentina-2023 span {
+        font-family: libre baskerville;
+    }
+
+    .barra p{
+        font-family: red hat display;
+        font-weight: 900;
+    }
+    .centro button {
         background: var(--ta-celeste);
         border: none;
         color: #fff !important;
         padding: 1px 6px !important;
         display: inline-block;
     }
-    .votos-pie .button:hover{
-        text-decoration: none;
-    }
-
-    .votos-container p {
-        font-size: 0.6em;
-        font-family: libre baskerville;
-    }
-
-    .elecciones-container {
-        justify-content: space-around;
-        font-family: red hat display;
-    }
-
-    .candidate-container {
-        /* border-bottom: 3px solid green;
-    margin-bottom: 1em; */
-        margin-right: -7.5px;
-        margin-left: -7.5px;
-        padding: 0;
-        justify-content: space-between;
-        margin-bottom: 30px;
-    }
-
-    .porc-votos {
-        font-family: caladea;
-        font-size: 1.8em;
-        display: none;
-    }
-
     .elecciones-title {
+        background: var(--ta-celeste) !important;
+        color: #fff !important;
         font-family: red hat display;
         font-style: italic;
         width: fit-content;
         padding: 1px 10px;
         font-size: large;
     }
-
-    .elecciones-title .provincia {
-        font-weight: 400;
-    }
-
-    .selected,
-    .selected+.triangle,
-    .elecciones-title {
-        background: var(--ta-celeste) !important;
-    }
-
-    .selected p,
-    .elecciones-title {
-        color: #fff !important;
-    }
-
-    .elecciones-separator {
-        background-color: var(--ta-celeste);
-        display: inline-block;
-        height: 2px;
-        margin-top: 25px;
-        width: 60px;
-    }
-
-    .lista .lista {
-        text-transform: uppercase;
-        color: var(--ta-celeste);
-        font-size: 1em;
-    }
-
-    .eleccion-container {
-        display: none;
-    }
-    .home .candidate-container:nth-child(+n+6) {
-            display: none !important;
-    }
-    @media (max-width: 991px) {
-        .home .candidate-container:nth-child(+n+5) {
-            display: none !important;
-        }
-    }
-
-    @media (max-width: 599px) {
-
-        .lista,
-        .votos-pie {
-            font-size: 0.85em;
-        }
-
-        .votos-container {
-            font-size: 1.25em;
-        }
-
-        .votos-container p {
-            font-size: 0.6em;
-        }
-
-        .candidate-container {
-            padding: 0 15px;
-        }
-
-        .elecciones-title {
-            font-size: medium;
-        }
-
-        .lista .lista {
-            font-size: 0.9em;
-        }
-    }
 </style>
-<script>
-    let links = document.querySelectorAll(".elecciones-tags a");
-    let elections = document.querySelectorAll(".eleccion-container");
-    links.forEach((l) => {
-        l.addEventListener("click", function() {
-            links.forEach((li) => {
-                li.parentNode.classList.remove("selected");
-            });
-            elections.forEach(e => {
-                e.style.display = "none";
-            });
-            l.parentNode.classList.add("selected");
-            document.querySelector(`.${l.firstElementChild.dataset.tag}`).style.display = "block";
-        });
-    });
-
-    document.querySelector(".btn-100").click();
-</script>

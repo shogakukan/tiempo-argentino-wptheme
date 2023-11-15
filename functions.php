@@ -1137,18 +1137,18 @@ function elecciones_get_results(){
 		if ($data_nacion){
 			update_option('resultados_nacion', prosess_data_nacion($data_nacion, 'Presidenciales', 'Presidenciales', 'Todo el país', 100, 'nacion'));
 		}
-		$data_pba = update_elecciones_data($url_nacion .'/resultados/getResultados?distritoId=02&categoriaId=4', $token_nacion);
-		if ($data_pba){
-			update_option('resultados_pba', prosess_data_nacion($data_pba, 'Gobernación', 'PBA - Gobernación', 'Provincia de Buenos Aires', 102, 'pba'));
-		}
-		$data_caba = update_elecciones_data($url_nacion .'/resultados/getResultados?distritoId=01&categoriaId=11', $token_nacion);
-		if ($data_caba){
-			update_option('resultados_caba', prosess_data_nacion($data_caba, 'Jefatura de gobierno', 'CABA - Jefatura de gobierno', 'CABA', 101, 'caba'));
-		}
-		$data_catamarca = update_elecciones_data($url_nacion .'/resultados/getResultados?distritoId=03&categoriaId=4', $token_nacion);
-		if ($data_caba){
-			update_option('resultados_catamarca', prosess_data_nacion($data_catamarca, 'Gobernación', 'Catamarca - Gobernación', 'Catamarca', 103, 'catamarca'));
-		}
+		// $data_pba = update_elecciones_data($url_nacion .'/resultados/getResultados?distritoId=02&categoriaId=4', $token_nacion);
+		// if ($data_pba){
+		// 	update_option('resultados_pba', prosess_data_nacion($data_pba, 'Gobernación', 'PBA - Gobernación', 'Provincia de Buenos Aires', 102, 'pba'));
+		// }
+		// $data_caba = update_elecciones_data($url_nacion .'/resultados/getResultados?distritoId=01&categoriaId=11', $token_nacion);
+		// if ($data_caba){
+		// 	update_option('resultados_caba', prosess_data_nacion($data_caba, 'Jefatura de gobierno', 'CABA - Jefatura de gobierno', 'CABA', 101, 'caba'));
+		// }
+		// $data_catamarca = update_elecciones_data($url_nacion .'/resultados/getResultados?distritoId=03&categoriaId=4', $token_nacion);
+		// if ($data_caba){
+		// 	update_option('resultados_catamarca', prosess_data_nacion($data_catamarca, 'Gobernación', 'Catamarca - Gobernación', 'Catamarca', 103, 'catamarca'));
+		// }
 	}
 	$urls_array = [
 		"https://www.tiempoar.com.ar/resultados",
