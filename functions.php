@@ -1126,6 +1126,12 @@ function bloque_elecciones()
 }
 add_action('elecciones', 'bloque_elecciones');
 
+function bloque_feriados()
+{
+	require_once TA_THEME_PATH . '/parts/calendar.php';
+}
+add_action('feriados', 'bloque_feriados');
+
 function elecciones_get_results(){
 	$options = get_option('elecciones_option_name');
 	$url_nacion = isset($options['url_nacion']) ? $options['url_nacion'] : '';

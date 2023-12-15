@@ -69,14 +69,10 @@
 
     if (is_front_page()) {
         do_action('cloud_tag');
-    }
-
-    if (is_front_page()) {
-        do_action('elecciones');
     } else {
         global $post;
-        if($post->post_name == 'resultados'){
-            do_action('elecciones');
+        if($post->post_name == 'feriados'){
+            do_action('feriados');
         }
     }
 
