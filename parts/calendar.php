@@ -145,20 +145,14 @@
                 ),
             ),
             '04' => array(
+                '01' => array(
+                    'tipo' => 'puente',
+                    'nombre' => 'Feriado Puente Turístico'
+                ),
                 '02' => array(
                     'tipo' => 'inamovible',
                     'nombre' => 'Día del Veterano y de los Caídos en la Guerra de Malvinas'
                 )
-            ),
-            '04' => array(
-                '02' => array(
-                    'tipo' => 'inamovible',
-                    'nombre' => 'Día del Veterano y de los Caídos en la Guerra de Malvinas'
-                ),
-                '07' => array(
-                    'tipo' => 'inamovible',
-                    'nombre' => 'Viernes Santo'
-                ),
             ),
             '05' => array(
                 '01' => array(
@@ -178,6 +172,10 @@
                 '20' => array(
                     'tipo' => 'inamovible',
                     'nombre' => 'Paso a la Inmortalidad del General Manuel Belgrano'
+                ),
+                '21' => array(
+                    'tipo' => 'puente',
+                    'nombre' => 'Feriado Puente Turístico'
                 )
             ),
             '07' => array(
@@ -187,21 +185,25 @@
                 )
             ),
             '08' => array(
-                '19' => array(
+                '17' => array(
                     'tipo' => 'movible',
                     'nombre' => 'Paso a la Inmortalidad del Gral. José de San Martín (17/8)'
                 )
             ),
             '10' => array(
-                '14' => array(
+                '10' => array(
+                    'tipo' => 'puente',
+                    'nombre' => 'Feriado Puente Turístico'
+                ),
+                '12' => array(
                     'tipo' => 'movible',
                     'nombre' => 'Día del Respeto a la Diversidad Cultural (12/10)'
                 )
             ),
             '11' => array(
-                '18' => array(
+                '20' => array(
                     'tipo' => 'movible',
-                    'nombre' => 'Día de la Soberanía Nacional'
+                    'nombre' => 'Día de la Soberanía Nacional (20/11)'
                 )
             ),
             '12' => array(
