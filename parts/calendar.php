@@ -1,122 +1,12 @@
 <div class="calendario">
     <div class="d-flex flex-wrap justify-content-center">
         <?php
-        $dateComponents = getdate();
+        $dateComponents = getdate(strtotime('-3 hour'));
         $year = $dateComponents['year'];
         $meses = array(
             'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'
         );
         $feriados = array();
-        $feriados['2023'] = array(
-            '01' => array(
-                '01' => array(
-                    'tipo' => 'inamovible',
-                    'nombre' => 'Año nuevo'
-                )
-            ),
-            '02' => array(
-                '20' => array(
-                    'tipo' => 'inamovible',
-                    'nombre' => 'Carnaval'
-                ),
-                '21' => array(
-                    'tipo' => 'inamovible',
-                    'nombre' => 'Carnaval'
-                ),
-            ),
-            '03' => array(
-                '24' => array(
-                    'tipo' => 'inamovible',
-                    'nombre' => 'Día Nacional de la Memoria por la Verdad y la Justicia'
-                )
-            ),
-            '04' => array(
-                '02' => array(
-                    'tipo' => 'inamovible',
-                    'nombre' => 'Día del Veterano y de los Caídos en la Guerra de Malvinas'
-                ),
-                '07' => array(
-                    'tipo' => 'inamovible',
-                    'nombre' => 'Viernes Santo'
-                ),
-            ),
-            '04' => array(
-                '02' => array(
-                    'tipo' => 'inamovible',
-                    'nombre' => 'Día del Veterano y de los Caídos en la Guerra de Malvinas'
-                ),
-                '07' => array(
-                    'tipo' => 'inamovible',
-                    'nombre' => 'Viernes Santo'
-                ),
-            ),
-            '05' => array(
-                '01' => array(
-                    'tipo' => 'inamovible',
-                    'nombre' => 'Día del Trabajador'
-                ),
-                '25' => array(
-                    'tipo' => 'inamovible',
-                    'nombre' => 'Día de la Revolución de Mayo'
-                ),
-                '26' => array(
-                    'tipo' => 'puente',
-                    'nombre' => 'Feriado Puente Turístico'
-                )
-            ),
-            '06' => array(
-                '17' => array(
-                    'tipo' => 'movible',
-                    'nombre' => 'Paso a la Inmortalidad del Gral. Don Martín Miguel de Güemes'
-                ),
-                '19' => array(
-                    'tipo' => 'puente',
-                    'nombre' => 'Feriado Puente Turístico'
-                ),
-                '20' => array(
-                    'tipo' => 'inamovible',
-                    'nombre' => 'Paso a la Inmortalidad del General Manuel Belgrano'
-                )
-            ),
-            '07' => array(
-                '09' => array(
-                    'tipo' => 'inamovible',
-                    'nombre' => 'Día de la Independencia'
-                )
-            ),
-            '08' => array(
-                '21' => array(
-                    'tipo' => 'movible',
-                    'nombre' => 'Paso a la Inmortalidad del Gral. José de San Martín (17/8)'
-                )
-            ),
-            '10' => array(
-                '13' => array(
-                    'tipo' => 'puente',
-                    'nombre' => 'Feriado Puente Turístico'
-                ),
-                '16' => array(
-                    'tipo' => 'movible',
-                    'nombre' => 'Día del Respeto a la Diversidad Cultural (12/10)'
-                )
-            ),
-            '11' => array(
-                '20' => array(
-                    'tipo' => 'movible',
-                    'nombre' => 'Día de la Soberanía Nacional'
-                )
-            ),
-            '12' => array(
-                '08' => array(
-                    'tipo' => 'inamovible',
-                    'nombre' => 'Día de la Inmaculada Concepción de María'
-                ),
-                '25' => array(
-                    'tipo' => 'inamovible',
-                    'nombre' => 'Navidad'
-                )
-            ),
-        );
         $feriados['2024'] = array(
             '01' => array(
                 '01' => array(
@@ -310,7 +200,7 @@
         <?php endfor;?>
     </div>
     <div class="next-feriado">
-        <p style="font-size:30px">Faltan <?php echo $ii ?> para el próximo feriado</p>
+        <p style="font-size:30px">Faltan <?php echo $ii ?> días para el próximo feriado</p>
         <p style="font-size:20px"><?php echo $nextFeriado['dia'] ;?> de <?php echo $nextFeriado['mes'] ;?> - <?php echo $nextFeriado['motivo'] ;?></p>
     </div>
 </div>
