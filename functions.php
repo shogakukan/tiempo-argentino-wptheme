@@ -995,6 +995,8 @@ function clean_cloudflare_cache () {
 		"https://www.tiempoar.com.ar/espectaculos",
 		"https://www.tiempoar.com.ar/asociate/",
 		"https://www.tiempoar.com.ar/asociate",
+		"https://www.tiempoar.com.ar/feriados/",
+		"https://www.tiempoar.com.ar/feriados",
 	];
 	purge_cloudflare($urls_array);
 }
