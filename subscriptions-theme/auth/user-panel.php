@@ -3,7 +3,10 @@
 
 <div class="tab-pane content-panel" id="subscription">
 
-    <?php if (membership()->get_membership(wp_get_current_user()->ID)['id'] === null || isset(membership()->get_membership(wp_get_current_user()->ID)['status']) === 'cancel') : ?>
+    <?php if (
+        membership()->get_membership(wp_get_current_user()->ID)['id'] === null ||
+        (!empty(membership()->get_membership(wp_get_current_user()->ID)['status']) && str_contains(membership()->get_membership(wp_get_current_user()->ID)['status'],'cancel'))
+        ) : ?>
         <div class="subs-block mt-4">
             <div class="container">
                 <div class="title text-center">
@@ -51,7 +54,7 @@
                     </div>
                     <!-- button -->
                     <div class="btns-container d-flex justify-content-between justify-content-md-center mt-3">
-                        <button type="button" name="edit_subscription" id="edit_subscription" type="button" name="edit_subscription" id="edit_subscription">Editar plan</button>
+                        <button type="button" name="edit_subscription" id="edit_subscription" type="button" name="edit_subscription">Editar plan</button>
                         <?php do_action('edit_membership_user_panel') ?>
                         <form method="post" id="cancel-form-membership">
                             <input type="hidden" name="membership_id" value="<?php echo membership()->get_membership(wp_get_current_user()->ID)['id'] ?>">
