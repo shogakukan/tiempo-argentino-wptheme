@@ -42,27 +42,27 @@ export default function ArticlePreviewCommon(props = {}){
             }
 
             <div class={`content ${info_class}`}>
-                { articleData?.headband &&
+                {/* { articleData?.headband &&
                 <>
                     <div class="article-border"></div>
                     <div class="category-title">
                         <h4 data-headband>{htmlDecode(articleData.headband)}</h4>
                     </div>
                 </>
-                }
+                } */}
 
                 <div class="title">
                     <a data-url href={articleData?.url ?? ''}>
                         <p data-title>{htmlDecode(articleData?.title) ?? ''}</p>
                     </a>
                 </div>
-                { (articleData?.authors?.length > 0) &&
+                {/* { (articleData?.authors?.length > 0) &&
                 <div class="article-info-container">
                     <div class="author">
                         <p>Por {getAuthorsLinks({ authors: articleData.authors })}</p>
                     </div>
                 </div>
-                }
+                } */}
             </div>
         </div>
     );

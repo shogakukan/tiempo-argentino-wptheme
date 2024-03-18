@@ -10,6 +10,7 @@ $article = TA_Article_Factory::get_article($post);
 $date = $article->get_date_day('d/m/Y');
 
 $thumbnail = $article->get_thumbnail_common(null, 'destacado');
+$thumbnail_mobile = $article->get_thumbnail_common(null, 'medium');
 $section = $article->section;
 $author = $article->first_author;
 $authors = $article->authors;
@@ -23,35 +24,39 @@ $authors = $article->authors;
             <div class="articulo-simple text-right my-4">
                 <div class="container">
                     <div class="text-left mx-auto">
-                        <?php if( $section ): ?>
-                        <div class="categories d-flex">
-                            <a href="<?php echo esc_attr($section->archive_url); ?>"><h4 class="theme mr-2"><?php echo esc_html($section->name); ?></h4></a>
-                            <?php if($article->cintillo): ?>
-                                <h4 class="subtheme"><?php echo $article->cintillo; ?></h4></a>
-                            <?php endif; ?>
-                        </div>
+                        <?php if ($section) : ?>
+                            <div class="categories d-flex">
+                                <a href="<?php echo esc_attr($section->archive_url); ?>">
+                                    <h4 class="theme mr-2"><?php echo esc_html($section->name); ?></h4>
+                                </a>
+                                <?php if ($article->cintillo) : ?>
+                                    <h4 class="subtheme"><?php echo $article->cintillo; ?></h4></a>
+                                <?php endif; ?>
+                            </div>
                         <?php endif; ?>
                         <div class="pl-lg-5">
                             <div class="title mt-2">
                                 <h1><?php echo esc_html($article->title); ?></h1>
                             </div>
-                            <?php if( $article->excerpt ): ?>
-                            <div class="subtitle">
-                                <h3><?php echo esc_html($article->excerpt); ?></h3>
-                            </div>
+                            <?php if ($article->excerpt) : ?>
+                                <div class="subtitle">
+                                    <h3><?php echo esc_html($article->excerpt); ?></h3>
+                                </div>
                             <?php endif; ?>
-                            <?php get_template_part('parts/article','authors_data', array( 'article' => $article, 'size' => 'mobile' )); ?>
+                            <?php get_template_part('parts/article', 'authors_data', array('article' => $article, 'size' => 'mobile')); ?>
                             <div class="d-flex justify-content-between align-items-end mt-3">
-                                <?php if( $show_date && $date ): ?>
-                                <p class="date mb-0"><?php echo $date; ?></p>
+                                <?php if ($show_date && $date) : ?>
+                                    <p class="date mb-0"><?php echo $date; ?></p>
                                 <?php endif; ?>
-                                <?php if(is_callable($before_social_buttons)){ call_user_func($before_social_buttons); } ?>
+                                <?php if (is_callable($before_social_buttons)) {
+                                    call_user_func($before_social_buttons);
+                                } ?>
                                 <div></div>
-                                <?php get_template_part( 'parts/article', 'social_buttons', array(
+                                <?php get_template_part('parts/article', 'social_buttons', array(
                                     'class' => 'text-right mt-3',
                                     'title' => $article->title,
                                     'authors' => $authors
-                                    ) );
+                                ));
                                 ?>
                             </div>
                         </div>
@@ -59,32 +64,35 @@ $authors = $article->authors;
                             <div class="img-container video mt-3">
                                 <iframe loading="lazy" id="article-video" width="100%" height="100%" src="https://www.youtube.com/embed/<?php echo esc_html($article->get_video()); ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
-                        <?php elseif( $thumbnail ): ?>
-                        <div class="img-container mt-3">
-                            <div class="img-wrapper" id="article-main-image">
-                                <img src="<?php echo esc_attr($thumbnail['url']); ?>" alt="<?php echo esc_attr($thumbnail['alt']); ?>" class="img-fluid w-100" />
+                        <?php elseif ($thumbnail) : ?>
+                            <div class="img-container mt-3">
+                                <div class="img-wrapper" id="article-main-image">
+                                    <img src="<?php echo esc_attr($thumbnail['url']); ?>" alt="<?php echo esc_attr($thumbnail['alt']); ?>" class="img-fluid w-100 d-none d-sm-block" />
+                                    <?php if ($thumbnail_mobile) : ?>
+                                    <img src="<?php echo esc_attr($thumbnail_mobile['url']); ?>" alt="<?php echo esc_attr($thumbnail['alt']); ?>" class="img-fluid w-100 d-sm-none" />
+                                    <?php endif; ?>
+                                </div>
+                                <?php get_template_part('parts/image', 'copyright', array('photographer' => $article->thumbnail_common['author'], 'caption' => $article->thumbnail_common['caption'])); ?>
+                                <?php if ($article->thumbnail_common['caption']) : ?>
+                                    <div class="bajada mt-1">
+                                        <p><?php echo esc_html($article->thumbnail_common['caption']); ?></p>
+                                    </div>
+                                <?php endif; ?>
                             </div>
-                            <?php get_template_part('parts/image', 'copyright', array('photographer' => $article->thumbnail_common['author'], 'caption' => $article->thumbnail_common['caption'])); ?>
-                            <?php if($article->thumbnail_common['caption']): ?>
-                            <div class="bajada mt-1">
-                                <p><?php echo esc_html($article->thumbnail_common['caption']); ?></p>
-                            </div>
-                            <?php endif; ?>
-                        </div>
                         <?php endif; ?>
-                        <?php get_template_part('parts/article','authors_data', array( 'article' => $article, 'size' => 'desktop' )); ?>
-                        
+                        <?php get_template_part('parts/article', 'authors_data', array('article' => $article, 'size' => 'desktop')); ?>
+
                         <?php if (is_active_sidebar('article_mobile_postimage')) { ?>
                             <div class="row d-flex">
                                 <div class="col-12 d-block d-md-none d-sm-none mx-auto text-center mt-3">
                                     <?php dynamic_sidebar('article_mobile_postimage'); ?>
                                 </div>
                             </div>
-                    <?php } ?>
-                           <div class="article-body mt-3">
+                        <?php } ?>
+                        <div class="article-body mt-3">
                             <div class="art-column-w-lpadding">
-                                <?php echo apply_filters( 'the_content', $article->content ); ?>
-                                <?php get_template_part('parts/article','authors_subdata', array( 'article' => $article )); ?>
+                                <?php echo apply_filters('the_content', $article->content); ?>
+                                <?php get_template_part('parts/article', 'authors_subdata', array('article' => $article)); ?>
                             </div>
                         </div>
                         <?php if (is_active_sidebar('article_mobile_calltoaction')) : ?>
@@ -94,12 +102,12 @@ $authors = $article->authors;
                                 </div>
                             </div>
                         <?php endif; ?>
-                        <?php get_template_part( 'parts/article', 'social_buttons', array(
+                        <?php get_template_part('parts/article', 'social_buttons', array(
                             'class' => 'text-right mt-3',
                             'title' => $article->title,
                             'authors' => $authors
-                            ));
-                            ?>
+                        ));
+                        ?>
                     </div>
                 </div>
                 <div class="container-md mb-2 p-0">
@@ -134,3 +142,22 @@ $authors = $article->authors;
 </div>
 
 <?php get_template_part('parts/single_article', 'bottom'); ?>
+<?php if ($author->name == 'Mora Sarquis') : ?> <style>
+        @media(max-width:600px) {
+            #article-main-image {
+                overflow: scroll;
+            }
+
+            #article-main-image::after {
+                content: "Deslizá para ver completo →";
+                float: right;
+                margin-right: 1rem;
+            }
+
+            #article-main-image img {
+                width: 767px !important;
+                max-width: none;
+            }
+        }
+    </style>
+<?php endif; ?>
