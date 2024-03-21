@@ -1,12 +1,12 @@
-<?php 
+<?php
 $userdata = get_userdata(get_current_user_id());
 $rol = isset($userdata->roles[0]) ? $userdata->roles[0] : '';
 if (is_user_logged_in() && get_user_meta(get_current_user_id(),'_user_status',true) == 'active' && $rol == get_option('subscription_digital_role')){
     $link = get_permalink(get_option('beneficios_loop_page'));
-    $label = __('COMUNIDAD','gen-base-theme'); 
+    $label = __('COMUNIDAD','gen-base-theme');
 } else {
     $link = get_permalink(get_option('subscriptions_loop_page'));
-    $label = __('ASOCIATE','gen-base-theme'); 
+    $label = __('ASOCIATE','gen-base-theme');
 }
 ?>
 
@@ -132,9 +132,10 @@ if (is_user_logged_in() && get_user_meta(get_current_user_id(),'_user_status',tr
                             <span></span>
                         </button>
                     </div>
-                    <div class="tiempo-logo mr-lg-5">
-                        <a href="<?php echo home_url() ?>"><img src="<?php echo TA_THEME_URL; ?>/markup/assets/images/tiempo-logo.svg" class="img-fluid" alt=""></a>
-
+                    <div class="tiempo-logo mr-lg-5 d-inline-block">
+                        <a title="Tiempo Argentino" href="<?php echo home_url() ?>">
+                            <img src="<?php echo TA_THEME_URL; ?>/markup/assets/images/tiempo-logo.svg" width="204" height="57" class="img-fluid" alt="Tiempo Argentino">
+                        </a>
                     </div>
                     <div class="weather d-none d-xl-flex flex-column align-content-center justify-content-start text-left  mr-5">
                         <div class="mt-2">
@@ -158,7 +159,7 @@ if (is_user_logged_in() && get_user_meta(get_current_user_id(),'_user_status',tr
                             <a href="<?php echo get_permalink(get_option('subscriptions_login_register_page')) ?>"><img src="<?php echo TA_THEME_URL; ?>/markup/assets/images/profile-icon.svg" class="img-fluid" alt=""></a>
                             <a href="<?php echo get_permalink(get_option('subscriptions_login_register_page')); ?>"><?php echo __('Ingresar','gen-base-theme')?></a>
                         </div>
-                        
+
 
                     <?php else : ?>
                         <div class="logged-user mx-2">
@@ -306,6 +307,6 @@ if (is_user_logged_in() && get_user_meta(get_current_user_id(),'_user_status',tr
 
     <?php if (is_front_page()) : ?>
         <?php if (is_active_sidebar('home_mobile_vslider')) { ?>
-            <?php dynamic_sidebar('home_mobile_vslider'); ?>               
+            <?php dynamic_sidebar('home_mobile_vslider'); ?>
         <?php } ?>
     <?php endif; ?>
