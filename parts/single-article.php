@@ -72,8 +72,8 @@ $authors = $article->authors;
                                     <div class="img-wrapper" id="article-main-image">
                                         <img
                                             class="img-fluid w-100"
-                                            width="1200"
-                                            height="799"
+                                            width="767"
+                                            height="511"
                                             srcset="
                                                 <?php echo esc_attr($thumbnail_mobile['url']); ?> 400w,
                                                 <?php echo esc_attr($thumbnail_chico['url']); ?> 500w,
@@ -86,7 +86,7 @@ $authors = $article->authors;
                                                 (max-width: 1000px) 767px
                                                 1200px
                                             "
-                                            src="<?php echo esc_attr($thumbnail_grande['url']); ?>"
+                                            src="<?php echo esc_attr($thumbnail['url']); ?>"
                                             alt="<?php echo esc_attr($thumbnail['alt']); ?>" />
                                     </div>
                                     <?php get_template_part('parts/image', 'copyright', array('photographer' => $article->thumbnail_common['author'], 'caption' => $article->thumbnail_common['caption'])); ?>
