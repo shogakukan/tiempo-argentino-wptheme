@@ -9,7 +9,9 @@ $article = TA_Article_Factory::get_article($post);
 
 $date = $article->get_date_day('d/m/Y');
 
+$thumbnail_chico = $article->get_thumbnail_common(null, 'destacado-chico');
 $thumbnail = $article->get_thumbnail_common(null, 'destacado');
+$thumbnail_grande = $article->get_thumbnail_common(null, 'destacado-grande');
 $thumbnail_mobile = $article->get_thumbnail_common(null, 'medium');
 $section = $article->section;
 $author = $article->first_author;
@@ -68,10 +70,22 @@ $authors = $article->authors;
                             <?php elseif ($thumbnail) : ?>
                                 <div class="img-container mt-3">
                                     <div class="img-wrapper" id="article-main-image">
-                                        <img src="<?php echo esc_attr($thumbnail['url']); ?>" alt="<?php echo esc_attr($thumbnail['alt']); ?>" class="img-fluid w-100 d-none d-sm-block" width="767" height="511" />
-                                        <?php if ($thumbnail_mobile) : ?>
-                                        <img src="<?php echo esc_attr($thumbnail_mobile['url']); ?>" alt="<?php echo esc_attr($thumbnail['alt']); ?>" class="img-fluid w-100 d-sm-none" />
-                                        <?php endif; ?>
+                                        <img
+                                            class="img-fluid w-100"
+                                            srcset="
+                                                <?php echo esc_attr($thumbnail_mobile['url']); ?> 400w,
+                                                <?php echo esc_attr($thumbnail_chico['url']); ?> 500w,
+                                                <?php echo esc_attr($thumbnail['url']); ?> 767w,
+                                                <?php echo esc_attr($thumbnail_grande['url']); ?> 1200w,
+                                            "
+                                            sizes="
+                                                (max-width: 500px) 400px,
+                                                (max-width: 650px) 500px,
+                                                (max-width: 1000px) 767px
+                                                1200px
+                                            "
+                                            src="<?php echo esc_attr($thumbnail_grande['url']); ?>"
+                                            alt="<?php echo esc_attr($thumbnail['alt']); ?>" />
                                     </div>
                                     <?php get_template_part('parts/image', 'copyright', array('photographer' => $article->thumbnail_common['author'], 'caption' => $article->thumbnail_common['caption'])); ?>
                                     <?php if ($article->thumbnail_common['caption']) : ?>

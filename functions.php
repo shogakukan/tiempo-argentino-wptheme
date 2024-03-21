@@ -111,7 +111,7 @@ class TA_Theme
 		self::redirect_searchs();
 		self::filter_contents();
 		self::searchpage();
-    
+
 		add_action('admin_head',[self::class,'not_admin']);
 	}
 
@@ -235,7 +235,11 @@ class TA_Theme
 	{
 		add_theme_support('post-thumbnails');
 
+		add_image_size('destacado-chico', 500, 684);
+
 		add_image_size('destacado', 767, 1050);
+
+		add_image_size('destacado-grande', 1200, 1643);
 
 		//svg support
 		function cc_mime_types($mimes)
@@ -763,7 +767,7 @@ function article_columns_data( $column, $post_id ) {
                 echo $terms;
             }
             break;
- 
+
         case 'ta_article_section':
 			$terms = get_the_term_list( $post_id, 'ta_article_section', '', ', ', '' );
             if ( is_string( $terms ) ) {
@@ -908,23 +912,23 @@ add_action( 'admin_init', 'hook_new_media_columns' );
 
 add_action( 'add_attachment', 'delete_image_meta_caption' );
 function delete_image_meta_caption( $post_ID ) {
-    if ( wp_attachment_is_image( $post_ID )) {		
+    if ( wp_attachment_is_image( $post_ID )) {
         $my_image_meta = array(
             'ID' => $post_ID,
             'post_excerpt' => "",
         );
-        wp_update_post( $my_image_meta );   
+        wp_update_post( $my_image_meta );
     }
 }
 
 add_action( 'admin_enqueue_scripts', 'wptuts_add_color_picker' );
 function wptuts_add_color_picker( $hook ) {
- 
-    if( is_admin() ) { 
-     
-        // Add the color picker css file       
-        wp_enqueue_style( 'wp-color-picker' ); 
-         
+
+    if( is_admin() ) {
+
+        // Add the color picker css file
+        wp_enqueue_style( 'wp-color-picker' );
+
         // Include our custom jQuery file with WordPress Color Picker dependency
 		wp_enqueue_script('color_picker_js', TA_ASSETS_JS_URL . '/src/color.js', array( 'wp-color-picker' ), false, true );
 
@@ -1061,7 +1065,7 @@ function clear_article_cache ($post_id, $post){
 		$link . '/amp',
 		$link . '/amp' . '/'
 	);
-	
+
 	$terms = get_the_terms($post, "ta_article_section");
     if ($terms && isset($terms[0])){
         $terms_array = $terms[0]->to_array();
@@ -1139,7 +1143,7 @@ function elecciones_get_results(){
 	$url_nacion = isset($options['url_nacion']) ? $options['url_nacion'] : '';
 	$token_nacion = isset($options['token_nacion']) ? $options['token_nacion'] : '';
 	$url_caba = isset($options['url_caba']) ? $options['url_caba'] : '';
-	
+
 	if ($url_nacion && $token_nacion){
 		$data_nacion = update_elecciones_data($url_nacion .'/resultados/getResultados?categoriaId=1', $token_nacion);
 		if ($data_nacion){
@@ -1164,7 +1168,7 @@ function elecciones_get_results(){
 	];
 	purge_cloudflare($urls_array);
 
-	
+
 }
 
 function update_elecciones_data($url, $token = null){
@@ -1185,7 +1189,7 @@ function update_elecciones_data($url, $token = null){
 			'Authorization: Bearer ' . $token);
 	}
 	curl_setopt_array($curl, $options);
-	
+
 
 	$jsonData = curl_exec($curl);
 	$http_status = curl_getinfo($curl, CURLINFO_HTTP_CODE);
@@ -1252,7 +1256,7 @@ function prosess_data_nacion($fromApi, $eleccion, $tagName, $region, $tagCode, $
 		// }
 		$una_from_api['resultados'][] = $agrupacion_data_final;
 	}
-	
+
 	usort($una_from_api['resultados'],function($a,$b){
 		return (int)$a['votosPorc'] < (int)$b['votosPorc'];
 	});
