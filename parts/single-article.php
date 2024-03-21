@@ -68,7 +68,7 @@ $authors = $article->authors;
                             <?php elseif ($thumbnail) : ?>
                                 <div class="img-container mt-3">
                                     <div class="img-wrapper" id="article-main-image">
-                                        <img src="<?php echo esc_attr($thumbnail['url']); ?>" alt="<?php echo esc_attr($thumbnail['alt']); ?>" class="img-fluid w-100 d-none d-sm-block" />
+                                        <img src="<?php echo esc_attr($thumbnail['url']); ?>" alt="<?php echo esc_attr($thumbnail['alt']); ?>" class="img-fluid w-100 d-none d-sm-block" width="767" height="511" />
                                         <?php if ($thumbnail_mobile) : ?>
                                         <img src="<?php echo esc_attr($thumbnail_mobile['url']); ?>" alt="<?php echo esc_attr($thumbnail['alt']); ?>" class="img-fluid w-100 d-sm-none" />
                                         <?php endif; ?>

@@ -23,12 +23,12 @@ if (!$article->authors || empty($article->authors))
                 <?php endif; ?>
                     <?php if (!$author->has_photo) : ?>
                         <div class="author-icon mr-2">
-                            <img src="<?php echo TA_THEME_URL; ?>/assets/img/author-pen.svg" alt="" />
+                            <img src="<?php echo TA_THEME_URL; ?>/assets/img/author-pen.svg" width="34" height="34" alt="Por <?php echo esc_html($author->name); ?>" />
                         </div>
                     <?php else : ?><div class="author-icon mr-2">
                             <div class="author-img" style="background-image: url('<?php echo esc_attr($author->photo); ?>');float:right;">
                                 <div class="author-icon mr-2">
-                                    <img src="<?php echo TA_THEME_URL; ?>/assets/img/author-pen.svg" alt="" />
+                                    <img src="<?php echo TA_THEME_URL; ?>/assets/img/author-pen.svg" width="34" height="34" alt="Por <?php echo esc_html($author->name); ?>" />
                                 </div>
                             </div>
                         </div>
@@ -54,7 +54,7 @@ if (!$article->authors || empty($article->authors))
         <div class="author d-flex mr-2">
             <div class="author-info">
                 <p>Por:
-                    <?php 
+                    <?php
                     $authors = $article->authors;
                     $amount = count($authors);
                     ?>

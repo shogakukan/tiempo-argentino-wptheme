@@ -118,7 +118,7 @@
             </div>
             <div class="asociate-banner position-relative">
                 <div class="asociate-banner-bg">
-                    <img src="<?php echo TA_THEME_URL; ?>/markup/assets/images/asociate-banner.svg" class="img-fluid" alt="">
+                    <img src="<?php echo TA_THEME_URL; ?>/markup/assets/images/asociate-banner.svg" class="img-fluid" width="160" height="80" alt="ASOCIATE">
                 </div>
                 <div class="asociate-banner-content position-absolute">
                     <div class="separator"></div>

@@ -180,7 +180,9 @@ if (is_user_logged_in() && get_user_meta(get_current_user_id(),'_user_status',tr
                 </div>
                 <div class="asociate-banner position-relative ml-md-3">
                     <div class="asociate-banner-bg h-100 ">
-                        <a href="<?php echo $link ?>"> <img src="<?php echo TA_THEME_URL; ?>/markup/assets/images/asociate-banner.svg" class="img-fluid" alt=""></a>
+                        <a href="<?php echo $link ?>">
+                            <img src="<?php echo TA_THEME_URL; ?>/markup/assets/images/asociate-banner.svg" class="img-fluid" width="160" height="80" alt="<?php echo $label; ?>">
+                        </a>
                     </div>
                     <div class="asociate-banner-content position-absolute">
                         <div class="separator"></div>
