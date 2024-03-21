@@ -59,6 +59,8 @@
 .articulo-especial .social-btns a {
   margin-left: 10px;
   text-decoration: none;
+  width: 40px;
+  height: 40px;
 }
 .articulo-simple .date,
 .articulo-simple .author,
