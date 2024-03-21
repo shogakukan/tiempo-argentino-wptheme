@@ -9,14 +9,14 @@ extract($template_args);
     <div id="comment-<?php echo esc_attr($comment->comment_ID); ?>" class="single-comment position-relative input d-flex justify-content-between <?php echo esc_attr($container_class); ?>" data-id="<?php echo esc_attr($comment->comment_ID); ?>">
         <div class="profile position-absolute h-100">
             <div class="picture position-relative mb-3 mb-md-2">
-                <img src="<?php echo esc_attr($avatar_url); ?>" alt="" class="img-fluid" />
+                <img src="<?php echo esc_attr($avatar_url); ?>" alt="<?php echo esc_html($name); ?>" width="70" height="70" class="img-fluid" />
                 <?php if($author || $user_manages_comments): ?>
                     <div class="icon position-absolute">
-                        <img src="<?php echo TA_THEME_URL; ?>/assets/img/partner-blue.png" alt="" />
+                        <img src="<?php echo TA_THEME_URL; ?>/assets/img/partner-blue.png" alt="<?php echo esc_html($name); ?>" width="70" height="70" class="img-fluid" />
                     </div>
                 <?php elseif($is_partner): ?>
                     <div class="icon position-absolute">
-                        <img src="<?php echo TA_THEME_URL; ?>/assets/img/partner-yellow.svg" alt="" />
+                        <img src="<?php echo TA_THEME_URL; ?>/assets/img/partner-yellow.svg alt="<?php echo esc_html($name); ?>" width="70" height="70" class="img-fluid" />
                     </div>
                 <?php endif; ?>
             </div>

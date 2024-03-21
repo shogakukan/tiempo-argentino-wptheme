@@ -363,6 +363,9 @@ function ta_get_social_image($name, $format = "grey"){
         case 'instagram':
             $image = TA_THEME_URL . "/markup/assets/images/instagram-$format-icon.svg";
         break;
+        case 'telegram':
+            $image = TA_THEME_URL . "/markup/assets/images/telegram-$format-icon.svg";
+        break;
     }
     return $image;
 }
@@ -1114,7 +1117,7 @@ function check_member($user_id)
 	}
 
 	return false;
-		
+
 }
 function ta_get_commment_display_data($args = array()){
     $default_args = array(

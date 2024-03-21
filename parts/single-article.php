@@ -72,6 +72,8 @@ $authors = $article->authors;
                                     <div class="img-wrapper" id="article-main-image">
                                         <img
                                             class="img-fluid w-100"
+                                            width="1200"
+                                            height="799"
                                             srcset="
                                                 <?php echo esc_attr($thumbnail_mobile['url']); ?> 400w,
                                                 <?php echo esc_attr($thumbnail_chico['url']); ?> 500w,

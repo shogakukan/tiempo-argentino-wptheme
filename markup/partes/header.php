@@ -75,6 +75,12 @@
                                 </div>
                             </a>
                         </div>
+                        <div class="telegram">
+                            <a href="">
+                                <div><img src="<?php echo TA_THEME_URL; ?>/markup/assets/images/telegram-white-icon.svg" class="img-fluid" alt="">
+                                </div>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -91,7 +97,7 @@
                     </button>
                 </div>
                 <div class="tiempo-logo mr-lg-5 d-inline-block">
-                    <img src="<?php echo TA_THEME_URL; ?>/markup/assets/images/tiempo-logo.svg" width="204" height="57" class="img-fluid" alt="Tiempo Argentino">
+                    <img src="<?php echo TA_THEME_URL; ?>/markup/assets/images/tiempo-logo.svg" width="204" height="57" class="img-fluid" alt="Tiempo Argentino - Dueños de nuestras palabras">
                 </div>
                 <div>
                     class="weather d-none d-lg-flex flex-column align-content-center justify-content-start text-left  mr-5">
