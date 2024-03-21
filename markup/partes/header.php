@@ -4,7 +4,7 @@
 <div class="container d-sm-none d-md-block mt-md-3 mb-md-3">
     <div class="row d-flex">
         <div class="mx-auto">
-            <?php dynamic_sidebar('article_desktop_preheader'); ?>          
+            <?php dynamic_sidebar('article_desktop_preheader'); ?>
         </div>
     </div>
 </div>
@@ -90,10 +90,10 @@
                         <span></span>
                     </button>
                 </div>
-                <div class="tiempo-logo mr-lg-5">
-                    <img src="<?php echo TA_THEME_URL; ?>/markup/assets/images/tiempo-logo.svg" class="img-fluid" alt="">
+                <div class="tiempo-logo mr-lg-5 d-inline-block">
+                    <img src="<?php echo TA_THEME_URL; ?>/markup/assets/images/tiempo-logo.svg" width="204" height="57" class="img-fluid" alt="Tiempo Argentino">
                 </div>
-                <div
+                <div>
                     class="weather d-none d-lg-flex flex-column align-content-center justify-content-start text-left  mr-5">
                     <div class="mt-2">
                         <div class="date">

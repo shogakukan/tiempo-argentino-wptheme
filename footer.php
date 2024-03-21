@@ -3,7 +3,7 @@
     <div class="footer-content d-flex flex-column flex-lg-row justify-content-between my-3 mt-md-4 mb-md-5">
         <div class="ta-info col-12 col-lg-4">
             <div class="tiempo-logo">
-                <img src="<?php echo TA_THEME_URL; ?>/markup/assets/images/tiempo-logo.svg" class="img-fluid" alt="">
+                <img src="<?php echo TA_THEME_URL; ?>/markup/assets/images/tiempo-logo.svg" width="256" height="71" class="img-fluid" alt="Tiempo Argentino">
             </div>
             <div class="description ta-celeste-color mt-3">
                 <p>Es una publicación de Cooperativa de Trabajo Por Más Tiempo Limitada</p>
@@ -37,7 +37,7 @@
 <?php elseif (get_post_type() === 'ta_article') : ?>
 
     <?php if (is_active_sidebar('article_mobile_fixed')) dynamic_sidebar('article_mobile_fixed'); ?>
-    <?php if (is_active_sidebar('article_desktop_fixed')) dynamic_sidebar('article_desktop_fixed'); ?>        
+    <?php if (is_active_sidebar('article_desktop_fixed')) dynamic_sidebar('article_desktop_fixed'); ?>
 
 <?php endif?>
 <?php wp_footer(); ?>

@@ -28,22 +28,22 @@ if ($authors){
 
 ?>
 <div class="social-btns">
-    <a href="#comments-container">
-        <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/comentar.svg" alt="" />
+    <a title="Ver los comentarios de <?php echo $title; ?>" class="d-inline-block" href="#comments-container">
+        <img class="img-fluid m-0" src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/comentar.svg"  alt="Ver los comentarios de <?php echo $title; ?>" />
     </a>
     <?php /*
     <a tabindex="0" id="share-popover" class="share-popover" data-bs-toggle="popover" data-bs-trigger="focus">
         <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/compartir.svg" alt="" />
     </a>
     */ ?>
-    <a href="https://facebook.com/sharer.php?u=<?php echo get_permalink( get_queried_object_id() )?>" target="_blank">
-        <img class="img-fluid m-0" src="<?php echo get_stylesheet_directory_uri()?>/assets/img/fb-share-popover.svg">
+    <a title="Compartir <?php echo $title; ?> en Facebook" class="d-inline-block" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo get_permalink( get_queried_object_id() )?>">
+        <img class="img-fluid m-0" src="<?php echo get_stylesheet_directory_uri()?>/assets/img/fb-share-popover.svg" width="40" height="40" alt="Compartir <?php echo $title; ?> en Facebook">
     </a>
-    <a href="https://twitter.com/intent/tweet?url=<?php echo $tw_text . "%0A%0A" . get_permalink( get_queried_object_id() )?>" target="_blank">
-        <img class="img-fluid m-0" src="<?php echo get_stylesheet_directory_uri()?>/assets/img/twitter-share-popover.svg">
+    <a title="Compartir <?php echo $title; ?> en X" class="d-inline-block" href="https://twitter.com/intent/tweet?text=<?php echo $title; ?>&url=<?php echo $tw_text . "%0A%0A" . get_permalink( get_queried_object_id() )?>&via=tiempoarg" target="_blank">
+        <img class="img-fluid m-0" src="<?php echo get_stylesheet_directory_uri()?>/assets/img/twitter-share-popover.svg" width="40" height="40" alt="Compartir <?php echo $title; ?> en X">
     </a>
-    <a href="whatsapp://send/?text=<?php echo get_permalink( get_queried_object_id() )?>" target="_blank" class="d-lg-none">
-        <img class="img-fluid m-0" src="<?php echo get_stylesheet_directory_uri()?>/assets/img/whatsapp-share-popover.svg">
+    <a title="Compartir <?php echo $title; ?> por WhatsApp" class="d-lg-none d-inline-block" href="whatsapp://send/?text=<?php echo get_permalink( get_queried_object_id() )?>" target="_blank">
+        <img class="img-fluid m-0" src="<?php echo get_stylesheet_directory_uri()?>/assets/img/whatsapp-share-popover.svg" width="40" height="40" alt="Compartir <?php echo $title; ?> por WhatsApp">
     </a>
     <?php // do_action('favorite_button_action') ?>
 </div>
