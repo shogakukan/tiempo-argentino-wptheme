@@ -28,7 +28,7 @@ $extra_menu_items = RB_Menu::get_menu_items('extra-menu');
                 <button id="search-btn2" class="search-icon mr-3 btn btn-link d-flex collapsed" data-toggle="collapse"
                     data-target="#searchBarMenu" aria-expanded="false" aria-controls="searchBarMenu">
                     <div>
-                        <img src="<?php echo TA_THEME_URL; ?>/markup/assets/images/search-icon.svg" class="img-fluid" alt="">
+                        <img src="<?php echo TA_THEME_URL; ?>/markup/assets/images/search-icon.svg" class="img-fluid" width="34" height="36" alt="Buscar en Tiempo Argentino...">
                     </div>
                 </button>
                 <div class="profile-icon">
@@ -52,7 +52,7 @@ $extra_menu_items = RB_Menu::get_menu_items('extra-menu');
                                 data-toggle="collapse" data-target="#searchBarMenu" aria-expanded="false"
                                 aria-controls="searchBarMenu">
                                 <div class="d-flex align-items-center">
-                                    <img src="<?php echo TA_THEME_URL; ?>/markup/assets/images/search-icon.svg" class="img-fluid" alt="">
+                                    <img src="<?php echo TA_THEME_URL; ?>/markup/assets/images/search-icon.svg" class="img-fluid" width="34" height="36" alt="Buscar en Tiempo Argentino...">
                                     <p><?php echo __('BUSCAR','gen-base-theme')?></p>
                                 </div>
                             </button>
@@ -71,7 +71,7 @@ $extra_menu_items = RB_Menu::get_menu_items('extra-menu');
                                 <p><a href="<?php echo get_permalink( get_option('user_login_page') )?>"><?php echo __('INGRESAR','gen-base-theme')?></a></p>
                                 </p>
                                 <?php endif;?>
-                               
+
                             </div>
                         </a>
                     </div>
@@ -301,5 +301,5 @@ $extra_menu_items = RB_Menu::get_menu_items('extra-menu');
 if (window.innerWidth < 768) {
     let menus = document.querySelectorAll('.menu-items-container .card-header [data-toggle="collapse"]');
     menus.forEach(m => {m.click();});
-} 
+}
 </script>

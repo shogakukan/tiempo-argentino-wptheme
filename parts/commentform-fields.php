@@ -28,12 +28,12 @@ $is_logged = $user->ID != 0;
             </div>
             <div class="input-icon">
                 <button class="position-absolute">
-                    <img src="<?php echo TA_THEME_URL; ?>/assets/img/emoji.svg" alt="Emojis" class="w-100" />
+                    <img src="<?php echo TA_THEME_URL; ?>/assets/img/emoji.svg" alt="Emojis" width="39" height="39" class="w-100" />
                 </button>
             </div>
         </div>
         <div class="send-btn d-flex align-items-center">
-            <button><img src="<?php echo TA_THEME_URL; ?>/assets/img/send.svg" alt="Enviar" /></button>
+            <button><img src="<?php echo TA_THEME_URL; ?>/assets/img/send.svg" width="39" height="39" alt="Enviar" /></button>
         </div>
     </div>
 

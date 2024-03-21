@@ -38,7 +38,7 @@
                         </div>
                     </div>
                     <div class="send-btn d-flex align-items-center">
-                        <button><img src="<?php echo TA_THEME_URL; ?>/markup/assets/images/send.svg" alt="" /></button>
+                        <button><img src="<?php echo TA_THEME_URL; ?>/markup/assets/images/send.svg" width="39" height="39" alt="Enviar"/></button>
                     </div>
                 </div>
                 <div class="input-container">

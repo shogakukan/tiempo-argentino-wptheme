@@ -76,7 +76,7 @@ if (is_user_logged_in() && get_user_meta(get_current_user_id(),'_user_status',tr
                     <div class="beneficios-socios d-flex align-items-center px-2">
                         <p><a href="<?php echo get_permalink(get_option('beneficios_loop_page')) ?>"><?php echo __('Comunidad Tiempo', 'gen-base-theme') ?></a></p>
                     </div>
-                    <div class="d-flex justify-content-between flex-fill mx-2">
+                    <div class="d-flex justify-content-between flex-fill mx-2 pb-1">
                         <div class="temas-importantes d-flex align-items-center">
                             <!-- <div class="title d-flex p-1">
                                 <div class="d-flex mr-2">
@@ -109,10 +109,8 @@ if (is_user_logged_in() && get_user_meta(get_current_user_id(),'_user_status',tr
                                 foreach ($social_data as $social) :
                                 ?>
                                     <div class="<?php echo $social['name'] ?>">
-                                        <a href="<?php echo esc_attr($social['url']); ?>" target="_blank">
-                                            <div>
-                                                <img src="<?php echo ta_get_social_image($social['name'], 'white') ?>" class="img-fluid" alt="">
-                                            </div>
+                                        <a title="<?php echo $social['name'] ?> de Tiempo Argentino" href="<?php echo esc_attr($social['url']); ?>" target="_blank">
+                                            <img alt="<?php echo $social['name'] ?> de Tiempo Argentino" src="<?php echo ta_get_social_image($social['name'], 'white') ?>" width="21" height="21" class="img-fluid">
                                         </a>
                                     </div>
                                 <?php
@@ -151,12 +149,12 @@ if (is_user_logged_in() && get_user_meta(get_current_user_id(),'_user_status',tr
                 <div class="d-none d-lg-flex justify-content-between align-items-center">
                     <button id="search-btn" class="search-icon mr-3 btn btn-link d-flex collapsed" data-toggle="collapse" data-target="#searchBar" aria-expanded="false" aria-controls="searchBar">
                         <div class="d-flex align-items-center">
-                            <img src="<?php echo TA_THEME_URL; ?>/markup/assets/images/search-icon.svg" class="img-fluid" alt="">
+                            <img src="<?php echo TA_THEME_URL; ?>/markup/assets/images/search-icon.svg" class="img-fluid" width="34" height="36" alt="Buscar en Tiempo Argentino...">
                         </div>
                     </button>
                     <?php if (!is_user_logged_in()) : ?>
                         <div class="profile-icon">
-                            <a href="<?php echo get_permalink(get_option('subscriptions_login_register_page')) ?>"><img src="<?php echo TA_THEME_URL; ?>/markup/assets/images/profile-icon.svg" class="img-fluid" alt=""></a>
+                            <a href="<?php echo get_permalink(get_option('subscriptions_login_register_page')) ?>"><img src="<?php echo TA_THEME_URL; ?>/markup/assets/images/profile-icon.svg" class="img-fluid" width="36" height="34" alt="<?php echo __('Ingresar','gen-base-theme')?>"></a>
                             <a href="<?php echo get_permalink(get_option('subscriptions_login_register_page')); ?>"><?php echo __('Ingresar','gen-base-theme')?></a>
                         </div>
 
@@ -173,7 +171,7 @@ if (is_user_logged_in() && get_user_meta(get_current_user_id(),'_user_status',tr
                                     </div>
                                 </div>
                                 <div class="user-img ml-2">
-                                    <a href="<?php echo get_permalink(get_option('user_panel_page')) ?>"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/logged-profile-icon.svg" alt=""></a>
+                                    <a href="<?php echo get_permalink(get_option('user_panel_page')) ?>"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/logged-profile-icon.svg" width="36" height="34" alt="<?php echo wp_get_current_user()->first_name ?>"></a>
                                     <a href="<?php echo wp_logout_url(home_url()); ?>"><?php echo __('Salir','gen-base-theme')?></a>
                                 </div>
                             </div>

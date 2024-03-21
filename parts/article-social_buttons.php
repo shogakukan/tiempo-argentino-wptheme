@@ -29,7 +29,7 @@ if ($authors){
 ?>
 <div class="social-btns">
     <a title="Ver los comentarios de <?php echo $title; ?>" class="d-inline-block" href="#comments-container">
-        <img class="img-fluid m-0" src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/comentar.svg"  alt="Ver los comentarios de <?php echo $title; ?>" />
+        <img class="img-fluid m-0" src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/comentar.svg"  width="40" height="40" alt="Ver los comentarios de <?php echo $title; ?>" />
     </a>
     <?php /*
     <a tabindex="0" id="share-popover" class="share-popover" data-bs-toggle="popover" data-bs-trigger="focus">
