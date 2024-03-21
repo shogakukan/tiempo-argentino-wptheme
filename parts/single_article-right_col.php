@@ -27,7 +27,7 @@
         ?>
     </div>
     <?php if (is_active_sidebar('article_desktop_sidebar')) { ?>
-        <div class="d-none d-sm-none d-md-block anuncio-side-single">
+        <div class="d-none d-sm-none d-md-flex anuncio-side-single justify-content-center align-items-center" style="height: 600px;">
             <?php dynamic_sidebar('article_desktop_sidebar'); ?>
         </div>
     <?php } ?>
