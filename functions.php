@@ -1081,6 +1081,22 @@ function clear_article_cache ($post_id, $post){
 	purge_cloudflare ($urls_array);
 }
 
+add_action('save_post', 'clear_page_cache', 100, 2);
+function clear_page_cache ($post_id, $post){
+	if( $post->post_type === 'page' ){
+		$link = get_permalink($post);
+		$last_char = substr($link, -1);
+		if ($last_char == '/') {
+			$link = substr($link, 0, -1);
+		}
+		$urls_array = array(
+			$link,
+			$link . '/'
+		);
+		purge_cloudflare ($urls_array);
+	}
+}
+
 function purge_cloudflare ($urls_array) {
 	$email = get_option('cloudflare_cache_purge_option_name')['email'];
 	$key = get_option('cloudflare_cache_purge_option_name')['key'];
