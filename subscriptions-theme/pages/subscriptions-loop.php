@@ -628,6 +628,7 @@
                                             </div>
                                         </form>
                                         <div class="info text-center mt-5">
+                                            <h6 class="mb-4"><?php echo sprintf(__('Si tenés problemas con este formulario mandanos un email a %s y te agilizamos el proceso de alta', 'gen-base-theme'), '<a href="mailto:pagostiempo@gmail.com" class="highlighted">pagostiempo@gmail.com</a>') ?></h6>
                                             <h6><?php echo sprintf(__('Al hacer click en registrarse, estás aceptando nuestros %s', 'gen-base-theme'), '<a href="' . get_permalink(get_option('subscriptions_terms_page')) . '" class="highlighted">' . __('términos y condiciones', 'gen-base-theme') . '</a>') ?></h6>
                                         </div>
                                     </div>
