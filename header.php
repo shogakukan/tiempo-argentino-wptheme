@@ -70,7 +70,7 @@ if (is_user_logged_in() && get_user_meta(get_current_user_id(),'_user_status',tr
     <?php endif; ?>
     <!-- taxonomia -->
     <div class="header mb-4" id="headerDefault">
-        <div class="container">
+        <div class="container header-container">
             <div class="desktop-ribbon d-none d-lg-block">
                 <div class="d-flex justify-content-between">
                     <div class="beneficios-socios d-flex align-items-center px-2">
@@ -146,7 +146,7 @@ if (is_user_logged_in() && get_user_meta(get_current_user_id(),'_user_status',tr
                         </div>
                     </div>
                 </div>
-                <div class="d-none d-lg-flex justify-content-between align-items-center">
+                <div class="d-none d-lg-flex justify-content-between align-items-center search-login-widget">
                     <button id="search-btn" class="search-icon mr-3 btn btn-link d-flex collapsed" data-toggle="collapse" data-target="#searchBar" aria-expanded="false" aria-controls="searchBar">
                         <div class="d-flex align-items-center">
                             <img src="<?php echo TA_THEME_URL; ?>/markup/assets/images/search-icon.svg" class="img-fluid" width="34" height="36" alt="Buscar en Tiempo Argentino...">
@@ -177,6 +177,13 @@ if (is_user_logged_in() && get_user_meta(get_current_user_id(),'_user_status',tr
                             </div>
                         </div>
                     <?php endif ?>
+                </div>
+                <div class="weather d-sm-none">
+                    <div class="mt-3">
+                        <div class="date">
+                            <p class="text-capitalize" style="font-size: .7rem;"><?php echo date_i18n('l, j F , Y'); ?></p>
+                        </div>
+                    </div>
                 </div>
                 <div class="asociate-banner position-relative ml-md-3">
                     <div class="asociate-banner-bg h-100 ">

@@ -43,6 +43,12 @@ class Widgets_Theme_TA
         add_filter('the_content', [$this, 'insert_article_amp_paragraph_3_4']);
         add_filter('the_content', [$this, 'insert_article_desktop_paragraph_3_4']);
         add_filter('the_content', [$this, 'insert_article_mobile_paragraph_2_3']);
+
+        if (is_active_sidebar('home_desk_sticky')) {
+            add_filter( 'body_class', function( $classes ) {
+                return array_merge( $classes, array( 'sticky-ad' ) );
+            } );
+        }
     }
 
     public function home_desktop_widgets()
@@ -50,6 +56,7 @@ class Widgets_Theme_TA
         $widgets = [
             'home_desk_preheader' => __('Home Desktop - Preheader', 'gen-base-theme'),
             'home_desk_posheader' => __('Home Desktop - Posheader', 'gen-base-theme'),
+            'home_desk_sticky' => __('Home Desktop - Sticky', 'gen-base-theme'),
             'home_desk_row_1_2' => __('Home Desktop  - Fila 1-2', 'gen-base-theme'),
             'home_desk_row_3_4' => __('Home Desktop - Fila 3-4', 'gen-base-theme'),
             'home_desk_row_5_6' => __('Home Desktop - Fila 5-6', 'gen-base-theme'),
@@ -424,7 +431,6 @@ class Widgets_Theme_TA
         }
         return $content;
     }
-
 
 
 

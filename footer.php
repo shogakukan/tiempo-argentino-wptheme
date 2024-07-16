@@ -29,6 +29,13 @@
 </div>
 
 <?php if (is_front_page()) : ?>
+    <?php if (is_active_sidebar('home_desk_sticky')) { ?>
+        <div class="sticky-ad-home container-fluid">
+            <div class="d-flex justify-content-center align-items-center">
+            <?php dynamic_sidebar('home_desk_sticky') ?>
+            </div>
+        </div>
+    <?php } ?>
 
     <?php if (is_active_sidebar('home_mobile_fixed')) dynamic_sidebar('home_mobile_fixed'); ?>
     <?php if (is_active_sidebar('home_desktop_fixed')) dynamic_sidebar('home_desktop_fixed'); ?>
