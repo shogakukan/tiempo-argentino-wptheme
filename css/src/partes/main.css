@@ -282,7 +282,7 @@ a.ab-item {
 }
 
 .menu-desktop {
-  
+
   position: absolute !important;
   left: 50% !important;
   padding-top: 60px !important;
@@ -1045,6 +1045,9 @@ a.ab-item {
   font-weight: 500;
   font-style: italic;
 }
+.sticky-ad-home {
+  display: none;
+}
 
 .banner-nuevo-tiempo .title p,
 .eleccion-contenido .title p {
@@ -1153,12 +1156,12 @@ a.ab-item {
 .mas-leidas .user-block-container .user-tabs .nav.nav-tabs .nav-item .nav-link.active {
   background-color: white;
   padding-top: 5px;
-  
+
 }
 .mas-leidas .user-block-container .user-tabs .nav.nav-tabs .nav-item .nav-link.active > div,
 .mas-leidas .user-block-container .user-tabs .nav.nav-tabs .nav-item .nav-link.active p {
   border: none;
-  
+
 }
 
 .mas-leidas .user-block-container .user-tabs .nav.nav-tabs .nav-item .nav-link.active p {
@@ -1330,6 +1333,30 @@ a.ab-item {
   }
   .footer-content p {
     font-size: 19px;
+  }
+}
+@media (min-width: 1500px) {
+  body.home.sticky-ad > div.container,
+  body.home.sticky-ad > div.container-with-header div.container {
+    margin-left: 0;
+  }
+  .sticky-ad-home {
+    display: block !important;
+    position: fixed;
+    top: 150px;
+  }
+  .sticky-ad-home > div {
+    position: absolute;
+    right: 0;
+    width: calc(100vw - 1200px);
+    height: calc(100vh - 200px);
+  }
+  body.home.sticky-ad #headerDefault .header-container {
+    max-width: 100% !important;
+  }
+  body.home.sticky-ad .search-login-widget {
+    margin-left: auto !important;
+    justify-content: end !important;
   }
 }
 .desktop-ribbon {
