@@ -120,7 +120,7 @@ if (is_user_logged_in() && get_user_meta(get_current_user_id(),'_user_status',tr
                     </button>
                     <?php if (!is_user_logged_in()) : ?>
                         <div class="profile-icon">
-                            <a href="<?php echo get_permalink(get_option('user_panel_page')) ?>"><img src="<?php echo TA_THEME_URL; ?>/markup/assets/images/profile-icon.svg" class="img-fluid" alt=""></a>
+                        <a href="<?php echo get_permalink(get_option('subscriptions_login_register_page')) ?>"><img src="<?php echo TA_THEME_URL; ?>/markup/assets/images/profile-icon.svg" class="img-fluid" alt=""></a>
                         </div>
                     <?php else : ?>
                         <div class="logged-user mx-2">

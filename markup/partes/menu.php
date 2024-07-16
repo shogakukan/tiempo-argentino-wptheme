@@ -32,7 +32,7 @@ $extra_menu_items = RB_Menu::get_menu_items('extra-menu');
                     </div>
                 </button>
                 <div class="profile-icon">
-                <a href="<?php echo get_permalink( get_option('user_panel_page') )?>"><img src="<?php echo TA_THEME_URL; ?>/markup/assets/images/profile-icon.svg" class="img-fluid" alt=""></a>
+                <a href="<?php echo get_permalink( get_option('subscriptions_login_register_page') )?>"><img src="<?php echo TA_THEME_URL; ?>/markup/assets/images/profile-icon.svg" class="img-fluid" alt=""></a>
                 </div>
             </div>
         </div>
