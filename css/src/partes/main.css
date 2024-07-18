@@ -70,7 +70,6 @@ a.ab-item {
   z-index: 15;
   top: 0;
 }
-.header.sticky-default .weather,
 .header.sticky-default .desktop-ribbon {
   display: none !important;
 }
@@ -1045,7 +1044,7 @@ a.ab-item {
   font-weight: 500;
   font-style: italic;
 }
-.sticky-ad-home {
+.home-sticky-sidebar {
   display: none;
 }
 
@@ -1336,27 +1335,41 @@ a.ab-item {
   }
 }
 @media (min-width: 1500px) {
-  body.home.sticky-ad > div.container,
-  body.home.sticky-ad > div.container-with-header div.container {
+  body.home.home-side-layout > div.container,
+  body.home.home-side-layout > div.container-with-header div.container {
     margin-left: 0;
   }
-  .sticky-ad-home {
+  .home-sticky-sidebar {
     display: block !important;
     position: fixed;
     top: 150px;
   }
-  .sticky-ad-home > div {
+  .home-sticky-sidebar > div {
     position: absolute;
     right: 0;
     width: calc(100vw - 1200px);
     height: calc(100vh - 200px);
   }
-  body.home.sticky-ad #headerDefault .header-container {
+  body.home.home-side-layout #headerDefault .header-container {
     max-width: 100% !important;
   }
-  body.home.sticky-ad .search-login-widget {
+  body.home.home-side-layout .search-login-widget {
     margin-left: auto !important;
     justify-content: end !important;
+  }
+}
+@media (min-width: 1850px) {
+  body.home.home-side-layout > div.container,
+  body.home.home-side-layout > div.container-with-header div.container {
+    margin-left: auto;
+  }
+  .home-sticky-sidebar > div {
+    position: absolute;
+    right: 0;
+    width: calc(100vw - 1500px);
+  }
+  body.home.home-side-layout #headerDefault .header-container {
+    max-width: 1200px !important;
   }
 }
 .desktop-ribbon {

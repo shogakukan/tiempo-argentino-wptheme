@@ -30,7 +30,7 @@
 
 <?php if (is_front_page()) : ?>
     <?php if (is_active_sidebar('home_desk_sticky')) { ?>
-        <div class="sticky-ad-home container-fluid">
+        <div class="home-sticky-sidebar container-fluid">
             <div class="d-flex justify-content-center align-items-center">
             <?php dynamic_sidebar('home_desk_sticky') ?>
             </div>

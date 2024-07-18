@@ -135,7 +135,7 @@ if (is_user_logged_in() && get_user_meta(get_current_user_id(),'_user_status',tr
                             <img src="<?php echo TA_THEME_URL; ?>/markup/assets/images/tiempo-logo.svg" width="204" height="57" class="img-fluid" alt="Tiempo Argentino">
                         </a>
                     </div>
-                    <div class="weather d-none d-xl-flex flex-column align-content-center justify-content-start text-left  mr-5">
+                    <div class="weather d-none d-lg-flex flex-column align-content-center justify-content-start text-left  mr-5">
                         <div class="mt-2">
                             <div class="date">
                                 <p class="text-capitalize"><?php echo date_i18n('l, j F , Y'); ?></p>
@@ -178,10 +178,10 @@ if (is_user_logged_in() && get_user_meta(get_current_user_id(),'_user_status',tr
                         </div>
                     <?php endif ?>
                 </div>
-                <div class="weather d-sm-none">
-                    <div class="mt-3">
+                <div class="weather d-lg-none">
+                    <div class="mt-3 col-11 pl-0">
                         <div class="date">
-                            <p class="text-capitalize" style="font-size: .7rem;"><?php echo date_i18n('l, j F , Y'); ?></p>
+                            <p class="text-capitalize" style="font-size: .6rem;"><?php echo date_i18n('l, j F , Y'); ?></p>
                         </div>
                     </div>
                 </div>

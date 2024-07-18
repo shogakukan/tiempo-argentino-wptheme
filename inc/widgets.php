@@ -46,7 +46,7 @@ class Widgets_Theme_TA
 
         if (is_active_sidebar('home_desk_sticky')) {
             add_filter( 'body_class', function( $classes ) {
-                return array_merge( $classes, array( 'sticky-ad' ) );
+                return array_merge( $classes, array( 'home-side-layout' ) );
             } );
         }
     }
