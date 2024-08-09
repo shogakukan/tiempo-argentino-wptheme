@@ -17,6 +17,7 @@ const TAContainerControls = (props = {}) => {
         title = '',
         use_term_format = false,
         header_link = '',
+        title_image = null
     } = attributes;
 
     const usesTermFormat = isTermArticles && use_term_format;
@@ -30,6 +31,12 @@ const TAContainerControls = (props = {}) => {
                     disabled = {usesTermFormat}
                     value={ title }
                     onChange={ ( title ) => setAttributes( { title } ) }
+                />
+                <TextControl
+                    label="Imagen como título"
+                    disabled = {usesTermFormat}
+                    value={ title_image }
+                    onChange={ ( title_image ) => setAttributes( { title_image } ) }
                 />
                 <TextControl
                     label="Link al clickear el título"

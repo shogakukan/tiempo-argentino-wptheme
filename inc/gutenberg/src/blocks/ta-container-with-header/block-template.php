@@ -24,9 +24,13 @@ $header_link_tag = $header_link ? 'href="'. esc_attr($header_link) .'"' : '';
         <div class="context-bg  py-3">
             <div class="container <?php echo esc_attr($header_class); ?>">
                 <?php if($header_type == 'common'): ?>
-                <a <?php echo $header_link_tag; ?> class="section-title">
-                    <h4><?php echo $title; ?></h4>
-                </a>
+                    <a <?php echo $header_link_tag; ?> class="section-title">
+                    <?php if($title_image): ?>
+                        <img class="img-fluid" src="<?php echo $title_image; ?>" alt="<?php echo $title; ?>" width="" height="35" style="height: 35px !important;">
+                    <?php else: ?>
+                        <h4><?php echo $title; ?></h4>
+                    <?php endif; ?>
+                    </a>
                 <?php elseif($header_type == 'especial'): ?>
                 <div class="article-tags ta-blue-bg m-0">
                     <div class="tag d-flex my-2">

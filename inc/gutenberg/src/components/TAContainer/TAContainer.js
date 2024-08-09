@@ -16,19 +16,21 @@ const TAContainer = (props = {}) => {
         color_context = 'common',
         header_type = 'common',
         title = '',
+        title_image = '',
     } = attributes;
 
     const headerClass = header_type == 'special' ? 'special' : '';
     const className = `ta-container ta-context ${color_context}`;
+    const content = title_image ? '<img class="img-fluid" alt="'+title+'" src="'+title_image+'" width="" height="35" style="height: 35px !important;">' : title;
 
     return (
         <div className={className}>
             <div className = { `container-header wp-block ${headerClass}` } >
                 <TASeparator/>
                 <RBContentEditable
-                    content = {title}
-                    onBlur = { (title) => setAttributes({title}) }
-                    className="text"
+                    content = {content}
+                    onBlur = { [(title) => setAttributes({title}), (title_image) => setAttributes({title_image})] }
+                    className = "text"
                     disabled = { !titleEditable }
                 />
             </div>

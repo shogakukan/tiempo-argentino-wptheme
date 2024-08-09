@@ -1358,7 +1358,7 @@ a.ab-item {
     justify-content: end !important;
   }
 }
-@media (min-width: 1850px) {
+@media (min-width: 1870px) {
   body.home.home-side-layout > div.container,
   body.home.home-side-layout > div.container-with-header div.container {
     margin-left: auto;
@@ -1366,7 +1366,7 @@ a.ab-item {
   .home-sticky-sidebar > div {
     position: absolute;
     right: 0;
-    width: calc(100vw - 1500px);
+    width: calc(100vw - 1550px);
   }
   body.home.home-side-layout #headerDefault .header-container {
     max-width: 1200px !important;

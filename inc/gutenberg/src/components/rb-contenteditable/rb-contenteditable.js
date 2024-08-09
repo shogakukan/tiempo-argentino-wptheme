@@ -49,6 +49,7 @@ export default function RBContentEditable(props = {}){
         onPaste: pasteAsPlainText,
         contentEditable: !disabled,
         ref: elementRef,
-        //dangerouslySetInnerHTML: { __html: html }
-    }, showPlaceholder ? placeholder : content );
+        // dangerouslySetInnerHTML: showPlaceholder ? { __html: placeholder } : { __html: content }
+        dangerouslySetInnerHTML: { __html: content }
+    });
 }
