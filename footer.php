@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container footer-container">
     <div class="separator"></div>
     <div class="footer-content d-flex flex-column flex-lg-row justify-content-between my-3 mt-md-4 mb-md-5">
         <div class="ta-info col-12 col-lg-4">
@@ -29,14 +29,6 @@
 </div>
 
 <?php if (is_front_page()) : ?>
-    <?php if (is_active_sidebar('home_desk_sticky')) { ?>
-        <div class="home-sticky-sidebar container-fluid">
-            <div class="d-flex justify-content-center align-items-center">
-            <?php dynamic_sidebar('home_desk_sticky') ?>
-            </div>
-        </div>
-    <?php } ?>
-
     <?php if (is_active_sidebar('home_mobile_fixed')) dynamic_sidebar('home_mobile_fixed'); ?>
     <?php if (is_active_sidebar('home_desktop_fixed')) dynamic_sidebar('home_desktop_fixed'); ?>
     <?php if (is_active_sidebar('home_desktop_vslider')) dynamic_sidebar('home_desktop_vslider'); ?>

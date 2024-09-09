@@ -1044,9 +1044,6 @@ a.ab-item {
   font-weight: 500;
   font-style: italic;
 }
-.home-sticky-sidebar {
-  display: none;
-}
 
 .banner-nuevo-tiempo .title p,
 .eleccion-contenido .title p {
@@ -1334,44 +1331,50 @@ a.ab-item {
     font-size: 19px;
   }
 }
+
 @media (min-width: 1500px) {
-  body.home.home-side-layout > div.container,
-  body.home.home-side-layout > div.container-with-header div.container {
-    margin-left: 0;
-  }
-  .home-sticky-sidebar {
-    display: block !important;
-    position: fixed;
-    top: 150px;
-  }
-  .home-sticky-sidebar > div {
-    position: absolute;
-    right: 0;
-    width: calc(100vw - 1200px);
-    height: calc(100vh - 200px);
-  }
-  body.home.home-side-layout #headerDefault .header-container {
+  body.home.home-side-layout .header-container,
+  body.home.home-side-layout .footer-container {
     max-width: 100% !important;
+  }
+  body.home.home-side-layout .home-side-layout-wrapper {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    margin: 0 auto;
+    max-width: 100%;
   }
   body.home.home-side-layout .search-login-widget {
     margin-left: auto !important;
     justify-content: end !important;
   }
+  body.home.home-side-layout .home-side-layout-content {
+    width: calc(100% - 400px);
+    margin-right: 30px;
+  }
+  body.home.home-side-layout .home-sticky-sidebar {
+    display: block !important;
+    padding-right: 5px;
+    z-index: 10;
+  }
+  body.home.home-side-layout .home-sticky-sidebar > div {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 150px;
+  }
 }
-@media (min-width: 1870px) {
-  body.home.home-side-layout > div.container,
-  body.home.home-side-layout > div.container-with-header div.container {
-    margin-left: auto;
+
+@media (min-width: 1900px) {
+  .container {
+    max-width: 1900px;
   }
-  .home-sticky-sidebar > div {
-    position: absolute;
-    right: 0;
-    width: calc(100vw - 1550px);
-  }
-  body.home.home-side-layout #headerDefault .header-container {
-    max-width: 1200px !important;
+  body.home.home-side-layout .header-container,
+  body.home.home-side-layout .footer-container,
+  body.home.home-side-layout .home-side-layout-content,
+  body.home.home-side-layout .home-side-layout-wrapper {
+    max-width: 1900px !important;
   }
 }
+
 .desktop-ribbon {
   transition: all 0.5s ease-out;
   opacity: 1;

@@ -5,6 +5,10 @@
  */
 ?>
 <?php get_header(); ?>
+<?php if (is_active_sidebar('home_desk_sticky')) { ?>
+<div class="home-side-layout-wrapper">
+    <div class="home-side-layout-content">
+<?php } ?>
 <?php do_action('nota_apertura'); ?>
 <?php if (is_front_page()) :
 
@@ -79,5 +83,23 @@
     the_content();
 endif; ?>
 <?php TA_Blocks_Container_Manager::close(); ?>
+
+<?php if (is_active_sidebar('home_desk_sticky')) { ?>
+</div>
+<?php } ?>
+
+<?php if (is_front_page()) { ?>
+<?php if (is_active_sidebar('home_desk_sticky')) { ?>
+    <div class="d-none home-sticky-sidebar">
+        <div class="d-flex justify-content-center align-items-center">
+        <?php dynamic_sidebar('home_desk_sticky') ?>
+        </div>
+    </div>
+<?php } ?>
+<?php } ?>
+
+<?php if (is_active_sidebar('home_desk_sticky')) { ?>
+</div>
+<?php } ?>
 
 <?php get_footer(); ?>
