@@ -39,7 +39,7 @@ if ($authors){
     <a title="Compartir <?php echo $title; ?> en Facebook" class="d-inline-block" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo get_permalink( get_queried_object_id() )?>">
         <img class="img-fluid m-0" src="<?php echo get_stylesheet_directory_uri()?>/assets/img/fb-share-popover.svg" width="40" height="40" alt="Compartir <?php echo $title; ?> en Facebook">
     </a>
-    <a title="Compartir <?php echo $title; ?> en X" class="d-inline-block" href="https://twitter.com/intent/tweet?text=<?php echo $title; ?>&url=<?php echo $tw_text . "%0A%0A" . get_permalink( get_queried_object_id() )?>&via=tiempoarg" target="_blank">
+    <a title="Compartir <?php echo $title; ?> en X" class="d-inline-block" href="https://twitter.com/intent/tweet?text=<?php echo $title; ?>&url=<?php echo get_permalink( get_queried_object_id() )?>&via=tiempoarg" target="_blank">
         <img class="img-fluid m-0" src="<?php echo get_stylesheet_directory_uri()?>/assets/img/twitter-share-popover.svg" width="40" height="40" alt="Compartir <?php echo $title; ?> en X">
     </a>
     <a title="Compartir <?php echo $title; ?> por WhatsApp" class="d-lg-none d-inline-block" href="whatsapp://send/?text=<?php echo get_permalink( get_queried_object_id() )?>" target="_blank">
