@@ -77,3 +77,9 @@ new TA_Micrositio('democracia', array(
     'priority'              => 10,
     'custom_content'        => true,
 ));
+
+new TA_Micrositio('rural', array(
+    'title'                 => 'Tiempo Rural',
+    'priority'              => 11,
+    'custom_content'        => true,
+));
